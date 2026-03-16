@@ -13,15 +13,10 @@ import com.microsoft.playwright.BrowserContext;
 import com.microsoft.playwright.BrowserType;
 import com.microsoft.playwright.Page;
 import com.microsoft.playwright.Playwright;
-import java.io.BufferedReader;
-import java.io.BufferedWriter;
 import java.io.File;
-import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.io.InputStreamReader;
 import java.io.OutputStream;
-import java.io.OutputStreamWriter;
 import java.util.Scanner;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -31,26 +26,18 @@ import java.util.logging.Logger;
  * @author rokom
  */
 public class MainMenuForm extends javax.swing.JFrame {
+    
+    private GUIManager guiManager;
 
     /**
      * Creates new form MainMenuForm
      */
     public MainMenuForm() {
         initComponents();
-        File settings = new File("settings.txt");
-        // load settings
-        if (settings.exists()) {
-            try {
-                Scanner reader = new Scanner(settings);
-                userAgentTF.setText(reader.nextLine());
-                crawlDelaySPN.setValue(Integer.valueOf(reader.nextLine()));
-                urlTF.setText(reader.nextLine());
-                timeFrameSPN.setValue(Integer.valueOf(reader.nextLine()));
-                reader.close();
-            } catch (IOException ex) {
-                System.out.println(ex);
-            }
-        }
+    }
+    
+    public void setGuiManager(GUIManager manager) {
+        guiManager = manager;
     }
 
     /**
@@ -63,131 +50,24 @@ public class MainMenuForm extends javax.swing.JFrame {
     private void initComponents() {
 
         mainPanelJP = new javax.swing.JPanel();
-        userAgentLBL = new javax.swing.JLabel();
-        crawlDelayLBL = new javax.swing.JLabel();
-        userAgentTF = new javax.swing.JTextField();
-        crawlDelaySPN = new javax.swing.JSpinner();
-        urlLBL = new javax.swing.JLabel();
-        urlTF = new javax.swing.JTextField();
-        okBTN = new javax.swing.JButton();
-        saveBTN = new javax.swing.JButton();
-        crawlBTN = new javax.swing.JButton();
-        timeFrameLBL = new javax.swing.JLabel();
-        timeFrameSPN = new javax.swing.JSpinner();
-        timeFrame2LBL = new javax.swing.JLabel();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        statusTA = new javax.swing.JTextArea();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(51, 51, 255));
         setForeground(java.awt.Color.gray);
+        setName("mainMenuFrame"); // NOI18N
 
         mainPanelJP.setBackground(new java.awt.Color(51, 51, 255));
-
-        userAgentLBL.setForeground(new java.awt.Color(255, 255, 255));
-        userAgentLBL.setText("User Agent:");
-
-        crawlDelayLBL.setForeground(new java.awt.Color(255, 255, 255));
-        crawlDelayLBL.setText("Crawl Delay (seconds):");
-
-        urlLBL.setForeground(new java.awt.Color(255, 255, 255));
-        urlLBL.setText("URL:");
-
-        okBTN.setText("OK");
-
-        saveBTN.setText("Save Settings");
-        saveBTN.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                saveBTNActionPerformed(evt);
-            }
-        });
-
-        crawlBTN.setText("Crawl");
-        crawlBTN.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                crawlBTNActionPerformed(evt);
-            }
-        });
-
-        timeFrameLBL.setForeground(new java.awt.Color(255, 255, 255));
-        timeFrameLBL.setText("Time frame: Last");
-
-        timeFrame2LBL.setForeground(new java.awt.Color(255, 255, 255));
-        timeFrame2LBL.setText("Day(s)");
-
-        statusTA.setEditable(false);
-        statusTA.setColumns(20);
-        statusTA.setLineWrap(true);
-        statusTA.setRows(5);
-        jScrollPane1.setViewportView(statusTA);
+        mainPanelJP.setName("mainPanelJP"); // NOI18N
 
         javax.swing.GroupLayout mainPanelJPLayout = new javax.swing.GroupLayout(mainPanelJP);
         mainPanelJP.setLayout(mainPanelJPLayout);
         mainPanelJPLayout.setHorizontalGroup(
             mainPanelJPLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(mainPanelJPLayout.createSequentialGroup()
-                .addGap(26, 26, 26)
-                .addGroup(mainPanelJPLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(userAgentLBL, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(crawlDelayLBL)
-                    .addComponent(urlLBL, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(timeFrameLBL))
-                .addGap(36, 36, 36)
-                .addGroup(mainPanelJPLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(mainPanelJPLayout.createSequentialGroup()
-                        .addComponent(timeFrameSPN, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(timeFrame2LBL, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(urlTF, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(crawlDelaySPN, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(userAgentTF, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(264, Short.MAX_VALUE))
-            .addGroup(mainPanelJPLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, mainPanelJPLayout.createSequentialGroup()
-                    .addContainerGap()
-                    .addGroup(mainPanelJPLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                        .addGroup(mainPanelJPLayout.createSequentialGroup()
-                            .addGap(0, 356, Short.MAX_VALUE)
-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 214, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGroup(mainPanelJPLayout.createSequentialGroup()
-                            .addComponent(okBTN)
-                            .addGap(138, 138, 138)
-                            .addComponent(crawlBTN)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 188, Short.MAX_VALUE)
-                            .addComponent(saveBTN)))
-                    .addGap(22, 22, 22)))
+            .addGap(0, 598, Short.MAX_VALUE)
         );
         mainPanelJPLayout.setVerticalGroup(
             mainPanelJPLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(mainPanelJPLayout.createSequentialGroup()
-                .addGap(30, 30, 30)
-                .addGroup(mainPanelJPLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(userAgentLBL)
-                    .addComponent(userAgentTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(32, 32, 32)
-                .addGroup(mainPanelJPLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(crawlDelayLBL)
-                    .addComponent(crawlDelaySPN, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(34, 34, 34)
-                .addGroup(mainPanelJPLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(urlLBL)
-                    .addComponent(urlTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(33, 33, 33)
-                .addGroup(mainPanelJPLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(timeFrameLBL)
-                    .addComponent(timeFrameSPN, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(timeFrame2LBL))
-                .addContainerGap(122, Short.MAX_VALUE))
-            .addGroup(mainPanelJPLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(mainPanelJPLayout.createSequentialGroup()
-                    .addContainerGap()
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 54, Short.MAX_VALUE)
-                    .addGroup(mainPanelJPLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(okBTN)
-                        .addComponent(saveBTN)
-                        .addComponent(crawlBTN))
-                    .addContainerGap()))
+            .addGap(0, 339, Short.MAX_VALUE)
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -209,72 +89,6 @@ public class MainMenuForm extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void saveBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_saveBTNActionPerformed
-        // TODO add your handling code here:
-        File settings = new File("settings.txt");
-        try {
-            FileWriter writer = new FileWriter(settings);
-            writer.write(userAgentTF.getText() + "\n");
-            writer.write(crawlDelaySPN.getValue().toString() + "\n");
-            writer.write(urlTF.getText() + "\n");
-            writer.write(timeFrameSPN.getValue().toString());
-            writer.close();
-        } catch (IOException ex) {
-            System.out.println(ex);
-        }
-    }//GEN-LAST:event_saveBTNActionPerformed
-
-    private void crawlBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_crawlBTNActionPerformed
-        // TODO add your handling code here:
-        statusTA.append("Work in progress...\n");
-        Playwright playwright  = Playwright.create();
-        Browser browser = playwright.firefox().launch(new BrowserType.LaunchOptions()
-            .setSlowMo(5000)
-            //.setHeadless(false)
-            );
-        BrowserContext context = browser.newContext(new Browser.NewContextOptions()
-                .setUserAgent("Roko Matanovic/National College of Ireland/x23361212@student.ncirl.ie. Agritech research purposes only.")
-                .setLocale("en-ie"));
-        Page page = browser.newPage();
-        page.navigate(urlTF.getText());
-        statusTA.append("Visiting " + page.title() + "\n");
-        JSoupParser parser = new JSoupParser();
-        statusTA.append("Links: " + parser.getLinks(page.content()) + "\n");
-        // visit every website
-        page.waitForTimeout((int) (Math.random() * 5 + 1));
-        page.close();
-        page = browser.newPage();
-        page.navigate(urlTF.getText() +parser.getLinkStrings().getFirst());
-        statusTA.append("Visiting " + page.title() + "\n");
-        parser.getTextFromParagraphs(page.content(), "data-component=CoreParagraph");
-        for (String p : parser.getParagraphs()) {
-            statusTA.append(p);
-        }
-        playwright.close();
-        
-        File paragraphs = new File("text.txt");
-        try {
-            FileWriter writer = new FileWriter(paragraphs);
-            for (String p: parser.getParagraphs()) {
-                writer.write(p + "\n");
-            }
-            writer.close();
-        } catch (IOException ex) {
-            System.out.println(ex);
-        }
-        
-        // invoke Python script
-        ProcessBuilder pb = new ProcessBuilder("cmd", "/c", "start", "python", "-u", "agribert.py")
-                .inheritIO();
-        try {
-            Process process = pb.start();
-        } catch (IOException ex) {
-            Logger.getLogger(MainMenuForm.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        OutputStream os = null;
-        
-    }//GEN-LAST:event_crawlBTNActionPerformed
 
     /**
      * @param args the command line arguments
@@ -312,20 +126,6 @@ public class MainMenuForm extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton crawlBTN;
-    private javax.swing.JLabel crawlDelayLBL;
-    private javax.swing.JSpinner crawlDelaySPN;
-    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JPanel mainPanelJP;
-    private javax.swing.JButton okBTN;
-    private javax.swing.JButton saveBTN;
-    private javax.swing.JTextArea statusTA;
-    private javax.swing.JLabel timeFrame2LBL;
-    private javax.swing.JLabel timeFrameLBL;
-    private javax.swing.JSpinner timeFrameSPN;
-    private javax.swing.JLabel urlLBL;
-    private javax.swing.JTextField urlTF;
-    private javax.swing.JLabel userAgentLBL;
-    private javax.swing.JTextField userAgentTF;
     // End of variables declaration//GEN-END:variables
 }
