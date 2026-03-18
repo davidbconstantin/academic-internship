@@ -41,6 +41,7 @@ public class CrawlerScriptingJP extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        commandBG = new javax.swing.ButtonGroup();
         chooseLBL = new javax.swing.JLabel();
         commandCB = new javax.swing.JComboBox<>();
         addBTN = new javax.swing.JButton();
@@ -49,6 +50,9 @@ public class CrawlerScriptingJP extends javax.swing.JPanel {
         jScrollPane1 = new javax.swing.JScrollPane();
         scriptTA = new javax.swing.JTextArea();
         inputTF = new javax.swing.JTextField();
+        resultsRB = new javax.swing.JRadioButton();
+        resultsCB = new javax.swing.JComboBox<>();
+        urlhtmlRB = new javax.swing.JRadioButton();
 
         setBackground(new java.awt.Color(51, 51, 255));
         setName("crawlerScriptingJP"); // NOI18N
@@ -57,7 +61,12 @@ public class CrawlerScriptingJP extends javax.swing.JPanel {
         chooseLBL.setForeground(new java.awt.Color(255, 255, 255));
         chooseLBL.setText("Choose Command:");
 
-        commandCB.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Visit", "Search", "Write" }));
+        commandCB.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Visit", "Search", "Write", "Python" }));
+        commandCB.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                commandCBActionPerformed(evt);
+            }
+        });
 
         addBTN.setText("Add Command");
         addBTN.addActionListener(new java.awt.event.ActionListener() {
@@ -85,6 +94,28 @@ public class CrawlerScriptingJP extends javax.swing.JPanel {
         scriptTA.setRows(5);
         jScrollPane1.setViewportView(scriptTA);
 
+        inputTF.setEnabled(false);
+
+        commandBG.add(resultsRB);
+        resultsRB.setForeground(new java.awt.Color(255, 255, 255));
+        resultsRB.setText("Search Results");
+        resultsRB.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                resultsRBActionPerformed(evt);
+            }
+        });
+
+        resultsCB.setEnabled(false);
+
+        commandBG.add(urlhtmlRB);
+        urlhtmlRB.setForeground(new java.awt.Color(255, 255, 255));
+        urlhtmlRB.setText("URL / HTML");
+        urlhtmlRB.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                urlhtmlRBActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -95,10 +126,14 @@ public class CrawlerScriptingJP extends javax.swing.JPanel {
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(commandCB, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(chooseLBL))
+                            .addComponent(chooseLBL)
+                            .addComponent(resultsRB)
+                            .addComponent(urlhtmlRB))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(inputTF)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(resultsCB, javax.swing.GroupLayout.Alignment.LEADING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(inputTF, javax.swing.GroupLayout.DEFAULT_SIZE, 237, Short.MAX_VALUE))
                         .addGap(64, 64, 64)))
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(37, 37, 37))
@@ -107,7 +142,7 @@ public class CrawlerScriptingJP extends javax.swing.JPanel {
                 .addComponent(backBTN)
                 .addGap(59, 59, 59)
                 .addComponent(addBTN)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 189, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 196, Short.MAX_VALUE)
                 .addComponent(okBTN)
                 .addGap(54, 54, 54))
         );
@@ -115,15 +150,21 @@ public class CrawlerScriptingJP extends javax.swing.JPanel {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(36, 36, 36)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(chooseLBL)
                         .addGap(29, 29, 29)
                         .addComponent(commandCB, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(36, 36, 36)
-                        .addComponent(inputTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
+                        .addComponent(urlhtmlRB)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(resultsRB)
+                        .addGap(17, 17, 17)
+                        .addComponent(inputTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(resultsCB, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 219, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 62, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 80, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(addBTN)
                     .addComponent(okBTN)
@@ -140,7 +181,13 @@ public class CrawlerScriptingJP extends javax.swing.JPanel {
     private void addBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addBTNActionPerformed
         // TODO add your handling code here:
         String commandToAdd = commandCB.getSelectedItem().toString();
-        String object = inputTF.getText();
+        String object = "";
+        if (urlhtmlRB.isSelected())
+            object = inputTF.getText();
+        else {
+            object = inputTF.getText();
+            commandToAdd = resultsCB.getSelectedItem().toString() + " " + commandCB.getSelectedItem().toString();
+        }
         currentCrawler.addCommand(commandToAdd + " " + object);
         scriptTA.setText("");
         int counter = 0;
@@ -157,15 +204,43 @@ public class CrawlerScriptingJP extends javax.swing.JPanel {
         ((MainMenuJP)guiManager.findPanel("mainMenuJP")).loadCrawlers();
     }//GEN-LAST:event_okBTNActionPerformed
 
+    private void commandCBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_commandCBActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_commandCBActionPerformed
+
+    private void urlhtmlRBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_urlhtmlRBActionPerformed
+        // TODO add your handling code here:
+        inputTF.setEnabled(true);
+        resultsCB.setEnabled(false);
+    }//GEN-LAST:event_urlhtmlRBActionPerformed
+
+    private void resultsRBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_resultsRBActionPerformed
+        // TODO add your handling code here:
+        inputTF.setEnabled(true);
+        resultsCB.setEnabled(true);
+        // get a list of results that actions can be performed on
+        int counter = 0;
+        resultsCB.removeAllItems();
+        for (String command: currentCrawler.getCommands()) {
+            counter++;
+            if (command.startsWith("Search"))
+                resultsCB.addItem("Command #" + counter);
+        }
+    }//GEN-LAST:event_resultsRBActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton addBTN;
     private javax.swing.JButton backBTN;
     private javax.swing.JLabel chooseLBL;
+    private javax.swing.ButtonGroup commandBG;
     private javax.swing.JComboBox<String> commandCB;
     private javax.swing.JTextField inputTF;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JButton okBTN;
+    private javax.swing.JComboBox<String> resultsCB;
+    private javax.swing.JRadioButton resultsRB;
     private javax.swing.JTextArea scriptTA;
+    private javax.swing.JRadioButton urlhtmlRB;
     // End of variables declaration//GEN-END:variables
 }

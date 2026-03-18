@@ -14,7 +14,7 @@ public class WebCrawler implements java.io.Serializable {
     private String name, userAgent;
     private int crawlDelay;
     private ArrayList<String> urls;
-    private ArrayList<String> searchResults;
+    private ArrayList<SearchResult> searchResults;
     private ArrayList<String> commands;
     
     public WebCrawler(String name, String userAgent, int crawlDelay) {
@@ -69,15 +69,11 @@ public class WebCrawler implements java.io.Serializable {
         this.urls = urls;
     }
 
-    public ArrayList<String> getHtmlResponses() {
+    public ArrayList<SearchResult> getHtmlResponses() {
         return searchResults;
     }
-
-    public void setHtmlResponses(ArrayList<String> htmlResponses) {
-        this.searchResults = htmlResponses;
-    }
     
-    public void addHtmlResponse(String response) {
+    public void addHtmlResponse(SearchResult response) {
         searchResults.add(response);
     }
 

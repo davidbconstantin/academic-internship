@@ -2,6 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
  * https://stackoverflow.com/questions/12684072/eofexception-when-reading-files-with-objectinputstream
+ * https://huggingface.co/blog/sentiment-analysis-python
  */
 package com.security.academicinternshipproject;
 
@@ -17,7 +18,10 @@ import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.ObjectInputStream;
+import java.io.OutputStream;
 import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -89,6 +93,8 @@ public class MainMenuJP extends javax.swing.JPanel {
         selectCrawlerLBL = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         statusTA = new javax.swing.JTextArea();
+        responsesLBL = new javax.swing.JLabel();
+        responsesCB = new javax.swing.JComboBox<>();
 
         setBackground(new java.awt.Color(51, 51, 255));
         setName("mainMenuJP"); // NOI18N
@@ -127,14 +133,24 @@ public class MainMenuJP extends javax.swing.JPanel {
         statusTA.setRows(5);
         jScrollPane1.setViewportView(statusTA);
 
+        responsesLBL.setForeground(new java.awt.Color(255, 255, 255));
+        responsesLBL.setText("View HTML Responses:");
+
+        responsesCB.setEnabled(false);
+        responsesCB.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                responsesCBActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(51, 51, 51)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
+                        .addGap(51, 51, 51)
                         .addComponent(backBTN)
                         .addGap(88, 88, 88)
                         .addComponent(crawlBTN)
@@ -144,9 +160,20 @@ public class MainMenuJP extends javax.swing.JPanel {
                         .addComponent(okBTN))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(crawlersCB, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(selectCrawlerLBL))
-                        .addGap(41, 41, 41)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(37, 37, 37)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGap(30, 30, 30)
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(crawlersCB, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(selectCrawlerLBL)))
+                                    .addComponent(responsesLBL))
+                                .addGap(18, 18, 18))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addContainerGap()
+                                .addComponent(responsesCB, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(37, 37, 37)))
                         .addComponent(jScrollPane1)))
                 .addGap(48, 48, 48))
         );
@@ -158,7 +185,11 @@ public class MainMenuJP extends javax.swing.JPanel {
                         .addGap(73, 73, 73)
                         .addComponent(selectCrawlerLBL)
                         .addGap(18, 18, 18)
-                        .addComponent(crawlersCB, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(crawlersCB, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(27, 27, 27)
+                        .addComponent(responsesLBL)
+                        .addGap(18, 18, 18)
+                        .addComponent(responsesCB, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(35, 35, 35)
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 266, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -209,28 +240,43 @@ public class MainMenuJP extends javax.swing.JPanel {
                 BrowserContext context = browser.newContext(new Browser.NewContextOptions()
                 .setUserAgent(crawler.getUserAgent())
                 .setLocale("en-ie"));
+                // trim command number if the command begins with one e.g. Command #2
+                int outputNo = -1;
                 for (String command: crawler.getCommands()) {
+                    if (command.startsWith("Command")) {
+                        outputNo = Integer.valueOf(command.charAt(9));
+                        command = command.substring(10);
+                    }
                     if (command.startsWith("Visit")) {
                         page = browser.newPage();
-                        page.navigate(command.substring(6));
+                        // navigate to the first line in the HTML response
+                        if (outputNo > -1)
+                            page.navigate(crawler.getHtmlResponses().get(outputNo).getResults().getFirst());
+                        else
+                            page.navigate(command.substring(6));
                         statusTA.append("Visiting " + command.substring(6) + "\n");
+                        String response = page.content();
                         statusTA.append(page.content());
+                        crawler.addHtmlResponse(new SearchResult(response));
                     }
                     else if (command.startsWith("Search")) {
-                        ArrayList<String> response = parser.searchDocument(page.content(), command.substring(7));
-                        crawler.setHtmlResponses(response);
+                        ArrayList<String> response = new ArrayList<>();
+                        if (outputNo > -1)
+                            response = parser.searchDocument(crawler.getHtmlResponses().get(outputNo).getResults().getFirst(), command);
+                        else
+                            response = parser.searchDocument(page.content(), command.substring(7));
+                        crawler.addHtmlResponse(new SearchResult(response));
                         statusTA.append("Searching...\n");
-                        for (String result: crawler.getHtmlResponses()) {
+                        for (String result: response) 
                             statusTA.append(result + "\n");
-                        }
                     }
                     else if (command.startsWith("Write")) {
                         File paragraphs = new File("text.txt");
                         statusTA.append("Writing...\n");
                         try {
                             FileWriter writer = new FileWriter(paragraphs);
-                            for (String p: crawler.getHtmlResponses()) {
-                                writer.write(p + "\n");
+                            for (String result: crawler.getHtmlResponses().getLast().getResults()) {
+                                writer.write(result + "\n");
                             }
                             writer.close();
                             statusTA.append("Write complete!\n");
@@ -238,11 +284,45 @@ public class MainMenuJP extends javax.swing.JPanel {
                             System.out.println(ex);
                         }
                     }
+                    else if (command.startsWith("Python")) {
+                    // invoke Python script
+                        System.out.println("Executing " + command.substring(7));
+                        ProcessBuilder pb = new ProcessBuilder("cmd", "/c", "start", "python", "-u", command.substring(7))
+                                .inheritIO();
+                        try {
+                            Process process = pb.start();
+                        } catch (IOException ex) {
+                            Logger.getLogger(MainMenuForm.class.getName()).log(Level.SEVERE, null, ex);
+                        }                   
+                    }
+                }
+                // add HTML responses to combo box
+                int counter = -1;
+                responsesCB.setEnabled(true);
+                responsesCB.removeAllItems();
+                for (SearchResult result: crawler.getHtmlResponses()) {
+                    counter++;
+                    responsesCB.addItem("Response " + counter);
                 }
                 playwright.close();
             }
         }
     }//GEN-LAST:event_crawlBTNActionPerformed
+
+    private void responsesCBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_responsesCBActionPerformed
+        // TODO add your handling code here:
+        statusTA.setText("");
+        // look up crawler
+        String targetName = crawlersCB.getSelectedItem().toString();
+        WebCrawler target = null;
+        for (WebCrawler crawler: crawlerList) {
+            if (crawler.getName().equals(targetName))
+                target = crawler;
+        }
+        for (String result: target.getHtmlResponses().get(responsesCB.getSelectedIndex()).getResults()) {
+            statusTA.append(result + "\n");
+        }
+    }//GEN-LAST:event_responsesCBActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -252,6 +332,8 @@ public class MainMenuJP extends javax.swing.JPanel {
     private javax.swing.JComboBox<String> crawlersCB;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JButton okBTN;
+    private javax.swing.JComboBox<String> responsesCB;
+    private javax.swing.JLabel responsesLBL;
     private javax.swing.JLabel selectCrawlerLBL;
     private javax.swing.JTextArea statusTA;
     // End of variables declaration//GEN-END:variables
