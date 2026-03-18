@@ -1,13 +1,10 @@
 from transformers import pipeline
 
 file = open("text.txt")
-print(file.read())
-fill_mask = pipeline(
-    "fill-mask",
-    model="recobo/agriculture-bert-uncased",
-    tokenizer="recobo/agriculture-bert-uncased"
-)
-data = fill_mask("[MASK] is the [MASK] of cultivating plants and [MASK].")
+data = file.read()
 print(data)
+sentiment_pipeline = pipeline("sentiment-analysis")
+result = sentiment_pipeline(data)
+print(result)
 print("Press any key to continue...")
 message = input()
