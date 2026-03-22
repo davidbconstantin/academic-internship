@@ -1,7 +1,84 @@
-Schemes 25 minutes ago 'No plan' to get back to 100% approval of TAMS applications - DAFM There "isn't any capacity" in the current TAMS budget to get back to 100% approval for applications according to a senior DAFM official.
-Agri Politics about 2 hours ago MEPs call for more 'robust budget support' for livestock farming The Agriculture Committee of the EU is calling for stronger support for the EU livestock sector in the face of economic and other pressures.
-Rural Life about 2 hours ago IPCC calls for 'swift action' to stop large-scale illegal peat extraction "Swift action" is needed to stop large-scale illegal peat extraction, the Irish Peatland Conservation Council (IPCC) has said.
-N.Ireland about 2 hours ago Farmers and rural firms challenge UK inheritance tax reform in High Court A judicial review to challenge the government's inheritance tax reform is taking place in the High Court today.
-Rural Life about 2 hours ago DAFM seeks tenders for social farming projects The Department of Agriculture, Food and Marine (DAFM) is currently inviting tenders for social farming projects.
-Dairy about 3 hours ago Muir commends 'cutting-edge research' during trip to Dutch dairy farm Minister Andrew Muir has commended the "cutting-edge research and technology" being used in the farming sector during his visit to the Netherlands.
-Rural Life about 3 hours ago EU young farmers call for action from political leaders on cost crisis An organisation representing young farmers in the EU is calling on leaders to take action on the increasing cost of fuel and farm inputs.
+<a href="/farming-news/hanrahan-slams-relentless-beef-price-cuts-as-reckless/" class="articleContainer grid grid-cols-1 auto-rows-auto top-story" data-v-7b88ee06="">
+ <div class="article-meta mb-1.5 md:mb-2.5 flex flex-wrap sm:flex-nowrap items-center" data-v-7b88ee06="">
+  <p class="text-lg inline text-agriland uppercase font-bold pr-3 leading-5" data-v-7b88ee06=""><span data-v-7b88ee06="">Beef</span></p>
+  <time class="self-center text-default lg:block" data-v-7b88ee06="">about 2 hours ago</time>
+ </div>
+ <h2 class="text-2xl sm:text-3xl lg:text-4xl 2xl:text-5xl md:leading-10 2xl:leading-14 mb-2 sm:mb-4 heading font-bold" data-v-7b88ee06=""><!----><span class="inline" data-v-7b88ee06="">Hanrahan slams 'relentless' beef price cuts as 'reckless'</span></h2>
+ <p class="text-default sm:text-xl 2xl:text-2xl excerpt" data-v-7b88ee06="">IFA national livestock chairperson Declan Hanrahan has slammed what he called "relentless" beef price cuts.</p>
+ <div data-component="CdnImage" class="thumbnail w-full mb-3 sm:mb-5" data-v-7b88ee06="">
+  <img src="https://www.agriland.ie/cdn-cgi/image/width=1280,height=720,format=auto,fit=cover/https://cdn.agriland.ie/uploads/2023/08/FS1E10-56s325-Cattle-Mart-Beef-Agriland20.jpg" alt="Hanrahan slams 'relentless' beef price cuts as 'reckless'">
+ </div>
+ <!--[--><!--]-->
+</a>
+<a href="/farming-news/heydon-provides-detailed-analysis-to-cabinet-of-agri-fuel-costs/" class="articleContainer grid grid-cols-1 auto-rows-auto" data-v-7b88ee06="">
+ <div class="article-meta mb-1.5 md:mb-2.5 flex flex-wrap sm:flex-nowrap items-center" data-v-7b88ee06="">
+  <p class="text-sm sm:text-default inline text-agriland uppercase font-bold pr-3 leading-5" data-v-7b88ee06=""><span data-v-7b88ee06="">Agri-Business</span></p>
+  <time class="self-center text-sm  lg:hidden" data-v-7b88ee06="">about 4 hours ago</time>
+ </div>
+ <h2 class="text-default sm:text-xl 2xl:text-2xl heading font-bold" data-v-7b88ee06=""><!----><span class="inline" data-v-7b88ee06="">Heydon provides 'detailed analysis' to cabinet of agri fuel costs</span></h2>
+ <p class="hidden sm:block text-default excerpt" data-v-7b88ee06="">Minister Heydon is said to have provided a "detailed analysis" of the impact of the Middle East conflict on costs in the agriculture sector.</p>
+ <div data-component="CdnImage" class="thumbnail w-full mb-3" data-v-7b88ee06="">
+  <picture><!--[--><!--[--><source media="(max-width: 631px)" srcset="https://www.agriland.ie/cdn-cgi/image/width=550,height=500,format=auto,fit=cover/https://cdn.agriland.ie/uploads/2025/05/Adobe-Express-file-10.jpg"><!--]--><!--[--><!----><!--]--><!--]--><img src="https://www.agriland.ie/cdn-cgi/image/width=640,height=360,format=auto,fit=cover/https://cdn.agriland.ie/uploads/2025/05/Adobe-Express-file-10.jpg" alt="Heydon provides 'detailed analysis' to cabinet of agri fuel costs"></picture>
+ </div>
+ <!--[--><!--]-->
+</a>
+<a href="/farming-news/listen-young-laois-farmer-talks-calf-to-beef-wagyu-and-show-cattle/" class="articleContainer grid grid-cols-1 auto-rows-auto" data-v-7b88ee06="">
+ <div class="article-meta mb-1.5 md:mb-2.5 flex flex-wrap sm:flex-nowrap items-center" data-v-7b88ee06="">
+  <p class="text-sm sm:text-default inline text-agriland uppercase font-bold pr-3 leading-5" data-v-7b88ee06=""><span data-v-7b88ee06="">Beef</span></p>
+  <time class="self-center text-sm  lg:hidden" data-v-7b88ee06="">about 4 hours ago</time>
+ </div>
+ <h2 class="text-default sm:text-xl 2xl:text-2xl heading font-bold" data-v-7b88ee06=""><!----><span class="inline" data-v-7b88ee06="">Listen: Young Laois farmer talks calf-to-beef, Wagyu and show cattle</span></h2>
+ <p class="hidden sm:block text-default excerpt" data-v-7b88ee06="">Agriland caught up with Cathal Doyle from Ballyroan, Co. Laois, to hear more about his work in the beef industry with Wagyu-cross cattle.</p>
+ <div data-component="CdnImage" class="thumbnail w-full mb-3" data-v-7b88ee06="">
+  <picture><!--[--><!--[--><source media="(max-width: 631px)" srcset="https://www.agriland.ie/cdn-cgi/image/width=550,height=500,format=auto,fit=cover/https://cdn.agriland.ie/uploads/2026/03/img-2293-scaled.jpg"><!--]--><!--[--><!----><!--]--><!--]--><img src="https://www.agriland.ie/cdn-cgi/image/width=640,height=360,format=auto,fit=cover/https://cdn.agriland.ie/uploads/2026/03/img-2293-scaled.jpg" alt="Listen: Young Laois farmer talks calf-to-beef, Wagyu and show cattle"></picture>
+ </div>
+ <!--[--><!--]-->
+</a>
+<a href="/farming-news/gorman-writes-to-tanaiste-to-call-for-carbon-tax-suspension/" class="articleContainer grid grid-cols-1 auto-rows-auto" data-v-7b88ee06="">
+ <div class="article-meta mb-1.5 md:mb-2.5 flex flex-wrap sm:flex-nowrap items-center" data-v-7b88ee06="">
+  <p class="text-sm sm:text-default inline text-agriland uppercase font-bold pr-3 leading-5" data-v-7b88ee06=""><span data-v-7b88ee06="">Rural Life</span></p>
+  <time class="self-center text-sm  lg:hidden" data-v-7b88ee06="">about 5 hours ago</time>
+ </div>
+ <h2 class="text-default sm:text-xl 2xl:text-2xl heading font-bold" data-v-7b88ee06=""><!----><span class="inline" data-v-7b88ee06="">Gorman writes to Tánaiste to call for Carbon Tax suspension</span></h2>
+ <p class="hidden sm:block text-default excerpt" data-v-7b88ee06="">Francie Gorman has said he has written to the Tánaiste and Minister for Finance calling for a suspension of the Carbon Tax on green diesel.</p>
+ <div data-component="CdnImage" class="thumbnail w-full mb-3 lg:hidden" data-v-7b88ee06="">
+  <picture><!--[--><!--[--><source media="(max-width: 631px)" srcset="https://www.agriland.ie/cdn-cgi/image/width=550,height=500,format=auto,fit=cover/https://cdn.agriland.ie/uploads/2019/10/20171112_105804.jpg"><!--]--><!--[--><!----><!--]--><!--]--><img src="https://www.agriland.ie/cdn-cgi/image/width=640,height=360,format=auto,fit=cover/https://cdn.agriland.ie/uploads/2019/10/20171112_105804.jpg" alt="Gorman writes to Tánaiste to call for Carbon Tax suspension"></picture>
+ </div>
+ <!--[--><!--]-->
+</a>
+<a href="/farming-news/dafm-actions-on-pet-food-plant-controls-effective-audit/" class="articleContainer grid grid-cols-1 auto-rows-auto" data-v-7b88ee06="">
+ <div class="article-meta mb-1.5 md:mb-2.5 flex flex-wrap sm:flex-nowrap items-center" data-v-7b88ee06="">
+  <p class="text-sm sm:text-default inline text-agriland uppercase font-bold pr-3 leading-5" data-v-7b88ee06=""><span data-v-7b88ee06="">Agri-Business</span></p>
+  <time class="self-center text-sm  lg:hidden" data-v-7b88ee06="">about 6 hours ago</time>
+ </div>
+ <h2 class="text-default sm:text-xl 2xl:text-2xl heading font-bold" data-v-7b88ee06=""><!----><span class="inline" data-v-7b88ee06="">DAFM actions on pet food plant controls 'effective' - audit</span></h2>
+ <p class="hidden sm:block text-default excerpt" data-v-7b88ee06="">Actions by the Department of Agriculture (DAFM) to address issues with controls at pet food plants have been "effective", an audit found.</p>
+ <div data-component="CdnImage" class="thumbnail w-full mb-3 lg:hidden" data-v-7b88ee06="">
+  <picture><!--[--><!--[--><source media="(max-width: 631px)" srcset="https://www.agriland.ie/cdn-cgi/image/width=550,height=500,format=auto,fit=cover/https://cdn.agriland.ie/uploads/2024/02/technology-engineer-2023-11-27-04-59-33-utc.jpg"><!--]--><!--[--><!----><!--]--><!--]--><img src="https://www.agriland.ie/cdn-cgi/image/width=640,height=360,format=auto,fit=cover/https://cdn.agriland.ie/uploads/2024/02/technology-engineer-2023-11-27-04-59-33-utc.jpg" alt="DAFM actions on pet food plant controls 'effective' - audit"></picture>
+ </div>
+ <!--[--><!--]-->
+</a>
+<a href="/farming-news/dairy-calf-registrations-surpass-960000-head/" class="articleContainer grid grid-cols-1 auto-rows-auto" data-v-7b88ee06="">
+ <div class="article-meta mb-1.5 md:mb-2.5 flex flex-wrap sm:flex-nowrap items-center" data-v-7b88ee06="">
+  <p class="text-sm sm:text-default inline text-agriland uppercase font-bold pr-3 leading-5" data-v-7b88ee06=""><span data-v-7b88ee06="">Dairy</span></p>
+  <time class="self-center text-sm  lg:hidden" data-v-7b88ee06="">about 8 hours ago</time>
+ </div>
+ <h2 class="text-default sm:text-xl 2xl:text-2xl heading font-bold" data-v-7b88ee06=""><!----><span class="inline" data-v-7b88ee06="">Dairy calf registrations surpass 960,000 head</span></h2>
+ <p class="hidden sm:block text-default excerpt" data-v-7b88ee06="">The total number of Irish calves registered in 2026 has surpassed the the 1 million mark, with 86% of calves registered to dairy farms.</p>
+ <div data-component="CdnImage" class="thumbnail w-full mb-3 lg:hidden" data-v-7b88ee06="">
+  <picture><!--[--><!--[--><source media="(max-width: 631px)" srcset="https://www.agriland.ie/cdn-cgi/image/width=550,height=500,format=auto,fit=cover/https://cdn.agriland.ie/uploads/2023/02/Cattle-passports.jpg"><!--]--><!--[--><!----><!--]--><!--]--><img src="https://www.agriland.ie/cdn-cgi/image/width=640,height=360,format=auto,fit=cover/https://cdn.agriland.ie/uploads/2023/02/Cattle-passports.jpg" alt="Dairy calf registrations surpass 960,000 head"></picture>
+ </div>
+ <!--[--><!--]-->
+</a>
+<a href="/farming-news/ni-police-appeal-for-information-after-sheep-found-dead/" class="articleContainer grid grid-cols-1 auto-rows-auto" data-v-7b88ee06="">
+ <div class="article-meta mb-1.5 md:mb-2.5 flex flex-wrap sm:flex-nowrap items-center" data-v-7b88ee06="">
+  <p class="text-sm sm:text-default inline text-agriland uppercase font-bold pr-3 leading-5" data-v-7b88ee06=""><span data-v-7b88ee06="">N.Ireland</span></p>
+  <time class="self-center text-sm  lg:hidden" data-v-7b88ee06="">about 9 hours ago</time>
+ </div>
+ <h2 class="text-default sm:text-xl 2xl:text-2xl heading font-bold" data-v-7b88ee06=""><!----><span class="inline" data-v-7b88ee06="">NI police appeal for information after sheep found dead</span></h2>
+ <p class="hidden sm:block text-default excerpt" data-v-7b88ee06="">Police in Northern Ireland are appealing for information after sheep were found dead in a field in Co. Antrim.</p>
+ <div data-component="CdnImage" class="thumbnail w-full mb-3 lg:hidden" data-v-7b88ee06="">
+  <picture><!--[--><!--[--><source media="(max-width: 631px)" srcset="https://www.agriland.ie/cdn-cgi/image/width=550,height=500,format=auto,fit=cover/https://cdn.agriland.ie/uploads/2020/09/image-source-google-search-wikimedia-commons.jpg"><!--]--><!--[--><!----><!--]--><!--]--><img src="https://www.agriland.ie/cdn-cgi/image/width=640,height=360,format=auto,fit=cover/https://cdn.agriland.ie/uploads/2020/09/image-source-google-search-wikimedia-commons.jpg" alt="NI police appeal for information after sheep found dead"></picture>
+ </div>
+ <!--[--><!--]-->
+</a>
