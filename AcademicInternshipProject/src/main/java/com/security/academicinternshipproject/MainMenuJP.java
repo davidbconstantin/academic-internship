@@ -236,64 +236,93 @@ public class MainMenuJP extends javax.swing.JPanel {
                 .setSlowMo(crawler.getCrawlDelay() * 1000)
                 //.setHeadless(false)
             );
+                // initialise browser
                 Page page = null;
                 BrowserContext context = browser.newContext(new Browser.NewContextOptions()
                 .setUserAgent(crawler.getUserAgent())
                 .setLocale("en-ie"));
-                // trim command number if the command begins with one e.g. Command #2
-                int outputNo = -1;
+                
                 for (String command: crawler.getCommands()) {
-                    if (command.startsWith("Command")) {
-                        outputNo = Integer.valueOf(command.charAt(9));
-                        command = command.substring(10);
-                    }
-                    if (command.startsWith("Visit")) {
-                        page = browser.newPage();
-                        // navigate to the first line in the HTML response
-                        if (outputNo > -1)
-                            page.navigate(crawler.getHtmlResponses().get(outputNo).getResults().getFirst());
-                        else
-                            page.navigate(command.substring(6));
-                        statusTA.append("Visiting " + command.substring(6) + "\n");
-                        String response = page.content();
-                        statusTA.append(page.content());
-                        crawler.addHtmlResponse(new SearchResult(response));
-                    }
-                    else if (command.startsWith("Search")) {
-                        ArrayList<String> response = new ArrayList<>();
-                        if (outputNo > -1)
-                            response = parser.searchDocument(crawler.getHtmlResponses().get(outputNo).getResults().getFirst(), command);
-                        else
-                            response = parser.searchDocument(page.content(), command.substring(7));
-                        crawler.addHtmlResponse(new SearchResult(response));
-                        statusTA.append("Searching...\n");
-                        for (String result: response) 
-                            statusTA.append(result + "\n");
-                    }
-                    else if (command.startsWith("Write")) {
-                        File paragraphs = new File("text.txt");
-                        statusTA.append("Writing...\n");
-                        try {
-                            FileWriter writer = new FileWriter(paragraphs);
-                            for (String result: crawler.getHtmlResponses().getLast().getResults()) {
-                                writer.write(result + "\n");
-                            }
-                            writer.close();
-                            statusTA.append("Write complete!\n");
-                        } catch (IOException ex) {
-                            System.out.println(ex);
+                    ArrayList<String> response = new ArrayList<>();
+                    ArrayList<String> results = new ArrayList<>();
+                    CommandParser commandParser = new CommandParser(command);
+                    command = commandParser.getAction();
+                    System.out.println("Command: " + command);
+                    System.out.println("Output Number: " + commandParser.getSubjectNo());
+                    // if operating on a previous command's results
+                    if (commandParser.getSubjectNo() > -1) {
+                        for (String result: crawler.getHtmlResponses().get(commandParser.getSubjectNo() - 1).getResults()) {
+                            results.add(result);
                         }
                     }
-                    else if (command.startsWith("Python")) {
-                    // invoke Python script
-                        System.out.println("Executing " + command.substring(7));
-                        ProcessBuilder pb = new ProcessBuilder("cmd", "/c", "start", "python", "-u", command.substring(7))
-                                .inheritIO();
-                        try {
-                            Process process = pb.start();
-                        } catch (IOException ex) {
-                            Logger.getLogger(MainMenuForm.class.getName()).log(Level.SEVERE, null, ex);
-                        }                   
+                    else
+                        results.add(commandParser.getObject());
+                    for (String result: results) {
+                        if (command.equals("Visit")) {
+                            page = browser.newPage();
+                            page.navigate(result);
+                            response.add(page.content());
+                            crawler.addHtmlResponse(new SearchResult(response));
+                        }
+                        else if (command.equals("Search")) {
+                            response.addAll(parser.searchDocument(crawler.getHtmlResponses().getLast().getResults().getFirst(), result));
+                            crawler.addHtmlResponse(new SearchResult(response));
+                        }
+                        else if (command.equals("Text")) 
+                            response.addAll(parser.getTextFromDocument(result));
+                        else if (command.equals("Attribute"))
+                            response.addAll(parser.getAttributesFromDocument(result, commandParser.getObject()));
+                        else if (command.startsWith("Write")) {
+                            File paragraphs = new File("text.txt");
+                            try {
+                                FileWriter writer = new FileWriter(paragraphs);
+                                for (String toWrite: crawler.getHtmlResponses().getLast().getResults()) {
+                                    writer.write(toWrite + "\n");
+                                }
+                                writer.close();
+                            } catch (IOException ex) {
+                                System.out.println(ex);
+                            }
+                        }   
+                        else if (command.startsWith("Python")) {
+                        // invoke Python script
+                            ProcessBuilder pb = new ProcessBuilder("cmd", "/c", "start", "python", "-u", commandParser.getObject())
+                                    .inheritIO();
+                            try {
+                                Process process = pb.start();
+                            } catch (IOException ex) {
+                                Logger.getLogger(MainMenuForm.class.getName()).log(Level.SEVERE, null, ex);
+                            }                   
+                        }
+                    }
+//                    if (command.startsWith("Visit")) {
+//                        page = browser.newPage();
+//                        // navigate to the first line in the HTML response
+//                        for (String result: results) {
+//                            page.navigate(result);
+//                            response.add(page.content());
+//                        }
+//                        crawler.addHtmlResponse(new SearchResult(response));
+//                    }
+//                    else if (command.startsWith("Search")) {
+//                        for (String result: crawler.getHtmlResponses().getLast().getResults()) {
+//                            response.addAll(parser.searchDocument(result, commandParser.getObject()));
+//                        }
+//                        crawler.addHtmlResponse(new SearchResult(response));
+//                    }
+//                    else if (command.startsWith("Text")) {
+//                        for (String result: results) {
+//                            response.addAll(parser.getTextFromDocument(result));
+//                        }
+//                    }
+//                    else if (command.startsWith("Attribute")) {
+//                        for (String result: results) {
+//                            response.addAll(parser.getAttributesFromDocument(result, commandParser.getObject()));
+//                        }
+//                    }
+                    statusTA.append("Executing command " + commandParser.getAction() + "\n");
+                    for (String line: response) {
+                        statusTA.append(line + "\n");
                     }
                 }
                 // add HTML responses to combo box

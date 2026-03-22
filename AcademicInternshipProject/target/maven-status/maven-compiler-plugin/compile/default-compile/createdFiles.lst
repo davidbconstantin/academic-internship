@@ -12,6 +12,7 @@ com\security\academicinternshipproject\JSoupParser.class
 com\security\academicinternshipproject\GUIManager.class
 com\security\academicinternshipproject\AcademicInternshipProject.class
 com\security\academicinternshipproject\MainMenuJP$1.class
+com\security\academicinternshipproject\CommandParser.class
 com\security\academicinternshipproject\CrawlerConfigJP$3.class
 com\security\academicinternshipproject\WebCrawler.class
 com\security\academicinternshipproject\CrawlerScriptingJP$4.class

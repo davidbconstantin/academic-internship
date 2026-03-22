@@ -17,51 +17,47 @@ import org.jsoup.select.Elements;
  */
 public class JSoupParser {
     
-    private ArrayList<String> linkStrings = new ArrayList<>();
     private ArrayList<String> paragraphs = new ArrayList<>();
+    private Elements elements;
     
     public JSoupParser() {
         
     }
-    
-//    public ArrayList<String> getLinks(String htmlMarkup) {
-//        Document doc = Jsoup.parse(htmlMarkup);
-//        Elements links = doc.select("a.articleContainer[href^=/farming-news]").empty();
-//        for (Element element: links) {
-//            linkStrings.add(element.attr("href") + "\n");
-//        }
-//        return linkStrings;
-//    }
-    
-    public ArrayList<String> getLinks(String htmlMarkup, String elementClass, String attribute) {
-        Document doc = Jsoup.parse(htmlMarkup);
-        Elements links = doc.select("a." + elementClass + "[" + attribute + "]");
-        for (Element element: links) {
-            linkStrings.add(element.attr("href") + "\n");
-        }
-        return linkStrings;
-    }
-    
-    public ArrayList<String> getTextFromParagraphs(String htmlMarkup, String attribute) {
-        Document doc = Jsoup.parse(htmlMarkup);
-        Elements tags = doc.select("p[" + attribute + "]");
-        for (Element element: tags) {
-            paragraphs.add(element.text());
-        }
-        return paragraphs;
-    }
-    
+
     public ArrayList<String> searchDocument(String htmlMarkup, String searchTerm) {
+        paragraphs.clear();
         Document doc = Jsoup.parse(htmlMarkup);
-        Elements tags = doc.select(searchTerm);
-        for (Element element: tags) {
+        elements = doc.select(searchTerm);
+        for (Element element: elements) {
+            paragraphs.add(element.toString());
+        }
+        System.out.println("Searching: " + htmlMarkup);
+        System.out.println("Search results: " + paragraphs.toString());
+        return paragraphs;
+    }
+    
+    public ArrayList<String> getTextFromDocument(String htmlMarkup) {
+        paragraphs.clear();
+        Document doc = Jsoup.parse(htmlMarkup);
+        elements = doc.getAllElements();
+        for (Element element: elements) {
             paragraphs.add(element.text());
         }
         return paragraphs;
     }
-    
-    public ArrayList<String> getLinkStrings() {
-        return linkStrings;
+   
+    public ArrayList<String> getAttributesFromDocument(String htmlMarkup, String searchTerm) {
+        paragraphs.clear();
+        Document doc = Jsoup.parse(htmlMarkup);
+        elements = doc.getAllElements();
+        for (Element element: elements) {
+            if (element.hasAttr(searchTerm))
+                paragraphs.add(element.attr(searchTerm));
+        }
+        for (String result: paragraphs) {
+            System.out.println("Result: " + result);
+        }
+        return paragraphs;
     }
     
     public ArrayList<String> getParagraphs() {
