@@ -4,33 +4,40 @@
 
 package com.security.academicinternshipproject;
 
-import javax.swing.JPanel;
+import java.awt.Dimension;
 
-/**
- *
- * @author rokom
- */
 public class AcademicInternshipProject {
 
     public static void main(String[] args) {
+
         // initialise GUI
         MainMenuForm mainMenu = new MainMenuForm();
         GUIManager guiManager = new GUIManager(mainMenu);
+
         // initialise panels
+        HomeLandingJP homeLandingJP = new HomeLandingJP();   // landing page 
         CrawlerConfigJP crawlerConfigPanel = new CrawlerConfigJP();
         MainMenuJP mainMenuPanel = new MainMenuJP();
         CrawlerScriptingJP crawlerScriptingPanel = new CrawlerScriptingJP();
 
+        homeLandingJP.setGuiManager(guiManager);
         crawlerConfigPanel.setGuiManager(guiManager);
         mainMenuPanel.setGuiManager(guiManager);
         crawlerScriptingPanel.setGuiManager(guiManager);
-        
+
+        guiManager.addPanel(homeLandingJP);   // add landinig page first
         guiManager.addPanel(crawlerConfigPanel);
         guiManager.addPanel(mainMenuPanel);
         guiManager.addPanel(crawlerScriptingPanel);
-        
-        guiManager.setCurrentPanel(mainMenuPanel);
-        
+
+        // 
+        guiManager.setCurrentPanel(homeLandingJP);
+
+        mainMenu.setTitle("Academic Internship Project");
+        mainMenu.setMinimumSize(new Dimension(1020, 720));
+        mainMenu.setSize(1020, 720);
+        mainMenu.setLocationRelativeTo(null);
+
         mainMenu.setGuiManager(guiManager);
         mainMenu.setVisible(true);
     }
