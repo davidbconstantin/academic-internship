@@ -223,7 +223,9 @@ public class CrawlerScriptingJP extends javax.swing.JPanel {
         resultsCB.removeAllItems();
         for (String command: currentCrawler.getCommands()) {
             counter++;
-            if (command.startsWith("Search"))
+            CommandParser commandParser = new CommandParser(command);
+            String action = commandParser.getAction();
+            if (action.equals("Search") || action.equals("Text") || action.equals("Attribute"))
                 resultsCB.addItem("Command #" + counter);
         }
     }//GEN-LAST:event_resultsRBActionPerformed

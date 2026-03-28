@@ -13,11 +13,14 @@ import java.util.ArrayList;
 public class SearchResult {
     private static int id = 0;
     private ArrayList<String> results;
+    private int commandNo;
     
-    public SearchResult(ArrayList<String> results) {
+    public SearchResult(ArrayList<String> results, int commandNo) {
         id++;
         this.results = new ArrayList<>();
         this.results.addAll(results);
+        this.commandNo = commandNo;
+        System.out.println("Recording search results with command #" + commandNo);
     }
     
     public SearchResult(String result) {
@@ -28,6 +31,10 @@ public class SearchResult {
 
     public int getId() {
         return id;
+    }
+    
+    public int getCommandNo() {
+        return commandNo;
     }
 
     public ArrayList<String> getResults() {

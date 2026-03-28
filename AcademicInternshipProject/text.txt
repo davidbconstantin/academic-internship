@@ -1,84 +1,390 @@
-<a href="/farming-news/hanrahan-slams-relentless-beef-price-cuts-as-reckless/" class="articleContainer grid grid-cols-1 auto-rows-auto top-story" data-v-7b88ee06="">
- <div class="article-meta mb-1.5 md:mb-2.5 flex flex-wrap sm:flex-nowrap items-center" data-v-7b88ee06="">
-  <p class="text-lg inline text-agriland uppercase font-bold pr-3 leading-5" data-v-7b88ee06=""><span data-v-7b88ee06="">Beef</span></p>
-  <time class="self-center text-default lg:block" data-v-7b88ee06="">about 2 hours ago</time>
- </div>
- <h2 class="text-2xl sm:text-3xl lg:text-4xl 2xl:text-5xl md:leading-10 2xl:leading-14 mb-2 sm:mb-4 heading font-bold" data-v-7b88ee06=""><!----><span class="inline" data-v-7b88ee06="">Hanrahan slams 'relentless' beef price cuts as 'reckless'</span></h2>
- <p class="text-default sm:text-xl 2xl:text-2xl excerpt" data-v-7b88ee06="">IFA national livestock chairperson Declan Hanrahan has slammed what he called "relentless" beef price cuts.</p>
- <div data-component="CdnImage" class="thumbnail w-full mb-3 sm:mb-5" data-v-7b88ee06="">
-  <img src="https://www.agriland.ie/cdn-cgi/image/width=1280,height=720,format=auto,fit=cover/https://cdn.agriland.ie/uploads/2023/08/FS1E10-56s325-Cattle-Mart-Beef-Agriland20.jpg" alt="Hanrahan slams 'relentless' beef price cuts as 'reckless'">
- </div>
- <!--[--><!--]-->
-</a>
-<a href="/farming-news/heydon-provides-detailed-analysis-to-cabinet-of-agri-fuel-costs/" class="articleContainer grid grid-cols-1 auto-rows-auto" data-v-7b88ee06="">
- <div class="article-meta mb-1.5 md:mb-2.5 flex flex-wrap sm:flex-nowrap items-center" data-v-7b88ee06="">
-  <p class="text-sm sm:text-default inline text-agriland uppercase font-bold pr-3 leading-5" data-v-7b88ee06=""><span data-v-7b88ee06="">Agri-Business</span></p>
-  <time class="self-center text-sm  lg:hidden" data-v-7b88ee06="">about 4 hours ago</time>
- </div>
- <h2 class="text-default sm:text-xl 2xl:text-2xl heading font-bold" data-v-7b88ee06=""><!----><span class="inline" data-v-7b88ee06="">Heydon provides 'detailed analysis' to cabinet of agri fuel costs</span></h2>
- <p class="hidden sm:block text-default excerpt" data-v-7b88ee06="">Minister Heydon is said to have provided a "detailed analysis" of the impact of the Middle East conflict on costs in the agriculture sector.</p>
- <div data-component="CdnImage" class="thumbnail w-full mb-3" data-v-7b88ee06="">
-  <picture><!--[--><!--[--><source media="(max-width: 631px)" srcset="https://www.agriland.ie/cdn-cgi/image/width=550,height=500,format=auto,fit=cover/https://cdn.agriland.ie/uploads/2025/05/Adobe-Express-file-10.jpg"><!--]--><!--[--><!----><!--]--><!--]--><img src="https://www.agriland.ie/cdn-cgi/image/width=640,height=360,format=auto,fit=cover/https://cdn.agriland.ie/uploads/2025/05/Adobe-Express-file-10.jpg" alt="Heydon provides 'detailed analysis' to cabinet of agri fuel costs"></picture>
- </div>
- <!--[--><!--]-->
-</a>
-<a href="/farming-news/listen-young-laois-farmer-talks-calf-to-beef-wagyu-and-show-cattle/" class="articleContainer grid grid-cols-1 auto-rows-auto" data-v-7b88ee06="">
- <div class="article-meta mb-1.5 md:mb-2.5 flex flex-wrap sm:flex-nowrap items-center" data-v-7b88ee06="">
-  <p class="text-sm sm:text-default inline text-agriland uppercase font-bold pr-3 leading-5" data-v-7b88ee06=""><span data-v-7b88ee06="">Beef</span></p>
-  <time class="self-center text-sm  lg:hidden" data-v-7b88ee06="">about 4 hours ago</time>
- </div>
- <h2 class="text-default sm:text-xl 2xl:text-2xl heading font-bold" data-v-7b88ee06=""><!----><span class="inline" data-v-7b88ee06="">Listen: Young Laois farmer talks calf-to-beef, Wagyu and show cattle</span></h2>
- <p class="hidden sm:block text-default excerpt" data-v-7b88ee06="">Agriland caught up with Cathal Doyle from Ballyroan, Co. Laois, to hear more about his work in the beef industry with Wagyu-cross cattle.</p>
- <div data-component="CdnImage" class="thumbnail w-full mb-3" data-v-7b88ee06="">
-  <picture><!--[--><!--[--><source media="(max-width: 631px)" srcset="https://www.agriland.ie/cdn-cgi/image/width=550,height=500,format=auto,fit=cover/https://cdn.agriland.ie/uploads/2026/03/img-2293-scaled.jpg"><!--]--><!--[--><!----><!--]--><!--]--><img src="https://www.agriland.ie/cdn-cgi/image/width=640,height=360,format=auto,fit=cover/https://cdn.agriland.ie/uploads/2026/03/img-2293-scaled.jpg" alt="Listen: Young Laois farmer talks calf-to-beef, Wagyu and show cattle"></picture>
- </div>
- <!--[--><!--]-->
-</a>
-<a href="/farming-news/gorman-writes-to-tanaiste-to-call-for-carbon-tax-suspension/" class="articleContainer grid grid-cols-1 auto-rows-auto" data-v-7b88ee06="">
- <div class="article-meta mb-1.5 md:mb-2.5 flex flex-wrap sm:flex-nowrap items-center" data-v-7b88ee06="">
-  <p class="text-sm sm:text-default inline text-agriland uppercase font-bold pr-3 leading-5" data-v-7b88ee06=""><span data-v-7b88ee06="">Rural Life</span></p>
-  <time class="self-center text-sm  lg:hidden" data-v-7b88ee06="">about 5 hours ago</time>
- </div>
- <h2 class="text-default sm:text-xl 2xl:text-2xl heading font-bold" data-v-7b88ee06=""><!----><span class="inline" data-v-7b88ee06="">Gorman writes to Tánaiste to call for Carbon Tax suspension</span></h2>
- <p class="hidden sm:block text-default excerpt" data-v-7b88ee06="">Francie Gorman has said he has written to the Tánaiste and Minister for Finance calling for a suspension of the Carbon Tax on green diesel.</p>
- <div data-component="CdnImage" class="thumbnail w-full mb-3 lg:hidden" data-v-7b88ee06="">
-  <picture><!--[--><!--[--><source media="(max-width: 631px)" srcset="https://www.agriland.ie/cdn-cgi/image/width=550,height=500,format=auto,fit=cover/https://cdn.agriland.ie/uploads/2019/10/20171112_105804.jpg"><!--]--><!--[--><!----><!--]--><!--]--><img src="https://www.agriland.ie/cdn-cgi/image/width=640,height=360,format=auto,fit=cover/https://cdn.agriland.ie/uploads/2019/10/20171112_105804.jpg" alt="Gorman writes to Tánaiste to call for Carbon Tax suspension"></picture>
- </div>
- <!--[--><!--]-->
-</a>
-<a href="/farming-news/dafm-actions-on-pet-food-plant-controls-effective-audit/" class="articleContainer grid grid-cols-1 auto-rows-auto" data-v-7b88ee06="">
- <div class="article-meta mb-1.5 md:mb-2.5 flex flex-wrap sm:flex-nowrap items-center" data-v-7b88ee06="">
-  <p class="text-sm sm:text-default inline text-agriland uppercase font-bold pr-3 leading-5" data-v-7b88ee06=""><span data-v-7b88ee06="">Agri-Business</span></p>
-  <time class="self-center text-sm  lg:hidden" data-v-7b88ee06="">about 6 hours ago</time>
- </div>
- <h2 class="text-default sm:text-xl 2xl:text-2xl heading font-bold" data-v-7b88ee06=""><!----><span class="inline" data-v-7b88ee06="">DAFM actions on pet food plant controls 'effective' - audit</span></h2>
- <p class="hidden sm:block text-default excerpt" data-v-7b88ee06="">Actions by the Department of Agriculture (DAFM) to address issues with controls at pet food plants have been "effective", an audit found.</p>
- <div data-component="CdnImage" class="thumbnail w-full mb-3 lg:hidden" data-v-7b88ee06="">
-  <picture><!--[--><!--[--><source media="(max-width: 631px)" srcset="https://www.agriland.ie/cdn-cgi/image/width=550,height=500,format=auto,fit=cover/https://cdn.agriland.ie/uploads/2024/02/technology-engineer-2023-11-27-04-59-33-utc.jpg"><!--]--><!--[--><!----><!--]--><!--]--><img src="https://www.agriland.ie/cdn-cgi/image/width=640,height=360,format=auto,fit=cover/https://cdn.agriland.ie/uploads/2024/02/technology-engineer-2023-11-27-04-59-33-utc.jpg" alt="DAFM actions on pet food plant controls 'effective' - audit"></picture>
- </div>
- <!--[--><!--]-->
-</a>
-<a href="/farming-news/dairy-calf-registrations-surpass-960000-head/" class="articleContainer grid grid-cols-1 auto-rows-auto" data-v-7b88ee06="">
- <div class="article-meta mb-1.5 md:mb-2.5 flex flex-wrap sm:flex-nowrap items-center" data-v-7b88ee06="">
-  <p class="text-sm sm:text-default inline text-agriland uppercase font-bold pr-3 leading-5" data-v-7b88ee06=""><span data-v-7b88ee06="">Dairy</span></p>
-  <time class="self-center text-sm  lg:hidden" data-v-7b88ee06="">about 8 hours ago</time>
- </div>
- <h2 class="text-default sm:text-xl 2xl:text-2xl heading font-bold" data-v-7b88ee06=""><!----><span class="inline" data-v-7b88ee06="">Dairy calf registrations surpass 960,000 head</span></h2>
- <p class="hidden sm:block text-default excerpt" data-v-7b88ee06="">The total number of Irish calves registered in 2026 has surpassed the the 1 million mark, with 86% of calves registered to dairy farms.</p>
- <div data-component="CdnImage" class="thumbnail w-full mb-3 lg:hidden" data-v-7b88ee06="">
-  <picture><!--[--><!--[--><source media="(max-width: 631px)" srcset="https://www.agriland.ie/cdn-cgi/image/width=550,height=500,format=auto,fit=cover/https://cdn.agriland.ie/uploads/2023/02/Cattle-passports.jpg"><!--]--><!--[--><!----><!--]--><!--]--><img src="https://www.agriland.ie/cdn-cgi/image/width=640,height=360,format=auto,fit=cover/https://cdn.agriland.ie/uploads/2023/02/Cattle-passports.jpg" alt="Dairy calf registrations surpass 960,000 head"></picture>
- </div>
- <!--[--><!--]-->
-</a>
-<a href="/farming-news/ni-police-appeal-for-information-after-sheep-found-dead/" class="articleContainer grid grid-cols-1 auto-rows-auto" data-v-7b88ee06="">
- <div class="article-meta mb-1.5 md:mb-2.5 flex flex-wrap sm:flex-nowrap items-center" data-v-7b88ee06="">
-  <p class="text-sm sm:text-default inline text-agriland uppercase font-bold pr-3 leading-5" data-v-7b88ee06=""><span data-v-7b88ee06="">N.Ireland</span></p>
-  <time class="self-center text-sm  lg:hidden" data-v-7b88ee06="">about 9 hours ago</time>
- </div>
- <h2 class="text-default sm:text-xl 2xl:text-2xl heading font-bold" data-v-7b88ee06=""><!----><span class="inline" data-v-7b88ee06="">NI police appeal for information after sheep found dead</span></h2>
- <p class="hidden sm:block text-default excerpt" data-v-7b88ee06="">Police in Northern Ireland are appealing for information after sheep were found dead in a field in Co. Antrim.</p>
- <div data-component="CdnImage" class="thumbnail w-full mb-3 lg:hidden" data-v-7b88ee06="">
-  <picture><!--[--><!--[--><source media="(max-width: 631px)" srcset="https://www.agriland.ie/cdn-cgi/image/width=550,height=500,format=auto,fit=cover/https://cdn.agriland.ie/uploads/2020/09/image-source-google-search-wikimedia-commons.jpg"><!--]--><!--[--><!----><!--]--><!--]--><img src="https://www.agriland.ie/cdn-cgi/image/width=640,height=360,format=auto,fit=cover/https://cdn.agriland.ie/uploads/2020/09/image-source-google-search-wikimedia-commons.jpg" alt="NI police appeal for information after sheep found dead"></picture>
- </div>
- <!--[--><!--]-->
-</a>
+A sharp rise in fuel costs because of the Middle East conflict could see the cost of producing silage "double" a farming organisation warned today (Monday, March 23)
+A sharp rise in fuel costs because of the Middle East conflict could see the cost of producing silage "double" a farming organisation warned today (Monday, March 23)
+
+A sharp rise in fuel costs because of the Middle East conflict could see the cost of producing silage "double" a farming organisation warned today (Monday, March 23)
+A sharp rise in fuel costs because of the Middle East conflict could see the cost of producing silage "double" a farming organisation warned today (Monday, March 23)
+Ahead of an expected meeting later today between coalition leaders to sign off on a package of support measures to offset rising fuel prices, the Irish Cattle and Sheep Farmers' Association (ICSA) has said "token" measures will not be enough.
+Ahead of an expected meeting later today between coalition leaders to sign off on a package of support measures to offset rising fuel prices, the Irish Cattle and Sheep Farmers' Association (ICSA) has said "token" measures will not be enough.
+
+Ahead of an expected meeting later today between coalition leaders to sign off on a package of support measures to offset rising fuel prices, the Irish Cattle and Sheep Farmers' Association (ICSA) has said "token" measures will not be enough.
+Ahead of an expected meeting later today between coalition leaders to sign off on a package of support measures to offset rising fuel prices, the Irish Cattle and Sheep Farmers' Association (ICSA) has said "token" measures will not be enough.
+Instead ICSA president, Sean McNamara, has called on the government to "take decisive action" to offset the surge in fuel and fertiliser costs.
+Instead ICSA president, Sean McNamara, has called on the government to "take decisive action" to offset the surge in fuel and fertiliser costs.
+
+Instead ICSA president, Sean McNamara, has called on the government to "take decisive action" to offset the surge in fuel and fertiliser costs.
+Instead ICSA president, Sean McNamara, has called on the government to "take decisive action" to offset the surge in fuel and fertiliser costs.
+“Fuel prices have surged in a matter of weeks, with agricultural diesel up by as much as 65-70% and road diesel up around 30%.
+“Fuel prices have surged in a matter of weeks, with agricultural diesel up by as much as 65-70% and road diesel up around 30%.
+
+“Fuel prices have surged in a matter of weeks, with agricultural diesel up by as much as 65-70% and road diesel up around 30%.
+“Fuel prices have surged in a matter of weeks, with agricultural diesel up by as much as 65-70% and road diesel up around 30%.
+"These are not marginal increases that farmers can absorb, they go to the very heart of whether it is viable to produce food at all,” he added.
+"These are not marginal increases that farmers can absorb, they go to the very heart of whether it is viable to produce food at all,” he added.
+
+"These are not marginal increases that farmers can absorb, they go to the very heart of whether it is viable to produce food at all,” he added.
+"These are not marginal increases that farmers can absorb, they go to the very heart of whether it is viable to produce food at all,” he added.
+According to the ICSA farmers are now heading into a season "where the cost of producing silage, keeping livestock, and growing crops could double".
+According to the ICSA farmers are now heading into a season "where the cost of producing silage, keeping livestock, and growing crops could double".
+
+According to the ICSA farmers are now heading into a season "where the cost of producing silage, keeping livestock, and growing crops could double".
+According to the ICSA farmers are now heading into a season "where the cost of producing silage, keeping livestock, and growing crops could double".
+McNamara added: "This is an extraordinary situation and it demands a serious response from government.”
+McNamara added: "This is an extraordinary situation and it demands a serious response from government.”
+
+McNamara added: "This is an extraordinary situation and it demands a serious response from government.”
+McNamara added: "This is an extraordinary situation and it demands a serious response from government.”
+"If current trends continue, we will see reduced stocking rates and lower levels of production. This will have direct consequences not just for farm families, but for food supply and prices.”
+"If current trends continue, we will see reduced stocking rates and lower levels of production. This will have direct consequences not just for farm families, but for food supply and prices.”
+
+"If current trends continue, we will see reduced stocking rates and lower levels of production. This will have direct consequences not just for farm families, but for food supply and prices.”
+"If current trends continue, we will see reduced stocking rates and lower levels of production. This will have direct consequences not just for farm families, but for food supply and prices.”
+The ICSA has urged coalition leaders to implement a targeted package of measures, it is calling for:
+The ICSA has urged coalition leaders to implement a targeted package of measures, it is calling for:
+
+The ICSA has urged coalition leaders to implement a targeted package of measures, it is calling for:
+The ICSA has urged coalition leaders to implement a targeted package of measures, it is calling for:
+Separately Fertilisers Europe - which represents 15 fertiliser manufacturers in the European Union and nine national fertiliser associations - has said that "European producers are working to maintain reliable supply during this period of heightened uncertainty".
+Separately Fertilisers Europe - which represents 15 fertiliser manufacturers in the European Union and nine national fertiliser associations - has said that "European producers are working to maintain reliable supply during this period of heightened uncertainty".
+
+Separately Fertilisers Europe - which represents 15 fertiliser manufacturers in the European Union and nine national fertiliser associations - has said that "European producers are working to maintain reliable supply during this period of heightened uncertainty".
+Separately Fertilisers Europe - which represents 15 fertiliser manufacturers in the European Union and nine national fertiliser associations - has said that "European producers are working to maintain reliable supply during this period of heightened uncertainty".
+However the organisation has also warned that if the situation in the Middle East were to persist or further exacerbate then "EU institutions should consider reinforcing aid and assistance to European farmers, while supporting the resilience of Europe's fertiliser industry".
+However the organisation has also warned that if the situation in the Middle East were to persist or further exacerbate then "EU institutions should consider reinforcing aid and assistance to European farmers, while supporting the resilience of Europe's fertiliser industry".
+
+However the organisation has also warned that if the situation in the Middle East were to persist or further exacerbate then "EU institutions should consider reinforcing aid and assistance to European farmers, while supporting the resilience of Europe's fertiliser industry".
+However the organisation has also warned that if the situation in the Middle East were to persist or further exacerbate then "EU institutions should consider reinforcing aid and assistance to European farmers, while supporting the resilience of Europe's fertiliser industry".
+"Ensuring farmers’ access to fertilisers goes hand in hand with maintaining a stable, competitive European production base that can serve agriculture in the long-term," the organisation said.
+"Ensuring farmers’ access to fertilisers goes hand in hand with maintaining a stable, competitive European production base that can serve agriculture in the long-term," the organisation said.
+
+"Ensuring farmers’ access to fertilisers goes hand in hand with maintaining a stable, competitive European production base that can serve agriculture in the long-term," the organisation said.
+"Ensuring farmers’ access to fertilisers goes hand in hand with maintaining a stable, competitive European production base that can serve agriculture in the long-term," the organisation said.
+Last week Minister Michael Healy-Rae told the Dáil that it was "understood that there may be sufficient fertiliser stocks to last until mid-April" in Ireland.
+Last week Minister Michael Healy-Rae told the Dáil that it was "understood that there may be sufficient fertiliser stocks to last until mid-April" in Ireland.
+
+Last week Minister Michael Healy-Rae told the Dáil that it was "understood that there may be sufficient fertiliser stocks to last until mid-April" in Ireland.
+Last week Minister Michael Healy-Rae told the Dáil that it was "understood that there may be sufficient fertiliser stocks to last until mid-April" in Ireland.
+A key deadline of the Residential Zoned Land Tax (RZLT) is approaching for farmers.
+A key deadline of the Residential Zoned Land Tax (RZLT) is approaching for farmers.
+
+A key deadline of the Residential Zoned Land Tax (RZLT) is approaching for farmers.
+A key deadline of the Residential Zoned Land Tax (RZLT) is approaching for farmers.
+The revised maps for 2026 were published on January 31.
+The revised maps for 2026 were published on January 31.
+
+The revised maps for 2026 were published on January 31.
+The revised maps for 2026 were published on January 31.
+These identify land that may be liable for the tax in that year.
+These identify land that may be liable for the tax in that year.
+
+These identify land that may be liable for the tax in that year.
+These identify land that may be liable for the tax in that year.
+Landowners are able to apply for an exemption from the RZLT if they request a rezoning of their land.
+Landowners are able to apply for an exemption from the RZLT if they request a rezoning of their land.
+
+Landowners are able to apply for an exemption from the RZLT if they request a rezoning of their land.
+Landowners are able to apply for an exemption from the RZLT if they request a rezoning of their land.
+A request to the relevant local authority to change the zoning of land must be submitted before April 1, 2026.
+A request to the relevant local authority to change the zoning of land must be submitted before April 1, 2026.
+
+A request to the relevant local authority to change the zoning of land must be submitted before April 1, 2026.
+A request to the relevant local authority to change the zoning of land must be submitted before April 1, 2026.
+April 1, 2026
+The tax aims to prompt residential development by incentivising landowners to activate existing planning permissions, or to engage with planning authorities to seek planning permission in respect of relevant land.
+The tax aims to prompt residential development by incentivising landowners to activate existing planning permissions, or to engage with planning authorities to seek planning permission in respect of relevant land.
+
+The tax aims to prompt residential development by incentivising landowners to activate existing planning permissions, or to engage with planning authorities to seek planning permission in respect of relevant land.
+The tax aims to prompt residential development by incentivising landowners to activate existing planning permissions, or to engage with planning authorities to seek planning permission in respect of relevant land.
+Lands are liable for the tax at 3% of market value.
+Lands are liable for the tax at 3% of market value.
+
+Lands are liable for the tax at 3% of market value.
+Lands are liable for the tax at 3% of market value.
+Revenue told Agriland that owners are advised to review the annually revised final maps to confirm whether their lands are included.
+Revenue told Agriland that owners are advised to review the annually revised final maps to confirm whether their lands are included.
+
+Revenue told Agriland that owners are advised to review the annually revised final maps to confirm whether their lands are included.
+Revenue told Agriland that owners are advised to review the annually revised final maps to confirm whether their lands are included.
+Agriland
+Revenue outlined that RZLT returns for 2026 must be filed on or before May 23, 2026.
+Revenue outlined that RZLT returns for 2026 must be filed on or before May 23, 2026.
+
+Revenue outlined that RZLT returns for 2026 must be filed on or before May 23, 2026.
+Revenue outlined that RZLT returns for 2026 must be filed on or before May 23, 2026.
+A spokesperson for the ICMSA said that the RZLT is a "hugely significant issue for the farmers concerned".
+A spokesperson for the ICMSA said that the RZLT is a "hugely significant issue for the farmers concerned".
+
+A spokesperson for the ICMSA said that the RZLT is a "hugely significant issue for the farmers concerned".
+A spokesperson for the ICMSA said that the RZLT is a "hugely significant issue for the farmers concerned".
+"ICMSA is concerned that there are farmers out there who are unaware that their land is liable for RZLT," the spokesperson told Agriland.
+"ICMSA is concerned that there are farmers out there who are unaware that their land is liable for RZLT," the spokesperson told Agriland.
+
+"ICMSA is concerned that there are farmers out there who are unaware that their land is liable for RZLT," the spokesperson told Agriland.
+"ICMSA is concerned that there are farmers out there who are unaware that their land is liable for RZLT," the spokesperson told Agriland.
+Agriland
+"Farmers should check the RZLT maps to see if their land is liable and contact their local county council with any queries."
+"Farmers should check the RZLT maps to see if their land is liable and contact their local county council with any queries."
+
+"Farmers should check the RZLT maps to see if their land is liable and contact their local county council with any queries."
+"Farmers should check the RZLT maps to see if their land is liable and contact their local county council with any queries."
+The ICMSA said that "every attempt should be made, by either Revenue or local councils, to notify farmers if they are subject to RZLT".
+The ICMSA said that "every attempt should be made, by either Revenue or local councils, to notify farmers if they are subject to RZLT".
+
+The ICMSA said that "every attempt should be made, by either Revenue or local councils, to notify farmers if they are subject to RZLT".
+The ICMSA said that "every attempt should be made, by either Revenue or local councils, to notify farmers if they are subject to RZLT".
+The Irish Farmers' Association (IFA) farm business chairperson, Bill O'Keeffe said that a "permanent" solution that will remove farmland from the scope of the RZLT is needed.
+The Irish Farmers' Association (IFA) farm business chairperson, Bill O'Keeffe said that a "permanent" solution that will remove farmland from the scope of the RZLT is needed.
+
+The Irish Farmers' Association (IFA) farm business chairperson, Bill O'Keeffe said that a "permanent" solution that will remove farmland from the scope of the RZLT is needed.
+The Irish Farmers' Association (IFA) farm business chairperson, Bill O'Keeffe said that a "permanent" solution that will remove farmland from the scope of the RZLT is needed.
+"The exemption announced in Budget 2025 and continued in Budget 2026 is only a year-by-year solution that places full responsibility on landowners to go through this two-step process to gain an annual exemption," O'Keeffe said.
+"The exemption announced in Budget 2025 and continued in Budget 2026 is only a year-by-year solution that places full responsibility on landowners to go through this two-step process to gain an annual exemption," O'Keeffe said.
+
+"The exemption announced in Budget 2025 and continued in Budget 2026 is only a year-by-year solution that places full responsibility on landowners to go through this two-step process to gain an annual exemption," O'Keeffe said.
+"The exemption announced in Budget 2025 and continued in Budget 2026 is only a year-by-year solution that places full responsibility on landowners to go through this two-step process to gain an annual exemption," O'Keeffe said.
+He added: "It is important that farmers realise they must act before the April deadline and apply for their lands to be rezoned, regardless of previous applications."
+He added: "It is important that farmers realise they must act before the April deadline and apply for their lands to be rezoned, regardless of previous applications."
+
+He added: "It is important that farmers realise they must act before the April deadline and apply for their lands to be rezoned, regardless of previous applications."
+He added: "It is important that farmers realise they must act before the April deadline and apply for their lands to be rezoned, regardless of previous applications."
+The Ulster Unionist Party (UUP) has said it will support the Areas of Natural Constraint (ANC) Bill from Sinn Féin MLA Declan McAleer under certain conditions.
+The Ulster Unionist Party (UUP) has said it will support the Areas of Natural Constraint (ANC) Bill from Sinn Féin MLA Declan McAleer under certain conditions.
+
+The Ulster Unionist Party (UUP) has said it will support the Areas of Natural Constraint (ANC) Bill from Sinn Féin MLA Declan McAleer under certain conditions.
+The Ulster Unionist Party (UUP) has said it will support the Areas of Natural Constraint (ANC) Bill from Sinn Féin MLA Declan McAleer under certain conditions.
+The bill proposes the re-introduction of ANC payments, which had previously been available up to 2018.
+The bill proposes the re-introduction of ANC payments, which had previously been available up to 2018.
+
+The bill proposes the re-introduction of ANC payments, which had previously been available up to 2018.
+The bill proposes the re-introduction of ANC payments, which had previously been available up to 2018.
+Agriculture, Environment and Rural Affairs (AERA) Committee chair and UUP Agriculture spokesperson Robbie Butler said that support for the bill will be on the condition that "credible funding is secured, clear and measurable outcomes are defined, and the bill aligns with a coherent, long term agricultural policy".
+Agriculture, Environment and Rural Affairs (AERA) Committee chair and UUP Agriculture spokesperson Robbie Butler said that support for the bill will be on the condition that "credible funding is secured, clear and measurable outcomes are defined, and the bill aligns with a coherent, long term agricultural policy".
+
+Agriculture, Environment and Rural Affairs (AERA) Committee chair and UUP Agriculture spokesperson Robbie Butler said that support for the bill will be on the condition that "credible funding is secured, clear and measurable outcomes are defined, and the bill aligns with a coherent, long term agricultural policy".
+Agriculture, Environment and Rural Affairs (AERA) Committee chair and UUP Agriculture spokesperson Robbie Butler said that support for the bill will be on the condition that "credible funding is secured, clear and measurable outcomes are defined, and the bill aligns with a coherent, long term agricultural policy".
+Butler said the UUP will support the bill’s “progression to Committee Stage”.
+Butler said the UUP will support the bill’s “progression to Committee Stage”.
+
+Butler said the UUP will support the bill’s “progression to Committee Stage”.
+Butler said the UUP will support the bill’s “progression to Committee Stage”.
+However, he added that the party's support depends on the Northern Ireland Executive “providing clear answers on funding, targeting, and strategic alignment before the bill moves further”.
+However, he added that the party's support depends on the Northern Ireland Executive “providing clear answers on funding, targeting, and strategic alignment before the bill moves further”.
+
+However, he added that the party's support depends on the Northern Ireland Executive “providing clear answers on funding, targeting, and strategic alignment before the bill moves further”.
+However, he added that the party's support depends on the Northern Ireland Executive “providing clear answers on funding, targeting, and strategic alignment before the bill moves further”.
+He said: “Since Brexit, Northern Ireland farmers have lost access to longstanding EU schemes designed to support those working in disadvantaged areas, schemes that once delivered stability and predictability.
+He said: “Since Brexit, Northern Ireland farmers have lost access to longstanding EU schemes designed to support those working in disadvantaged areas, schemes that once delivered stability and predictability.
+
+He said: “Since Brexit, Northern Ireland farmers have lost access to longstanding EU schemes designed to support those working in disadvantaged areas, schemes that once delivered stability and predictability.
+He said: “Since Brexit, Northern Ireland farmers have lost access to longstanding EU schemes designed to support those working in disadvantaged areas, schemes that once delivered stability and predictability.
+He said that it is “neither fair nor sustainable that Northern Ireland farmers, facing similar or greater constraints, remain at a competitive disadvantage”.
+He said that it is “neither fair nor sustainable that Northern Ireland farmers, facing similar or greater constraints, remain at a competitive disadvantage”.
+
+He said that it is “neither fair nor sustainable that Northern Ireland farmers, facing similar or greater constraints, remain at a competitive disadvantage”.
+He said that it is “neither fair nor sustainable that Northern Ireland farmers, facing similar or greater constraints, remain at a competitive disadvantage”.
+Butler described the bill as “a welcome opportunity to correct that imbalance and strengthen food security”.
+Butler described the bill as “a welcome opportunity to correct that imbalance and strengthen food security”.
+
+Butler described the bill as “a welcome opportunity to correct that imbalance and strengthen food security”.
+Butler described the bill as “a welcome opportunity to correct that imbalance and strengthen food security”.
+However, he added, “to secure our support beyond today, key issues must be addressed”.
+However, he added, “to secure our support beyond today, key issues must be addressed”.
+
+However, he added, “to secure our support beyond today, key issues must be addressed”.
+However, he added, “to secure our support beyond today, key issues must be addressed”.
+The UUP agriculture spokesperson said that the Northern Ireland Executive “must confirm the funding source” and that “public money must deliver public goods, yet while the bill references the environmental role of ANC farmers, it does not require measurable outcomes”.
+The UUP agriculture spokesperson said that the Northern Ireland Executive “must confirm the funding source” and that “public money must deliver public goods, yet while the bill references the environmental role of ANC farmers, it does not require measurable outcomes”.
+
+The UUP agriculture spokesperson said that the Northern Ireland Executive “must confirm the funding source” and that “public money must deliver public goods, yet while the bill references the environmental role of ANC farmers, it does not require measurable outcomes”.
+The UUP agriculture spokesperson said that the Northern Ireland Executive “must confirm the funding source” and that “public money must deliver public goods, yet while the bill references the environmental role of ANC farmers, it does not require measurable outcomes”.
+“Payments should therefore be linked to verifiable results," Butler said.
+“Payments should therefore be linked to verifiable results," Butler said.
+
+“Payments should therefore be linked to verifiable results," Butler said.
+“Payments should therefore be linked to verifiable results," Butler said.
+Northern Ireland has committed to contribute to the UK’s fulfilment of the global '30 by 30' target, that at least 30% of land and sea is effectively conserved and managed by 2030.
+Northern Ireland has committed to contribute to the UK’s fulfilment of the global '30 by 30' target, that at least 30% of land and sea is effectively conserved and managed by 2030.
+
+Northern Ireland has committed to contribute to the UK’s fulfilment of the global '30 by 30' target, that at least 30% of land and sea is effectively conserved and managed by 2030.
+Northern Ireland has committed to contribute to the UK’s fulfilment of the global '30 by 30' target, that at least 30% of land and sea is effectively conserved and managed by 2030.
+30% of land and sea
+Butler added: “Northern Ireland farmers should no longer be left behind their counterparts in the Republic of Ireland and Scotland.
+Butler added: “Northern Ireland farmers should no longer be left behind their counterparts in the Republic of Ireland and Scotland.
+
+Butler added: “Northern Ireland farmers should no longer be left behind their counterparts in the Republic of Ireland and Scotland.
+Butler added: “Northern Ireland farmers should no longer be left behind their counterparts in the Republic of Ireland and Scotland.
+“I look forward to Declan and Sinn Féin providing the detailed answers required at Committee Stage to ensure real progress is made.”
+“I look forward to Declan and Sinn Féin providing the detailed answers required at Committee Stage to ensure real progress is made.”
+
+“I look forward to Declan and Sinn Féin providing the detailed answers required at Committee Stage to ensure real progress is made.”
+“I look forward to Declan and Sinn Féin providing the detailed answers required at Committee Stage to ensure real progress is made.”
+Separately, McAleer recently discussed the bill with Agriland.
+Separately, McAleer recently discussed the bill with Agriland.
+
+Separately, McAleer recently discussed the bill with Agriland.
+Separately, McAleer recently discussed the bill with Agriland.
+McAleer
+Agriland
+He said: “ANC payments will ensure that monies will flow into rural communities that need it most: benefitting local businesses, schools and community services.
+He said: “ANC payments will ensure that monies will flow into rural communities that need it most: benefitting local businesses, schools and community services.
+
+He said: “ANC payments will ensure that monies will flow into rural communities that need it most: benefitting local businesses, schools and community services.
+He said: “ANC payments will ensure that monies will flow into rural communities that need it most: benefitting local businesses, schools and community services.
+He added: “Obviously, there is a requirement to find a budget for the measure, should it reach the statute book.”
+He added: “Obviously, there is a requirement to find a budget for the measure, should it reach the statute book.”
+
+He added: “Obviously, there is a requirement to find a budget for the measure, should it reach the statute book.”
+He added: “Obviously, there is a requirement to find a budget for the measure, should it reach the statute book.”
+The Irish Cattle and Sheep Farmers' Association (ICSA) has reacted angrily to the confirmation that the EU-Mercosur Interim Trade Agreement will come into force on May 1.
+The Irish Cattle and Sheep Farmers' Association (ICSA) has reacted angrily to the confirmation that the EU-Mercosur Interim Trade Agreement will come into force on May 1.
+
+The Irish Cattle and Sheep Farmers' Association (ICSA) has reacted angrily to the confirmation that the EU-Mercosur Interim Trade Agreement will come into force on May 1.
+The Irish Cattle and Sheep Farmers' Association (ICSA) has reacted angrily to the confirmation that the EU-Mercosur Interim Trade Agreement will come into force on May 1.
+Sean McNamara, the association's president, said he is "outraged" that the European Commission has moved to provisional apply the trade deal.
+Sean McNamara, the association's president, said he is "outraged" that the European Commission has moved to provisional apply the trade deal.
+
+Sean McNamara, the association's president, said he is "outraged" that the European Commission has moved to provisional apply the trade deal.
+Sean McNamara, the association's president, said he is "outraged" that the European Commission has moved to provisional apply the trade deal.
+As Agriland reported earlier today (Monday, March 23), the EU has notified the Mercosur countries about the provisional application of the interim trade deal.
+As Agriland reported earlier today (Monday, March 23), the EU has notified the Mercosur countries about the provisional application of the interim trade deal.
+
+As Agriland reported earlier today (Monday, March 23), the EU has notified the Mercosur countries about the provisional application of the interim trade deal.
+As Agriland reported earlier today (Monday, March 23), the EU has notified the Mercosur countries about the provisional application of the interim trade deal.
+Agriland
+the EU has notified the Mercosur countries
+The trade agreement will apply provisionally from May 1 between the EU and all Mercosur countries that complete their ratification procedures and notified the EU before the end of March.
+The trade agreement will apply provisionally from May 1 between the EU and all Mercosur countries that complete their ratification procedures and notified the EU before the end of March.
+
+The trade agreement will apply provisionally from May 1 between the EU and all Mercosur countries that complete their ratification procedures and notified the EU before the end of March.
+The trade agreement will apply provisionally from May 1 between the EU and all Mercosur countries that complete their ratification procedures and notified the EU before the end of March.
+Argentina, Brazil and Uruguay have already done so and Paraguay is expected to follow suit in the very near future.
+Argentina, Brazil and Uruguay have already done so and Paraguay is expected to follow suit in the very near future.
+
+Argentina, Brazil and Uruguay have already done so and Paraguay is expected to follow suit in the very near future.
+Argentina, Brazil and Uruguay have already done so and Paraguay is expected to follow suit in the very near future.
+The deal will, among numerous other provisions, allow an additional 99,000t of beef from Mercosur countries enter the EU at a reduced tariff rate.
+The deal will, among numerous other provisions, allow an additional 99,000t of beef from Mercosur countries enter the EU at a reduced tariff rate.
+
+The deal will, among numerous other provisions, allow an additional 99,000t of beef from Mercosur countries enter the EU at a reduced tariff rate.
+The deal will, among numerous other provisions, allow an additional 99,000t of beef from Mercosur countries enter the EU at a reduced tariff rate.
+That provision has drawn widespread criticism from the EU agri-sector, including from Irish farm organisations.
+That provision has drawn widespread criticism from the EU agri-sector, including from Irish farm organisations.
+
+That provision has drawn widespread criticism from the EU agri-sector, including from Irish farm organisations.
+That provision has drawn widespread criticism from the EU agri-sector, including from Irish farm organisations.
+The trade agreement is being applied on an interim basis as part of a procedure that allows the trade provisions of the wider political agreement between the EU and Mercosur to enter into force even though that political agreement is yet to be ratified by the European Parliament.
+The trade agreement is being applied on an interim basis as part of a procedure that allows the trade provisions of the wider political agreement between the EU and Mercosur to enter into force even though that political agreement is yet to be ratified by the European Parliament.
+
+The trade agreement is being applied on an interim basis as part of a procedure that allows the trade provisions of the wider political agreement between the EU and Mercosur to enter into force even though that political agreement is yet to be ratified by the European Parliament.
+The trade agreement is being applied on an interim basis as part of a procedure that allows the trade provisions of the wider political agreement between the EU and Mercosur to enter into force even though that political agreement is yet to be ratified by the European Parliament.
+The commission's decision to carry out the ratification of the trade deal in this way has drawn a lot of criticism, and has been referred to the Court of Justice of the EU by the parliament.
+The commission's decision to carry out the ratification of the trade deal in this way has drawn a lot of criticism, and has been referred to the Court of Justice of the EU by the parliament.
+
+The commission's decision to carry out the ratification of the trade deal in this way has drawn a lot of criticism, and has been referred to the Court of Justice of the EU by the parliament.
+The commission's decision to carry out the ratification of the trade deal in this way has drawn a lot of criticism, and has been referred to the Court of Justice of the EU by the parliament.
+Reacting to the latest development today, ICSA president McNamara said that the provisional application of the trade deal "is happening despite the European Parliament not having voted on it and the ongoing legal review by the [court]".
+Reacting to the latest development today, ICSA president McNamara said that the provisional application of the trade deal "is happening despite the European Parliament not having voted on it and the ongoing legal review by the [court]".
+
+Reacting to the latest development today, ICSA president McNamara said that the provisional application of the trade deal "is happening despite the European Parliament not having voted on it and the ongoing legal review by the [court]".
+Reacting to the latest development today, ICSA president McNamara said that the provisional application of the trade deal "is happening despite the European Parliament not having voted on it and the ongoing legal review by the [court]".
+"What is happening is disgraceful, and farmers everywhere will rightly feel angered and let down," he added.
+"What is happening is disgraceful, and farmers everywhere will rightly feel angered and let down," he added.
+
+"What is happening is disgraceful, and farmers everywhere will rightly feel angered and let down," he added.
+"What is happening is disgraceful, and farmers everywhere will rightly feel angered and let down," he added.
+"Farmers have mobilised massive opposition to this deal and repeatedly highlighted the environmental risks and dangers to consumers from hormone-treated beef, yet the commission appears willing to press ahead anyway," he added.
+"Farmers have mobilised massive opposition to this deal and repeatedly highlighted the environmental risks and dangers to consumers from hormone-treated beef, yet the commission appears willing to press ahead anyway," he added.
+
+"Farmers have mobilised massive opposition to this deal and repeatedly highlighted the environmental risks and dangers to consumers from hormone-treated beef, yet the commission appears willing to press ahead anyway," he added.
+"Farmers have mobilised massive opposition to this deal and repeatedly highlighted the environmental risks and dangers to consumers from hormone-treated beef, yet the commission appears willing to press ahead anyway," he added.
+Beef treated with hormones is not permitted to enter the EU under the EU-Mercosur Trade Agreement, or at all. However, despite official controls to prevent this, it has occurred, most notably at the end of last year, with some of that beef sold and likely consumed in Ireland.
+Beef treated with hormones is not permitted to enter the EU under the EU-Mercosur Trade Agreement, or at all. However, despite official controls to prevent this, it has occurred, most notably at the end of last year, with some of that beef sold and likely consumed in Ireland.
+
+Beef treated with hormones is not permitted to enter the EU under the EU-Mercosur Trade Agreement, or at all. However, despite official controls to prevent this, it has occurred, most notably at the end of last year, with some of that beef sold and likely consumed in Ireland.
+Beef treated with hormones is not permitted to enter the EU under the EU-Mercosur Trade Agreement, or at all. However, despite official controls to prevent this, it has occurred, most notably at the end of last year, with some of that beef sold and likely consumed in Ireland.
+some of that beef sold and likely consumed in Ireland
+"This disregard for the concerns of Irish and European farmers is deeply frustrating and unacceptable," McNamara said.
+"This disregard for the concerns of Irish and European farmers is deeply frustrating and unacceptable," McNamara said.
+
+"This disregard for the concerns of Irish and European farmers is deeply frustrating and unacceptable," McNamara said.
+"This disregard for the concerns of Irish and European farmers is deeply frustrating and unacceptable," McNamara said.
+The ICSA president also said the timing of the announcement today "could not be worse".
+The ICSA president also said the timing of the announcement today "could not be worse".
+
+The ICSA president also said the timing of the announcement today "could not be worse".
+The ICSA president also said the timing of the announcement today "could not be worse".
+"Farmers are already grappling with soaring fuel and input costs, as well as extreme uncertainty over future CAP [Common Agricultural Policy] supports," he said.
+"Farmers are already grappling with soaring fuel and input costs, as well as extreme uncertainty over future CAP [Common Agricultural Policy] supports," he said.
+
+"Farmers are already grappling with soaring fuel and input costs, as well as extreme uncertainty over future CAP [Common Agricultural Policy] supports," he said.
+"Farmers are already grappling with soaring fuel and input costs, as well as extreme uncertainty over future CAP [Common Agricultural Policy] supports," he said.
+"The sector simply cannot bear anymore pressure. What makes this even more galling is the sense among farmers that no matter how strong or widespread the opposition, their voices are being ignored," McNamara added.
+"The sector simply cannot bear anymore pressure. What makes this even more galling is the sense among farmers that no matter how strong or widespread the opposition, their voices are being ignored," McNamara added.
+
+"The sector simply cannot bear anymore pressure. What makes this even more galling is the sense among farmers that no matter how strong or widespread the opposition, their voices are being ignored," McNamara added.
+"The sector simply cannot bear anymore pressure. What makes this even more galling is the sense among farmers that no matter how strong or widespread the opposition, their voices are being ignored," McNamara added.
+"That cannot be allowed to stand," he commented.
+"That cannot be allowed to stand," he commented.
+
+"That cannot be allowed to stand," he commented.
+"That cannot be allowed to stand," he commented.
+Over €5.6 million was paid out to farmers under various schemes last week, according to the Department of Agriculture, Food and the Marine (DAFM).
+Over €5.6 million was paid out to farmers under various schemes last week, according to the Department of Agriculture, Food and the Marine (DAFM).
+
+Over €5.6 million was paid out to farmers under various schemes last week, according to the Department of Agriculture, Food and the Marine (DAFM).
+Over €5.6 million was paid out to farmers under various schemes last week, according to the Department of Agriculture, Food and the Marine (DAFM).
+The latest data shows that just over €900,000 was paid out under the 2025 Basic Income Support for Sustainability (BISS) and Complimentary Redistributive Income Support for Sustainability (CRISS).
+The latest data shows that just over €900,000 was paid out under the 2025 Basic Income Support for Sustainability (BISS) and Complimentary Redistributive Income Support for Sustainability (CRISS).
+
+The latest data shows that just over €900,000 was paid out under the 2025 Basic Income Support for Sustainability (BISS) and Complimentary Redistributive Income Support for Sustainability (CRISS).
+The latest data shows that just over €900,000 was paid out under the 2025 Basic Income Support for Sustainability (BISS) and Complimentary Redistributive Income Support for Sustainability (CRISS).
+BISS
+The department said that 118,526 farmers have now received a total of €840.6 million under these measures.
+The department said that 118,526 farmers have now received a total of €840.6 million under these measures.
+
+The department said that 118,526 farmers have now received a total of €840.6 million under these measures.
+The department said that 118,526 farmers have now received a total of €840.6 million under these measures.
+This figure includes the 2025 Complementary Income Support for Young Farmers of €36.4 million and the 2025 National Reserve of €2.9 million.
+This figure includes the 2025 Complementary Income Support for Young Farmers of €36.4 million and the 2025 National Reserve of €2.9 million.
+
+This figure includes the 2025 Complementary Income Support for Young Farmers of €36.4 million and the 2025 National Reserve of €2.9 million.
+This figure includes the 2025 Complementary Income Support for Young Farmers of €36.4 million and the 2025 National Reserve of €2.9 million.
+A further €2.9 million was paid out to farmers last week through the Targeted Agricultural Modernisation Schemes (TAMS 3).
+A further €2.9 million was paid out to farmers last week through the Targeted Agricultural Modernisation Schemes (TAMS 3).
+
+A further €2.9 million was paid out to farmers last week through the Targeted Agricultural Modernisation Schemes (TAMS 3).
+A further €2.9 million was paid out to farmers last week through the Targeted Agricultural Modernisation Schemes (TAMS 3).
+Over 43,000 approvals for TAMS 3 applications have been issued with 15,626 payments made totalling over €142 million.
+Over 43,000 approvals for TAMS 3 applications have been issued with 15,626 payments made totalling over €142 million.
+
+Over 43,000 approvals for TAMS 3 applications have been issued with 15,626 payments made totalling over €142 million.
+Over 43,000 approvals for TAMS 3 applications have been issued with 15,626 payments made totalling over €142 million.
+Last week, the department issued an additional €1.3 million to farmers for the 2025 Eco Scheme.
+Last week, the department issued an additional €1.3 million to farmers for the 2025 Eco Scheme.
+
+Last week, the department issued an additional €1.3 million to farmers for the 2025 Eco Scheme.
+Last week, the department issued an additional €1.3 million to farmers for the 2025 Eco Scheme.
+This brings the total paid out under this scheme to €305 million to 118,332 farmers.
+This brings the total paid out under this scheme to €305 million to 118,332 farmers.
+
+This brings the total paid out under this scheme to €305 million to 118,332 farmers.
+This brings the total paid out under this scheme to €305 million to 118,332 farmers.
+The data also shows that almost €95,000 was paid out under the 2025 Areas of Natural Constraint (ANC) and Areas of Specific Constraint (ASC).
+The data also shows that almost €95,000 was paid out under the 2025 Areas of Natural Constraint (ANC) and Areas of Specific Constraint (ASC).
+
+The data also shows that almost €95,000 was paid out under the 2025 Areas of Natural Constraint (ANC) and Areas of Specific Constraint (ASC).
+The data also shows that almost €95,000 was paid out under the 2025 Areas of Natural Constraint (ANC) and Areas of Specific Constraint (ASC).
+An additional €240,000 was issued to farmers in the Agri-Climate Rural Environment Scheme (ACRES).
+An additional €240,000 was issued to farmers in the Agri-Climate Rural Environment Scheme (ACRES).
+
+An additional €240,000 was issued to farmers in the Agri-Climate Rural Environment Scheme (ACRES).
+An additional €240,000 was issued to farmers in the Agri-Climate Rural Environment Scheme (ACRES).
+While nearly €93,000 was paid to participants in last year's Sheep Improvement Scheme.
+While nearly €93,000 was paid to participants in last year's Sheep Improvement Scheme.
+
+While nearly €93,000 was paid to participants in last year's Sheep Improvement Scheme.
+While nearly €93,000 was paid to participants in last year's Sheep Improvement Scheme.
+To date, 16,757 farmers have been paid a total of €18.15 million for this scheme.
+To date, 16,757 farmers have been paid a total of €18.15 million for this scheme.
+
+To date, 16,757 farmers have been paid a total of €18.15 million for this scheme.
+To date, 16,757 farmers have been paid a total of €18.15 million for this scheme.

@@ -22,28 +22,26 @@ public class JSoupParser {
     
     public JSoupParser() {
         
-    }
-
-    public ArrayList<String> searchDocument(String htmlMarkup, String searchTerm) {
-        paragraphs.clear();
-        Document doc = Jsoup.parse(htmlMarkup);
+    } 
+    public ArrayList<String> searchDocument(ArrayList<String> htmlMarkup, String searchTerm) {
+    paragraphs.clear();
+    for (String textBlock: htmlMarkup) {
+        Document doc = Jsoup.parse(textBlock);
         elements = doc.select(searchTerm);
         for (Element element: elements) {
             paragraphs.add(element.toString());
         }
-        System.out.println("Searching: " + htmlMarkup);
-        System.out.println("Search results: " + paragraphs.toString());
-        return paragraphs;
+    }
+    //System.out.println("Searching: " + htmlMarkup);
+    //System.out.println("Search results: " + paragraphs.toString());
+    return paragraphs;
     }
     
-    public ArrayList<String> getTextFromDocument(String htmlMarkup) {
-        paragraphs.clear();
-        Document doc = Jsoup.parse(htmlMarkup);
-        elements = doc.getAllElements();
-        for (Element element: elements) {
-            paragraphs.add(element.text());
-        }
-        return paragraphs;
+    public String getTextFromDocument(String htmlMarkup) {
+        System.out.println("Extracting text...");
+            Document doc = Jsoup.parse(htmlMarkup);
+            System.out.println("Adding paragraph: " + doc.text());
+            return doc.text();
     }
    
     public ArrayList<String> getAttributesFromDocument(String htmlMarkup, String searchTerm) {
@@ -55,7 +53,7 @@ public class JSoupParser {
                 paragraphs.add(element.attr(searchTerm));
         }
         for (String result: paragraphs) {
-            System.out.println("Result: " + result);
+            //System.out.println("Result: " + result);
         }
         return paragraphs;
     }
