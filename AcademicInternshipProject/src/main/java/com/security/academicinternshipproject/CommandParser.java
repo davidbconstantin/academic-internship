@@ -16,9 +16,11 @@ public class CommandParser {
     private String object;
     private String subject;
     private int subjectNo;
+    private static int commandNo = 0;
     private StringTokenizer tokenizer;
     
     public CommandParser(String command) {
+        commandNo++;
         action = "";
         object = "";
         subjectNo = -1;
@@ -52,6 +54,10 @@ public class CommandParser {
     
     public int getSubjectNo() {
         return subjectNo;
+    }
+    
+    public int getCommandNo() {
+        return commandNo;
     }
     
 }

@@ -227,6 +227,7 @@ public class MainMenuJP extends javax.swing.JPanel {
 
     private void crawlBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_crawlBTNActionPerformed
         // TODO add your handling code here:
+        String baseUrl = "";
         for (WebCrawler crawler: crawlerList) {
             if (crawlersCB.getSelectedItem().toString().equals(crawler.getName())) {
                 statusTA.setText("");
@@ -247,33 +248,57 @@ public class MainMenuJP extends javax.swing.JPanel {
                     ArrayList<String> results = new ArrayList<>();
                     CommandParser commandParser = new CommandParser(command);
                     command = commandParser.getAction();
-                    System.out.println("Command: " + command);
-                    System.out.println("Output Number: " + commandParser.getSubjectNo());
+                    System.out.println("Command #" + commandParser.getCommandNo() + ": " + command);
+                    System.out.println("Object Number: " + commandParser.getSubjectNo());
                     // if operating on a previous command's results
                     if (commandParser.getSubjectNo() > -1) {
-                        for (String result: crawler.getHtmlResponses().get(commandParser.getSubjectNo() - 1).getResults()) {
+                        int resultsIndex = commandParser.getSubjectNo() - 1;
+                        // find the final results of a particular operation by looping through the crawler in reverse direction
+                        for (int i = crawler.getHtmlResponses().size() - 1; i >= 0; i--) {
+                            System.out.println("Loop index: " + i);
+                            // never evaluates true if subject number is -1
+                            if (crawler.getHtmlResponses().get(i).getCommandNo() == commandParser.getSubjectNo()) {
+                                resultsIndex = i;
+                                break;
+                            }
+                        }
+                        for (String result: crawler.getHtmlResponses().get(resultsIndex).getResults()) {
                             results.add(result);
                         }
                     }
                     else
                         results.add(commandParser.getObject());
+                    int loopCounter = 0;
                     for (String result: results) {
+                        loopCounter++;
+                        if (result.length() > 32)
+                            System.out.println("Result # " + loopCounter + ": " + result.substring(0, 31));
+                        else
+                            System.out.println("Result # " + loopCounter + ": " + result);
                         if (command.equals("Visit")) {
                             page = browser.newPage();
+                            if (result.startsWith("/"))
+                                result = baseUrl + result;
                             page.navigate(result);
+                            if (baseUrl.equals(""))
+                                baseUrl = page.url().substring(0, page.url().length() - 1);
                             response.add(page.content());
-                            crawler.addHtmlResponse(new SearchResult(response));
+                            //crawler.addHtmlResponse(new SearchResult(response, commandParser.getCommandNo()));
                         }
                         else if (command.equals("Search")) {
-                            response.addAll(parser.searchDocument(crawler.getHtmlResponses().getLast().getResults().getFirst(), result));
-                            crawler.addHtmlResponse(new SearchResult(response));
+                            response.addAll(parser.searchDocument(crawler.getHtmlResponses().getLast().getResults(), result));
+                            //crawler.addHtmlResponse(new SearchResult(response, commandParser.getCommandNo()));
                         }
-                        else if (command.equals("Text")) 
-                            response.addAll(parser.getTextFromDocument(result));
-                        else if (command.equals("Attribute"))
+                        else if (command.equals("Text")) {
+                            response.add(parser.getTextFromDocument(result));
+                            //crawler.addHtmlResponse(new SearchResult(response, commandParser.getCommandNo()));
+                        }
+                        else if (command.equals("Attribute")) {
                             response.addAll(parser.getAttributesFromDocument(result, commandParser.getObject()));
+                            //crawler.addHtmlResponse(new SearchResult(response, commandParser.getCommandNo()));
+                        }
                         else if (command.startsWith("Write")) {
-                            File paragraphs = new File("text.txt");
+                            File paragraphs = new File(result);
                             try {
                                 FileWriter writer = new FileWriter(paragraphs);
                                 for (String toWrite: crawler.getHtmlResponses().getLast().getResults()) {
@@ -295,31 +320,8 @@ public class MainMenuJP extends javax.swing.JPanel {
                             }                   
                         }
                     }
-//                    if (command.startsWith("Visit")) {
-//                        page = browser.newPage();
-//                        // navigate to the first line in the HTML response
-//                        for (String result: results) {
-//                            page.navigate(result);
-//                            response.add(page.content());
-//                        }
-//                        crawler.addHtmlResponse(new SearchResult(response));
-//                    }
-//                    else if (command.startsWith("Search")) {
-//                        for (String result: crawler.getHtmlResponses().getLast().getResults()) {
-//                            response.addAll(parser.searchDocument(result, commandParser.getObject()));
-//                        }
-//                        crawler.addHtmlResponse(new SearchResult(response));
-//                    }
-//                    else if (command.startsWith("Text")) {
-//                        for (String result: results) {
-//                            response.addAll(parser.getTextFromDocument(result));
-//                        }
-//                    }
-//                    else if (command.startsWith("Attribute")) {
-//                        for (String result: results) {
-//                            response.addAll(parser.getAttributesFromDocument(result, commandParser.getObject()));
-//                        }
-//                    }
+                    if (!commandParser.getAction().equals("Python") && !commandParser.getAction().equals("Write"))
+                        crawler.addHtmlResponse(new SearchResult(response, commandParser.getCommandNo()));
                     statusTA.append("Executing command " + commandParser.getAction() + "\n");
                     for (String line: response) {
                         statusTA.append(line + "\n");
