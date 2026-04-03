@@ -1,12 +1,14 @@
 com\security\academicinternshipproject\CrawlerScriptingJP.class
 com\security\academicinternshipproject\MainMenuJP.class
 com\security\academicinternshipproject\MainMenuJP$4.class
+com\security\academicinternshipproject\DatabaseSettingsJP$1.class
 com\security\academicinternshipproject\SearchResult.class
 com\security\academicinternshipproject\CrawlerConfigJP.class
 com\security\academicinternshipproject\CrawlerScriptingJP$5.class
 com\security\academicinternshipproject\MainMenuJP$2.class
 com\security\academicinternshipproject\MainMenuForm.class
 com\security\academicinternshipproject\JSoupParser.class
+com\security\academicinternshipproject\MainMenuJP$6.class
 com\security\academicinternshipproject\GUIManager.class
 com\security\academicinternshipproject\CrawlerConfigJP$3.class
 com\security\academicinternshipproject\WebCrawler.class
@@ -14,7 +16,10 @@ com\security\academicinternshipproject\CrawlerScriptingJP$3.class
 com\security\academicinternshipproject\CrawlerConfigJP$1.class
 com\security\academicinternshipproject\MainMenuForm$1.class
 com\security\academicinternshipproject\CrawlerScriptingJP$1.class
+com\security\academicinternshipproject\HomeLandingJP.class
 com\security\academicinternshipproject\CrawlerScriptingJP$6.class
+com\security\academicinternshipproject\MainMenuJP$5.class
+com\security\academicinternshipproject\DatabaseSettingsJP.class
 com\security\academicinternshipproject\AcademicInternshipProject.class
 com\security\academicinternshipproject\MainMenuJP$1.class
 com\security\academicinternshipproject\CommandParser.class

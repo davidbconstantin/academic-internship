@@ -184,7 +184,7 @@ public class HomeLandingJP extends JPanel {
         statusValue.setText(panelName);
 
         if("mainMenuJP".equals(panelName) && panel instanceof MainMenuJP){
-            ((MainMenuJP)panel).loadCrawlers();
+            //((MainMenuJP)panel).loadCrawlers();
         }
 
         guiManager.setCurrentPanel(panel);
