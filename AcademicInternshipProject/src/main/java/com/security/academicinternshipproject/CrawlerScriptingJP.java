@@ -61,7 +61,7 @@ public class CrawlerScriptingJP extends javax.swing.JPanel {
         chooseLBL.setForeground(new java.awt.Color(255, 255, 255));
         chooseLBL.setText("Choose Command:");
 
-        commandCB.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Visit", "Search", "Text", "Attribute", "Write", "Python" }));
+        commandCB.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Visit", "Search", "Text", "Attribute", "Write", "SQL", "Python" }));
         commandCB.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 commandCBActionPerformed(evt);

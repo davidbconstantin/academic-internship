@@ -15,8 +15,8 @@ import java.sql.Statement;
  *
  * @author rokom
  */
-public class AivenConnector {
-    public AivenConnector(String host, int port, String databaseName, String userName, String password) throws ClassNotFoundException {
+public class MySQLConnector {
+    public MySQLConnector(String host, int port, String databaseName, String userName, String password) throws ClassNotFoundException {
         Class.forName("com.mysql.cj.jdbc.Driver");
         try (final Connection connection = 
             DriverManager.getConnection("jdbc:mysql://" + host + ":" + port + "/" + databaseName +

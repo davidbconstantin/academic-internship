@@ -11,17 +11,21 @@ import com.microsoft.playwright.BrowserContext;
 import com.microsoft.playwright.BrowserType;
 import com.microsoft.playwright.Page;
 import com.microsoft.playwright.Playwright;
+import java.util.List;
+import java.io.BufferedInputStream;
+import java.io.BufferedReader;
 import java.io.EOFException;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
+import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.ObjectInputStream;
-import java.io.OutputStream;
 import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -31,6 +35,8 @@ public class MainMenuJP extends javax.swing.JPanel {
     
     private GUIManager guiManager;
     private ArrayList<WebCrawler> crawlerList = new ArrayList<>();
+    private MySQLConnector mysql;
+    private boolean sqlCredentialsRequired = false;
 
     /**
      * Creates new form MainMenuJP
@@ -47,6 +53,10 @@ public class MainMenuJP extends javax.swing.JPanel {
     
     public ArrayList<WebCrawler> getCrawlerList() {
         return crawlerList;
+    }
+    
+    public void setSQLCredentialsRequired(boolean value) {
+        sqlCredentialsRequired = value;
     }
     
     public void loadCrawlers() {
@@ -231,14 +241,22 @@ public class MainMenuJP extends javax.swing.JPanel {
                 for (String command: crawler.getCommands()) {
                     counter++;
                     statusTA.append("Command " + String.valueOf(counter) + ": " + command + "\n");
+                    CommandParser commandParser = new CommandParser(command);
+                    if (commandParser.getAction().equals("SQL")) {
+                        sqlCredentialsRequired = true;
+                        }
+                    }
                 }
-            }
         }
     }//GEN-LAST:event_crawlersCBActionPerformed
 
     private void crawlBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_crawlBTNActionPerformed
         // TODO add your handling code here:
         String baseUrl = "";
+        if (sqlCredentialsRequired) {
+            guiManager.setCurrentPanel(guiManager.findPanel("SQLCredentialsJP"));
+            return;
+        }   
         for (WebCrawler crawler: crawlerList) {
             if (crawlersCB.getSelectedItem().toString().equals(crawler.getName())) {
                 statusTA.setText("");
@@ -307,6 +325,29 @@ public class MainMenuJP extends javax.swing.JPanel {
                         else if (command.equals("Attribute")) {
                             response.addAll(parser.getAttributesFromDocument(result, commandParser.getObject()));
                             //crawler.addHtmlResponse(new SearchResult(response, commandParser.getCommandNo()));
+                        }
+                        else if (command.equals("SQL")) {
+                            File databaseSettings = new File("credentials.txt");
+                            try {
+                                BufferedReader reader = new BufferedReader(new FileReader(databaseSettings));
+                                List<String> credentials = new ArrayList<>();
+                                String line;
+                                while ((line = reader.readLine()) != null) {
+                                    credentials.add(line);
+                                    System.out.println("Reading line: " + line);
+                                }
+                                System.out.println("Changing panel...");
+                                System.out.println("Panel set.");
+                                mysql = new MySQLConnector(credentials.get(0), Integer.parseInt(credentials.get(1)), credentials.get(2),
+                                    String.valueOf(((SQLCredentialsJP)guiManager.findPanel("SQLCredentialsJP")).getUsername()),
+                                    String.valueOf(((SQLCredentialsJP)guiManager.findPanel("SQLCredentialsJP")).getPassword()));
+                                // prevent credentials lingering in memory
+                                ((SQLCredentialsJP)guiManager.findPanel("SQLCredentialsJP")).eraseCredentials();
+                            } catch (FileNotFoundException | ClassNotFoundException ex) {
+                                System.out.println(ex);
+                            } catch (IOException ex) {
+                                System.out.println(ex);
+                            }
                         }
                         else if (command.startsWith("Write")) {
                             File paragraphs = new File(result);

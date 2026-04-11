@@ -4,6 +4,10 @@
  */
 package com.security.academicinternshipproject;
 
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
+
 /**
  *
  * @author rokom
@@ -34,13 +38,9 @@ public class DatabaseSettingsJP extends javax.swing.JPanel {
         hostLBL = new javax.swing.JLabel();
         portLBL = new javax.swing.JLabel();
         dbNameLBL = new javax.swing.JLabel();
-        usernameLBL = new javax.swing.JLabel();
-        passwordLBL = new javax.swing.JLabel();
         portTF = new javax.swing.JTextField();
         hostTF = new javax.swing.JTextField();
         dbNameTF = new javax.swing.JTextField();
-        passwordTF = new javax.swing.JTextField();
-        usernameTF = new javax.swing.JTextField();
         okBTN = new javax.swing.JButton();
         backBTN = new javax.swing.JButton();
 
@@ -57,13 +57,12 @@ public class DatabaseSettingsJP extends javax.swing.JPanel {
         dbNameLBL.setForeground(new java.awt.Color(255, 255, 255));
         dbNameLBL.setText("Database Name:");
 
-        usernameLBL.setForeground(new java.awt.Color(255, 255, 255));
-        usernameLBL.setText("Username:");
-
-        passwordLBL.setForeground(new java.awt.Color(255, 255, 255));
-        passwordLBL.setText("Password:");
-
         okBTN.setText("OK");
+        okBTN.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                okBTNActionPerformed(evt);
+            }
+        });
 
         backBTN.setText("Back");
         backBTN.addActionListener(new java.awt.event.ActionListener() {
@@ -87,14 +86,6 @@ public class DatabaseSettingsJP extends javax.swing.JPanel {
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(passwordLBL)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(passwordTF, javax.swing.GroupLayout.PREFERRED_SIZE, 187, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(usernameLBL)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(usernameTF, javax.swing.GroupLayout.PREFERRED_SIZE, 187, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
                                 .addComponent(dbNameLBL, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(dbNameTF, javax.swing.GroupLayout.PREFERRED_SIZE, 187, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -106,7 +97,7 @@ public class DatabaseSettingsJP extends javax.swing.JPanel {
                                 .addComponent(portLBL)
                                 .addGap(105, 105, 105)
                                 .addComponent(portTF, javax.swing.GroupLayout.PREFERRED_SIZE, 187, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addContainerGap(180, Short.MAX_VALUE))))
+                        .addContainerGap(261, Short.MAX_VALUE))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -123,16 +114,7 @@ public class DatabaseSettingsJP extends javax.swing.JPanel {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(dbNameLBL)
                     .addComponent(dbNameTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(24, 24, 24)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(usernameLBL)
-                            .addComponent(usernameTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(31, 31, 31)
-                        .addComponent(passwordLBL))
-                    .addComponent(passwordTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 37, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 189, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(okBTN)
                     .addComponent(backBTN))
@@ -145,6 +127,22 @@ public class DatabaseSettingsJP extends javax.swing.JPanel {
         guiManager.setCurrentPanel(guiManager.findPanel("mainMenuJP"));
     }//GEN-LAST:event_backBTNActionPerformed
 
+    private void okBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_okBTNActionPerformed
+        // TODO add your handling code here:
+        File credentials = new File("credentials.txt");
+        try {
+            FileWriter writer = new FileWriter(credentials);
+            writer.write(hostTF.getText() + "\n");
+            writer.write(portTF.getText() + "\n");
+            writer.write(dbNameTF.getText());
+            writer.close();
+            System.out.println("Database settings written to file.");
+        } catch (IOException ex) {
+            System.out.println(ex);
+        }
+        
+    }//GEN-LAST:event_okBTNActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton backBTN;
@@ -153,11 +151,7 @@ public class DatabaseSettingsJP extends javax.swing.JPanel {
     private javax.swing.JLabel hostLBL;
     private javax.swing.JTextField hostTF;
     private javax.swing.JButton okBTN;
-    private javax.swing.JLabel passwordLBL;
-    private javax.swing.JTextField passwordTF;
     private javax.swing.JLabel portLBL;
     private javax.swing.JTextField portTF;
-    private javax.swing.JLabel usernameLBL;
-    private javax.swing.JTextField usernameTF;
     // End of variables declaration//GEN-END:variables
 }

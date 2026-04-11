@@ -106,13 +106,14 @@
     <Component class="javax.swing.JComboBox" name="commandCB">
       <Properties>
         <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-          <StringArray count="6">
+          <StringArray count="7">
             <StringItem index="0" value="Visit"/>
             <StringItem index="1" value="Search"/>
             <StringItem index="2" value="Text"/>
             <StringItem index="3" value="Attribute"/>
             <StringItem index="4" value="Write"/>
-            <StringItem index="5" value="Python"/>
+            <StringItem index="5" value="SQL"/>
+            <StringItem index="6" value="Python"/>
           </StringArray>
         </Property>
       </Properties>
