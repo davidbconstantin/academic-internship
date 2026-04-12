@@ -11,17 +11,21 @@ import com.microsoft.playwright.BrowserContext;
 import com.microsoft.playwright.BrowserType;
 import com.microsoft.playwright.Page;
 import com.microsoft.playwright.Playwright;
+import java.util.List;
+import java.io.BufferedInputStream;
+import java.io.BufferedReader;
 import java.io.EOFException;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
+import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.ObjectInputStream;
-import java.io.OutputStream;
 import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -31,6 +35,8 @@ public class MainMenuJP extends javax.swing.JPanel {
     
     private GUIManager guiManager;
     private ArrayList<WebCrawler> crawlerList = new ArrayList<>();
+    private MySQLConnector mysql;
+    private boolean sqlCredentialsRequired = false;
 
     /**
      * Creates new form MainMenuJP
@@ -47,6 +53,10 @@ public class MainMenuJP extends javax.swing.JPanel {
     
     public ArrayList<WebCrawler> getCrawlerList() {
         return crawlerList;
+    }
+    
+    public void setSQLCredentialsRequired(boolean value) {
+        sqlCredentialsRequired = value;
     }
     
     public void loadCrawlers() {
@@ -86,7 +96,6 @@ public class MainMenuJP extends javax.swing.JPanel {
     private void initComponents() {
 
         backBTN = new javax.swing.JButton();
-        okBTN = new javax.swing.JButton();
         crawlBTN = new javax.swing.JButton();
         configBTN = new javax.swing.JButton();
         crawlersCB = new javax.swing.JComboBox<>();
@@ -95,13 +104,17 @@ public class MainMenuJP extends javax.swing.JPanel {
         statusTA = new javax.swing.JTextArea();
         responsesLBL = new javax.swing.JLabel();
         responsesCB = new javax.swing.JComboBox<>();
+        dbSettingsBTN = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(51, 51, 255));
         setName("mainMenuJP"); // NOI18N
 
         backBTN.setText("Back");
-
-        okBTN.setText("OK");
+        backBTN.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                backBTNActionPerformed(evt);
+            }
+        });
 
         crawlBTN.setText("Crawl");
         crawlBTN.addActionListener(new java.awt.event.ActionListener() {
@@ -143,6 +156,13 @@ public class MainMenuJP extends javax.swing.JPanel {
             }
         });
 
+        dbSettingsBTN.setText("Database Settings");
+        dbSettingsBTN.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                dbSettingsBTNActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -150,14 +170,15 @@ public class MainMenuJP extends javax.swing.JPanel {
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(51, 51, 51)
+                        .addGap(19, 19, 19)
                         .addComponent(backBTN)
-                        .addGap(88, 88, 88)
+                        .addGap(31, 31, 31)
                         .addComponent(crawlBTN)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 40, Short.MAX_VALUE)
+                        .addGap(35, 35, 35)
                         .addComponent(configBTN)
-                        .addGap(41, 41, 41)
-                        .addComponent(okBTN))
+                        .addGap(63, 63, 63)
+                        .addComponent(dbSettingsBTN)
+                        .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
@@ -174,7 +195,7 @@ public class MainMenuJP extends javax.swing.JPanel {
                                 .addContainerGap()
                                 .addComponent(responsesCB, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(37, 37, 37)))
-                        .addComponent(jScrollPane1)))
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 389, Short.MAX_VALUE)))
                 .addGap(48, 48, 48))
         );
         layout.setVerticalGroup(
@@ -196,9 +217,9 @@ public class MainMenuJP extends javax.swing.JPanel {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 35, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(backBTN)
-                    .addComponent(okBTN)
                     .addComponent(crawlBTN)
-                    .addComponent(configBTN))
+                    .addComponent(configBTN)
+                    .addComponent(dbSettingsBTN))
                 .addGap(31, 31, 31))
         );
     }// </editor-fold>//GEN-END:initComponents
@@ -220,14 +241,22 @@ public class MainMenuJP extends javax.swing.JPanel {
                 for (String command: crawler.getCommands()) {
                     counter++;
                     statusTA.append("Command " + String.valueOf(counter) + ": " + command + "\n");
+                    CommandParser commandParser = new CommandParser(command);
+                    if (commandParser.getAction().equals("SQL")) {
+                        sqlCredentialsRequired = true;
+                        }
+                    }
                 }
-            }
         }
     }//GEN-LAST:event_crawlersCBActionPerformed
 
     private void crawlBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_crawlBTNActionPerformed
         // TODO add your handling code here:
         String baseUrl = "";
+        if (sqlCredentialsRequired) {
+            guiManager.setCurrentPanel(guiManager.findPanel("SQLCredentialsJP"));
+            return;
+        }   
         for (WebCrawler crawler: crawlerList) {
             if (crawlersCB.getSelectedItem().toString().equals(crawler.getName())) {
                 statusTA.setText("");
@@ -297,6 +326,29 @@ public class MainMenuJP extends javax.swing.JPanel {
                             response.addAll(parser.getAttributesFromDocument(result, commandParser.getObject()));
                             //crawler.addHtmlResponse(new SearchResult(response, commandParser.getCommandNo()));
                         }
+                        else if (command.equals("SQL")) {
+                            File databaseSettings = new File("credentials.txt");
+                            try {
+                                BufferedReader reader = new BufferedReader(new FileReader(databaseSettings));
+                                List<String> credentials = new ArrayList<>();
+                                String line;
+                                while ((line = reader.readLine()) != null) {
+                                    credentials.add(line);
+                                    System.out.println("Reading line: " + line);
+                                }
+                                System.out.println("Changing panel...");
+                                System.out.println("Panel set.");
+                                mysql = new MySQLConnector(credentials.get(0), Integer.parseInt(credentials.get(1)), credentials.get(2),
+                                    String.valueOf(((SQLCredentialsJP)guiManager.findPanel("SQLCredentialsJP")).getUsername()),
+                                    String.valueOf(((SQLCredentialsJP)guiManager.findPanel("SQLCredentialsJP")).getPassword()));
+                                // prevent credentials lingering in memory
+                                ((SQLCredentialsJP)guiManager.findPanel("SQLCredentialsJP")).eraseCredentials();
+                            } catch (FileNotFoundException | ClassNotFoundException ex) {
+                                System.out.println(ex);
+                            } catch (IOException ex) {
+                                System.out.println(ex);
+                            }
+                        }
                         else if (command.startsWith("Write")) {
                             File paragraphs = new File(result);
                             try {
@@ -355,14 +407,24 @@ public class MainMenuJP extends javax.swing.JPanel {
         }
     }//GEN-LAST:event_responsesCBActionPerformed
 
+    private void dbSettingsBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dbSettingsBTNActionPerformed
+        // TODO add your handling code here:
+        guiManager.setCurrentPanel(guiManager.findPanel("databaseSettingsJP"));
+    }//GEN-LAST:event_dbSettingsBTNActionPerformed
+
+    private void backBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backBTNActionPerformed
+        // TODO add your handling code here:
+        guiManager.setCurrentPanel(guiManager.findPanel("homeLandingJP"));
+    }//GEN-LAST:event_backBTNActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton backBTN;
     private javax.swing.JButton configBTN;
     private javax.swing.JButton crawlBTN;
     private javax.swing.JComboBox<String> crawlersCB;
+    private javax.swing.JButton dbSettingsBTN;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JButton okBTN;
     private javax.swing.JComboBox<String> responsesCB;
     private javax.swing.JLabel responsesLBL;
     private javax.swing.JLabel selectCrawlerLBL;

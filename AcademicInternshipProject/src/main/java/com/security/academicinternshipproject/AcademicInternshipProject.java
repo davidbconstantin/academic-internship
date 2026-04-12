@@ -19,26 +19,30 @@ public class AcademicInternshipProject {
         CrawlerConfigJP crawlerConfigPanel = new CrawlerConfigJP();
         MainMenuJP mainMenuPanel = new MainMenuJP();
         CrawlerScriptingJP crawlerScriptingPanel = new CrawlerScriptingJP();
+        DatabaseSettingsJP databaseSettingsPanel = new DatabaseSettingsJP();
+        SQLCredentialsJP sqlCredentialsPanel = new SQLCredentialsJP();
 
         homeLandingJP.setGuiManager(guiManager);
         crawlerConfigPanel.setGuiManager(guiManager);
         mainMenuPanel.setGuiManager(guiManager);
         crawlerScriptingPanel.setGuiManager(guiManager);
+        databaseSettingsPanel.setGuiManager(guiManager);
+        sqlCredentialsPanel.setGuiManager(guiManager);
 
         guiManager.addPanel(homeLandingJP);   // add landinig page first
         guiManager.addPanel(crawlerConfigPanel);
-        guiManager.addPanel(mainMenuPanel);
         guiManager.addPanel(crawlerScriptingPanel);
-
-        // 
-        guiManager.setCurrentPanel(homeLandingJP);
+        guiManager.addPanel(databaseSettingsPanel);
+        guiManager.addPanel(sqlCredentialsPanel);
+        guiManager.addPanel(mainMenuPanel);
 
         mainMenu.setTitle("Academic Internship Project");
         mainMenu.setMinimumSize(new Dimension(1020, 720));
         mainMenu.setSize(1020, 720);
-        mainMenu.setLocationRelativeTo(null);
-
+        mainMenu.setLocationRelativeTo(null);      
+        
         mainMenu.setGuiManager(guiManager);
+        guiManager.setCurrentPanel(homeLandingJP);
         mainMenu.setVisible(true);
     }
 }
