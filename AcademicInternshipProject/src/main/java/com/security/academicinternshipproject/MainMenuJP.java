@@ -37,6 +37,8 @@ public class MainMenuJP extends javax.swing.JPanel {
     private ArrayList<WebCrawler> crawlerList = new ArrayList<>();
     private MySQLConnector mysql;
     private boolean sqlCredentialsRequired = false;
+    private boolean newCrawler = false;
+    private WebCrawler selectedCrawler;
 
     /**
      * Creates new form MainMenuJP
@@ -57,6 +59,14 @@ public class MainMenuJP extends javax.swing.JPanel {
     
     public void setSQLCredentialsRequired(boolean value) {
         sqlCredentialsRequired = value;
+    }
+    
+    public boolean getIfNewCrawler() {
+        return newCrawler;
+    }
+    
+    public WebCrawler getSelectedCrawler() {
+        return selectedCrawler;
     }
     
     public void loadCrawlers() {
@@ -84,6 +94,7 @@ public class MainMenuJP extends javax.swing.JPanel {
             ex.printStackTrace();
             crawlersCB.setEnabled(false);
         }
+        crawlersCB.addItem("New Crawler...");
     }
 
     /**
@@ -234,6 +245,7 @@ public class MainMenuJP extends javax.swing.JPanel {
         statusTA.setText("");
         for (WebCrawler crawler: crawlerList) {
             if (crawlersCB.getSelectedItem().toString().equals(crawler.getName())) {
+                selectedCrawler = crawler;
                 statusTA.append("Name: " + crawler.getName() + "\n");
                 statusTA.append("User Agent: " + crawler.getUserAgent() + "\n");
                 statusTA.append("Crawl Delay: " + crawler.getCrawlDelay() + "\n");
@@ -247,6 +259,10 @@ public class MainMenuJP extends javax.swing.JPanel {
                         }
                     }
                 }
+            if (crawlersCB.getSelectedItem().toString().equals("New Crawler...")) {
+                System.out.println("Creating new crawler...");
+                newCrawler = true;
+            }
         }
     }//GEN-LAST:event_crawlersCBActionPerformed
 
@@ -336,13 +352,12 @@ public class MainMenuJP extends javax.swing.JPanel {
                                     credentials.add(line);
                                     System.out.println("Reading line: " + line);
                                 }
-                                System.out.println("Changing panel...");
-                                System.out.println("Panel set.");
                                 mysql = new MySQLConnector(credentials.get(0), Integer.parseInt(credentials.get(1)), credentials.get(2),
                                     String.valueOf(((SQLCredentialsJP)guiManager.findPanel("SQLCredentialsJP")).getUsername()),
                                     String.valueOf(((SQLCredentialsJP)guiManager.findPanel("SQLCredentialsJP")).getPassword()));
                                 // prevent credentials lingering in memory
                                 ((SQLCredentialsJP)guiManager.findPanel("SQLCredentialsJP")).eraseCredentials();
+                                response.add(mysql.getResult());
                             } catch (FileNotFoundException | ClassNotFoundException ex) {
                                 System.out.println(ex);
                             } catch (IOException ex) {

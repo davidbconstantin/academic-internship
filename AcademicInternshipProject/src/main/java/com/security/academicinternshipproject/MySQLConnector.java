@@ -16,8 +16,10 @@ import java.sql.Statement;
  * @author rokom
  */
 
-// placeholder method
 public class MySQLConnector {
+    
+    private String result;
+    
     public MySQLConnector(String host, int port, String databaseName, String userName, String password) throws ClassNotFoundException {
         Class.forName("com.mysql.cj.jdbc.Driver");
         try (final Connection connection = 
@@ -27,10 +29,15 @@ public class MySQLConnector {
             final ResultSet resultSet = statement.executeQuery("SELECT version() AS version")) {
             while (resultSet.next()) {
                 System.out.println("SQL Version: " + resultSet.getString("version"));
+                result = "SQL Version: " + resultSet.getString("version");
                 }        
             } catch (SQLException e) {
                 System.out.println("Connection failure.");
                     e.printStackTrace();
             }
+    }
+    
+    public String getResult() {
+        return result;
     }
 }

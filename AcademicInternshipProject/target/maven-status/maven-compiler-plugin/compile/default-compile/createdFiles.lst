@@ -22,6 +22,7 @@ com\security\academicinternshipproject\DatabaseSettingsJP$2.class
 com\security\academicinternshipproject\HomeLandingJP.class
 com\security\academicinternshipproject\CrawlerScriptingJP$6.class
 com\security\academicinternshipproject\MySQLConnector.class
+com\security\academicinternshipproject\CrawlerConfigJP$4.class
 com\security\academicinternshipproject\MainMenuJP$5.class
 com\security\academicinternshipproject\DatabaseSettingsJP.class
 com\security\academicinternshipproject\AcademicInternshipProject.class
@@ -31,3 +32,4 @@ com\security\academicinternshipproject\CrawlerScriptingJP$4.class
 com\security\academicinternshipproject\CrawlerConfigJP$2.class
 com\security\academicinternshipproject\CrawlerScriptingJP$2.class
 com\security\academicinternshipproject\MainMenuJP$3.class
+com\security\academicinternshipproject\CrawlerScriptingJP$7.class

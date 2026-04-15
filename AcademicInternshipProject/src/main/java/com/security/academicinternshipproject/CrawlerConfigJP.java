@@ -20,7 +20,7 @@ import javax.swing.SwingUtilities;
 public class CrawlerConfigJP extends javax.swing.JPanel {
 
     private GUIManager guiManager;
-    private WebCrawler newCrawler;
+    private WebCrawler newCrawler, selectedCrawler;
     /**
      * Creates new form CrawlerConfigJP
      */
@@ -45,6 +45,17 @@ public class CrawlerConfigJP extends javax.swing.JPanel {
             ex.printStackTrace();
         }
     }
+    
+    private void populateFields() {
+        selectedCrawler = ((MainMenuJP)guiManager.findPanel("mainMenuJP")).getSelectedCrawler();
+        System.out.println("Selected Crawler: " + selectedCrawler.getName());
+        if (!selectedCrawler.getName().equals("New Crawler...")) {
+            nameTF.setText(selectedCrawler.getName());
+            userAgentTF.setText(selectedCrawler.getUserAgent());
+            crawlDelaySP.setValue(selectedCrawler.getCrawlDelay());
+            scriptBTN.setEnabled(true);
+        }
+    }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -67,6 +78,15 @@ public class CrawlerConfigJP extends javax.swing.JPanel {
 
         setBackground(new java.awt.Color(51, 51, 255));
         setName("crawlerConfigJP"); // NOI18N
+        addAncestorListener(new javax.swing.event.AncestorListener() {
+            public void ancestorAdded(javax.swing.event.AncestorEvent evt) {
+                formAncestorAdded(evt);
+            }
+            public void ancestorMoved(javax.swing.event.AncestorEvent evt) {
+            }
+            public void ancestorRemoved(javax.swing.event.AncestorEvent evt) {
+            }
+        });
 
         backBTN.setText("Back");
         backBTN.addActionListener(new java.awt.event.ActionListener() {
@@ -156,7 +176,8 @@ public class CrawlerConfigJP extends javax.swing.JPanel {
 
     private void okBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_okBTNActionPerformed
         // TODO add your handling code here:
-        newCrawler = new WebCrawler(nameTF.getText(), userAgentTF.getText(), Integer.parseInt(crawlDelaySP.getValue().toString()));
+        if (selectedCrawler.getName().equals("New Crawler..."))
+            newCrawler = new WebCrawler(nameTF.getText(), userAgentTF.getText(), Integer.parseInt(crawlDelaySP.getValue().toString()));
         scriptBTN.setEnabled(true);
     }//GEN-LAST:event_okBTNActionPerformed
 
@@ -165,6 +186,11 @@ public class CrawlerConfigJP extends javax.swing.JPanel {
         guiManager.setCurrentPanel(guiManager.findPanel("crawlerScriptingJP"));
         ((CrawlerScriptingJP)guiManager.findPanel("crawlerScriptingJP")).setWebCrawler(newCrawler);      
     }//GEN-LAST:event_scriptBTNActionPerformed
+
+    private void formAncestorAdded(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_formAncestorAdded
+        // TODO add your handling code here:
+        populateFields();
+    }//GEN-LAST:event_formAncestorAdded
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

@@ -32,7 +32,6 @@ public class GUIManager {
     }
     
     public JPanel findPanel(String name) {
-        System.out.println("Panel list length: " + panelList.size());
         for (JPanel panel: panelList) {
             if (panel.getName().equals(name))
                 return panel;

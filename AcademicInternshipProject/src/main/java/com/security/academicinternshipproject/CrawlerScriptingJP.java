@@ -31,6 +31,28 @@ public class CrawlerScriptingJP extends javax.swing.JPanel {
     public WebCrawler getWebCrawler() {
         return currentCrawler;
     }
+    
+    public void populateFields() {
+        int counter = 0;
+        scriptTA.setText("");
+        for (String command: currentCrawler.getCommands()) {
+            counter++;
+            scriptTA.append("Command " + String.valueOf(counter) + ": " + command + "\n");
+        }
+        // populate combo box with commands that have been added thus far
+        if (currentCrawler != null)
+            if (!currentCrawler.getName().equals("New Crawler...")) {
+                counter = 0;
+                editCB.removeAllItems();
+                editCB.setEnabled(true);
+                for (String command: currentCrawler.getCommands()) {
+                    counter++;
+                    editCB.addItem("Command " + counter);
+                }
+                editCB.addItem("None");
+                editCB.setSelectedItem("None");
+            }     
+    }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -53,10 +75,21 @@ public class CrawlerScriptingJP extends javax.swing.JPanel {
         resultsRB = new javax.swing.JRadioButton();
         resultsCB = new javax.swing.JComboBox<>();
         urlhtmlRB = new javax.swing.JRadioButton();
+        editLBL = new javax.swing.JLabel();
+        editCB = new javax.swing.JComboBox<>();
 
         setBackground(new java.awt.Color(51, 51, 255));
         setName("crawlerScriptingJP"); // NOI18N
         setPreferredSize(new java.awt.Dimension(610, 390));
+        addAncestorListener(new javax.swing.event.AncestorListener() {
+            public void ancestorAdded(javax.swing.event.AncestorEvent evt) {
+                formAncestorAdded(evt);
+            }
+            public void ancestorMoved(javax.swing.event.AncestorEvent evt) {
+            }
+            public void ancestorRemoved(javax.swing.event.AncestorEvent evt) {
+            }
+        });
 
         chooseLBL.setForeground(new java.awt.Color(255, 255, 255));
         chooseLBL.setText("Choose Command:");
@@ -116,6 +149,11 @@ public class CrawlerScriptingJP extends javax.swing.JPanel {
             }
         });
 
+        editLBL.setForeground(new java.awt.Color(255, 255, 255));
+        editLBL.setText("Edit Command:");
+
+        editCB.setEnabled(false);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -125,17 +163,23 @@ public class CrawlerScriptingJP extends javax.swing.JPanel {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(commandCB, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(chooseLBL)
                             .addComponent(resultsRB)
-                            .addComponent(urlhtmlRB))
+                            .addComponent(urlhtmlRB)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(chooseLBL)
+                                    .addComponent(commandCB, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(36, 36, 36)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(editLBL, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(editCB, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(resultsCB, javax.swing.GroupLayout.Alignment.LEADING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(inputTF, javax.swing.GroupLayout.DEFAULT_SIZE, 237, Short.MAX_VALUE))
-                        .addGap(64, 64, 64)))
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(20, 20, 20)))
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 278, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(37, 37, 37))
             .addGroup(layout.createSequentialGroup()
                 .addGap(46, 46, 46)
@@ -152,9 +196,13 @@ public class CrawlerScriptingJP extends javax.swing.JPanel {
                 .addGap(36, 36, 36)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(chooseLBL)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(chooseLBL)
+                            .addComponent(editLBL))
                         .addGap(29, 29, 29)
-                        .addComponent(commandCB, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(commandCB, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(editCB, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(18, 18, 18)
                         .addComponent(urlhtmlRB)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -180,6 +228,8 @@ public class CrawlerScriptingJP extends javax.swing.JPanel {
 
     private void addBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addBTNActionPerformed
         // TODO add your handling code here:
+        currentCrawler = ((MainMenuJP)guiManager.findPanel("mainMenuJP")).getSelectedCrawler();
+        System.out.println("Current crawler: " + currentCrawler.getName());
         String commandToAdd = commandCB.getSelectedItem().toString();
         String object = "";
         if (urlhtmlRB.isSelected())
@@ -230,6 +280,14 @@ public class CrawlerScriptingJP extends javax.swing.JPanel {
         }
     }//GEN-LAST:event_resultsRBActionPerformed
 
+    private void formAncestorAdded(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_formAncestorAdded
+        // TODO add your handling code here:
+        currentCrawler = ((MainMenuJP)guiManager.findPanel("mainMenuJP")).getSelectedCrawler();
+        System.out.println("Current crawler: " + currentCrawler.getName());
+        if (!currentCrawler.getName().equals("New Crawler..."))
+            populateFields();
+    }//GEN-LAST:event_formAncestorAdded
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton addBTN;
@@ -237,6 +295,8 @@ public class CrawlerScriptingJP extends javax.swing.JPanel {
     private javax.swing.JLabel chooseLBL;
     private javax.swing.ButtonGroup commandBG;
     private javax.swing.JComboBox<String> commandCB;
+    private javax.swing.JComboBox<String> editCB;
+    private javax.swing.JLabel editLBL;
     private javax.swing.JTextField inputTF;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JButton okBTN;
