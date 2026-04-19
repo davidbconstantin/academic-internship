@@ -8,19 +8,6 @@
  */
 package com.security.academicinternshipproject;
 
-import com.microsoft.playwright.Browser;
-import com.microsoft.playwright.BrowserContext;
-import com.microsoft.playwright.BrowserType;
-import com.microsoft.playwright.Page;
-import com.microsoft.playwright.Playwright;
-import java.io.File;
-import java.io.FileWriter;
-import java.io.IOException;
-import java.io.OutputStream;
-import java.util.Scanner;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-
 /**
  *
  * @author rokom

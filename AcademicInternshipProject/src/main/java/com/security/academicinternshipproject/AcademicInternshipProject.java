@@ -1,5 +1,7 @@
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * https://docs.oracle.com/javase/tutorial/uiswing/layout/card.html - GUI design
+ * https://docs.oracle.com/javase/tutorial/uiswing/layout/group.html
  */
 
 package com.security.academicinternshipproject;

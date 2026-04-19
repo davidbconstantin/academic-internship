@@ -1,0 +1,10 @@
+Name: PerfectCrawler
+User Agent: Roko Matanovic/National College of Ireland/x23361212@student.ncirl.ie
+Crawl Delay: 5
+Command 1: Visit https://www.agriland.ie
+Command 2: Search a.articleContainer[href^=/farming-news]
+Command 3: Command #2 Attribute href
+Command 4: Command #3 Visit 
+Command 5: Search p[data-component=CoreParagraph]
+Command 6: Command #5 Text 
+Command 7: Write output.txt

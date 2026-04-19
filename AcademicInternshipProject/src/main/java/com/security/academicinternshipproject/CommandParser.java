@@ -60,4 +60,8 @@ public class CommandParser {
         return commandNo;
     }
     
+    public void setCommandNo(int number) {
+        commandNo = number;
+    }
+    
 }

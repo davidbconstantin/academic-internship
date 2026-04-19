@@ -38,7 +38,7 @@ public class MainMenuJP extends javax.swing.JPanel {
     private MySQLConnector mysql;
     private boolean sqlCredentialsRequired = false;
     private boolean newCrawler = false;
-    private WebCrawler selectedCrawler;
+    private WebCrawler selectedCrawler = new WebCrawler();
 
     /**
      * Creates new form MainMenuJP
@@ -75,26 +75,29 @@ public class MainMenuJP extends javax.swing.JPanel {
             FileInputStream crawlers = new FileInputStream("crawlers.dat");
             try {
                 ObjectInputStream ois = new ObjectInputStream(crawlers);
-                crawlersCB.setEnabled(true);
                 while (true) {
                     try {
                         crawlerList.add((WebCrawler)ois.readObject());
                     } catch (EOFException | ClassNotFoundException ex) {
-                        ex.printStackTrace();
+                        //ex.printStackTrace();
                         break;
                     }
                 }
                 for (WebCrawler crawler: crawlerList) {
-                    crawlersCB.addItem(crawler.getName());
+                    if (crawler != null)
+                        crawlersCB.addItem(crawler.getName());
                 }
             } catch (IOException ex) {
                 ex.printStackTrace();
             }
         } catch (FileNotFoundException ex) {
             ex.printStackTrace();
-            crawlersCB.setEnabled(false);
         }
         crawlersCB.addItem("New Crawler...");
+        if (crawlersCB.getSelectedItem().toString().equals("New Crawler...")) {
+            System.out.println("Creating new crawler...");
+            newCrawler = true;
+        }
     }
 
     /**
@@ -244,6 +247,7 @@ public class MainMenuJP extends javax.swing.JPanel {
         // TODO add your handling code here:
         statusTA.setText("");
         for (WebCrawler crawler: crawlerList) {
+            if (crawler != null)
             if (crawlersCB.getSelectedItem().toString().equals(crawler.getName())) {
                 selectedCrawler = crawler;
                 statusTA.append("Name: " + crawler.getName() + "\n");
@@ -261,6 +265,7 @@ public class MainMenuJP extends javax.swing.JPanel {
                 }
             if (crawlersCB.getSelectedItem().toString().equals("New Crawler...")) {
                 System.out.println("Creating new crawler...");
+                selectedCrawler = new WebCrawler();
                 newCrawler = true;
             }
         }

@@ -4,11 +4,13 @@ com\security\academicinternshipproject\MainMenuJP$4.class
 com\security\academicinternshipproject\DatabaseSettingsJP$1.class
 com\security\academicinternshipproject\SearchResult.class
 com\security\academicinternshipproject\SQLCredentialsJP$1.class
+com\security\academicinternshipproject\CrawlerScriptingJP$10.class
 com\security\academicinternshipproject\CrawlerConfigJP.class
 com\security\academicinternshipproject\CrawlerScriptingJP$5.class
 com\security\academicinternshipproject\MainMenuJP$2.class
 com\security\academicinternshipproject\MainMenuForm.class
 com\security\academicinternshipproject\JSoupParser.class
+com\security\academicinternshipproject\CrawlerScriptingJP$9.class
 com\security\academicinternshipproject\MainMenuJP$6.class
 com\security\academicinternshipproject\GUIManager.class
 com\security\academicinternshipproject\CrawlerConfigJP$3.class
@@ -21,6 +23,7 @@ com\security\academicinternshipproject\CrawlerScriptingJP$1.class
 com\security\academicinternshipproject\DatabaseSettingsJP$2.class
 com\security\academicinternshipproject\HomeLandingJP.class
 com\security\academicinternshipproject\CrawlerScriptingJP$6.class
+com\security\academicinternshipproject\CrawlerScriptingJP$8.class
 com\security\academicinternshipproject\MySQLConnector.class
 com\security\academicinternshipproject\CrawlerConfigJP$4.class
 com\security\academicinternshipproject\MainMenuJP$5.class

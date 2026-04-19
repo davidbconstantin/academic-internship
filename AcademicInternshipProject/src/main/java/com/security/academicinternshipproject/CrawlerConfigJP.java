@@ -37,8 +37,10 @@ public class CrawlerConfigJP extends javax.swing.JPanel {
         try {
             FileOutputStream fos = new FileOutputStream("crawlers.dat");
             ObjectOutputStream ostream = new ObjectOutputStream(fos);
-            for (WebCrawler crawler: ((MainMenuJP)guiManager.findPanel("mainMenuJP")).getCrawlerList()) {
-                ostream.writeObject(crawler);
+            if (((MainMenuJP)guiManager.findPanel("mainMenuJP")).getCrawlerList().size() > 1) {
+                for (WebCrawler crawler: ((MainMenuJP)guiManager.findPanel("mainMenuJP")).getCrawlerList()) {
+                    ostream.writeObject(crawler);
+                }
             }
             ostream.writeObject(newCrawler);
         } catch (IOException ex) {
