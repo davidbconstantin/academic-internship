@@ -13,7 +13,7 @@ import java.util.Arrays;
  */
 public class SQLCredentialsJP extends javax.swing.JPanel {
     
-    private GUIManager guiManager;
+    private MainMenuForm mainMenuForm;
     private char[] username;
     private char[] password;
     private boolean credentialsSet = false;
@@ -21,7 +21,8 @@ public class SQLCredentialsJP extends javax.swing.JPanel {
     /**
      * Creates new form SQLCredentialsJP
      */
-    public SQLCredentialsJP() {
+    public SQLCredentialsJP(MainMenuForm mainMenuForm) {
+        this.mainMenuForm = mainMenuForm;
         initComponents();
     }
     
@@ -35,16 +36,6 @@ public class SQLCredentialsJP extends javax.swing.JPanel {
     
     public boolean getAreCredentialsSet() {
         return credentialsSet;
-    }
-    
-    public void setGuiManager(GUIManager manager) {
-        guiManager = manager;
-    }
-    
-    public void eraseCredentials() {
-        Arrays.fill(username, '0');
-        Arrays.fill(password, '0');
-        credentialsSet = false;
     }
 
     /**
@@ -139,8 +130,8 @@ public class SQLCredentialsJP extends javax.swing.JPanel {
         credentialsSet = true;
         usernamePF.setText("");
         passwordPF.setText("");
-        ((MainMenuJP)(guiManager.findPanel("mainMenuJP"))).setSQLCredentialsRequired(false);
-        guiManager.setCurrentPanel(guiManager.findPanel("mainMenuJP"));
+        mainMenuForm.setSQLCredentialsRequired(false);
+        mainMenuForm.displayPanel("Main Menu");
     }//GEN-LAST:event_okBTNActionPerformed
 
 

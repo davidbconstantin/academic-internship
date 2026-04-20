@@ -6,7 +6,6 @@
 import com.security.academicinternshipproject.CrawlerConfigJP;
 import com.security.academicinternshipproject.CrawlerScriptingJP;
 import com.security.academicinternshipproject.DatabaseSettingsJP;
-import com.security.academicinternshipproject.GUIManager;
 import com.security.academicinternshipproject.HomeLandingJP;
 import com.security.academicinternshipproject.MainMenuForm;
 import com.security.academicinternshipproject.MainMenuJP;
@@ -32,12 +31,12 @@ public class CardLayoutTest {
         MainMenuForm mainMenu = new MainMenuForm();
 
         // initialise panels
-        HomeLandingJP homeLandingJP = new HomeLandingJP();   // landing page 
-        CrawlerConfigJP crawlerConfigPanel = new CrawlerConfigJP();
-        MainMenuJP mainMenuPanel = new MainMenuJP();
-        CrawlerScriptingJP crawlerScriptingPanel = new CrawlerScriptingJP();
-        DatabaseSettingsJP databaseSettingsPanel = new DatabaseSettingsJP();
-        SQLCredentialsJP sqlCredentialsPanel = new SQLCredentialsJP();
+        HomeLandingJP homeLandingJP = new HomeLandingJP(mainMenu);   // landing page 
+        CrawlerConfigJP crawlerConfigPanel = new CrawlerConfigJP(mainMenu);
+        MainMenuJP mainMenuPanel = new MainMenuJP(mainMenu);
+        CrawlerScriptingJP crawlerScriptingPanel = new CrawlerScriptingJP(mainMenu);
+        DatabaseSettingsJP databaseSettingsPanel = new DatabaseSettingsJP(mainMenu);
+        SQLCredentialsJP sqlCredentialsPanel = new SQLCredentialsJP(mainMenu);
 
         Container contentPane = mainMenu.getContentPane();
         contentPane.setLayout(new CardLayout());

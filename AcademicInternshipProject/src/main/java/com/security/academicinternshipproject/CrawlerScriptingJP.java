@@ -10,19 +10,16 @@ package com.security.academicinternshipproject;
  */
 public class CrawlerScriptingJP extends javax.swing.JPanel {
 
-    private GUIManager guiManager;
+    private MainMenuForm mainMenuForm;
     private WebCrawler currentCrawler;
     private int selectedCommandIndex = -1;
     
     /**
      * Creates new form CrawlerScriptingJP
      */
-    public CrawlerScriptingJP() {
+    public CrawlerScriptingJP(MainMenuForm mainMenuForm) {
+        this.mainMenuForm = mainMenuForm;
         initComponents();
-    }
-    
-    public void setGuiManager(GUIManager manager) {
-        guiManager = manager;
     }
     
     public void setWebCrawler(WebCrawler crawler) {
@@ -246,21 +243,20 @@ public class CrawlerScriptingJP extends javax.swing.JPanel {
 
     private void backBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backBTNActionPerformed
         // TODO add your handling code here:
-        guiManager.setCurrentPanel(guiManager.findPanel("crawlerConfigJP"));
+        mainMenuForm.displayPanel("Crawler Configuration");
     }//GEN-LAST:event_backBTNActionPerformed
 
     private void addBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addBTNActionPerformed
         // TODO add your handling code here:
-        currentCrawler = ((MainMenuJP)guiManager.findPanel("mainMenuJP")).getSelectedCrawler();
+        currentCrawler = mainMenuForm.getSelectedCrawler();
         System.out.println("Current crawler: " + currentCrawler.getName());
         currentCrawler.addCommand(composeCommand());
     }//GEN-LAST:event_addBTNActionPerformed
 
     private void okBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_okBTNActionPerformed
         // TODO add your handling code here:
-        ((CrawlerConfigJP)guiManager.findPanel("crawlerConfigJP")).writeCrawler();
+        mainMenuForm.writeCrawler();
         scriptTA.setText("Crawler ready to use.");   
-        ((MainMenuJP)guiManager.findPanel("mainMenuJP")).loadCrawlers();
     }//GEN-LAST:event_okBTNActionPerformed
 
     private void commandCBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_commandCBActionPerformed
@@ -291,7 +287,7 @@ public class CrawlerScriptingJP extends javax.swing.JPanel {
 
     private void formAncestorAdded(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_formAncestorAdded
         // TODO add your handling code here:
-        currentCrawler = ((MainMenuJP)guiManager.findPanel("mainMenuJP")).getSelectedCrawler();
+        currentCrawler = mainMenuForm.getSelectedCrawler();
         System.out.println("Current crawler: " + currentCrawler.getName());
         editBTN.setVisible(false);
         if (!currentCrawler.getName().equals("New Crawler..."))
@@ -301,7 +297,7 @@ public class CrawlerScriptingJP extends javax.swing.JPanel {
     private void editCBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_editCBActionPerformed
         // TODO add your handling code here:
         // find the command and parse it so it can be tweaked in the editor
-        currentCrawler = ((MainMenuJP)guiManager.findPanel("mainMenuJP")).getSelectedCrawler();
+        currentCrawler = mainMenuForm.getSelectedCrawler();
         editBTN.setVisible(true);
         int counter = 0;
         // clear input fields if "None" is selected
@@ -335,7 +331,7 @@ public class CrawlerScriptingJP extends javax.swing.JPanel {
 
     private void editBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_editBTNActionPerformed
         // TODO add your handling code here:
-        currentCrawler = ((MainMenuJP)guiManager.findPanel("mainMenuJP")).getSelectedCrawler();
+        currentCrawler = mainMenuForm.getSelectedCrawler();
         currentCrawler.editCommand(selectedCommandIndex, composeCommand());
     }//GEN-LAST:event_editBTNActionPerformed
 

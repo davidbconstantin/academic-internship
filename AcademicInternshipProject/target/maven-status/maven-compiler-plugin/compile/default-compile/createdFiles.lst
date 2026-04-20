@@ -12,9 +12,9 @@ com\security\academicinternshipproject\MainMenuForm.class
 com\security\academicinternshipproject\JSoupParser.class
 com\security\academicinternshipproject\CrawlerScriptingJP$9.class
 com\security\academicinternshipproject\MainMenuJP$6.class
-com\security\academicinternshipproject\GUIManager.class
 com\security\academicinternshipproject\CrawlerConfigJP$3.class
 com\security\academicinternshipproject\WebCrawler.class
+com\security\academicinternshipproject\MainMenuJP$7.class
 com\security\academicinternshipproject\CrawlerScriptingJP$3.class
 com\security\academicinternshipproject\CrawlerConfigJP$1.class
 com\security\academicinternshipproject\MainMenuForm$1.class

@@ -8,23 +8,154 @@
  */
 package com.security.academicinternshipproject;
 
+import java.awt.CardLayout;
+import java.awt.Container;
+import java.io.EOFException;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
+import java.util.Arrays;
+import java.util.List;
+import javax.swing.JPanel;
+
 /**
  *
  * @author rokom
  */
 public class MainMenuForm extends javax.swing.JFrame {
-    
-    private GUIManager guiManager;
 
     /**
      * Creates new form MainMenuForm
      */
+    private CardLayout cardLayout;
+//    private JPanel cardPanel;
+    
+    private List<WebCrawler> webCrawlers;
+    private WebCrawler selectedCrawler, newCrawler;
+    
+    private boolean sqlCredentialsRequired = true;
+    private boolean isNewCrawler = false;
+    private char[] username;
+    private char[] password;
+    
     public MainMenuForm() {
         initComponents();
+        Container contentPane = getContentPane();
+        cardLayout = (CardLayout) mainPanelJP.getLayout();
+        contentPane.setLayout(cardLayout);
+        
+        // initialise panels
+        HomeLandingJP homeLandingJP = new HomeLandingJP(this);   // landing page 
+        CrawlerConfigJP crawlerConfigPanel = new CrawlerConfigJP(this);
+        MainMenuJP mainMenuPanel = new MainMenuJP(this);
+        CrawlerScriptingJP crawlerScriptingPanel = new CrawlerScriptingJP(this);
+        DatabaseSettingsJP databaseSettingsPanel = new DatabaseSettingsJP(this);
+        SQLCredentialsJP sqlCredentialsPanel = new SQLCredentialsJP(this);
+        
+        // add panels to card layout
+        mainPanelJP.add(homeLandingJP, "Landing");
+        mainPanelJP.add(crawlerConfigPanel, "Crawler Configuration");
+        mainPanelJP.add(mainMenuPanel, "Main Menu");
+        mainPanelJP.add(crawlerScriptingPanel, "Crawler Scripting");
+        mainPanelJP.add(databaseSettingsPanel, "Database Settings");
+        mainPanelJP.add(sqlCredentialsPanel, "SQL Settings");
     }
     
-    public void setGuiManager(GUIManager manager) {
-        guiManager = manager;
+    public void displayPanel(String panelName) {
+        cardLayout.show(mainPanelJP, panelName);
+        System.out.println("Current panel: " + panelName);
+    }
+
+    public List<WebCrawler> getWebCrawlers() {
+        return webCrawlers;
+    }
+
+    public WebCrawler getSelectedCrawler() {
+        return selectedCrawler;
+    }
+    
+    public void setSelectedCrawler(WebCrawler crawler) {
+        selectedCrawler = crawler;
+    }
+    
+    public WebCrawler getNewCrawler() {
+        return newCrawler;
+    }
+
+    public boolean isSqlCredentialsRequired() {
+        return sqlCredentialsRequired;
+    }
+    
+    public void setSQLCredentialsRequired(boolean value) {
+        sqlCredentialsRequired = value;
+    }
+
+    public char[] getUsername() {
+        return username;
+    }
+
+    public char[] getPassword() {
+        return password;
+    }
+    
+    public boolean getIsNewCrawler() {
+        return isNewCrawler;
+    }
+    
+    public void eraseCredentials() {
+        Arrays.fill(username, '0');
+        Arrays.fill(password, '0');
+        sqlCredentialsRequired = false;
+    }
+    
+    public void writeCrawler() {
+        try {
+            FileOutputStream fos = new FileOutputStream("crawlers.dat");
+            ObjectOutputStream ostream = new ObjectOutputStream(fos);
+            if (webCrawlers.size() > 1) {
+                for (WebCrawler crawler: webCrawlers) {
+                    ostream.writeObject(crawler);
+                }
+            }
+            ostream.writeObject(newCrawler);
+        } catch (IOException ex) {
+            ex.printStackTrace();
+        }
+    }
+      
+    public void loadCrawlers(javax.swing.JComboBox crawlersCB) {
+        crawlersCB.removeAllItems();
+        try {
+            FileInputStream crawlers = new FileInputStream("crawlers.dat");
+            try {
+                ObjectInputStream ois = new ObjectInputStream(crawlers);
+                while (true) {
+                    try {
+                        webCrawlers.add((WebCrawler)ois.readObject());
+                    } catch (EOFException | ClassNotFoundException ex) {
+                        //ex.printStackTrace();
+                        break;
+                    }
+                }
+                for (WebCrawler crawler: webCrawlers) {
+                    if (crawler != null)
+                        crawlersCB.addItem(crawler.getName());
+                }
+            } catch (IOException ex) {
+                ex.printStackTrace();
+            }
+        } catch (FileNotFoundException ex) {
+            ex.printStackTrace();
+        }
+        crawlersCB.addItem("New Crawler...");
+        if (crawlersCB.getSelectedItem().toString().equals("New Crawler...")) {
+            System.out.println("Creating new crawler...");
+            isNewCrawler = true;
+            selectedCrawler = new WebCrawler();
+        }
     }
 
     /**
@@ -45,33 +176,17 @@ public class MainMenuForm extends javax.swing.JFrame {
 
         mainPanelJP.setBackground(new java.awt.Color(51, 51, 255));
         mainPanelJP.setName("mainPanelJP"); // NOI18N
-
-        javax.swing.GroupLayout mainPanelJPLayout = new javax.swing.GroupLayout(mainPanelJP);
-        mainPanelJP.setLayout(mainPanelJPLayout);
-        mainPanelJPLayout.setHorizontalGroup(
-            mainPanelJPLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 598, Short.MAX_VALUE)
-        );
-        mainPanelJPLayout.setVerticalGroup(
-            mainPanelJPLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 339, Short.MAX_VALUE)
-        );
+        mainPanelJP.setLayout(new java.awt.CardLayout());
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(mainPanelJP, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
+            .addComponent(mainPanelJP, javax.swing.GroupLayout.PREFERRED_SIZE, 610, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(mainPanelJP, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
+            .addComponent(mainPanelJP, javax.swing.GroupLayout.PREFERRED_SIZE, 351, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         pack();

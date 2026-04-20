@@ -19,37 +19,19 @@ import javax.swing.SwingUtilities;
  */
 public class CrawlerConfigJP extends javax.swing.JPanel {
 
-    private GUIManager guiManager;
+    private MainMenuForm mainMenuForm;
     private WebCrawler newCrawler, selectedCrawler;
     /**
      * Creates new form CrawlerConfigJP
      */
-    public CrawlerConfigJP() {
+    public CrawlerConfigJP(MainMenuForm mainMenuForm) {
+        this.mainMenuForm = mainMenuForm;
         initComponents();
         scriptBTN.setEnabled(false);
     }
     
-    public void setGuiManager(GUIManager manager) {
-        guiManager = manager;
-    }
-    
-    public void writeCrawler() {
-        try {
-            FileOutputStream fos = new FileOutputStream("crawlers.dat");
-            ObjectOutputStream ostream = new ObjectOutputStream(fos);
-            if (((MainMenuJP)guiManager.findPanel("mainMenuJP")).getCrawlerList().size() > 1) {
-                for (WebCrawler crawler: ((MainMenuJP)guiManager.findPanel("mainMenuJP")).getCrawlerList()) {
-                    ostream.writeObject(crawler);
-                }
-            }
-            ostream.writeObject(newCrawler);
-        } catch (IOException ex) {
-            ex.printStackTrace();
-        }
-    }
-    
     private void populateFields() {
-        selectedCrawler = ((MainMenuJP)guiManager.findPanel("mainMenuJP")).getSelectedCrawler();
+        selectedCrawler = mainMenuForm.getSelectedCrawler();
         System.out.println("Selected Crawler: " + selectedCrawler.getName());
         if (!selectedCrawler.getName().equals("New Crawler...")) {
             nameTF.setText(selectedCrawler.getName());
@@ -173,7 +155,7 @@ public class CrawlerConfigJP extends javax.swing.JPanel {
 
     private void backBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backBTNActionPerformed
         // TODO add your handling code here:
-        guiManager.setCurrentPanel(guiManager.findPanel("mainMenuJP"));      
+        mainMenuForm.displayPanel("Main Menu");
     }//GEN-LAST:event_backBTNActionPerformed
 
     private void okBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_okBTNActionPerformed
@@ -185,13 +167,13 @@ public class CrawlerConfigJP extends javax.swing.JPanel {
 
     private void scriptBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_scriptBTNActionPerformed
         // TODO add your handling code here:
-        guiManager.setCurrentPanel(guiManager.findPanel("crawlerScriptingJP"));
-        ((CrawlerScriptingJP)guiManager.findPanel("crawlerScriptingJP")).setWebCrawler(newCrawler);      
+        mainMenuForm.displayPanel("Crawler Scripting");
     }//GEN-LAST:event_scriptBTNActionPerformed
 
     private void formAncestorAdded(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_formAncestorAdded
         // TODO add your handling code here:
         populateFields();
+        System.out.println("Selected crawler: " + mainMenuForm.getSelectedCrawler());
     }//GEN-LAST:event_formAncestorAdded
 
 
