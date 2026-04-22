@@ -133,7 +133,6 @@ public class DatabaseSettingsJP extends javax.swing.JPanel {
             writer.write(portTF.getText() + "\n");
             writer.write(dbNameTF.getText());
             writer.close();
-            System.out.println("Database settings written to file.");
         } catch (IOException ex) {
             System.out.println(ex);
         }

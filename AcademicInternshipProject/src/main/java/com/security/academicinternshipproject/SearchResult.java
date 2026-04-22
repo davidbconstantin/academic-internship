@@ -20,7 +20,6 @@ public class SearchResult {
         this.results = new ArrayList<>();
         this.results.addAll(results);
         this.commandNo = commandNo;
-        System.out.println("Recording search results with command #" + commandNo);
     }
     
     public SearchResult(String result) {

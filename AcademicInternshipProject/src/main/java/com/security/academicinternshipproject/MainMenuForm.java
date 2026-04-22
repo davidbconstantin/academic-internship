@@ -17,6 +17,7 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import javax.swing.JPanel;
@@ -33,11 +34,11 @@ public class MainMenuForm extends javax.swing.JFrame {
     private CardLayout cardLayout;
 //    private JPanel cardPanel;
     
-    private List<WebCrawler> webCrawlers;
-    private WebCrawler selectedCrawler, newCrawler;
+    private List<WebCrawler> webCrawlers = new ArrayList<>();
+    private WebCrawler selectedCrawler;
     
-    private boolean sqlCredentialsRequired = true;
-    private boolean isNewCrawler = false;
+    private boolean sqlCredentialsRequired = false;
+    private boolean editMode = false;
     private char[] username;
     private char[] password;
     
@@ -62,11 +63,12 @@ public class MainMenuForm extends javax.swing.JFrame {
         mainPanelJP.add(crawlerScriptingPanel, "Crawler Scripting");
         mainPanelJP.add(databaseSettingsPanel, "Database Settings");
         mainPanelJP.add(sqlCredentialsPanel, "SQL Settings");
+        
+        selectedCrawler = new WebCrawler();
     }
     
     public void displayPanel(String panelName) {
         cardLayout.show(mainPanelJP, panelName);
-        System.out.println("Current panel: " + panelName);
     }
 
     public List<WebCrawler> getWebCrawlers() {
@@ -79,10 +81,6 @@ public class MainMenuForm extends javax.swing.JFrame {
     
     public void setSelectedCrawler(WebCrawler crawler) {
         selectedCrawler = crawler;
-    }
-    
-    public WebCrawler getNewCrawler() {
-        return newCrawler;
     }
 
     public boolean isSqlCredentialsRequired() {
@@ -101,8 +99,12 @@ public class MainMenuForm extends javax.swing.JFrame {
         return password;
     }
     
-    public boolean getIsNewCrawler() {
-        return isNewCrawler;
+    public boolean isEditMode() {
+        return editMode;
+    }
+    
+    public void setEditMode(boolean value) {
+        editMode = value;
     }
     
     public void eraseCredentials() {
@@ -120,7 +122,8 @@ public class MainMenuForm extends javax.swing.JFrame {
                     ostream.writeObject(crawler);
                 }
             }
-            ostream.writeObject(newCrawler);
+            ostream.writeObject(selectedCrawler);
+            webCrawlers.clear();
         } catch (IOException ex) {
             ex.printStackTrace();
         }
@@ -142,20 +145,22 @@ public class MainMenuForm extends javax.swing.JFrame {
                 }
                 for (WebCrawler crawler: webCrawlers) {
                     if (crawler != null)
+                    {
                         crawlersCB.addItem(crawler.getName());
+                    }
                 }
             } catch (IOException ex) {
                 ex.printStackTrace();
             }
         } catch (FileNotFoundException ex) {
-            ex.printStackTrace();
+            //ex.printStackTrace();
         }
         crawlersCB.addItem("New Crawler...");
         if (crawlersCB.getSelectedItem().toString().equals("New Crawler...")) {
-            System.out.println("Creating new crawler...");
-            isNewCrawler = true;
             selectedCrawler = new WebCrawler();
-        }
+            editMode = false;
+        } else
+            editMode = true;
     }
 
     /**

@@ -34,10 +34,7 @@ import javax.swing.JOptionPane;
 public class MainMenuJP extends javax.swing.JPanel {
     
     private MainMenuForm mainMenuForm;
-    private ArrayList<WebCrawler> crawlerList = new ArrayList<>();
     private MySQLConnector mysql;
-    private boolean sqlCredentialsRequired = false;
-    private boolean newCrawler = false;
 
     /**
      * Creates new form MainMenuJP
@@ -45,16 +42,6 @@ public class MainMenuJP extends javax.swing.JPanel {
     public MainMenuJP(MainMenuForm mainMenuForm) {
         this.mainMenuForm = mainMenuForm;
         initComponents();
-        // load crawlers
-        mainMenuForm.loadCrawlers(crawlersCB);
-    }
-    
-    public ArrayList<WebCrawler> getCrawlerList() {
-        return crawlerList;
-    }
-    
-    public boolean getIfNewCrawler() {
-        return newCrawler;
     }
 
     /**
@@ -205,17 +192,17 @@ public class MainMenuJP extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void configBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_configBTNActionPerformed
-        // TODO add your handling code here:
+        // TODO add your handling code here:        
         mainMenuForm.displayPanel("Crawler Configuration");
     }//GEN-LAST:event_configBTNActionPerformed
 
     private void crawlersCBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_crawlersCBActionPerformed
         // TODO add your handling code here:
         statusTA.setText("");
-        for (WebCrawler crawler: crawlerList) {
-            if (crawler != null)
+        for (WebCrawler crawler: mainMenuForm.getWebCrawlers()) {
             if (crawlersCB.getSelectedItem().toString().equals(crawler.getName())) {
                 mainMenuForm.setSelectedCrawler(crawler);
+                crawler.printInfo();
                 statusTA.append("Name: " + crawler.getName() + "\n");
                 statusTA.append("User Agent: " + crawler.getUserAgent() + "\n");
                 statusTA.append("Crawl Delay: " + crawler.getCrawlDelay() + "\n");
@@ -225,14 +212,13 @@ public class MainMenuJP extends javax.swing.JPanel {
                     statusTA.append("Command " + String.valueOf(counter) + ": " + command + "\n");
                     CommandParser commandParser = new CommandParser(command);
                     if (commandParser.getAction().equals("SQL")) {
-                        sqlCredentialsRequired = true;
+                        mainMenuForm.setSQLCredentialsRequired(true);
                         }
                     }
                 }
             if (crawlersCB.getSelectedItem().toString().equals("New Crawler...")) {
-                System.out.println("Creating new crawler...");
                 mainMenuForm.setSelectedCrawler(new WebCrawler());
-                newCrawler = true;
+                mainMenuForm.setEditMode(false);
             }
         }
     }//GEN-LAST:event_crawlersCBActionPerformed
@@ -240,11 +226,11 @@ public class MainMenuJP extends javax.swing.JPanel {
     private void crawlBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_crawlBTNActionPerformed
         // TODO add your handling code here:
         String baseUrl = "";
-        if (sqlCredentialsRequired) {
+        if (mainMenuForm.isSqlCredentialsRequired()) {
             mainMenuForm.displayPanel("SQL Settings");
             return;
         }   
-        for (WebCrawler crawler: crawlerList) {
+        for (WebCrawler crawler: mainMenuForm.getWebCrawlers()) {
             if (crawlersCB.getSelectedItem().toString().equals(crawler.getName())) {
                 statusTA.setText("");
                 Playwright playwright = Playwright.create();
@@ -264,14 +250,11 @@ public class MainMenuJP extends javax.swing.JPanel {
                     ArrayList<String> results = new ArrayList<>();
                     CommandParser commandParser = new CommandParser(command);
                     command = commandParser.getAction();
-                    System.out.println("Command #" + commandParser.getCommandNo() + ": " + command);
-                    System.out.println("Object Number: " + commandParser.getSubjectNo());
                     // if operating on a previous command's results
                     if (commandParser.getSubjectNo() > -1) {
                         int resultsIndex = commandParser.getSubjectNo() - 1;
                         // find the final results of a particular operation by looping through the crawler in reverse direction
                         for (int i = crawler.getHtmlResponses().size() - 1; i >= 0; i--) {
-                            System.out.println("Loop index: " + i);
                             // never evaluates true if subject number is -1
                             if (crawler.getHtmlResponses().get(i).getCommandNo() == commandParser.getSubjectNo()) {
                                 resultsIndex = i;
@@ -321,7 +304,6 @@ public class MainMenuJP extends javax.swing.JPanel {
                                 String line;
                                 while ((line = reader.readLine()) != null) {
                                     credentials.add(line);
-                                    System.out.println("Reading line: " + line);
                                 }
                                 mysql = new MySQLConnector(credentials.get(0), Integer.parseInt(credentials.get(1)), credentials.get(2),
                                     String.valueOf(mainMenuForm.getUsername()),
@@ -384,7 +366,7 @@ public class MainMenuJP extends javax.swing.JPanel {
         // look up crawler
         String targetName = crawlersCB.getSelectedItem().toString();
         WebCrawler target = null;
-        for (WebCrawler crawler: crawlerList) {
+        for (WebCrawler crawler: mainMenuForm.getWebCrawlers()) {
             if (crawler.getName().equals(targetName))
                 target = crawler;
         }

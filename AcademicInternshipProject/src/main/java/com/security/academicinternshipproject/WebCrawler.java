@@ -38,7 +38,7 @@ public class WebCrawler implements java.io.Serializable {
     }
     
     public WebCrawler() {
-        name = "New Crawler";
+        name = "New Crawler...";
         userAgent = "";
         crawlDelay = 0;
         urls = new ArrayList<>();
@@ -96,11 +96,20 @@ public class WebCrawler implements java.io.Serializable {
     
     public void addCommand(String command) {
         commands.add(command);
-        System.out.println("Adding command " + command);
     }
     
     public void editCommand(int index, String command) {
         commands.set(index, command);
     }
 
+    public void printInfo() {
+        System.out.println("Name: " + name);
+        System.out.println("User Agent: " + userAgent);
+        System.out.println("Crawl Delay: " + crawlDelay);
+        int counter = 0;
+        for (String command: commands) {
+            counter++;
+            System.out.println("Command " + counter + ": " + command);
+        }
+    }
 }
