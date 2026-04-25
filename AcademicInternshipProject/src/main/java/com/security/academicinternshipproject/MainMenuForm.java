@@ -117,7 +117,7 @@ public class MainMenuForm extends javax.swing.JFrame {
         try {
             FileOutputStream fos = new FileOutputStream("crawlers.dat");
             ObjectOutputStream ostream = new ObjectOutputStream(fos);
-            if (webCrawlers.size() > 1) {
+            if (webCrawlers.size() > 0) {
                 for (WebCrawler crawler: webCrawlers) {
                     ostream.writeObject(crawler);
                 }
@@ -130,6 +130,7 @@ public class MainMenuForm extends javax.swing.JFrame {
     }
       
     public void loadCrawlers(javax.swing.JComboBox crawlersCB) {
+        webCrawlers.clear();
         crawlersCB.removeAllItems();
         try {
             FileInputStream crawlers = new FileInputStream("crawlers.dat");

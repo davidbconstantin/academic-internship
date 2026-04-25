@@ -39,7 +39,15 @@ public class CrawlerScriptingJP extends javax.swing.JPanel {
                 counter++;
                 editCB.addItem("Command " + counter);
             }
-        }     
+        }
+        // enable remove button if there is at least one command already
+        if (!mainMenuForm.getSelectedCrawler().getCommands().isEmpty()) {
+            removeBTN.setVisible(true);
+            removeBTN.setEnabled(true);
+        } else {
+            removeBTN.setVisible(false);
+            removeBTN.setEnabled(false);
+        }
     }
 
     /**
@@ -66,6 +74,7 @@ public class CrawlerScriptingJP extends javax.swing.JPanel {
         editLBL = new javax.swing.JLabel();
         editCB = new javax.swing.JComboBox<>();
         editBTN = new javax.swing.JButton();
+        removeBTN = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(51, 51, 255));
         setName("crawlerScriptingJP"); // NOI18N
@@ -156,6 +165,14 @@ public class CrawlerScriptingJP extends javax.swing.JPanel {
             }
         });
 
+        removeBTN.setText("Remove Command");
+        removeBTN.setEnabled(false);
+        removeBTN.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                removeBTNActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -184,15 +201,17 @@ public class CrawlerScriptingJP extends javax.swing.JPanel {
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 278, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(37, 37, 37))
             .addGroup(layout.createSequentialGroup()
-                .addGap(46, 46, 46)
+                .addGap(15, 15, 15)
                 .addComponent(backBTN)
-                .addGap(59, 59, 59)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(addBTN)
-                .addGap(35, 35, 35)
+                .addGap(18, 18, 18)
                 .addComponent(editBTN)
+                .addGap(18, 18, 18)
+                .addComponent(removeBTN)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(okBTN)
-                .addGap(54, 54, 54))
+                .addGap(23, 23, 23))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -221,7 +240,8 @@ public class CrawlerScriptingJP extends javax.swing.JPanel {
                     .addComponent(addBTN)
                     .addComponent(okBTN)
                     .addComponent(backBTN)
-                    .addComponent(editBTN))
+                    .addComponent(editBTN)
+                    .addComponent(removeBTN))
                 .addGap(32, 32, 32))
         );
     }// </editor-fold>//GEN-END:initComponents
@@ -283,7 +303,8 @@ public class CrawlerScriptingJP extends javax.swing.JPanel {
         // clear input fields if "None" is selected
         if (editCB.getSelectedItem().equals("None")) {
             // placeholder
-        }
+        } else
+            editBTN.setEnabled(true);
         for (String command: mainMenuForm.getSelectedCrawler().getCommands()) {
             counter++;
             resultsCB.removeAllItems();
@@ -294,7 +315,7 @@ public class CrawlerScriptingJP extends javax.swing.JPanel {
             if (editCB.getSelectedIndex() == counter) {
                 commandCB.setSelectedItem(commandParser.getAction());
                 inputTF.setEnabled(true);
-                selectedCommandIndex = counter;
+                selectedCommandIndex = counter - 1;
                 if (commandParser.getSubjectNo() > -1) {
                     resultsCB.setEnabled(true);
                     resultsCB.setSelectedItem("Command #" + commandParser.getSubjectNo());
@@ -312,7 +333,14 @@ public class CrawlerScriptingJP extends javax.swing.JPanel {
     private void editBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_editBTNActionPerformed
         // TODO add your handling code here:
         mainMenuForm.getSelectedCrawler().editCommand(selectedCommandIndex, composeCommand());
+        populateFields();
     }//GEN-LAST:event_editBTNActionPerformed
+
+    private void removeBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_removeBTNActionPerformed
+        // TODO add your handling code here:
+        mainMenuForm.getSelectedCrawler().removeCommand(mainMenuForm.getSelectedCrawler().getCommands().size() - 1);
+        populateFields();
+    }//GEN-LAST:event_removeBTNActionPerformed
 
     private String composeCommand() {
         String commandToAdd = commandCB.getSelectedItem().toString();
@@ -338,6 +366,7 @@ public class CrawlerScriptingJP extends javax.swing.JPanel {
     private javax.swing.JTextField inputTF;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JButton okBTN;
+    private javax.swing.JButton removeBTN;
     private javax.swing.JComboBox<String> resultsCB;
     private javax.swing.JRadioButton resultsRB;
     private javax.swing.JTextArea scriptTA;

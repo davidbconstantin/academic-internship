@@ -101,6 +101,10 @@ public class WebCrawler implements java.io.Serializable {
     public void editCommand(int index, String command) {
         commands.set(index, command);
     }
+    
+    public void removeCommand(int index) {
+        commands.remove(index);
+    }
 
     public void printInfo() {
         System.out.println("Name: " + name);

@@ -35,6 +35,11 @@ public class CrawlerConfigJP extends javax.swing.JPanel {
             userAgentTF.setText(mainMenuForm.getSelectedCrawler().getUserAgent());
             crawlDelaySP.setValue(mainMenuForm.getSelectedCrawler().getCrawlDelay());
             scriptBTN.setEnabled(true);
+        } else {
+            nameTF.setText("");
+            userAgentTF.setText("");
+            crawlDelaySP.setValue(0);
+            scriptBTN.setEnabled(false);
         }
     }
 
