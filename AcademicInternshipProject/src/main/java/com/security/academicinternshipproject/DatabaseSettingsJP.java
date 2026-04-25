@@ -14,16 +14,13 @@ import java.io.IOException;
  */
 public class DatabaseSettingsJP extends javax.swing.JPanel {
 
-    private GUIManager guiManager;
+    private MainMenuForm mainMenuForm;
     /**
      * Creates new form DatabaseSettingsJP
      */
-    public DatabaseSettingsJP() {
+    public DatabaseSettingsJP(MainMenuForm mainMenuForm) {
+        this.mainMenuForm = mainMenuForm;
         initComponents();
-    }
-    
-    public void setGuiManager(GUIManager manager) {
-        guiManager = manager;
     }
 
     /**
@@ -124,7 +121,7 @@ public class DatabaseSettingsJP extends javax.swing.JPanel {
 
     private void backBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backBTNActionPerformed
         // TODO add your handling code here:
-        guiManager.setCurrentPanel(guiManager.findPanel("mainMenuJP"));
+        mainMenuForm.displayPanel("Main Menu");
     }//GEN-LAST:event_backBTNActionPerformed
 
     private void okBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_okBTNActionPerformed
@@ -136,7 +133,6 @@ public class DatabaseSettingsJP extends javax.swing.JPanel {
             writer.write(portTF.getText() + "\n");
             writer.write(dbNameTF.getText());
             writer.close();
-            System.out.println("Database settings written to file.");
         } catch (IOException ex) {
             System.out.println(ex);
         }

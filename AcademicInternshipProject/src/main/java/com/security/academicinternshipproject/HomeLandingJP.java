@@ -22,20 +22,17 @@ import javax.swing.JPanel;
 
 public class HomeLandingJP extends JPanel {
 
-    private GUIManager guiManager;
+    private MainMenuForm mainMenuForm;
     private final JLabel savedCrawlersValue = new JLabel("0");
     private final JLabel statusValue = new JLabel("Ready");
 
-    public HomeLandingJP() {
+    public HomeLandingJP(MainMenuForm mainMenuForm) {
+        this.mainMenuForm = mainMenuForm;
         setName("homeLandingJP");
         buildUI();
         refreshStats();
     }
-
-    public void setGuiManager(GUIManager guiManager) {
-        this.guiManager = guiManager;
-    }
-
+    
     private void buildUI() {
 
         setBackground(new Color(51,51,255));
@@ -169,25 +166,25 @@ public class HomeLandingJP extends JPanel {
 
     private void openPanel(String panelName) {
 
-        if(guiManager == null){
-            JOptionPane.showMessageDialog(this,"GUI manager not ready");
-            return;
-        }
-
-        JPanel panel = guiManager.findPanel(panelName);
-
-        if(panel == null){
-            JOptionPane.showMessageDialog(this,"Panel not found: " + panelName);
-            return;
-        }
-
-        statusValue.setText(panelName);
-
-        if("mainMenuJP".equals(panelName) && panel instanceof MainMenuJP){
-            //((MainMenuJP)panel).loadCrawlers();
-        }
-
-        guiManager.setCurrentPanel(panel);
+//        if(guiManager == null){
+//            JOptionPane.showMessageDialog(this,"GUI manager not ready");
+//            return;
+//        }
+//
+//        JPanel panel = guiManager.findPanel(panelName);
+//
+//        if(panel == null){
+//            JOptionPane.showMessageDialog(this,"Panel not found: " + panelName);
+//            return;
+//        }
+//
+//        statusValue.setText(panelName);
+//
+//        if("mainMenuJP".equals(panelName) && panel instanceof MainMenuJP){
+//            //((MainMenuJP)panel).loadCrawlers();
+//        }
+//
+//        guiManager.setCurrentPanel(panel);
     }
 
     public final void refreshStats() {

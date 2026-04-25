@@ -38,9 +38,7 @@ public class JSoupParser {
     }
     
     public String getTextFromDocument(String htmlMarkup) {
-        System.out.println("Extracting text...");
             Document doc = Jsoup.parse(htmlMarkup);
-            System.out.println("Adding paragraph: " + doc.text());
             return doc.text();
     }
    
@@ -51,9 +49,6 @@ public class JSoupParser {
         for (Element element: elements) {
             if (element.hasAttr(searchTerm))
                 paragraphs.add(element.attr(searchTerm));
-        }
-        for (String result: paragraphs) {
-            //System.out.println("Result: " + result);
         }
         return paragraphs;
     }

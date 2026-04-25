@@ -19,41 +19,27 @@ import javax.swing.SwingUtilities;
  */
 public class CrawlerConfigJP extends javax.swing.JPanel {
 
-    private GUIManager guiManager;
-    private WebCrawler newCrawler, selectedCrawler;
+    private MainMenuForm mainMenuForm;
     /**
      * Creates new form CrawlerConfigJP
      */
-    public CrawlerConfigJP() {
+    public CrawlerConfigJP(MainMenuForm mainMenuForm) {
+        this.mainMenuForm = mainMenuForm;
         initComponents();
         scriptBTN.setEnabled(false);
     }
     
-    public void setGuiManager(GUIManager manager) {
-        guiManager = manager;
-    }
-    
-    public void writeCrawler() {
-        try {
-            FileOutputStream fos = new FileOutputStream("crawlers.dat");
-            ObjectOutputStream ostream = new ObjectOutputStream(fos);
-            for (WebCrawler crawler: ((MainMenuJP)guiManager.findPanel("mainMenuJP")).getCrawlerList()) {
-                ostream.writeObject(crawler);
-            }
-            ostream.writeObject(newCrawler);
-        } catch (IOException ex) {
-            ex.printStackTrace();
-        }
-    }
-    
     private void populateFields() {
-        selectedCrawler = ((MainMenuJP)guiManager.findPanel("mainMenuJP")).getSelectedCrawler();
-        System.out.println("Selected Crawler: " + selectedCrawler.getName());
-        if (!selectedCrawler.getName().equals("New Crawler...")) {
-            nameTF.setText(selectedCrawler.getName());
-            userAgentTF.setText(selectedCrawler.getUserAgent());
-            crawlDelaySP.setValue(selectedCrawler.getCrawlDelay());
+        if (mainMenuForm.isEditMode()) {
+            nameTF.setText(mainMenuForm.getSelectedCrawler().getName());
+            userAgentTF.setText(mainMenuForm.getSelectedCrawler().getUserAgent());
+            crawlDelaySP.setValue(mainMenuForm.getSelectedCrawler().getCrawlDelay());
             scriptBTN.setEnabled(true);
+        } else {
+            nameTF.setText("");
+            userAgentTF.setText("");
+            crawlDelaySP.setValue(0);
+            scriptBTN.setEnabled(false);
         }
     }
 
@@ -112,6 +98,7 @@ public class CrawlerConfigJP extends javax.swing.JPanel {
         userAgentLBL.setText("User Agent:");
 
         scriptBTN.setText("Script Behaviour");
+        scriptBTN.setEnabled(false);
         scriptBTN.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 scriptBTNActionPerformed(evt);
@@ -171,20 +158,22 @@ public class CrawlerConfigJP extends javax.swing.JPanel {
 
     private void backBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backBTNActionPerformed
         // TODO add your handling code here:
-        guiManager.setCurrentPanel(guiManager.findPanel("mainMenuJP"));      
+        mainMenuForm.displayPanel("Main Menu");
     }//GEN-LAST:event_backBTNActionPerformed
 
     private void okBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_okBTNActionPerformed
         // TODO add your handling code here:
-        if (selectedCrawler.getName().equals("New Crawler..."))
-            newCrawler = new WebCrawler(nameTF.getText(), userAgentTF.getText(), Integer.parseInt(crawlDelaySP.getValue().toString()));
+        mainMenuForm.getSelectedCrawler().setName(nameTF.getText());
+        mainMenuForm.getSelectedCrawler().setUserAgent(userAgentTF.getText());
+        mainMenuForm.getSelectedCrawler().setCrawlDelay(Integer.parseInt(crawlDelaySP.getValue().toString()));
+        if (mainMenuForm.isEditMode())
+            mainMenuForm.writeCrawler();
         scriptBTN.setEnabled(true);
     }//GEN-LAST:event_okBTNActionPerformed
 
     private void scriptBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_scriptBTNActionPerformed
         // TODO add your handling code here:
-        guiManager.setCurrentPanel(guiManager.findPanel("crawlerScriptingJP"));
-        ((CrawlerScriptingJP)guiManager.findPanel("crawlerScriptingJP")).setWebCrawler(newCrawler);      
+        mainMenuForm.displayPanel("Crawler Scripting");
     }//GEN-LAST:event_scriptBTNActionPerformed
 
     private void formAncestorAdded(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_formAncestorAdded

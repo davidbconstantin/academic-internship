@@ -33,68 +33,15 @@ import javax.swing.JOptionPane;
  */
 public class MainMenuJP extends javax.swing.JPanel {
     
-    private GUIManager guiManager;
-    private ArrayList<WebCrawler> crawlerList = new ArrayList<>();
+    private MainMenuForm mainMenuForm;
     private MySQLConnector mysql;
-    private boolean sqlCredentialsRequired = false;
-    private boolean newCrawler = false;
-    private WebCrawler selectedCrawler;
 
     /**
      * Creates new form MainMenuJP
      */
-    public MainMenuJP() {
+    public MainMenuJP(MainMenuForm mainMenuForm) {
+        this.mainMenuForm = mainMenuForm;
         initComponents();
-        // load crawlers
-        loadCrawlers();
-    }
-    
-    public void setGuiManager(GUIManager manager) {
-        guiManager = manager;
-    }
-    
-    public ArrayList<WebCrawler> getCrawlerList() {
-        return crawlerList;
-    }
-    
-    public void setSQLCredentialsRequired(boolean value) {
-        sqlCredentialsRequired = value;
-    }
-    
-    public boolean getIfNewCrawler() {
-        return newCrawler;
-    }
-    
-    public WebCrawler getSelectedCrawler() {
-        return selectedCrawler;
-    }
-    
-    public void loadCrawlers() {
-        crawlersCB.removeAllItems();
-        try {
-            FileInputStream crawlers = new FileInputStream("crawlers.dat");
-            try {
-                ObjectInputStream ois = new ObjectInputStream(crawlers);
-                crawlersCB.setEnabled(true);
-                while (true) {
-                    try {
-                        crawlerList.add((WebCrawler)ois.readObject());
-                    } catch (EOFException | ClassNotFoundException ex) {
-                        ex.printStackTrace();
-                        break;
-                    }
-                }
-                for (WebCrawler crawler: crawlerList) {
-                    crawlersCB.addItem(crawler.getName());
-                }
-            } catch (IOException ex) {
-                ex.printStackTrace();
-            }
-        } catch (FileNotFoundException ex) {
-            ex.printStackTrace();
-            crawlersCB.setEnabled(false);
-        }
-        crawlersCB.addItem("New Crawler...");
     }
 
     /**
@@ -119,6 +66,15 @@ public class MainMenuJP extends javax.swing.JPanel {
 
         setBackground(new java.awt.Color(51, 51, 255));
         setName("mainMenuJP"); // NOI18N
+        addAncestorListener(new javax.swing.event.AncestorListener() {
+            public void ancestorAdded(javax.swing.event.AncestorEvent evt) {
+                formAncestorAdded(evt);
+            }
+            public void ancestorMoved(javax.swing.event.AncestorEvent evt) {
+            }
+            public void ancestorRemoved(javax.swing.event.AncestorEvent evt) {
+            }
+        });
 
         backBTN.setText("Back");
         backBTN.addActionListener(new java.awt.event.ActionListener() {
@@ -236,16 +192,17 @@ public class MainMenuJP extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void configBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_configBTNActionPerformed
-        // TODO add your handling code here:
-        guiManager.setCurrentPanel(guiManager.findPanel("crawlerConfigJP"));
+        // TODO add your handling code here:        
+        mainMenuForm.displayPanel("Crawler Configuration");
     }//GEN-LAST:event_configBTNActionPerformed
 
     private void crawlersCBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_crawlersCBActionPerformed
         // TODO add your handling code here:
         statusTA.setText("");
-        for (WebCrawler crawler: crawlerList) {
+        for (WebCrawler crawler: mainMenuForm.getWebCrawlers()) {
             if (crawlersCB.getSelectedItem().toString().equals(crawler.getName())) {
-                selectedCrawler = crawler;
+                mainMenuForm.setSelectedCrawler(crawler);
+                crawler.printInfo();
                 statusTA.append("Name: " + crawler.getName() + "\n");
                 statusTA.append("User Agent: " + crawler.getUserAgent() + "\n");
                 statusTA.append("Crawl Delay: " + crawler.getCrawlDelay() + "\n");
@@ -255,13 +212,13 @@ public class MainMenuJP extends javax.swing.JPanel {
                     statusTA.append("Command " + String.valueOf(counter) + ": " + command + "\n");
                     CommandParser commandParser = new CommandParser(command);
                     if (commandParser.getAction().equals("SQL")) {
-                        sqlCredentialsRequired = true;
+                        mainMenuForm.setSQLCredentialsRequired(true);
                         }
                     }
                 }
             if (crawlersCB.getSelectedItem().toString().equals("New Crawler...")) {
-                System.out.println("Creating new crawler...");
-                newCrawler = true;
+                mainMenuForm.setSelectedCrawler(new WebCrawler());
+                mainMenuForm.setEditMode(false);
             }
         }
     }//GEN-LAST:event_crawlersCBActionPerformed
@@ -269,11 +226,11 @@ public class MainMenuJP extends javax.swing.JPanel {
     private void crawlBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_crawlBTNActionPerformed
         // TODO add your handling code here:
         String baseUrl = "";
-        if (sqlCredentialsRequired) {
-            guiManager.setCurrentPanel(guiManager.findPanel("SQLCredentialsJP"));
+        if (mainMenuForm.isSqlCredentialsRequired()) {
+            mainMenuForm.displayPanel("SQL Settings");
             return;
         }   
-        for (WebCrawler crawler: crawlerList) {
+        for (WebCrawler crawler: mainMenuForm.getWebCrawlers()) {
             if (crawlersCB.getSelectedItem().toString().equals(crawler.getName())) {
                 statusTA.setText("");
                 Playwright playwright = Playwright.create();
@@ -293,14 +250,11 @@ public class MainMenuJP extends javax.swing.JPanel {
                     ArrayList<String> results = new ArrayList<>();
                     CommandParser commandParser = new CommandParser(command);
                     command = commandParser.getAction();
-                    System.out.println("Command #" + commandParser.getCommandNo() + ": " + command);
-                    System.out.println("Object Number: " + commandParser.getSubjectNo());
                     // if operating on a previous command's results
                     if (commandParser.getSubjectNo() > -1) {
                         int resultsIndex = commandParser.getSubjectNo() - 1;
                         // find the final results of a particular operation by looping through the crawler in reverse direction
                         for (int i = crawler.getHtmlResponses().size() - 1; i >= 0; i--) {
-                            System.out.println("Loop index: " + i);
                             // never evaluates true if subject number is -1
                             if (crawler.getHtmlResponses().get(i).getCommandNo() == commandParser.getSubjectNo()) {
                                 resultsIndex = i;
@@ -350,13 +304,12 @@ public class MainMenuJP extends javax.swing.JPanel {
                                 String line;
                                 while ((line = reader.readLine()) != null) {
                                     credentials.add(line);
-                                    System.out.println("Reading line: " + line);
                                 }
                                 mysql = new MySQLConnector(credentials.get(0), Integer.parseInt(credentials.get(1)), credentials.get(2),
-                                    String.valueOf(((SQLCredentialsJP)guiManager.findPanel("SQLCredentialsJP")).getUsername()),
-                                    String.valueOf(((SQLCredentialsJP)guiManager.findPanel("SQLCredentialsJP")).getPassword()));
+                                    String.valueOf(mainMenuForm.getUsername()),
+                                    String.valueOf(mainMenuForm.getPassword()));
                                 // prevent credentials lingering in memory
-                                ((SQLCredentialsJP)guiManager.findPanel("SQLCredentialsJP")).eraseCredentials();
+                                mainMenuForm.eraseCredentials();
                                 response.add(mysql.getResult());
                             } catch (FileNotFoundException | ClassNotFoundException ex) {
                                 System.out.println(ex);
@@ -413,7 +366,7 @@ public class MainMenuJP extends javax.swing.JPanel {
         // look up crawler
         String targetName = crawlersCB.getSelectedItem().toString();
         WebCrawler target = null;
-        for (WebCrawler crawler: crawlerList) {
+        for (WebCrawler crawler: mainMenuForm.getWebCrawlers()) {
             if (crawler.getName().equals(targetName))
                 target = crawler;
         }
@@ -424,13 +377,18 @@ public class MainMenuJP extends javax.swing.JPanel {
 
     private void dbSettingsBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dbSettingsBTNActionPerformed
         // TODO add your handling code here:
-        guiManager.setCurrentPanel(guiManager.findPanel("databaseSettingsJP"));
+        mainMenuForm.displayPanel("Database Settings");
     }//GEN-LAST:event_dbSettingsBTNActionPerformed
 
     private void backBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backBTNActionPerformed
         // TODO add your handling code here:
-        guiManager.setCurrentPanel(guiManager.findPanel("homeLandingJP"));
+        mainMenuForm.displayPanel("Landing");
     }//GEN-LAST:event_backBTNActionPerformed
+
+    private void formAncestorAdded(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_formAncestorAdded
+        // TODO add your handling code here:
+        mainMenuForm.loadCrawlers(crawlersCB);
+    }//GEN-LAST:event_formAncestorAdded
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
