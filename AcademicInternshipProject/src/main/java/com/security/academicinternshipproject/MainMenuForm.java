@@ -55,6 +55,7 @@ public class MainMenuForm extends javax.swing.JFrame {
         CrawlerScriptingJP crawlerScriptingPanel = new CrawlerScriptingJP(this);
         DatabaseSettingsJP databaseSettingsPanel = new DatabaseSettingsJP(this);
         SQLCredentialsJP sqlCredentialsPanel = new SQLCredentialsJP(this);
+        SQLDatabaseJP sqlDatabasePanel = new SQLDatabaseJP(this);
         
         // add panels to card layout
         mainPanelJP.add(homeLandingJP, "Landing");
@@ -63,6 +64,7 @@ public class MainMenuForm extends javax.swing.JFrame {
         mainPanelJP.add(crawlerScriptingPanel, "Crawler Scripting");
         mainPanelJP.add(databaseSettingsPanel, "Database Settings");
         mainPanelJP.add(sqlCredentialsPanel, "SQL Settings");
+        mainPanelJP.add(sqlDatabasePanel, "SQL Database");
         
         selectedCrawler = new WebCrawler();
     }
