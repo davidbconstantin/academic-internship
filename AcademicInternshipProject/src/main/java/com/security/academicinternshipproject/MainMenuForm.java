@@ -10,10 +10,13 @@ package com.security.academicinternshipproject;
 
 import java.awt.CardLayout;
 import java.awt.Container;
+import java.io.BufferedReader;
 import java.io.EOFException;
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
+import java.io.FileReader;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
@@ -36,6 +39,8 @@ public class MainMenuForm extends javax.swing.JFrame {
     
     private List<WebCrawler> webCrawlers = new ArrayList<>();
     private WebCrawler selectedCrawler;
+    private MySQLConnector sql;
+    private List<String> sqlCredentials = new ArrayList<>();
     
     private boolean sqlCredentialsRequired = false;
     private boolean editMode = false;
@@ -67,6 +72,9 @@ public class MainMenuForm extends javax.swing.JFrame {
         mainPanelJP.add(sqlDatabasePanel, "SQL Database");
         
         selectedCrawler = new WebCrawler();
+        
+        // load SQL database settings
+        loadSQLCredentials();
     }
     
     public void displayPanel(String panelName) {
@@ -103,6 +111,10 @@ public class MainMenuForm extends javax.swing.JFrame {
     
     public boolean isEditMode() {
         return editMode;
+    }
+    
+    public MySQLConnector getMySQL() {
+        return sql;
     }
     
     public void setEditMode(boolean value) {
@@ -164,6 +176,26 @@ public class MainMenuForm extends javax.swing.JFrame {
             editMode = false;
         } else
             editMode = true;
+    }
+    
+    public void loadSQLCredentials() {
+        File databaseSettings = new File("credentials.txt");
+        sqlCredentials.clear();
+        try {
+            BufferedReader reader = new BufferedReader(new FileReader(databaseSettings));
+            String line;
+            while ((line = reader.readLine()) != null) {
+                sqlCredentials.add(line);
+            }
+        } catch (FileNotFoundException ex) {
+            System.out.println(ex);
+            } catch (IOException ex) {
+                System.out.println(ex);
+            }
+    }
+    
+    public List<String> getSQLCredentials() {
+        return sqlCredentials;
     }
 
     /**

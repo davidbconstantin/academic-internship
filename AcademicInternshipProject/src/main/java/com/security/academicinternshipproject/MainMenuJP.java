@@ -41,6 +41,7 @@ public class MainMenuJP extends javax.swing.JPanel {
      */
     public MainMenuJP(MainMenuForm mainMenuForm) {
         this.mainMenuForm = mainMenuForm;
+        mysql = mainMenuForm.getMySQL();
         initComponents();
     }
 
@@ -297,25 +298,17 @@ public class MainMenuJP extends javax.swing.JPanel {
                             //crawler.addHtmlResponse(new SearchResult(response, commandParser.getCommandNo()));
                         }
                         else if (command.equals("SQL")) {
-                            File databaseSettings = new File("credentials.txt");
                             try {
-                                BufferedReader reader = new BufferedReader(new FileReader(databaseSettings));
-                                List<String> credentials = new ArrayList<>();
-                                String line;
-                                while ((line = reader.readLine()) != null) {
-                                    credentials.add(line);
-                                }
+                                List<String> credentials = mainMenuForm.getSQLCredentials();
                                 mysql = new MySQLConnector(credentials.get(0), Integer.parseInt(credentials.get(1)), credentials.get(2),
                                     String.valueOf(mainMenuForm.getUsername()),
                                     String.valueOf(mainMenuForm.getPassword()));
                                 // prevent credentials lingering in memory
                                 mainMenuForm.eraseCredentials();
                                 response.add(mysql.getResult());
-                            } catch (FileNotFoundException | ClassNotFoundException ex) {
+                            } catch (ClassNotFoundException ex) {
                                 System.out.println(ex);
-                            } catch (IOException ex) {
-                                System.out.println(ex);
-                            }
+                            } 
                         }
                         else if (command.startsWith("Write")) {
                             File paragraphs = new File(result);

@@ -2,6 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  * based on https://aiven.io/docs/products/mysql/howto/connect-with-java
+ * https://www.tutorialspoint.com/java_mysql/java_mysql_create_tables.htm
  */
 package com.security.academicinternshipproject;
 
@@ -35,6 +36,19 @@ public class MySQLConnector {
                 System.out.println("Connection failure.");
                     e.printStackTrace();
             }
+    }
+    
+    public void executeUpdate(String host, int port, String databaseName, String userName, String password, String userStatement) throws ClassNotFoundException {
+        Class.forName("com.mysql.cj.jdbc.Driver");
+        try (final Connection connection = 
+            DriverManager.getConnection("jdbc:mysql://" + host + ":" + port + "/" + databaseName +
+                "?sslmode=require", userName, password);
+            final Statement statement = connection.createStatement()) {
+            statement.executeUpdate(userStatement); 
+            } catch (SQLException e) {
+                System.out.println("Connection failure.");
+                    e.printStackTrace();
+            }      
     }
     
     public String getResult() {

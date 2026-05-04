@@ -1,13 +1,21 @@
 package com.security.academicinternshipproject;
 
+import java.util.ArrayList;
+import java.util.List;
 import javax.swing.DefaultCellEditor;
 import javax.swing.JCheckBox;
 import javax.swing.JComboBox;
+import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableColumn;
+import javax.swing.table.TableModel;
 
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
+ * https://docs.oracle.com/javase/tutorial/uiswing/components/table.html#renderer
+ * https://www.tutorialspoint.com/article/java-program-to-append-a-row-to-a-jtable-in-java-swing
+ * https://docs.oracle.com/javase/tutorial/uiswing/components/table.html#modelchange
+ * https://dev.mysql.com/doc/refman/9.7/en/create-table.html
  */
 
 /**
@@ -17,12 +25,15 @@ import javax.swing.table.TableColumn;
 public class SQLDatabaseJP extends javax.swing.JPanel {
 
     private MainMenuForm mainMenuForm;
+    private boolean reentrancyGuard = false;
+    private int primaryKeyIndex = -1;
     /**
      * Creates new form SQLDatabaseJP
      */
     public SQLDatabaseJP(MainMenuForm mainMenuForm) {
         this.mainMenuForm = mainMenuForm;
         initComponents();
+        configureTable();
     }
 
     /**
@@ -42,6 +53,7 @@ public class SQLDatabaseJP extends javax.swing.JPanel {
         abortBTN = new javax.swing.JButton();
         okBTN = new javax.swing.JButton();
         addBTN = new javax.swing.JButton();
+        deleteBTN = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(0, 51, 255));
         setPreferredSize(new java.awt.Dimension(610, 390));
@@ -54,14 +66,14 @@ public class SQLDatabaseJP extends javax.swing.JPanel {
 
         columnsTBL.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null}
+                {null, null, null}
             },
             new String [] {
-                "Column Name", "Data Type", "Primary Key", "Auto-Increment"
+                "Column Name", "Data Type", "Primary Key"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.Object.class, java.lang.Object.class, java.lang.Boolean.class, java.lang.Boolean.class
+                java.lang.Object.class, java.lang.Object.class, java.lang.Boolean.class
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -88,6 +100,18 @@ public class SQLDatabaseJP extends javax.swing.JPanel {
         });
 
         addBTN.setText("Add Row");
+        addBTN.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                addBTNActionPerformed(evt);
+            }
+        });
+
+        deleteBTN.setText("Delete Row");
+        deleteBTN.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                deleteBTNActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -104,18 +128,21 @@ public class SQLDatabaseJP extends javax.swing.JPanel {
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(nameLBL)
                                 .addGap(31, 31, 31)
-                                .addComponent(nameTF, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(nameTF, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(0, 0, Short.MAX_VALUE))
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(abortBTN)
                                 .addGap(67, 67, 67)
                                 .addComponent(addBTN)
+                                .addGap(49, 49, 49)
+                                .addComponent(deleteBTN)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(okBTN)))))
                 .addGap(45, 45, 45))
             .addGroup(layout.createSequentialGroup()
                 .addGap(49, 49, 49)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(100, Short.MAX_VALUE))
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 343, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(218, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -132,7 +159,8 @@ public class SQLDatabaseJP extends javax.swing.JPanel {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(abortBTN)
                     .addComponent(okBTN)
-                    .addComponent(addBTN))
+                    .addComponent(addBTN)
+                    .addComponent(deleteBTN))
                 .addGap(30, 30, 30))
         );
     }// </editor-fold>//GEN-END:initComponents
@@ -144,14 +172,74 @@ public class SQLDatabaseJP extends javax.swing.JPanel {
 
     private void okBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_okBTNActionPerformed
         // TODO add your handling code here:
+        MySQLConnector sql = mainMenuForm.getMySQL();
+        List<String> credentials = new ArrayList<>();
+        List<String> tableRows = new ArrayList<>();
+        credentials = mainMenuForm.getSQLCredentials();
+        // get table row and column details
+        DefaultTableModel model = (DefaultTableModel)columnsTBL.getModel();
+        for (int i = 0; i < model.getRowCount(); i++) {
+            // tbc...
+        }
+        try {
+            sql = new MySQLConnector(credentials.get(0), Integer.parseInt(credentials.get(1)), credentials.get(2), String.valueOf(mainMenuForm.getUsername()), String.valueOf(mainMenuForm.getPassword()));
+        } catch (ClassNotFoundException ex) {
+            System.out.println(ex);
+        }
     }//GEN-LAST:event_okBTNActionPerformed
 
+    private void addBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addBTNActionPerformed
+        // TODO add your handling code here:
+        DefaultTableModel model = (DefaultTableModel)columnsTBL.getModel();
+        Object[] row = {null, null, null, null};
+        model.addRow(row);
+    }//GEN-LAST:event_addBTNActionPerformed
+
+    private void deleteBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteBTNActionPerformed
+        // TODO add your handling code here:
+        DefaultTableModel model = (DefaultTableModel)columnsTBL.getModel();
+        // prevent an out of bounds error
+        if (model.getRowCount() > 0)
+            model.removeRow(model.getRowCount() - 1);
+    }//GEN-LAST:event_deleteBTNActionPerformed
+
+    private void configureTable() {
+        DefaultTableModel model = (DefaultTableModel)columnsTBL.getModel();
+        model.addTableModelListener(new javax.swing.event.TableModelListener() {
+            @Override
+            public void tableChanged(javax.swing.event.TableModelEvent e) {
+                if (reentrancyGuard) {
+                    // exit method
+                    reentrancyGuard = false;
+                    return;
+                }
+                // check if primary key has already been set
+                for (int i = 0; i < model.getRowCount(); i++) {
+                    if (model.getValueAt(i, 2) != null)
+                    if ((boolean)model.getValueAt(i, 2) == true) {
+                        // record the primary key index if selecting it for the first time
+                        if (primaryKeyIndex == -1) {
+                            primaryKeyIndex = i;
+                        }
+                        if (i != primaryKeyIndex && primaryKeyIndex > -1) {
+                            // remove the check on the other box
+                            int oldIndex = primaryKeyIndex;
+                            primaryKeyIndex = i;
+                            reentrancyGuard = true;
+                            model.setValueAt(false, oldIndex, 2);
+                        }
+                    }
+                }
+            }
+        });
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton abortBTN;
     private javax.swing.JButton addBTN;
     private javax.swing.JTable columnsTBL;
     private String[] dataTypes = {"INT", "BIGINT", "VARCHAR", "TEXT", "DATE", "DATETIME", "DECIMAL", "FLOAT", "BOOLEAN", "TIMESTAMP"};
+    private javax.swing.JButton deleteBTN;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel nameLBL;
     private javax.swing.JTextField nameTF;
