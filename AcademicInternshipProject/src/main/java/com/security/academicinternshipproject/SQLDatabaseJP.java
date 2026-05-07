@@ -172,17 +172,46 @@ public class SQLDatabaseJP extends javax.swing.JPanel {
 
     private void okBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_okBTNActionPerformed
         // TODO add your handling code here:
+        // check if SQL credentials have been set
+        if (mainMenuForm.getUsername() == null || mainMenuForm.getPassword() == null) {
+            mainMenuForm.displayPanel("SQL Settings");
+            return;
+        }
         MySQLConnector sql = mainMenuForm.getMySQL();
         List<String> credentials = new ArrayList<>();
-        List<String> tableRows = new ArrayList<>();
+        String tableRow = "";
+        String sqlStatement = "CREATE TABLE " + nameTF.getText() + "(";
         credentials = mainMenuForm.getSQLCredentials();
         // get table row and column details
         DefaultTableModel model = (DefaultTableModel)columnsTBL.getModel();
         for (int i = 0; i < model.getRowCount(); i++) {
-            // tbc...
+            tableRow = "";
+            for (int j = 0; j < model.getColumnCount(); j++) {
+                // do not pass "true" or "false" to the SQL statement
+                if (model.getValueAt(i, j) != null && j != 2) {
+                    tableRow += model.getValueAt(i, j).toString() + " ";
+                    // specify default length if using varchar
+                    if (j == 1)
+                        if(model.getValueAt(i, j) == "VARCHAR" || model.getValueAt(i, j) == "VARBINARY")
+                            tableRow += "(255)";
+                }
+                // if the current column is the primary key one
+                if (j == 2 && model.getValueAt(i, j) != null)
+                    if ((boolean)model.getValueAt(i, j))
+                        tableRow += "PRIMARY KEY";
+            }
+            tableRow = tableRow.trim();
+            if (i != model.getRowCount() - 1)
+                tableRow += ",";    
+            sqlStatement += tableRow;
         }
-        try {
-            sql = new MySQLConnector(credentials.get(0), Integer.parseInt(credentials.get(1)), credentials.get(2), String.valueOf(mainMenuForm.getUsername()), String.valueOf(mainMenuForm.getPassword()));
+        sqlStatement += ");";
+        System.out.println("SQL Statement: " + sqlStatement);
+        try {             
+            sql = new MySQLConnector(credentials.get(0), Integer.parseInt(credentials.get(1)), credentials.get(2), String.valueOf(mainMenuForm.getUsername()), String.valueOf(mainMenuForm.getPassword()), sqlStatement);
+            // wipe input fields
+            nameTF.setText("");
+            
         } catch (ClassNotFoundException ex) {
             System.out.println(ex);
         }

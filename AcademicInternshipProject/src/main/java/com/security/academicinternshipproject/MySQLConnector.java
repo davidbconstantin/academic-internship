@@ -38,13 +38,14 @@ public class MySQLConnector {
             }
     }
     
-    public void executeUpdate(String host, int port, String databaseName, String userName, String password, String userStatement) throws ClassNotFoundException {
+    public MySQLConnector(String host, int port, String databaseName, String userName, String password, String userStatement) throws ClassNotFoundException {
         Class.forName("com.mysql.cj.jdbc.Driver");
         try (final Connection connection = 
             DriverManager.getConnection("jdbc:mysql://" + host + ":" + port + "/" + databaseName +
                 "?sslmode=require", userName, password);
             final Statement statement = connection.createStatement()) {
-            statement.executeUpdate(userStatement); 
+            final int resultCount = statement.executeUpdate(userStatement); 
+            System.out.println("Rows affected: " + resultCount);
             } catch (SQLException e) {
                 System.out.println("Connection failure.");
                     e.printStackTrace();

@@ -35,6 +35,7 @@ public class MainMenuForm extends javax.swing.JFrame {
      * Creates new form MainMenuForm
      */
     private CardLayout cardLayout;
+    private String lastPanel = "";
 //    private JPanel cardPanel;
     
     private List<WebCrawler> webCrawlers = new ArrayList<>();
@@ -107,6 +108,14 @@ public class MainMenuForm extends javax.swing.JFrame {
 
     public char[] getPassword() {
         return password;
+    }
+    
+    public void setUsername(char[] username) {
+        this.username = username;
+    }
+    
+    public void setPassword(char[] password) {
+        this.password = password;
     }
     
     public boolean isEditMode() {
