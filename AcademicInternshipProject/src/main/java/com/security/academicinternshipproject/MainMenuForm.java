@@ -43,7 +43,7 @@ public class MainMenuForm extends javax.swing.JFrame {
     private MySQLConnector sql;
     private List<String> sqlCredentials = new ArrayList<>();
     
-    private boolean sqlCredentialsRequired = false;
+    private boolean sqlCredentialsRequired = true;
     private boolean editMode = false;
     private char[] username;
     private char[] password;

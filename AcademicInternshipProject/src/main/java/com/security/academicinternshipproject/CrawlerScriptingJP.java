@@ -254,6 +254,8 @@ public class CrawlerScriptingJP extends javax.swing.JPanel {
     private void addBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addBTNActionPerformed
         // TODO add your handling code here:
         mainMenuForm.getSelectedCrawler().addCommand(composeCommand());
+        // to use web crawler data as variables, refer to them by command number
+        // i.e. SQL INSERT INTO table_name (column1...) VALUES (@2...);
         populateFields();
     }//GEN-LAST:event_addBTNActionPerformed
 
