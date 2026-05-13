@@ -1,2 +1,3 @@
 com\mycompany\davidssimplecrawler\WebCrawlerApp.class
+com\mycompany\davidssimplecrawler\PageFetcher.class
 com\mycompany\davidssimplecrawler\MainWindow.class
