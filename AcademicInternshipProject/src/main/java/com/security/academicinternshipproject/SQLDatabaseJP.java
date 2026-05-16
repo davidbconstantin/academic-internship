@@ -66,14 +66,14 @@ public class SQLDatabaseJP extends javax.swing.JPanel {
 
         columnsTBL.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null}
+                {null, null, null, null}
             },
             new String [] {
-                "Column Name", "Data Type", "Primary Key"
+                "Column Name", "Data Type", "Primary Key", "Auto-Increment"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.Object.class, java.lang.Object.class, java.lang.Boolean.class
+                java.lang.Object.class, java.lang.Object.class, java.lang.Boolean.class, java.lang.Boolean.class
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -188,7 +188,7 @@ public class SQLDatabaseJP extends javax.swing.JPanel {
             tableRow = "";
             for (int j = 0; j < model.getColumnCount(); j++) {
                 // do not pass "true" or "false" to the SQL statement
-                if (model.getValueAt(i, j) != null && j != 2) {
+                if (model.getValueAt(i, j) != null && j != 2 && j != 3) {
                     tableRow += model.getValueAt(i, j).toString() + " ";
                     // specify default length if using varchar
                     if (j == 1)
@@ -196,9 +196,15 @@ public class SQLDatabaseJP extends javax.swing.JPanel {
                             tableRow += "(255)";
                 }
                 // if the current column is the primary key one
-                if (j == 2 && model.getValueAt(i, j) != null)
+                if (j == 2 && model.getValueAt(i, j) != null) {
                     if ((boolean)model.getValueAt(i, j))
                         tableRow += "PRIMARY KEY";
+                }
+                // append the auto-increment modifier
+                if (j == 3 && model.getValueAt(i, j) != null) {
+                    if ((boolean)model.getValueAt(i, j))
+                        tableRow += " AUTO_INCREMENT";
+                }
             }
             tableRow = tableRow.trim();
             if (i != model.getRowCount() - 1)
@@ -244,18 +250,27 @@ public class SQLDatabaseJP extends javax.swing.JPanel {
                 }
                 // check if primary key has already been set
                 for (int i = 0; i < model.getRowCount(); i++) {
-                    if (model.getValueAt(i, 2) != null)
-                    if ((boolean)model.getValueAt(i, 2) == true) {
-                        // record the primary key index if selecting it for the first time
-                        if (primaryKeyIndex == -1) {
-                            primaryKeyIndex = i;
+                    if (model.getValueAt(i, 2) != null) {
+                        if ((boolean)model.getValueAt(i, 2) == true) {
+                            // record the primary key index if selecting it for the first time
+                            if (primaryKeyIndex == -1) {
+                                primaryKeyIndex = i;
+                            }
+                            if (i != primaryKeyIndex && primaryKeyIndex > -1) {
+                                // remove the check on the other box
+                                int oldIndex = primaryKeyIndex;
+                                primaryKeyIndex = i;
+                                reentrancyGuard = true;
+                                model.setValueAt(false, oldIndex, 2);
+                            }
                         }
-                        if (i != primaryKeyIndex && primaryKeyIndex > -1) {
-                            // remove the check on the other box
-                            int oldIndex = primaryKeyIndex;
-                            primaryKeyIndex = i;
+                    }
+                    // remove the check on Auto-Increment if the database column is not
+                    // a primary key
+                    if (model.getValueAt(i, 3) != null) {
+                        if ((boolean)model.getValueAt(i, 2) == false && (boolean)model.getValueAt(i, 3) == true) {
                             reentrancyGuard = true;
-                            model.setValueAt(false, oldIndex, 2);
+                            model.setValueAt(false, i, 3);                    
                         }
                     }
                 }

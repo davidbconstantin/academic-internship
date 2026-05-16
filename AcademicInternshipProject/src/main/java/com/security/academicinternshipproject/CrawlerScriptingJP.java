@@ -294,6 +294,7 @@ public class CrawlerScriptingJP extends javax.swing.JPanel {
     private void formAncestorAdded(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_formAncestorAdded
         // TODO add your handling code here:
         populateFields();
+        System.out.println("Selected crawler: " + mainMenuForm.getSelectedCrawler().getName());
         editBTN.setVisible(false);
     }//GEN-LAST:event_formAncestorAdded
 

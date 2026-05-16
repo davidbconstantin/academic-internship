@@ -337,16 +337,20 @@ public class MainMenuJP extends javax.swing.JPanel {
                                         }
                                     }
                                     if (atSignPresent && numericCharacterPresent && alphabeticLetterPresent) {
-                                        String valueToInsert = "'" + crawler.getHtmlResponses().get(numericCharacter).getResults().getFirst() + "'";
-                                        sqlStatement = sqlStatement.replaceFirst("@\\d[iIsS]", valueToInsert);
+                                        String modifiedSqlStatement = "";
+                                        for (String valueToInsert: crawler.getHtmlResponses().get(numericCharacter - 1).getResults()) {
+                                            modifiedSqlStatement = sqlStatement;
+                                            valueToInsert = "'" + valueToInsert + "'";
+                                            modifiedSqlStatement = modifiedSqlStatement.replaceFirst("@\\d[iIsS]", valueToInsert);
+                                            System.out.println("SQL Statement: " + sqlStatement);
+                                            mysql = new MySQLConnector(credentials.get(0), Integer.parseInt(credentials.get(1)), credentials.get(2),
+                                            String.valueOf(mainMenuForm.getUsername()),
+                                            String.valueOf(mainMenuForm.getPassword()), modifiedSqlStatement);
+                                        }
                                         atSignPresent = numericCharacterPresent = isNumeric = false;
                                     } else
                                         atSignPresent = numericCharacterPresent = isNumeric = false;
                                 }
-                                System.out.println("SQL Statement: " + sqlStatement);
-                                mysql = new MySQLConnector(credentials.get(0), Integer.parseInt(credentials.get(1)), credentials.get(2),
-                                    String.valueOf(mainMenuForm.getUsername()),
-                                    String.valueOf(mainMenuForm.getPassword()), sqlStatement);
                                 // prevent credentials lingering in memory
                                 mainMenuForm.eraseCredentials();
                                 response.add(mysql.getResult());
