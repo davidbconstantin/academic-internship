@@ -64,6 +64,7 @@ public class SQLUpdateTest {
                 while (matcher.find()) {
                     System.out.println("Size of value to insert: " + matcher.group().length());
                 }
+                mysql.fetchTableSchemas(credentials.get(0), credentials.get(1), credentials.get(2));
             } catch (ClassNotFoundException | SQLException ex) {
                 if (ex instanceof SQLException)
                     System.out.println(ex);
