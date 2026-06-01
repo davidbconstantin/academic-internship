@@ -6,20 +6,22 @@
 package com.security.academicinternshipproject;
 
 import java.sql.DatabaseMetaData; 
-import java.sql.ResultSet;
-import java.sql.ResultSetMetaData;
-import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.List;
+import java.util.StringTokenizer;
 
 /**
  *
  * @author rokom
  */
 public class SQLParser {
-    private List<String> columnInfo;
-    private String currentDb;
+    private SQLDatabaseInfo databaseInfo;
+    private List<String> result;
     
-    public SQLParser(String sqlStatement, DatabaseMetaData dbMetadata) {
-
+    public SQLParser(String sqlStatement, SQLDatabaseInfo databaseInfo) {
+        this.databaseInfo = databaseInfo;
+        result = new ArrayList<>();
+        // parse INSERT INTO table_name (column1, column2, column3, ...) VALUES (value1, value2, value3, ...); 
+        StringTokenizer tokenizer = new StringTokenizer(sqlStatement);
     }
 }
