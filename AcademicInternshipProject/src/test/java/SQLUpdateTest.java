@@ -5,6 +5,8 @@
 
 import com.mysql.cj.jdbc.exceptions.MysqlDataTruncation;
 import com.security.academicinternshipproject.MySQLConnector;
+import com.security.academicinternshipproject.SQLDatabaseInfo;
+import com.security.academicinternshipproject.SQLParser;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
@@ -47,7 +49,7 @@ public class SQLUpdateTest {
         credentials.add(System.getenv("TEST_MYSQL_URL"));
         credentials.add(System.getenv("TEST_MYSQL_USER"));
         credentials.add(System.getenv("TEST_MYSQL_PASSWORD"));
-        String sqlStatement = "INSERT INTO testtable (text) VALUES ('AAAAAAA"
+        String sqlStatement = "INSERT INTO testtable (id, text) VALUES (1, 'AAAAAAA"
                 + "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
                 + "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
                 + "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
@@ -57,7 +59,6 @@ public class SQLUpdateTest {
                 + "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA')";
             try {
                 MySQLConnector mysql = new MySQLConnector(credentials.get(0), credentials.get(1), credentials.get(2)); 
-                int columnSize = mysql.getColumnSize("Column size: " + credentials.get(0), credentials.get(1), credentials.get(2), "testtable", "text");
                 String value = sqlStatement;
                 Pattern pattern = Pattern.compile("'([^']*)'");
                 Matcher matcher = pattern.matcher(value);
@@ -65,6 +66,16 @@ public class SQLUpdateTest {
                     System.out.println("Size of value to insert: " + matcher.group().length());
                 }
                 mysql.fetchTableSchemas(credentials.get(0), credentials.get(1), credentials.get(2));
+                List<SQLDatabaseInfo> dbInfo = new ArrayList<>();
+                SQLDatabaseInfo currentDbInfo = null;
+                dbInfo = mysql.getDbInfo();
+                // find current database
+                for (SQLDatabaseInfo db: dbInfo) {
+                    if (db.getName().equals(mysql.getCurrentDb())) {
+                        currentDbInfo = db;
+                    }
+                }
+                SQLParser parser = new SQLParser(sqlStatement, currentDbInfo);
             } catch (ClassNotFoundException | SQLException ex) {
                 if (ex instanceof SQLException)
                     System.out.println(ex);

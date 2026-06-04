@@ -26,8 +26,8 @@ public class MySQLConnector {
     
     private String result;
     private DatabaseMetaData metadata;
-    private List<String> tableStrings;
     private String currentDb;
+    private List<SQLDatabaseInfo> dbInfo;
     
     public MySQLConnector(String host, int port, String databaseName, String userName, String password) throws ClassNotFoundException {
         Class.forName("com.mysql.cj.jdbc.Driver");
@@ -106,7 +106,6 @@ public class MySQLConnector {
         try (final Connection connection = 
             DriverManager.getConnection(url + "?sslmode=require", userName, password)) {
             metadata = connection.getMetaData();
-            tableStrings = new ArrayList<>();
             ResultSet results = metadata.getTables(null, null, "%", new String[]{"TABLE"});
             ResultSetMetaData rsmd = results.getMetaData();
             currentDb = connection.getCatalog();
@@ -131,7 +130,6 @@ public class MySQLConnector {
                     ResultSet results2 = metadata.getColumns(databaseName, null, results.getString("TABLE_NAME"), null);
                     String columnName = "";
                     while (results2.next()) {
-                        System.out.println("Fetching...");
                         columnName = results2.getString("COLUMN_NAME");
                         int dataType = Integer.parseInt(results2.getString("DATA_TYPE"));
                         String typeName = results2.getString("TYPE_NAME");
@@ -147,41 +145,83 @@ public class MySQLConnector {
                     tableInfo.add(new SQLTableInfo(results.getString("TABLE_CAT"), results.getString("TABLE_NAME"), columnInfo));
                     columnInfo.clear();
                 }
-                System.out.println(results.getString("TABLE_CAT"));
-                System.out.println(results.getString("TABLE_NAME"));
-//                for (int i = 1; i <= columnCount; i++ ) {
-//                    if (results.getString(i) != null) {
-//                        System.out.println(results.getString(i));
-//                        //System.out.println(results.getString("TABLE_CAT"));
-//                        //System.out.println(results.getString("TABLE_NAME"));
-////                        if (results.getString(i).equals(currentDb)) {
-////                            System.out.println(results.getString(i));
-////                            tableStrings.add(results.getString(i));
-////                        }
-//                    }
-//                }
             }
-            for (int i = 0; i < databaseInfo.size(); i++) {
-                databaseInfo.get(i).printInfo();
-                for (int j = 0; j < databaseInfo.get(i).getTables().size(); j++) {
-                    databaseInfo.get(i).getTables().get(j).printInfo();
-                    System.out.println("Number of columns: " + databaseInfo.get(i).getTables().get(j).getColumns().size());
-                    for (int k = 0; k < databaseInfo.get(i).getTables().get(j).getColumns().size(); k++) {
-                        System.out.println("Executing");
-                        databaseInfo.get(i).getTables().get(j).getColumns().get(k).printInfo();
-                    }
-                }
-            }
+            dbInfo = databaseInfo;
         } catch (SQLException ex) {
             System.out.println(ex);
         }
     }
     
-    public List<String> getTableSchemas() {
-        return tableStrings;
+    public void fetchTableSchemas(String host, int port, String dbName, String userName, String password) throws ClassNotFoundException {
+        Class.forName("com.mysql.cj.jdbc.Driver");
+        try (final Connection connection = 
+            DriverManager.getConnection("jdbc:mysql://" + host + ":" + port + "/" + dbName +
+                "?sslmode=require", userName, password)) {
+            metadata = connection.getMetaData();
+            ResultSet results = metadata.getTables(null, null, "%", new String[]{"TABLE"});
+            ResultSetMetaData rsmd = results.getMetaData();
+            currentDb = connection.getCatalog();
+            System.out.println("The current database is: " + currentDb);
+            List<SQLDatabaseInfo> databaseInfo = new ArrayList<>();
+            List<SQLTableInfo> tableInfo = new ArrayList<>();
+            List<SQLColumnInfo> columnInfo = new ArrayList<>();
+            String databaseName = "";
+            String tableName = "";
+            List<String> tables = new ArrayList<>();
+            while (results.next()) {
+                if (!databaseName.equals(results.getString("TABLE_CAT"))) {
+                    if (!tables.isEmpty()) {
+                        databaseInfo.add(new SQLDatabaseInfo(databaseName, tableInfo));
+                        tables.clear();
+                        tableInfo.clear();
+                    }
+                    databaseName = results.getString("TABLE_CAT");
+                }
+                if (!tables.contains(results.getString("TABLE_NAME"))) {
+                    tables.add(results.getString("TABLE_NAME"));
+                    ResultSet results2 = metadata.getColumns(databaseName, null, results.getString("TABLE_NAME"), null);
+                    String columnName = "";
+                    while (results2.next()) {
+                        columnName = results2.getString("COLUMN_NAME");
+                        int dataType = Integer.parseInt(results2.getString("DATA_TYPE"));
+                        String typeName = results2.getString("TYPE_NAME");
+                        int columnSize = Integer.parseInt(results2.getString("COLUMN_SIZE"));
+                        String remarks = results2.getString("REMARKS");
+                        String columnDef = results2.getString("COLUMN_DEF");
+                        int ordinalPos = Integer.parseInt(results2.getString("ORDINAL_POSITION"));
+                        String isAutoincrement = results2.getString("IS_AUTOINCREMENT");
+                        String isGeneratedColumn = results2.getString("IS_GENERATEDCOLUMN");
+                        SQLColumnInfo columns = new SQLColumnInfo(columnName, dataType, typeName, columnSize, remarks, columnDef, ordinalPos, isAutoincrement, isGeneratedColumn);
+                        columnInfo.add(new SQLColumnInfo(columnName, dataType, typeName, columnSize, remarks, columnDef, ordinalPos, isAutoincrement, isGeneratedColumn));
+                    }   
+                    tableInfo.add(new SQLTableInfo(results.getString("TABLE_CAT"), results.getString("TABLE_NAME"), columnInfo));
+                    columnInfo.clear();
+                }
+            }
+            dbInfo = databaseInfo;
+        } catch (SQLException ex) {
+            System.out.println(ex);
+        }
+    }
+    
+    public String getCurrentDb() {
+        return currentDb;
     }
     
     public String getResult() {
         return result;
+    }
+    
+    public List<SQLDatabaseInfo> getDbInfo() {
+        return dbInfo;
+    }
+    
+    public SQLDatabaseInfo getCurrentDbAsInfo() {
+        for (SQLDatabaseInfo db: dbInfo) {
+            if (db.getName().equals(currentDb)) {
+                return db;
+            }
+        }
+        return null;
     }
 }

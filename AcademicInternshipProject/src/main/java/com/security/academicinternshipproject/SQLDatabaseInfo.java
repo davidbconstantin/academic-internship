@@ -31,8 +31,8 @@ public class SQLDatabaseInfo {
     
     public void printInfo() {
         System.out.println("Database Name: " + name);
-        for (int i = 0; i < tables.size(); i++) {
-            System.out.println("Table Name: " + tables.get(i));
-        }
+        for (SQLTableInfo table: tables) {
+            table.printInfo();
+        }     
     }
 }

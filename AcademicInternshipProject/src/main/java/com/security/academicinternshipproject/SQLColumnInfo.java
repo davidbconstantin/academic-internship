@@ -36,11 +36,26 @@ public class SQLColumnInfo {
         System.out.println("Data Type: " + dataType);
         System.out.println("Type Name: " + typeName);
         System.out.println("Column Size: " + columnSize);
-        System.out.println("Remarks: " + remarks);
-        System.out.println("Column Definition: " + columnDef);
-        System.out.println("Ordinal Position: " + ordinalPosition);
-        System.out.println("Is Autoincrement: " + isAutoincrement);
-        System.out.println("Is Generated Column: " + isGeneratedColumn);
+        //System.out.println("Remarks: " + remarks);
+        //System.out.println("Column Definition: " + columnDef);
+        //System.out.println("Ordinal Position: " + ordinalPosition);
+        //System.out.println("Is Autoincrement: " + isAutoincrement);
+        //System.out.println("Is Generated Column: " + isGeneratedColumn);
     }
+
+    public String getColumnName() {
+        return columnName;
+    }
+
+    public String getTypeName() {
+        return typeName;
+    }
+
+    public int getColumnSize() {
+        return columnSize;
+    }
+    
+    
+    
     
 }

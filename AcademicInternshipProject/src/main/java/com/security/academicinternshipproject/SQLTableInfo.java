@@ -23,6 +23,10 @@ public class SQLTableInfo {
         this.columns = new ArrayList<>();
         this.columns.addAll(columns);
     }
+    
+    public String getTableName() {
+        return tableName;
+    }
 
     public List<SQLColumnInfo> getColumns() {
         return columns;

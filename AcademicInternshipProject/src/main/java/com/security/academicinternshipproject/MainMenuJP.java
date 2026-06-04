@@ -25,6 +25,7 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.math.BigDecimal;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -339,14 +340,37 @@ public class MainMenuJP extends javax.swing.JPanel {
                                     }
                                     if (atSignPresent && numericCharacterPresent && alphabeticLetterPresent) {
                                         String modifiedSqlStatement = "";
+                                        SQLDatabaseInfo dbInfo = null;
                                         for (String valueToInsert: crawler.getHtmlResponses().get(numericCharacter - 1).getResults()) {
                                             modifiedSqlStatement = sqlStatement;
                                             valueToInsert = "'" + valueToInsert + "'";
                                             modifiedSqlStatement = modifiedSqlStatement.replaceFirst("@\\d[iIsS]", valueToInsert);
+                                            // check SQL statement for errors
+                                            try {
+                                                mysql = new MySQLConnector(credentials.get(0), Integer.parseInt(credentials.get(1)), credentials.get(2),
+                                                String.valueOf(mainMenuForm.getUsername()),
+                                                String.valueOf(mainMenuForm.getPassword()));
+                                                mysql.fetchTableSchemas(credentials.get(0), Integer.parseInt(credentials.get(1)), credentials.get(2), String.valueOf(mainMenuForm.getUsername()), String.valueOf(mainMenuForm.getPassword()));
+                                                dbInfo = mysql.getCurrentDbAsInfo();
+                                            } catch (Exception ex) {
+                                                System.out.println(ex);
+                                            }
+                                            SQLParser sqlParser = new SQLParser(modifiedSqlStatement, dbInfo);
                                             System.out.println("SQL Statement: " + sqlStatement);
-                                            mysql = new MySQLConnector(credentials.get(0), Integer.parseInt(credentials.get(1)), credentials.get(2),
-                                            String.valueOf(mainMenuForm.getUsername()),
-                                            String.valueOf(mainMenuForm.getPassword()), modifiedSqlStatement);
+                                            if (!sqlParser.getMustSplit()) {
+                                                // insert a single statement
+                                                mysql = new MySQLConnector(credentials.get(0), Integer.parseInt(credentials.get(1)), credentials.get(2),
+                                                String.valueOf(mainMenuForm.getUsername()),
+                                                String.valueOf(mainMenuForm.getPassword()), modifiedSqlStatement);
+                                            } else {
+                                                // insert multiple statements
+                                                for (String toInsert: sqlParser.getStringsToInsert()) {
+                                                    mysql = new MySQLConnector(credentials.get(0), Integer.parseInt(credentials.get(1)), credentials.get(2),
+                                                    String.valueOf(mainMenuForm.getUsername()),
+                                                    String.valueOf(mainMenuForm.getPassword()), toInsert);                                                  
+                                                }
+                                                
+                                            }
                                         }
                                         atSignPresent = numericCharacterPresent = isNumeric = false;
                                     } else
