@@ -20,7 +20,7 @@ public class AcademicInternshipProject {
         mainMenu.setSize(1020, 720);
         mainMenu.setLocationRelativeTo(null);      
         
-        mainMenu.displayPanel("Main Menu");
+        mainMenu.displayPanel("Landing");
         mainMenu.setVisible(true);
     }
 }

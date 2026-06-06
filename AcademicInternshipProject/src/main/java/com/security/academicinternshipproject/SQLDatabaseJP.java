@@ -167,7 +167,7 @@ public class SQLDatabaseJP extends javax.swing.JPanel {
 
     private void abortBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_abortBTNActionPerformed
         // TODO add your handling code here:
-        mainMenuForm.displayPanel("SQL Settings");
+        mainMenuForm.displayPanel("Database Settings");
     }//GEN-LAST:event_abortBTNActionPerformed
 
     private void okBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_okBTNActionPerformed

@@ -66,6 +66,11 @@ public class SQLCredentialsJP extends javax.swing.JPanel {
         });
 
         abortBTN.setText("Abort");
+        abortBTN.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                abortBTNActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -121,8 +126,13 @@ public class SQLCredentialsJP extends javax.swing.JPanel {
         usernamePF.setText("");
         passwordPF.setText("");
         mainMenuForm.setSQLCredentialsRequired(false);
-        mainMenuForm.displayPanel("Main Menu");
+        mainMenuForm.displayPanel(mainMenuForm.getPreviousPanelName());
     }//GEN-LAST:event_okBTNActionPerformed
+
+    private void abortBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_abortBTNActionPerformed
+        // TODO add your handling code here:
+        mainMenuForm.displayPanel(mainMenuForm.getPreviousPanelName());
+    }//GEN-LAST:event_abortBTNActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

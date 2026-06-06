@@ -5,10 +5,12 @@
  * https://docs.oracle.com/javase/8/docs/api/java/lang/ProcessBuilder.html
  * https://huggingface.co/recobo/agriculture-bert-uncased
  * https://medium.com/@evaGachirwa/running-python-script-with-arguments-in-the-command-line-93dfa5f10eff
+ * https://stackoverflow.com/questions/6505953/cardlayout-get-the-selected-cards-name
  */
 package com.security.academicinternshipproject;
 
 import java.awt.CardLayout;
+import java.awt.Component;
 import java.awt.Container;
 import java.io.BufferedReader;
 import java.io.EOFException;
@@ -35,7 +37,7 @@ public class MainMenuForm extends javax.swing.JFrame {
      * Creates new form MainMenuForm
      */
     private CardLayout cardLayout;
-    private String lastPanel = "";
+    private JPanel lastPanel;
 //    private JPanel cardPanel;
     
     private List<WebCrawler> webCrawlers = new ArrayList<>();
@@ -65,12 +67,20 @@ public class MainMenuForm extends javax.swing.JFrame {
         
         // add panels to card layout
         mainPanelJP.add(homeLandingJP, "Landing");
+        homeLandingJP.setName("Landing");
         mainPanelJP.add(crawlerConfigPanel, "Crawler Configuration");
+        crawlerConfigPanel.setName("Crawler Configuration");
         mainPanelJP.add(mainMenuPanel, "Main Menu");
+        mainMenuPanel.setName("Main Menu");
         mainPanelJP.add(crawlerScriptingPanel, "Crawler Scripting");
+        crawlerScriptingPanel.setName("Crawler Scripting");
         mainPanelJP.add(databaseSettingsPanel, "Database Settings");
+        databaseSettingsPanel.setName("Database Settings");
         mainPanelJP.add(sqlCredentialsPanel, "SQL Settings");
+        sqlCredentialsPanel.setName("SQL Settings");
         mainPanelJP.add(sqlDatabasePanel, "SQL Database");
+        sqlDatabasePanel.setName("SQL Database");
+        lastPanel = mainMenuPanel;
         
         selectedCrawler = new WebCrawler();
         
@@ -79,7 +89,14 @@ public class MainMenuForm extends javax.swing.JFrame {
     }
     
     public void displayPanel(String panelName) {
+        // get the previous panel's name while ignoring pop-up menus
+        for (Component comp: mainPanelJP.getComponents()) {
+            if (comp.isVisible())
+                if (!comp.getName().equals("SQL Settings"))
+                    lastPanel = (javax.swing.JPanel)comp;
+        }
         cardLayout.show(mainPanelJP, panelName);
+        //System.out.println("Previous panel: " + lastPanel.getName());
     }
 
     public List<WebCrawler> getWebCrawlers() {
@@ -205,6 +222,10 @@ public class MainMenuForm extends javax.swing.JFrame {
     
     public List<String> getSQLCredentials() {
         return sqlCredentials;
+    }
+    
+    public String getPreviousPanelName() {
+        return lastPanel.getName();
     }
 
     /**
