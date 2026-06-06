@@ -29,6 +29,10 @@
               <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" attributes="0">
+                      <Component id="tablesBTN" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                  </Group>
+                  <Group type="102" attributes="0">
                       <Component id="backBTN" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="32767" attributes="0"/>
                       <Component id="okBTN" min="-2" max="-2" attributes="0"/>
@@ -76,7 +80,9 @@
                   <Component id="dbNameLBL" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="dbNameTF" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace pref="189" max="32767" attributes="0"/>
+              <EmptySpace min="-2" pref="39" max="-2" attributes="0"/>
+              <Component id="tablesBTN" min="-2" max="-2" attributes="0"/>
+              <EmptySpace pref="127" max="32767" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="okBTN" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="backBTN" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -131,6 +137,14 @@
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="backBTNActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="tablesBTN">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Tables..."/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="tablesBTNActionPerformed"/>
       </Events>
     </Component>
   </SubComponents>

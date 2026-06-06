@@ -27,6 +27,11 @@ public class CommandParser {
         tokenizer = new StringTokenizer(command);
         while (tokenizer.hasMoreTokens()) {
             String token = tokenizer.nextToken();
+            // extract entire SQL command
+            if (action.equals("SQL") && !object.equals("")) {
+                object += " " + token;
+                System.out.println(object);
+            }
             if (token.equals("Command"))
                 subject = token;
             else if (token.startsWith("#")) {

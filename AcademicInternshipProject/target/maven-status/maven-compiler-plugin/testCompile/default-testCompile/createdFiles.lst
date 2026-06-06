@@ -1,3 +1,5 @@
 CommandParserTest.class
 JSoupTextTest.class
+SQLUpdateTest.class
+SQLCommandTest.class
 CardLayoutTest.class

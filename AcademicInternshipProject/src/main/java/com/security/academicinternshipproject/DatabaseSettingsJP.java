@@ -40,6 +40,7 @@ public class DatabaseSettingsJP extends javax.swing.JPanel {
         dbNameTF = new javax.swing.JTextField();
         okBTN = new javax.swing.JButton();
         backBTN = new javax.swing.JButton();
+        tablesBTN = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(0, 0, 255));
         setName("databaseSettingsJP"); // NOI18N
@@ -68,6 +69,13 @@ public class DatabaseSettingsJP extends javax.swing.JPanel {
             }
         });
 
+        tablesBTN.setText("Tables...");
+        tablesBTN.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tablesBTNActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -75,6 +83,9 @@ public class DatabaseSettingsJP extends javax.swing.JPanel {
             .addGroup(layout.createSequentialGroup()
                 .addGap(33, 33, 33)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(tablesBTN)
+                        .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(backBTN)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -111,7 +122,9 @@ public class DatabaseSettingsJP extends javax.swing.JPanel {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(dbNameLBL)
                     .addComponent(dbNameTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 189, Short.MAX_VALUE)
+                .addGap(39, 39, 39)
+                .addComponent(tablesBTN)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 127, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(okBTN)
                     .addComponent(backBTN))
@@ -139,6 +152,11 @@ public class DatabaseSettingsJP extends javax.swing.JPanel {
         
     }//GEN-LAST:event_okBTNActionPerformed
 
+    private void tablesBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tablesBTNActionPerformed
+        // TODO add your handling code here:
+        mainMenuForm.displayPanel("SQL Database");
+    }//GEN-LAST:event_tablesBTNActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton backBTN;
@@ -149,5 +167,6 @@ public class DatabaseSettingsJP extends javax.swing.JPanel {
     private javax.swing.JButton okBTN;
     private javax.swing.JLabel portLBL;
     private javax.swing.JTextField portTF;
+    private javax.swing.JButton tablesBTN;
     // End of variables declaration//GEN-END:variables
 }

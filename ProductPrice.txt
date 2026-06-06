@@ -1,0 +1,68 @@
+All these products were sourced locally with the origin in Ireland
+
+Tesco 
+https://www.tesco.ie/
+
+Free Range Eggs 6 Pack - €2.69
+Irish Butter 454g - €4.39
+Irish Whole Milk 2L - €2.35
+Irish Beef Mince 500g - €5.50
+Irish Chicken Fillets 1kg - €9.00
+Irish Potatoes 2kg - €3.49
+
+SuperValu
+https://shop.supervalu.ie/
+
+Free Range Eggs 6 Pack - €2.99
+Irish Butter 454g - €4.59
+Irish Whole Milk 2L - €2.39
+Irish Beef Mince 500g - €5.99
+Irish Chicken Fillets 1kg - €9.49
+Irish Potatoes 2kg - €3.99
+
+
+Dunnes Stores
+https://www.dunnesstoresgrocery.com/
+
+Free Range Eggs 6 Pack - €2.59
+Irish Butter 454g - €4.25
+Irish Whole Milk 2L - €2.29
+Irish Beef Mince 500g - €5.49
+Irish Chicken Fillets 1kg - €8.99
+Irish Potatoes 2kg - €3.29
+
+Aldi Ireland
+https://groceries.aldi.ie/
+
+Free Range Eggs 6 Pack - €2.49
+Irish Butter 454g - €3.99
+Irish Whole Milk 2L - €2.25
+Irish Beef Mince 500g - €5.29
+Irish Chicken Fillets 1kg - €8.49
+Irish Potatoes 2kg - €2.99
+
+
+Lidl Ireland
+https://www.lidl.ie/
+
+Free Range Eggs 6 Pack - €2.45
+Irish Butter 454g - €3.95
+Irish Whole Milk 2L - €2.25
+Irish Beef Mince 500g - €5.25
+Irish Chicken Fillets 1kg - €8.45
+Irish Potatoes 2kg - €2.89
+
+
+Conclusion based on my findings
+
+- Most supermarket websites use JavaScript to load their product prices that are displayed
+- Some of the common HTML names I found:
+  price
+  product-price
+  current-price
+  amount
+  value
+
+- Prices are usually inside span or div tags on the websites
+- Lidl and Aldi seem cheapest overall for local products which makes sense based on their cost friendly advertising
+- Tesco and SuperValu tend to be slightly more expensive

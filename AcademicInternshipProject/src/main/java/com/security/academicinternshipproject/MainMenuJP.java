@@ -3,6 +3,8 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
  * https://stackoverflow.com/questions/12684072/eofexception-when-reading-files-with-objectinputstream
  * https://huggingface.co/blog/sentiment-analysis-python
+ * https://www.w3schools.com/sql/sql_insert.asp
+ * https://www.w3schools.com/java/java_regex.asp
  */
 package com.security.academicinternshipproject;
 
@@ -22,6 +24,8 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.ObjectInputStream;
+import java.math.BigDecimal;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -41,6 +45,7 @@ public class MainMenuJP extends javax.swing.JPanel {
      */
     public MainMenuJP(MainMenuForm mainMenuForm) {
         this.mainMenuForm = mainMenuForm;
+        mysql = mainMenuForm.getMySQL();
         initComponents();
     }
 
@@ -211,10 +216,10 @@ public class MainMenuJP extends javax.swing.JPanel {
                     counter++;
                     statusTA.append("Command " + String.valueOf(counter) + ": " + command + "\n");
                     CommandParser commandParser = new CommandParser(command);
-                    if (commandParser.getAction().equals("SQL")) {
-                        mainMenuForm.setSQLCredentialsRequired(true);
-                        }
-                    }
+//                    if (commandParser.getAction().equals("SQL")) {
+//                        mainMenuForm.setSQLCredentialsRequired(true);
+//                        }
+                       }
                 }
             if (crawlersCB.getSelectedItem().toString().equals("New Crawler...")) {
                 mainMenuForm.setSelectedCrawler(new WebCrawler());
@@ -297,25 +302,86 @@ public class MainMenuJP extends javax.swing.JPanel {
                             //crawler.addHtmlResponse(new SearchResult(response, commandParser.getCommandNo()));
                         }
                         else if (command.equals("SQL")) {
-                            File databaseSettings = new File("credentials.txt");
                             try {
-                                BufferedReader reader = new BufferedReader(new FileReader(databaseSettings));
-                                List<String> credentials = new ArrayList<>();
-                                String line;
-                                while ((line = reader.readLine()) != null) {
-                                    credentials.add(line);
+                                List<String> credentials = mainMenuForm.getSQLCredentials();
+                                String sqlStatement = commandParser.getObject();
+                                // parse contents of the SQL command
+                                // example command: @2i or @2is
+                                // s stands for String, i means Integer (numeric value)7
+                                boolean atSignPresent = false;
+                                boolean numericCharacterPresent = false;
+                                boolean alphabeticLetterPresent = false;
+                                int numericCharacter = -1;
+                                boolean isNumeric = false;
+                                for (int i = 0; i < sqlStatement.length(); i++) {
+                                    // sub in HTML responses 
+                                    if (sqlStatement.charAt(i) == '@') {
+                                        atSignPresent = true;
+                                        System.out.println("At sign present.");
+                                    }
+                                    if (i + 1 < sqlStatement.length()) {
+                                        if (sqlStatement.charAt(i + 1) == '1' || sqlStatement.charAt(i + 1) == '2' ||
+                                            sqlStatement.charAt(i + 1) == '3' || sqlStatement.charAt(i + 1) == '4' ||
+                                            sqlStatement.charAt(i + 1) == '5' || sqlStatement.charAt(i + 1) == '6' ||
+                                            sqlStatement.charAt(i + 1) == '7' || sqlStatement.charAt(i + 1) == '8' ||
+                                            sqlStatement.charAt(i + 1) == '9') {
+                                        numericCharacterPresent = true;
+                                        numericCharacter = Integer.parseInt(String.valueOf(sqlStatement.charAt(i + 1)));
+                                        System.out.println("Numeric character: " + numericCharacter);
+                                        System.out.println("Numeric character present.");
+                                        }
+                                    }
+                                    if (i + 2 < sqlStatement.length()) {
+                                        if (sqlStatement.charAt(i + 2) == 'i' || sqlStatement.charAt(i + 2) == 's' ||
+                                                sqlStatement.charAt(i + 2) == 'I' || sqlStatement.charAt(i + 2) == 'S') {
+                                            alphabeticLetterPresent = true;
+                                            System.out.println("Alphabetic letter present.");
+                                        }
+                                    }
+                                    if (atSignPresent && numericCharacterPresent && alphabeticLetterPresent) {
+                                        String modifiedSqlStatement = "";
+                                        SQLDatabaseInfo dbInfo = null;
+                                        for (String valueToInsert: crawler.getHtmlResponses().get(numericCharacter - 1).getResults()) {
+                                            modifiedSqlStatement = sqlStatement;
+                                            valueToInsert = "'" + valueToInsert + "'";
+                                            modifiedSqlStatement = modifiedSqlStatement.replaceFirst("@\\d[iIsS]", valueToInsert);
+                                            // check SQL statement for errors
+                                            try {
+                                                mysql = new MySQLConnector(credentials.get(0), Integer.parseInt(credentials.get(1)), credentials.get(2),
+                                                String.valueOf(mainMenuForm.getUsername()),
+                                                String.valueOf(mainMenuForm.getPassword()));
+                                                mysql.fetchTableSchemas(credentials.get(0), Integer.parseInt(credentials.get(1)), credentials.get(2), String.valueOf(mainMenuForm.getUsername()), String.valueOf(mainMenuForm.getPassword()));
+                                                dbInfo = mysql.getCurrentDbAsInfo();
+                                            } catch (Exception ex) {
+                                                System.out.println(ex);
+                                            }
+                                            SQLParser sqlParser = new SQLParser(modifiedSqlStatement, dbInfo);
+                                            System.out.println("SQL Statement: " + sqlStatement);
+                                            if (!sqlParser.getMustSplit()) {
+                                                // insert a single statement
+                                                mysql = new MySQLConnector(credentials.get(0), Integer.parseInt(credentials.get(1)), credentials.get(2),
+                                                String.valueOf(mainMenuForm.getUsername()),
+                                                String.valueOf(mainMenuForm.getPassword()), modifiedSqlStatement);
+                                            } else {
+                                                // insert multiple statements
+                                                for (String toInsert: sqlParser.getStringsToInsert()) {
+                                                    mysql = new MySQLConnector(credentials.get(0), Integer.parseInt(credentials.get(1)), credentials.get(2),
+                                                    String.valueOf(mainMenuForm.getUsername()),
+                                                    String.valueOf(mainMenuForm.getPassword()), toInsert);                                                  
+                                                }
+                                                
+                                            }
+                                        }
+                                        atSignPresent = numericCharacterPresent = isNumeric = false;
+                                    } else
+                                        atSignPresent = numericCharacterPresent = isNumeric = false;
                                 }
-                                mysql = new MySQLConnector(credentials.get(0), Integer.parseInt(credentials.get(1)), credentials.get(2),
-                                    String.valueOf(mainMenuForm.getUsername()),
-                                    String.valueOf(mainMenuForm.getPassword()));
                                 // prevent credentials lingering in memory
                                 mainMenuForm.eraseCredentials();
                                 response.add(mysql.getResult());
-                            } catch (FileNotFoundException | ClassNotFoundException ex) {
+                            } catch (ClassNotFoundException ex) {
                                 System.out.println(ex);
-                            } catch (IOException ex) {
-                                System.out.println(ex);
-                            }
+                            } 
                         }
                         else if (command.startsWith("Write")) {
                             File paragraphs = new File(result);

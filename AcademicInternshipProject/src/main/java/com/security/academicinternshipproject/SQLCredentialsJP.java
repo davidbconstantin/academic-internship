@@ -14,8 +14,6 @@ import java.util.Arrays;
 public class SQLCredentialsJP extends javax.swing.JPanel {
     
     private MainMenuForm mainMenuForm;
-    private char[] username;
-    private char[] password;
     private boolean credentialsSet = false;
 
     /**
@@ -24,14 +22,6 @@ public class SQLCredentialsJP extends javax.swing.JPanel {
     public SQLCredentialsJP(MainMenuForm mainMenuForm) {
         this.mainMenuForm = mainMenuForm;
         initComponents();
-    }
-    
-    public char[] getUsername() {
-        return username;
-    }
-    
-    public char[] getPassword() {
-        return password;
     }
     
     public boolean getAreCredentialsSet() {
@@ -125,8 +115,8 @@ public class SQLCredentialsJP extends javax.swing.JPanel {
 
     private void okBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_okBTNActionPerformed
         // TODO add your handling code here:
-        username = usernamePF.getPassword();
-        password = passwordPF.getPassword();
+        mainMenuForm.setUsername(usernamePF.getPassword());
+        mainMenuForm.setPassword(passwordPF.getPassword());
         credentialsSet = true;
         usernamePF.setText("");
         passwordPF.setText("");
