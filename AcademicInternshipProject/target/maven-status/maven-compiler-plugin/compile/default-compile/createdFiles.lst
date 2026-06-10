@@ -1,5 +1,6 @@
 com\security\academicinternshipproject\CrawlerScriptingJP.class
 com\security\academicinternshipproject\SearchResult.class
+com\security\academicinternshipproject\SentimentAnalysisJP$1.class
 com\security\academicinternshipproject\DatabaseSettingsJP$3.class
 com\security\academicinternshipproject\CrawlerScriptingJP$5.class
 com\security\academicinternshipproject\MainMenuJP$2.class
@@ -8,10 +9,12 @@ com\security\academicinternshipproject\CrawlerScriptingJP$9.class
 com\security\academicinternshipproject\HTMLNode.class
 com\security\academicinternshipproject\MainMenuJP$6.class
 com\security\academicinternshipproject\SQLColumnInfo.class
+com\security\academicinternshipproject\SentimentAnalysisJP.class
 com\security\academicinternshipproject\CrawlerConfigJP$1.class
 com\security\academicinternshipproject\MainMenuForm$1.class
 com\security\academicinternshipproject\SQLDatabaseJP.class
 com\security\academicinternshipproject\SQLCredentialsJP.class
+com\security\academicinternshipproject\SentimentAnalysisJP$2.class
 com\security\academicinternshipproject\CrawlerScriptingJP$1.class
 com\security\academicinternshipproject\DatabaseSettingsJP$2.class
 com\security\academicinternshipproject\HomeLandingJP.class
@@ -21,6 +24,7 @@ com\security\academicinternshipproject\AcademicInternshipProject.class
 com\security\academicinternshipproject\MainMenuJP$1.class
 com\security\academicinternshipproject\CrawlerScriptingJP$4.class
 com\security\academicinternshipproject\SQLDatabaseJP$5.class
+com\security\academicinternshipproject\MainMenuForm$2.class
 com\security\academicinternshipproject\CrawlerConfigJP$2.class
 com\security\academicinternshipproject\CrawlerScriptingJP$7.class
 com\security\academicinternshipproject\MainMenuJP.class
@@ -28,6 +32,7 @@ com\security\academicinternshipproject\MainMenuJP$4.class
 com\security\academicinternshipproject\DatabaseSettingsJP$1.class
 com\security\academicinternshipproject\SQLCredentialsJP$1.class
 com\security\academicinternshipproject\CrawlerScriptingJP$10.class
+com\security\academicinternshipproject\SentimentAnalysisJP$3.class
 com\security\academicinternshipproject\CrawlerConfigJP.class
 com\security\academicinternshipproject\MainMenuForm.class
 com\security\academicinternshipproject\JSoupParser.class
@@ -46,6 +51,7 @@ com\security\academicinternshipproject\MySQLConnector.class
 com\security\academicinternshipproject\CrawlerConfigJP$4.class
 com\security\academicinternshipproject\SQLDatabaseJP$4.class
 com\security\academicinternshipproject\DatabaseSettingsJP.class
+com\security\academicinternshipproject\SentimentAnalysisJP$4.class
 com\security\academicinternshipproject\CommandParser.class
 com\security\academicinternshipproject\SQLParser.class
 com\security\academicinternshipproject\SQLTableInfo.class

@@ -22,11 +22,15 @@ public class SentimentAnalysisTest {
     
     @Test
     public void predict() {
-        SentimentAnalyser analyser = new SentimentAnalyser();
+        SentimentAnalyser analyser = new SentimentAnalyser("djl://ai.djl.pytorch/distilbert");
         try {
-            analyser.predict("This is bad stuff!");
+            analyser.predict("The final report by the Commission of Investigation into how abuse allegations against basketball coach Bill Kenneally were handled is due to be published today.\n" +
+"\n" +
+"The convicted paedophile is currently serving almost 19 years in prison for the serious sexual abuse of 15 young boys between 1979 and 1990, following two previous criminal prosecutions.");
             System.out.println("Input: " + analyser.getInput());
-            System.out.println(analyser.getClassifications().best());
+            System.out.println(analyser.getClassifications());
+            System.out.println(analyser.getClassifications().get("Positive").getProbability());
+            System.out.println(analyser.getClassifications().get("Negative").getProbability());
         } catch (Exception ex) {
             System.out.println(ex);
         }

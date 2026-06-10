@@ -44,6 +44,7 @@ public class MainMenuForm extends javax.swing.JFrame {
     private WebCrawler selectedCrawler;
     private MySQLConnector sql;
     private List<String> sqlCredentials = new ArrayList<>();
+    private SentimentAnalyser sentimentAnalyser;
     
     private boolean sqlCredentialsRequired = true;
     private boolean editMode = false;
@@ -56,6 +57,9 @@ public class MainMenuForm extends javax.swing.JFrame {
         cardLayout = (CardLayout) mainPanelJP.getLayout();
         contentPane.setLayout(cardLayout);
         
+        // initialise sentiment analyser
+        sentimentAnalyser = new SentimentAnalyser("djl://ai.djl.pytorch/distilbert");
+        
         // initialise panels
         HomeLandingJP homeLandingJP = new HomeLandingJP(this);   // landing page 
         CrawlerConfigJP crawlerConfigPanel = new CrawlerConfigJP(this);
@@ -64,6 +68,7 @@ public class MainMenuForm extends javax.swing.JFrame {
         DatabaseSettingsJP databaseSettingsPanel = new DatabaseSettingsJP(this);
         SQLCredentialsJP sqlCredentialsPanel = new SQLCredentialsJP(this);
         SQLDatabaseJP sqlDatabasePanel = new SQLDatabaseJP(this);
+        SentimentAnalysisJP sentimentAnalysisPanel = new SentimentAnalysisJP(this);
         
         // add panels to card layout
         mainPanelJP.add(homeLandingJP, "Landing");
@@ -80,8 +85,10 @@ public class MainMenuForm extends javax.swing.JFrame {
         sqlCredentialsPanel.setName("SQL Settings");
         mainPanelJP.add(sqlDatabasePanel, "SQL Database");
         sqlDatabasePanel.setName("SQL Database");
-        lastPanel = mainMenuPanel;
+        mainPanelJP.add(sentimentAnalysisPanel, "Sentiment Analysis");
+        sentimentAnalysisPanel.setName("Sentiment Analysis");
         
+        lastPanel = mainMenuPanel;  
         selectedCrawler = new WebCrawler();
         
         // load SQL database settings
@@ -91,11 +98,22 @@ public class MainMenuForm extends javax.swing.JFrame {
     public void displayPanel(String panelName) {
         // get the previous panel's name while ignoring pop-up menus
         for (Component comp: mainPanelJP.getComponents()) {
-            if (comp.isVisible())
+            if (comp.isVisible()) {
                 if (!comp.getName().equals("SQL Settings"))
                     lastPanel = (javax.swing.JPanel)comp;
+            }
         }
         cardLayout.show(mainPanelJP, panelName);
+        for (Component comp: mainPanelJP.getComponents()) {
+            // hide menu bar if outside main menu
+            if (comp.isVisible() && comp.getName().equals("Main Menu")) {
+                mainMB.setVisible(true);
+                System.out.println("Rendering menu bar");
+                break;
+            }
+            else
+                mainMB.setVisible(false);
+        }
         //System.out.println("Previous panel: " + lastPanel.getName());
     }
 
@@ -109,6 +127,10 @@ public class MainMenuForm extends javax.swing.JFrame {
     
     public void setSelectedCrawler(WebCrawler crawler) {
         selectedCrawler = crawler;
+    }
+    
+    public SentimentAnalyser getSentimentAnalyser() {
+        return sentimentAnalyser;
     }
 
     public boolean isSqlCredentialsRequired() {
@@ -227,6 +249,17 @@ public class MainMenuForm extends javax.swing.JFrame {
     public String getPreviousPanelName() {
         return lastPanel.getName();
     }
+    
+    public void populateComboBoxWithHTMLResponses(javax.swing.JComboBox cbox, WebCrawler crawler) {
+        // add HTML responses to combo box
+        int counter = -1;
+        cbox.setEnabled(true);
+        cbox.removeAllItems();
+        for (SearchResult result: crawler.getHtmlResponses()) {
+            counter++;
+            cbox.addItem("Response " + counter);
+        }
+    }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -238,6 +271,9 @@ public class MainMenuForm extends javax.swing.JFrame {
     private void initComponents() {
 
         mainPanelJP = new javax.swing.JPanel();
+        mainMB = new javax.swing.JMenuBar();
+        actionsMU = new javax.swing.JMenu();
+        sAnalysisMI = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(51, 51, 255));
@@ -247,6 +283,20 @@ public class MainMenuForm extends javax.swing.JFrame {
         mainPanelJP.setBackground(new java.awt.Color(51, 51, 255));
         mainPanelJP.setName("mainPanelJP"); // NOI18N
         mainPanelJP.setLayout(new java.awt.CardLayout());
+
+        actionsMU.setText("Actions");
+
+        sAnalysisMI.setText("Sentiment Analysis");
+        sAnalysisMI.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                sAnalysisMIActionPerformed(evt);
+            }
+        });
+        actionsMU.add(sAnalysisMI);
+
+        mainMB.add(actionsMU);
+
+        setJMenuBar(mainMB);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -261,6 +311,11 @@ public class MainMenuForm extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void sAnalysisMIActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sAnalysisMIActionPerformed
+        // TODO add your handling code here:
+        displayPanel("Sentiment Analysis");
+    }//GEN-LAST:event_sAnalysisMIActionPerformed
 
     /**
      * @param args the command line arguments
@@ -298,6 +353,9 @@ public class MainMenuForm extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JMenu actionsMU;
+    private javax.swing.JMenuBar mainMB;
     private javax.swing.JPanel mainPanelJP;
+    private javax.swing.JMenuItem sAnalysisMI;
     // End of variables declaration//GEN-END:variables
 }

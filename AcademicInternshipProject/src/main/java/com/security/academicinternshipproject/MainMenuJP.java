@@ -5,6 +5,7 @@
  * https://huggingface.co/blog/sentiment-analysis-python
  * https://www.w3schools.com/sql/sql_insert.asp
  * https://www.w3schools.com/java/java_regex.asp
+ * https://docs.oracle.com/javase/tutorial/uiswing/components/menu.html
  */
 package com.security.academicinternshipproject;
 
@@ -13,6 +14,7 @@ import com.microsoft.playwright.BrowserContext;
 import com.microsoft.playwright.BrowserType;
 import com.microsoft.playwright.Page;
 import com.microsoft.playwright.Playwright;
+import java.awt.BorderLayout;
 import java.util.List;
 import java.io.BufferedInputStream;
 import java.io.BufferedReader;
@@ -29,6 +31,8 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JMenu;
+import javax.swing.JMenuBar;
 import javax.swing.JOptionPane;
 
 /**
@@ -46,6 +50,7 @@ public class MainMenuJP extends javax.swing.JPanel {
     public MainMenuJP(MainMenuForm mainMenuForm) {
         this.mainMenuForm = mainMenuForm;
         mysql = mainMenuForm.getMySQL();
+        // add menu bar
         initComponents();
     }
 

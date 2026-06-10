@@ -27,12 +27,17 @@ public class SentimentAnalyser {
     
     private static final Logger logger = LoggerFactory.getLogger(SentimentAnalyser.class);
     private String input;
+    private String modelUrl;
+    
+    public SentimentAnalyser(String modelUrl) {
+        this.modelUrl = modelUrl;
+    }
     
     public Classifications predict(String input) throws MalformedModelException, ModelNotFoundException, IOException, TranslateException {
         Criteria<String, Classifications> criteria =
                 Criteria.builder()
                     .setTypes(String.class, Classifications.class)
-                    .optModelUrls("djl://ai.djl.pytorch/distilbert")
+                    .optModelUrls(modelUrl)
                     .optEngine("PyTorch")
                     .optDevice(Device.cpu())
                     .optProgress(new ProgressBar())
@@ -53,5 +58,9 @@ public class SentimentAnalyser {
     
     public String getInput() {
         return input;
+    }
+    
+    public String getModelUrl() {
+        return modelUrl;
     }
 }
