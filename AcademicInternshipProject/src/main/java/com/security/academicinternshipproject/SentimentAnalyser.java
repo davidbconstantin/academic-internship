@@ -1,6 +1,10 @@
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ * https://docs.djl.ai/master/docs/serving/serving/docs/lmi/deployment_guide/model-artifacts.html
+ * https://javadoc.io/doc/ai.djl/api/latest/ai/djl/repository/zoo/ZooModel.html
+ * https://www.baeldung.com/jackson-object-mapper-tutorial 
+ * https://www.mongodb.com/resources/basics/chunking-explained 
  */
 package com.security.academicinternshipproject;
 
@@ -8,12 +12,18 @@ import ai.djl.Device;
 import ai.djl.MalformedModelException;
 import ai.djl.inference.Predictor;
 import ai.djl.modality.Classifications;
+import ai.djl.modality.nlp.bert.BertTokenizer;
 import ai.djl.repository.zoo.Criteria;
 import ai.djl.repository.zoo.ModelNotFoundException;
 import ai.djl.repository.zoo.ZooModel;
 import ai.djl.training.util.ProgressBar;
 import ai.djl.translate.TranslateException;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.util.List;
+import java.util.Map;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -31,6 +41,7 @@ public class SentimentAnalyser {
     
     public SentimentAnalyser(String modelUrl) {
         this.modelUrl = modelUrl;
+        System.setProperty("ai.djl.repository.zoo.refresh", "true");
     }
     
     public Classifications predict(String input) throws MalformedModelException, ModelNotFoundException, IOException, TranslateException {
@@ -45,9 +56,23 @@ public class SentimentAnalyser {
         
         try (ZooModel<String, Classifications> model = criteria.loadModel();
             Predictor<String, Classifications> predictor = model.newPredictor()) {
+            
+            // check if input size exceeds max position embeddings and truncate if it does
+            BertTokenizer tokenizer = new BertTokenizer();
+            List<String> tokens = tokenizer.tokenize(input);
+            if (tokens.size() > 512) {
+                input = input.substring(0, 511);
+            }
             classifications = predictor.predict(input);
             this.input = input;
             logger.info(classifications.toString());
+            
+            // returns model artefacts
+            Path modelPath = model.getModelPath();
+            System.out.println("Model Path: " + modelPath);
+            
+            Path configPath = modelPath.resolve("config.json");
+            Files.list(modelPath).forEach(p -> System.out.println(" " + p.getFileName()));
             return classifications;
         }
     }

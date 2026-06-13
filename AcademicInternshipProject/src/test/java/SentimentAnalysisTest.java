@@ -23,6 +23,7 @@ public class SentimentAnalysisTest {
     @Test
     public void predict() {
         SentimentAnalyser analyser = new SentimentAnalyser("djl://ai.djl.pytorch/distilbert");
+        //SentimentAnalyser analyser = new SentimentAnalyser("https://huggingface.co/distilbert/distilbert-base-uncased");
         try {
             analyser.predict("The final report by the Commission of Investigation into how abuse allegations against basketball coach Bill Kenneally were handled is due to be published today.\n" +
 "\n" +
