@@ -52,6 +52,7 @@ public class SentimentAnalysisJP extends javax.swing.JPanel {
         responsesLBL = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         statusTA = new javax.swing.JTextArea();
+        queryBTN = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(0, 51, 242));
         setPreferredSize(new java.awt.Dimension(610, 390));
@@ -119,6 +120,13 @@ public class SentimentAnalysisJP extends javax.swing.JPanel {
         statusTA.setWrapStyleWord(true);
         jScrollPane1.setViewportView(statusTA);
 
+        queryBTN.setText("Query Database");
+        queryBTN.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                queryBTNActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -141,7 +149,10 @@ public class SentimentAnalysisJP extends javax.swing.JPanel {
                                         .addGap(67, 67, 67)
                                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                             .addComponent(responsesLBL)
-                                            .addComponent(responsesCB, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                            .addGroup(layout.createSequentialGroup()
+                                                .addComponent(responsesCB, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                                .addComponent(queryBTN))))
                                     .addGroup(layout.createSequentialGroup()
                                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                             .addGroup(layout.createSequentialGroup()
@@ -157,7 +168,7 @@ public class SentimentAnalysisJP extends javax.swing.JPanel {
                                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                             .addComponent(pValueLBL)
                                             .addComponent(nValueLBL))))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 117, Short.MAX_VALUE))
+                                .addGap(52, 52, 52))
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(backBTN)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -177,8 +188,9 @@ public class SentimentAnalysisJP extends javax.swing.JPanel {
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(inputTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(responsesCB, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(27, 27, 27)
+                    .addComponent(responsesCB, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(queryBTN))
+                .addGap(26, 26, 26)
                 .addComponent(modelLBL)
                 .addGap(46, 46, 46)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -255,6 +267,11 @@ public class SentimentAnalysisJP extends javax.swing.JPanel {
         }
     }//GEN-LAST:event_responsesCBActionPerformed
 
+    private void queryBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_queryBTNActionPerformed
+        // TODO add your handling code here:
+        mainMenuForm.displayPanel("Database Query");
+    }//GEN-LAST:event_queryBTNActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton backBTN;
@@ -268,6 +285,7 @@ public class SentimentAnalysisJP extends javax.swing.JPanel {
     private javax.swing.JLabel pValueLBL;
     private javax.swing.JLabel positiveLBL;
     private javax.swing.JProgressBar positivePB;
+    private javax.swing.JButton queryBTN;
     private javax.swing.JComboBox<String> responsesCB;
     private javax.swing.JLabel responsesLBL;
     private javax.swing.JButton runBTN;

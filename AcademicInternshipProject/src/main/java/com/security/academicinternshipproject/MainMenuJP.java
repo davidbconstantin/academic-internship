@@ -6,6 +6,7 @@
  * https://www.w3schools.com/sql/sql_insert.asp
  * https://www.w3schools.com/java/java_regex.asp
  * https://docs.oracle.com/javase/tutorial/uiswing/components/menu.html
+ * https://docs.oracle.com/javase/8/docs/api/javax/swing/SwingUtilities.html#invokeLater-java.lang.Runnable-
  */
 package com.security.academicinternshipproject;
 
@@ -34,6 +35,7 @@ import java.util.logging.Logger;
 import javax.swing.JMenu;
 import javax.swing.JMenuBar;
 import javax.swing.JOptionPane;
+import javax.swing.SwingUtilities;
 
 /**
  *
@@ -83,6 +85,7 @@ public class MainMenuJP extends javax.swing.JPanel {
             public void ancestorMoved(javax.swing.event.AncestorEvent evt) {
             }
             public void ancestorRemoved(javax.swing.event.AncestorEvent evt) {
+                formAncestorRemoved(evt);
             }
         });
 
@@ -212,7 +215,8 @@ public class MainMenuJP extends javax.swing.JPanel {
         for (WebCrawler crawler: mainMenuForm.getWebCrawlers()) {
             if (crawlersCB.getSelectedItem().toString().equals(crawler.getName())) {
                 mainMenuForm.setSelectedCrawler(crawler);
-                crawler.printInfo();
+                System.out.println("Selected Crawler: " + crawler.getName());
+                //crawler.printInfo();
                 statusTA.append("Name: " + crawler.getName() + "\n");
                 statusTA.append("User Agent: " + crawler.getUserAgent() + "\n");
                 statusTA.append("Crawl Delay: " + crawler.getCrawlDelay() + "\n");
@@ -459,7 +463,26 @@ public class MainMenuJP extends javax.swing.JPanel {
     private void formAncestorAdded(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_formAncestorAdded
         // TODO add your handling code here:
         mainMenuForm.loadCrawlers(crawlersCB);
+        System.out.println("Last selected crawler: " + mainMenuForm.getLastSelectedCrawlerName());
+        // find previously selected crawler if reloading form
+        SwingUtilities.invokeLater(() -> {
+            System.out.println("Invoking...");
+            if (mainMenuForm.getLastSelectedCrawlerName() != null)
+            if (!mainMenuForm.getLastSelectedCrawlerName().equals(crawlersCB.getSelectedItem().toString()))
+            for (int i = 0; i < crawlersCB.getItemCount(); i++) {
+                System.out.println("Looping");
+                if (crawlersCB.getItemAt(i).equals(mainMenuForm.getLastSelectedCrawlerName())) {
+                    System.out.println("Match found");
+                    crawlersCB.setSelectedItem(mainMenuForm.getLastSelectedCrawlerName());
+                }
+            }});
     }//GEN-LAST:event_formAncestorAdded
+
+    private void formAncestorRemoved(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_formAncestorRemoved
+        // TODO add your handling code here:
+        // memorise the last selected crawler
+        mainMenuForm.setLastSelectedCrawlerName(crawlersCB.getSelectedItem().toString());
+    }//GEN-LAST:event_formAncestorRemoved
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

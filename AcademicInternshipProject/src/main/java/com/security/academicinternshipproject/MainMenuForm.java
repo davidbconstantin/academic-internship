@@ -44,12 +44,15 @@ public class MainMenuForm extends javax.swing.JFrame {
     private WebCrawler selectedCrawler;
     private MySQLConnector sql;
     private List<String> sqlCredentials = new ArrayList<>();
+    private SQLDatabaseInfo dbInfo;
     private SentimentAnalyser sentimentAnalyser;
     
     private boolean sqlCredentialsRequired = true;
     private boolean editMode = false;
     private char[] username;
     private char[] password;
+    
+    private String lastSelectedCrawlerName = null;
     
     public MainMenuForm() {
         initComponents();
@@ -69,6 +72,7 @@ public class MainMenuForm extends javax.swing.JFrame {
         SQLCredentialsJP sqlCredentialsPanel = new SQLCredentialsJP(this);
         SQLDatabaseJP sqlDatabasePanel = new SQLDatabaseJP(this);
         SentimentAnalysisJP sentimentAnalysisPanel = new SentimentAnalysisJP(this);
+        DatabaseQueryJP databaseQueryPanel = new DatabaseQueryJP(this);
         
         // add panels to card layout
         mainPanelJP.add(homeLandingJP, "Landing");
@@ -87,6 +91,8 @@ public class MainMenuForm extends javax.swing.JFrame {
         sqlDatabasePanel.setName("SQL Database");
         mainPanelJP.add(sentimentAnalysisPanel, "Sentiment Analysis");
         sentimentAnalysisPanel.setName("Sentiment Analysis");
+        mainPanelJP.add(databaseQueryPanel, "Database Query");
+        databaseQueryPanel.setName("Database Query");
         
         lastPanel = mainMenuPanel;  
         selectedCrawler = new WebCrawler();
@@ -167,6 +173,14 @@ public class MainMenuForm extends javax.swing.JFrame {
     
     public void setEditMode(boolean value) {
         editMode = value;
+    }
+    
+    public String getLastSelectedCrawlerName() {
+        return lastSelectedCrawlerName;
+    }
+    
+    public void setLastSelectedCrawlerName(String name) {
+        lastSelectedCrawlerName = name;
     }
     
     public void eraseCredentials() {
@@ -250,6 +264,10 @@ public class MainMenuForm extends javax.swing.JFrame {
         return lastPanel.getName();
     }
     
+    public SQLDatabaseInfo getDatabaseInfo() {
+        return dbInfo;
+    }
+    
     public void populateComboBoxWithHTMLResponses(javax.swing.JComboBox cbox, WebCrawler crawler) {
         // add HTML responses to combo box
         int counter = -1;
@@ -259,6 +277,22 @@ public class MainMenuForm extends javax.swing.JFrame {
             counter++;
             cbox.addItem("Response " + counter);
         }
+    }
+    
+    // requires the database admin's credentials
+    public void loadDatabaseSchema() {
+        if (!sqlCredentialsRequired) {
+        try {
+            sql = new MySQLConnector(sqlCredentials.get(0), Integer.parseInt(sqlCredentials.get(1)), sqlCredentials.get(2),
+            String.valueOf(username),
+            String.valueOf(password));
+            sql.fetchTableSchemas(sqlCredentials.get(0), Integer.parseInt(sqlCredentials.get(1)), sqlCredentials.get(2), String.valueOf(username), String.valueOf(password));
+            dbInfo = sql.getCurrentDbAsInfo();
+        } catch (Exception ex) {
+            System.out.println(ex);
+            }
+        } else
+            displayPanel("SQL Settings");
     }
 
     /**

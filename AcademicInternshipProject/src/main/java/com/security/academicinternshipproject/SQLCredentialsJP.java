@@ -23,10 +23,6 @@ public class SQLCredentialsJP extends javax.swing.JPanel {
         this.mainMenuForm = mainMenuForm;
         initComponents();
     }
-    
-    public boolean getAreCredentialsSet() {
-        return credentialsSet;
-    }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -122,7 +118,6 @@ public class SQLCredentialsJP extends javax.swing.JPanel {
         // TODO add your handling code here:
         mainMenuForm.setUsername(usernamePF.getPassword());
         mainMenuForm.setPassword(passwordPF.getPassword());
-        credentialsSet = true;
         usernamePF.setText("");
         passwordPF.setText("");
         mainMenuForm.setSQLCredentialsRequired(false);

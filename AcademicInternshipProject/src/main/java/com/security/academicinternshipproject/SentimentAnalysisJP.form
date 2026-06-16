@@ -47,7 +47,11 @@
                                       <EmptySpace min="-2" pref="67" max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="0" attributes="0">
                                           <Component id="responsesLBL" min="-2" max="-2" attributes="0"/>
-                                          <Component id="responsesCB" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          <Group type="102" alignment="0" attributes="0">
+                                              <Component id="responsesCB" min="-2" max="-2" attributes="0"/>
+                                              <EmptySpace max="32767" attributes="0"/>
+                                              <Component id="queryBTN" min="-2" max="-2" attributes="0"/>
+                                          </Group>
                                       </Group>
                                   </Group>
                                   <Group type="102" alignment="0" attributes="0">
@@ -72,7 +76,7 @@
                                       </Group>
                                   </Group>
                               </Group>
-                              <EmptySpace pref="117" max="32767" attributes="0"/>
+                              <EmptySpace min="-2" pref="52" max="-2" attributes="0"/>
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
                               <Component id="backBTN" min="-2" max="-2" attributes="0"/>
@@ -101,8 +105,9 @@
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="inputTF" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="responsesCB" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="queryBTN" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
               <Component id="modelLBL" min="-2" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="46" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="1" attributes="0">
@@ -261,5 +266,13 @@
         </Component>
       </SubComponents>
     </Container>
+    <Component class="javax.swing.JButton" name="queryBTN">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Query Database"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="queryBTNActionPerformed"/>
+      </Events>
+    </Component>
   </SubComponents>
 </Form>
