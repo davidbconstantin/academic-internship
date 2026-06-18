@@ -6,6 +6,7 @@ package com.security.academicinternshipproject;
 
 import java.util.ArrayList;
 import java.util.List;
+import javax.swing.table.AbstractTableModel;
 
 /**
  *
@@ -20,6 +21,53 @@ public class DatabaseQueryJP extends javax.swing.JPanel {
     public DatabaseQueryJP(MainMenuForm mainMenuForm) {
         this.mainMenuForm = mainMenuForm;
         initComponents();
+    }
+    
+    class SQLTableModel extends AbstractTableModel {
+        
+        private String[] columnNames;
+        private Object[][] data;
+        
+        public SQLTableModel(String[] columnNames, Object[][] data) {
+            this.columnNames = columnNames;
+            this.data = data;
+        }
+        
+        @Override
+        public String getColumnName(int column) {
+            return columnNames[column];
+        }
+
+        @Override
+        public int getRowCount() {
+            return data.length;
+        }
+
+        @Override
+        public int getColumnCount() {
+            return columnNames.length;
+        }
+
+        @Override
+        public Object getValueAt(int rowIndex, int columnIndex) {
+            if (data == null || rowIndex < 0 || rowIndex >= data.length)
+                return "";
+            else
+                return data[rowIndex][columnIndex];
+        }
+        
+    }
+    
+    private void loadTableData() {
+            List<String> listData = new ArrayList<>();
+            for (SQLTableInfo table: mainMenuForm.getDatabaseInfo().getTables()) {
+                listData.add(table.getTableName());
+            }
+            String[] array = new String[listData.size()];
+            for (int i = 0; i < array.length; i++) {
+                array[i] = listData.get(i);
+            }
+            tableLS.setListData(array);       
     }
 
     /**
@@ -138,33 +186,46 @@ public class DatabaseQueryJP extends javax.swing.JPanel {
     private void formAncestorAdded(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_formAncestorAdded
         // TODO add your handling code here:
         // load database schema if the user has already input their username and password
-        if (!mainMenuForm.isSqlCredentialsRequired()) {
+        if (!mainMenuForm.isSqlCredentialsRequired()) 
             mainMenuForm.loadDatabaseSchema();
-            List<String> listData = new ArrayList<>();
-            for (SQLTableInfo table: mainMenuForm.getDatabaseInfo().getTables()) {
-                listData.add(table.getTableName());
-            }
-            String[] array = new String[listData.size()];
-            for (int i = 0; i < array.length; i++) {
-                array[i] = listData.get(i);
-            }
-            tableLS.setListData(array);
-        }
     }//GEN-LAST:event_formAncestorAdded
 
     private void refreshBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_refreshBTNActionPerformed
         // TODO add your handling code here:
-        mainMenuForm.loadDatabaseSchema();
+        if (mainMenuForm.loadDatabaseSchema()) {
+            loadTableData();
+            displaySelectedTableSchema();
+        }
+        
     }//GEN-LAST:event_refreshBTNActionPerformed
 
     private void tableLSValueChanged(javax.swing.event.ListSelectionEvent evt) {//GEN-FIRST:event_tableLSValueChanged
         // TODO add your handling code here:
         System.out.println("Selected table: " + tableLS.getSelectedValue());
+        displaySelectedTableSchema();
     }//GEN-LAST:event_tableLSValueChanged
 
-    private void displayTableSchema() {
+    private void displaySelectedTableSchema() {
         // retrieve the selected table's schema first
-        
+        if (mainMenuForm.getDatabaseInfo() != null) {
+            for (SQLTableInfo info: mainMenuForm.getDatabaseInfo().getTables()) {
+                if (info.getTableName().equals(tableLS.getSelectedValue())) {
+                    String[] colNames = new String[info.getColumns().size()];
+                    Object[][] rowData = new Object[2][info.getColumns().size()];
+                    // extract column names
+                    for (int i = 0; i < info.getColumns().size(); i++) {
+                        colNames[i] = info.getColumns().get(i).getColumnName();
+                        System.out.println("Column name: " + colNames[i]);
+                    }
+                    SQLTableModel tableModel = new SQLTableModel(colNames, rowData);
+                    // remove existing table model
+                    if (displayTBL.getModel() != null)
+                        if (displayTBL.getCellEditor() != null)
+                            displayTBL.getCellEditor().cancelCellEditing();              
+                    displayTBL.setModel(tableModel);
+                }
+            }
+        }
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

@@ -280,7 +280,7 @@ public class MainMenuForm extends javax.swing.JFrame {
     }
     
     // requires the database admin's credentials
-    public void loadDatabaseSchema() {
+    public boolean loadDatabaseSchema() {
         if (!sqlCredentialsRequired) {
         try {
             sql = new MySQLConnector(sqlCredentials.get(0), Integer.parseInt(sqlCredentials.get(1)), sqlCredentials.get(2),
@@ -288,11 +288,15 @@ public class MainMenuForm extends javax.swing.JFrame {
             String.valueOf(password));
             sql.fetchTableSchemas(sqlCredentials.get(0), Integer.parseInt(sqlCredentials.get(1)), sqlCredentials.get(2), String.valueOf(username), String.valueOf(password));
             dbInfo = sql.getCurrentDbAsInfo();
+            return true;
         } catch (Exception ex) {
             System.out.println(ex);
+            return false;
             }
-        } else
+        } else {
             displayPanel("SQL Settings");
+            return false;
+        }
     }
 
     /**

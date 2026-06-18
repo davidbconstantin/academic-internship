@@ -49,6 +49,7 @@ com\security\academicinternshipproject\SQLDatabaseInfo.class
 com\security\academicinternshipproject\CrawlerScriptingJP$3.class
 com\security\academicinternshipproject\SQLDatabaseJP$3.class
 com\security\academicinternshipproject\SQLCredentialsJP$2.class
+com\security\academicinternshipproject\DatabaseQueryJP$SQLTableModel.class
 com\security\academicinternshipproject\CrawlerScriptingJP$6.class
 com\security\academicinternshipproject\CrawlerScriptingJP$8.class
 com\security\academicinternshipproject\MySQLConnector.class
