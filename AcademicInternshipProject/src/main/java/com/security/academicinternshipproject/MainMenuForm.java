@@ -25,6 +25,7 @@ import java.io.ObjectOutputStream;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import javax.sql.rowset.CachedRowSet;
 import javax.swing.JPanel;
 
 /**
@@ -45,6 +46,8 @@ public class MainMenuForm extends javax.swing.JFrame {
     private MySQLConnector sql;
     private List<String> sqlCredentials = new ArrayList<>();
     private SQLDatabaseInfo dbInfo;
+    private CachedRowSet crs;
+    
     private SentimentAnalyser sentimentAnalyser;
     
     private boolean sqlCredentialsRequired = true;
@@ -268,6 +271,10 @@ public class MainMenuForm extends javax.swing.JFrame {
         return dbInfo;
     }
     
+    public CachedRowSet getCrs() {
+        return crs;
+    }
+    
     public void populateComboBoxWithHTMLResponses(javax.swing.JComboBox cbox, WebCrawler crawler) {
         // add HTML responses to combo box
         int counter = -1;
@@ -297,6 +304,25 @@ public class MainMenuForm extends javax.swing.JFrame {
             displayPanel("SQL Settings");
             return false;
         }
+    }
+    
+    public boolean returnTableData(String tableName) {
+        if (!sqlCredentialsRequired) {
+            try {
+                 sql = new MySQLConnector(sqlCredentials.get(0), Integer.parseInt(sqlCredentials.get(1)), sqlCredentials.get(2),
+                 String.valueOf(username),
+                 String.valueOf(password));
+                 sql.fetchTableSchemas(sqlCredentials.get(0), Integer.parseInt(sqlCredentials.get(1)), sqlCredentials.get(2), String.valueOf(username), String.valueOf(password));
+                 crs = sql.executeQuery(sql.composeUrl(sqlCredentials.get(0), Integer.parseInt(sqlCredentials.get(1)), sqlCredentials.get(2)), String.valueOf(username), String.valueOf(password), "SELECT * FROM " + tableName);
+                 return true;
+             } catch (Exception ex) {
+                 System.out.println(ex);
+                 return false;
+                 }
+             } else {
+                 displayPanel("SQL Settings");
+                 return false;
+             }
     }
 
     /**

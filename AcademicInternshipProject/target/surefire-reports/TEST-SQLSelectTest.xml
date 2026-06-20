@@ -1,0 +1,757 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="SQLSelectTest" time="0.622" tests="1" errors="0" skipped="0" failures="0">
+  <properties>
+    <property name="java.specification.version" value="22"/>
+    <property name="sun.cpu.isalist" value="amd64"/>
+    <property name="sun.jnu.encoding" value="Cp1252"/>
+    <property name="java.class.path" value="C:\University\Semester 6\Project\Python\AcademicInternshipProject\target\test-classes;C:\University\Semester 6\Project\Python\AcademicInternshipProject\target\classes;C:\Users\rokom\.m2\repository\org\jsoup\jsoup\1.22.1\jsoup-1.22.1.jar;C:\Users\rokom\.m2\repository\com\microsoft\playwright\playwright\1.58.0\playwright-1.58.0.jar;C:\Users\rokom\.m2\repository\com\google\code\gson\gson\2.13.2\gson-2.13.2.jar;C:\Users\rokom\.m2\repository\com\google\errorprone\error_prone_annotations\2.41.0\error_prone_annotations-2.41.0.jar;C:\Users\rokom\.m2\repository\org\opentest4j\opentest4j\1.3.0\opentest4j-1.3.0.jar;C:\Users\rokom\.m2\repository\com\microsoft\playwright\driver\1.58.0\driver-1.58.0.jar;C:\Users\rokom\.m2\repository\com\microsoft\playwright\driver-bundle\1.58.0\driver-bundle-1.58.0.jar;C:\Users\rokom\.m2\repository\org\junit\jupiter\junit-jupiter-api\5.10.2\junit-jupiter-api-5.10.2.jar;C:\Users\rokom\.m2\repository\org\junit\platform\junit-platform-commons\1.10.2\junit-platform-commons-1.10.2.jar;C:\Users\rokom\.m2\repository\org\apiguardian\apiguardian-api\1.1.2\apiguardian-api-1.1.2.jar;C:\Users\rokom\.m2\repository\org\junit\jupiter\junit-jupiter-params\5.10.2\junit-jupiter-params-5.10.2.jar;C:\Users\rokom\.m2\repository\org\junit\jupiter\junit-jupiter-engine\5.10.2\junit-jupiter-engine-5.10.2.jar;C:\Users\rokom\.m2\repository\org\junit\platform\junit-platform-engine\1.10.2\junit-platform-engine-1.10.2.jar;C:\Users\rokom\.m2\repository\com\mysql\mysql-connector-j\9.6.0\mysql-connector-j-9.6.0.jar;C:\Users\rokom\.m2\repository\com\google\protobuf\protobuf-java\4.31.1\protobuf-java-4.31.1.jar;C:\Users\rokom\.m2\repository\ai\djl\api\0.36.0\api-0.36.0.jar;C:\Users\rokom\.m2\repository\net\java\dev\jna\jna\5.17.0\jna-5.17.0.jar;C:\Users\rokom\.m2\repository\org\apache\commons\commons-compress\1.27.1\commons-compress-1.27.1.jar;C:\Users\rokom\.m2\repository\commons-codec\commons-codec\1.17.1\commons-codec-1.17.1.jar;C:\Users\rokom\.m2\repository\commons-io\commons-io\2.16.1\commons-io-2.16.1.jar;C:\Users\rokom\.m2\repository\org\slf4j\slf4j-api\2.0.17\slf4j-api-2.0.17.jar;C:\Users\rokom\.m2\repository\com\guicedee\services\slf4j\1.2.2.1\slf4j-1.2.2.1.jar;C:\Users\rokom\.m2\repository\ai\djl\pytorch\pytorch-engine\0.36.0\pytorch-engine-0.36.0.jar;C:\Users\rokom\.m2\repository\ai\djl\pytorch\pytorch-model-zoo\0.36.0\pytorch-model-zoo-0.36.0.jar;C:\Users\rokom\.m2\repository\ai\djl\huggingface\tokenizers\0.36.0\tokenizers-0.36.0.jar;C:\Users\rokom\.m2\repository\com\fasterxml\jackson\core\jackson-databind\2.22.0\jackson-databind-2.22.0.jar;C:\Users\rokom\.m2\repository\com\fasterxml\jackson\core\jackson-annotations\2.22\jackson-annotations-2.22.jar;C:\Users\rokom\.m2\repository\com\fasterxml\jackson\core\jackson-core\2.22.0\jackson-core-2.22.0.jar;"/>
+    <property name="java.vm.vendor" value="Azul Systems, Inc."/>
+    <property name="sun.arch.data.model" value="64"/>
+    <property name="user.variant" value=""/>
+    <property name="java.vendor.url" value="http://www.azul.com/"/>
+    <property name="user.timezone" value="Europe/Dublin"/>
+    <property name="os.name" value="Windows 11"/>
+    <property name="java.vm.specification.version" value="22"/>
+    <property name="user.country" value="IE"/>
+    <property name="sun.java.launcher" value="SUN_STANDARD"/>
+    <property name="sun.boot.library.path" value="C:\Program Files\Apache NetBeans\jdk\bin"/>
+    <property name="sun.java.command" value="C:\Users\rokom\AppData\Local\Temp\surefire6682897799283892875\surefirebooter-20260620130850658_3.jar C:\Users\rokom\AppData\Local\Temp\surefire6682897799283892875 2026-06-20T13-08-50_542-jvmRun1 surefire-20260620130850658_1tmp surefire_0-20260620130850658_2tmp"/>
+    <property name="jdk.debug" value="release"/>
+    <property name="test" value="SQLSelectTest"/>
+    <property name="surefire.test.class.path" value="C:\University\Semester 6\Project\Python\AcademicInternshipProject\target\test-classes;C:\University\Semester 6\Project\Python\AcademicInternshipProject\target\classes;C:\Users\rokom\.m2\repository\org\jsoup\jsoup\1.22.1\jsoup-1.22.1.jar;C:\Users\rokom\.m2\repository\com\microsoft\playwright\playwright\1.58.0\playwright-1.58.0.jar;C:\Users\rokom\.m2\repository\com\google\code\gson\gson\2.13.2\gson-2.13.2.jar;C:\Users\rokom\.m2\repository\com\google\errorprone\error_prone_annotations\2.41.0\error_prone_annotations-2.41.0.jar;C:\Users\rokom\.m2\repository\org\opentest4j\opentest4j\1.3.0\opentest4j-1.3.0.jar;C:\Users\rokom\.m2\repository\com\microsoft\playwright\driver\1.58.0\driver-1.58.0.jar;C:\Users\rokom\.m2\repository\com\microsoft\playwright\driver-bundle\1.58.0\driver-bundle-1.58.0.jar;C:\Users\rokom\.m2\repository\org\junit\jupiter\junit-jupiter-api\5.10.2\junit-jupiter-api-5.10.2.jar;C:\Users\rokom\.m2\repository\org\junit\platform\junit-platform-commons\1.10.2\junit-platform-commons-1.10.2.jar;C:\Users\rokom\.m2\repository\org\apiguardian\apiguardian-api\1.1.2\apiguardian-api-1.1.2.jar;C:\Users\rokom\.m2\repository\org\junit\jupiter\junit-jupiter-params\5.10.2\junit-jupiter-params-5.10.2.jar;C:\Users\rokom\.m2\repository\org\junit\jupiter\junit-jupiter-engine\5.10.2\junit-jupiter-engine-5.10.2.jar;C:\Users\rokom\.m2\repository\org\junit\platform\junit-platform-engine\1.10.2\junit-platform-engine-1.10.2.jar;C:\Users\rokom\.m2\repository\com\mysql\mysql-connector-j\9.6.0\mysql-connector-j-9.6.0.jar;C:\Users\rokom\.m2\repository\com\google\protobuf\protobuf-java\4.31.1\protobuf-java-4.31.1.jar;C:\Users\rokom\.m2\repository\ai\djl\api\0.36.0\api-0.36.0.jar;C:\Users\rokom\.m2\repository\net\java\dev\jna\jna\5.17.0\jna-5.17.0.jar;C:\Users\rokom\.m2\repository\org\apache\commons\commons-compress\1.27.1\commons-compress-1.27.1.jar;C:\Users\rokom\.m2\repository\commons-codec\commons-codec\1.17.1\commons-codec-1.17.1.jar;C:\Users\rokom\.m2\repository\commons-io\commons-io\2.16.1\commons-io-2.16.1.jar;C:\Users\rokom\.m2\repository\org\slf4j\slf4j-api\2.0.17\slf4j-api-2.0.17.jar;C:\Users\rokom\.m2\repository\com\guicedee\services\slf4j\1.2.2.1\slf4j-1.2.2.1.jar;C:\Users\rokom\.m2\repository\ai\djl\pytorch\pytorch-engine\0.36.0\pytorch-engine-0.36.0.jar;C:\Users\rokom\.m2\repository\ai\djl\pytorch\pytorch-model-zoo\0.36.0\pytorch-model-zoo-0.36.0.jar;C:\Users\rokom\.m2\repository\ai\djl\huggingface\tokenizers\0.36.0\tokenizers-0.36.0.jar;C:\Users\rokom\.m2\repository\com\fasterxml\jackson\core\jackson-databind\2.22.0\jackson-databind-2.22.0.jar;C:\Users\rokom\.m2\repository\com\fasterxml\jackson\core\jackson-annotations\2.22\jackson-annotations-2.22.jar;C:\Users\rokom\.m2\repository\com\fasterxml\jackson\core\jackson-core\2.22.0\jackson-core-2.22.0.jar;"/>
+    <property name="sun.cpu.endian" value="little"/>
+    <property name="user.home" value="C:\Users\rokom"/>
+    <property name="user.language" value="en"/>
+    <property name="java.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.version.date" value="2024-04-16"/>
+    <property name="java.home" value="C:\Program Files\Apache NetBeans\jdk"/>
+    <property name="file.separator" value="\"/>
+    <property name="basedir" value="C:\University\Semester 6\Project\Python\AcademicInternshipProject"/>
+    <property name="java.vm.compressedOopsMode" value="Zero based"/>
+    <property name="line.separator" value="&#10;"/>
+    <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.specification.name" value="Java Platform API Specification"/>
+    <property name="surefire.real.class.path" value="C:\Users\rokom\AppData\Local\Temp\surefire6682897799283892875\surefirebooter-20260620130850658_3.jar"/>
+    <property name="user.script" value=""/>
+    <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
+    <property name="java.runtime.version" value="22.0.1+8"/>
+    <property name="user.name" value="rokom"/>
+    <property name="stdout.encoding" value="Cp1252"/>
+    <property name="path.separator" value=";"/>
+    <property name="os.version" value="10.0"/>
+    <property name="java.runtime.name" value="OpenJDK Runtime Environment"/>
+    <property name="file.encoding" value="UTF-8"/>
+    <property name="java.vm.name" value="OpenJDK 64-Bit Server VM"/>
+    <property name="java.vendor.version" value="Zulu22.30+13-CA"/>
+    <property name="maven.ext.class.path" value="C:\Program Files\Apache NetBeans\java\maven-nblib\netbeans-eventspy.jar"/>
+    <property name="localRepository" value="C:\Users\rokom\.m2\repository"/>
+    <property name="java.vendor.url.bug" value="http://www.azul.com/support/"/>
+    <property name="java.io.tmpdir" value="C:\Users\rokom\AppData\Local\Temp\"/>
+    <property name="java.version" value="22.0.1"/>
+    <property name="user.dir" value="C:\University\Semester 6\Project\Python\AcademicInternshipProject"/>
+    <property name="os.arch" value="amd64"/>
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+    <property name="sun.os.patch.level" value=""/>
+    <property name="native.encoding" value="Cp1252"/>
+    <property name="java.library.path" value="C:\Program Files\Apache NetBeans\jdk\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Program Files (x86)\Common Files\Oracle\Java\java8path;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\Microsoft SQL Server\150\Tools\Binn\;C:\Program Files\dotnet\;c:\Program Files (x86)\Microsoft SQL Server\90\Tools\binn\;C:\Program Files (x86)\Windows Kits\10\Windows Performance Toolkit\;C:\Program Files\nodejs\;C:\ProgramData\chocolatey\bin;C:\Program Files\Git\cmd;C:\Program Files\Java\jdk-25;;C:\Program Files\Docker\Docker\resources\bin;C:\Program Files\MySQL\MySQL Shell 8.0\bin\;C:\Users\rokom\AppData\Local\Programs\Python\Launcher\;C:\Users\rokom\AppData\Local\Microsoft\WindowsApps;C:\Users\rokom\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\rokom\.dotnet\tools;C:\Users\rokom\AppData\Local\Microsoft\WinGet\Packages\Schniz.fnm_Microsoft.Winget.Source_8wekyb3d8bbwe;C:\Users\rokom\AppData\Roaming\npm;C:\Program Files (x86)\Nmap;C:\Program Files\Wireshark;C:\Users\rokom\AppData\Local\Programs\Python\Python312\Scripts;C:\Users\rokom\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\Scripts;C:\Program Files\Java\jdk-25;C:\Users\rokom\AppData\Local\Programs\Ollama;C:\Program Files\apache-maven-3.9.12\bin;;."/>
+    <property name="java.vm.info" value="mixed mode, sharing"/>
+    <property name="stderr.encoding" value="Cp1252"/>
+    <property name="java.vendor" value="Azul Systems, Inc."/>
+    <property name="java.vm.version" value="22.0.1+8"/>
+    <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
+    <property name="java.class.version" value="66.0"/>
+  </properties>
+  <testcase name="select" classname="SQLSelectTest" time="0.598">
+    <system-out><![CDATA[Table Name: testtable
+ID: 247 Text: The commission today (Thursday, June 4) confirmed it has decided to refer Ireland to the Court of Justice of the European Union, because it claims that the State has failed to "comply"with environmental rules governing "peat extraction projects".
+ID: 248 Text: Under EU law, peat extraction projects that could significantly impact the environment must undergo an Environmental Impact Assessment (EIA).
+ID: 249 Text: According to the commission these assessments not only ensure public participation but also"guarantee the preservation of peatlands, which play a vital role for both ecological balance and climate mitigation".
+ID: 250 Text: The Roscommon-Galway TD believes it is "disgusting" that the European Commission has referred - what it described as "peat extraction projects" - to the Court of Justice, because Deputy Fitzmaurice believes it has "made a decision already that it is ille
+ID: 251 Text: gal".
+ID: 252 Text: The European Commission said today in relation to Ireland it was aware that "there is still significant peat cutting activity, which is not subject to planning permission or environmental impact assessment, especially in relation to sites below 50 hectar
+ID: 253 Text: es".
+ID: 254 Text: It stated: "Despite evidence of these ongoing illegal activities, enforcement action at the local level is not being taken.
+ID: 255 Text: According to Deputy Fitzmaurice he sees the case as a "vendetta" against the likes of the milling peat operators.
+ID: 256 Text: Milled peat or casing has traditionally been used for mushroom production.
+ID: 257 Text: "Will the casing for mushrooms come from Latvia or another country? Does that make sense?" Deputy Fitzmaurice asked.
+ID: 258 Text: Fintan Kelly, senior land use officer with the Environmental Pillar, said: “The European Commission’s decision is welcome and necessary.
+ID: 259 Text: "While Ireland has taken some steps, including action by the Environmental Protection Agency (EPA) on larger commercial sites and rehabilitation of Bord na Móna lands, the failure of local authorities to regulate other large commercial operators forced t
+ID: 260 Text: he commission to take action".
+ID: 261 Text: According to the Environmental Pillar national reporting "puts the total extraction of bogs, both commercial and domestic, at 70,020 hectares".
+ID: 262 Text: But it also claimed that "satellite assessment of the midlands bogs alone indicates that peat extraction covers 119,000 hectares—70% higher than what is reported for all peatlands combined".
+ID: 263 Text: The European Commission has referred Ireland to the Court of Justice of the European Union (CJEU) for allegedly failing to comply with the Environmental Impact Assessment (EIA) rules on peat cutting projects.
+ID: 264 Text: The commission says that Ireland failed to comply with an EIA directive from 2011, which requires member states to carry out an assessment of the environmental impacts of projects "likely to have a significant negative impact on the environment".
+ID: 265 Text: Peat extraction falls under the scope of that directive.
+ID: 266 Text: According to the commission, these assessments "ensure public participation in the decision-making process of projects", and "guarantee the preservation of peatlands".
+ID: 267 Text: Although Ireland introduced legislation in 1999 to implement an EU court ruling under an earlier version of the EIA directive, the commission has stated this legislation was not followed up by enforcement action, and that, "in practice", Ireland has not 
+ID: 268 Text: ensured that all peat cutting projects are regulated and subject to an environmental impact assessment.
+ID: 269 Text: The commission started an "infringement" procedure against Ireland in July 2019 with a letter of formal notice, followed by a "reasoned opinion" in July 2020.
+ID: 270 Text: At that time, there were "significant peat cutting activities ongoing that had not been subject to planning permissions or environmental impact assessments", according to the commission.
+ID: 271 Text: The commission did acknowledge that, since July 2020, Ireland has taken "significant action" to halt peat cutting under the remit of Bord Na Móna.
+ID: 272 Text: The European executive institution also noted that, since July 2020, the Environmental Protection Agency (EPA) has been undertaking enforcement action against operators on privately owned commercial sites of over 50ha, resulting in some commercial peat o
+ID: 273 Text: perators halting their activities.
+ID: 274 Text: However, the commission said it is "aware that there is still significant peat cutting activity, which is not subject to planning permission or environmental impact assessment, especially in relation to sites below 50 hectares".
+ID: 275 Text: "The commission considers that efforts by the Irish authorities have been insufficient and is therefore referring Ireland to the Court of Justice of the European Union," the commission said in a statement.
+ID: 276 Text: A key report from agriculture MEPs in the European Parliament, set to be published next week, will begin a "crucial phase" on Common Agricultural Policy (CAP) talks, an Irish MEP has said.
+ID: 277 Text: Cowen said the publication of the report will mark a "significant milestone in negotiations on the future of European agriculture".
+ID: 278 Text: However, Cowen stressed that the "overriding issue" remains the overall CAP budget.
+ID: 279 Text: Cowen said: "The publication of the first draft report will mark the real beginning of negotiations. Up to now, much of the discussion has been about broad principles. From June 12 onwards, we move into the detail.
+ID: 280 Text: "The parliament has already sent a strong signal through its support for a €433 billion CAP envelope. The challenge now is turning that signal into reality," the Ireland Midlands-Northwest MEP said.
+ID: 281 Text: "That will require constructive engagement between political groups, but I believe there is a growing coalition emerging around the need for a stronger CAP budget," he added.
+ID: 282 Text: Cowen said: "The next CAP will shape European agriculture for the best part of a decade. It is vital that we get it right."
+ID: 283 Text: Minister for Agriculture, Food and the Marine Martin Heydon has described the 2023 Shannon Callows Flood Scheme as “a once-off measure”.
+ID: 284 Text: The minister added: “There are currently no plans to introduce another scheme.”
+ID: 285 Text: He made the comments in reply to a query from Roscommon-Galway Fianna Fáil TD Martin Daly about supports related to “persistent elevated water levels and flooding in the Shannon Callows”.
+ID: 286 Text: Minister Heydon said: “My department is not involved in the management of the water levels on the River Shannon, however, following exceptional flooding in the Shannon Callows during the summer of 2023, on November 7, 2023, the Shannon Callows Flood Sche
+ID: 287 Text: me was announced as a once-off measure.
+ID: 288 Text: That summer, farmers in the Shannon Callows saw thousands of acres worth of fodder flooded, equating to tens of thousands of bales lost.
+ID: 289 Text: In November 2023, then-Minister for Agriculture, Food and the Marine Charlie McConalogue secured cabinet approval for a €800,000 scheme to help farmers who lost fodder due to the flooding.
+ID: 290 Text: In October of last year, a new website was launched to provide the public with information on flood risk and water levels on the River Shannon.
+ID: 291 Text: Minister Moran also confirmed that funding of €2 million will be allocated for future "strategic maintenance work" on the Shannon.
+ID: 292 Text: The working group was established in 2016, following severe flooding that impacted the River Shannon Basin, to coordinate the future efforts of the relevant state agencies in the region.
+ID: 293 Text: The website is designed to share information with communities and the general public about the work of the group.
+ID: 294 Text: Spring 2026 was “exceptionally warm”, making it the third warmest spring on record, according to Met Éireann.
+ID: 295 Text: The national mean spring 2026 temperature across March, April and May was 10.14°C, the latest seasonal climate report from the national forecaster showed.
+ID: 296 Text: This was 1.02°C above the 1991-2020 long-term average (LTA) and 1.77°C above the 1961-1990 LTA.
+ID: 297 Text: Seven of the 10 warmest springs have occurred since 2001. In descending order, these are: 2025; 2026; 2024; 2017; 2023; 2007; and 2011.
+ID: 298 Text: However, the report highlighted that rainfall was near normal overall, with the season also wetter than average in the west and drier than average in the south and east.
+ID: 299 Text: While March was mild and relatively wet overall, it was drier in the south. The month saw periods of frontal rain or showers at times, sometimes heavy, but also some dry days.
+ID: 300 Text: April was mild and quite sunny overall. It was wet in the west and dry in the east. Storm Dave, named by the UK Met Office, passed over the north-west of Ireland late in April.
+ID: 301 Text: High pressure to the north took control for the final third of the month and brought much drier and sunnier conditions in an easterly airflow.
+ID: 302 Text: May was mild and dry overall. The first two thirds of the month were relatively cool with high pressure to the west directing Arctic airmasses over Ireland.
+ID: 303 Text: Most seasonal rainfall totals were above their 1991-2020 LTA
+ID: 304 Text: The percentage of seasonal rainfall values ranged from 60% (99.4mm) at Casement Aerodrome, Co. Dublin to 127% (305.5mm) at Athenry, Co. Galway.
+ID: 305 Text: The number of very wet days ranged from two days at both Oak Park, Co. Carlow and Dublin Airport, Co. Dublin to 11 days at Valentia Observatory, Co. Kerry.
+ID: 306 Text: It was the wettest spring for seven years in parts of the north-west and the driest spring for six years in parts of the east.
+ID: 307 Text: All mean air temperatures across the country were above their LTA for the season.
+ID: 308 Text: Deviations from mean air temperature ranged from +0.5 °C (9.9°C) at Belmullet, Co. Mayo to +1.3°C at both Dublin Airport, Co. Dublin (9.7°C) - its second warmest spring on record, behind 1990 - and Phoenix Park, Co Dublin (10.3°C)
+ID: 309 Text: Mean temperatures for the season ranged from 8.9 °C (1.0°C above its LTA) at Knock Airport, Co. Mayo to 10.7 °C at both Sherkin Island, Co. Cork and Shannon Airport, Co. Clare (0.9 °C above their LTAs).
+ID: 310 Text: The season’s highest temperature at a synoptic station was reported at Shannon Airport, Co. Clare on May 26 with a temperature of 30.6°C .
+ID: 311 Text: All stations reported ground frost during the season. The number of days with ground frost ranged from three days at Cork Airport to 45 days at Phoenix Park, Co. Dublin.
+ID: 312 Text: More than half of stations reported air frost.
+ID: 313 Text: Nearly all available sunshine totals were above their LTA for the season.
+ID: 314 Text: The highest number of daily sunshine hours recorded this season was 15.2 hours at Johnstown Castle, Co. Wexford on Tuesday, May 26.
+ID: 315 Text: Seasonal mean wind speeds ranged from 6.4 knots (11.9 km/h) at Moore Park, Co. Cork to 15.1 knots (28.0 km/h) at Mace Head, Co. Galway.
+ID: 316 Text: Gales were reported on numerous days, with strong gales reported on eight days during the season.
+ID: 317 Text: The number of days with gales ranged from zero days at a few stations to 15 days at Mace Head, Co. Galway.
+ID: 318 Text: Minister of State for Nature, Heritage and Biodiversity, Christopher O’Sullivan has condemned the ‘utterly reckless’ illegal fire that destroyed large sections of Wicklow Mountains National Park.
+ID: 319 Text: “Last week, an illegal fire destroyed 66ha of land within Wicklow Mountains National Park, the equivalent of an area more than 50 times the size of Croke Park,” he said.
+ID: 320 Text: In the early hours of last Thursday (May 28), a member of the public reported a fire on an open hillside in Piperstown, near the Glenasmole Valley in south Co. Dublin. This land is part of Wicklow Mountains National Park.
+ID: 321 Text: The report triggered an emergency response from the Dublin Fire Brigade, while personnel from the National Parks and Wildlife Service (NPWS) and Coillte also attended the scene.
+ID: 322 Text: Together, they attempted to bring the fire under control, but strong winds and large gorse stands on site created the conditions that led it to spread extremely quickly.
+ID: 323 Text: Significant public resources were mobilised, including the use of multiple fire tenders and helicopters to conduct water drops.
+ID: 324 Text: There were private homes close by, and Dublin Fire Brigade called an excavator onsite to dig firebreaks to protect them.
+ID: 325 Text: Under the Wildlife Act, burning, cutting, or destroying vegetation on uncultivated land or hedgerows is illegal from March 1 to August 31 to safeguard nesting birds and wildlife during their breeding season.
+ID: 326 Text: The burning of general domestic or agricultural waste is entirely prohibited.
+ID: 327 Text: The minister appealed to communities and landowners to be aware of responsibilities when it comes to burning activities.
+ID: 328 Text: He said: “Illegal burning is a wildlife crime and is subject to investigation and prosecution.
+ID: 329 Text: “I’m so grateful to the emergency services and NPWS personnel who put their lives at risk for us in situations like this, and I’d like to commend the member of the public who reported the fire.”
+ID: 330 Text: NPWS staff have reported the destruction of pipit and lark nests as a consequence of this fire.
+ID: 331 Text: "Nesting season is a time for growth and for the future survival of our rarest birds and wildlife. That makes this act particularly cruel.”
+ID: 332 Text: European Commissioner for Health and Animal Welfare Oliver Varhelyi was speaking on the occasion of World Food Safety Day, which took place on Sunday (June 7).
+ID: 333 Text: "This framework ensures that the food that reaches European consumers is as safe as it can be," he added.
+ID: 334 Text: "When risks are identified, unsafe products are swiftly removed from the market, often before they ever reach supermarket shelves," the Hungarian commissioner said.
+ID: 335 Text: "As they do so, they can rest assured that our standards do not stop at the EU borders. Our strict rules on food and feed hygiene, our high standards for animal and plant health, apply to all products put on our market, whether produced in Europe or not,
+ID: 336 Text: " Commissioner Varhelyi said.
+ID: 337 Text: The commissioner said that, since the start of the current commission in 2024, he has "worked to strengthen every link in this food chain and ensure that our world-class food safety system remains robust, effective and fit for the future".
+ID: 338 Text: "I have increased controls on imports and taken firm action to prevent unsafe goods from entering the market. The message is clear: if a product is sold in the European Union, it must meet European standards," he said.
+ID: 339 Text: "This protects consumers. It ensures fairness for our farmers, producers and food businesses," Commissioner Varhelyi added.
+ID: 340 Text: A former chairperson of the European Food Safety Authority (EFSA) has said he does not believe Brazil can meet a deadline to comply with EU regulations regarding the use of antimicrobials in livestock.
+ID: 341 Text: Last month, the European Commission confirmed that Brazil will no longer be authorised to export a range of animal products to the EU from September 3.
+ID: 342 Text: This follows a vote by member states on an updated list of third countries authorised to export food-producing animals and animal products to the EU.
+ID: 343 Text: Dr. Patrick Wall, a former EFSA chair, told Independent Ireland MEP Ciaran Mullooly that he believes it will not be technically possible for Brazil to be restored onto the EU export list by the September deadline.
+ID: 344 Text: Dr. Wall noted that Brazil is currently working on a full traceability system for its entire cattle herd, similar to the EU, but this is not expected until 2036.
+ID: 345 Text: "The Brazilian authorities now have three months to get their act together and I don’t believe this will be possible," he added.
+ID: 346 Text: The young handlers’ competitions particularly exemplified this fact with space in the show rings at a premium as these classes were judged.
+ID: 347 Text: The Sheep Inter-Breed Championship was won by a young Suffolk ewe, which had lambed for the first time earlier in the spring. The winning breeder was Dennis Taylor, from Coleraine.
+ID: 348 Text: Clark Lamont, from Dumfries in Scotland, judged the sheep classes at Ballymoney Show 2026. This was the third occasion on which he had participated in a judging capacity at the north Co. Antrim event.
+ID: 349 Text: Lamont described his champion as a young ewe with tremendous presence and breed character, adding:
+ID: 350 Text: “She also has excellent balance and power. The ewe can look forward to a tremendous breeding future.
+ID: 351 Text: “I was very impressed with the quality of the sheep competing at Ballymoney this year.
+ID: 352 Text: But it was very much a case of sheep enthusiasts attending this year’s Ballymoney Show enjoying a double bonus as the event also hosted the 2026 Northern Ireland Valais Blacknose Sheep Club’s national show
+ID: 353 Text: A total of 80 sheep took part in the competition classes that were catalogued for the event.
+ID: 354 Text: Anne-Marie O’Loughlin, from Maghera, manages a flock of 20 Valais Blacknose breeding females with her husband Michael.
+ID: 355 Text: She explained: “Valais Blacknose sheep were first imported into Northern Ireland from Switzerland back in 2016.
+ID: 356 Text: “And we now have 50 pedigree flocks.
+ID: 357 Text: Meanwhile, an excellent Holstein Cow - exhibited by the King family from Ballymena in Co. Antrim - won the much coveted Champion of Champions’ accolade in the cattle section at the north Co. Antrim event.
+ID: 358 Text: The third calver, Grange Farm Primrose, looked an absolute picture on the day.
+ID: 359 Text: Judge Andrew Kennedy, described the cow as an elite example of the Holstein breed.
+ID: 360 Text: He explained: “She has tremendous dairy character, walks well and has a very impressive mammary system.
+ID: 361 Text: “The fact that she has had three calves up to this point and is still only a four-year-old cow reflects the fact that she is inherently fertile and calves down with ease.
+ID: 362 Text: Jack King exhibited the winning cow in the ring.
+ID: 363 Text: He commented: “She calved down in January and is currently giving 60L of milk per day.
+ID: 364 Text: "This was her first competitive outing. The plan now is to bring her back for the Dairy Cow of the Year final, which will be held at Antrim Show in July."
+ID: 365 Text: “There are 50 cows in the herd at home, mostly autumn calving," King added.
+ID: 366 Text: The Champion of Champions’ reserve was an outstanding Limousin/Blue heifer from the Jalex herd of William Alexander, who farms near Toome in Co Antrim.
+ID: 367 Text: The animal also won the Beef Inter-Breed and the Commercial Beef Championships at Ballymoney 2026.
+ID: 368 Text: Overall, there was a tremendous turnout of cattle at this year’s event.
+ID: 369 Text: Judge Leanne Workman, from Larne, described her champion as a magnificent beef animal.
+ID: 370 Text: “I couldn’t fault the heifer,” she commented.
+ID: 371 Text: “It had excellent beef quality and caught my eye as soon as she entered the ring.”
+ID: 372 Text: The Greenmount Association, an organisation of former students of the Greenmount agricultural college campus in Co. Antrim, has invited former students to a reunion event this month.
+ID: 373 Text: The association is inviting former students who completed their Certificate Course in Agriculture (CCA), Certificate Course in Horticulture (CCA), and National Diploma courses in 1986, to the 40-year reunion.
+ID: 374 Text: The event will take place on Friday, June 19, at the Greenmount Campus of the College of Agriculture, Food and Rural Enterprises (CAFRE), beginning at 10:30a.m.
+ID: 375 Text: The Department of Agriculture, Environment and Rural Affairs (DAERA) said the reunion promises to be a memorable occasion for past students to "reconnect, share memories and celebrate their time at the college".
+ID: 376 Text: The event will include an update on college developments, and a guided tour of the farm and horticulture facilities.
+ID: 377 Text: All members of the class of 1986 are encouraged to attend the reunion to mark "this important milestone and renew friendships together".
+ID: 378 Text: Places at the event must be booked in advance by contacting the Greenmount Association.
+ID: 379 Text: In the other news related to the college campus, a beef conference and farm visit will be held at the CAFRE Greenmount Campus tomorrow (Wednesday, June 10).
+ID: 380 Text: The event in Co. Antrim is being organised by CAFRE and the Ulster Farmers’ Union (UFU).
+ID: 381 Text: The beef conference will focus on achieving economic and environmentally sustainable beef systems.
+ID: 382 Text: Farmers Trevor Summerville and Declan Rafferty, from Co. Tyrone, will give a virtual tour of their different beef enterprises.
+ID: 383 Text: In the afternoon, delegates will visit the CAFRE Beef and Sheep Centre, to hear from industry experts on areas to help improve efficiency and drive productivity.
+ID: 384 Text: The event, sponsored by ABP Food Group, Foyle Food Group and WD Meats, will run from 9:30a.m to 5:00p.m.
+ID: 385 Text: A former chair of the European Food Safety Authority (EFSA) does not believe Brazil can meet a deadline to comply with EU regulations regarding the use of antimicrobials in livestock.
+ID: 386 Text: Last month, the European Commission confirmed that Brazil will no longer be authorised to export a range of animal products to the EU from September 3.
+ID: 387 Text: This follows a vote by member states on an updated list of third countries authorised to export food-producing animals and animal products to the EU.
+ID: 388 Text: The commission has said that to be included in the list Brazil "must ensure compliance with the union requirements on the use of antimicrobials for the entire lifetime of the animals that the exported products originate from".
+ID: 389 Text: "It is worth noting that, at the moment, Brazilian exports of animal products continue normally," the government said.
+ID: 390 Text: However, Dr. Patrick Wall, a former EFSA chair, told Independent Ireland MEP Ciaran Mullooly that he believes it will not be technically possible for Brazil to be restored onto the EU export list by the September deadline.
+ID: 391 Text: Dr. Wall, who is also a former chief executive of the Food Safety Authority of Ireland (FSAI), met with the Midlands-North-West MEP and Independent Ireland TD Michael Fitzmaurice over the weekend.
+ID: 392 Text: "Brazil is phenomenal exporter of beef globally, they are a major player and they have 230 million head of cattle. They have the most advanced abattoirs in the world.
+ID: 393 Text: Dr. Wall noted that Brazil is currently working on a full traceability system for its entire cattle herd, similar to the EU, but this is not expected until 2036.
+ID: 394 Text: He noted that Brazilian beef traceability records currently relate to 90 days duration.
+ID: 395 Text: Dr. Wall said he will accept an invitation from the Independent Ireland MEP to travel to Brussels to meet EU officials and provide further information on the issue in the coming weeks.
+ID: 396 Text: MEP Mullooly has written to European Commissioner for Health and Animal Welfare Oliver Varhelyi asking him to enforce the ban on Brazilian beef entering the EU from September 3, 2026.
+ID: 397 Text: "Public health and food safety are of the highest concern to me as both an MEP and an EU food consumer.
+ID: 398 Text: "I hope you will agree with me that we cannot simply proceed in these circumstances without first addressing the public concerns and must await scientifically proven guarantees on antimicrobial and growth promoter use in Brazil before any move to restore
+ID: 399 Text:  Brazilian beef to a list of safe countries," Mullooly said.
+ID: 400 Text: "It is my opinion that we have jumped the gun with the Mercosur deal for the simple reason that it doesn’t add up," he said.
+ID: 401 Text: Teagasc is confirming that the coming days will see the completion of most disease control programmes in winter wheat and spring barley crops.
+ID: 402 Text: Meanwhile, the start of the 2026 harvest continues to draw ever closer. Recent rains have served to boost crop growth rates.
+ID: 403 Text: What is required now are a few dry weeks to get the combines rolling.
+ID: 404 Text: According to Teagasc agronomists, septoria levels have been very low up to this point, as a result of all the dry weather in late May.
+ID: 405 Text: Yellow rust has been an issue in some crops, mainly those that did not receive a leaf four application and can still be seen in crops on the flag leaf.
+ID: 406 Text: Meanwhile, the final ‘head’ spray helps to top up control of disease on the flag leaf.
+ID: 407 Text: It gives some protection against fusarium and other ear diseases, especially if the weather is broken during flowering.
+ID: 408 Text: Growers should time the final fungicide application at early flowering, which is normally three weeks after the flag leaf spray.
+ID: 409 Text: Many of the March drilled crops have already received their final fungicide.
+ID: 410 Text: However, most of the later sown crops still have to receive their final application.
+ID: 411 Text: Late season disease control in spring barley is designed to control ramularia and diseases such as rynchosporium or net blotch.
+ID: 412 Text: Agronomists are confirming that ramularia will probably be an issue this year due to the weather conditions in May, ranging from cold north winds in the first half of the month to record temperatures at the end of the period.
+ID: 413 Text: While different varieties have differing levels of tolerance to ramularia, being able to predict which varieties are going to show signs of infection is very difficult.
+ID: 414 Text: For this reason, we would recommend that growers protect all barley crops from ramularia.
+ID: 415 Text: Repeated trials have clearly shown that from flag leaf fully emerged to the awns peeping is the optimum timing for applying the final fungicide to spring barley crops.
+ID: 416 Text: However, waiting for the heads to come fully out and to start flowering (i.e. 10 -14 days later) can reduce yields by 0.3-0.4t/ha.
+ID: 417 Text: This yield loss clearly shows that allowing ramularia to develop in the crop makes it more difficult to control, so earlier applications of fungicides are important.
+ID: 418 Text: This is because all the products that are available will only work preventatively; they will not cure it when it is visible.
+ID: 419 Text: Therefore, by applying a fungicide early, growers are trying to delay the infection from occurring for as long as possible, thus keeping the crop greener for longer.
+ID: 420 Text: Shearing is one of the busiest days of the year on sheep farms.
+ID: 421 Text: However, by completing a couple of simple tasks beforehand, the job can be made that little bit easier.
+ID: 422 Text: Teagasc has shared key tips from David Heraty of the Irish Wool Council aimed at not only making the job easier on the sheep, the farmer and the shearer, but to also ensure the presentation of wool is improved.
+ID: 423 Text: Heraty said this is an "important factor in improving the value of the product produced".
+ID: 424 Text: He stressed that it is "important to shear the sheep well to obtain the highest quality wool".
+ID: 425 Text: His key takeaways are: ensure sheep are dry and fasted; separate lambs from ewes to reduce stress and fleece soiling; remove dags to keep the wool clean; and arrange for extra help to manage sheep and wool handling.
+ID: 426 Text: Heraty advises to house and fast sheep the night before shearing.
+ID: 427 Text: "This ensures sheep are empty the next morning, reducing stress for both the animals and the shearer," he explained.
+ID: 428 Text: "Ideally, sheep should be housed on slatted floors or accumulated winter bedding rather than fresh straw, which can stick to the fleece.
+ID: 429 Text: "If housing is not possible, keep sheep in a bare paddock."
+ID: 430 Text: Step two involves drafting ewes from lambs.
+ID: 431 Text: Heraty said drafting ewes from lambs facilitates easier movement of ewes.
+ID: 432 Text: "Ewes will be anxious to return to the lambs and this will reduce the risk of fleeces becoming soiled," he said.
+ID: 433 Text: Next, remove dags from ewes prior to shearing.
+ID: 434 Text: "Dagging beforehand reduces extra work and prevents contamination of the wool during shearing," he said.
+ID: 435 Text: Heraty added that having extra help available on shearing day "makes the task that little bit easier".
+ID: 436 Text: "One person can focus on handling the sheep, while the other manages the wool," he said.
+ID: 437 Text: European Commissioner for Health and Animal Welfare Oliver Varhelyi was speaking on the occasion of World Food Safety Day, which took place on Sunday (June 7).
+ID: 438 Text: "This framework ensures that the food that reaches European consumers is as safe as it can be," he added.
+ID: 439 Text: "When risks are identified, unsafe products are swiftly removed from the market, often before they ever reach supermarket shelves," the Hungarian commissioner said.
+ID: 440 Text: "As they do so, they can rest assured that our standards do not stop at the EU borders. Our strict rules on food and feed hygiene, our high standards for animal and plant health, apply to all products put on our market, whether produced in Europe or not,
+ID: 441 Text: " Commissioner Varhelyi said.
+ID: 442 Text: The commissioner said that, since the start of the current commission in 2024, he has "worked to strengthen every link in this food chain and ensure that our world-class food safety system remains robust, effective and fit for the future".
+ID: 443 Text: "I have increased controls on imports and taken firm action to prevent unsafe goods from entering the market. The message is clear: if a product is sold in the European Union, it must meet European standards," he said.
+ID: 444 Text: "This protects consumers. It ensures fairness for our farmers, producers and food businesses," Commissioner Varhelyi added.
+ID: 445 Text: A former chairperson of the European Food Safety Authority (EFSA) has said he does not believe Brazil can meet a deadline to comply with EU regulations regarding the use of antimicrobials in livestock.
+ID: 446 Text: Last month, the European Commission confirmed that Brazil will no longer be authorised to export a range of animal products to the EU from September 3.
+ID: 447 Text: This follows a vote by member states on an updated list of third countries authorised to export food-producing animals and animal products to the EU.
+ID: 448 Text: Dr. Patrick Wall, a former EFSA chair, told Independent Ireland MEP Ciaran Mullooly that he believes it will not be technically possible for Brazil to be restored onto the EU export list by the September deadline.
+ID: 449 Text: Dr. Wall noted that Brazil is currently working on a full traceability system for its entire cattle herd, similar to the EU, but this is not expected until 2036.
+ID: 450 Text: "The Brazilian authorities now have three months to get their act together and I don’t believe this will be possible," he added.
+ID: 451 Text: The young handlers’ competitions particularly exemplified this fact with space in the show rings at a premium as these classes were judged.
+ID: 452 Text: The Sheep Inter-Breed Championship was won by a young Suffolk ewe, which had lambed for the first time earlier in the spring. The winning breeder was Dennis Taylor, from Coleraine.
+ID: 453 Text: Clark Lamont, from Dumfries in Scotland, judged the sheep classes at Ballymoney Show 2026. This was the third occasion on which he had participated in a judging capacity at the north Co. Antrim event.
+ID: 454 Text: Lamont described his champion as a young ewe with tremendous presence and breed character, adding:
+ID: 455 Text: “She also has excellent balance and power. The ewe can look forward to a tremendous breeding future.
+ID: 456 Text: “I was very impressed with the quality of the sheep competing at Ballymoney this year.
+ID: 457 Text: But it was very much a case of sheep enthusiasts attending this year’s Ballymoney Show enjoying a double bonus as the event also hosted the 2026 Northern Ireland Valais Blacknose Sheep Club’s national show
+ID: 458 Text: A total of 80 sheep took part in the competition classes that were catalogued for the event.
+ID: 459 Text: Anne-Marie O’Loughlin, from Maghera, manages a flock of 20 Valais Blacknose breeding females with her husband Michael.
+ID: 460 Text: She explained: “Valais Blacknose sheep were first imported into Northern Ireland from Switzerland back in 2016.
+ID: 461 Text: “And we now have 50 pedigree flocks.
+ID: 462 Text: Meanwhile, an excellent Holstein Cow - exhibited by the King family from Ballymena in Co. Antrim - won the much coveted Champion of Champions’ accolade in the cattle section at the north Co. Antrim event.
+ID: 463 Text: The third calver, Grange Farm Primrose, looked an absolute picture on the day.
+ID: 464 Text: Judge Andrew Kennedy, described the cow as an elite example of the Holstein breed.
+ID: 465 Text: He explained: “She has tremendous dairy character, walks well and has a very impressive mammary system.
+ID: 466 Text: “The fact that she has had three calves up to this point and is still only a four-year-old cow reflects the fact that she is inherently fertile and calves down with ease.
+ID: 467 Text: Jack King exhibited the winning cow in the ring.
+ID: 468 Text: He commented: “She calved down in January and is currently giving 60L of milk per day.
+ID: 469 Text: "This was her first competitive outing. The plan now is to bring her back for the Dairy Cow of the Year final, which will be held at Antrim Show in July."
+ID: 470 Text: “There are 50 cows in the herd at home, mostly autumn calving," King added.
+ID: 471 Text: The Champion of Champions’ reserve was an outstanding Limousin/Blue heifer from the Jalex herd of William Alexander, who farms near Toome in Co Antrim.
+ID: 472 Text: The animal also won the Beef Inter-Breed and the Commercial Beef Championships at Ballymoney 2026.
+ID: 473 Text: Overall, there was a tremendous turnout of cattle at this year’s event.
+ID: 474 Text: Judge Leanne Workman, from Larne, described her champion as a magnificent beef animal.
+ID: 475 Text: “I couldn’t fault the heifer,” she commented.
+ID: 476 Text: “It had excellent beef quality and caught my eye as soon as she entered the ring.”
+ID: 477 Text: The Greenmount Association, an organisation of former students of the Greenmount agricultural college campus in Co. Antrim, has invited former students to a reunion event this month.
+ID: 478 Text: The association is inviting former students who completed their Certificate Course in Agriculture (CCA), Certificate Course in Horticulture (CCA), and National Diploma courses in 1986, to the 40-year reunion.
+ID: 479 Text: The event will take place on Friday, June 19, at the Greenmount Campus of the College of Agriculture, Food and Rural Enterprises (CAFRE), beginning at 10:30a.m.
+ID: 480 Text: The Department of Agriculture, Environment and Rural Affairs (DAERA) said the reunion promises to be a memorable occasion for past students to "reconnect, share memories and celebrate their time at the college".
+ID: 481 Text: The event will include an update on college developments, and a guided tour of the farm and horticulture facilities.
+ID: 482 Text: All members of the class of 1986 are encouraged to attend the reunion to mark "this important milestone and renew friendships together".
+ID: 483 Text: Places at the event must be booked in advance by contacting the Greenmount Association.
+ID: 484 Text: In the other news related to the college campus, a beef conference and farm visit will be held at the CAFRE Greenmount Campus tomorrow (Wednesday, June 10).
+ID: 485 Text: The event in Co. Antrim is being organised by CAFRE and the Ulster Farmers’ Union (UFU).
+ID: 486 Text: The beef conference will focus on achieving economic and environmentally sustainable beef systems.
+ID: 487 Text: Farmers Trevor Summerville and Declan Rafferty, from Co. Tyrone, will give a virtual tour of their different beef enterprises.
+ID: 488 Text: In the afternoon, delegates will visit the CAFRE Beef and Sheep Centre, to hear from industry experts on areas to help improve efficiency and drive productivity.
+ID: 489 Text: The event, sponsored by ABP Food Group, Foyle Food Group and WD Meats, will run from 9:30a.m to 5:00p.m.
+ID: 490 Text: A former chair of the European Food Safety Authority (EFSA) does not believe Brazil can meet a deadline to comply with EU regulations regarding the use of antimicrobials in livestock.
+ID: 491 Text: Last month, the European Commission confirmed that Brazil will no longer be authorised to export a range of animal products to the EU from September 3.
+ID: 492 Text: This follows a vote by member states on an updated list of third countries authorised to export food-producing animals and animal products to the EU.
+ID: 493 Text: The commission has said that to be included in the list Brazil "must ensure compliance with the union requirements on the use of antimicrobials for the entire lifetime of the animals that the exported products originate from".
+ID: 494 Text: "It is worth noting that, at the moment, Brazilian exports of animal products continue normally," the government said.
+ID: 495 Text: However, Dr. Patrick Wall, a former EFSA chair, told Independent Ireland MEP Ciaran Mullooly that he believes it will not be technically possible for Brazil to be restored onto the EU export list by the September deadline.
+ID: 496 Text: Dr. Wall, who is also a former chief executive of the Food Safety Authority of Ireland (FSAI), met with the Midlands-North-West MEP and Independent Ireland TD Michael Fitzmaurice over the weekend.
+ID: 497 Text: "Brazil is phenomenal exporter of beef globally, they are a major player and they have 230 million head of cattle. They have the most advanced abattoirs in the world.
+ID: 498 Text: Dr. Wall noted that Brazil is currently working on a full traceability system for its entire cattle herd, similar to the EU, but this is not expected until 2036.
+ID: 499 Text: He noted that Brazilian beef traceability records currently relate to 90 days duration.
+ID: 500 Text: Dr. Wall said he will accept an invitation from the Independent Ireland MEP to travel to Brussels to meet EU officials and provide further information on the issue in the coming weeks.
+ID: 501 Text: MEP Mullooly has written to European Commissioner for Health and Animal Welfare Oliver Varhelyi asking him to enforce the ban on Brazilian beef entering the EU from September 3, 2026.
+ID: 502 Text: "Public health and food safety are of the highest concern to me as both an MEP and an EU food consumer.
+ID: 503 Text: "I hope you will agree with me that we cannot simply proceed in these circumstances without first addressing the public concerns and must await scientifically proven guarantees on antimicrobial and growth promoter use in Brazil before any move to restore
+ID: 504 Text:  Brazilian beef to a list of safe countries," Mullooly said.
+ID: 505 Text: "It is my opinion that we have jumped the gun with the Mercosur deal for the simple reason that it doesn’t add up," he said.
+ID: 506 Text: Teagasc is confirming that the coming days will see the completion of most disease control programmes in winter wheat and spring barley crops.
+ID: 507 Text: Meanwhile, the start of the 2026 harvest continues to draw ever closer. Recent rains have served to boost crop growth rates.
+ID: 508 Text: What is required now are a few dry weeks to get the combines rolling.
+ID: 509 Text: According to Teagasc agronomists, septoria levels have been very low up to this point, as a result of all the dry weather in late May.
+ID: 510 Text: Yellow rust has been an issue in some crops, mainly those that did not receive a leaf four application and can still be seen in crops on the flag leaf.
+ID: 511 Text: Meanwhile, the final ‘head’ spray helps to top up control of disease on the flag leaf.
+ID: 512 Text: It gives some protection against fusarium and other ear diseases, especially if the weather is broken during flowering.
+ID: 513 Text: Growers should time the final fungicide application at early flowering, which is normally three weeks after the flag leaf spray.
+ID: 514 Text: Many of the March drilled crops have already received their final fungicide.
+ID: 515 Text: However, most of the later sown crops still have to receive their final application.
+ID: 516 Text: Late season disease control in spring barley is designed to control ramularia and diseases such as rynchosporium or net blotch.
+ID: 517 Text: Agronomists are confirming that ramularia will probably be an issue this year due to the weather conditions in May, ranging from cold north winds in the first half of the month to record temperatures at the end of the period.
+ID: 518 Text: While different varieties have differing levels of tolerance to ramularia, being able to predict which varieties are going to show signs of infection is very difficult.
+ID: 519 Text: For this reason, we would recommend that growers protect all barley crops from ramularia.
+ID: 520 Text: Repeated trials have clearly shown that from flag leaf fully emerged to the awns peeping is the optimum timing for applying the final fungicide to spring barley crops.
+ID: 521 Text: However, waiting for the heads to come fully out and to start flowering (i.e. 10 -14 days later) can reduce yields by 0.3-0.4t/ha.
+ID: 522 Text: This yield loss clearly shows that allowing ramularia to develop in the crop makes it more difficult to control, so earlier applications of fungicides are important.
+ID: 523 Text: This is because all the products that are available will only work preventatively; they will not cure it when it is visible.
+ID: 524 Text: Therefore, by applying a fungicide early, growers are trying to delay the infection from occurring for as long as possible, thus keeping the crop greener for longer.
+ID: 525 Text: Shearing is one of the busiest days of the year on sheep farms.
+ID: 526 Text: However, by completing a couple of simple tasks beforehand, the job can be made that little bit easier.
+ID: 527 Text: Teagasc has shared key tips from David Heraty of the Irish Wool Council aimed at not only making the job easier on the sheep, the farmer and the shearer, but to also ensure the presentation of wool is improved.
+ID: 528 Text: Heraty said this is an "important factor in improving the value of the product produced".
+ID: 529 Text: He stressed that it is "important to shear the sheep well to obtain the highest quality wool".
+ID: 530 Text: His key takeaways are: ensure sheep are dry and fasted; separate lambs from ewes to reduce stress and fleece soiling; remove dags to keep the wool clean; and arrange for extra help to manage sheep and wool handling.
+ID: 531 Text: Heraty advises to house and fast sheep the night before shearing.
+ID: 532 Text: "This ensures sheep are empty the next morning, reducing stress for both the animals and the shearer," he explained.
+ID: 533 Text: "Ideally, sheep should be housed on slatted floors or accumulated winter bedding rather than fresh straw, which can stick to the fleece.
+ID: 534 Text: "If housing is not possible, keep sheep in a bare paddock."
+ID: 535 Text: Step two involves drafting ewes from lambs.
+ID: 536 Text: Heraty said drafting ewes from lambs facilitates easier movement of ewes.
+ID: 537 Text: "Ewes will be anxious to return to the lambs and this will reduce the risk of fleeces becoming soiled," he said.
+ID: 538 Text: Next, remove dags from ewes prior to shearing.
+ID: 539 Text: "Dagging beforehand reduces extra work and prevents contamination of the wool during shearing," he said.
+ID: 540 Text: Heraty added that having extra help available on shearing day "makes the task that little bit easier".
+ID: 541 Text: "One person can focus on handling the sheep, while the other manages the wool," he said.
+ID: 542 Text: UK and global grain prices have weakened further over recent days, the Agricultural and Horticultural Development Board (AHDB) has confirmed.
+ID: 543 Text: November 2026 futures’ markets in the UK fell by £6.25/t or 3.4% during the week ending Friday, June 5.
+ID: 544 Text: Grain markets were mainly driven lower last week by good US crop conditions, steady planting progress of spring crops, and harvest pressure as northern hemisphere harvests commence.
+ID: 545 Text: Despite some lingering support from the recent drought in the US and concerns about tighter global wheat availability, this was not enough to offset the bearish sentiment, AHDB said.
+ID: 546 Text: US harvest pressure is feeding into global pricing as Oklahoma and Texas wheat harvest is well underway.
+ID: 547 Text: Last week, the United States Department of Agriculture (USDA) estimated that 67% of US maize was in good or excellent condition, the first estimate for the 2026 campaign. This is marginally down in comparison to the same point last year of 69%.
+ID: 548 Text: The condition of this crop is going to be a huge sentiment driver over the next couple of months.
+ID: 549 Text: There are widespread rains forecast over the US Midwest over the next week, which will support germination and crop development and could possibly continue to weigh on global markets.
+ID: 550 Text: In other news, last week agricultural consultancy IKAR raised Russia’s wheat estimate to 91.5Mt, increasing by 1.5Mt on previous estimates.
+ID: 551 Text: However, French wheat crop conditions (by June 1) were revised down, with 76% of the crop in good or excellent condition, compared to 78% the week prior. This was after the record-breaking heatwave over the last couple of weeks.
+ID: 552 Text: In South America, Argentina’s wheat crop is being sown at record pace, with 32.4% of the total area sown just weeks into the 2026 wheat campaign, 12.4% ahead of the five-year average.
+ID: 553 Text: Over the coming weeks, focus is going to be on northern hemisphere harvest progression, which could continue to weigh on grains.
+ID: 554 Text: In July, focus on the US maize crop will be a sentiment driver for price direction in the longer-term. Currently, prospects are looking positive for large US spring crops.
+ID: 555 Text: Meanwhile, Irish tillage farmers have started to gear up for harvest 2026.
+ID: 556 Text: Weather permitting, combines could be rolling in around four weeks’ time.
+ID: 557 Text: The continuing spell of broken weather has allowed all crops to recover from the record breaking dry conditions that characterised the second half of May.
+ID: 558 Text: Spring crops will also have benefitted from the return of the rains.
+ID: 559 Text: However, growers will be wanting a period of dry weather at this stage to allow them get on with the harvest in a stress-free manner.
+ID: 560 Text: European Commissioner for Health and Animal Welfare Oliver Varhelyi was speaking on the occasion of World Food Safety Day, which took place on Sunday (June 7).
+ID: 561 Text: "This framework ensures that the food that reaches European consumers is as safe as it can be," he added.
+ID: 562 Text: "When risks are identified, unsafe products are swiftly removed from the market, often before they ever reach supermarket shelves," the Hungarian commissioner said.
+ID: 563 Text: "As they do so, they can rest assured that our standards do not stop at the EU borders. Our strict rules on food and feed hygiene, our high standards for animal and plant health, apply to all products put on our market, whether produced in Europe or not,
+ID: 564 Text: " Commissioner Varhelyi said.
+ID: 565 Text: The commissioner said that, since the start of the current commission in 2024, he has "worked to strengthen every link in this food chain and ensure that our world-class food safety system remains robust, effective and fit for the future".
+ID: 566 Text: "I have increased controls on imports and taken firm action to prevent unsafe goods from entering the market. The message is clear: if a product is sold in the European Union, it must meet European standards," he said.
+ID: 567 Text: "This protects consumers. It ensures fairness for our farmers, producers and food businesses," Commissioner Varhelyi added.
+ID: 568 Text: A former chairperson of the European Food Safety Authority (EFSA) has said he does not believe Brazil can meet a deadline to comply with EU regulations regarding the use of antimicrobials in livestock.
+ID: 569 Text: Last month, the European Commission confirmed that Brazil will no longer be authorised to export a range of animal products to the EU from September 3.
+ID: 570 Text: This follows a vote by member states on an updated list of third countries authorised to export food-producing animals and animal products to the EU.
+ID: 571 Text: Dr. Patrick Wall, a former EFSA chair, told Independent Ireland MEP Ciaran Mullooly that he believes it will not be technically possible for Brazil to be restored onto the EU export list by the September deadline.
+ID: 572 Text: Dr. Wall noted that Brazil is currently working on a full traceability system for its entire cattle herd, similar to the EU, but this is not expected until 2036.
+ID: 573 Text: "The Brazilian authorities now have three months to get their act together and I don’t believe this will be possible," he added.
+ID: 574 Text: The young handlers’ competitions particularly exemplified this fact with space in the show rings at a premium as these classes were judged.
+ID: 575 Text: The Sheep Inter-Breed Championship was won by a young Suffolk ewe, which had lambed for the first time earlier in the spring. The winning breeder was Dennis Taylor, from Coleraine.
+ID: 576 Text: Clark Lamont, from Dumfries in Scotland, judged the sheep classes at Ballymoney Show 2026. This was the third occasion on which he had participated in a judging capacity at the north Co. Antrim event.
+ID: 577 Text: Lamont described his champion as a young ewe with tremendous presence and breed character, adding:
+ID: 578 Text: “She also has excellent balance and power. The ewe can look forward to a tremendous breeding future.
+ID: 579 Text: “I was very impressed with the quality of the sheep competing at Ballymoney this year.
+ID: 580 Text: But it was very much a case of sheep enthusiasts attending this year’s Ballymoney Show enjoying a double bonus as the event also hosted the 2026 Northern Ireland Valais Blacknose Sheep Club’s national show
+ID: 581 Text: A total of 80 sheep took part in the competition classes that were catalogued for the event.
+ID: 582 Text: Anne-Marie O’Loughlin, from Maghera, manages a flock of 20 Valais Blacknose breeding females with her husband Michael.
+ID: 583 Text: She explained: “Valais Blacknose sheep were first imported into Northern Ireland from Switzerland back in 2016.
+ID: 584 Text: “And we now have 50 pedigree flocks.
+ID: 585 Text: Meanwhile, an excellent Holstein Cow - exhibited by the King family from Ballymena in Co. Antrim - won the much coveted Champion of Champions’ accolade in the cattle section at the north Co. Antrim event.
+ID: 586 Text: The third calver, Grange Farm Primrose, looked an absolute picture on the day.
+ID: 587 Text: Judge Andrew Kennedy, described the cow as an elite example of the Holstein breed.
+ID: 588 Text: He explained: “She has tremendous dairy character, walks well and has a very impressive mammary system.
+ID: 589 Text: “The fact that she has had three calves up to this point and is still only a four-year-old cow reflects the fact that she is inherently fertile and calves down with ease.
+ID: 590 Text: Jack King exhibited the winning cow in the ring.
+ID: 591 Text: He commented: “She calved down in January and is currently giving 60L of milk per day.
+ID: 592 Text: "This was her first competitive outing. The plan now is to bring her back for the Dairy Cow of the Year final, which will be held at Antrim Show in July."
+ID: 593 Text: “There are 50 cows in the herd at home, mostly autumn calving," King added.
+ID: 594 Text: The Champion of Champions’ reserve was an outstanding Limousin/Blue heifer from the Jalex herd of William Alexander, who farms near Toome in Co Antrim.
+ID: 595 Text: The animal also won the Beef Inter-Breed and the Commercial Beef Championships at Ballymoney 2026.
+ID: 596 Text: Overall, there was a tremendous turnout of cattle at this year’s event.
+ID: 597 Text: Judge Leanne Workman, from Larne, described her champion as a magnificent beef animal.
+ID: 598 Text: “I couldn’t fault the heifer,” she commented.
+ID: 599 Text: “It had excellent beef quality and caught my eye as soon as she entered the ring.”
+ID: 600 Text: The Greenmount Association, an organisation of former students of the Greenmount agricultural college campus in Co. Antrim, has invited former students to a reunion event this month.
+ID: 601 Text: The association is inviting former students who completed their Certificate Course in Agriculture (CCA), Certificate Course in Horticulture (CCA), and National Diploma courses in 1986, to the 40-year reunion.
+ID: 602 Text: The event will take place on Friday, June 19, at the Greenmount Campus of the College of Agriculture, Food and Rural Enterprises (CAFRE), beginning at 10:30a.m.
+ID: 603 Text: The Department of Agriculture, Environment and Rural Affairs (DAERA) said the reunion promises to be a memorable occasion for past students to "reconnect, share memories and celebrate their time at the college".
+ID: 604 Text: The event will include an update on college developments, and a guided tour of the farm and horticulture facilities.
+ID: 605 Text: All members of the class of 1986 are encouraged to attend the reunion to mark "this important milestone and renew friendships together".
+ID: 606 Text: Places at the event must be booked in advance by contacting the Greenmount Association.
+ID: 607 Text: In the other news related to the college campus, a beef conference and farm visit will be held at the CAFRE Greenmount Campus tomorrow (Wednesday, June 10).
+ID: 608 Text: The event in Co. Antrim is being organised by CAFRE and the Ulster Farmers’ Union (UFU).
+ID: 609 Text: The beef conference will focus on achieving economic and environmentally sustainable beef systems.
+ID: 610 Text: Farmers Trevor Summerville and Declan Rafferty, from Co. Tyrone, will give a virtual tour of their different beef enterprises.
+ID: 611 Text: In the afternoon, delegates will visit the CAFRE Beef and Sheep Centre, to hear from industry experts on areas to help improve efficiency and drive productivity.
+ID: 612 Text: The event, sponsored by ABP Food Group, Foyle Food Group and WD Meats, will run from 9:30a.m to 5:00p.m.
+ID: 613 Text: A former chair of the European Food Safety Authority (EFSA) does not believe Brazil can meet a deadline to comply with EU regulations regarding the use of antimicrobials in livestock.
+ID: 614 Text: Last month, the European Commission confirmed that Brazil will no longer be authorised to export a range of animal products to the EU from September 3.
+ID: 615 Text: This follows a vote by member states on an updated list of third countries authorised to export food-producing animals and animal products to the EU.
+ID: 616 Text: The commission has said that to be included in the list Brazil "must ensure compliance with the union requirements on the use of antimicrobials for the entire lifetime of the animals that the exported products originate from".
+ID: 617 Text: "It is worth noting that, at the moment, Brazilian exports of animal products continue normally," the government said.
+ID: 618 Text: However, Dr. Patrick Wall, a former EFSA chair, told Independent Ireland MEP Ciaran Mullooly that he believes it will not be technically possible for Brazil to be restored onto the EU export list by the September deadline.
+ID: 619 Text: Dr. Wall, who is also a former chief executive of the Food Safety Authority of Ireland (FSAI), met with the Midlands-North-West MEP and Independent Ireland TD Michael Fitzmaurice over the weekend.
+ID: 620 Text: "Brazil is phenomenal exporter of beef globally, they are a major player and they have 230 million head of cattle. They have the most advanced abattoirs in the world.
+ID: 621 Text: Dr. Wall noted that Brazil is currently working on a full traceability system for its entire cattle herd, similar to the EU, but this is not expected until 2036.
+ID: 622 Text: He noted that Brazilian beef traceability records currently relate to 90 days duration.
+ID: 623 Text: Dr. Wall said he will accept an invitation from the Independent Ireland MEP to travel to Brussels to meet EU officials and provide further information on the issue in the coming weeks.
+ID: 624 Text: MEP Mullooly has written to European Commissioner for Health and Animal Welfare Oliver Varhelyi asking him to enforce the ban on Brazilian beef entering the EU from September 3, 2026.
+ID: 625 Text: "Public health and food safety are of the highest concern to me as both an MEP and an EU food consumer.
+ID: 626 Text: "I hope you will agree with me that we cannot simply proceed in these circumstances without first addressing the public concerns and must await scientifically proven guarantees on antimicrobial and growth promoter use in Brazil before any move to restore
+ID: 627 Text:  Brazilian beef to a list of safe countries," Mullooly said.
+ID: 628 Text: "It is my opinion that we have jumped the gun with the Mercosur deal for the simple reason that it doesn’t add up," he said.
+ID: 629 Text: Teagasc is confirming that the coming days will see the completion of most disease control programmes in winter wheat and spring barley crops.
+ID: 630 Text: Meanwhile, the start of the 2026 harvest continues to draw ever closer. Recent rains have served to boost crop growth rates.
+ID: 631 Text: What is required now are a few dry weeks to get the combines rolling.
+ID: 632 Text: According to Teagasc agronomists, septoria levels have been very low up to this point, as a result of all the dry weather in late May.
+ID: 633 Text: Yellow rust has been an issue in some crops, mainly those that did not receive a leaf four application and can still be seen in crops on the flag leaf.
+ID: 634 Text: Meanwhile, the final ‘head’ spray helps to top up control of disease on the flag leaf.
+ID: 635 Text: It gives some protection against fusarium and other ear diseases, especially if the weather is broken during flowering.
+ID: 636 Text: Growers should time the final fungicide application at early flowering, which is normally three weeks after the flag leaf spray.
+ID: 637 Text: Many of the March drilled crops have already received their final fungicide.
+ID: 638 Text: However, most of the later sown crops still have to receive their final application.
+ID: 639 Text: Late season disease control in spring barley is designed to control ramularia and diseases such as rynchosporium or net blotch.
+ID: 640 Text: Agronomists are confirming that ramularia will probably be an issue this year due to the weather conditions in May, ranging from cold north winds in the first half of the month to record temperatures at the end of the period.
+ID: 641 Text: While different varieties have differing levels of tolerance to ramularia, being able to predict which varieties are going to show signs of infection is very difficult.
+ID: 642 Text: For this reason, we would recommend that growers protect all barley crops from ramularia.
+ID: 643 Text: Repeated trials have clearly shown that from flag leaf fully emerged to the awns peeping is the optimum timing for applying the final fungicide to spring barley crops.
+ID: 644 Text: However, waiting for the heads to come fully out and to start flowering (i.e. 10 -14 days later) can reduce yields by 0.3-0.4t/ha.
+ID: 645 Text: This yield loss clearly shows that allowing ramularia to develop in the crop makes it more difficult to control, so earlier applications of fungicides are important.
+ID: 646 Text: This is because all the products that are available will only work preventatively; they will not cure it when it is visible.
+ID: 647 Text: Therefore, by applying a fungicide early, growers are trying to delay the infection from occurring for as long as possible, thus keeping the crop greener for longer.
+ID: 648 Text: Coillte has welcomed the publication of a report outlining a roadmap to scale up the use of timber in building.
+ID: 649 Text: Minister for Agriculture, Food and the Marine, Martin Heydon brought The Timber in Construction Steering Group’s final report and recommendations to Cabinet yesterday (Tuesday, June 9).
+ID: 650 Text: The steering group, established in 2023, brought together over 60 organisations across government, industry, and academia.
+ID: 651 Text: The recommendations contained in the report are supported by technical studies, international policy reviews, and market surveys.
+ID: 652 Text: Coillte said the report marks "an important shift from policy debate to implementation", by providing a "practical, system-wide roadmap to address barriers to timber adoption in Ireland", particularly in the areas of regulation, procurement, skills and k
+ID: 653 Text: nowledge.
+ID: 654 Text: Commenting on the report, Imelda Hurley, chief executive officer (CEO) of Coillte, said:
+ID: 655 Text: "The recommendations, including the establishment of the Timber Knowledge Development and Innovation Facility, the introduction of a wood-first approach in public procurement; and the development of national standards, are critical to unlocking progress.
+ID: 656 Text: 
+ID: 657 Text: "Building on the strong collaboration between government, industry and academia to date, we look forward to collaborating with all key stakeholders to progress the implementation of the report’s recommendations."
+ID: 658 Text: Hurley noted that the use of timber in construction in Ireland still significantly below European levels.
+ID: 659 Text: "Delivering more homes while meeting our legally binding climate targets requires decisive action.
+ID: 660 Text: "Timber offers a renewable, low-carbon solution that can support both, while strengthening Ireland’s forestry and construction sectors.
+ID: 661 Text: By using more Irish timber in construction we can create jobs, boost domestic manufacturing and enhance our security of supply," she said.
+ID: 662 Text: A European young farmers group has called for the EU to provide a policy framework that will allow livestock farming to remain "attractive, sustainable and economically viable in the decades ahead".
+ID: 663 Text: The European Council of Young Farmers (CEJA) called for “a more holistic discussion that also recognises the sector’s strategic contributions".
+ID: 664 Text: According to CEJA, livestock farming plays a strategic role in Europe’s food systems and rural territories, including producing food and a wide range of by-products.
+ID: 665 Text: The sector also contributes to maintaining permanent grasslands, recycling nutrients, supporting biodiversity and supporting economic activity in many regions, the group said.
+ID: 666 Text: In terms of challenges facing the sector, CEJA cited generational renewal; investment capacity; uneven distribution of costs; risks and benefits along the supply chain; animal health threats; increasing societal expectations; and the need to reconcile en
+ID: 667 Text: vironmental ambitions with economic viability and global competition.
+ID: 668 Text: CEJA called for the EU Livestock Strategy to “address these challenges and provide young livestock farmers with a coherent trajectory and a practical toolbox to navigate these challenges”.
+ID: 669 Text: CEJA’s vice president and young pig producer Katharina Schobersberger said: “Young farmers are ready to invest in the future of livestock.
+ID: 670 Text: CEJA’s position paper outlines what it sees as seven priorities for the future of the sector:
+ID: 671 Text: According to CEJA, these priorities respond to the key challenges facing livestock farmers, while providing a roadmap for its long-term development.
+ID: 672 Text: It said: “Across all areas, young farmers call for balanced, science-based and workable solutions that reflect the complexity and sectoral and territorial diversity of European livestock systems.
+ID: 673 Text: “The paper highlights the need to improve the attractiveness of livestock farming, strengthen farmers’ socio-economic resilience, support innovation, investments and high standards of animal health and welfare, and ensure that environmental objectives re
+ID: 674 Text: main achievable in practice.”
+ID: 675 Text: The group claimed the main challenge is how any evolution of livestock farming "can remain economically viable, environmentally sustainable and socially acceptable”.
+ID: 676 Text: The group has called on European institutions to place young farmers at the heart of the livestock strategy.
+ID: 677 Text: It said: “Addressing the sector’s challenges will require more than new obligations.
+ID: 678 Text: "It will require creating the conditions for a new generation of farmers to invest in livestock with confidence and a clear sense of direction.”
+ID: 679 Text: 1,479 new tractors were licensed for the first time during the first five months of 2026, according to the Central Statistics Office (CSO).
+ID: 680 Text: This represents an increase of 22% or 263 units on the 1,216 new tractors registered in the same period last year.
+ID: 681 Text: 289 new tractors were licensed in May 2026, which is unchanged from May 2025.
+ID: 682 Text: 239 used (imported) tractors were licensed in May 2026, marking a decrease of 21 units (8%) on May 2025 (260).
+ID: 683 Text: Between January and May this year, 1,205 used (imported) tractors were registered, up 5% on the corresponding timeframe in 2025 (1,155 units).
+ID: 684 Text: The data also shows that the total number of new private cars licensed in May 2026 (11,063) rose by 32% when compared with May 2025 (8,403).
+ID: 685 Text: 7,519 used (imported) cars were licensed in May 2026, up 22% on the same month last year (6,144).
+ID: 686 Text: The share of electric vehicles (EVs) among used (imported) cars from January to May 2026 was 10% compared with 4% in the same period of 2025.
+ID: 687 Text: The number of new private electric cars licensed in May 2026 jumped by 118% to 3,010 units when compared with May 2025 (1,382).
+ID: 688 Text: This means the share of electric vehicles (EVs) among new private cars from January to May 2026 was 24% compared with 16% in the same period of 2025.
+ID: 689 Text: The number of new plug-in hybrid electric vehicles (PHEVs) licensed in May 2026 (1,389) decreased by 2% in comparison with May 2025.
+ID: 690 Text: The combined share of petrol and diesel cars among new private cars licensed from January to May 2026 (34%) was down in comparison with 2025 (44%).
+ID: 691 Text: The number of new goods vehicles was down by 9% in the year to May 2026 at 3,135 units.
+ID: 692 Text: There were 17,147 new goods vehicles licensed from January to May 2026 which was an increase of 12% on the 15,312 licensed over the same period of 2025.
+ID: 693 Text: Data also shows that Toyota was the most popular make of new private car licensed in May 2026 at 2,011 vehicles, followed by Volkswagen (1,679), Skoda (1,483), Kia (621), and Hyundai (604).
+ID: 694 Text: The most popular brand of new electric car licensed in May 2026 was Volkswagen ID.4 (341), followed by Skoda Enyaq (182), and Skoda Elroq (175).
+ID: 695 Text: Only Barley Yellow Dwarf Virus (BYDV) tolerant varieties of winter barley will be included in future Goldcrop trial programmes.
+ID: 696 Text: The company is also looking at the potential to assess tolerant varieties of winter wheat, with one already under scrutiny and submitted for initial assessment by the Department of Agriculture, Food and the Marine.
+ID: 697 Text: These issues were discussed at the Goldcrop open evening held at the company’s trials site, near Dunleer in Co Louth on Monday (June 8).
+ID: 698 Text: Significantly, the company is currently assessing BYDV tolerant varieties of barley courtesy of genetics sourced from both the UK and mainland Europe.
+ID: 699 Text: Goldcrop agronomist, John Dunne, commented: “BYDV tolerance is the future.
+ID: 700 Text: "Yes, tolerant varieties will show symptoms of the disease. And we have seen this over recent months.
+ID: 701 Text: "But the varieties in question are bred not to suffer to the same extent as those that do not have the tolerance capability.
+ID: 702 Text: According to Dunne, tolerance to BYDV is a delivered by a combination of two factors: major genes and minor genes, called quantitative trait loci.
+ID: 703 Text: He added: "It is also a reality that some BYDV tolerant varieties are more tolerant than others.
+ID: 704 Text: French plant breeders were the first to commit to the commercial development of BYDV tolerant winter barleys.
+ID: 705 Text: And this is why the first options coming to market were all six-row varieties: reflecting the French commitment to this type of cereal production.
+ID: 706 Text: “Historically, the UK plant breeder, KWS, was to the fore in developing extremely high performing winter barley varieties," Dunne explained.
+ID: 707 Text: “The company was that little bit slower in bringing BYDV tolerant varieties to market.
+ID: 708 Text: The Goldcrop agronomist highlighted the French-bred winter barley variety, Integral as one that performs well under Irish conditions - it is a six-row option.
+ID: 709 Text: The variety yields well, has BYDV tolerance, is very suited to a mid-September drilling date and grows well on both light and heavy soils.
+ID: 710 Text: Meanwhile a two-row winter barley worthy of note is Organa
+ID: 711 Text: New to the market, it has BYDV tolerance but also shows excellent levels of resistance to a number of weather diseases, including rhyncosporium and ramularia.
+ID: 712 Text: Minister of State for Nature, Heritage and Biodiversity, Christopher O’Sullivan recently launched first public consultation on the draft template for the plan.
+ID: 713 Text: The minister said that "public participation and stakeholder engagement are at the heart of Ireland’s approach to restoring nature".
+ID: 714 Text: He said this is the "first of several steps on our journey to develop a national policy that creates an opportunity for each and every one of us to take part in this great national effort".
+ID: 715 Text: The closing date for submissions in this first consultation is Tuesday, June 30, 2026.
+ID: 716 Text: However, INHFA national president Pheilim Molloy has called for an extension of the closing date and for more direct engagement for those interested in making a submission.
+ID: 717 Text: Molloy claimed the current process "seems deliberately designed to reduce the number of submissions".
+ID: 718 Text: "Our understanding was that the consultation process would run for two months and see staff from the NPWS [National Parks and Wildlife Service] and Department of Housing Local Government and Heritage, themselves hold meetings across the country, explaini
+ID: 719 Text: ng the plan and taking questions from members of the public.
+ID: 720 Text: "Unfortunately, what we have here is a box ticking exercise that effectively excludes the public due to a level of detail that most people will find exhaustive," he said.
+ID: 721 Text: According to Molloy, the consultation link contains 11 documents including EU Commission text and regulation, draft templates and guidance documents, SEA screening and environmental reports.
+ID: 722 Text: "Beyond these, there is reference made inside many of these documents to further documents that will need to be read for context and background information.
+ID: 723 Text: "In doing this they need to arrange meetings across the country to explain what is involved and critically answer the many questions people have on this.
+ID: 724 Text: "In addition to this they also need to extend the closing date to the end of July," he said.
+ID: 725 Text: "The plan has the potential to impact heavily on farmers and landowners but will also impact at community and national level as it will form part of our planning process.
+ID: 726 Text: "It will run to 2050 and possibly beyond and as of now there is no money to support it, in a similar manner to the land designations first introduced thirty years ago.
+ID: 727 Text: "On this basis the minimum our farmers, landowners and communities need is real engagement and a timescale that allows for this," Molloy added.
+ID: 728 Text: Last month was the second warmest May on record, according to latest research released today (Wednesday, June 10).
+ID: 729 Text: According to the Copernicus Climate Change Service (C3S) there was an "intense heatwave in western Europe" last month.
+ID: 730 Text: May also saw an average surface air temperature of 15.81°C.
+ID: 731 Text: This was 0.55°C above the 1991-2020 average for the month, only behind May 2024.
+ID: 732 Text: Copernicus reports that across Europe, the month was marked by a rapid transition from much cooler-than-average conditions to one of the most intense heatwaves ever observed this early in the year in western Europe.
+ID: 733 Text: During the second half of the month, western Europe experienced an unusually early and intense heatwave, with many May temperature records broken across Ireland, France, the UK and Portugal.
+ID: 734 Text: “Feels-like” temperatures reached 35°C to 40°C across large parts of the region, corresponding to ‘strong’ (above 32°C) and ‘very strong’ (above 38°C) heat stress conditions.
+ID: 735 Text: According to Copernicus: “The rapid transition likely increased impacts on populations, leaving little time for people– or crops and ecosystems during growing season – to acclimatise to much higher temperatures.”
+ID: 736 Text: For Europe, this was also the third warmest spring (March–May) on record.
+ID: 737 Text: Last month also saw a contrast in dry and wet conditions.
+ID: 738 Text: In large parts of western, central and eastern Europe – including Italy and Spain – there was drier-than-average conditions. Conversely, there was widespread flooding in Turkey, Bulgaria and Moldova, as parts of northwest continental Europe, north Scandi
+ID: 739 Text: navia, Finland, Turkey and the Black Sea region were wetter than average.
+ID: 740 Text: Samantha Burgess, strategic lead for climate at the European Centre for Medium–Range Weather Forecasts, said: “May 2026 was the second warmest May on record globally, extending the exceptional global warmth, with near-record temperatures in both the atmo
+ID: 741 Text: sphere and the ocean.
+ID: 742 Text: “In Europe, an unusually early and intense heatwave demonstrates how quickly climate extremes are becoming the new normal rather than the exception.”
+ID: 743 Text: Last week (June 4) Met Éireann reported that spring 2026 in Ireland was “exceptionally warm”, making it the third warmest spring on record.
+ID: 744 Text: The national mean spring 2026 temperature across March, April and May was 10.14°C, the latest seasonal climate report from the national forecaster showed.
+ID: 745 Text: This was 1.02°C above the 1991-2020 long-term average (LTA) and 1.77°C above the 1961-1990 LTA.
+ID: 746 Text: Disease control in spring bean crops must be addressed by growers over the coming days, according to Teagasc.
+ID: 747 Text: Foliar diseases such as chocolate spot, downy mildew and rusts need to be controlled in order for crops to keep the foliage for as long as possible.
+ID: 748 Text: All diseases develop quickly in warm, humid conditions.
+ID: 749 Text: For chocolate spot control, fungicides need to be applied before the disease develops. Therefore, growers should apply a fungicide at the first signs of disease or in any case at the start of flowering and repeat two to three weeks later.
+ID: 750 Text: Signum 0.5-0.75kg/ha can be applied at both timings for good control. Elatus Era is also an option and has approval for a single application on beans at 0.66L/ha.
+ID: 751 Text: For downy mildew control, there are no fungicides currently available that will give control, however, Basfoliar Active and Nutriphite PGA - which are bio-stimulants - both claim to give some control.
+ID: 752 Text: Meanwhile, beans offer growers a good opportunity to control problematic grass weeds such as bromes, ryegrasses, and wild oats with graminicide-type herbicides.
+ID: 753 Text: Good control can be achieved where products such as Fusilade Max (1.0 – 3.0L/ha), Stratos Ultra (1.5 – 4.0L/ha), or Falcon (0.7 -1.5L/ha) are used in time.
+ID: 754 Text: Generally, they need to be applied before flowering has commenced for best control.
+ID: 755 Text: June is a critical month for grass weed control as, for many, they will now be easier to identify once they have headed out.
+ID: 756 Text: While blackgrass was added to the list of noxious weeds in 2025, this will not solve the issue - growers need to be proactive in dealing with the problem.
+ID: 757 Text: Preventing seed return of grass weeds like blackgrass, Italian ryegrass, or wild oats has to be the first line of defence for next year’s crop.
+ID: 758 Text: Where populations are low, rogueing should be carried out. However, where populations are too high for manual control then spot spraying with glyphosate has to be considered.
+ID: 759 Text: Significantly, resistance testing in Oak Park will only be available in 2026.
+ID: 760 Text: It is unlikely that it will be available as a service in 2027. If you have a problem, collect some seed and see if it is resistant to the common herbicides. This is the first step in dealing with the issue.
+ID: 761 Text: However, it remains deeply concerning that the extent of the herbicide resistance challenge within Ireland’s grass weed populations continues to increase.
+ID: 762 Text: It is an issue that the tillage sector will have to address head-on as a matter of priority.
+ID: 763 Text: Last week saw the first murmurings of the year from some cattle-trade industry players in relation to reduced cattle supplies.
+ID: 764 Text: While several factory outlets cut their price offers for the week following Monday (June 8) and did not rule out further price cuts, other senior cattle procurement players seemed less confident that further beef price cuts were imminent.
+ID: 765 Text: The procurement staff who cast doubt on further beef price cuts being implemented cited reduced cattle availability as the reason they do not think prices will fall further.
+ID: 766 Text: This sentiment was echoed by Kilkenny Mart auctioneer George Candler on Thursday, June 11, who told Agriland after the weekly general cattle sale that "there was an absence of forward stores and beef-type animals, which could be an indication that these 
+ID: 767 Text: type of animals are not as plentiful as we thought".
+ID: 768 Text: This month also sees the 2026 FIFA World Cup kicking off across Mexico, the US, and Canada.
+ID: 769 Text: While there are some positive indications for the beef trade, the official kill figures up to Sunday, June 7, give no real indication of any significant waning of factory cattle supplies.
+ID: 770 Text: The table below details weekly beef kill numbers in the week ending Sunday, June 7, versus the same week of last year, the cumulative beef kill-to-date this year versus the same week of last year, as well as the change in numbers and percentage changes:
+ID: 771 Text: This year, bank holidays have had no major impact on kill numbers as most outlets are not operating at full capacity currently and are not killing cattle five days/week this year.
+ID: 772 Text: Looking at the table above, the cumulative kill-to-date this year is down 75,500 head or 9.7% on last year despite Bord Bia forecasting the 2026 factory cattle supply to be largely similar to last year.
+ID: 773 Text: According to Bord Bia, 1.59 million cattle were slaughtered in Ireland in 2025 and the 2026 supply forecast is for a beef kill of 1.56-1.6 million cattle.
+ID: 774 Text: This supply forecast would suggest finished cattle supplies for the remainder of this year will run above last year overall but there could well be some pinch points along the way.
+ID: 775 Text: Cattle supplies have declined in Ireland and are declining across Europe which would indicate there may well be more of a reduced demand issue rather than an over-supply issue affecting the trade currently.
+ID: 776 Text: A trip to any supermarket to compare the price of beef to alternative protein sources such as chicken or pork on a per kilo basis will give anyone a better understanding of what protein option a consumer that purchases solely on price will go for - and r
+ID: 777 Text: ule out.
+ID: 778 Text: It was outlined earlier this year that Ireland needs to retain its critical mass to remain relevant in key beef markets.
+ID: 779 Text: It is a well-known industry fact that rising beef demand generally brings a more sustainable beef price rise than any price rise resulting from a localised, temporary tightness in supply.
+ID: 780 Text: So while prices are in decline and are well down on this last year, Irish beef price is still at a record-high when 2025 figures are excluded.
+ID: 781 Text: In summary, it is not expected that overall cattle supplies will decline to any significant extent this year.
+ID: 782 Text: Despite this, some temporary tightness in supplies could well materialise which could help stabilise beef price.
+ID: 783 Text: The reality is that Irish beef price is set by a supply-demand dynamic and while it is hard for beef farmers to hear, it does seem to be currently out of kilter.
+ID: 784 Text: Strengthening in demand for Irish beef will be the best catalyst for price stability and strengthening in the medium to long term.
+ID: 785 Text: The Department of Agriculture, Food and the Marine (DAFM) is currently considering recruiting more staff for the Forestry Appeals Committee (FAC).
+ID: 786 Text: In response, the minister said the committee was established under the Agriculture Appeals Act 2001 to provide an appeals service against decisions on forestry licence applications made to the minister.
+ID: 787 Text: Minister Heydon noted that appeals can be made to the committee on a number of grounds.
+ID: 788 Text: "In more complex appeals, the preparation of these statements involves input from many sources within my department.
+ID: 789 Text: "Once submitted to the FAC, it is the responsibility of the FAC to schedule the hearing of cases," he said.
+ID: 790 Text: In 2024, there were 115 appeals submitted to the committee in relation to forestry licences.
+ID: 791 Text: During the year, 77 appeals were processed, while 36 were awaiting a decision and two licences were appealed to the Department of Agriculture, Food and the Marine (DAFM).
+ID: 792 Text: Minister Heydon said that "appeals have become more complex since the foundation of the FAC".
+ID: 793 Text: "My department is working actively to improve the time it takes to process these increasingly complex cases through improved processes and working with the FAC to clarify procedures where these are being raised by appellants.
+ID: 794 Text: "The FAC itself is also looking at its procedures with a view to processing appeals more quickly.
+ID: 795 Text: "I am confident that these initiatives will improve the time it takes for the FAC to consider affirming more department decisions on licences," Minster Heydon said.
+ID: 796 Text: John Deere has focused on precision farming systems and cabin ergonomics for their model year 2027 (MY27) tractors.
+ID: 797 Text: Details on the 6R, 6M, and 8R MY27 models show that, overall, the main upgrades went towards improving tractor efficiency, increasing the effectiveness of automated guidance, supervised autonomy, and improving cab comfort for agricultural operators.
+ID: 798 Text: A StarFire 7500 integrated receiver, G5 CommandCenter and JDLink modem, which John Deere said will enable immediate access to guidance and automation, is delivered with the 6R and available for the 6M series.
+ID: 799 Text: The 6R tractors are capable of supervised autonomy, subject to licence selection.
+ID: 800 Text: According to John Deere, the 6M has received "a new high-bandwidth communication bus" that the company claims provides access to more than 2,000 machine data points.
+ID: 801 Text: This is aimed at improving remote diagnostics and allowing service teams to pre-identify faults, shorten repair time, and reduce unplanned downtime.
+ID: 802 Text: The 8R Series comes with integrated receiver technology, a G5 plus CommandCentre display and JDLink connectivity.
+ID: 803 Text: All 8 series models offer advanced precision functionalities, including supervised autonomy features such as AutoTrac Turn Automation, AutoPath, and variable rate and depth control.
+ID: 804 Text: John Deere recently celebrated 25 years of using automated guidance, a large step towards the acceleration of precision agriculture, achieved through the use of StarFire receivers.
+ID: 805 Text: The company claims its use of Sub-Foot Real-Time Kinematics (SF-RTK) enables positioning accuracy "down to 2.5cm".
+ID: 806 Text: G5 functionality includes section control and variable rate control, with optional upgrades such as AutoTrac Turn Automation, AutoPath and Passive Implement Guidance.
+ID: 807 Text: InField Data Sharing is intended to link multiple John Deere machines working in the same field on the same task, enabling operators to see real-time progress and coordinate as one.
+ID: 808 Text: The 6R, 6M and 8R ranges have all received updates to their cabins.
+ID: 809 Text: In regard to the 6R, the MY27 tractors feature the CommandView 4, which John Deere says is designed to "improve ergonomics, visibility and acoustic comfort".
+ID: 810 Text: Its redesigned cab frame is claimed to improve rear implement visibility by up to 20% compared to the previous model.
+ID: 811 Text: Interior noise levels are at the moderately loud level of 66dBa.
+ID: 812 Text: This has been achieved by measures such as relocating steering and braking valves outside the cab, optimised cab mounting, quieter air conditioning blowers, and a sound-absorbing cab floor.
+ID: 813 Text: The standard CommandX Plus or optional CommandX Pro joysticks are available for the new e19 full PowerShift and AutoPowr transmissions.
+ID: 814 Text: Further cab updates include a touchscreen radio with wireless Apple CarPlay/Android Auto and a 6.1 sound system with subwoofer.
+ID: 815 Text: Additionally, wireless phone charging comes as standard, along with up to four USB-C ports, an 8.5L compressor-cooled refrigerator, and a more powerful air conditioning system.
+ID: 816 Text: The automatic display pre-boots when the cabin door is opened; a 320° windshield wiper; a new right-hand side wiper; automatic trailer steering axle lock when reversing, and a fully integrated Category IV cabin filter.
+ID: 817 Text: According to John Deere, its next-generation Hydraulic Cab Suspension (HCS) features new low-friction suspension cylinders, an updated controller and revised cab mounting components.
+ID: 818 Text: Together, these improvements are claimed to "reduce vibration, harshness and noise and protect the driver from uneven ground conditions".
+ID: 819 Text: For MY27, a redesigned steering column with foot-operated memory adjustment is intended to improve ergonomics and ensure a consistent driving position, John Deere said.
+ID: 820 Text: A new 33cm contoured leather steering wheel and a flatter steering column angle has been added in an effort to enhance steering precision and comfort.
+ID: 821 Text: A new displacement-based braking system and automotive-style pedals have been added to deliver "progressive deceleration and easy changing of pedals", which the company said can be done "without lifting the heel".
+ID: 822 Text: Adjustable seat damping, wider rim options, Variable Ratio Steering and the new Reactive Steering are also available with the Sport Package Pro.
+ID: 823 Text: The cab of the 6M series has been revised with what John Deere believes to be a "clearer layout and a more flexible control configuration".
+ID: 824 Text: Options range from a right-hand console with mechanical orelectric Selective Control Valves (SCV) to a compact CommandARM with G5 CommandCenter and a CommandX Plus joystick.
+ID: 825 Text: The operating logic now follows the 6R, 7R and 8R series, supporting easier transfer between machines.
+ID: 826 Text: The optional CommandX Plus joystick is available on all e19 and AutoPowr transmissions.
+ID: 827 Text: Integrated into the Compact CommandARM, it offers six freely assignable buttons, two set speeds, and control of tractor andISOBUS functions familiar from the CommandPRO joystick.
+ID: 828 Text: Additionally, the Compact CommandARM offers two SCV configurations with traditional E-SCV switches or an electronic joystick.
+ID: 829 Text: According to John Deere, the optional 10.1-inch G5 CommandCenter display is the "main interface for tractor and Precision Ag functions", supported by a corner post display for key parameters such as speed and engine rpm.
+ID: 830 Text: In configurations without G5, the corner post display remains the main control centre.
+ID: 831 Text: The G5 platform supports "a wide range of Precision Ag applications, from basic guidance to advanced features such as AutoPath," John Deere said.
+ID: 832 Text: The Settings Manager function enables storage and recall of different profiles for tractor, implement and automation settings.
+ID: 833 Text: The Layout Manager enables configuration of screen layouts based off to task or operator preference.
+ID: 834 Text: The new Remote Display Control (RDC) enables remote adjustment of G5 displays, improving operator support and reducing setup time.
+ID: 835 Text: Satellite Map visualisation supports field orientation and documentation.
+ID: 836 Text: New features include door cinch soft-close technology, push-button start with pin code protection, 320° wiper and wireless phone charging.
+ID: 837 Text: The redesigned CommandARM integrates either CommandX Plus or CommandX Pro, available for e23, AutoPowr or AutoPowr (for 370 and 410 models) transmission options.
+ID: 838 Text: The standard convenience display allows operators to store and recall personalised settings for seat position, climate control and infotainment.
+ID: 839 Text: The next-generation seat offers electronic controls for both seatand CommandARM.
+ID: 840 Text: According to John Deere, the new CommandView 4 Plus cab on the 8RX models removes the right-hand console, increasing legroom by 15% and improving side visibility by 20%.
+ID: 841 Text: Marcus Luchmann, product manager at John Deere, said: “When developing the new 8 series cab, we deliberately put the driver and the needs of large farms at the centre of every decision.
+ID: 842 Text: “A unified operating concept for both the driver interface and precision ag technology, from 6M to 8R high-horsepower tractors and beyond, combined with transferable driver settings across tractors, enables operators to switch machines easily without re-
+ID: 843 Text: training.
+ID: 844 Text: "At the same time, farm owners can assign the right tractor to each task more efficiently."
+ID: 845 Text: Irish milk price trends in 2026 have mirrored those seen across Europe, with the average April milk price across the bloc now marking its tenth consecutive decrease.
+ID: 846 Text: Before the price cuts began in June 2025, that year had kicked off with high prices following on from the record end of year levels in 2024.
+ID: 847 Text: The chart below tracks how the milk price had risen across 2024, staying high into 2025, before starting to fall in the second half of the year.
+ID: 848 Text: Current 2026 milk prices remain below 2024 levels, but are higher than the 2020-2023 average.
+ID: 849 Text: In terms of Irish prices, base prices began dropping from an average of 48.63c/L in June 2025 to an average of 34.3c/L by December 2025.
+ID: 850 Text: In the latest Milk Price Tracker for Ireland, milk prices held relatively stable for April supplies, with no direct cuts from any processors.
+ID: 851 Text: The increased prices means the average base price for April was 37.24c/L.
+ID: 852 Text: The milk price for the ZuivelNL report is calculated based on the following milk criteria per 100kg of milk:
+ID: 853 Text: VAT is excluded from the calculation.
+ID: 854 Text: According to the report, the European average standard milk price for April was €39.76/100kgs of milk solids.
+ID: 855 Text: This was down marginally on the March average by €0.72/100kgs milk solids or 1.08%.
+ID: 856 Text: However, the average price was down on April 2025 prices by almost 21%, or -€0.1042/1kg of milk solids.
+ID: 857 Text: In terms of the Irish co-ops listed in the report, all were offering prices in April that came in below the European average.
+ID: 858 Text: Tirlan offered €36.97/100kgs of milk, while Dairygold paid €36.26/100kgs of milk.
+ID: 859 Text: Kerry Agribusiness had a €36.81 base price/100kgs of milk, but this included additional supplement of €2.79 per 100kg on top of the base milk price during the first three months of this year. This supplement is included in the fat and protein price.
+ID: 860 Text: Across Europe, Finnish company Valio had the highest payout with a base price of €43.11/100kg.
+ID: 861 Text: The co-op cut its price by €3.40 (approx. €0.034/L) from March, following 10 months of stability.
+ID: 862 Text: Caspa Foods saw the biggest cut with of €7.44/100kgs (€0.0744/1kg). The monthly surcharge on the milk price was also halved (from €7.77/100kg to €3.88/100kg of milk).
+ID: 863 Text: This cut was a response to the market conditions and had been anticipated, according to the report.
+ID: 864 Text: A payment for animal welfare of €0.60/100kg of milk is not yet included in the calculated milk price.
+ID: 865 Text: EU milk supply jumped by 4.5% in the first quarter (Q1) of 2026, with Poland as well as western Europe the driving forces behind this. Ireland saw a minor increase in collections of 1.6% on 2025 levels.
+ID: 866 Text: Global supplies were up in the first quarter as well. New Zealand saw significant increases of supply of 9.7%. Australia saw a rise of 2.8% and Argentina saw a 7.9% increase in supply.
+ID: 867 Text: Uruguay saw the highest jump of 11.3%.
+ID: 868 Text: When all global export supplies are combined, the total milk supply is up 4.1% on Q1 2025.
+ID: 869 Text: The milk price correlates with the global dairy trade, according to the report.
+ID: 870 Text: Butter took a hit of €400/t in the first half of May but has now stabilised and had a minor rebound, it said.
+ID: 871 Text: In Global Dairy Trade auctions over the past six months, butter prices fell to €4,360 per metric tonne (MT) in December before rebounding to €5,975/MT by March.
+ID: 872 Text: Butter hit another slump in May, dropping to €4,722/ MT but has shown signs of recovery increasing to €4,924/MT on June 2.
+ID: 873 Text: The event in Ballyouskill on the Kilkenny/Laois border will kick off on Saturday, June 20 with the All-Ireland female-only tractor run.
+ID: 874 Text: It is open to tractors of all ages with a preference for vintage machines.
+ID: 875 Text: This is the first of its kind and is very symbolic this year as 2026 was declared by the United Nations as International Year of the Female Farmer, the organisers said.
+ID: 876 Text: Registration for the run is at 4:00pm on Saturday in Ballyouskill, with departure at 5:00pm.
+ID: 877 Text: After the run there will be live music by Knots Down and Out in the Wheel Inn, Ballyouskill.
+ID: 878 Text: On Sunday, June 21 - the summer solstice, and longest daylight day - there will be a pre-1980 vintage tractor run with registration from 11:00am and departure from Ballyouskill at 12 noon.
+ID: 879 Text: The driving force behind the initiative are Paul Palmer, Freddie Farrell and Gemma Palmer.
+ID: 880 Text: According to Farrell, there has been a great response to both events.
+ID: 881 Text: He said: "The vintage-only tractor run taking place on Sunday is gaining good momentum as a lot of similar events have been cancelled due to the fuel crisis.
+ID: 882 Text: "The ladies run is creating quite a stir as it is a novel idea and in our area there are lots of lady drivers.
+ID: 883 Text: The proceeds of the weekend will go to the Alzheimer Society of Ireland, Breast Cancer Ireland and Teac Tom, the Thomas Hayes Trust.
+ID: 884 Text: Poultry litter is, possibly, the most effective source of organic manure available to Irish grassland and tillage farmers.
+ID: 885 Text: It contains high levels of nitrogen (N) potash (K) and phosphate (P).
+ID: 886 Text: Moreover, ever larger quantities of the material are becoming available across the island of Ireland, reflecting the fast-expanding footprint of poultry meat sector.
+ID: 887 Text: Litter is best applied as a prior to ploughing in preparation for a cereal crop, potatoes, fodder beet or forage maize.
+ID: 888 Text: Incorporating the litter into the soil significantly reduces the threat of botulism that can be carried by decomposing, dead birds that, from time to time, can feature within the material
+ID: 889 Text: He recently highlighted this matter in the Northern Ireland Assembly after a North/South Ministerial Council meeting, urging greater all-island cooperation on nutrient management to support farmers and deliver environmental benefits.
+ID: 890 Text: The West Tyrone MLA said he raised the issue of "ongoing barriers preventing the cross-border movement of poultry litter".
+ID: 891 Text: McAleer added: 'There is a well-established imbalance across the island, with a surplus of phosphorus in the north and a deficit in the south.
+ID: 892 Text: "This creates a clear opportunity for a practical and mutually beneficial solution through the export of poultry litter.
+ID: 893 Text: According to McAleer, this is not a new issue.
+ID: 894 Text: "It has been under discussion for a considerable period and continues to be a source of frustration for the agri-food sector," he said.
+ID: 895 Text: "Farmers on both sides of the border stand to benefit, yet progress has been limited.
+ID: 896 Text: According to McAleer, Minister for Agriculture, Food and the Marine Andrew Muir, acknowledged the challenges relating to these matters and confirmed that the issue has been discussed at North/South level, particularly through the agriculture sectoral for
+ID: 897 Text: mat.
+ID: 898 Text: Minister Muir also indicated his intention to engage further with Shared Environmental Services, the Northern Ireland Environment Agency and other stakeholder organisations in an effort to identify a workable solution.
+ID: 899 Text: McAleer said: 'While this commitment to engagement is welcome, it must now translate into tangible progress.
+ID: 900 Text: "This is an all-island challenge that requires coordinated action and political leadership.
+ID: 901 Text: “I will continue to press for a resolution that supports farmers, improves nutrient management and delivers environmental benefits on an all-island basis.”
+ID: 902 Text: Barriers to cross-border movements of poultry litter has also been raised in Dáil Éireann this week.
+ID: 903 Text: Deputy Martin Kenny, Sinn Féin spokesperson on agriculture, has called on the Department of Agriculture, Food and the Marine (DAFM) to make efforts to ensure the continued movement of poultry manure from Northern Ireland.
+ID: 904 Text: Deputy Kenny said that, since the start of June, the importation of poultry manure from Northern Ireland has been suspended.
+ID: 905 Text: According to Deputy Kenny, the SES is concerned that poultry manure from Northern Ireland could be spread on or near designated land in the Republic of Ireland.
+ID: 906 Text: The Sinn Féin agriculture spokesperson raised the issue in the Dáil on Thursday, June 11, where Minister for Enterprise, Tourism and Employment Peter Burke was taking questions.
+ID: 907 Text: Minister Burke did not give an undertaking for the government to address the issue, but he did say he would raise the matter with the Department of Agriculture, and Minister for Agriculture, Food and the Marine Martin Heydon.
+ID: 908 Text: There’s a wide range of schemes and payments available to farmers under the current version of the Common Agricultural Policy (CAP), with an accompanying list of deadlines to keep track of.
+ID: 909 Text: Here are some of the key deadlines that are coming up, from June to September.
+ID: 910 Text: Many of these schemes fall under the Targeted Agricultural Modernisation Scheme (TAMS 3).
+ID: 911 Text: The Organic Capital Investment Scheme, the fourth scheme to open TAMS 3, has a deadline of June 16.
+ID: 912 Text: The scheme will provide grant aid under TAMS at the higher rate of 60% for organic farmers for capital investments and equipment to develop their organic enterprise.
+ID: 913 Text: Minister for Agriculture, Food and the Marine Martin Heydon described the Solar Capital Investment Scheme (SCIS) as “a measure under the Targeted Agriculture Modernisation Scheme (TAMS 3), which provides support to farmers wishing to invest in renewable 
+ID: 914 Text: energy”.
+ID: 915 Text: The next deadline for the TAMS 3 SCIS in Ireland is June 19 (Tranche 12, extended from the original June 5 date).
+ID: 916 Text: Tranche 13 of the scheme has a deadline of September 4.
+ID: 917 Text: The Pig and Poultry Investment Scheme (PPIS) is intended to assist farmers to purchase new equipment for the upgrading of pig and poultry units on their farms, thereby supporting farmers’ compliance with animal welfare legislation.
+ID: 918 Text: It is also intended to facilitate energy efficient measures to improve competitiveness and contribute to the improvement of agricultural incomes.
+ID: 919 Text: The tranche 12 deadline is June 19 (extended from June 5), while the tranche 13 deadline is September 4.
+ID: 920 Text: The next deadline for the Young Farmer Capital Investment Scheme (YFCIS, Tranche 13) under TAMS 3 is June 19.
+ID: 921 Text: This extended date was adjusted from the early June timeframe.
+ID: 922 Text: After this, the subsequent 2026 application tranches will close on September 4 and December 4.
+ID: 923 Text: According to DAFM: “The Women Farmers’ Capital Investment Scheme (WFCIS) provides an incentive to women farmers to upgrade their agricultural buildings and equipment by providing them with an increased level of support to meet the considerable capital co
+ID: 924 Text: sts associated with the establishment of their enterprises."
+ID: 925 Text: The deadline for tranche 12 was recently extended to June 19.
+ID: 926 Text: Subsequent 2026 application deadlines are September 4 and December 4.
+ID: 927 Text: According to the Department of Agriculture, Food and the Marine (DAFM), the Agri-Climate Rural Environment Scheme (ACRES) scorecard is a “results-based assessment tool used to grade the environmental and ecological quality of farmlands”.eThe deadline for
+ID: 928 Text:  submission of completed scorecards is August 31, 2026.
+ID: 929 Text: "You are reminded that once an ACRES scorecard has been submitted in full, it will not be possible to make further changes to the scorecard and it cannot subsequently be amended," DAFM said.
+ID: 930 Text: "It is therefore essential that advisers are fully satisfied that scorecards are correct at the time of submission."
+ID: 931 Text: The TAMS 3 Nutrient Importation Storage Scheme (NISS) provides Irish farmers with a 70% grant to assist in building facilities for storing imported animal excreta, soiled water, and farmyard manures.
+ID: 932 Text: It operates with a stand-alone investment ceiling of €90,000 for individuals and €160,000 for registered farm partnerships.
+ID: 933 Text: The final two application batch deadlines for 2026 are September 4 and December 4.
+ID: 934 Text: The Collaborative Farming Grant Scheme provides financial support aimed at covering part of the legal, advisory and financial services costs of setting up a Registered Farm Partnership.
+ID: 935 Text: Applications for the Collaborative Farming Grant (tranche 3) will open on August 17, with a deadline of September 30.
+]]></system-out>
+  </testcase>
+</testsuite>

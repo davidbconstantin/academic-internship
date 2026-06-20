@@ -4,8 +4,10 @@
  */
 package com.security.academicinternshipproject;
 
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
+import javax.sql.rowset.CachedRowSet;
 import javax.swing.table.AbstractTableModel;
 
 /**
@@ -26,9 +28,9 @@ public class DatabaseQueryJP extends javax.swing.JPanel {
     class SQLTableModel extends AbstractTableModel {
         
         private String[] columnNames;
-        private Object[][] data;
+        private CachedRowSet data;
         
-        public SQLTableModel(String[] columnNames, Object[][] data) {
+        public SQLTableModel(String[] columnNames, CachedRowSet data) {
             this.columnNames = columnNames;
             this.data = data;
         }
@@ -40,7 +42,17 @@ public class DatabaseQueryJP extends javax.swing.JPanel {
 
         @Override
         public int getRowCount() {
-            return data.length;
+            int rows = 0;
+            // move cursor to the last row
+            try {
+                data.last();
+                // the index of the last row represents the count
+                rows = data.getRow();
+                data.beforeFirst();
+            } catch (SQLException ex) {
+                System.out.println(ex);
+            }
+            return rows;
         }
 
         @Override
@@ -50,10 +62,15 @@ public class DatabaseQueryJP extends javax.swing.JPanel {
 
         @Override
         public Object getValueAt(int rowIndex, int columnIndex) {
-            if (data == null || rowIndex < 0 || rowIndex >= data.length)
+            if (data == null || rowIndex < 0 || rowIndex >= getRowCount())
                 return "";
-            else
-                return data[rowIndex][columnIndex];
+            try {
+                data.absolute(rowIndex + 1);
+                return data.getObject(columnIndex + 1);
+            } catch (SQLException ex) {
+                System.out.println(ex);
+                return null;
+            }
         }
         
     }
@@ -212,12 +229,13 @@ public class DatabaseQueryJP extends javax.swing.JPanel {
                 if (info.getTableName().equals(tableLS.getSelectedValue())) {
                     String[] colNames = new String[info.getColumns().size()];
                     Object[][] rowData = new Object[2][info.getColumns().size()];
+                    mainMenuForm.returnTableData(info.getTableName());
                     // extract column names
                     for (int i = 0; i < info.getColumns().size(); i++) {
                         colNames[i] = info.getColumns().get(i).getColumnName();
                         System.out.println("Column name: " + colNames[i]);
                     }
-                    SQLTableModel tableModel = new SQLTableModel(colNames, rowData);
+                    SQLTableModel tableModel = new SQLTableModel(colNames, mainMenuForm.getCrs());
                     // remove existing table model
                     if (displayTBL.getModel() != null)
                         if (displayTBL.getCellEditor() != null)

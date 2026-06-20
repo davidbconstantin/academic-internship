@@ -1,5 +1,6 @@
 CommandParserTest.class
 JSoupTextTest.class
+SQLSelectTest.class
 SQLUpdateTest.class
 SentimentAnalysisTest.class
 SQLCommandTest.class
