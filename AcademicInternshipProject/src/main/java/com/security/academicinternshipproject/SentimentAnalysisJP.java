@@ -9,6 +9,9 @@ import ai.djl.repository.zoo.ModelNotFoundException;
 import ai.djl.translate.TranslateException;
 import java.awt.Color;
 import java.io.IOException;
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  *
@@ -17,6 +20,9 @@ import java.io.IOException;
 public class SentimentAnalysisJP extends javax.swing.JPanel {
     
     private MainMenuForm mainMenuForm;
+    private List<Integer> positiveScores;
+    private List<Integer> negativeScores;
+    
     /**
      * Creates new form SentimentAnalysisJP
      */
@@ -227,12 +233,27 @@ public class SentimentAnalysisJP extends javax.swing.JPanel {
         try {
             if (!statusTA.getText().equals(""))
                 mainMenuForm.getSentimentAnalyser().predict(statusTA.getText());
-            else
+            else if (!mainMenuForm.isAnalysingSQLTable())
                 mainMenuForm.getSentimentAnalyser().predict(inputTF.getText());
-            positivePB.setValue((int)(mainMenuForm.getSentimentAnalyser().getClassifications().get("Positive").getProbability() * 100));
-            negativePB.setValue((int)(mainMenuForm.getSentimentAnalyser().getClassifications().get("Negative").getProbability() * 100));
-            pValueLBL.setText(String.valueOf(mainMenuForm.getSentimentAnalyser().getClassifications().get("Positive").getProbability()));
-            nValueLBL.setText(String.valueOf(mainMenuForm.getSentimentAnalyser().getClassifications().get("Negative").getProbability()));
+            else {
+                // predict sentiment for each table row
+                int index = 0;
+                positiveScores = new ArrayList<>();
+                negativeScores = new ArrayList<>();
+                while (mainMenuForm.getCrs().next()) {
+                    index++;
+                    System.out.println("Analysing row " + index + " out of " + mainMenuForm.getCrs().size()); 
+                    if (mainMenuForm.getCrs().getString(mainMenuForm.getSelectedColumnName()) != null &&
+                            !mainMenuForm.getCrs().getString(mainMenuForm.getSelectedColumnName()).trim().isEmpty()) {
+                        mainMenuForm.getSentimentAnalyser().predict(mainMenuForm.getCrs().getString(mainMenuForm.getSelectedColumnName()));
+                        positiveScores.add((int)(mainMenuForm.getSentimentAnalyser().getClassifications().get("Positive").getProbability() * 100));
+                        negativeScores.add((int)(mainMenuForm.getSentimentAnalyser().getClassifications().get("Negative").getProbability() * 100));
+                    } else
+                        System.out.println("Skipping row...");
+                }
+                mainMenuForm.getCrs().close();
+            }
+            displayAnalysisResults();
         } catch (MalformedModelException ex) {
             System.out.println(ex);
         } catch (ModelNotFoundException ex) {
@@ -240,6 +261,8 @@ public class SentimentAnalysisJP extends javax.swing.JPanel {
         } catch (IOException ex) {
             System.out.println(ex);
         } catch (TranslateException ex) {
+            System.out.println(ex);
+        } catch (SQLException ex) {
             System.out.println(ex);
         }
     }//GEN-LAST:event_runBTNActionPerformed
@@ -256,6 +279,9 @@ public class SentimentAnalysisJP extends javax.swing.JPanel {
             responsesCB.setVisible(false);
             responsesLBL.setVisible(false);
         }
+        // fill in text field if using SQL query
+        if (mainMenuForm.getSelectedColumnName() != null)
+            inputTF.setText("SELECT " + mainMenuForm.getSelectedColumnName() + " FROM " + mainMenuForm.getSelectedTableName());
     }//GEN-LAST:event_formAncestorAdded
 
     private void responsesCBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_responsesCBActionPerformed
@@ -272,6 +298,31 @@ public class SentimentAnalysisJP extends javax.swing.JPanel {
         mainMenuForm.displayPanel("Database Query");
     }//GEN-LAST:event_queryBTNActionPerformed
 
+    public void displayAnalysisResults() {
+        if (!mainMenuForm.isAnalysingSQLTable()) {
+        positivePB.setValue((int)(mainMenuForm.getSentimentAnalyser().getClassifications().get("Positive").getProbability() * 100));
+        negativePB.setValue((int)(mainMenuForm.getSentimentAnalyser().getClassifications().get("Negative").getProbability() * 100));
+        } else {
+            positivePB.setValue(computeAggregateScore((ArrayList<Integer>) positiveScores));
+            negativePB.setValue(computeAggregateScore((ArrayList<Integer>) negativeScores));
+            positiveScores.clear();
+            negativeScores.clear();
+        }
+        pValueLBL.setText(String.valueOf(mainMenuForm.getSentimentAnalyser().getClassifications().get("Positive").getProbability()));
+        nValueLBL.setText(String.valueOf(mainMenuForm.getSentimentAnalyser().getClassifications().get("Negative").getProbability()));
+    }
+    
+    public int computeAggregateScore(ArrayList<Integer> values) {
+        int finalValue = 0;
+        int denominator = 0;
+        for (int value: values) {
+            denominator++;
+            System.out.println("Value " + denominator + ": "+ value);
+            finalValue += value;
+        }
+        System.out.println("Final value: " + finalValue + "/" + denominator);
+        return finalValue / denominator;
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton backBTN;

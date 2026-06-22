@@ -5,9 +5,11 @@
 package com.security.academicinternshipproject;
 
 import java.sql.SQLException;
+import java.sql.Types;
 import java.util.ArrayList;
 import java.util.List;
 import javax.sql.rowset.CachedRowSet;
+import javax.swing.JOptionPane;
 import javax.swing.table.AbstractTableModel;
 
 /**
@@ -17,6 +19,7 @@ import javax.swing.table.AbstractTableModel;
 public class DatabaseQueryJP extends javax.swing.JPanel {
 
     private MainMenuForm mainMenuForm;
+    private boolean validDataType = false;
     /**
      * Creates new form DatabaseQueryJP
      */
@@ -104,6 +107,7 @@ public class DatabaseQueryJP extends javax.swing.JPanel {
         jScrollPane2 = new javax.swing.JScrollPane();
         displayTBL = new javax.swing.JTable();
         refreshBTN = new javax.swing.JButton();
+        selectedColLBL = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(0, 51, 242));
         setPreferredSize(new java.awt.Dimension(610, 390));
@@ -125,6 +129,11 @@ public class DatabaseQueryJP extends javax.swing.JPanel {
         });
 
         okBTN.setText("OK");
+        okBTN.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                okBTNActionPerformed(evt);
+            }
+        });
 
         selectLBL.setForeground(new java.awt.Color(255, 255, 255));
         selectLBL.setText("Select Table:");
@@ -144,6 +153,17 @@ public class DatabaseQueryJP extends javax.swing.JPanel {
 
             }
         ));
+        displayTBL.setRowSelectionAllowed(false);
+        displayTBL.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                displayTBLMouseClicked(evt);
+            }
+        });
+        displayTBL.addPropertyChangeListener(new java.beans.PropertyChangeListener() {
+            public void propertyChange(java.beans.PropertyChangeEvent evt) {
+                displayTBLPropertyChange(evt);
+            }
+        });
         jScrollPane2.setViewportView(displayTBL);
 
         refreshBTN.setText("Refresh Schema");
@@ -153,26 +173,30 @@ public class DatabaseQueryJP extends javax.swing.JPanel {
             }
         });
 
+        selectedColLBL.setForeground(new java.awt.Color(255, 255, 255));
+        selectedColLBL.setText("Selected column:");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
+                .addGap(28, 28, 28)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(selectLBL)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(28, 28, 28)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(selectLBL)
+                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(54, 54, 54)
-                                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 360, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(39, 39, 39)
+                                .addGap(11, 11, 11)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(refreshBTN)
+                                    .addComponent(backBTN))))
+                        .addGap(54, 54, 54)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(refreshBTN)
-                            .addComponent(backBTN))))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 41, Short.MAX_VALUE)
+                            .addComponent(selectedColLBL)
+                            .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 360, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(okBTN)
                 .addGap(43, 43, 43))
         );
@@ -186,7 +210,9 @@ public class DatabaseQueryJP extends javax.swing.JPanel {
                     .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 177, Short.MAX_VALUE))
                 .addGap(18, 18, 18)
-                .addComponent(refreshBTN)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(refreshBTN)
+                    .addComponent(selectedColLBL))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 83, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(backBTN)
@@ -222,6 +248,44 @@ public class DatabaseQueryJP extends javax.swing.JPanel {
         displaySelectedTableSchema();
     }//GEN-LAST:event_tableLSValueChanged
 
+    private void displayTBLPropertyChange(java.beans.PropertyChangeEvent evt) {//GEN-FIRST:event_displayTBLPropertyChange
+        // TODO add your handling code here:
+    }//GEN-LAST:event_displayTBLPropertyChange
+
+    private void displayTBLMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_displayTBLMouseClicked
+        // TODO add your handling code here:
+        // extract selected column name
+        int colIndex = displayTBL.getSelectedColumn();
+        if (colIndex >= 0) {
+            String selectedColumn = displayTBL.getColumnName(colIndex);
+            System.out.println("Selected column: " + selectedColumn);
+            selectedColLBL.setText("Selected column: " + selectedColumn);
+            // establish column type; natural language types are required for processing
+            SQLColumnInfo colInfo = mainMenuForm.getDatabaseInfo().findColumn(tableLS.getSelectedValue(), selectedColumn);
+            System.out.println("Data type: " + colInfo.getTypeName());
+            if (colInfo.getTypeName().equals("CHAR") || colInfo.getTypeName().equals("VARCHAR")
+                    || colInfo.getTypeName().equals("LONGNVARCHAR") || colInfo.getTypeName().equals("BLOB")
+                    || colInfo.getTypeName().equals("LONGVARCHAR") || colInfo.getTypeName().equals("NCHAR")) {
+                validDataType = true;
+            }
+            else
+                validDataType = false;
+        }
+    }//GEN-LAST:event_displayTBLMouseClicked
+
+    private void okBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_okBTNActionPerformed
+        // TODO add your handling code here:
+        if (validDataType) {
+            mainMenuForm.setSelectedColumnName(displayTBL.getColumnName(displayTBL.getSelectedColumn()));
+            mainMenuForm.setSelectedTableName(tableLS.getSelectedValue());
+            System.out.println("Selection accepted.");
+            mainMenuForm.setIsAnalysingTable(true);
+            mainMenuForm.displayPanel("Sentiment Analysis");
+        }
+        else 
+            JOptionPane.showMessageDialog(null, "Unexpected data type for NLP! Please select text data.");
+    }//GEN-LAST:event_okBTNActionPerformed
+
     private void displaySelectedTableSchema() {
         // retrieve the selected table's schema first
         if (mainMenuForm.getDatabaseInfo() != null) {
@@ -254,6 +318,7 @@ public class DatabaseQueryJP extends javax.swing.JPanel {
     private javax.swing.JButton okBTN;
     private javax.swing.JButton refreshBTN;
     private javax.swing.JLabel selectLBL;
+    private javax.swing.JLabel selectedColLBL;
     private javax.swing.JList<String> tableLS;
     // End of variables declaration//GEN-END:variables
 }

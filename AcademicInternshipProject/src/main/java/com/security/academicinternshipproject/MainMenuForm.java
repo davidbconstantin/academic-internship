@@ -48,7 +48,11 @@ public class MainMenuForm extends javax.swing.JFrame {
     private SQLDatabaseInfo dbInfo;
     private CachedRowSet crs;
     
+    // database query variables
     private SentimentAnalyser sentimentAnalyser;
+    private String selectedColumnName;
+    private String selectedTableName;
+    private boolean analysingSQLTable = false;
     
     private boolean sqlCredentialsRequired = true;
     private boolean editMode = false;
@@ -108,7 +112,7 @@ public class MainMenuForm extends javax.swing.JFrame {
         // get the previous panel's name while ignoring pop-up menus
         for (Component comp: mainPanelJP.getComponents()) {
             if (comp.isVisible()) {
-                if (!comp.getName().equals("SQL Settings"))
+                if (!comp.getName().equals("SQL Settings")) 
                     lastPanel = (javax.swing.JPanel)comp;
             }
         }
@@ -184,6 +188,14 @@ public class MainMenuForm extends javax.swing.JFrame {
     
     public void setLastSelectedCrawlerName(String name) {
         lastSelectedCrawlerName = name;
+    }
+    
+    public boolean isAnalysingSQLTable() {
+        return analysingSQLTable;
+    }
+    
+    public void setIsAnalysingTable(boolean value) {
+        analysingSQLTable = value;
     }
     
     public void eraseCredentials() {
@@ -275,6 +287,22 @@ public class MainMenuForm extends javax.swing.JFrame {
         return crs;
     }
     
+    public void setSelectedColumnName(String selectedColumn) {
+        selectedColumnName = selectedColumn;
+    }
+    
+    public String getSelectedColumnName() {
+        return selectedColumnName;
+    }
+    
+    public void setSelectedTableName(String selectedTable) {
+        selectedTableName = selectedTable;
+    }
+    
+    public String getSelectedTableName() {
+        return selectedTableName;
+    }
+    
     public void populateComboBoxWithHTMLResponses(javax.swing.JComboBox cbox, WebCrawler crawler) {
         // add HTML responses to combo box
         int counter = -1;
@@ -314,6 +342,25 @@ public class MainMenuForm extends javax.swing.JFrame {
                  String.valueOf(password));
                  sql.fetchTableSchemas(sqlCredentials.get(0), Integer.parseInt(sqlCredentials.get(1)), sqlCredentials.get(2), String.valueOf(username), String.valueOf(password));
                  crs = sql.executeQuery(sql.composeUrl(sqlCredentials.get(0), Integer.parseInt(sqlCredentials.get(1)), sqlCredentials.get(2)), String.valueOf(username), String.valueOf(password), "SELECT * FROM " + tableName);
+                 return true;
+             } catch (Exception ex) {
+                 System.out.println(ex);
+                 return false;
+                 }
+             } else {
+                 displayPanel("SQL Settings");
+                 return false;
+             }
+    }
+    
+     public boolean returnColumnData(String tableName, String columnName) {
+        if (!sqlCredentialsRequired) {
+            try {
+                 sql = new MySQLConnector(sqlCredentials.get(0), Integer.parseInt(sqlCredentials.get(1)), sqlCredentials.get(2),
+                 String.valueOf(username),
+                 String.valueOf(password));
+                 sql.fetchTableSchemas(sqlCredentials.get(0), Integer.parseInt(sqlCredentials.get(1)), sqlCredentials.get(2), String.valueOf(username), String.valueOf(password));
+                 crs = sql.executeQuery(sql.composeUrl(sqlCredentials.get(0), Integer.parseInt(sqlCredentials.get(1)), sqlCredentials.get(2)), String.valueOf(username), String.valueOf(password), "SELECT " + columnName + " FROM " + tableName);
                  return true;
              } catch (Exception ex) {
                  System.out.println(ex);
