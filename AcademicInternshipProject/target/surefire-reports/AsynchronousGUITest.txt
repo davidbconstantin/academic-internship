@@ -1,4 +1,4 @@
 -------------------------------------------------------------------------------
-Test set: SQLCommandTest
+Test set: AsynchronousGUITest
 -------------------------------------------------------------------------------
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.003 s -- in SQLCommandTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 38.08 s -- in AsynchronousGUITest

@@ -252,6 +252,8 @@ public class SentimentAnalysisJP extends javax.swing.JPanel {
                         System.out.println("Skipping row...");
                 }
                 mainMenuForm.getCrs().close();
+                mainMenuForm.setIsAnalysingTable(false);
+                inputTF.setText("");
             }
             displayAnalysisResults();
         } catch (MalformedModelException ex) {

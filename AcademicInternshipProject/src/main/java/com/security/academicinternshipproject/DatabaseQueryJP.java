@@ -265,7 +265,8 @@ public class DatabaseQueryJP extends javax.swing.JPanel {
             System.out.println("Data type: " + colInfo.getTypeName());
             if (colInfo.getTypeName().equals("CHAR") || colInfo.getTypeName().equals("VARCHAR")
                     || colInfo.getTypeName().equals("LONGNVARCHAR") || colInfo.getTypeName().equals("BLOB")
-                    || colInfo.getTypeName().equals("LONGVARCHAR") || colInfo.getTypeName().equals("NCHAR")) {
+                    || colInfo.getTypeName().equals("LONGVARCHAR") || colInfo.getTypeName().equals("NCHAR")
+                    || colInfo.getTypeName().equals("TEXT")) {
                 validDataType = true;
             }
             else

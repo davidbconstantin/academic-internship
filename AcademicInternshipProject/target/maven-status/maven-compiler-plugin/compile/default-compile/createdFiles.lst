@@ -16,6 +16,7 @@ com\security\academicinternshipproject\CrawlerConfigJP$1.class
 com\security\academicinternshipproject\MainMenuForm$1.class
 com\security\academicinternshipproject\SQLDatabaseJP.class
 com\security\academicinternshipproject\SQLCredentialsJP.class
+com\security\academicinternshipproject\TestForm.class
 com\security\academicinternshipproject\SentimentAnalysisJP$2.class
 com\security\academicinternshipproject\CrawlerScriptingJP$1.class
 com\security\academicinternshipproject\DatabaseSettingsJP$2.class
@@ -29,6 +30,7 @@ com\security\academicinternshipproject\SentimentAnalysisJP$5.class
 com\security\academicinternshipproject\CrawlerScriptingJP$4.class
 com\security\academicinternshipproject\SQLDatabaseJP$5.class
 com\security\academicinternshipproject\MainMenuForm$2.class
+com\security\academicinternshipproject\TestForm$1.class
 com\security\academicinternshipproject\CrawlerConfigJP$2.class
 com\security\academicinternshipproject\DatabaseQueryJP$6.class
 com\security\academicinternshipproject\CrawlerScriptingJP$7.class
@@ -51,6 +53,7 @@ com\security\academicinternshipproject\SQLDatabaseJP$6.class
 com\security\academicinternshipproject\SQLDatabaseInfo.class
 com\security\academicinternshipproject\CrawlerScriptingJP$3.class
 com\security\academicinternshipproject\SQLDatabaseJP$3.class
+com\security\academicinternshipproject\TestPanel.class
 com\security\academicinternshipproject\SQLCredentialsJP$2.class
 com\security\academicinternshipproject\DatabaseQueryJP$SQLTableModel.class
 com\security\academicinternshipproject\CrawlerScriptingJP$6.class
