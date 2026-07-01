@@ -4,6 +4,7 @@ com\security\academicinternshipproject\DatabaseQueryJP.class
 com\security\academicinternshipproject\SearchResult.class
 com\security\academicinternshipproject\SentimentAnalysisJP$1.class
 com\security\academicinternshipproject\DatabaseSettingsJP$3.class
+com\security\academicinternshipproject\swingworkers\WebCrawlerGUIWorker.class
 com\security\academicinternshipproject\CrawlerScriptingJP$5.class
 com\security\academicinternshipproject\MainMenuJP$2.class
 com\security\academicinternshipproject\SQLDatabaseJP$1.class
@@ -50,6 +51,7 @@ com\security\academicinternshipproject\MainMenuJP$7.class
 com\security\academicinternshipproject\DatabaseQueryJP$5.class
 com\security\academicinternshipproject\SentimentAnalyser.class
 com\security\academicinternshipproject\SQLDatabaseJP$6.class
+com\security\academicinternshipproject\swingworkers\SentimentAnalysisGUIWorker.class
 com\security\academicinternshipproject\SQLDatabaseInfo.class
 com\security\academicinternshipproject\CrawlerScriptingJP$3.class
 com\security\academicinternshipproject\SQLDatabaseJP$3.class
