@@ -1,22 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="SQLSelectTest" time="0.519" tests="1" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" version="3.0.2" name="SQLSelectTest" time="0.446" tests="1" errors="0" skipped="0" failures="0">
   <properties>
     <property name="java.specification.version" value="22"/>
     <property name="sun.cpu.isalist" value="amd64"/>
     <property name="sun.jnu.encoding" value="Cp1252"/>
     <property name="sun.awt.enableExtraMouseButtons" value="true"/>
     <property name="java.class.path" value="C:\University\Semester 6\Project\Python\AcademicInternshipProject\target\test-classes;C:\University\Semester 6\Project\Python\AcademicInternshipProject\target\classes;C:\Users\rokom\.m2\repository\org\jsoup\jsoup\1.22.1\jsoup-1.22.1.jar;C:\Users\rokom\.m2\repository\com\microsoft\playwright\playwright\1.58.0\playwright-1.58.0.jar;C:\Users\rokom\.m2\repository\com\google\code\gson\gson\2.13.2\gson-2.13.2.jar;C:\Users\rokom\.m2\repository\com\google\errorprone\error_prone_annotations\2.41.0\error_prone_annotations-2.41.0.jar;C:\Users\rokom\.m2\repository\org\opentest4j\opentest4j\1.3.0\opentest4j-1.3.0.jar;C:\Users\rokom\.m2\repository\com\microsoft\playwright\driver\1.58.0\driver-1.58.0.jar;C:\Users\rokom\.m2\repository\com\microsoft\playwright\driver-bundle\1.58.0\driver-bundle-1.58.0.jar;C:\Users\rokom\.m2\repository\org\junit\jupiter\junit-jupiter-api\5.10.2\junit-jupiter-api-5.10.2.jar;C:\Users\rokom\.m2\repository\org\junit\platform\junit-platform-commons\1.10.2\junit-platform-commons-1.10.2.jar;C:\Users\rokom\.m2\repository\org\apiguardian\apiguardian-api\1.1.2\apiguardian-api-1.1.2.jar;C:\Users\rokom\.m2\repository\org\junit\jupiter\junit-jupiter-params\5.10.2\junit-jupiter-params-5.10.2.jar;C:\Users\rokom\.m2\repository\org\junit\jupiter\junit-jupiter-engine\5.10.2\junit-jupiter-engine-5.10.2.jar;C:\Users\rokom\.m2\repository\org\junit\platform\junit-platform-engine\1.10.2\junit-platform-engine-1.10.2.jar;C:\Users\rokom\.m2\repository\com\mysql\mysql-connector-j\9.6.0\mysql-connector-j-9.6.0.jar;C:\Users\rokom\.m2\repository\com\google\protobuf\protobuf-java\4.31.1\protobuf-java-4.31.1.jar;C:\Users\rokom\.m2\repository\ai\djl\api\0.36.0\api-0.36.0.jar;C:\Users\rokom\.m2\repository\net\java\dev\jna\jna\5.17.0\jna-5.17.0.jar;C:\Users\rokom\.m2\repository\org\apache\commons\commons-compress\1.27.1\commons-compress-1.27.1.jar;C:\Users\rokom\.m2\repository\commons-codec\commons-codec\1.17.1\commons-codec-1.17.1.jar;C:\Users\rokom\.m2\repository\commons-io\commons-io\2.16.1\commons-io-2.16.1.jar;C:\Users\rokom\.m2\repository\org\slf4j\slf4j-api\2.0.17\slf4j-api-2.0.17.jar;C:\Users\rokom\.m2\repository\com\guicedee\services\slf4j\1.2.2.1\slf4j-1.2.2.1.jar;C:\Users\rokom\.m2\repository\ai\djl\pytorch\pytorch-engine\0.36.0\pytorch-engine-0.36.0.jar;C:\Users\rokom\.m2\repository\ai\djl\pytorch\pytorch-model-zoo\0.36.0\pytorch-model-zoo-0.36.0.jar;C:\Users\rokom\.m2\repository\ai\djl\huggingface\tokenizers\0.36.0\tokenizers-0.36.0.jar;C:\Users\rokom\.m2\repository\com\fasterxml\jackson\core\jackson-databind\2.22.0\jackson-databind-2.22.0.jar;C:\Users\rokom\.m2\repository\com\fasterxml\jackson\core\jackson-annotations\2.22\jackson-annotations-2.22.jar;C:\Users\rokom\.m2\repository\com\fasterxml\jackson\core\jackson-core\2.22.0\jackson-core-2.22.0.jar;"/>
-    <property name="java.vm.vendor" value="Azul Systems, Inc."/>
+    <property name="java.vm.vendor" value="Eclipse Adoptium"/>
     <property name="sun.arch.data.model" value="64"/>
     <property name="user.variant" value=""/>
-    <property name="java.vendor.url" value="http://www.azul.com/"/>
+    <property name="java.vendor.url" value="https://adoptium.net/"/>
     <property name="user.timezone" value="Europe/Dublin"/>
     <property name="os.name" value="Windows 11"/>
     <property name="java.vm.specification.version" value="22"/>
     <property name="user.country" value="IE"/>
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
-    <property name="sun.boot.library.path" value="C:\Program Files\Apache NetBeans\jdk\bin"/>
-    <property name="sun.java.command" value="C:\Users\rokom\AppData\Local\Temp\surefire17640646466209157828\surefirebooter-20260627133152728_3.jar C:\Users\rokom\AppData\Local\Temp\surefire17640646466209157828 2026-06-27T13-31-52_595-jvmRun1 surefire-20260627133152728_1tmp surefire_0-20260627133152728_2tmp"/>
+    <property name="sun.boot.library.path" value="C:\Program Files\Eclipse Adoptium\jdk-22.0.2.9-hotspot\bin"/>
+    <property name="sun.java.command" value="C:\Users\rokom\AppData\Local\Temp\surefire16562219765014648921\surefirebooter-20260702143311607_3.jar C:\Users\rokom\AppData\Local\Temp\surefire16562219765014648921 2026-07-02T14-33-11_411-jvmRun1 surefire-20260702143311607_1tmp surefire_0-20260702143311607_2tmp"/>
     <property name="jdk.debug" value="release"/>
     <property name="surefire.test.class.path" value="C:\University\Semester 6\Project\Python\AcademicInternshipProject\target\test-classes;C:\University\Semester 6\Project\Python\AcademicInternshipProject\target\classes;C:\Users\rokom\.m2\repository\org\jsoup\jsoup\1.22.1\jsoup-1.22.1.jar;C:\Users\rokom\.m2\repository\com\microsoft\playwright\playwright\1.58.0\playwright-1.58.0.jar;C:\Users\rokom\.m2\repository\com\google\code\gson\gson\2.13.2\gson-2.13.2.jar;C:\Users\rokom\.m2\repository\com\google\errorprone\error_prone_annotations\2.41.0\error_prone_annotations-2.41.0.jar;C:\Users\rokom\.m2\repository\org\opentest4j\opentest4j\1.3.0\opentest4j-1.3.0.jar;C:\Users\rokom\.m2\repository\com\microsoft\playwright\driver\1.58.0\driver-1.58.0.jar;C:\Users\rokom\.m2\repository\com\microsoft\playwright\driver-bundle\1.58.0\driver-bundle-1.58.0.jar;C:\Users\rokom\.m2\repository\org\junit\jupiter\junit-jupiter-api\5.10.2\junit-jupiter-api-5.10.2.jar;C:\Users\rokom\.m2\repository\org\junit\platform\junit-platform-commons\1.10.2\junit-platform-commons-1.10.2.jar;C:\Users\rokom\.m2\repository\org\apiguardian\apiguardian-api\1.1.2\apiguardian-api-1.1.2.jar;C:\Users\rokom\.m2\repository\org\junit\jupiter\junit-jupiter-params\5.10.2\junit-jupiter-params-5.10.2.jar;C:\Users\rokom\.m2\repository\org\junit\jupiter\junit-jupiter-engine\5.10.2\junit-jupiter-engine-5.10.2.jar;C:\Users\rokom\.m2\repository\org\junit\platform\junit-platform-engine\1.10.2\junit-platform-engine-1.10.2.jar;C:\Users\rokom\.m2\repository\com\mysql\mysql-connector-j\9.6.0\mysql-connector-j-9.6.0.jar;C:\Users\rokom\.m2\repository\com\google\protobuf\protobuf-java\4.31.1\protobuf-java-4.31.1.jar;C:\Users\rokom\.m2\repository\ai\djl\api\0.36.0\api-0.36.0.jar;C:\Users\rokom\.m2\repository\net\java\dev\jna\jna\5.17.0\jna-5.17.0.jar;C:\Users\rokom\.m2\repository\org\apache\commons\commons-compress\1.27.1\commons-compress-1.27.1.jar;C:\Users\rokom\.m2\repository\commons-codec\commons-codec\1.17.1\commons-codec-1.17.1.jar;C:\Users\rokom\.m2\repository\commons-io\commons-io\2.16.1\commons-io-2.16.1.jar;C:\Users\rokom\.m2\repository\org\slf4j\slf4j-api\2.0.17\slf4j-api-2.0.17.jar;C:\Users\rokom\.m2\repository\com\guicedee\services\slf4j\1.2.2.1\slf4j-1.2.2.1.jar;C:\Users\rokom\.m2\repository\ai\djl\pytorch\pytorch-engine\0.36.0\pytorch-engine-0.36.0.jar;C:\Users\rokom\.m2\repository\ai\djl\pytorch\pytorch-model-zoo\0.36.0\pytorch-model-zoo-0.36.0.jar;C:\Users\rokom\.m2\repository\ai\djl\huggingface\tokenizers\0.36.0\tokenizers-0.36.0.jar;C:\Users\rokom\.m2\repository\com\fasterxml\jackson\core\jackson-databind\2.22.0\jackson-databind-2.22.0.jar;C:\Users\rokom\.m2\repository\com\fasterxml\jackson\core\jackson-annotations\2.22\jackson-annotations-2.22.jar;C:\Users\rokom\.m2\repository\com\fasterxml\jackson\core\jackson-core\2.22.0\jackson-core-2.22.0.jar;"/>
     <property name="sun.cpu.endian" value="little"/>
@@ -24,8 +24,8 @@
     <property name="user.home" value="C:\Users\rokom"/>
     <property name="user.language" value="en"/>
     <property name="java.specification.vendor" value="Oracle Corporation"/>
-    <property name="java.version.date" value="2024-04-16"/>
-    <property name="java.home" value="C:\Program Files\Apache NetBeans\jdk"/>
+    <property name="java.version.date" value="2024-07-16"/>
+    <property name="java.home" value="C:\Program Files\Eclipse Adoptium\jdk-22.0.2.9-hotspot"/>
     <property name="file.separator" value="\"/>
     <property name="basedir" value="C:\University\Semester 6\Project\Python\AcademicInternshipProject"/>
     <property name="java.vm.compressedOopsMode" value="Zero based"/>
@@ -33,10 +33,10 @@
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
     <property name="java.awt.headless" value="false"/>
-    <property name="surefire.real.class.path" value="C:\Users\rokom\AppData\Local\Temp\surefire17640646466209157828\surefirebooter-20260627133152728_3.jar"/>
+    <property name="surefire.real.class.path" value="C:\Users\rokom\AppData\Local\Temp\surefire16562219765014648921\surefirebooter-20260702143311607_3.jar"/>
     <property name="user.script" value=""/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
-    <property name="java.runtime.version" value="22.0.1+8"/>
+    <property name="java.runtime.version" value="22.0.2+9"/>
     <property name="user.name" value="rokom"/>
     <property name="stdout.encoding" value="Cp1252"/>
     <property name="path.separator" value=";"/>
@@ -44,26 +44,26 @@
     <property name="java.runtime.name" value="OpenJDK Runtime Environment"/>
     <property name="file.encoding" value="UTF-8"/>
     <property name="java.vm.name" value="OpenJDK 64-Bit Server VM"/>
-    <property name="java.vendor.version" value="Zulu22.30+13-CA"/>
+    <property name="java.vendor.version" value="Temurin-22.0.2+9"/>
     <property name="maven.ext.class.path" value="C:\Program Files\Apache NetBeans\java\maven-nblib\netbeans-eventspy.jar"/>
     <property name="localRepository" value="C:\Users\rokom\.m2\repository"/>
-    <property name="java.vendor.url.bug" value="http://www.azul.com/support/"/>
+    <property name="java.vendor.url.bug" value="https://github.com/adoptium/adoptium-support/issues"/>
     <property name="java.io.tmpdir" value="C:\Users\rokom\AppData\Local\Temp\"/>
-    <property name="java.version" value="22.0.1"/>
+    <property name="java.version" value="22.0.2"/>
     <property name="user.dir" value="C:\University\Semester 6\Project\Python\AcademicInternshipProject"/>
     <property name="os.arch" value="amd64"/>
     <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
     <property name="sun.os.patch.level" value=""/>
     <property name="native.encoding" value="Cp1252"/>
-    <property name="java.library.path" value="C:\Program Files\Apache NetBeans\jdk\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Program Files (x86)\Common Files\Oracle\Java\java8path;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\Microsoft SQL Server\150\Tools\Binn\;C:\Program Files\dotnet\;c:\Program Files (x86)\Microsoft SQL Server\90\Tools\binn\;C:\Program Files (x86)\Windows Kits\10\Windows Performance Toolkit\;C:\Program Files\nodejs\;C:\ProgramData\chocolatey\bin;C:\Program Files\Git\cmd;C:\Program Files\Java\jdk-25;;C:\Program Files\Docker\Docker\resources\bin;C:\Program Files\MySQL\MySQL Shell 8.0\bin\;C:\Users\rokom\AppData\Local\Programs\Python\Launcher\;C:\Users\rokom\AppData\Local\Microsoft\WindowsApps;C:\Users\rokom\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\rokom\.dotnet\tools;C:\Users\rokom\AppData\Local\Microsoft\WinGet\Packages\Schniz.fnm_Microsoft.Winget.Source_8wekyb3d8bbwe;C:\Users\rokom\AppData\Roaming\npm;C:\Program Files (x86)\Nmap;C:\Program Files\Wireshark;C:\Users\rokom\AppData\Local\Programs\Python\Python312\Scripts;C:\Users\rokom\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\Scripts;C:\Program Files\Java\jdk-25;C:\Users\rokom\AppData\Local\Programs\Ollama;C:\Program Files\apache-maven-3.9.12\bin;;."/>
+    <property name="java.library.path" value="C:\Program Files\Eclipse Adoptium\jdk-22.0.2.9-hotspot\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\Program Files\Eclipse Adoptium\jdk-22.0.2.9-hotspot\bin;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Program Files (x86)\Common Files\Oracle\Java\java8path;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\Microsoft SQL Server\150\Tools\Binn\;C:\Program Files\dotnet\;c:\Program Files (x86)\Microsoft SQL Server\90\Tools\binn\;C:\Program Files (x86)\Windows Kits\10\Windows Performance Toolkit\;C:\Program Files\nodejs\;C:\ProgramData\chocolatey\bin;C:\Program Files\Git\cmd;C:\Program Files\Java\jdk-25;;C:\Program Files\Docker\Docker\resources\bin;C:\Program Files\MySQL\MySQL Shell 8.0\bin\;C:\Users\rokom\AppData\Local\Programs\Python\Launcher\;C:\Users\rokom\AppData\Local\Microsoft\WindowsApps;C:\Users\rokom\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\rokom\.dotnet\tools;C:\Users\rokom\AppData\Local\Microsoft\WinGet\Packages\Schniz.fnm_Microsoft.Winget.Source_8wekyb3d8bbwe;C:\Users\rokom\AppData\Roaming\npm;C:\Program Files (x86)\Nmap;C:\Program Files\Wireshark;C:\Users\rokom\AppData\Local\Programs\Python\Python312\Scripts;C:\Users\rokom\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\Scripts;C:\Users\rokom\AppData\Local\Programs\Ollama;C:\Program Files\apache-maven-3.9.12\bin;C:\Program Files\Apache NetBeans\bin\;."/>
     <property name="java.vm.info" value="mixed mode, sharing"/>
     <property name="stderr.encoding" value="Cp1252"/>
-    <property name="java.vendor" value="Azul Systems, Inc."/>
-    <property name="java.vm.version" value="22.0.1+8"/>
+    <property name="java.vendor" value="Eclipse Adoptium"/>
+    <property name="java.vm.version" value="22.0.2+9"/>
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="java.class.version" value="66.0"/>
   </properties>
-  <testcase name="select" classname="SQLSelectTest" time="0.517">
+  <testcase name="select" classname="SQLSelectTest" time="0.442">
     <system-out><![CDATA[Table Name: testtable
 ID: 247 Text: The commission today (Thursday, June 4) confirmed it has decided to refer Ireland to the Court of Justice of the European Union, because it claims that the State has failed to "comply"with environmental rules governing "peat extraction projects".
 ID: 248 Text: Under EU law, peat extraction projects that could significantly impact the environment must undergo an Environmental Impact Assessment (EIA).
@@ -754,6 +754,261 @@ ID: 932 Text: It operates with a stand-alone investment ceiling of €90,000 for
 ID: 933 Text: The final two application batch deadlines for 2026 are September 4 and December 4.
 ID: 934 Text: The Collaborative Farming Grant Scheme provides financial support aimed at covering part of the legal, advisory and financial services costs of setting up a Registered Farm Partnership.
 ID: 935 Text: Applications for the Collaborative Farming Grant (tranche 3) will open on August 17, with a deadline of September 30.
+ID: 936 Text: The first meeting of the Bord Bia Farmer Forum took place today (Monday, June 29), the Irish food board has confirmed.
+ID: 937 Text: In a statement, the manager of the Bord Bia Farmer Forum, Niamh Bambrick said: "Almost 100 farmers from across the country came together today for the inaugural Bord Bia Farmer Forum, representing a broad mix of enterprises, ages and regions."
+ID: 938 Text: Bambrick added: "The agenda was developed in advance by the Farmer Forum Committee, which includes representatives from the farming organisations alongside independent farmer representatives.
+ID: 939 Text: She said the discussions today focused on "three key themes", namely Bord Bia’s role; farm assurance schemes; and market promotion and development.
+ID: 940 Text: "The group spent almost four hours discussing these topics, with participants sharing a wide range of perspectives and practical suggestions. We appreciate the time and openness of everyone who took part," Bambrick said.
+ID: 941 Text: She added: "Bord Bia, in collaboration with the Farmer Forum Committee, will now review the feedback over the coming days and consider how it can help shape future engagement.
+ID: 942 Text: "This was our first Bord Bia Farmer Forum, and we believe it was a positive first step in creating an ongoing, constructive dialogue with farmers," Bambrick said.
+ID: 943 Text: Last month, Bord Bia said it would expand engagement in its Farmer Forum initiative due to "strong interest".
+ID: 944 Text: The state body said the Farmer Forum received a significant number of applications from farmers and growers wishing to participate.
+ID: 945 Text: In response to the level of interest, the Irish food board said it was revising its approach to "ensure that all members who applied to participate in the Farmer Forum can do so".
+ID: 946 Text: To accommodate all eligible applicants, the state body is set to run a Farmer Forum "regional roadshow" this autumn. These events will take place in addition to Farmer Forum assemblies.
+ID: 947 Text: Much of the key detail in the report has already come to light, but the publication today (Monday, June 29) provides some facts and figures that were not yet finalised.
+ID: 948 Text: Lins said the budget aspect of his report is based on the April report on the next long-term EU budget - the Multiannual Financial Framework (MFF) - which calls for a 2028-2034 CAP of €433 billion, compared to a commission proposal of €290 billion.
+ID: 949 Text: On capping and redistribution, the report would increase the upper limit on payments to natural persons from €100,000 in the commission proposal to €500,000.
+ID: 950 Text: This would be mandatory for member states, although member states would decide the per-hectare rate of redistributive payment, as well as the maximum number of hectares on which the payment should apply.
+ID: 951 Text: This would be similar to arrangements in the current CAP, although it would increase the amount available for frontloading from 10% of Pillar I funds to 15%.
+ID: 952 Text: The report calls for defined "earmarking" for rewarding environmental, climate and animal welfare services provided by farmers.
+ID: 953 Text: Lins said: "When it comes to competitiveness of the farmers, the so-called level playing field within the EU, I think there needs to be a clear catalogue of measures."
+ID: 954 Text: He said he is in favour of limiting the possibility for member states to set up their own conditionality.
+ID: 955 Text: The final element is on strengthening risk mitigation and investments for irrigation, which is of importance for farmers in climates prone to prolonged spells of dry weather and drought.
+ID: 956 Text: Speaking to journalists before presenting his report today, Lins said: "So all in all, in my draft report, I changed a lot when you compare it with the original commission proposal. There is much more commonality in the CAP.
+ID: 957 Text: "There are a lot of mandatory things, where there is more or less no free lunch anymore for member states. I want to continue with a real Common Agricultural Policy for the EU and for the farming sector with the EU," he added.
+ID: 958 Text: Commenting after presenting the report to the agriculture committee today, Lins added: "Europe needs a stable, predictable agricultural policy that gives farmers long-term certainty and frees excessive red tape.
+ID: 959 Text: "Only with an independent and reliable CAP can we safeguard the future of our rural areas and the supply of high-quality food," he said.
+ID: 960 Text: "We should keep what already works, not reinvent it. Proven tools must be strengthened, such as redistributive income support to specifically strengthen small and medium-sized farms," the German MEP added.
+ID: 961 Text: Krone is making its entry into the pickup rake market with the Swativo T 1040 Pro, focusing on ease of use, consistent swath formation and top-quality forage.
+ID: 962 Text: "Broadening its portfolio of rakes" will allow the company to in future "offer the right swathing technology for virtually every forage plant and every application," Krone said.
+ID: 963 Text: While rotary rakes are particularly effective for grass and straw, mergers (sometimes called belt mergers) have advantages when used for herbaceous crops such as clover or lucerne.
+ID: 964 Text: Traditional rotary rakes sweep and drag forage across the ground, while a merger uses a pickup mechanism to lift the crop, preventing any damage during raking.
+ID: 965 Text: The lifted grass lands on a hydraulic conveyor belt and is gently deposited aside.
+ID: 966 Text: The company has credited the development of its Optiswath concept for the "perfect swathing with no leaf loss" from the pickup rake.
+ID: 967 Text: "Optiswath combines perfectly coordinated components of the swathing units to ensure a constant crop flow and even swaths," it said.
+ID: 968 Text: "Rubber-coated guide rollers keep the pick-up steady over varying ground, protecting the soil and ensuring clean forage intake".
+ID: 969 Text: Krone has also chosen to add a twin-rotor system for the feed rotor, which can be adjusted in relation to the pick-up speed.
+ID: 970 Text: This allows crop flow to be adapted to different harvesting conditions.
+ID: 971 Text: Krone says that this creates a smooth, controlled flow of crop transferred onto the 1.2m conveyor so it can "handle large volumes with ease".
+ID: 972 Text: In addition, the conveyor belt is mounted at a steep angle on the machine, in order to feed the crops directly towards the swath.
+ID: 973 Text: The mechanical forced steering system on the rake "ensures excellent manoeuvrability and facilitates working on tight bends and swathing corners".
+ID: 974 Text: "The steered axle delivers excellent manoeuvrability in tight spaces, while high working speeds allow for strong output," Krone said.
+ID: 975 Text: For road transport, the belt units can be folded in hydraulically and lock automatically, giving it a width of just under 3m and a height of 3.85m.
+ID: 976 Text: A compressed air brake system and LED lighting, including warning panels, provide the required safety.  
+ID: 977 Text: To ensure a high level of flexibility in swathing, the Swativo T 1040 Pro features telescopic units and conveyor belts with adjustable directions of rotation.
+ID: 978 Text: This system allows for flexible swath options, including centre or side swathing, as well as single or twin swaths.
+ID: 979 Text: As a result, the machine can be continuously adapted to different operating strategies and crop volumes.  
+ID: 980 Text: The machine is operated via ISOBUS control with what Krone describes as a "modern user interface".
+ID: 981 Text: "Stored crop profiles for different operating conditions facilitate the work and ensure a consistently high standard of work," it added.
+ID: 982 Text: According to Krone, all functions and parameters can be adjusted from the tractor cabin.
+ID: 983 Text: The machine features as standard an automatic belt stop which Krone says "ensures neat swath ends".
+ID: 984 Text: There is also the optional of a Section Control that automates the raising and lowering of the pick-up units on wedge-shaped surfaces. 
+ID: 985 Text: According to Krone product manager, Tobias Reher: "When developing the Swativo T 1040 Pro, the focus was not only on top-quality forage but also on consistent swath formation and intuitive ease of use.
+ID: 986 Text: "That is exactly what we have achieved with this machine," he emphasised.
+ID: 987 Text: Prices this week are at approximately €9.20/kg for spring lambs, up 50c/kg from this time last year when spring lamb prices were at approximately €8.70/kg.
+ID: 988 Text: Despite this, prices have been cut over the past two weeks when spring lamb prices were at €9.90/kg.
+ID: 989 Text: Generally speaking, early July traditionally sees mid-season lambing flocks drafting higher numbers of lambs and spring lamb supplies tend to become more widely available.
+ID: 990 Text: This week, Kepak is quoting €9.00/kg plus a €0.15c/kg Quality Assurance (QA) bonus for spring lambs, leaving €9.15/kg on offer here up to 21.5kg carcass-weight this week.
+ID: 991 Text: The Athleague, Co. Roscommon site is quoting €5.00/kg for cull ewes this week.
+ID: 992 Text: Kepak has no quote for hoggets again this week.
+ID: 993 Text: Irish Country Meats (ICM) is quoting €9.00/kg plus a 20c/kg QA bonus for spring lambs, leaving €9.20/kg on offer here up to 21.5kg carcass-weight.
+ID: 994 Text: The Navan, Co. Meath and Camolin, Co. Wexford-based outlets are quoting €5.00/kg for cull ewes this week.
+ID: 995 Text: ICM is quoting €8.00/kg plus a 20c/kg QA bonus for hoggets, leaving €8.20/kg on offer here up to 23kg carcass-weight.
+ID: 996 Text: Kildare Chilling (Dawn Meats Kildare) is quoting €9.00/kg plus a 20c/kg QA bonus for spring lambs, leaving €9.20/kg on offer here up to 23kg carcass-weight.
+ID: 997 Text: The outlet is quoting €5.00/kg for cull ewes from 35-43kg carcass-weight.
+ID: 998 Text: Lighter ewes will be priced on valuation at the outlet.
+ID: 999 Text: Ballon Meats in Co. Carlow is quoting €9.30/kg for spring lambs this week.
+ID: 1000 Text: The outlet is quoting €5.30/kg for cull ewes again this week.
+ID: 1001 Text: Embrace FARM offers support to farm families in the aftermath of a serious injury or sudden bereavement, offering a compassionate community to share, heal, and connect.
+ID: 1002 Text: The annual ecumenical service offers an opportunity to remember and honour loved ones who have been lost or injured in farm accidents.
+ID: 1003 Text: FCI said it was “delighted to attend the event and support the ongoing work of Embrace FARM" by donating €1,000 on behalf of its members.
+ID: 1004 Text: Embrace FARM was established by husband and wife, Brian and Norma Rohan in 2014, following the tragic loss of Brian’s father Liam in a farming accident.
+ID: 1005 Text: The not-for-profit organisation is the first of its kind to support the farming community and families of Ireland who, like them, have experienced the impact of serious injury and sudden death.
+ID: 1006 Text: Norma Rohan reflected on the organisation’s growth over the past 13 years: “The agricultural sector continues to be resilient against all of the changes that affects its people both and inside and outside the farm gate every day.
+ID: 1007 Text: "Our remembrance service continues to be a pivotal space for farm families to take the time to remember those they have lost or who have face life-changing circumstances.
+ID: 1008 Text: "It is our opportunity to give thanks and show our appreciation to the farming community when they need it most.”
+ID: 1009 Text: FCI managing director Ann Gleeson Hanrahan said: “The Embrace FARM annual ecumenical remembrance service is an event that FCI has supported for many years.
+ID: 1010 Text: “Through the tragedy of their own loss, Brian and Norma Rohan have provided invaluable support to many agricultural contracting and farming families who have experienced serious injury or sudden bereavement.”
+ID: 1011 Text: Hanrahan went on to describe Embrace FARM as a very worthwhile initiative.
+ID: 1012 Text: She added: “Everyone hopes that they will never need to call on their important services, but nevertheless, the farm and forestry contractors of Ireland respect and appreciate the vital work that this voluntary organisation carries out.”
+ID: 1013 Text: The event, on Saturday, July 18 at Athenry Livestock Mart, will begin with a convoy of wool growers arriving from all four provinces of Ireland, each bringing their annual wool clip to be included in the national Irish wool harvest.
+ID: 1014 Text: Known as the Galway Wool Meitheal, the event celebrates the collective efforts of farmers working together to restore value, transparency and traceability to Irish wool.
+ID: 1015 Text: President Connolly will attend the event in recognition of the dedication and commitment of Irish wool growers who, through the Galway Wool Co-operative, are rebuilding a transparent and fully traceable supply chain for Irish wool.
+ID: 1016 Text: Organisers have said that wool is an "incredible" Irish fibre that has been largely absent from Irish knitwear, tweed, blankets carpets and rugs for more than 40 years.
+ID: 1017 Text: Since its foundation, the Galway Wool Co-op has grown from 20 members to almost 50 wool growers from across Ireland.
+ID: 1018 Text: Operated entirely by volunteers on a not-for-profit basis, every euro generated is reinvested into the running costs of the cooperative and the organisation of the annual Meitheal Day.
+ID: 1019 Text: Throughout the event, the wool will be weighed, inspected and prepared for collection before beginning its journey to processors and manufacturers.
+ID: 1020 Text: Returning buyers include AOVCA Ireland, supporting growers for a second consecutive year, alongside long standing partners Wool Store Ireland and The Sheep Walk Ranch, Texas, US.
+ID: 1021 Text: The asking price has remained the same at €2.50/kg with a focus on rebuilding the volume of the clip and reopening markets.
+ID: 1022 Text: Adding to the celebration this year, members of the Galway Artisans Collective from across Ireland will showcase an exhibition of handcrafted work celebrating the beauty, versatility and heritage of native Irish wool.
+ID: 1023 Text: Visitors will have the opportunity to meet the makers and experience first-hand the creativity inspired by this natural fibre.
+ID: 1024 Text: Galway County Council has sponsored two awards for the exhibition, recognising artisan pieces that thoughtfully reflect the unique qualities of native Irish wool.
+ID: 1025 Text: Growers will compete for Best Fleece awards in two categories: flocks of 15 sheep and under, and over 15 sheep.
+ID: 1026 Text: With the national Galway flock numbering fewer than 2,000 sheep, these awards are designed to encourage emerging breeders to place an even greater emphasis on wool quality while recognising the important contribution of both small and established flocks.
+ID: 1027 Text: 
+ID: 1028 Text: The Best Fleece competitions are sponsored by Cormac Tagging and the Galway Sheep Breeders Association.
+ID: 1029 Text: The continued success of the Galway Wool Meitheal has also been strengthened by innovation.
+ID: 1030 Text: The project demonstrated that many of the long-held misconceptions surrounding Irish wool are linked as much to processing methods as they are to fibre micron or breed type.
+ID: 1031 Text: Her findings have resulted in Irish wool that is once again wearable and has opened opportunities for designers, crafters and makers seeking premium, traceable Irish fibre with a compelling story of provenance.
+ID: 1032 Text: Visitors will also enjoy a traditional hand-shearing demonstration as well as the traditional art of hand spinning.
+ID: 1033 Text: Throughout the morning, members of Oranmore Comhaltas will provide a backdrop of traditional Irish music and set dancing.
+ID: 1034 Text: Groundbreakers, proudly supported by FBD, is highlighting the important role of women in farming.
+ID: 1035 Text: The series, which includes articles, videos and podcasts, is showcasing a number of diverse experiences in light of 2026 being International Year of the Woman Farmer.
+ID: 1036 Text: Issues being examined include innovation and diversification, generational renewal, and the evolving identity of Irish farming.
+ID: 1037 Text: Miriam and Rachel Hastings are farming with their parents on the Galway/Roscommon border.
+ID: 1038 Text: They have a suckler beef farm, as well as sheep, mainly calving and lambing in the spring.
+ID: 1039 Text: She highlighted the "bond" that people have to the farm they grew up on.
+ID: 1040 Text: According to Miriam, the sisters "were out in the farm from when we could fit into a pair of wellies".
+ID: 1041 Text: The sisters said that growing up they never felt disadvantaged due to being women in the sector.
+ID: 1042 Text: "We have always been out on the farm when the contractors came, when we had to go to the agri store, we always went with our parents," Rachel added.
+ID: 1043 Text: Continually learning, implementing new technologies and breeding quality animals are among their key focuses on the farm.
+ID: 1044 Text: "Around 2018/2019 there was a rise of farming getting a bit more presence on social media," Miriam said.
+ID: 1045 Text: They set themselves a goal to post frequently, to highlight for them "what was important, what made us happy that day" with as much positivity as they could.
+ID: 1046 Text: Given their work in education, it is no surprise the sisters are always striving to learn new ways of doing things on the farm, and have found social media a way to seeing what works well on other farms and adapting to their own.
+ID: 1047 Text: Miriam said that it is only in "very recent times" that the importance of women on the farm has been highlighted, referencing the women-specific supports now available under the Targeted Agriculture Modernisation Schemes (TAMS 3).
+ID: 1048 Text: The growth in women-only knowledge transfer groups is also important to "build the confidence of women around each other and sharing their thoughts and experiences".
+ID: 1049 Text: She said it is important that the supports out there are "easily accessible".
+ID: 1050 Text: Miriam said she is aware that the UN has declared 2026 as the International Year of the Woman Farmer.
+ID: 1051 Text: Rachel added that women are "the backbone of many farms".
+ID: 1052 Text: "Women are the people on the farm that are often balancing a lot," she said.
+ID: 1053 Text: International Year of the Woman Farmer aims to spotlight the essential roles women play across agri-food systems.
+ID: 1054 Text: Women are under-represented in the agriculture sector.
+ID: 1055 Text: The Central Statistics Office Farm Structure Survey 2023 showed that women account for 13.2% of farm holders in Ireland and 34% of total farm workers.
+ID: 1056 Text: The first meeting of the Bord Bia Farmer Forum took place today (Monday, June 29), the Irish food board has confirmed.
+ID: 1057 Text: In a statement, the manager of the Bord Bia Farmer Forum, Niamh Bambrick said: "Almost 100 farmers from across the country came together today for the inaugural Bord Bia Farmer Forum, representing a broad mix of enterprises, ages and regions."
+ID: 1058 Text: Bambrick added: "The agenda was developed in advance by the Farmer Forum Committee, which includes representatives from the farming organisations alongside independent farmer representatives.
+ID: 1059 Text: She said the discussions today focused on "three key themes", namely Bord Bia’s role; farm assurance schemes; and market promotion and development.
+ID: 1060 Text: "The group spent almost four hours discussing these topics, with participants sharing a wide range of perspectives and practical suggestions. We appreciate the time and openness of everyone who took part," Bambrick said.
+ID: 1061 Text: She added: "Bord Bia, in collaboration with the Farmer Forum Committee, will now review the feedback over the coming days and consider how it can help shape future engagement.
+ID: 1062 Text: "This was our first Bord Bia Farmer Forum, and we believe it was a positive first step in creating an ongoing, constructive dialogue with farmers," Bambrick said.
+ID: 1063 Text: Last month, Bord Bia said it would expand engagement in its Farmer Forum initiative due to "strong interest".
+ID: 1064 Text: The state body said the Farmer Forum received a significant number of applications from farmers and growers wishing to participate.
+ID: 1065 Text: In response to the level of interest, the Irish food board said it was revising its approach to "ensure that all members who applied to participate in the Farmer Forum can do so".
+ID: 1066 Text: To accommodate all eligible applicants, the state body is set to run a Farmer Forum "regional roadshow" this autumn. These events will take place in addition to Farmer Forum assemblies.
+ID: 1067 Text: Much of the key detail in the report has already come to light, but the publication today (Monday, June 29) provides some facts and figures that were not yet finalised.
+ID: 1068 Text: Lins said the budget aspect of his report is based on the April report on the next long-term EU budget - the Multiannual Financial Framework (MFF) - which calls for a 2028-2034 CAP of €433 billion, compared to a commission proposal of €290 billion.
+ID: 1069 Text: On capping and redistribution, the report would increase the upper limit on payments to natural persons from €100,000 in the commission proposal to €500,000.
+ID: 1070 Text: This would be mandatory for member states, although member states would decide the per-hectare rate of redistributive payment, as well as the maximum number of hectares on which the payment should apply.
+ID: 1071 Text: This would be similar to arrangements in the current CAP, although it would increase the amount available for frontloading from 10% of Pillar I funds to 15%.
+ID: 1072 Text: The report calls for defined "earmarking" for rewarding environmental, climate and animal welfare services provided by farmers.
+ID: 1073 Text: Lins said: "When it comes to competitiveness of the farmers, the so-called level playing field within the EU, I think there needs to be a clear catalogue of measures."
+ID: 1074 Text: He said he is in favour of limiting the possibility for member states to set up their own conditionality.
+ID: 1075 Text: The final element is on strengthening risk mitigation and investments for irrigation, which is of importance for farmers in climates prone to prolonged spells of dry weather and drought.
+ID: 1076 Text: Speaking to journalists before presenting his report today, Lins said: "So all in all, in my draft report, I changed a lot when you compare it with the original commission proposal. There is much more commonality in the CAP.
+ID: 1077 Text: "There are a lot of mandatory things, where there is more or less no free lunch anymore for member states. I want to continue with a real Common Agricultural Policy for the EU and for the farming sector with the EU," he added.
+ID: 1078 Text: Commenting after presenting the report to the agriculture committee today, Lins added: "Europe needs a stable, predictable agricultural policy that gives farmers long-term certainty and frees excessive red tape.
+ID: 1079 Text: "Only with an independent and reliable CAP can we safeguard the future of our rural areas and the supply of high-quality food," he said.
+ID: 1080 Text: "We should keep what already works, not reinvent it. Proven tools must be strengthened, such as redistributive income support to specifically strengthen small and medium-sized farms," the German MEP added.
+ID: 1081 Text: Krone is making its entry into the pickup rake market with the Swativo T 1040 Pro, focusing on ease of use, consistent swath formation and top-quality forage.
+ID: 1082 Text: "Broadening its portfolio of rakes" will allow the company to in future "offer the right swathing technology for virtually every forage plant and every application," Krone said.
+ID: 1083 Text: While rotary rakes are particularly effective for grass and straw, mergers (sometimes called belt mergers) have advantages when used for herbaceous crops such as clover or lucerne.
+ID: 1084 Text: Traditional rotary rakes sweep and drag forage across the ground, while a merger uses a pickup mechanism to lift the crop, preventing any damage during raking.
+ID: 1085 Text: The lifted grass lands on a hydraulic conveyor belt and is gently deposited aside.
+ID: 1086 Text: The company has credited the development of its Optiswath concept for the "perfect swathing with no leaf loss" from the pickup rake.
+ID: 1087 Text: "Optiswath combines perfectly coordinated components of the swathing units to ensure a constant crop flow and even swaths," it said.
+ID: 1088 Text: "Rubber-coated guide rollers keep the pick-up steady over varying ground, protecting the soil and ensuring clean forage intake".
+ID: 1089 Text: Krone has also chosen to add a twin-rotor system for the feed rotor, which can be adjusted in relation to the pick-up speed.
+ID: 1090 Text: This allows crop flow to be adapted to different harvesting conditions.
+ID: 1091 Text: Krone says that this creates a smooth, controlled flow of crop transferred onto the 1.2m conveyor so it can "handle large volumes with ease".
+ID: 1092 Text: In addition, the conveyor belt is mounted at a steep angle on the machine, in order to feed the crops directly towards the swath.
+ID: 1093 Text: The mechanical forced steering system on the rake "ensures excellent manoeuvrability and facilitates working on tight bends and swathing corners".
+ID: 1094 Text: "The steered axle delivers excellent manoeuvrability in tight spaces, while high working speeds allow for strong output," Krone said.
+ID: 1095 Text: For road transport, the belt units can be folded in hydraulically and lock automatically, giving it a width of just under 3m and a height of 3.85m.
+ID: 1096 Text: A compressed air brake system and LED lighting, including warning panels, provide the required safety.  
+ID: 1097 Text: To ensure a high level of flexibility in swathing, the Swativo T 1040 Pro features telescopic units and conveyor belts with adjustable directions of rotation.
+ID: 1098 Text: This system allows for flexible swath options, including centre or side swathing, as well as single or twin swaths.
+ID: 1099 Text: As a result, the machine can be continuously adapted to different operating strategies and crop volumes.  
+ID: 1100 Text: The machine is operated via ISOBUS control with what Krone describes as a "modern user interface".
+ID: 1101 Text: "Stored crop profiles for different operating conditions facilitate the work and ensure a consistently high standard of work," it added.
+ID: 1102 Text: According to Krone, all functions and parameters can be adjusted from the tractor cabin.
+ID: 1103 Text: The machine features as standard an automatic belt stop which Krone says "ensures neat swath ends".
+ID: 1104 Text: There is also the optional of a Section Control that automates the raising and lowering of the pick-up units on wedge-shaped surfaces. 
+ID: 1105 Text: According to Krone product manager, Tobias Reher: "When developing the Swativo T 1040 Pro, the focus was not only on top-quality forage but also on consistent swath formation and intuitive ease of use.
+ID: 1106 Text: "That is exactly what we have achieved with this machine," he emphasised.
+ID: 1107 Text: Prices this week are at approximately €9.20/kg for spring lambs, up 50c/kg from this time last year when spring lamb prices were at approximately €8.70/kg.
+ID: 1108 Text: Despite this, prices have been cut over the past two weeks when spring lamb prices were at €9.90/kg.
+ID: 1109 Text: Generally speaking, early July traditionally sees mid-season lambing flocks drafting higher numbers of lambs and spring lamb supplies tend to become more widely available.
+ID: 1110 Text: This week, Kepak is quoting €9.00/kg plus a €0.15c/kg Quality Assurance (QA) bonus for spring lambs, leaving €9.15/kg on offer here up to 21.5kg carcass-weight this week.
+ID: 1111 Text: The Athleague, Co. Roscommon site is quoting €5.00/kg for cull ewes this week.
+ID: 1112 Text: Kepak has no quote for hoggets again this week.
+ID: 1113 Text: Irish Country Meats (ICM) is quoting €9.00/kg plus a 20c/kg QA bonus for spring lambs, leaving €9.20/kg on offer here up to 21.5kg carcass-weight.
+ID: 1114 Text: The Navan, Co. Meath and Camolin, Co. Wexford-based outlets are quoting €5.00/kg for cull ewes this week.
+ID: 1115 Text: ICM is quoting €8.00/kg plus a 20c/kg QA bonus for hoggets, leaving €8.20/kg on offer here up to 23kg carcass-weight.
+ID: 1116 Text: Kildare Chilling (Dawn Meats Kildare) is quoting €9.00/kg plus a 20c/kg QA bonus for spring lambs, leaving €9.20/kg on offer here up to 23kg carcass-weight.
+ID: 1117 Text: The outlet is quoting €5.00/kg for cull ewes from 35-43kg carcass-weight.
+ID: 1118 Text: Lighter ewes will be priced on valuation at the outlet.
+ID: 1119 Text: Ballon Meats in Co. Carlow is quoting €9.30/kg for spring lambs this week.
+ID: 1120 Text: The outlet is quoting €5.30/kg for cull ewes again this week.
+ID: 1121 Text: Embrace FARM offers support to farm families in the aftermath of a serious injury or sudden bereavement, offering a compassionate community to share, heal, and connect.
+ID: 1122 Text: The annual ecumenical service offers an opportunity to remember and honour loved ones who have been lost or injured in farm accidents.
+ID: 1123 Text: FCI said it was “delighted to attend the event and support the ongoing work of Embrace FARM" by donating €1,000 on behalf of its members.
+ID: 1124 Text: Embrace FARM was established by husband and wife, Brian and Norma Rohan in 2014, following the tragic loss of Brian’s father Liam in a farming accident.
+ID: 1125 Text: The not-for-profit organisation is the first of its kind to support the farming community and families of Ireland who, like them, have experienced the impact of serious injury and sudden death.
+ID: 1126 Text: Norma Rohan reflected on the organisation’s growth over the past 13 years: “The agricultural sector continues to be resilient against all of the changes that affects its people both and inside and outside the farm gate every day.
+ID: 1127 Text: "Our remembrance service continues to be a pivotal space for farm families to take the time to remember those they have lost or who have face life-changing circumstances.
+ID: 1128 Text: "It is our opportunity to give thanks and show our appreciation to the farming community when they need it most.”
+ID: 1129 Text: FCI managing director Ann Gleeson Hanrahan said: “The Embrace FARM annual ecumenical remembrance service is an event that FCI has supported for many years.
+ID: 1130 Text: “Through the tragedy of their own loss, Brian and Norma Rohan have provided invaluable support to many agricultural contracting and farming families who have experienced serious injury or sudden bereavement.”
+ID: 1131 Text: Hanrahan went on to describe Embrace FARM as a very worthwhile initiative.
+ID: 1132 Text: She added: “Everyone hopes that they will never need to call on their important services, but nevertheless, the farm and forestry contractors of Ireland respect and appreciate the vital work that this voluntary organisation carries out.”
+ID: 1133 Text: The event, on Saturday, July 18 at Athenry Livestock Mart, will begin with a convoy of wool growers arriving from all four provinces of Ireland, each bringing their annual wool clip to be included in the national Irish wool harvest.
+ID: 1134 Text: Known as the Galway Wool Meitheal, the event celebrates the collective efforts of farmers working together to restore value, transparency and traceability to Irish wool.
+ID: 1135 Text: President Connolly will attend the event in recognition of the dedication and commitment of Irish wool growers who, through the Galway Wool Co-operative, are rebuilding a transparent and fully traceable supply chain for Irish wool.
+ID: 1136 Text: Organisers have said that wool is an "incredible" Irish fibre that has been largely absent from Irish knitwear, tweed, blankets carpets and rugs for more than 40 years.
+ID: 1137 Text: Since its foundation, the Galway Wool Co-op has grown from 20 members to almost 50 wool growers from across Ireland.
+ID: 1138 Text: Operated entirely by volunteers on a not-for-profit basis, every euro generated is reinvested into the running costs of the cooperative and the organisation of the annual Meitheal Day.
+ID: 1139 Text: Throughout the event, the wool will be weighed, inspected and prepared for collection before beginning its journey to processors and manufacturers.
+ID: 1140 Text: Returning buyers include AOVCA Ireland, supporting growers for a second consecutive year, alongside long standing partners Wool Store Ireland and The Sheep Walk Ranch, Texas, US.
+ID: 1141 Text: The asking price has remained the same at €2.50/kg with a focus on rebuilding the volume of the clip and reopening markets.
+ID: 1142 Text: Adding to the celebration this year, members of the Galway Artisans Collective from across Ireland will showcase an exhibition of handcrafted work celebrating the beauty, versatility and heritage of native Irish wool.
+ID: 1143 Text: Visitors will have the opportunity to meet the makers and experience first-hand the creativity inspired by this natural fibre.
+ID: 1144 Text: Galway County Council has sponsored two awards for the exhibition, recognising artisan pieces that thoughtfully reflect the unique qualities of native Irish wool.
+ID: 1145 Text: Growers will compete for Best Fleece awards in two categories: flocks of 15 sheep and under, and over 15 sheep.
+ID: 1146 Text: With the national Galway flock numbering fewer than 2,000 sheep, these awards are designed to encourage emerging breeders to place an even greater emphasis on wool quality while recognising the important contribution of both small and established flocks.
+ID: 1147 Text: 
+ID: 1148 Text: The Best Fleece competitions are sponsored by Cormac Tagging and the Galway Sheep Breeders Association.
+ID: 1149 Text: The continued success of the Galway Wool Meitheal has also been strengthened by innovation.
+ID: 1150 Text: The project demonstrated that many of the long-held misconceptions surrounding Irish wool are linked as much to processing methods as they are to fibre micron or breed type.
+ID: 1151 Text: Her findings have resulted in Irish wool that is once again wearable and has opened opportunities for designers, crafters and makers seeking premium, traceable Irish fibre with a compelling story of provenance.
+ID: 1152 Text: Visitors will also enjoy a traditional hand-shearing demonstration as well as the traditional art of hand spinning.
+ID: 1153 Text: Throughout the morning, members of Oranmore Comhaltas will provide a backdrop of traditional Irish music and set dancing.
+ID: 1154 Text: Dutch livestock farmers who wished to cease operations have had €4.2 billion made available to them over the period 2019-2025.
+ID: 1155 Text: The funding comes from schemes aimed at reducing nitrogen emissions from livestock farming, introduced by Jaimi van Essen, Minister of Agriculture, Fisheries, Food Security and Nature (LVVN).
+ID: 1156 Text: According to a report from the Netherlands Court of Audit, which investigates public fund spending, nitrogen (ammonia) emissions from livestock farm stables fell by 18% over that same period.
+ID: 1157 Text: Titled ‘Focus on Nitrogen from Livestock Farms’, the report said: “Half of the reduction is due to livestock farmers making use of schemes to cease their operations.”
+ID: 1158 Text: The remainder of ammonia emissions originate from outside the barns, for example, through the spreading of manure on agricultural land.
+ID: 1159 Text: Nitrogen emissions from livestock farmers account for slightly less than half of the total nitrogen emissions in the Netherlands, the report said, with the remainder coming mainly from industry and transport.
+ID: 1160 Text: The analysis shows that national barn emissions decreased by 10,700t (18%) in the period 2019-2024, stating that half of this decrease is related to the termination schemes.
+ID: 1161 Text: Since 2019, 1,329 livestock farmers in the country have made use of one of the five termination schemes investigated by the Court of Audit.
+ID: 1162 Text: According to the report, cattle farmers (dairy and beef) participate less in the termination schemes than other livestock farmers.
+ID: 1163 Text: Of all cattle farmers in the Netherlands, 2% participated in a termination scheme, compared to 5% of poultry farmers and 8% of pig farmers, the report said.
+ID: 1164 Text: The reduction in barn emissions from cattle farms is also smaller than that of other livestock farms.
+ID: 1165 Text: Although cattle account for 57% of barn emissions, this decreased the least since 2019, as the number of animals fell by 7% between 2019 and 2025 and barn emissions by 11% over that period.
+ID: 1166 Text: For chickens and pigs, the number of animals decreased by 14% and 28% respectively over the same period, and barn emissions by 20% and 35% respectively.
+ID: 1167 Text: Budgets for voluntary termination schemes are often not fully utilised, according to the report.
+ID: 1168 Text: In total, the minister made €4.2 billion in budget available for the termination schemes from 2019 through 2025; 38% has not been spent.
+ID: 1169 Text: The report found that with the unspent €1.6 billion, an additional 3,300t could have been achieved in emission reductions.
+ID: 1170 Text: According to the report, Minister van Essen had indicated he would submit his nitrogen policy to Parliament before the summer of 2026, but had not been seen by the Court of Audit by time of publication.
+ID: 1171 Text: It added that the cabinet of Prime Minister Rob Jetten is also working on a plan to reduce nitrogen emissions in zones close to vulnerable nature areas.
+ID: 1172 Text: A relatively large number of cattle farmers are active within 1km of these vulnerable nature areas, within which they are responsible for 69% of the emissions.
+ID: 1173 Text: US President Donald Trump has signed a proclamation temporarily suspending countervailing duties (CVDs) on certain phosphate fertiliser imports.
+ID: 1174 Text: The temporary suspension aims to increase phosphate fertiliser availability, improve competition, and help lower expenses while supporting a stable and reliable fertiliser supply ahead of future planting seasons.
+ID: 1175 Text: Bayer has been handed a major win by the US Supreme Court in a long running sage concerning the pesticide product Roundup.
+ID: 1176 Text: Roundup, which was originally manufactured by Monsanto before that company was bought by German-based Bayer, contains glyphosate, which is claimed by some to cause cancer.
+ID: 1177 Text: This has resulted in numerous court cases taken against Bayer in courts across the US, with cancer sufferers suing the company for damages.
+ID: 1178 Text: Now, the US Supreme Court had handed down a judgement which could render many of the ongoing claims against Bayer moot.
+ID: 1179 Text: In a complex case, the court effectively ruled that Roundup does need to have a warning label for cancer, as its approval for use was already cleared by the US Environmental Protection Agency (EPA) based on national legislation, which the majority of jud
+ID: 1180 Text: ges on the court argued supersedes labelling requirements in individual states.
+ID: 1181 Text: Of the nine Supreme Court judges, seven of them backed this opinion while two dissented. Of the two dissenting judges, one was appointed by Joe Biden while he was US president and the other by Donald Trump during his first term as president.
+ID: 1182 Text: The dissenting judges wrote that, on a number of occasions, the EPA allowed companies to add cancer risk warnings to their products to comply with state laws, even for products that the EPA approved; and that among those companies was a subsidiary of Bay
+ID: 1183 Text: er itself.
+ID: 1184 Text: Reacting to the judgement of the majority of the court, Bayer said: "This decision, which reflects strong support across the ideological spectrum of the court, helps to bring significant containment to the Roundup litigation.
+ID: 1185 Text: "Glyphosate remains the most studied crop protection tool in the world and this decision affirms that the EPA’s safety determination is the law of the land, ensuring that companies cannot be punished under a patchwork of state...laws for complying with f
+ID: 1186 Text: ederal labelling requirements," the company added.
+ID: 1187 Text: Bayer CEO Bill Anderson claimed the decision "is good for the American farmers who help feed the world".
+ID: 1188 Text: "It provides the regulatory clarity necessary for innovators like us to develop the agricultural tools that guarantee an affordable food supply," Anderson added.
+ID: 1189 Text: "The decision brings overdue justice on an issue that should have been clarified much earlier. It’s time to put it behind us," the Bayer CEO said.
+ID: 1190 Text: Anderson said the company will continue its "multi-pronged containment strategy" to deal with other lawsuits.
 ]]></system-out>
   </testcase>
 </testsuite>

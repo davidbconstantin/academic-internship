@@ -47,17 +47,14 @@ public class WebCrawlerGUIWorker extends SwingWorker<String, String>{
         this.textArea = textArea;
         this.crawlersCB = crawlersCB;
         this.responsesCB = responsesCB;
-        playwright = Playwright.create();
     }
     
     @Override
     protected String doInBackground() throws Exception {
-        String baseUrl = "";
         textArea.setText("");
-        if (mainMenuForm.isSqlCredentialsRequired()) {
-            mainMenuForm.displayPanel("SQL Settings");
-            return "";
-        }   
+        publish("Initialising Playwright...");
+        playwright = Playwright.create();
+        String baseUrl = "";
         for (WebCrawler crawler: mainMenuForm.getWebCrawlers()) {
             if (crawlersCB.getSelectedItem().toString().equals(crawler.getName())) {
                 textArea.setText("");
@@ -240,10 +237,6 @@ public class WebCrawlerGUIWorker extends SwingWorker<String, String>{
                     }
                     if (!commandParser.getAction().equals("Python") && !commandParser.getAction().equals("Write"))
                         crawler.addHtmlResponse(new SearchResult(response, commandParser.getCommandNo()));
-                    textArea.append("Executing command " + commandParser.getAction() + "\n");
-                    for (String line: response) {
-                        textArea.append(line + "\n");
-                    }
                 }
                 // add HTML responses to combo box
                 int counter = -1;

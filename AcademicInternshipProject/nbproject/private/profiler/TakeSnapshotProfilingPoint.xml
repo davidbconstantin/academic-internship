@@ -5,7 +5,7 @@
 <entry key="0_p_location_file">{$projectDirectory}/src/main/java/com/security/academicinternshipproject/swingworkers/WebCrawlerGUIWorker.java</entry>
 <entry key="2_p_target">project</entry>
 <entry key="0_p_snapshot">profdata</entry>
-<entry key="0_p_location_line">71</entry>
+<entry key="0_p_location_line">68</entry>
 <entry key="2_p_name">Take Snapshot at WebCrawlerGUIWorker:256</entry>
 <entry key="0_p_enabled">true</entry>
 <entry key="2_p_location_file">{$projectDirectory}/src/main/java/com/security/academicinternshipproject/swingworkers/WebCrawlerGUIWorker.java</entry>
@@ -14,7 +14,7 @@
 <entry key="1_p_name">Take Snapshot at WebCrawlerGUIWorker:113</entry>
 <entry key="2_p_enabled">true</entry>
 <entry key="1_p_snapshot">profdata</entry>
-<entry key="2_p_location_line">256</entry>
+<entry key="2_p_location_line">249</entry>
 <entry key="2_p_location_offset">2147483647</entry>
 <entry key="1_p_file">C:\Users\rokom\AppData\Local\Temp\</entry>
 <entry key="0_p_file">C:\Users\rokom\AppData\Local\Temp\</entry>
@@ -24,7 +24,7 @@
 <entry key="1_p_enabled">true</entry>
 <entry key="2_p_snapshot">profdata</entry>
 <entry key="0_p_target">project</entry>
-<entry key="1_p_location_line">113</entry>
+<entry key="1_p_location_line">110</entry>
 <entry key="1_p_reset_results">false</entry>
 <entry key="1_p_location_file">{$projectDirectory}/src/main/java/com/security/academicinternshipproject/swingworkers/WebCrawlerGUIWorker.java</entry>
 <entry key="1_p_location_offset">2147483647</entry>

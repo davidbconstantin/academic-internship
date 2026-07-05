@@ -10,33 +10,11 @@
  */
 package com.security.academicinternshipproject;
 
-import com.microsoft.playwright.Browser;
-import com.microsoft.playwright.BrowserContext;
-import com.microsoft.playwright.BrowserType;
-import com.microsoft.playwright.Page;
-import com.microsoft.playwright.Playwright;
 import com.security.academicinternshipproject.swingworkers.WebCrawlerGUIWorker;
-import java.awt.BorderLayout;
-import java.util.List;
-import java.io.BufferedInputStream;
-import java.io.BufferedReader;
-import java.io.EOFException;
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.io.FileWriter;
-import java.io.IOException;
-import java.io.ObjectInputStream;
-import java.math.BigDecimal;
-import java.sql.SQLException;
-import java.util.ArrayList;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-import javax.swing.JMenu;
-import javax.swing.JMenuBar;
-import javax.swing.JOptionPane;
 import javax.swing.SwingUtilities;
+import static javax.swing.SwingWorker.StateValue.DONE;
+import static javax.swing.SwingWorker.StateValue.PENDING;
+import static javax.swing.SwingWorker.StateValue.STARTED;
 
 /**
  *
@@ -46,6 +24,7 @@ public class MainMenuJP extends javax.swing.JPanel {
     
     private MainMenuForm mainMenuForm;
     private MySQLConnector mysql;
+    private WebCrawlerGUIWorker crawlerWorker;
 
     /**
      * Creates new form MainMenuJP
@@ -240,9 +219,11 @@ public class MainMenuJP extends javax.swing.JPanel {
 
     private void crawlBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_crawlBTNActionPerformed
         // TODO add your handling code here:
-        WebCrawlerGUIWorker crawlerWorker = new WebCrawlerGUIWorker(mainMenuForm,
-        mysql, statusTA, crawlersCB, responsesCB);
-        crawlerWorker.execute();
+        if (mainMenuForm.isSqlCredentialsRequired()) {
+            mainMenuForm.displayPanel("SQL Settings");
+        }
+        else
+            crawlerWorker.execute();
 //        String baseUrl = "";
 //        if (mainMenuForm.isSqlCredentialsRequired()) {
 //            mainMenuForm.displayPanel("SQL Settings");
@@ -441,16 +422,18 @@ public class MainMenuJP extends javax.swing.JPanel {
 
     private void responsesCBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_responsesCBActionPerformed
         // TODO add your handling code here:
-        statusTA.setText("");
-        // look up crawler
-        String targetName = crawlersCB.getSelectedItem().toString();
-        WebCrawler target = null;
-        for (WebCrawler crawler: mainMenuForm.getWebCrawlers()) {
-            if (crawler.getName().equals(targetName))
-                target = crawler;
-        }
-        for (String result: target.getHtmlResponses().get(responsesCB.getSelectedIndex()).getResults()) {
-            statusTA.append(result + "\n");
+            if (crawlerWorker.getState() != STARTED ) {
+            statusTA.setText("");
+            // look up crawler
+            String targetName = crawlersCB.getSelectedItem().toString();
+            WebCrawler target = null;
+            for (WebCrawler crawler: mainMenuForm.getWebCrawlers()) {
+                if (crawler.getName().equals(targetName))
+                    target = crawler;
+            }
+            for (String result: target.getHtmlResponses().get(responsesCB.getSelectedIndex()).getResults()) {
+                statusTA.append(result + "\n");
+            }
         }
     }//GEN-LAST:event_responsesCBActionPerformed
 
@@ -466,20 +449,32 @@ public class MainMenuJP extends javax.swing.JPanel {
 
     private void formAncestorAdded(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_formAncestorAdded
         // TODO add your handling code here:
-        mainMenuForm.loadCrawlers(crawlersCB);
-        System.out.println("Last selected crawler: " + mainMenuForm.getLastSelectedCrawlerName());
-        // find previously selected crawler if reloading form
-        SwingUtilities.invokeLater(() -> {
-            System.out.println("Invoking...");
-            if (mainMenuForm.getLastSelectedCrawlerName() != null)
-            if (!mainMenuForm.getLastSelectedCrawlerName().equals(crawlersCB.getSelectedItem().toString()))
-            for (int i = 0; i < crawlersCB.getItemCount(); i++) {
-                System.out.println("Looping");
-                if (crawlersCB.getItemAt(i).equals(mainMenuForm.getLastSelectedCrawlerName())) {
-                    System.out.println("Match found");
-                    crawlersCB.setSelectedItem(mainMenuForm.getLastSelectedCrawlerName());
-                }
-            }});
+        // initialise worker for the first time
+        if (crawlerWorker == null)
+        crawlerWorker = new WebCrawlerGUIWorker(mainMenuForm,
+            mysql, statusTA, crawlersCB, responsesCB);
+        // do not load crawlers if a script is currently being executed
+        if (crawlerWorker.getState() == PENDING) {
+            mainMenuForm.loadCrawlers(crawlersCB);
+            System.out.println("Last selected crawler: " + mainMenuForm.getLastSelectedCrawlerName());
+            // find previously selected crawler if reloading form
+            SwingUtilities.invokeLater(() -> {
+                System.out.println("Invoking...");
+                if (mainMenuForm.getLastSelectedCrawlerName() != null)
+                if (!mainMenuForm.getLastSelectedCrawlerName().equals(crawlersCB.getSelectedItem().toString()))
+                for (int i = 0; i < crawlersCB.getItemCount(); i++) {
+                    System.out.println("Looping");
+                    if (crawlersCB.getItemAt(i).equals(mainMenuForm.getLastSelectedCrawlerName())) {
+                        System.out.println("Match found");
+                        crawlersCB.setSelectedItem(mainMenuForm.getLastSelectedCrawlerName());
+                    }
+                }});
+            // reinitialise worker if done
+            if (crawlerWorker.getState() == DONE)
+                crawlerWorker = new WebCrawlerGUIWorker(mainMenuForm,
+                    mysql, statusTA, crawlersCB, responsesCB);
+            System.out.println("Crawler State: " + crawlerWorker.getState());
+        }
     }//GEN-LAST:event_formAncestorAdded
 
     private void formAncestorRemoved(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_formAncestorRemoved
