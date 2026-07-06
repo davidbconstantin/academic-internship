@@ -11,6 +11,7 @@ com\security\academicinternshipproject\SQLDatabaseJP$1.class
 com\security\academicinternshipproject\CrawlerScriptingJP$9.class
 com\security\academicinternshipproject\HTMLNode.class
 com\security\academicinternshipproject\MainMenuJP$6.class
+com\security\academicinternshipproject\TaskNotifier.class
 com\security\academicinternshipproject\SQLColumnInfo.class
 com\security\academicinternshipproject\SentimentAnalysisJP.class
 com\security\academicinternshipproject\CrawlerConfigJP$1.class

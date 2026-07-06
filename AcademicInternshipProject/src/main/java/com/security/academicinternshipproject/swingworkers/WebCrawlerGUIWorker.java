@@ -54,6 +54,7 @@ public class WebCrawlerGUIWorker extends SwingWorker<String, String>{
         textArea.setText("");
         publish("Initialising Playwright...");
         playwright = Playwright.create();
+        mainMenuForm.getTaskNotifier().setToolTip(mainMenuForm.getSelectedCrawler().getName() + " is crawling the internet...");
         String baseUrl = "";
         for (WebCrawler crawler: mainMenuForm.getWebCrawlers()) {
             if (crawlersCB.getSelectedItem().toString().equals(crawler.getName())) {
@@ -247,6 +248,8 @@ public class WebCrawlerGUIWorker extends SwingWorker<String, String>{
                     responsesCB.addItem("Response " + counter);
                 }
                 playwright.close();
+                mainMenuForm.getTaskNotifier().displayMessage(mainMenuForm.getSelectedCrawler().getName() + " is finished crawling!");
+                mainMenuForm.getTaskNotifier().setToolTip("Web Crawler App");
             }
         }
         return "";

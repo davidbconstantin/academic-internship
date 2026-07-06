@@ -61,6 +61,9 @@ public class MainMenuForm extends javax.swing.JFrame {
     
     private String lastSelectedCrawlerName = null;
     
+    // notification functionality is initialised below
+    TaskNotifier notifier = new TaskNotifier();
+    
     public MainMenuForm() {
         initComponents();
         Container contentPane = getContentPane();
@@ -301,6 +304,10 @@ public class MainMenuForm extends javax.swing.JFrame {
     
     public String getSelectedTableName() {
         return selectedTableName;
+    }
+    
+    public TaskNotifier getTaskNotifier() {
+        return notifier;
     }
     
     public void populateComboBoxWithHTMLResponses(javax.swing.JComboBox cbox, WebCrawler crawler) {

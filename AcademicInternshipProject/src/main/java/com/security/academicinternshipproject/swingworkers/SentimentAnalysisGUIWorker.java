@@ -1,6 +1,7 @@
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ * https://docs.oracle.com/javase/8/docs/api/javax/swing/Timer.html
  */
 package com.security.academicinternshipproject.swingworkers;
 
@@ -13,6 +14,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 import javax.swing.SwingWorker;
+import javax.swing.Timer;
 
 /**
  *
@@ -32,6 +34,7 @@ public class SentimentAnalysisGUIWorker extends SwingWorker<List<Integer>, Integ
     private List<Integer> scores;
     private int index;
     private String row;
+    private Timer timer;
     
     public SentimentAnalysisGUIWorker(MainMenuForm mainMenuForm, javax.swing.JTextArea statusTA,
             javax.swing.JTextField inputTF, javax.swing.JProgressBar positivePB,
@@ -49,6 +52,7 @@ public class SentimentAnalysisGUIWorker extends SwingWorker<List<Integer>, Integ
     @Override
     protected List<Integer> doInBackground() {
         scores = new ArrayList<>();
+        mainMenuForm.getTaskNotifier().setToolTip("Performing sentiment analysis on table " + mainMenuForm.getSelectedTableName() + "...");
         try {
             if (!statusTA.getText().equals(""))
                 mainMenuForm.getSentimentAnalyser().predict(statusTA.getText());
@@ -59,6 +63,11 @@ public class SentimentAnalysisGUIWorker extends SwingWorker<List<Integer>, Integ
                 index = 0;
                 positiveScores = new ArrayList<>();
                 negativeScores = new ArrayList<>();
+                timer = new Timer(5000, e -> {
+                    mainMenuForm.getTaskNotifier().setToolTip("Performing sentiment analysis on table " + mainMenuForm.getSelectedTableName() + "... " +
+                    index + "/" + mainMenuForm.getCrs().size() + " row(s) processed.");
+                });
+                timer.start();
                 while (mainMenuForm.getCrs().next()) {
                     index++;
                     System.out.println("Analysing row " + index + " out of " + mainMenuForm.getCrs().size()); 
@@ -121,6 +130,9 @@ public class SentimentAnalysisGUIWorker extends SwingWorker<List<Integer>, Integ
             pValueLBL.setText(String.valueOf(mainMenuForm.getSentimentAnalyser().getClassifications().get("Positive").getProbability()));
             nValueLBL.setText(String.valueOf(mainMenuForm.getSentimentAnalyser().getClassifications().get("Negative").getProbability()));
         }
+        mainMenuForm.getTaskNotifier().displayMessage("Sentiment analysis is finished!");
+        mainMenuForm.getTaskNotifier().setToolTip("Web Crawler App");
+        timer.stop();
     }
     
     public int computeAggregateScore(ArrayList<Integer> values) {
