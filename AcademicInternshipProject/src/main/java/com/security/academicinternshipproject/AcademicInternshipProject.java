@@ -15,7 +15,7 @@ public class AcademicInternshipProject {
         // initialise GUI
         MainMenuForm mainMenu = new MainMenuForm();
 
-        mainMenu.setTitle("Academic Internship Project");
+        mainMenu.setTitle("Nascrawler");
         mainMenu.setMinimumSize(new Dimension(1020, 720));
         mainMenu.setSize(1020, 720);
         mainMenu.setLocationRelativeTo(null);      

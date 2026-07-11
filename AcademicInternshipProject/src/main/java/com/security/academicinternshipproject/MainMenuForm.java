@@ -9,9 +9,11 @@
  */
 package com.security.academicinternshipproject;
 
+import com.security.academicinternshipproject.helpmenu.AboutForm;
 import java.awt.CardLayout;
 import java.awt.Component;
 import java.awt.Container;
+import java.awt.Dimension;
 import java.io.BufferedReader;
 import java.io.EOFException;
 import java.io.File;
@@ -392,6 +394,9 @@ public class MainMenuForm extends javax.swing.JFrame {
         mainMB = new javax.swing.JMenuBar();
         actionsMU = new javax.swing.JMenu();
         sAnalysisMI = new javax.swing.JMenuItem();
+        helpMU = new javax.swing.JMenu();
+        aboutMI = new javax.swing.JMenuItem();
+        userManualMI = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(51, 51, 255));
@@ -414,6 +419,21 @@ public class MainMenuForm extends javax.swing.JFrame {
 
         mainMB.add(actionsMU);
 
+        helpMU.setText("Help");
+
+        aboutMI.setText("About");
+        aboutMI.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                aboutMIActionPerformed(evt);
+            }
+        });
+        helpMU.add(aboutMI);
+
+        userManualMI.setText("User Manual");
+        helpMU.add(userManualMI);
+
+        mainMB.add(helpMU);
+
         setJMenuBar(mainMB);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -434,6 +454,14 @@ public class MainMenuForm extends javax.swing.JFrame {
         // TODO add your handling code here:
         displayPanel("Sentiment Analysis");
     }//GEN-LAST:event_sAnalysisMIActionPerformed
+
+    private void aboutMIActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_aboutMIActionPerformed
+        // TODO add your handling code here:
+        AboutForm aboutForm = new AboutForm();
+        aboutForm.setLocationRelativeTo(this);
+        aboutForm.setTitle("About");
+        aboutForm.setVisible(true);
+    }//GEN-LAST:event_aboutMIActionPerformed
 
     /**
      * @param args the command line arguments
@@ -471,9 +499,12 @@ public class MainMenuForm extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JMenuItem aboutMI;
     private javax.swing.JMenu actionsMU;
+    private javax.swing.JMenu helpMU;
     private javax.swing.JMenuBar mainMB;
     private javax.swing.JPanel mainPanelJP;
     private javax.swing.JMenuItem sAnalysisMI;
+    private javax.swing.JMenuItem userManualMI;
     // End of variables declaration//GEN-END:variables
 }

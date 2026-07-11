@@ -39,7 +39,7 @@ public class HomeLandingJP extends JPanel {
         setLayout(new BorderLayout(16,16));
         setBorder(BorderFactory.createEmptyBorder(22,22,22,22));
 
-        JLabel title = new JLabel("Academic Internship Project");
+        JLabel title = new JLabel("Nascrawler");
         title.setForeground(Color.WHITE);
         title.setFont(new Font("SansSerif", Font.BOLD, 26));
 
