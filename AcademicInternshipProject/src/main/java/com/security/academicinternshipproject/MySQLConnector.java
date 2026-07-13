@@ -4,6 +4,8 @@
  * based on https://aiven.io/docs/products/mysql/howto/connect-with-java
  * https://www.tutorialspoint.com/java_mysql/java_mysql_create_tables.htm
  * https://www.baeldung.com/jdbc-database-metadata
+ * https://dev.mysql.com/doc/connector-j/en/connector-j-usagenotes-statements.html
+ * https://www.baeldung.com/java-jdbc-rowset
  */
 package com.security.academicinternshipproject;
 
@@ -16,6 +18,9 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
+import javax.sql.rowset.CachedRowSet;
+import javax.sql.rowset.RowSetFactory;
+import javax.sql.rowset.RowSetProvider;
 
 /**
  *
@@ -202,6 +207,26 @@ public class MySQLConnector {
         } catch (SQLException ex) {
             System.out.println(ex);
         }
+    }
+    
+    public CachedRowSet executeQuery(String url, String userName, String password, String userStatement) throws ClassNotFoundException, SQLException {
+        try (final Connection connection = 
+        DriverManager.getConnection(url + "?sslmode=require", userName, password);
+        final Statement statement = connection.createStatement()) {
+        final ResultSet results = statement.executeQuery(userStatement); 
+        RowSetFactory rsf = RowSetProvider.newFactory();
+        CachedRowSet crs = rsf.createCachedRowSet();
+        crs.populate(results);
+        return crs;
+        } catch (SQLException e) {
+            System.out.println("Connection failure.");
+                e.printStackTrace();
+                throw new SQLException("Hi", e);
+        }   
+    }
+    
+    public String composeUrl(String host, int port, String dbName) {
+        return "jdbc:mysql://" + host + ":" + port + "/" + dbName;
     }
     
     public String getCurrentDb() {

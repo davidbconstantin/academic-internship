@@ -1,5 +1,10 @@
 CommandParserTest.class
+AsynchronousGUITest.class
 JSoupTextTest.class
+SQLSelectTest.class
+SystemTrayTest.class
 SQLUpdateTest.class
+AsynchronousGUITest$1.class
+SentimentAnalysisTest.class
 SQLCommandTest.class
 CardLayoutTest.class

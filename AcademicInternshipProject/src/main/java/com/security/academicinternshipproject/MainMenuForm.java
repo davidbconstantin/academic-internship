@@ -5,11 +5,17 @@
  * https://docs.oracle.com/javase/8/docs/api/java/lang/ProcessBuilder.html
  * https://huggingface.co/recobo/agriculture-bert-uncased
  * https://medium.com/@evaGachirwa/running-python-script-with-arguments-in-the-command-line-93dfa5f10eff
+ * https://stackoverflow.com/questions/6505953/cardlayout-get-the-selected-cards-name
+ * https://docs.oracle.com/javase/tutorial/uiswing/components/frame.html#windowevents
  */
 package com.security.academicinternshipproject;
 
+import com.security.academicinternshipproject.helpmenu.AboutForm;
+import com.security.academicinternshipproject.helpmenu.UserManualForm;
 import java.awt.CardLayout;
+import java.awt.Component;
 import java.awt.Container;
+import java.awt.Dimension;
 import java.io.BufferedReader;
 import java.io.EOFException;
 import java.io.File;
@@ -23,6 +29,8 @@ import java.io.ObjectOutputStream;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import javax.sql.rowset.CachedRowSet;
+import javax.swing.JDialog;
 import javax.swing.JPanel;
 
 /**
@@ -35,24 +43,40 @@ public class MainMenuForm extends javax.swing.JFrame {
      * Creates new form MainMenuForm
      */
     private CardLayout cardLayout;
-    private String lastPanel = "";
+    private JPanel lastPanel;
 //    private JPanel cardPanel;
     
     private List<WebCrawler> webCrawlers = new ArrayList<>();
     private WebCrawler selectedCrawler;
     private MySQLConnector sql;
     private List<String> sqlCredentials = new ArrayList<>();
+    private SQLDatabaseInfo dbInfo;
+    private CachedRowSet crs;
+    
+    // database query variables
+    private SentimentAnalyser sentimentAnalyser;
+    private String selectedColumnName;
+    private String selectedTableName;
+    private boolean analysingSQLTable = false;
     
     private boolean sqlCredentialsRequired = true;
     private boolean editMode = false;
     private char[] username;
     private char[] password;
     
+    private String lastSelectedCrawlerName = null;
+    
+    // notification functionality is initialised below
+    TaskNotifier notifier = new TaskNotifier();
+    
     public MainMenuForm() {
         initComponents();
         Container contentPane = getContentPane();
         cardLayout = (CardLayout) mainPanelJP.getLayout();
         contentPane.setLayout(cardLayout);
+        
+        // initialise sentiment analyser
+        sentimentAnalyser = new SentimentAnalyser("djl://ai.djl.pytorch/distilbert");
         
         // initialise panels
         HomeLandingJP homeLandingJP = new HomeLandingJP(this);   // landing page 
@@ -62,16 +86,30 @@ public class MainMenuForm extends javax.swing.JFrame {
         DatabaseSettingsJP databaseSettingsPanel = new DatabaseSettingsJP(this);
         SQLCredentialsJP sqlCredentialsPanel = new SQLCredentialsJP(this);
         SQLDatabaseJP sqlDatabasePanel = new SQLDatabaseJP(this);
+        SentimentAnalysisJP sentimentAnalysisPanel = new SentimentAnalysisJP(this);
+        DatabaseQueryJP databaseQueryPanel = new DatabaseQueryJP(this);
         
         // add panels to card layout
         mainPanelJP.add(homeLandingJP, "Landing");
+        homeLandingJP.setName("Landing");
         mainPanelJP.add(crawlerConfigPanel, "Crawler Configuration");
+        crawlerConfigPanel.setName("Crawler Configuration");
         mainPanelJP.add(mainMenuPanel, "Main Menu");
+        mainMenuPanel.setName("Main Menu");
         mainPanelJP.add(crawlerScriptingPanel, "Crawler Scripting");
+        crawlerScriptingPanel.setName("Crawler Scripting");
         mainPanelJP.add(databaseSettingsPanel, "Database Settings");
+        databaseSettingsPanel.setName("Database Settings");
         mainPanelJP.add(sqlCredentialsPanel, "SQL Settings");
+        sqlCredentialsPanel.setName("SQL Settings");
         mainPanelJP.add(sqlDatabasePanel, "SQL Database");
+        sqlDatabasePanel.setName("SQL Database");
+        mainPanelJP.add(sentimentAnalysisPanel, "Sentiment Analysis");
+        sentimentAnalysisPanel.setName("Sentiment Analysis");
+        mainPanelJP.add(databaseQueryPanel, "Database Query");
+        databaseQueryPanel.setName("Database Query");
         
+        lastPanel = mainMenuPanel;  
         selectedCrawler = new WebCrawler();
         
         // load SQL database settings
@@ -79,7 +117,25 @@ public class MainMenuForm extends javax.swing.JFrame {
     }
     
     public void displayPanel(String panelName) {
+        // get the previous panel's name while ignoring pop-up menus
+        for (Component comp: mainPanelJP.getComponents()) {
+            if (comp.isVisible()) {
+                if (!comp.getName().equals("SQL Settings")) 
+                    lastPanel = (javax.swing.JPanel)comp;
+            }
+        }
         cardLayout.show(mainPanelJP, panelName);
+        for (Component comp: mainPanelJP.getComponents()) {
+            // hide menu bar if outside main menu
+            if (comp.isVisible() && comp.getName().equals("Main Menu")) {
+                mainMB.setVisible(true);
+                System.out.println("Rendering menu bar");
+                break;
+            }
+            else
+                mainMB.setVisible(false);
+        }
+        //System.out.println("Previous panel: " + lastPanel.getName());
     }
 
     public List<WebCrawler> getWebCrawlers() {
@@ -92,6 +148,10 @@ public class MainMenuForm extends javax.swing.JFrame {
     
     public void setSelectedCrawler(WebCrawler crawler) {
         selectedCrawler = crawler;
+    }
+    
+    public SentimentAnalyser getSentimentAnalyser() {
+        return sentimentAnalyser;
     }
 
     public boolean isSqlCredentialsRequired() {
@@ -128,6 +188,22 @@ public class MainMenuForm extends javax.swing.JFrame {
     
     public void setEditMode(boolean value) {
         editMode = value;
+    }
+    
+    public String getLastSelectedCrawlerName() {
+        return lastSelectedCrawlerName;
+    }
+    
+    public void setLastSelectedCrawlerName(String name) {
+        lastSelectedCrawlerName = name;
+    }
+    
+    public boolean isAnalysingSQLTable() {
+        return analysingSQLTable;
+    }
+    
+    public void setIsAnalysingTable(boolean value) {
+        analysingSQLTable = value;
     }
     
     public void eraseCredentials() {
@@ -206,6 +282,107 @@ public class MainMenuForm extends javax.swing.JFrame {
     public List<String> getSQLCredentials() {
         return sqlCredentials;
     }
+    
+    public String getPreviousPanelName() {
+        return lastPanel.getName();
+    }
+    
+    public SQLDatabaseInfo getDatabaseInfo() {
+        return dbInfo;
+    }
+    
+    public CachedRowSet getCrs() {
+        return crs;
+    }
+    
+    public void setSelectedColumnName(String selectedColumn) {
+        selectedColumnName = selectedColumn;
+    }
+    
+    public String getSelectedColumnName() {
+        return selectedColumnName;
+    }
+    
+    public void setSelectedTableName(String selectedTable) {
+        selectedTableName = selectedTable;
+    }
+    
+    public String getSelectedTableName() {
+        return selectedTableName;
+    }
+    
+    public TaskNotifier getTaskNotifier() {
+        return notifier;
+    }
+    
+    public void populateComboBoxWithHTMLResponses(javax.swing.JComboBox cbox, WebCrawler crawler) {
+        // add HTML responses to combo box
+        int counter = -1;
+        cbox.setEnabled(true);
+        cbox.removeAllItems();
+        for (SearchResult result: crawler.getHtmlResponses()) {
+            counter++;
+            cbox.addItem("Response " + counter);
+        }
+    }
+    
+    // requires the database admin's credentials
+    public boolean loadDatabaseSchema() {
+        if (!sqlCredentialsRequired) {
+        try {
+            sql = new MySQLConnector(sqlCredentials.get(0), Integer.parseInt(sqlCredentials.get(1)), sqlCredentials.get(2),
+            String.valueOf(username),
+            String.valueOf(password));
+            sql.fetchTableSchemas(sqlCredentials.get(0), Integer.parseInt(sqlCredentials.get(1)), sqlCredentials.get(2), String.valueOf(username), String.valueOf(password));
+            dbInfo = sql.getCurrentDbAsInfo();
+            return true;
+        } catch (Exception ex) {
+            System.out.println(ex);
+            return false;
+            }
+        } else {
+            displayPanel("SQL Settings");
+            return false;
+        }
+    }
+    
+    public boolean returnTableData(String tableName) {
+        if (!sqlCredentialsRequired) {
+            try {
+                 sql = new MySQLConnector(sqlCredentials.get(0), Integer.parseInt(sqlCredentials.get(1)), sqlCredentials.get(2),
+                 String.valueOf(username),
+                 String.valueOf(password));
+                 sql.fetchTableSchemas(sqlCredentials.get(0), Integer.parseInt(sqlCredentials.get(1)), sqlCredentials.get(2), String.valueOf(username), String.valueOf(password));
+                 crs = sql.executeQuery(sql.composeUrl(sqlCredentials.get(0), Integer.parseInt(sqlCredentials.get(1)), sqlCredentials.get(2)), String.valueOf(username), String.valueOf(password), "SELECT * FROM " + tableName);
+                 return true;
+             } catch (Exception ex) {
+                 System.out.println(ex);
+                 return false;
+                 }
+             } else {
+                 displayPanel("SQL Settings");
+                 return false;
+             }
+    }
+    
+     public boolean returnColumnData(String tableName, String columnName) {
+        if (!sqlCredentialsRequired) {
+            try {
+                 sql = new MySQLConnector(sqlCredentials.get(0), Integer.parseInt(sqlCredentials.get(1)), sqlCredentials.get(2),
+                 String.valueOf(username),
+                 String.valueOf(password));
+                 sql.fetchTableSchemas(sqlCredentials.get(0), Integer.parseInt(sqlCredentials.get(1)), sqlCredentials.get(2), String.valueOf(username), String.valueOf(password));
+                 crs = sql.executeQuery(sql.composeUrl(sqlCredentials.get(0), Integer.parseInt(sqlCredentials.get(1)), sqlCredentials.get(2)), String.valueOf(username), String.valueOf(password), "SELECT " + columnName + " FROM " + tableName);
+                 return true;
+             } catch (Exception ex) {
+                 System.out.println(ex);
+                 return false;
+                 }
+             } else {
+                 displayPanel("SQL Settings");
+                 return false;
+             }
+    }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -217,15 +394,56 @@ public class MainMenuForm extends javax.swing.JFrame {
     private void initComponents() {
 
         mainPanelJP = new javax.swing.JPanel();
+        mainMB = new javax.swing.JMenuBar();
+        actionsMU = new javax.swing.JMenu();
+        sAnalysisMI = new javax.swing.JMenuItem();
+        helpMU = new javax.swing.JMenu();
+        aboutMI = new javax.swing.JMenuItem();
+        userManualMI = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(51, 51, 255));
+        setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         setForeground(java.awt.Color.gray);
         setName("mainMenuFrame"); // NOI18N
 
         mainPanelJP.setBackground(new java.awt.Color(51, 51, 255));
         mainPanelJP.setName("mainPanelJP"); // NOI18N
         mainPanelJP.setLayout(new java.awt.CardLayout());
+
+        actionsMU.setText("Actions");
+
+        sAnalysisMI.setText("Sentiment Analysis");
+        sAnalysisMI.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                sAnalysisMIActionPerformed(evt);
+            }
+        });
+        actionsMU.add(sAnalysisMI);
+
+        mainMB.add(actionsMU);
+
+        helpMU.setText("Help");
+
+        aboutMI.setText("About");
+        aboutMI.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                aboutMIActionPerformed(evt);
+            }
+        });
+        helpMU.add(aboutMI);
+
+        userManualMI.setText("User Manual");
+        userManualMI.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                userManualMIActionPerformed(evt);
+            }
+        });
+        helpMU.add(userManualMI);
+
+        mainMB.add(helpMU);
+
+        setJMenuBar(mainMB);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -240,6 +458,29 @@ public class MainMenuForm extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void sAnalysisMIActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sAnalysisMIActionPerformed
+        // TODO add your handling code here:
+        displayPanel("Sentiment Analysis");
+    }//GEN-LAST:event_sAnalysisMIActionPerformed
+
+    private void aboutMIActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_aboutMIActionPerformed
+        // TODO add your handling code here:
+        AboutForm aboutForm = new AboutForm();
+        aboutForm.setLocationRelativeTo(this);
+        aboutForm.setTitle("About");
+        aboutForm.setDefaultCloseOperation(JDialog.DO_NOTHING_ON_CLOSE);
+        aboutForm.setVisible(true);
+    }//GEN-LAST:event_aboutMIActionPerformed
+
+    private void userManualMIActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_userManualMIActionPerformed
+        // TODO add your handling code here:
+        UserManualForm userManualForm = new UserManualForm();
+        userManualForm.setLocationRelativeTo(this);
+        userManualForm.setTitle("Help");
+        userManualForm.setDefaultCloseOperation(JDialog.DO_NOTHING_ON_CLOSE);
+        userManualForm.setVisible(true);
+    }//GEN-LAST:event_userManualMIActionPerformed
 
     /**
      * @param args the command line arguments
@@ -277,6 +518,12 @@ public class MainMenuForm extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JMenuItem aboutMI;
+    private javax.swing.JMenu actionsMU;
+    private javax.swing.JMenu helpMU;
+    private javax.swing.JMenuBar mainMB;
     private javax.swing.JPanel mainPanelJP;
+    private javax.swing.JMenuItem sAnalysisMI;
+    private javax.swing.JMenuItem userManualMI;
     // End of variables declaration//GEN-END:variables
 }

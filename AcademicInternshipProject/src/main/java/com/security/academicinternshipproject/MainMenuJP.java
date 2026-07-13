@@ -5,31 +5,16 @@
  * https://huggingface.co/blog/sentiment-analysis-python
  * https://www.w3schools.com/sql/sql_insert.asp
  * https://www.w3schools.com/java/java_regex.asp
+ * https://docs.oracle.com/javase/tutorial/uiswing/components/menu.html
+ * https://docs.oracle.com/javase/8/docs/api/javax/swing/SwingUtilities.html#invokeLater-java.lang.Runnable-
  */
 package com.security.academicinternshipproject;
 
-import com.microsoft.playwright.Browser;
-import com.microsoft.playwright.BrowserContext;
-import com.microsoft.playwright.BrowserType;
-import com.microsoft.playwright.Page;
-import com.microsoft.playwright.Playwright;
-import java.util.List;
-import java.io.BufferedInputStream;
-import java.io.BufferedReader;
-import java.io.EOFException;
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.io.FileWriter;
-import java.io.IOException;
-import java.io.ObjectInputStream;
-import java.math.BigDecimal;
-import java.sql.SQLException;
-import java.util.ArrayList;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-import javax.swing.JOptionPane;
+import com.security.academicinternshipproject.swingworkers.WebCrawlerGUIWorker;
+import javax.swing.SwingUtilities;
+import static javax.swing.SwingWorker.StateValue.DONE;
+import static javax.swing.SwingWorker.StateValue.PENDING;
+import static javax.swing.SwingWorker.StateValue.STARTED;
 
 /**
  *
@@ -39,6 +24,7 @@ public class MainMenuJP extends javax.swing.JPanel {
     
     private MainMenuForm mainMenuForm;
     private MySQLConnector mysql;
+    private WebCrawlerGUIWorker crawlerWorker;
 
     /**
      * Creates new form MainMenuJP
@@ -46,6 +32,7 @@ public class MainMenuJP extends javax.swing.JPanel {
     public MainMenuJP(MainMenuForm mainMenuForm) {
         this.mainMenuForm = mainMenuForm;
         mysql = mainMenuForm.getMySQL();
+        // add menu bar
         initComponents();
     }
 
@@ -78,6 +65,7 @@ public class MainMenuJP extends javax.swing.JPanel {
             public void ancestorMoved(javax.swing.event.AncestorEvent evt) {
             }
             public void ancestorRemoved(javax.swing.event.AncestorEvent evt) {
+                formAncestorRemoved(evt);
             }
         });
 
@@ -207,7 +195,8 @@ public class MainMenuJP extends javax.swing.JPanel {
         for (WebCrawler crawler: mainMenuForm.getWebCrawlers()) {
             if (crawlersCB.getSelectedItem().toString().equals(crawler.getName())) {
                 mainMenuForm.setSelectedCrawler(crawler);
-                crawler.printInfo();
+                System.out.println("Selected Crawler: " + crawler.getName());
+                //crawler.printInfo();
                 statusTA.append("Name: " + crawler.getName() + "\n");
                 statusTA.append("User Agent: " + crawler.getUserAgent() + "\n");
                 statusTA.append("Crawl Delay: " + crawler.getCrawlDelay() + "\n");
@@ -230,214 +219,221 @@ public class MainMenuJP extends javax.swing.JPanel {
 
     private void crawlBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_crawlBTNActionPerformed
         // TODO add your handling code here:
-        String baseUrl = "";
         if (mainMenuForm.isSqlCredentialsRequired()) {
             mainMenuForm.displayPanel("SQL Settings");
-            return;
-        }   
-        for (WebCrawler crawler: mainMenuForm.getWebCrawlers()) {
-            if (crawlersCB.getSelectedItem().toString().equals(crawler.getName())) {
-                statusTA.setText("");
-                Playwright playwright = Playwright.create();
-                JSoupParser parser = new JSoupParser();
-                Browser browser = playwright.firefox().launch(new BrowserType.LaunchOptions()
-                .setSlowMo(crawler.getCrawlDelay() * 1000)
-                //.setHeadless(false)
-            );
-                // initialise browser
-                Page page = null;
-                BrowserContext context = browser.newContext(new Browser.NewContextOptions()
-                .setUserAgent(crawler.getUserAgent())
-                .setLocale("en-ie"));
-                
-                for (String command: crawler.getCommands()) {
-                    ArrayList<String> response = new ArrayList<>();
-                    ArrayList<String> results = new ArrayList<>();
-                    CommandParser commandParser = new CommandParser(command);
-                    command = commandParser.getAction();
-                    // if operating on a previous command's results
-                    if (commandParser.getSubjectNo() > -1) {
-                        int resultsIndex = commandParser.getSubjectNo() - 1;
-                        // find the final results of a particular operation by looping through the crawler in reverse direction
-                        for (int i = crawler.getHtmlResponses().size() - 1; i >= 0; i--) {
-                            // never evaluates true if subject number is -1
-                            if (crawler.getHtmlResponses().get(i).getCommandNo() == commandParser.getSubjectNo()) {
-                                resultsIndex = i;
-                                break;
-                            }
-                        }
-                        for (String result: crawler.getHtmlResponses().get(resultsIndex).getResults()) {
-                            results.add(result);
-                        }
-                    }
-                    else
-                        results.add(commandParser.getObject());
-                    int loopCounter = 0;
-                    for (String result: results) {
-                        loopCounter++;
-                        if (result.length() > 32)
-                            System.out.println("Result # " + loopCounter + ": " + result.substring(0, 31));
-                        else
-                            System.out.println("Result # " + loopCounter + ": " + result);
-                        if (command.equals("Visit")) {
-                            page = browser.newPage();
-                            if (result.startsWith("/"))
-                                result = baseUrl + result;
-                            page.navigate(result);
-                            if (baseUrl.equals(""))
-                                baseUrl = page.url().substring(0, page.url().length() - 1);
-                            response.add(page.content());
-                            //crawler.addHtmlResponse(new SearchResult(response, commandParser.getCommandNo()));
-                        }
-                        else if (command.equals("Search")) {
-                            response.addAll(parser.searchDocument(crawler.getHtmlResponses().getLast().getResults(), result));
-                            //crawler.addHtmlResponse(new SearchResult(response, commandParser.getCommandNo()));
-                        }
-                        else if (command.equals("Text")) {
-                            response.add(parser.getTextFromDocument(result));
-                            //crawler.addHtmlResponse(new SearchResult(response, commandParser.getCommandNo()));
-                        }
-                        else if (command.equals("Attribute")) {
-                            response.addAll(parser.getAttributesFromDocument(result, commandParser.getObject()));
-                            //crawler.addHtmlResponse(new SearchResult(response, commandParser.getCommandNo()));
-                        }
-                        else if (command.equals("SQL")) {
-                            try {
-                                List<String> credentials = mainMenuForm.getSQLCredentials();
-                                String sqlStatement = commandParser.getObject();
-                                // parse contents of the SQL command
-                                // example command: @2i or @2is
-                                // s stands for String, i means Integer (numeric value)7
-                                boolean atSignPresent = false;
-                                boolean numericCharacterPresent = false;
-                                boolean alphabeticLetterPresent = false;
-                                int numericCharacter = -1;
-                                boolean isNumeric = false;
-                                for (int i = 0; i < sqlStatement.length(); i++) {
-                                    // sub in HTML responses 
-                                    if (sqlStatement.charAt(i) == '@') {
-                                        atSignPresent = true;
-                                        System.out.println("At sign present.");
-                                    }
-                                    if (i + 1 < sqlStatement.length()) {
-                                        if (sqlStatement.charAt(i + 1) == '1' || sqlStatement.charAt(i + 1) == '2' ||
-                                            sqlStatement.charAt(i + 1) == '3' || sqlStatement.charAt(i + 1) == '4' ||
-                                            sqlStatement.charAt(i + 1) == '5' || sqlStatement.charAt(i + 1) == '6' ||
-                                            sqlStatement.charAt(i + 1) == '7' || sqlStatement.charAt(i + 1) == '8' ||
-                                            sqlStatement.charAt(i + 1) == '9') {
-                                        numericCharacterPresent = true;
-                                        numericCharacter = Integer.parseInt(String.valueOf(sqlStatement.charAt(i + 1)));
-                                        System.out.println("Numeric character: " + numericCharacter);
-                                        System.out.println("Numeric character present.");
-                                        }
-                                    }
-                                    if (i + 2 < sqlStatement.length()) {
-                                        if (sqlStatement.charAt(i + 2) == 'i' || sqlStatement.charAt(i + 2) == 's' ||
-                                                sqlStatement.charAt(i + 2) == 'I' || sqlStatement.charAt(i + 2) == 'S') {
-                                            alphabeticLetterPresent = true;
-                                            System.out.println("Alphabetic letter present.");
-                                        }
-                                    }
-                                    if (atSignPresent && numericCharacterPresent && alphabeticLetterPresent) {
-                                        String modifiedSqlStatement = "";
-                                        SQLDatabaseInfo dbInfo = null;
-                                        for (String valueToInsert: crawler.getHtmlResponses().get(numericCharacter - 1).getResults()) {
-                                            modifiedSqlStatement = sqlStatement;
-                                            valueToInsert = "'" + valueToInsert + "'";
-                                            modifiedSqlStatement = modifiedSqlStatement.replaceFirst("@\\d[iIsS]", valueToInsert);
-                                            // check SQL statement for errors
-                                            try {
-                                                mysql = new MySQLConnector(credentials.get(0), Integer.parseInt(credentials.get(1)), credentials.get(2),
-                                                String.valueOf(mainMenuForm.getUsername()),
-                                                String.valueOf(mainMenuForm.getPassword()));
-                                                mysql.fetchTableSchemas(credentials.get(0), Integer.parseInt(credentials.get(1)), credentials.get(2), String.valueOf(mainMenuForm.getUsername()), String.valueOf(mainMenuForm.getPassword()));
-                                                dbInfo = mysql.getCurrentDbAsInfo();
-                                            } catch (Exception ex) {
-                                                System.out.println(ex);
-                                            }
-                                            SQLParser sqlParser = new SQLParser(modifiedSqlStatement, dbInfo);
-                                            System.out.println("SQL Statement: " + sqlStatement);
-                                            if (!sqlParser.getMustSplit()) {
-                                                // insert a single statement
-                                                mysql = new MySQLConnector(credentials.get(0), Integer.parseInt(credentials.get(1)), credentials.get(2),
-                                                String.valueOf(mainMenuForm.getUsername()),
-                                                String.valueOf(mainMenuForm.getPassword()), modifiedSqlStatement);
-                                            } else {
-                                                // insert multiple statements
-                                                for (String toInsert: sqlParser.getStringsToInsert()) {
-                                                    mysql = new MySQLConnector(credentials.get(0), Integer.parseInt(credentials.get(1)), credentials.get(2),
-                                                    String.valueOf(mainMenuForm.getUsername()),
-                                                    String.valueOf(mainMenuForm.getPassword()), toInsert);                                                  
-                                                }
-                                                
-                                            }
-                                        }
-                                        atSignPresent = numericCharacterPresent = isNumeric = false;
-                                    } else
-                                        atSignPresent = numericCharacterPresent = isNumeric = false;
-                                }
-                                // prevent credentials lingering in memory
-                                mainMenuForm.eraseCredentials();
-                                response.add(mysql.getResult());
-                            } catch (ClassNotFoundException ex) {
-                                System.out.println(ex);
-                            } 
-                        }
-                        else if (command.startsWith("Write")) {
-                            File paragraphs = new File(result);
-                            try {
-                                FileWriter writer = new FileWriter(paragraphs);
-                                for (String toWrite: crawler.getHtmlResponses().getLast().getResults()) {
-                                    writer.write(toWrite + "\n");
-                                }
-                                writer.close();
-                            } catch (IOException ex) {
-                                System.out.println(ex);
-                            }
-                        }   
-                        else if (command.startsWith("Python")) {
-                        // invoke Python script
-                            ProcessBuilder pb = new ProcessBuilder("cmd", "/c", "start", "python", "-u", commandParser.getObject())
-                                    .inheritIO();
-                            try {
-                                Process process = pb.start();
-                            } catch (IOException ex) {
-                                Logger.getLogger(MainMenuForm.class.getName()).log(Level.SEVERE, null, ex);
-                            }                   
-                        }
-                    }
-                    if (!commandParser.getAction().equals("Python") && !commandParser.getAction().equals("Write"))
-                        crawler.addHtmlResponse(new SearchResult(response, commandParser.getCommandNo()));
-                    statusTA.append("Executing command " + commandParser.getAction() + "\n");
-                    for (String line: response) {
-                        statusTA.append(line + "\n");
-                    }
-                }
-                // add HTML responses to combo box
-                int counter = -1;
-                responsesCB.setEnabled(true);
-                responsesCB.removeAllItems();
-                for (SearchResult result: crawler.getHtmlResponses()) {
-                    counter++;
-                    responsesCB.addItem("Response " + counter);
-                }
-                playwright.close();
-            }
         }
+        else
+            crawlerWorker.execute();
+//        String baseUrl = "";
+//        if (mainMenuForm.isSqlCredentialsRequired()) {
+//            mainMenuForm.displayPanel("SQL Settings");
+//            return;
+//        }   
+//        for (WebCrawler crawler: mainMenuForm.getWebCrawlers()) {
+//            if (crawlersCB.getSelectedItem().toString().equals(crawler.getName())) {
+//                statusTA.setText("");
+//                Playwright playwright = Playwright.create();
+//                JSoupParser parser = new JSoupParser();
+//                Browser browser = playwright.firefox().launch(new BrowserType.LaunchOptions()
+//                .setSlowMo(crawler.getCrawlDelay() * 1000)
+//                //.setHeadless(false)
+//            );
+//                // initialise browser
+//                Page page = null;
+//                BrowserContext context = browser.newContext(new Browser.NewContextOptions()
+//                .setUserAgent(crawler.getUserAgent())
+//                .setLocale("en-ie"));
+//                
+//                for (String command: crawler.getCommands()) {
+//                    ArrayList<String> response = new ArrayList<>();
+//                    ArrayList<String> results = new ArrayList<>();
+//                    CommandParser commandParser = new CommandParser(command);
+//                    command = commandParser.getAction();
+//                    // if operating on a previous command's results
+//                    if (commandParser.getSubjectNo() > -1) {
+//                        int resultsIndex = commandParser.getSubjectNo() - 1;
+//                        // find the final results of a particular operation by looping through the crawler in reverse direction
+//                        for (int i = crawler.getHtmlResponses().size() - 1; i >= 0; i--) {
+//                            // never evaluates true if subject number is -1
+//                            if (crawler.getHtmlResponses().get(i).getCommandNo() == commandParser.getSubjectNo()) {
+//                                resultsIndex = i;
+//                                break;
+//                            }
+//                        }
+//                        for (String result: crawler.getHtmlResponses().get(resultsIndex).getResults()) {
+//                            results.add(result);
+//                        }
+//                    }
+//                    else
+//                        results.add(commandParser.getObject());
+//                    int loopCounter = 0;
+//                    for (String result: results) {
+//                        loopCounter++;
+//                        if (result.length() > 32)
+//                            System.out.println("Result # " + loopCounter + ": " + result.substring(0, 31));
+//                        else
+//                            System.out.println("Result # " + loopCounter + ": " + result);
+//                        if (command.equals("Visit")) {
+//                            page = browser.newPage();
+//                            if (result.startsWith("/"))
+//                                result = baseUrl + result;
+//                            page.navigate(result);
+//                            if (baseUrl.equals(""))
+//                                baseUrl = page.url().substring(0, page.url().length() - 1);
+//                            response.add(page.content());
+//                            //crawler.addHtmlResponse(new SearchResult(response, commandParser.getCommandNo()));
+//                        }
+//                        else if (command.equals("Search")) {
+//                            response.addAll(parser.searchDocument(crawler.getHtmlResponses().getLast().getResults(), result));
+//                            //crawler.addHtmlResponse(new SearchResult(response, commandParser.getCommandNo()));
+//                        }
+//                        else if (command.equals("Text")) {
+//                            response.add(parser.getTextFromDocument(result));
+//                            //crawler.addHtmlResponse(new SearchResult(response, commandParser.getCommandNo()));
+//                        }
+//                        else if (command.equals("Attribute")) {
+//                            response.addAll(parser.getAttributesFromDocument(result, commandParser.getObject()));
+//                            //crawler.addHtmlResponse(new SearchResult(response, commandParser.getCommandNo()));
+//                        }
+//                        else if (command.equals("SQL")) {
+//                            try {
+//                                List<String> credentials = mainMenuForm.getSQLCredentials();
+//                                String sqlStatement = commandParser.getObject();
+//                                // parse contents of the SQL command
+//                                // example command: @2i or @2is
+//                                // s stands for String, i means Integer (numeric value)7
+//                                boolean atSignPresent = false;
+//                                boolean numericCharacterPresent = false;
+//                                boolean alphabeticLetterPresent = false;
+//                                int numericCharacter = -1;
+//                                boolean isNumeric = false;
+//                                for (int i = 0; i < sqlStatement.length(); i++) {
+//                                    // sub in HTML responses 
+//                                    if (sqlStatement.charAt(i) == '@') {
+//                                        atSignPresent = true;
+//                                        System.out.println("At sign present.");
+//                                    }
+//                                    if (i + 1 < sqlStatement.length()) {
+//                                        if (sqlStatement.charAt(i + 1) == '1' || sqlStatement.charAt(i + 1) == '2' ||
+//                                            sqlStatement.charAt(i + 1) == '3' || sqlStatement.charAt(i + 1) == '4' ||
+//                                            sqlStatement.charAt(i + 1) == '5' || sqlStatement.charAt(i + 1) == '6' ||
+//                                            sqlStatement.charAt(i + 1) == '7' || sqlStatement.charAt(i + 1) == '8' ||
+//                                            sqlStatement.charAt(i + 1) == '9') {
+//                                        numericCharacterPresent = true;
+//                                        numericCharacter = Integer.parseInt(String.valueOf(sqlStatement.charAt(i + 1)));
+//                                        System.out.println("Numeric character: " + numericCharacter);
+//                                        System.out.println("Numeric character present.");
+//                                        }
+//                                    }
+//                                    if (i + 2 < sqlStatement.length()) {
+//                                        if (sqlStatement.charAt(i + 2) == 'i' || sqlStatement.charAt(i + 2) == 's' ||
+//                                                sqlStatement.charAt(i + 2) == 'I' || sqlStatement.charAt(i + 2) == 'S') {
+//                                            alphabeticLetterPresent = true;
+//                                            System.out.println("Alphabetic letter present.");
+//                                        }
+//                                    }
+//                                    if (atSignPresent && numericCharacterPresent && alphabeticLetterPresent) {
+//                                        String modifiedSqlStatement = "";
+//                                        SQLDatabaseInfo dbInfo = null;
+//                                        for (String valueToInsert: crawler.getHtmlResponses().get(numericCharacter - 1).getResults()) {
+//                                            modifiedSqlStatement = sqlStatement;
+//                                            valueToInsert = "'" + valueToInsert + "'";
+//                                            modifiedSqlStatement = modifiedSqlStatement.replaceFirst("@\\d[iIsS]", valueToInsert);
+//                                            // check SQL statement for errors
+//                                            try {
+//                                                mysql = new MySQLConnector(credentials.get(0), Integer.parseInt(credentials.get(1)), credentials.get(2),
+//                                                String.valueOf(mainMenuForm.getUsername()),
+//                                                String.valueOf(mainMenuForm.getPassword()));
+//                                                mysql.fetchTableSchemas(credentials.get(0), Integer.parseInt(credentials.get(1)), credentials.get(2), String.valueOf(mainMenuForm.getUsername()), String.valueOf(mainMenuForm.getPassword()));
+//                                                dbInfo = mysql.getCurrentDbAsInfo();
+//                                            } catch (Exception ex) {
+//                                                System.out.println(ex);
+//                                            }
+//                                            SQLParser sqlParser = new SQLParser(modifiedSqlStatement, dbInfo);
+//                                            System.out.println("SQL Statement: " + sqlStatement);
+//                                            if (!sqlParser.getMustSplit()) {
+//                                                // insert a single statement
+//                                                mysql = new MySQLConnector(credentials.get(0), Integer.parseInt(credentials.get(1)), credentials.get(2),
+//                                                String.valueOf(mainMenuForm.getUsername()),
+//                                                String.valueOf(mainMenuForm.getPassword()), modifiedSqlStatement);
+//                                            } else {
+//                                                // insert multiple statements
+//                                                for (String toInsert: sqlParser.getStringsToInsert()) {
+//                                                    mysql = new MySQLConnector(credentials.get(0), Integer.parseInt(credentials.get(1)), credentials.get(2),
+//                                                    String.valueOf(mainMenuForm.getUsername()),
+//                                                    String.valueOf(mainMenuForm.getPassword()), toInsert);                                                  
+//                                                }
+//                                                
+//                                            }
+//                                        }
+//                                        atSignPresent = numericCharacterPresent = isNumeric = false;
+//                                    } else
+//                                        atSignPresent = numericCharacterPresent = isNumeric = false;
+//                                }
+//                                // prevent credentials lingering in memory
+//                                mainMenuForm.eraseCredentials();
+//                                response.add(mysql.getResult());
+//                            } catch (ClassNotFoundException ex) {
+//                                System.out.println(ex);
+//                            } 
+//                        }
+//                        else if (command.startsWith("Write")) {
+//                            File paragraphs = new File(result);
+//                            try {
+//                                FileWriter writer = new FileWriter(paragraphs);
+//                                for (String toWrite: crawler.getHtmlResponses().getLast().getResults()) {
+//                                    writer.write(toWrite + "\n");
+//                                }
+//                                writer.close();
+//                            } catch (IOException ex) {
+//                                System.out.println(ex);
+//                            }
+//                        }   
+//                        else if (command.startsWith("Python")) {
+//                        // invoke Python script
+//                            ProcessBuilder pb = new ProcessBuilder("cmd", "/c", "start", "python", "-u", commandParser.getObject())
+//                                    .inheritIO();
+//                            try {
+//                                Process process = pb.start();
+//                            } catch (IOException ex) {
+//                                Logger.getLogger(MainMenuForm.class.getName()).log(Level.SEVERE, null, ex);
+//                            }                   
+//                        }
+//                    }
+//                    if (!commandParser.getAction().equals("Python") && !commandParser.getAction().equals("Write"))
+//                        crawler.addHtmlResponse(new SearchResult(response, commandParser.getCommandNo()));
+//                    statusTA.append("Executing command " + commandParser.getAction() + "\n");
+//                    for (String line: response) {
+//                        statusTA.append(line + "\n");
+//                    }
+//                }
+//                // add HTML responses to combo box
+//                int counter = -1;
+//                responsesCB.setEnabled(true);
+//                responsesCB.removeAllItems();
+//                for (SearchResult result: crawler.getHtmlResponses()) {
+//                    counter++;
+//                    responsesCB.addItem("Response " + counter);
+//                }
+//                playwright.close();
+//            }
+//        }
     }//GEN-LAST:event_crawlBTNActionPerformed
 
     private void responsesCBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_responsesCBActionPerformed
         // TODO add your handling code here:
-        statusTA.setText("");
-        // look up crawler
-        String targetName = crawlersCB.getSelectedItem().toString();
-        WebCrawler target = null;
-        for (WebCrawler crawler: mainMenuForm.getWebCrawlers()) {
-            if (crawler.getName().equals(targetName))
-                target = crawler;
-        }
-        for (String result: target.getHtmlResponses().get(responsesCB.getSelectedIndex()).getResults()) {
-            statusTA.append(result + "\n");
+            if (crawlerWorker.getState() != STARTED ) {
+            statusTA.setText("");
+            // look up crawler
+            String targetName = crawlersCB.getSelectedItem().toString();
+            WebCrawler target = null;
+            for (WebCrawler crawler: mainMenuForm.getWebCrawlers()) {
+                if (crawler.getName().equals(targetName))
+                    target = crawler;
+            }
+            for (String result: target.getHtmlResponses().get(responsesCB.getSelectedIndex()).getResults()) {
+                statusTA.append(result + "\n");
+            }
         }
     }//GEN-LAST:event_responsesCBActionPerformed
 
@@ -453,8 +449,39 @@ public class MainMenuJP extends javax.swing.JPanel {
 
     private void formAncestorAdded(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_formAncestorAdded
         // TODO add your handling code here:
-        mainMenuForm.loadCrawlers(crawlersCB);
+        // initialise worker for the first time
+        if (crawlerWorker == null)
+        crawlerWorker = new WebCrawlerGUIWorker(mainMenuForm,
+            mysql, statusTA, crawlersCB, responsesCB);
+        // do not load crawlers if a script is currently being executed
+        if (crawlerWorker.getState() == PENDING) {
+            mainMenuForm.loadCrawlers(crawlersCB);
+            System.out.println("Last selected crawler: " + mainMenuForm.getLastSelectedCrawlerName());
+            // find previously selected crawler if reloading form
+            SwingUtilities.invokeLater(() -> {
+                System.out.println("Invoking...");
+                if (mainMenuForm.getLastSelectedCrawlerName() != null)
+                if (!mainMenuForm.getLastSelectedCrawlerName().equals(crawlersCB.getSelectedItem().toString()))
+                for (int i = 0; i < crawlersCB.getItemCount(); i++) {
+                    System.out.println("Looping");
+                    if (crawlersCB.getItemAt(i).equals(mainMenuForm.getLastSelectedCrawlerName())) {
+                        System.out.println("Match found");
+                        crawlersCB.setSelectedItem(mainMenuForm.getLastSelectedCrawlerName());
+                    }
+                }});
+            // reinitialise worker if done
+            if (crawlerWorker.getState() == DONE)
+                crawlerWorker = new WebCrawlerGUIWorker(mainMenuForm,
+                    mysql, statusTA, crawlersCB, responsesCB);
+            System.out.println("Crawler State: " + crawlerWorker.getState());
+        }
     }//GEN-LAST:event_formAncestorAdded
+
+    private void formAncestorRemoved(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_formAncestorRemoved
+        // TODO add your handling code here:
+        // memorise the last selected crawler
+        mainMenuForm.setLastSelectedCrawlerName(crawlersCB.getSelectedItem().toString());
+    }//GEN-LAST:event_formAncestorRemoved
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

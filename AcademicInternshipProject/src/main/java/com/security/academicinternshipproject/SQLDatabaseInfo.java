@@ -35,4 +35,16 @@ public class SQLDatabaseInfo {
             table.printInfo();
         }     
     }
+    
+    public SQLColumnInfo findColumn(String tableName, String columnName) {
+        for (SQLTableInfo table: tables) {
+            if (table.getTableName().equals(table.getTableName())) {
+                for (SQLColumnInfo column: table.getColumns()) {
+                    if (column.getColumnName().equals(columnName))
+                        return column;
+                }
+            }
+        }
+        return null;
+    }
 }

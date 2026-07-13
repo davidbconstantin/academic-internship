@@ -30,7 +30,7 @@ public class CommandParser {
             // extract entire SQL command
             if (action.equals("SQL") && !object.equals("")) {
                 object += " " + token;
-                System.out.println(object);
+                //System.out.println(object);
             }
             if (token.equals("Command"))
                 subject = token;

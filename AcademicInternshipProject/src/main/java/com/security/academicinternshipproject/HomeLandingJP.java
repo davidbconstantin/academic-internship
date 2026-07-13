@@ -39,7 +39,7 @@ public class HomeLandingJP extends JPanel {
         setLayout(new BorderLayout(16,16));
         setBorder(BorderFactory.createEmptyBorder(22,22,22,22));
 
-        JLabel title = new JLabel("Academic Internship Project");
+        JLabel title = new JLabel("Nascrawler");
         title.setForeground(Color.WHITE);
         title.setFont(new Font("SansSerif", Font.BOLD, 26));
 
@@ -97,21 +97,12 @@ public class HomeLandingJP extends JPanel {
         actions.add(navTitle);
         actions.add(Box.createRigidArea(new Dimension(0,12)));
 
-        actions.add(createActionButton("Open crawler workspace","mainMenuJP"));
+        actions.add(createActionButton("Open crawler workspace","Main Menu"));
         actions.add(Box.createRigidArea(new Dimension(0,10)));
 
-        actions.add(createActionButton("Configure a crawler","crawlerConfigJP"));
+        actions.add(createActionButton("Exit", null));
         actions.add(Box.createRigidArea(new Dimension(0,10)));
 
-        actions.add(createActionButton("Open scripting page","crawlerScriptingJP"));
-        actions.add(Box.createRigidArea(new Dimension(0,10)));
-
-        JButton refreshButton = new JButton("Refresh stats");
-        refreshButton.setAlignmentX(CENTER_ALIGNMENT);
-        refreshButton.setMaximumSize(new Dimension(220,34));
-        refreshButton.addActionListener(e -> refreshStats());
-
-        actions.add(refreshButton);
 
         center.add(stats, gbc);
 
@@ -160,31 +151,17 @@ public class HomeLandingJP extends JPanel {
         JButton button = new JButton(text);
         button.setAlignmentX(CENTER_ALIGNMENT);
         button.setMaximumSize(new Dimension(220,34));
-        button.addActionListener(e -> openPanel(panelName));
+        if (panelName != null)
+            button.addActionListener(e -> openPanel(panelName));
+        else
+            button.addActionListener(e -> System.exit(0));
         return button;
     }
 
     private void openPanel(String panelName) {
 
-//        if(guiManager == null){
-//            JOptionPane.showMessageDialog(this,"GUI manager not ready");
-//            return;
-//        }
-//
-//        JPanel panel = guiManager.findPanel(panelName);
-//
-//        if(panel == null){
-//            JOptionPane.showMessageDialog(this,"Panel not found: " + panelName);
-//            return;
-//        }
-//
-//        statusValue.setText(panelName);
-//
-//        if("mainMenuJP".equals(panelName) && panel instanceof MainMenuJP){
-//            //((MainMenuJP)panel).loadCrawlers();
-//        }
-//
-//        guiManager.setCurrentPanel(panel);
+    mainMenuForm.displayPanel(panelName);
+    
     }
 
     public final void refreshStats() {

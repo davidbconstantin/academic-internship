@@ -1,0 +1,14 @@
+To script a web crawler, you choose a command and enter an argument which may be either a URL or the output of a previous instruction. Commands can be added, edited and removed as one sees fit.
+Currently, the program supports over 7 commands:
+
+1) Visit - Directs the crawler to navigate to the specified URL
+2) Search - Extracts HTML tags from the active web page
+3) Text - Removes markup and accompanying syntax from the previous output
+4) Attribute - Fetches values assigned to a particular HTML attribute (e.g., href)
+5) Write - Writes the previous command's results to a text file whose name is specified as an argument
+6) SQL - Executes a SQL statement formulated by the user
+7) Python - Runs a Python file whereby its name is passed as a parameter
+
+Note that some commands exhibit the same behaviour irrespective of whether you choose to operate on URLs or search results.
+Moreover, to interleave intermediate output with SQL statements, use the below syntax (remove quotes):
+@"Command Number"i or @"Command Number"s depending on whether you are subbing in integers or strings.
