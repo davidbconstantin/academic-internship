@@ -4,6 +4,10 @@
  */
 package com.security.academicinternshipproject.helpmenu;
 
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
+
 /**
  *
  * @author rokom
@@ -28,22 +32,111 @@ public class UserManualForm extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        mainJP = new javax.swing.JPanel();
+        exitBTN = new javax.swing.JButton();
+        selectLBL = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        topicsLS = new javax.swing.JList<>();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        displayTA = new javax.swing.JTextArea();
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowClosing(java.awt.event.WindowEvent evt) {
+                formWindowClosing(evt);
+            }
+        });
+
+        mainJP.setBackground(new java.awt.Color(51, 51, 255));
+
+        exitBTN.setText("Exit");
+        exitBTN.addActionListener(this::exitBTNActionPerformed);
+
+        selectLBL.setForeground(new java.awt.Color(255, 255, 255));
+        selectLBL.setText("Select Topic");
+
+        topicsLS.setModel(new javax.swing.AbstractListModel<String>() {
+            String[] strings = { "Introduction", "Database", "Web Crawler", "Scripting", "Sentiment Analysis" };
+            public int getSize() { return strings.length; }
+            public String getElementAt(int i) { return strings[i]; }
+        });
+        topicsLS.addListSelectionListener(this::topicsLSValueChanged);
+        jScrollPane1.setViewportView(topicsLS);
+
+        displayTA.setEditable(false);
+        displayTA.setColumns(20);
+        displayTA.setLineWrap(true);
+        displayTA.setRows(5);
+        displayTA.setWrapStyleWord(true);
+        jScrollPane2.setViewportView(displayTA);
+
+        javax.swing.GroupLayout mainJPLayout = new javax.swing.GroupLayout(mainJP);
+        mainJP.setLayout(mainJPLayout);
+        mainJPLayout.setHorizontalGroup(
+            mainJPLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(mainJPLayout.createSequentialGroup()
+                .addGap(19, 19, 19)
+                .addGroup(mainJPLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jScrollPane1)
+                    .addComponent(exitBTN, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(selectLBL, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 361, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+        mainJPLayout.setVerticalGroup(
+            mainJPLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, mainJPLayout.createSequentialGroup()
+                .addGap(24, 24, 24)
+                .addComponent(selectLBL)
+                .addGap(18, 18, 18)
+                .addGroup(mainJPLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jScrollPane2)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 227, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 47, Short.MAX_VALUE)
+                .addComponent(exitBTN)
+                .addGap(19, 19, 19))
         );
+
+        getContentPane().add(mainJP, java.awt.BorderLayout.CENTER);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void exitBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exitBTNActionPerformed
+        // TODO add your handling code here:
+        dispose();
+    }//GEN-LAST:event_exitBTNActionPerformed
+
+    private void topicsLSValueChanged(javax.swing.event.ListSelectionEvent evt) {//GEN-FIRST:event_topicsLSValueChanged
+        // TODO add your handling code here:
+        // display the indicated tutorial topic
+        if (topicsLS.getSelectedValue().equals("Introduction"))
+            loadTutorialArticle("introduction.txt");
+        else if (topicsLS.getSelectedValue().equals("Database"))
+            loadTutorialArticle("database.txt");
+        else if (topicsLS.getSelectedValue().equals("Web Crawler"))
+            loadTutorialArticle("webcrawler.txt");
+        else if (topicsLS.getSelectedValue().equals("Scripting"))
+            loadTutorialArticle("scripting.txt");
+        else if (topicsLS.getSelectedValue().equals("Sentiment Analysis"))
+            loadTutorialArticle("sentimentanalysis.txt");
+    }//GEN-LAST:event_topicsLSValueChanged
+
+    private void formWindowClosing(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosing
+        // TODO add your handling code here:
+        dispose();
+    }//GEN-LAST:event_formWindowClosing
+
+    public void loadTutorialArticle(String name) {
+        try {
+            String text = Files.readString(Paths.get("tutorial/" + name));
+            displayTA.setText(text);
+            displayTA.setCaretPosition(0);
+        } catch (IOException ex) {
+            System.out.println(ex);
+        }
+    }
     /**
      * @param args the command line arguments
      */
@@ -70,5 +163,12 @@ public class UserManualForm extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTextArea displayTA;
+    private javax.swing.JButton exitBTN;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JPanel mainJP;
+    private javax.swing.JLabel selectLBL;
+    private javax.swing.JList<String> topicsLS;
     // End of variables declaration//GEN-END:variables
 }

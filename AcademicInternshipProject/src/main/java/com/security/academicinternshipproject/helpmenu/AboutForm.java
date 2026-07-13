@@ -3,6 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  * https://stackoverflow.com/questions/527719/how-to-add-hyperlink-in-jlabel
  * https://stackoverflow.com/questions/26749495/customize-detault-html-link-color-in-java-swing
+ * https://docs.oracle.com/javase/tutorial/uiswing/events/windowlistener.html
  */
 package com.security.academicinternshipproject.helpmenu;
 
@@ -47,9 +48,14 @@ public class AboutForm extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
+        addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowClosing(java.awt.event.WindowEvent evt) {
+                formWindowClosing(evt);
+            }
+        });
 
         mainJP.setBackground(new java.awt.Color(51, 51, 255));
-        mainJP.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        mainJP.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
         titleLBL.setForeground(new java.awt.Color(255, 255, 255));
         titleLBL.setText("About");
@@ -128,8 +134,13 @@ public class AboutForm extends javax.swing.JFrame {
 
     private void okBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_okBTNActionPerformed
         // TODO add your handling code here:
-        this.dispose();
+        dispose();
     }//GEN-LAST:event_okBTNActionPerformed
+
+    private void formWindowClosing(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosing
+        // TODO add your handling code here:
+        dispose();
+    }//GEN-LAST:event_formWindowClosing
 
     /**
      * @param args the command line arguments

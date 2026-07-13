@@ -7,12 +7,14 @@ com\security\academicinternshipproject\DatabaseSettingsJP$3.class
 com\security\academicinternshipproject\swingworkers\WebCrawlerGUIWorker.class
 com\security\academicinternshipproject\CrawlerScriptingJP$5.class
 com\security\academicinternshipproject\MainMenuJP$2.class
+com\security\academicinternshipproject\MainMenuForm$4.class
 com\security\academicinternshipproject\SQLDatabaseJP$1.class
 com\security\academicinternshipproject\CrawlerScriptingJP$9.class
 com\security\academicinternshipproject\helpmenu\AboutForm$1.class
 com\security\academicinternshipproject\HTMLNode.class
 com\security\academicinternshipproject\MainMenuJP$6.class
 com\security\academicinternshipproject\TaskNotifier.class
+com\security\academicinternshipproject\helpmenu\UserManualForm$2.class
 com\security\academicinternshipproject\helpmenu\UserManualForm.class
 com\security\academicinternshipproject\SQLColumnInfo.class
 com\security\academicinternshipproject\SentimentAnalysisJP.class
@@ -53,6 +55,7 @@ com\security\academicinternshipproject\CrawlerConfigJP$3.class
 com\security\academicinternshipproject\WebCrawler.class
 com\security\academicinternshipproject\MainMenuForm$3.class
 com\security\academicinternshipproject\MainMenuJP$7.class
+com\security\academicinternshipproject\helpmenu\UserManualForm$1.class
 com\security\academicinternshipproject\DatabaseQueryJP$5.class
 com\security\academicinternshipproject\SentimentAnalyser.class
 com\security\academicinternshipproject\SQLDatabaseJP$6.class
@@ -67,6 +70,7 @@ com\security\academicinternshipproject\CrawlerScriptingJP$6.class
 com\security\academicinternshipproject\CrawlerScriptingJP$8.class
 com\security\academicinternshipproject\MySQLConnector.class
 com\security\academicinternshipproject\CrawlerConfigJP$4.class
+com\security\academicinternshipproject\helpmenu\AboutForm$2.class
 com\security\academicinternshipproject\SQLDatabaseJP$4.class
 com\security\academicinternshipproject\DatabaseSettingsJP.class
 com\security\academicinternshipproject\SentimentAnalysisJP$4.class

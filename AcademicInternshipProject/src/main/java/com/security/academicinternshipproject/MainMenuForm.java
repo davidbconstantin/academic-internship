@@ -6,10 +6,12 @@
  * https://huggingface.co/recobo/agriculture-bert-uncased
  * https://medium.com/@evaGachirwa/running-python-script-with-arguments-in-the-command-line-93dfa5f10eff
  * https://stackoverflow.com/questions/6505953/cardlayout-get-the-selected-cards-name
+ * https://docs.oracle.com/javase/tutorial/uiswing/components/frame.html#windowevents
  */
 package com.security.academicinternshipproject;
 
 import com.security.academicinternshipproject.helpmenu.AboutForm;
+import com.security.academicinternshipproject.helpmenu.UserManualForm;
 import java.awt.CardLayout;
 import java.awt.Component;
 import java.awt.Container;
@@ -28,6 +30,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import javax.sql.rowset.CachedRowSet;
+import javax.swing.JDialog;
 import javax.swing.JPanel;
 
 /**
@@ -400,6 +403,7 @@ public class MainMenuForm extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(51, 51, 255));
+        setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         setForeground(java.awt.Color.gray);
         setName("mainMenuFrame"); // NOI18N
 
@@ -430,6 +434,11 @@ public class MainMenuForm extends javax.swing.JFrame {
         helpMU.add(aboutMI);
 
         userManualMI.setText("User Manual");
+        userManualMI.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                userManualMIActionPerformed(evt);
+            }
+        });
         helpMU.add(userManualMI);
 
         mainMB.add(helpMU);
@@ -460,8 +469,18 @@ public class MainMenuForm extends javax.swing.JFrame {
         AboutForm aboutForm = new AboutForm();
         aboutForm.setLocationRelativeTo(this);
         aboutForm.setTitle("About");
+        aboutForm.setDefaultCloseOperation(JDialog.DO_NOTHING_ON_CLOSE);
         aboutForm.setVisible(true);
     }//GEN-LAST:event_aboutMIActionPerformed
+
+    private void userManualMIActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_userManualMIActionPerformed
+        // TODO add your handling code here:
+        UserManualForm userManualForm = new UserManualForm();
+        userManualForm.setLocationRelativeTo(this);
+        userManualForm.setTitle("Help");
+        userManualForm.setDefaultCloseOperation(JDialog.DO_NOTHING_ON_CLOSE);
+        userManualForm.setVisible(true);
+    }//GEN-LAST:event_userManualMIActionPerformed
 
     /**
      * @param args the command line arguments
