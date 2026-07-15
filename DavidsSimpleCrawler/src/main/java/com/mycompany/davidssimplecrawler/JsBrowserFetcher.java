@@ -24,122 +24,170 @@ import java.util.List;
 public class JsBrowserFetcher {
 
     /**
-     * Opens Chrome, bypasses the pickapump consent wall using cookies and
-     * javascript injection, then waits for the station list to load.
+     * Opens Chrome, navigates to the url, waits for a specific css selector
+     * to appear in the DOM, then returns the fully rendered html.
      *
-     * Runs WITHOUT headless mode because pickapump detects and blocks
-     * headless browsers. A Chrome window will briefly appear and close.
+     * waitForSelector controls what element we wait for before grabbing html.
+     * If null or empty, falls back to a fixed time wait.
+     *
+     * Runs without headless mode because some sites block headless Chrome.
+     * A Chrome window will briefly appear and close.
      */
     public String fetchWithJs(String url, int waitSeconds) {
+        // for pickapump pages wait for station list
+        if (url.contains("pickapump")) {
+            return fetchWithWaitForSelector(url, waitSeconds, "ul.no-bullets li h5");
+        }
+        // for aldi search pages wait for product tiles
+        if (url.contains("aldi.ie")) {
+            return fetchWithWaitForSelector(url, waitSeconds, "div.product-tile");
+        }
+        // for lidl search pages wait for product grid
+        if (url.contains("lidl.ie")) {
+            return fetchWithWaitForSelector(url, waitSeconds, "article, [class*='product-grid']");
+        }
+        // for tesco wait for product list
+        if (url.contains("tesco.ie")) {
+            return fetchWithWaitForSelector(url, waitSeconds, "[data-auto='product-tile'], li.product-list--list-item");
+        }
+        // default - just use a fixed wait
+        return fetchWithWaitForSelector(url, waitSeconds, null);
+    }
+
+    /**
+     * Core fetch method.
+     * Opens Chrome, loads the url, optionally bypasses cookie consent,
+     * waits for waitForSelector to appear, then returns the page source.
+     */
+    public String fetchWithWaitForSelector(String url, int waitSeconds, String waitForSelector) {
         WebDriver driver = null;
 
         try {
             ChromeOptions options = new ChromeOptions();
-
-            // do NOT use headless - pickapump blocks headless browsers
-            // a chrome window will briefly appear on screen while scraping
-            // options.addArguments("--headless"); // intentionally disabled
-
+            // headless disabled - some sites detect and block headless chrome
+            // options.addArguments("--headless");
             options.addArguments("--disable-gpu");
             options.addArguments("--no-sandbox");
             options.addArguments("--window-size=1280,800");
             options.addArguments("--disable-blink-features=AutomationControlled");
             options.addArguments("--disable-extensions");
-
-            // make chrome look as much like a real browser as possible
             options.setExperimentalOption("excludeSwitches", new String[]{"enable-automation"});
             options.setExperimentalOption("useAutomationExtension", false);
 
             driver = new ChromeDriver(options);
 
-            // remove the webdriver property that sites use to detect automation
+            // remove webdriver detection flag
             ((JavascriptExecutor) driver).executeScript(
                 "Object.defineProperty(navigator, 'webdriver', {get: () => undefined})"
             );
 
-            // step 1: visit pickapump home page first to establish the domain
-            driver.get("https://pickapump.com");
-            Thread.sleep(3000);
-
-            // step 2: set consent cookies before loading the county page
-            driver.manage().addCookie(new Cookie(
-                "cookieconsent_status", "dismiss", "pickapump.com", "/", null));
-
-            // step 3: set localStorage consent flags via javascript
-            ((JavascriptExecutor) driver).executeScript(
-                "localStorage.setItem('cookieconsent_status', 'dismiss');" +
-                "localStorage.setItem('FCCDCF', '[1,1,1,[],[],[1,1,1,1,1,1,1,1,1,1],[],{}]');" +
-                "localStorage.setItem('eupubconsent-v2', 'accepted');"
-            );
-
-            Thread.sleep(1000);
-
-            // step 4: navigate to the target county page
-            driver.get(url);
-            Thread.sleep(3000);
-
-            // step 5: dismiss any consent popups that still appear
-            // try the simple cookieconsent banner
-            try {
-                WebDriverWait popupWait = new WebDriverWait(driver, Duration.ofSeconds(5));
-                WebElement allowBtn = popupWait.until(
-                    ExpectedConditions.elementToBeClickable(
-                        By.cssSelector("a.cc-btn.cc-allow")
-                    )
+            // ── pickapump: inject consent cookies before loading ──────
+            if (url.contains("pickapump")) {
+                driver.get("https://pickapump.com");
+                Thread.sleep(2000);
+                driver.manage().addCookie(new Cookie(
+                    "cookieconsent_status", "dismiss", "pickapump.com", "/", null));
+                ((JavascriptExecutor) driver).executeScript(
+                    "localStorage.setItem('cookieconsent_status', 'dismiss');" +
+                    "localStorage.setItem('FCCDCF', '[1,1,1,[],[],[1,1,1,1,1,1,1,1,1,1],[],{}]');"
                 );
-                allowBtn.click();
-                System.out.println("Dismissed simple cookie banner.");
-                Thread.sleep(1500);
-            } catch (Exception e) {
-                System.out.println("No simple banner or already dismissed.");
+                Thread.sleep(500);
             }
 
-            // try the full gdpr consent wall - click accept all
-            try {
-                List<WebElement> acceptBtns = driver.findElements(
-                    By.xpath("//button[normalize-space()='Accept all']")
-                );
-                if (acceptBtns.isEmpty()) {
-                    acceptBtns = driver.findElements(
-                        By.xpath("//a[normalize-space()='Accept all']")
+            // ── aldi: inject consent before loading search ────────────
+            if (url.contains("aldi.ie")) {
+                driver.get("https://www.aldi.ie");
+                Thread.sleep(2000);
+                // try to dismiss the onetrust cookie banner
+                try {
+                    WebDriverWait popupWait = new WebDriverWait(driver, Duration.ofSeconds(6));
+                    WebElement acceptBtn = popupWait.until(
+                        ExpectedConditions.elementToBeClickable(
+                            By.id("onetrust-accept-btn-handler")
+                        )
                     );
+                    acceptBtn.click();
+                    System.out.println("Aldi: dismissed OneTrust cookie banner.");
+                    Thread.sleep(1500);
+                } catch (Exception e) {
+                    System.out.println("Aldi: no cookie banner found or already dismissed.");
                 }
-                if (!acceptBtns.isEmpty()) {
-                    acceptBtns.get(0).click();
-                    System.out.println("Clicked GDPR Accept all.");
+            }
+
+            // ── load the target url ───────────────────────────────────
+            driver.get(url);
+            System.out.println("Loaded: " + url);
+
+            // ── wait for the target content to appear ─────────────────
+            if (waitForSelector != null && !waitForSelector.isEmpty()) {
+                System.out.println("Waiting for: " + waitForSelector);
+                try {
+                    WebDriverWait contentWait = new WebDriverWait(driver,
+                        Duration.ofSeconds(waitSeconds));
+                    contentWait.until(
+                        ExpectedConditions.presenceOfElementLocated(
+                            By.cssSelector(waitForSelector)
+                        )
+                    );
+                    System.out.println("Content detected: " + waitForSelector);
+                    // extra small wait for remaining content to settle
+                    Thread.sleep(1500);
+                } catch (Exception e) {
+                    System.out.println("Timed out waiting for: " + waitForSelector);
+                    // still grab what loaded
                     Thread.sleep(2000);
-                } else {
-                    System.out.println("No GDPR wall visible.");
                 }
-            } catch (Exception e) {
-                System.out.println("GDPR click failed: " + e.getMessage());
+            } else {
+                // no selector specified - just wait the full time
+                Thread.sleep(waitSeconds * 1000L);
             }
 
-            // step 6: wait for station data to appear
-            System.out.println("Waiting for station list...");
-            try {
-                WebDriverWait contentWait = new WebDriverWait(driver,
-                    Duration.ofSeconds(waitSeconds));
-                contentWait.until(
-                    ExpectedConditions.presenceOfElementLocated(
+            // ── for pickapump: dismiss consent popup if still showing ──
+            if (url.contains("pickapump")) {
+                try {
+                    List<WebElement> simpleButtons = driver.findElements(
+                        By.cssSelector("a.cc-btn.cc-allow, a.cc-btn.cc-dismiss, .cc-allow")
+                    );
+                    if (!simpleButtons.isEmpty()) {
+                        simpleButtons.get(0).click();
+                        System.out.println("Pickapump: clicked simple cookie banner.");
+                        Thread.sleep(1000);
+                    }
+                } catch (Exception e) {
+                    System.out.println("Pickapump: no simple banner.");
+                }
+                try {
+                    List<WebElement> gdprButtons = driver.findElements(
+                        By.xpath("//*[contains(text(),'Accept all') and not(contains(@class,'vendor'))]")
+                    );
+                    if (!gdprButtons.isEmpty()) {
+                        gdprButtons.get(0).click();
+                        System.out.println("Pickapump: clicked GDPR accept all.");
+                        Thread.sleep(2000);
+                    }
+                } catch (Exception e) {
+                    System.out.println("Pickapump: no GDPR wall.");
+                }
+
+                // re-wait for station list after consent
+                try {
+                    WebDriverWait reWait = new WebDriverWait(driver, Duration.ofSeconds(waitSeconds));
+                    reWait.until(ExpectedConditions.presenceOfElementLocated(
                         By.cssSelector("ul.no-bullets li h5")
-                    )
-                );
-                System.out.println("Station list loaded.");
-            } catch (Exception e) {
-                System.out.println("Timed out waiting for stations.");
+                    ));
+                    System.out.println("Pickapump: station list loaded.");
+                    Thread.sleep(1500);
+                } catch (Exception e) {
+                    System.out.println("Pickapump: timed out waiting for stations.");
+                }
             }
-
-            Thread.sleep(2000);
 
             return driver.getPageSource();
 
         } catch (InterruptedException e) {
             return "ERROR: Interrupted.";
-
         } catch (Exception e) {
             return "ERROR: " + e.getMessage();
-
         } finally {
             if (driver != null) {
                 driver.quit();

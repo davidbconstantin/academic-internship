@@ -9,33 +9,54 @@ package com.mycompany.davidssimplecrawler;
  * @author david
  */
 import javax.swing.*;
-import javax.swing.table.DefaultTableModel;
+import javax.swing.border.*;
+import javax.swing.table.*;
 import java.awt.*;
+import java.awt.event.*;
+import java.awt.geom.*;
 import java.util.ArrayList;
 
 public class MainWindow extends JFrame {
 
-    //basic window setup for main window
+    // ── colour palette ───────────────────────────────────────────────
+    // dark background colours
+    private static final Color BG_DARK      = new Color(15, 17, 26);
+    private static final Color BG_CARD      = new Color(24, 28, 42);
+    private static final Color BG_INPUT     = new Color(32, 37, 54);
+    private static final Color BG_TABLE_ALT = new Color(20, 23, 35);
 
-    //vars for the crawler tab
+    // accent colours
+    private static final Color ACCENT_BLUE    = new Color(99, 102, 241);
+    private static final Color ACCENT_PURPLE  = new Color(139, 92, 246);
+    private static final Color ACCENT_GREEN   = new Color(16, 185, 129);
+    private static final Color ACCENT_YELLOW  = new Color(245, 158, 11);
+    private static final Color ACCENT_RED     = new Color(239, 68, 68);
+
+    // text colours
+    private static final Color TEXT_PRIMARY   = new Color(248, 250, 252);
+    private static final Color TEXT_SECONDARY = new Color(148, 163, 184);
+    private static final Color TEXT_MUTED     = new Color(71, 85, 105);
+
+    // border colour
+    private static final Color BORDER_COLOR  = new Color(44, 50, 70);
+
+    // fonts
+    private static final Font FONT_TITLE  = new Font("SansSerif", Font.BOLD, 22);
+    private static final Font FONT_LABEL  = new Font("SansSerif", Font.BOLD, 12);
+    private static final Font FONT_INPUT  = new Font("SansSerif", Font.PLAIN, 13);
+    private static final Font FONT_SMALL  = new Font("SansSerif", Font.PLAIN, 11);
+    private static final Font FONT_MONO   = new Font("Monospaced", Font.PLAIN, 12);
+
+    // ── crawler tab vars ─────────────────────────────────────────────
     private JTextField urlField;
     private JTextField delayField;
     private JTextField selectorField;
     private JComboBox<String> parseModeBox;
     private JTextArea statusArea;
-
-    // store the last fetched html so we can re-parse without re-fetching
     private String lastHtml = "";
-
-    //vars for the fuel saved prices tab
-    private JTable fuelTable;
-    private DefaultTableModel fuelTableModel;
-    private JLabel fuelPathLabel;
-
-    //vars for the county dropdown
     private JComboBox<String> countyBox;
 
-    //vars for the product search tab
+    // ── product search tab vars ──────────────────────────────────────
     private JTextField productSearchField;
     private JCheckBox[] supermarketCheckboxes;
     private JTextArea productStatusArea;
@@ -43,389 +64,592 @@ public class MainWindow extends JFrame {
     private DefaultTableModel productTableModel;
     private JLabel productPathLabel;
 
-    // scrapers and readers
-    private FuelScraper fuelScraper = new FuelScraper();
-    private ProductScraper productScraper = new ProductScraper();
-    private CsvReader csvReader = new CsvReader();
+    // ── fuel tab vars ────────────────────────────────────────────────
+    private JTable fuelTable;
+    private DefaultTableModel fuelTableModel;
+    private JLabel fuelPathLabel;
+    private JLabel fuelCountLabel;
 
-    // all 26 irish counties mapped to their pickapump urls
+    // scrapers and readers
+    private FuelScraper fuelScraper       = new FuelScraper();
+    private ProductScraper productScraper = new ProductScraper();
+    private CsvReader csvReader           = new CsvReader();
+
+    // all 26 irish counties
     private static final String[][] COUNTIES = {
-        {"Dublin",      "https://pickapump.com/county/dublin"},
-        {"Cork",        "https://pickapump.com/county/cork"},
-        {"Galway",      "https://pickapump.com/county/galway"},
-        {"Limerick",    "https://pickapump.com/county/limerick"},
-        {"Waterford",   "https://pickapump.com/county/waterford"},
-        {"Tipperary",   "https://pickapump.com/county/tipperary"},
-        {"Kerry",       "https://pickapump.com/county/kerry"},
-        {"Donegal",     "https://pickapump.com/county/donegal"},
-        {"Wexford",     "https://pickapump.com/county/wexford"},
-        {"Wicklow",     "https://pickapump.com/county/wicklow"},
-        {"Meath",       "https://pickapump.com/county/meath"},
-        {"Kildare",     "https://pickapump.com/county/kildare"},
-        {"Louth",       "https://pickapump.com/county/louth"},
-        {"Kilkenny",    "https://pickapump.com/county/kilkenny"},
-        {"Westmeath",   "https://pickapump.com/county/westmeath"},
-        {"Clare",       "https://pickapump.com/county/clare"},
-        {"Offaly",      "https://pickapump.com/county/offaly"},
-        {"Laois",       "https://pickapump.com/county/laois"},
-        {"Cavan",       "https://pickapump.com/county/cavan"},
-        {"Monaghan",    "https://pickapump.com/county/monaghan"},
-        {"Longford",    "https://pickapump.com/county/longford"},
-        {"Roscommon",   "https://pickapump.com/county/roscommon"},
-        {"Sligo",       "https://pickapump.com/county/sligo"},
-        {"Leitrim",     "https://pickapump.com/county/leitrim"},
-        {"Mayo",        "https://pickapump.com/county/mayo"},
-        {"Carlow",      "https://pickapump.com/county/carlow"},
+        {"Dublin",    "https://pickapump.com/county/dublin"},
+        {"Cork",      "https://pickapump.com/county/cork"},
+        {"Galway",    "https://pickapump.com/county/galway"},
+        {"Limerick",  "https://pickapump.com/county/limerick"},
+        {"Waterford", "https://pickapump.com/county/waterford"},
+        {"Tipperary", "https://pickapump.com/county/tipperary"},
+        {"Kerry",     "https://pickapump.com/county/kerry"},
+        {"Donegal",   "https://pickapump.com/county/donegal"},
+        {"Wexford",   "https://pickapump.com/county/wexford"},
+        {"Wicklow",   "https://pickapump.com/county/wicklow"},
+        {"Meath",     "https://pickapump.com/county/meath"},
+        {"Kildare",   "https://pickapump.com/county/kildare"},
+        {"Louth",     "https://pickapump.com/county/louth"},
+        {"Kilkenny",  "https://pickapump.com/county/kilkenny"},
+        {"Westmeath", "https://pickapump.com/county/westmeath"},
+        {"Clare",     "https://pickapump.com/county/clare"},
+        {"Offaly",    "https://pickapump.com/county/offaly"},
+        {"Laois",     "https://pickapump.com/county/laois"},
+        {"Cavan",     "https://pickapump.com/county/cavan"},
+        {"Monaghan",  "https://pickapump.com/county/monaghan"},
+        {"Longford",  "https://pickapump.com/county/longford"},
+        {"Roscommon", "https://pickapump.com/county/roscommon"},
+        {"Sligo",     "https://pickapump.com/county/sligo"},
+        {"Leitrim",   "https://pickapump.com/county/leitrim"},
+        {"Mayo",      "https://pickapump.com/county/mayo"},
+        {"Carlow",    "https://pickapump.com/county/carlow"},
     };
 
     public MainWindow() {
-        setTitle("Web Crawler Application");
-        setSize(980, 680);
+        setTitle("Web Crawler — David Bulugea");
+        setSize(1100, 720);
+        setMinimumSize(new Dimension(900, 600));
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLocationRelativeTo(null);
+        setBackground(BG_DARK);
 
-        //build the ui
+        // set the look and feel to system default so fonts render cleanly
+        try {
+            UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
+        } catch (Exception e) {
+            // fallback to default
+        }
+
         buildUI();
     }
 
+    // ── main layout ──────────────────────────────────────────────────
+
     private void buildUI() {
+        JPanel root = new JPanel(new BorderLayout());
+        root.setBackground(BG_DARK);
 
-        // main panel with a mauve colour 90,90,255
-        JPanel mainPanel = new JPanel(new BorderLayout(10, 10));
-        mainPanel.setBackground(new Color(90, 90, 255));
-        mainPanel.setBorder(BorderFactory.createEmptyBorder(20, 20, 20, 20));
+        // sidebar navigation on the left
+        root.add(buildSidebar(), BorderLayout.WEST);
 
-        // title label at the top
-        JLabel titleLabel = new JLabel("Web Crawler Application", SwingConstants.CENTER);
-        titleLabel.setFont(new Font("SansSerif", Font.BOLD, 24));
-        titleLabel.setForeground(Color.WHITE);
-        mainPanel.add(titleLabel, BorderLayout.NORTH);
+        // content area on the right uses a card layout switched by the sidebar
+        JPanel contentArea = new JPanel(new CardLayout());
+        contentArea.setBackground(BG_DARK);
+        contentArea.add(buildFuelTab(),       "fuel");
+        contentArea.add(buildProductTab(),    "products");
+        contentArea.add(buildCrawlerTab(),    "crawler");
+        contentArea.add(buildSavedFuelTab(),  "saved_fuel");
+        contentArea.add(buildSavedProdTab(),  "saved_products");
+        root.add(contentArea, BorderLayout.CENTER);
 
-        // three tabs
-        JTabbedPane tabs = new JTabbedPane();
-        tabs.addTab("Crawler", buildCrawlerTab());
-        tabs.addTab("Product Search", buildProductSearchTab());
-        tabs.addTab("Saved Prices", buildFuelSavedTab());
-        tabs.addTab("Saved Products", buildProductSavedTab());
-        mainPanel.add(tabs, BorderLayout.CENTER);
+        // wire up the sidebar buttons to switch cards
+        wireSidebarToCards(root, contentArea);
 
-        add(mainPanel);
+        setContentPane(root);
     }
 
-    // ── TAB 1: general crawler ───────────────────────────────────────
+    // ── sidebar ──────────────────────────────────────────────────────
 
-    private JPanel buildCrawlerTab() {
+    private JPanel buildSidebar() {
+        JPanel sidebar = new JPanel();
+        sidebar.setPreferredSize(new Dimension(200, 0));
+        sidebar.setBackground(BG_CARD);
+        sidebar.setLayout(new BoxLayout(sidebar, BoxLayout.Y_AXIS));
+        sidebar.setBorder(BorderFactory.createMatteBorder(0, 0, 0, 1, BORDER_COLOR));
 
-        JPanel panel = new JPanel(new BorderLayout(10, 10));
-        panel.setOpaque(false);
+        // app logo area
+        JPanel logoPanel = new JPanel(new BorderLayout());
+        logoPanel.setBackground(BG_CARD);
+        logoPanel.setBorder(BorderFactory.createEmptyBorder(24, 20, 20, 20));
+        logoPanel.setMaximumSize(new Dimension(200, 90));
+
+        JLabel logo = new JLabel("🕷 WebCrawler");
+        logo.setFont(new Font("SansSerif", Font.BOLD, 16));
+        logo.setForeground(TEXT_PRIMARY);
+        logoPanel.add(logo, BorderLayout.CENTER);
+
+        JLabel sub = new JLabel("David Bulugea  ·  22516586");
+        sub.setFont(FONT_SMALL);
+        sub.setForeground(TEXT_MUTED);
+        logoPanel.add(sub, BorderLayout.SOUTH);
+
+        sidebar.add(logoPanel);
+
+        // divider
+        sidebar.add(makeDivider());
+
+        // nav section label
+        sidebar.add(makeSectionLabel("SCRAPING"));
+
+        // nav buttons - each has an id matching a card name
+        sidebar.add(makeNavBtn("⛽  Fuel Prices",    "fuel",           ACCENT_BLUE));
+        sidebar.add(makeNavBtn("🛒  Product Search", "products",       ACCENT_GREEN));
+        sidebar.add(Box.createVerticalStrut(8));
+        sidebar.add(makeSectionLabel("DATA"));
+        sidebar.add(makeNavBtn("📋  Saved Fuel",     "saved_fuel",     ACCENT_PURPLE));
+        sidebar.add(makeNavBtn("📦  Saved Products", "saved_products", ACCENT_YELLOW));
+        sidebar.add(Box.createVerticalStrut(8));
+        sidebar.add(makeDivider());
+        sidebar.add(makeSectionLabel("TOOLS"));
+        sidebar.add(makeNavBtn("🔧  Crawler",        "crawler",        ACCENT_RED));
+
+        sidebar.add(Box.createVerticalGlue());
+
+        // version label at the bottom
+        JLabel version = new JLabel("  v1.0  ·  Day 7");
+        version.setFont(FONT_SMALL);
+        version.setForeground(TEXT_MUTED);
+        version.setBorder(BorderFactory.createEmptyBorder(12, 20, 16, 0));
+        sidebar.add(version);
+
+        return sidebar;
+    }
+
+    /** Wires each sidebar nav button to show the matching card panel. */
+    private void wireSidebarToCards(JPanel root, JPanel contentArea) {
+        CardLayout cl = (CardLayout) contentArea.getLayout();
+
+        // find all nav buttons in the sidebar and add listeners
+        Component sidebar = root.getComponent(0);
+        for (Component c : ((JPanel) sidebar).getComponents()) {
+            if (c instanceof JButton) {
+                JButton btn = (JButton) c;
+                String cardName = (String) btn.getClientProperty("card");
+                if (cardName != null) {
+                    btn.addActionListener(e -> cl.show(contentArea, cardName));
+                }
+            }
+        }
+    }
+
+    // ── TAB: fuel prices ─────────────────────────────────────────────
+
+    private JPanel buildFuelTab() {
+        JPanel page = makePage();
+
+        // header
+        page.add(makePageHeader("⛽ Fuel Prices", "Scrape live fuel prices from Pickapump.com by county"), BorderLayout.NORTH);
+
+        JPanel body = new JPanel(new BorderLayout(16, 16));
+        body.setBackground(BG_DARK);
+        body.setBorder(BorderFactory.createEmptyBorder(16, 24, 24, 24));
+
+        // left: controls card
+        JPanel controlCard = makeCard();
+        controlCard.setLayout(new BoxLayout(controlCard, BoxLayout.Y_AXIS));
+        controlCard.setPreferredSize(new Dimension(280, 0));
+
+        addCardLabel(controlCard, "SELECT COUNTY");
+        controlCard.add(Box.createVerticalStrut(6));
+
+        // county dropdown
+        String[] countyNames = new String[COUNTIES.length];
+        for (int i = 0; i < COUNTIES.length; i++) countyNames[i] = COUNTIES[i][0];
+        countyBox = new JComboBox<>(countyNames);
+        styleCombo(countyBox);
+        countyBox.setMaximumSize(new Dimension(Integer.MAX_VALUE, 36));
+        countyBox.addActionListener(e -> {
+            int idx = countyBox.getSelectedIndex();
+            if (idx >= 0) urlField.setText(COUNTIES[idx][1]);
+        });
+        controlCard.add(countyBox);
+        controlCard.add(Box.createVerticalStrut(16));
+
+        addCardLabel(controlCard, "WAIT TIME (SECONDS)");
+        controlCard.add(Box.createVerticalStrut(6));
+        delayField = makeInput("15");
+        delayField.setMaximumSize(new Dimension(Integer.MAX_VALUE, 36));
+        controlCard.add(delayField);
+        controlCard.add(Box.createVerticalStrut(20));
+
+        // scrape button
+        JButton scrapeBtn = makeButton("⛽  Scrape Fuel Prices", ACCENT_BLUE);
+        scrapeBtn.setMaximumSize(new Dimension(Integer.MAX_VALUE, 42));
+        scrapeBtn.addActionListener(e -> onScrapeFuelClicked());
+        controlCard.add(scrapeBtn);
+        controlCard.add(Box.createVerticalStrut(8));
+
+        // info note
+        JLabel note = new JLabel("<html><center>A Chrome window will briefly<br>appear — this is normal.</center></html>");
+        note.setFont(FONT_SMALL);
+        note.setForeground(TEXT_MUTED);
+        note.setAlignmentX(Component.CENTER_ALIGNMENT);
+        controlCard.add(Box.createVerticalStrut(12));
+        controlCard.add(note);
+        controlCard.add(Box.createVerticalGlue());
+
+        body.add(controlCard, BorderLayout.WEST);
+
+        // right: status area
+        JPanel statusCard = makeCard();
+        statusCard.setLayout(new BorderLayout(0, 8));
+
+        JLabel statusTitle = new JLabel("Status Log");
+        statusTitle.setFont(FONT_LABEL);
+        statusTitle.setForeground(TEXT_SECONDARY);
+        statusCard.add(statusTitle, BorderLayout.NORTH);
 
         statusArea = new JTextArea();
         statusArea.setEditable(false);
         statusArea.setLineWrap(true);
         statusArea.setWrapStyleWord(true);
-        statusArea.setText("Select a county and click 'Scrape Fuel Prices', or enter any URL and use 'Fetch & Parse'.\n\n" +
-                           "A Chrome window will briefly appear when scraping fuel prices - this is normal.");
-        panel.add(new JScrollPane(statusArea), BorderLayout.CENTER);
+        statusArea.setFont(FONT_MONO);
+        statusArea.setBackground(BG_INPUT);
+        statusArea.setForeground(TEXT_PRIMARY);
+        statusArea.setCaretColor(TEXT_PRIMARY);
+        statusArea.setBorder(BorderFactory.createEmptyBorder(10, 12, 10, 12));
+        statusArea.setText("Select a county and click 'Scrape Fuel Prices' to begin.\n\n" +
+                           "Results will appear in the Saved Fuel tab after scraping.");
+        JScrollPane scroll = new JScrollPane(statusArea);
+        scroll.setBorder(BorderFactory.createLineBorder(BORDER_COLOR));
+        scroll.getViewport().setBackground(BG_INPUT);
+        statusCard.add(scroll, BorderLayout.CENTER);
 
-        JPanel inputPanel = new JPanel(new GridBagLayout());
-        inputPanel.setOpaque(false);
-        GridBagConstraints gbc = new GridBagConstraints();
-        gbc.insets = new Insets(4, 4, 4, 4);
-        gbc.fill = GridBagConstraints.HORIZONTAL;
+        // hidden url field - updated by county dropdown, used by scraper
+        urlField = new JTextField(COUNTIES[0][1]);
+        urlField.setVisible(false);
 
-        // county dropdown - row 0
-        addWhiteLabel(inputPanel, "County:", gbc, 0, 0);
-        String[] countyNames = new String[COUNTIES.length];
-        for (int i = 0; i < COUNTIES.length; i++) countyNames[i] = COUNTIES[i][0];
-        countyBox = new JComboBox<>(countyNames);
-        countyBox.addActionListener(e -> updateUrlFromCounty());
-        gbc.gridx = 1; gbc.gridy = 0; gbc.weightx = 1;
-        inputPanel.add(countyBox, gbc);
-
-        // URL field - row 1
-        addWhiteLabel(inputPanel, "URL:", gbc, 0, 1);
-        urlField = new JTextField(COUNTIES[0][1], 28);
-        gbc.gridx = 1; gbc.gridy = 1; gbc.weightx = 1;
-        inputPanel.add(urlField, gbc);
-
-        // delay field - row 2
-        addWhiteLabel(inputPanel, "Delay in (s):", gbc, 0, 2);
-        delayField = new JTextField("15", 5);
-        gbc.gridx = 1; gbc.gridy = 2; gbc.weightx = 0;
-        inputPanel.add(delayField, gbc);
-
-        // parse mode - row 3
-        addWhiteLabel(inputPanel, "Parse Mode:", gbc, 0, 3);
-        parseModeBox = new JComboBox<>(new String[]{"Text", "Links", "CSS Selector"});
-        gbc.gridx = 1; gbc.gridy = 3; gbc.weightx = 0;
-        inputPanel.add(parseModeBox, gbc);
-
-        // css selector - row 4
-        addWhiteLabel(inputPanel, "CSS Selector:", gbc, 0, 4);
-        selectorField = new JTextField("div.fuel-price-item", 10);
-        gbc.gridx = 1; gbc.gridy = 4; gbc.weightx = 0;
-        inputPanel.add(selectorField, gbc);
-
-        // buttons - row 5
-        JPanel btnRow = new JPanel(new FlowLayout(FlowLayout.LEFT, 8, 0));
-        btnRow.setOpaque(false);
-
-        JButton fetchParseBtn = new JButton("Fetch & Parse");
-        fetchParseBtn.setFont(new Font("SansSerif", Font.BOLD, 13));
-        fetchParseBtn.addActionListener(e -> onFetchAndParseClicked());
-        btnRow.add(fetchParseBtn);
-
-        JButton reparseBtn = new JButton("Re-Parse Last HTML");
-        reparseBtn.setFont(new Font("SansSerif", Font.PLAIN, 12));
-        reparseBtn.addActionListener(e -> parseAndDisplay(lastHtml));
-        btnRow.add(reparseBtn);
-
-        JButton fuelBtn = new JButton("Scrape Fuel Prices");
-        fuelBtn.setFont(new Font("SansSerif", Font.BOLD, 13));
-        fuelBtn.setBackground(new Color(255, 200, 0));
-        fuelBtn.addActionListener(e -> onScrapeFuelClicked());
-        btnRow.add(fuelBtn);
-
-        gbc.gridx = 1; gbc.gridy = 5; gbc.weightx = 0;
-        inputPanel.add(btnRow, gbc);
-
-        panel.add(inputPanel, BorderLayout.SOUTH);
-        return panel;
+        body.add(statusCard, BorderLayout.CENTER);
+        page.add(body, BorderLayout.CENTER);
+        return page;
     }
 
-    // ── TAB 2: product search ────────────────────────────────────────
+    // ── TAB: product search ──────────────────────────────────────────
 
-    /**
-     * Builds the product search tab.
-     * User types a product name, picks which supermarkets to search,
-     * clicks search and results appear in the table below.
-     */
-    private JPanel buildProductSearchTab() {
+    private JPanel buildProductTab() {
+        JPanel page = makePage();
+        page.add(makePageHeader("🛒 Product Search", "Search for any product across Irish supermarkets"), BorderLayout.NORTH);
 
-        JPanel panel = new JPanel(new BorderLayout(10, 10));
-        panel.setOpaque(false);
+        JPanel body = new JPanel(new BorderLayout(16, 16));
+        body.setBackground(BG_DARK);
+        body.setBorder(BorderFactory.createEmptyBorder(16, 24, 24, 24));
 
-        // top controls section
-        JPanel topPanel = new JPanel(new GridBagLayout());
-        topPanel.setOpaque(false);
-        GridBagConstraints gbc = new GridBagConstraints();
-        gbc.insets = new Insets(6, 6, 6, 6);
-        gbc.fill = GridBagConstraints.HORIZONTAL;
+        // top: search controls
+        JPanel topCard = makeCard();
+        topCard.setLayout(new BoxLayout(topCard, BoxLayout.Y_AXIS));
 
-        // product search input - row 0
-        addWhiteLabel(topPanel, "Search Product:", gbc, 0, 0);
-        productSearchField = new JTextField("strawberries", 22);
-        productSearchField.setFont(new Font("SansSerif", Font.PLAIN, 14));
-        gbc.gridx = 1; gbc.gridy = 0; gbc.weightx = 1;
-        topPanel.add(productSearchField, gbc);
+        addCardLabel(topCard, "PRODUCT NAME");
+        topCard.add(Box.createVerticalStrut(6));
+        productSearchField = makeInput("e.g. strawberries, milk, bread");
+        productSearchField.setMaximumSize(new Dimension(Integer.MAX_VALUE, 38));
+        topCard.add(productSearchField);
+        topCard.add(Box.createVerticalStrut(16));
 
-        // supermarket checkboxes - row 1
-        addWhiteLabel(topPanel, "Supermarkets:", gbc, 0, 1);
-        JPanel checkPanel = new JPanel(new FlowLayout(FlowLayout.LEFT, 8, 0));
-        checkPanel.setOpaque(false);
+        addCardLabel(topCard, "SUPERMARKETS");
+        topCard.add(Box.createVerticalStrut(8));
+
+        // supermarket checkboxes in a row
+        JPanel checkRow = new JPanel(new FlowLayout(FlowLayout.LEFT, 12, 0));
+        checkRow.setBackground(BG_CARD);
+        checkRow.setMaximumSize(new Dimension(Integer.MAX_VALUE, 36));
         supermarketCheckboxes = new JCheckBox[ProductScraper.SUPERMARKETS.length];
         for (int i = 0; i < ProductScraper.SUPERMARKETS.length; i++) {
             JCheckBox cb = new JCheckBox(ProductScraper.SUPERMARKETS[i][0]);
-            cb.setForeground(Color.WHITE);
-            cb.setOpaque(false);
-            cb.setSelected(true); // all ticked by default
+            cb.setFont(FONT_INPUT);
+            cb.setForeground(TEXT_PRIMARY);
+            cb.setBackground(BG_CARD);
+            cb.setSelected(true);
             supermarketCheckboxes[i] = cb;
-            checkPanel.add(cb);
+            checkRow.add(cb);
         }
-        gbc.gridx = 1; gbc.gridy = 1; gbc.weightx = 1;
-        topPanel.add(checkPanel, gbc);
+        topCard.add(checkRow);
+        topCard.add(Box.createVerticalStrut(16));
 
-        // search button - row 2
-        JPanel searchBtnRow = new JPanel(new FlowLayout(FlowLayout.LEFT, 8, 0));
-        searchBtnRow.setOpaque(false);
+        // search + save buttons side by side
+        JPanel btnRow = new JPanel(new FlowLayout(FlowLayout.LEFT, 10, 0));
+        btnRow.setBackground(BG_CARD);
+        btnRow.setMaximumSize(new Dimension(Integer.MAX_VALUE, 44));
 
-        JButton searchBtn = new JButton("Search Products");
-        searchBtn.setFont(new Font("SansSerif", Font.BOLD, 14));
-        searchBtn.setBackground(new Color(0, 200, 100));
+        JButton searchBtn = makeButton("🔍  Search Products", ACCENT_GREEN);
         searchBtn.addActionListener(e -> onSearchProductsClicked());
-        searchBtnRow.add(searchBtn);
+        btnRow.add(searchBtn);
 
-        JButton saveProductsBtn = new JButton("Save Results to CSV");
-        saveProductsBtn.setFont(new Font("SansSerif", Font.PLAIN, 12));
-        saveProductsBtn.addActionListener(e -> onSaveProductsClicked());
-        searchBtnRow.add(saveProductsBtn);
+        JButton saveBtn = makeSmallButton("💾  Save to CSV", ACCENT_PURPLE);
+        saveBtn.addActionListener(e -> onSaveProductsClicked());
+        btnRow.add(saveBtn);
 
-        gbc.gridx = 1; gbc.gridy = 2; gbc.weightx = 0;
-        topPanel.add(searchBtnRow, gbc);
+        topCard.add(btnRow);
+        body.add(topCard, BorderLayout.NORTH);
 
-        panel.add(topPanel, BorderLayout.NORTH);
-
-        // split pane - status log top, results table bottom
+        // bottom: split between log and results table
         JSplitPane split = new JSplitPane(JSplitPane.VERTICAL_SPLIT);
-        split.setDividerLocation(100);
-        split.setOpaque(false);
+        split.setDividerLocation(110);
+        split.setBackground(BG_DARK);
+        split.setBorder(null);
 
+        // status log
+        JPanel logCard = makeCard();
+        logCard.setLayout(new BorderLayout(0, 6));
+        JLabel logTitle = new JLabel("Search Log");
+        logTitle.setFont(FONT_LABEL);
+        logTitle.setForeground(TEXT_SECONDARY);
+        logCard.add(logTitle, BorderLayout.NORTH);
         productStatusArea = new JTextArea();
         productStatusArea.setEditable(false);
         productStatusArea.setLineWrap(true);
-        productStatusArea.setWrapStyleWord(true);
-        productStatusArea.setText("Type a product name, pick supermarkets, then click 'Search Products'.\n" +
-                                  "Chrome will open for each supermarket to load JavaScript content.");
-        split.setTopComponent(new JScrollPane(productStatusArea));
+        productStatusArea.setFont(FONT_MONO);
+        productStatusArea.setBackground(BG_INPUT);
+        productStatusArea.setForeground(TEXT_PRIMARY);
+        productStatusArea.setBorder(BorderFactory.createEmptyBorder(8, 10, 8, 10));
+        productStatusArea.setText("Type a product name and click 'Search Products'.");
+        JScrollPane logScroll = new JScrollPane(productStatusArea);
+        logScroll.setBorder(BorderFactory.createLineBorder(BORDER_COLOR));
+        logCard.add(logScroll, BorderLayout.CENTER);
+        split.setTopComponent(logCard);
 
         // results table
-        String[] columns = {"Supermarket", "Product Name", "Price", "Search Query", "Timestamp"};
-        productTableModel = new DefaultTableModel(columns, 0) {
+        JPanel tableCard = makeCard();
+        tableCard.setLayout(new BorderLayout(0, 8));
+        JLabel tableTitle = new JLabel("Results");
+        tableTitle.setFont(FONT_LABEL);
+        tableTitle.setForeground(TEXT_SECONDARY);
+        tableCard.add(tableTitle, BorderLayout.NORTH);
+        String[] cols = {"Supermarket", "Product Name", "Price", "Search Query", "Timestamp"};
+        productTableModel = new DefaultTableModel(cols, 0) {
             public boolean isCellEditable(int r, int c) { return false; }
         };
         productTable = new JTable(productTableModel);
-        productTable.setFillsViewportHeight(true);
-        productTable.setAutoCreateRowSorter(true);
-        productTable.getColumnModel().getColumn(0).setPreferredWidth(100);
-        productTable.getColumnModel().getColumn(1).setPreferredWidth(280);
+        styleTable(productTable);
+        productTable.getColumnModel().getColumn(0).setPreferredWidth(110);
+        productTable.getColumnModel().getColumn(1).setPreferredWidth(300);
         productTable.getColumnModel().getColumn(2).setPreferredWidth(70);
-        productTable.getColumnModel().getColumn(3).setPreferredWidth(100);
-        productTable.getColumnModel().getColumn(4).setPreferredWidth(120);
-        split.setBottomComponent(new JScrollPane(productTable));
+        productTable.getColumnModel().getColumn(3).setPreferredWidth(110);
+        productTable.getColumnModel().getColumn(4).setPreferredWidth(130);
+        JScrollPane tableScroll = new JScrollPane(productTable);
+        tableScroll.setBorder(BorderFactory.createLineBorder(BORDER_COLOR));
+        tableScroll.getViewport().setBackground(BG_DARK);
+        tableCard.add(tableScroll, BorderLayout.CENTER);
+        split.setBottomComponent(tableCard);
 
-        panel.add(split, BorderLayout.CENTER);
-        return panel;
+        body.add(split, BorderLayout.CENTER);
+        page.add(body, BorderLayout.CENTER);
+        return page;
     }
 
-    // ── TAB 3: saved fuel prices ─────────────────────────────────────
+    // ── TAB: crawler (advanced) ──────────────────────────────────────
 
-    private JPanel buildFuelSavedTab() {
+    private JPanel buildCrawlerTab() {
+        JPanel page = makePage();
+        page.add(makePageHeader("🔧 Crawler", "Fetch and parse any webpage using CSS selectors"), BorderLayout.NORTH);
 
-        JPanel panel = new JPanel(new BorderLayout(10, 10));
-        panel.setOpaque(false);
+        JPanel body = new JPanel(new BorderLayout(16, 16));
+        body.setBackground(BG_DARK);
+        body.setBorder(BorderFactory.createEmptyBorder(16, 24, 24, 24));
 
-        String[] columns = {"Timestamp", "Station", "Address", "Fuel Type", "Price"};
-        fuelTableModel = new DefaultTableModel(columns, 0);
-        fuelTable = new JTable(fuelTableModel);
-        fuelTable.setFillsViewportHeight(true);
-        fuelTable.setAutoCreateRowSorter(true);
-        fuelTable.getColumnModel().getColumn(0).setPreferredWidth(130);
-        fuelTable.getColumnModel().getColumn(1).setPreferredWidth(180);
-        fuelTable.getColumnModel().getColumn(2).setPreferredWidth(180);
-        fuelTable.getColumnModel().getColumn(3).setPreferredWidth(80);
-        fuelTable.getColumnModel().getColumn(4).setPreferredWidth(60);
-        panel.add(new JScrollPane(fuelTable), BorderLayout.CENTER);
+        // controls card
+        JPanel ctrlCard = makeCard();
+        ctrlCard.setLayout(new BoxLayout(ctrlCard, BoxLayout.Y_AXIS));
+        ctrlCard.setPreferredSize(new Dimension(300, 0));
 
-        JPanel bottomBar = new JPanel(new BorderLayout(8, 8));
-        bottomBar.setOpaque(false);
-        fuelPathLabel = new JLabel("No fuel data saved yet.");
-        fuelPathLabel.setForeground(Color.WHITE);
-        fuelPathLabel.setFont(new Font("SansSerif", Font.PLAIN, 11));
-        bottomBar.add(fuelPathLabel, BorderLayout.CENTER);
-        JButton refreshBtn = new JButton("Refresh");
-        refreshBtn.addActionListener(e -> loadFuelTable());
-        bottomBar.add(refreshBtn, BorderLayout.EAST);
-        panel.add(bottomBar, BorderLayout.SOUTH);
-        return panel;
-    }
+        addCardLabel(ctrlCard, "TARGET URL");
+        ctrlCard.add(Box.createVerticalStrut(6));
+        JTextField crawlUrlField = makeInput("https://example.com");
+        crawlUrlField.setMaximumSize(new Dimension(Integer.MAX_VALUE, 36));
+        ctrlCard.add(crawlUrlField);
+        ctrlCard.add(Box.createVerticalStrut(14));
 
-    // ── TAB 4: saved product prices ──────────────────────────────────
+        addCardLabel(ctrlCard, "PARSE MODE");
+        ctrlCard.add(Box.createVerticalStrut(6));
+        parseModeBox = new JComboBox<>(new String[]{"Text", "Links", "CSS Selector"});
+        styleCombo(parseModeBox);
+        parseModeBox.setMaximumSize(new Dimension(Integer.MAX_VALUE, 36));
+        ctrlCard.add(parseModeBox);
+        ctrlCard.add(Box.createVerticalStrut(14));
 
-    private JPanel buildProductSavedTab() {
+        addCardLabel(ctrlCard, "CSS SELECTOR");
+        ctrlCard.add(Box.createVerticalStrut(6));
+        selectorField = makeInput("div.fuel-price-item");
+        selectorField.setMaximumSize(new Dimension(Integer.MAX_VALUE, 36));
+        ctrlCard.add(selectorField);
+        ctrlCard.add(Box.createVerticalStrut(20));
 
-        JPanel panel = new JPanel(new BorderLayout(10, 10));
-        panel.setOpaque(false);
-
-        String[] columns = {"Timestamp", "Supermarket", "Search Query", "Product Name", "Price"};
-        DefaultTableModel savedProductModel = new DefaultTableModel(columns, 0);
-        JTable savedProductTable = new JTable(savedProductModel);
-        savedProductTable.setFillsViewportHeight(true);
-        savedProductTable.setAutoCreateRowSorter(true);
-        panel.add(new JScrollPane(savedProductTable), BorderLayout.CENTER);
-
-        JPanel bottomBar = new JPanel(new BorderLayout(8, 8));
-        bottomBar.setOpaque(false);
-        productPathLabel = new JLabel("No product data saved yet.");
-        productPathLabel.setForeground(Color.WHITE);
-        productPathLabel.setFont(new Font("SansSerif", Font.PLAIN, 11));
-        bottomBar.add(productPathLabel, BorderLayout.CENTER);
-
-        JButton refreshBtn = new JButton("Refresh");
-        refreshBtn.addActionListener(e -> {
-            savedProductModel.setRowCount(0);
-            String filePath = productScraper.getCsvFilePath();
-            ArrayList<String[]> rows = csvReader.readCsv(filePath);
-            for (String[] row : rows) savedProductModel.addRow(row);
-            productPathLabel.setText("File: " + filePath + "  (" + rows.size() + " rows)");
-        });
-        bottomBar.add(refreshBtn, BorderLayout.EAST);
-        panel.add(bottomBar, BorderLayout.SOUTH);
-        return panel;
-    }
-
-    // ── ACTIONS ──────────────────────────────────────────────────────
-
-    /** Updates the url field when the county dropdown changes. */
-    private void updateUrlFromCounty() {
-        int index = countyBox.getSelectedIndex();
-        if (index >= 0 && index < COUNTIES.length) {
-            urlField.setText(COUNTIES[index][1]);
-        }
-    }
-
-    /**
-     * Called when the user clicks "Fetch and Parse".
-     * Plain http fetch for normal websites.
-     */
-    private void onFetchAndParseClicked() {
-        String url = urlField.getText().trim();
-        if (url.isEmpty()) {
-            statusArea.setText("Please enter a URL first.");
-            return;
-        }
-
-        int delay = 0;
-        try {
-            delay = Integer.parseInt(delayField.getText().trim());
-        } catch (NumberFormatException ex) {
-            statusArea.setText("Delay must be a number. Defaulting to 0.");
-        }
-
-        statusArea.setText("Fetching: " + url + " (delay: " + delay + "s)...\n");
-
-        final int finalDelay = delay;
-        new Thread(() -> {
-            try {
-                if (finalDelay > 0) Thread.sleep(finalDelay * 1000L);
+        JButton fetchBtn = makeButton("🌐  Fetch & Parse", ACCENT_BLUE);
+        fetchBtn.setMaximumSize(new Dimension(Integer.MAX_VALUE, 42));
+        fetchBtn.addActionListener(e -> {
+            String url = crawlUrlField.getText().trim();
+            if (url.isEmpty()) return;
+            statusArea.setText("Fetching " + url + "...");
+            new Thread(() -> {
                 PageFetcher fetcher = new PageFetcher("Mozilla/5.0 (compatible; WebCrawlerApp/1.0)");
                 String html = fetcher.fetchPage(url);
                 lastHtml = html;
                 SwingUtilities.invokeLater(() -> parseAndDisplay(html));
-            } catch (InterruptedException ex) {
-                SwingUtilities.invokeLater(() -> statusArea.setText("Interrupted."));
-            }
-        }).start();
+            }).start();
+        });
+        ctrlCard.add(fetchBtn);
+        ctrlCard.add(Box.createVerticalStrut(8));
+
+        JButton reparseBtn = makeSmallButton("🔄  Re-Parse Last HTML", ACCENT_PURPLE);
+        reparseBtn.setMaximumSize(new Dimension(Integer.MAX_VALUE, 36));
+        reparseBtn.addActionListener(e -> parseAndDisplay(lastHtml));
+        ctrlCard.add(reparseBtn);
+        ctrlCard.add(Box.createVerticalGlue());
+
+        body.add(ctrlCard, BorderLayout.WEST);
+
+        // output area
+        JPanel outCard = makeCard();
+        outCard.setLayout(new BorderLayout(0, 8));
+        JLabel outTitle = new JLabel("Output");
+        outTitle.setFont(FONT_LABEL);
+        outTitle.setForeground(TEXT_SECONDARY);
+        outCard.add(outTitle, BorderLayout.NORTH);
+
+        // reuse statusArea for crawler output - create a separate one here
+        JTextArea crawlerOutput = new JTextArea();
+        crawlerOutput.setEditable(false);
+        crawlerOutput.setLineWrap(true);
+        crawlerOutput.setWrapStyleWord(true);
+        crawlerOutput.setFont(FONT_MONO);
+        crawlerOutput.setBackground(BG_INPUT);
+        crawlerOutput.setForeground(TEXT_PRIMARY);
+        crawlerOutput.setBorder(BorderFactory.createEmptyBorder(10, 12, 10, 12));
+        crawlerOutput.setText("Fetched HTML and parse results will appear here.");
+        JScrollPane outScroll = new JScrollPane(crawlerOutput);
+        outScroll.setBorder(BorderFactory.createLineBorder(BORDER_COLOR));
+        outCard.add(outScroll, BorderLayout.CENTER);
+
+        // wire fetch button to this output area
+        fetchBtn.addActionListener(e -> {
+            // second listener updates the crawlerOutput too
+            new Thread(() -> {
+                SwingUtilities.invokeLater(() -> {
+                    HtmlParser parser = new HtmlParser();
+                    if (lastHtml.isEmpty()) return;
+                    String mode = (String) parseModeBox.getSelectedItem();
+                    StringBuilder out = new StringBuilder();
+                    out.append("=== ").append(mode).append(" ===\n\n");
+                    if ("Text".equals(mode)) {
+                        out.append(parser.getAllText(lastHtml));
+                    } else if ("Links".equals(mode)) {
+                        ArrayList<String> links = parser.getAllLinks(lastHtml);
+                        out.append("Found ").append(links.size()).append(" links:\n\n");
+                        for (String l : links) out.append(l).append("\n");
+                    } else {
+                        String sel = selectorField.getText().trim();
+                        ArrayList<String> els = parser.searchByCssSelector(lastHtml, sel);
+                        out.append("Found ").append(els.size()).append(" element(s):\n\n");
+                        for (String el : els) out.append(el).append("\n---\n");
+                    }
+                    crawlerOutput.setText(out.toString());
+                });
+            }).start();
+        });
+
+        body.add(outCard, BorderLayout.CENTER);
+        page.add(body, BorderLayout.CENTER);
+        return page;
     }
 
-    /**
-     * Called when the user clicks "Scrape Fuel Prices".
-     * Uses the selected county, opens Chrome, scrapes and saves.
-     */
+    // ── TAB: saved fuel ──────────────────────────────────────────────
+
+    private JPanel buildSavedFuelTab() {
+        JPanel page = makePage();
+        page.add(makePageHeader("📋 Saved Fuel Prices", "All scraped fuel price records from pickapump.com"), BorderLayout.NORTH);
+
+        JPanel body = new JPanel(new BorderLayout(0, 12));
+        body.setBackground(BG_DARK);
+        body.setBorder(BorderFactory.createEmptyBorder(16, 24, 24, 24));
+
+        // stats bar
+        JPanel statsBar = new JPanel(new FlowLayout(FlowLayout.LEFT, 16, 0));
+        statsBar.setBackground(BG_DARK);
+        fuelCountLabel = makeStatLabel("0 records");
+        statsBar.add(fuelCountLabel);
+        fuelPathLabel = makeStatLabel("No data yet");
+        statsBar.add(fuelPathLabel);
+
+        JButton refreshBtn = makeSmallButton("🔄  Refresh", ACCENT_BLUE);
+        refreshBtn.addActionListener(e -> loadFuelTable());
+        statsBar.add(refreshBtn);
+        body.add(statsBar, BorderLayout.NORTH);
+
+        // table
+        String[] cols = {"Timestamp", "Station", "Address", "Fuel Type", "Price"};
+        fuelTableModel = new DefaultTableModel(cols, 0);
+        fuelTable = new JTable(fuelTableModel);
+        styleTable(fuelTable);
+        fuelTable.getColumnModel().getColumn(0).setPreferredWidth(130);
+        fuelTable.getColumnModel().getColumn(1).setPreferredWidth(200);
+        fuelTable.getColumnModel().getColumn(2).setPreferredWidth(200);
+        fuelTable.getColumnModel().getColumn(3).setPreferredWidth(90);
+        fuelTable.getColumnModel().getColumn(4).setPreferredWidth(70);
+
+        JScrollPane scroll = new JScrollPane(fuelTable);
+        scroll.setBorder(BorderFactory.createLineBorder(BORDER_COLOR));
+        scroll.getViewport().setBackground(BG_DARK);
+        body.add(scroll, BorderLayout.CENTER);
+
+        page.add(body, BorderLayout.CENTER);
+        return page;
+    }
+
+    // ── TAB: saved products ──────────────────────────────────────────
+
+    private JPanel buildSavedProdTab() {
+        JPanel page = makePage();
+        page.add(makePageHeader("📦 Saved Products", "All saved product search results from supermarkets"), BorderLayout.NORTH);
+
+        JPanel body = new JPanel(new BorderLayout(0, 12));
+        body.setBackground(BG_DARK);
+        body.setBorder(BorderFactory.createEmptyBorder(16, 24, 24, 24));
+
+        JPanel statsBar = new JPanel(new FlowLayout(FlowLayout.LEFT, 16, 0));
+        statsBar.setBackground(BG_DARK);
+        productPathLabel = makeStatLabel("No data yet");
+        statsBar.add(productPathLabel);
+
+        DefaultTableModel savedProdModel = new DefaultTableModel(
+            new String[]{"Timestamp", "Supermarket", "Search Query", "Product Name", "Price"}, 0);
+        JTable savedProdTable = new JTable(savedProdModel);
+        styleTable(savedProdTable);
+
+        JButton refreshBtn = makeSmallButton("🔄  Refresh", ACCENT_BLUE);
+        refreshBtn.addActionListener(e -> {
+            savedProdModel.setRowCount(0);
+            String fp = productScraper.getCsvFilePath();
+            ArrayList<String[]> rows = csvReader.readCsv(fp);
+            for (String[] row : rows) savedProdModel.addRow(row);
+            productPathLabel.setText(rows.size() + " records  ·  " + fp);
+        });
+        statsBar.add(refreshBtn);
+        body.add(statsBar, BorderLayout.NORTH);
+
+        JScrollPane scroll = new JScrollPane(savedProdTable);
+        scroll.setBorder(BorderFactory.createLineBorder(BORDER_COLOR));
+        scroll.getViewport().setBackground(BG_DARK);
+        body.add(scroll, BorderLayout.CENTER);
+
+        page.add(body, BorderLayout.CENTER);
+        return page;
+    }
+
+    // ── ACTIONS ──────────────────────────────────────────────────────
+
+    /** Scrapes fuel prices for the selected county. */
     private void onScrapeFuelClicked() {
         int index = countyBox.getSelectedIndex();
         String countyName = COUNTIES[index][0];
-        String url = COUNTIES[index][1];
-        urlField.setText(url);
+        String url        = COUNTIES[index][1];
 
         int waitSeconds = 15;
-        try {
-            waitSeconds = Math.max(Integer.parseInt(delayField.getText().trim()), 10);
-        } catch (NumberFormatException ex) { }
+        try { waitSeconds = Math.max(Integer.parseInt(delayField.getText().trim()), 10); }
+        catch (NumberFormatException ex) { }
 
-        statusArea.setText("Scraping fuel prices for: " + countyName + "\n" +
-                           "Chrome will open briefly - this is normal.\n" +
-                           "Waiting up to " + waitSeconds + "s for prices...");
+        statusArea.setText("▶ Scraping " + countyName + "...\n" +
+                           "  Chrome will open briefly.\n" +
+                           "  Waiting up to " + waitSeconds + "s for data to load.");
 
         final int finalWait = waitSeconds;
         new Thread(() -> {
             try {
-                JsBrowserFetcher browserFetcher = new JsBrowserFetcher();
-                String html = browserFetcher.fetchWithJs(url, finalWait);
+                JsBrowserFetcher browser = new JsBrowserFetcher();
+                String html = browser.fetchWithJs(url, finalWait);
                 lastHtml = html;
 
                 if (html.startsWith("ERROR")) {
                     SwingUtilities.invokeLater(() ->
-                        statusArea.setText(html + "\n\nMake sure Google Chrome is installed."));
+                        statusArea.setText("✗ Error: " + html));
                     return;
                 }
 
@@ -433,20 +657,21 @@ public class MainWindow extends JFrame {
 
                 if (entries.isEmpty()) {
                     SwingUtilities.invokeLater(() ->
-                        statusArea.setText("No prices found for " + countyName + ".\n" +
-                            "Click 'Re-Parse Last HTML' in Text mode to inspect what loaded."));
+                        statusArea.setText("✗ No prices found for " + countyName + ".\n\n" +
+                            "The consent wall may still be blocking data.\n" +
+                            "Try switching to the Crawler tab and using Text mode."));
                     return;
                 }
 
                 fuelScraper.saveToCsv(entries);
 
                 StringBuilder summary = new StringBuilder();
-                summary.append("Scraped ").append(entries.size())
-                       .append(" price(s) for ").append(countyName).append(".\n");
-                summary.append("Saved to: ").append(fuelScraper.getCsvFilePath()).append("\n\n");
+                summary.append("✓ Scraped ").append(entries.size())
+                       .append(" price(s) for ").append(countyName).append("\n\n");
                 for (FuelScraper.FuelEntry e : entries) {
-                    summary.append(e.stationName).append(" | ").append(e.address)
-                           .append(" | ").append(e.fuelType).append(" | ").append(e.price).append("\n");
+                    summary.append("  ").append(e.stationName)
+                           .append("  ·  ").append(e.fuelType)
+                           .append("  ·  ").append(e.price).append("\n");
                 }
 
                 SwingUtilities.invokeLater(() -> {
@@ -455,76 +680,60 @@ public class MainWindow extends JFrame {
                 });
 
             } catch (Exception ex) {
-                SwingUtilities.invokeLater(() -> statusArea.setText("Error: " + ex.getMessage()));
+                SwingUtilities.invokeLater(() ->
+                    statusArea.setText("✗ Error: " + ex.getMessage()));
             }
         }).start();
     }
 
-    /**
-     * Called when the user clicks "Search Products".
-     * Loops through the ticked supermarkets, fetches each search page with Selenium,
-     * scrapes product results and shows them in the table.
-     */
+    /** Searches selected supermarkets for the typed product. */
     private void onSearchProductsClicked() {
         String query = productSearchField.getText().trim();
-        if (query.isEmpty()) {
-            productStatusArea.setText("Please enter a product to search for.");
+        if (query.isEmpty() || query.equals("e.g. strawberries, milk, bread")) {
+            productStatusArea.setText("✗ Please enter a product name first.");
             return;
         }
 
-        // collect which supermarkets are ticked
-        ArrayList<Integer> selectedIndexes = new ArrayList<>();
+        ArrayList<Integer> selected = new ArrayList<>();
         for (int i = 0; i < supermarketCheckboxes.length; i++) {
-            if (supermarketCheckboxes[i].isSelected()) {
-                selectedIndexes.add(i);
-            }
+            if (supermarketCheckboxes[i].isSelected()) selected.add(i);
         }
 
-        if (selectedIndexes.isEmpty()) {
-            productStatusArea.setText("Please tick at least one supermarket.");
+        if (selected.isEmpty()) {
+            productStatusArea.setText("✗ Tick at least one supermarket.");
             return;
         }
 
-        // clear the live results table
         productTableModel.setRowCount(0);
-
-        productStatusArea.setText("Searching for '" + query + "' across " +
-                                  selectedIndexes.size() + " supermarket(s)...\n" +
-                                  "Chrome will open for each one. Please wait.");
+        productStatusArea.setText("▶ Searching for '" + query + "' across " +
+                                  selected.size() + " supermarket(s)...\n");
 
         new Thread(() -> {
             ArrayList<ProductScraper.ProductEntry> allResults = new ArrayList<>();
 
-            for (int idx : selectedIndexes) {
-                String supermarketName = ProductScraper.SUPERMARKETS[idx][0];
-                String urlTemplate    = ProductScraper.SUPERMARKETS[idx][1];
-                String searchUrl = productScraper.buildSearchUrl(urlTemplate, query);
+            for (int idx : selected) {
+                String name = ProductScraper.SUPERMARKETS[idx][0];
+                String tmpl = ProductScraper.SUPERMARKETS[idx][1];
+                String searchUrl = productScraper.buildSearchUrl(tmpl, query);
 
                 SwingUtilities.invokeLater(() ->
-                    productStatusArea.setText(productStatusArea.getText() +
-                        "\nSearching " + supermarketName + "...")
-                );
+                    productStatusArea.append("  · Searching " + name + "...\n"));
 
                 try {
-                    // use selenium to load the search results page
-                    JsBrowserFetcher browserFetcher = new JsBrowserFetcher();
-                    String html = browserFetcher.fetchWithJs(searchUrl, 10);
+                    JsBrowserFetcher browser = new JsBrowserFetcher();
+                    String html = browser.fetchWithJs(searchUrl, 10);
 
                     if (html.startsWith("ERROR")) {
                         SwingUtilities.invokeLater(() ->
-                            productStatusArea.setText(productStatusArea.getText() +
-                                "\n" + supermarketName + ": ERROR - " + html)
-                        );
+                            productStatusArea.append("    ✗ " + name + ": " + html + "\n"));
                         continue;
                     }
 
-                    // scrape the results
                     ArrayList<ProductScraper.ProductEntry> results =
-                        productScraper.scrapeProducts(html, supermarketName, query);
+                        productScraper.scrapeProducts(html, name, query);
 
                     allResults.addAll(results);
 
-                    // add results to table on swing thread
                     SwingUtilities.invokeLater(() -> {
                         for (ProductScraper.ProductEntry p : results) {
                             productTableModel.addRow(new String[]{
@@ -532,117 +741,309 @@ public class MainWindow extends JFrame {
                                 p.searchQuery, p.timestamp
                             });
                         }
-                        productStatusArea.setText(productStatusArea.getText() +
-                            "\n" + supermarketName + ": found " + results.size() + " result(s).");
+                        productStatusArea.append("    ✓ " + name + ": " + results.size() + " result(s)\n");
                     });
 
                 } catch (Exception ex) {
                     final String err = ex.getMessage();
                     SwingUtilities.invokeLater(() ->
-                        productStatusArea.setText(productStatusArea.getText() +
-                            "\n" + supermarketName + ": error - " + err)
-                    );
+                        productStatusArea.append("    ✗ " + name + ": " + err + "\n"));
                 }
             }
 
-            // done - show summary
             final int total = allResults.size();
             SwingUtilities.invokeLater(() ->
-                productStatusArea.setText(productStatusArea.getText() +
-                    "\n\nDone. Found " + total + " result(s) in total.\n" +
-                    "Click 'Save Results to CSV' to save them.")
-            );
+                productStatusArea.append("\n✓ Done — " + total + " result(s) found.\n" +
+                    "Click 'Save to CSV' to save them."));
 
         }).start();
     }
 
-    /**
-     * Called when the user clicks "Save Results to CSV".
-     * Saves whatever is currently in the product results table.
-     */
+    /** Saves product table contents to CSV. */
     private void onSaveProductsClicked() {
         int rowCount = productTableModel.getRowCount();
         if (rowCount == 0) {
-            productStatusArea.setText("No results to save. Search for something first.");
+            productStatusArea.append("\n✗ Nothing to save. Search first.");
             return;
         }
 
-        // rebuild entries from the table model
         ArrayList<ProductScraper.ProductEntry> entries = new ArrayList<>();
         for (int i = 0; i < rowCount; i++) {
-            String supermarket  = (String) productTableModel.getValueAt(i, 0);
-            String name         = (String) productTableModel.getValueAt(i, 1);
-            String price        = (String) productTableModel.getValueAt(i, 2);
-            String query        = (String) productTableModel.getValueAt(i, 3);
-            String timestamp    = (String) productTableModel.getValueAt(i, 4);
-            entries.add(new ProductScraper.ProductEntry(timestamp, supermarket, query, name, price));
+            entries.add(new ProductScraper.ProductEntry(
+                (String) productTableModel.getValueAt(i, 4),
+                (String) productTableModel.getValueAt(i, 0),
+                (String) productTableModel.getValueAt(i, 3),
+                (String) productTableModel.getValueAt(i, 1),
+                (String) productTableModel.getValueAt(i, 2)
+            ));
         }
 
         try {
             productScraper.saveToCsv(entries);
-            productStatusArea.setText(productStatusArea.getText() +
-                "\n\nSaved " + entries.size() + " results to:\n" +
+            productStatusArea.append("\n✓ Saved " + entries.size() + " rows to:\n  " +
                 productScraper.getCsvFilePath());
         } catch (Exception ex) {
-            productStatusArea.setText("Error saving: " + ex.getMessage());
+            productStatusArea.append("\n✗ Save failed: " + ex.getMessage());
         }
     }
 
-    /** Loads the fuel prices csv into the fuel saved tab table. */
+    /** Loads fuel prices CSV into the saved fuel tab table. */
     private void loadFuelTable() {
         fuelTableModel.setRowCount(0);
-        String filePath = fuelScraper.getCsvFilePath();
-        ArrayList<String[]> rows = csvReader.readCsv(filePath);
+        String fp = fuelScraper.getCsvFilePath();
+        ArrayList<String[]> rows = csvReader.readCsv(fp);
         for (String[] row : rows) fuelTableModel.addRow(row);
-        fuelPathLabel.setText("File: " + filePath + "  (" + rows.size() + " rows)");
+        fuelCountLabel.setText(rows.size() + " records");
+        fuelPathLabel.setText(fp);
     }
 
-    /** Helper to add a white label at a grid position. */
-    private void addWhiteLabel(JPanel panel, String text, GridBagConstraints gbc, int x, int y) {
-        JLabel label = new JLabel(text);
-        label.setForeground(Color.WHITE);
-        gbc.gridx = x; gbc.gridy = y; gbc.weightx = 0;
-        panel.add(label, gbc);
-    }
-
-    /**
-     * Parses html based on the selected mode and shows results in the status area.
-     */
+    /** Parses html and shows result in the status area. */
     private void parseAndDisplay(String html) {
-        if (html.isEmpty() || html.startsWith("ERROR")) {
-            statusArea.setText(html.isEmpty() ? "No HTML to parse. Fetch a page first." : html);
+        if (html == null || html.isEmpty() || html.startsWith("ERROR")) {
+            statusArea.setText(html == null || html.isEmpty() ?
+                "No HTML loaded yet." : html);
             return;
         }
 
         HtmlParser parser = new HtmlParser();
         String mode = (String) parseModeBox.getSelectedItem();
-        StringBuilder output = new StringBuilder();
-        output.append("=== Parse Mode: ").append(mode).append(" ===\n\n");
+        StringBuilder out = new StringBuilder();
+        out.append("=== ").append(mode).append(" ===\n\n");
 
-        // text mode - strips all tags, shows only readable text
         if ("Text".equals(mode)) {
-            output.append(parser.getAllText(html));
-
-        // links mode - pulls every url from the page
+            out.append(parser.getAllText(html));
         } else if ("Links".equals(mode)) {
             ArrayList<String> links = parser.getAllLinks(html);
-            output.append("Found ").append(links.size()).append(" links:\n\n");
-            for (String link : links) output.append(link).append("\n");
-
-        // css selector mode - finds elements matching the selector typed in
-        } else if ("CSS Selector".equals(mode)) {
-            String selector = selectorField.getText().trim();
-            if (selector.isEmpty()) {
-                statusArea.setText("Please enter a CSS selector.");
-                return;
-            }
-            ArrayList<String> elements = parser.searchByCssSelector(html, selector);
-            output.append("Found ").append(elements.size()).append(" element(s) matching '")
-                  .append(selector).append("':\n\n");
-            for (String el : elements) output.append(el).append("\n---\n");
+            out.append("Found ").append(links.size()).append(" links:\n\n");
+            for (String l : links) out.append(l).append("\n");
+        } else {
+            String sel = selectorField.getText().trim();
+            ArrayList<String> els = parser.searchByCssSelector(html, sel);
+            out.append("Found ").append(els.size()).append(" element(s):\n\n");
+            for (String el : els) out.append(el).append("\n---\n");
         }
 
-        //display results
-        statusArea.setText(output.toString());
+        statusArea.setText(out.toString());
+    }
+
+    // ── UI COMPONENT HELPERS ─────────────────────────────────────────
+
+    /** Creates a dark page panel with BorderLayout. */
+    private JPanel makePage() {
+        JPanel p = new JPanel(new BorderLayout());
+        p.setBackground(BG_DARK);
+        return p;
+    }
+
+    /** Creates a page header with title and subtitle. */
+    private JPanel makePageHeader(String title, String subtitle) {
+        JPanel header = new JPanel(new BorderLayout());
+        header.setBackground(BG_DARK);
+        header.setBorder(BorderFactory.createCompoundBorder(
+            BorderFactory.createMatteBorder(0, 0, 1, 0, BORDER_COLOR),
+            BorderFactory.createEmptyBorder(20, 24, 16, 24)
+        ));
+
+        JLabel titleLabel = new JLabel(title);
+        titleLabel.setFont(FONT_TITLE);
+        titleLabel.setForeground(TEXT_PRIMARY);
+        header.add(titleLabel, BorderLayout.CENTER);
+
+        JLabel subLabel = new JLabel(subtitle);
+        subLabel.setFont(FONT_SMALL);
+        subLabel.setForeground(TEXT_MUTED);
+        header.add(subLabel, BorderLayout.SOUTH);
+
+        return header;
+    }
+
+    /** Creates a dark card panel with padding and border. */
+    private JPanel makeCard() {
+        JPanel card = new JPanel();
+        card.setBackground(BG_CARD);
+        card.setBorder(BorderFactory.createCompoundBorder(
+            BorderFactory.createLineBorder(BORDER_COLOR),
+            BorderFactory.createEmptyBorder(16, 16, 16, 16)
+        ));
+        return card;
+    }
+
+    /** Creates a styled text input field. */
+    private JTextField makeInput(String placeholder) {
+        JTextField f = new JTextField(placeholder);
+        f.setFont(FONT_INPUT);
+        f.setBackground(BG_INPUT);
+        f.setForeground(TEXT_PRIMARY);
+        f.setCaretColor(TEXT_PRIMARY);
+        f.setBorder(BorderFactory.createCompoundBorder(
+            BorderFactory.createLineBorder(BORDER_COLOR),
+            BorderFactory.createEmptyBorder(7, 10, 7, 10)
+        ));
+        return f;
+    }
+
+    /** Creates a styled combobox. */
+    private void styleCombo(JComboBox<?> box) {
+        box.setFont(FONT_INPUT);
+        box.setBackground(BG_INPUT);
+        box.setForeground(TEXT_PRIMARY);
+        box.setBorder(BorderFactory.createLineBorder(BORDER_COLOR));
+    }
+
+    /** Creates a primary action button with an accent colour. */
+    private JButton makeButton(String text, Color accent) {
+        JButton btn = new JButton(text) {
+            @Override
+            protected void paintComponent(Graphics g) {
+                Graphics2D g2 = (Graphics2D) g.create();
+                g2.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
+                if (getModel().isPressed()) {
+                    g2.setColor(accent.darker());
+                } else if (getModel().isRollover()) {
+                    g2.setColor(accent.brighter());
+                } else {
+                    g2.setColor(accent);
+                }
+                g2.fillRoundRect(0, 0, getWidth(), getHeight(), 8, 8);
+                g2.setColor(Color.WHITE);
+                g2.setFont(getFont());
+                FontMetrics fm = g2.getFontMetrics();
+                int x = (getWidth() - fm.stringWidth(getText())) / 2;
+                int y = (getHeight() + fm.getAscent() - fm.getDescent()) / 2;
+                g2.drawString(getText(), x, y);
+                g2.dispose();
+            }
+        };
+        btn.setFont(new Font("SansSerif", Font.BOLD, 13));
+        btn.setForeground(Color.WHITE);
+        btn.setPreferredSize(new Dimension(180, 40));
+        btn.setBorderPainted(false);
+        btn.setContentAreaFilled(false);
+        btn.setFocusPainted(false);
+        btn.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+        return btn;
+    }
+
+    /** Creates a smaller secondary button. */
+    private JButton makeSmallButton(String text, Color accent) {
+        JButton btn = makeButton(text, accent);
+        btn.setFont(new Font("SansSerif", Font.PLAIN, 12));
+        btn.setPreferredSize(new Dimension(160, 34));
+        return btn;
+    }
+
+    /** Creates a sidebar nav button. */
+    private JButton makeNavBtn(String text, String cardName, Color accent) {
+        JButton btn = new JButton(text) {
+            @Override
+            protected void paintComponent(Graphics g) {
+                Graphics2D g2 = (Graphics2D) g.create();
+                g2.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
+                if (getModel().isRollover() || getModel().isPressed()) {
+                    g2.setColor(BG_INPUT);
+                    g2.fillRoundRect(6, 2, getWidth() - 12, getHeight() - 4, 8, 8);
+                    // left accent stripe
+                    g2.setColor(accent);
+                    g2.fillRoundRect(6, 2, 3, getHeight() - 4, 3, 3);
+                }
+                g2.setColor(getModel().isRollover() ? TEXT_PRIMARY : TEXT_SECONDARY);
+                g2.setFont(getFont());
+                FontMetrics fm = g2.getFontMetrics();
+                int y = (getHeight() + fm.getAscent() - fm.getDescent()) / 2;
+                g2.drawString(getText(), 18, y);
+                g2.dispose();
+            }
+        };
+        btn.putClientProperty("card", cardName);
+        btn.setFont(new Font("SansSerif", Font.PLAIN, 13));
+        btn.setMaximumSize(new Dimension(200, 38));
+        btn.setAlignmentX(Component.LEFT_ALIGNMENT);
+        btn.setBorderPainted(false);
+        btn.setContentAreaFilled(false);
+        btn.setFocusPainted(false);
+        btn.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+        return btn;
+    }
+
+    /** Adds a small muted section label to a panel. */
+    private void addCardLabel(JPanel panel, String text) {
+        JLabel lbl = new JLabel(text);
+        lbl.setFont(new Font("SansSerif", Font.BOLD, 10));
+        lbl.setForeground(TEXT_MUTED);
+        lbl.setAlignmentX(Component.LEFT_ALIGNMENT);
+        panel.add(lbl);
+    }
+
+    /** Creates a horizontal divider line for the sidebar. */
+    private JPanel makeDivider() {
+        JPanel div = new JPanel();
+        div.setBackground(BORDER_COLOR);
+        div.setMaximumSize(new Dimension(200, 1));
+        div.setPreferredSize(new Dimension(200, 1));
+        return div;
+    }
+
+    /** Creates a sidebar section heading label. */
+    private JLabel makeSectionLabel(String text) {
+        JLabel lbl = new JLabel("  " + text);
+        lbl.setFont(new Font("SansSerif", Font.BOLD, 10));
+        lbl.setForeground(TEXT_MUTED);
+        lbl.setBorder(BorderFactory.createEmptyBorder(12, 0, 4, 0));
+        lbl.setMaximumSize(new Dimension(200, 28));
+        return lbl;
+    }
+
+    /** Creates a small stat label for the saved tabs. */
+    private JLabel makeStatLabel(String text) {
+        JLabel lbl = new JLabel(text);
+        lbl.setFont(FONT_SMALL);
+        lbl.setForeground(TEXT_SECONDARY);
+        lbl.setBorder(BorderFactory.createCompoundBorder(
+            BorderFactory.createLineBorder(BORDER_COLOR),
+            BorderFactory.createEmptyBorder(4, 10, 4, 10)
+        ));
+        lbl.setBackground(BG_CARD);
+        lbl.setOpaque(true);
+        return lbl;
+    }
+
+    /** Applies the dark theme styling to a JTable. */
+    private void styleTable(JTable table) {
+        table.setBackground(BG_DARK);
+        table.setForeground(TEXT_PRIMARY);
+        table.setFont(FONT_INPUT);
+        table.setRowHeight(30);
+        table.setGridColor(BORDER_COLOR);
+        table.setSelectionBackground(ACCENT_BLUE);
+        table.setSelectionForeground(Color.WHITE);
+        table.setShowHorizontalLines(true);
+        table.setShowVerticalLines(false);
+        table.setAutoCreateRowSorter(true);
+        table.setFillsViewportHeight(true);
+
+        // style the header
+        JTableHeader header = table.getTableHeader();
+        header.setBackground(BG_CARD);
+        header.setForeground(TEXT_SECONDARY);
+        header.setFont(new Font("SansSerif", Font.BOLD, 11));
+        header.setBorder(BorderFactory.createMatteBorder(0, 0, 1, 0, BORDER_COLOR));
+
+        // alternating row colours
+        table.setDefaultRenderer(Object.class, new DefaultTableCellRenderer() {
+            @Override
+            public Component getTableCellRendererComponent(JTable t, Object val,
+                    boolean selected, boolean focused, int row, int col) {
+                super.getTableCellRendererComponent(t, val, selected, focused, row, col);
+                if (selected) {
+                    setBackground(ACCENT_BLUE);
+                    setForeground(Color.WHITE);
+                } else {
+                    setBackground(row % 2 == 0 ? BG_DARK : BG_TABLE_ALT);
+                    setForeground(TEXT_PRIMARY);
+                }
+                setBorder(BorderFactory.createEmptyBorder(0, 10, 0, 10));
+                return this;
+            }
+        });
     }
 }
