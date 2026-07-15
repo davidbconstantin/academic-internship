@@ -38,7 +38,7 @@ public class HtmlParser {
  
     /**
      * Extracts all visible text from the page — strips all HTML tags.
-     * Useful for reading a page like a human would.
+
      */
     public String getAllText(String html) {
         Document doc = Jsoup.parse(html);
@@ -47,7 +47,7 @@ public class HtmlParser {
  
     /**
      * Pulls every href attribute from the page — i.e. all hyperlinks.
-     * Returns a list of URL strings found on the page.
+     * Returns a list of URL strings found on the page -
      */
     public ArrayList<String> getAllLinks(String html) {
         ArrayList<String> links = new ArrayList<>();

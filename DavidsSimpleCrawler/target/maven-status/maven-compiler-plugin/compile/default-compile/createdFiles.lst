@@ -1,3 +1,11 @@
-com\mycompany\davidssimplecrawler\WebCrawlerApp.class
+com\mycompany\davidssimplecrawler\CsvReader.class
 com\mycompany\davidssimplecrawler\PageFetcher.class
+com\mycompany\davidssimplecrawler\HtmlParser.class
+com\mycompany\davidssimplecrawler\ProductScraper$ProductEntry.class
+com\mycompany\davidssimplecrawler\MainWindow$1.class
+com\mycompany\davidssimplecrawler\ProductScraper.class
 com\mycompany\davidssimplecrawler\MainWindow.class
+com\mycompany\davidssimplecrawler\FuelScraper$FuelEntry.class
+com\mycompany\davidssimplecrawler\FuelScraper.class
+com\mycompany\davidssimplecrawler\WebCrawlerApp.class
+com\mycompany\davidssimplecrawler\JsBrowserFetcher.class
