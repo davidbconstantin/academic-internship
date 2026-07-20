@@ -27,6 +27,7 @@ com\mycompany\davidssimplecrawler\MainWindow.class
 com\security\academicinternshipproject\DatabaseQueryJP$2.class
 com\security\academicinternshipproject\MainMenuForm.class
 com\security\academicinternshipproject\JSoupParser.class
+com\security\academicinternshipproject\helpmenu\AboutForm$3.class
 com\security\academicinternshipproject\helpmenu\UserManualForm$1.class
 com\security\academicinternshipproject\SentimentAnalyser.class
 com\mycompany\davidssimplecrawler\MainWindow$5.class
@@ -71,6 +72,7 @@ com\security\academicinternshipproject\CrawlerScriptingJP$4.class
 com\security\academicinternshipproject\SQLDatabaseJP$5.class
 com\mycompany\davidssimplecrawler\ProductScraper$ProductEntry.class
 com\security\academicinternshipproject\MainMenuForm$2.class
+com\security\academicinternshipproject\MainMenuForm$5.class
 com\security\academicinternshipproject\CrawlerScriptingJP$7.class
 com\mycompany\davidssimplecrawler\CsvReader.class
 com\mycompany\davidssimplecrawler\MainWindow$1.class
@@ -96,3 +98,4 @@ com\mycompany\davidssimplecrawler\WebCrawlerApp.class
 com\security\academicinternshipproject\SentimentAnalysisJP$4.class
 com\security\academicinternshipproject\DatabaseQueryJP$4.class
 com\security\academicinternshipproject\SQLTableInfo.class
+com\security\academicinternshipproject\helpmenu\UserManualForm$3.class

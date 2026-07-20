@@ -4,6 +4,10 @@
  */
 package com.security.academicinternshipproject.helpmenu;
 
+import java.awt.Color;
+import java.awt.Component;
+import java.awt.Container;
+import java.awt.event.MouseAdapter;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
@@ -21,6 +25,7 @@ public class UserManualForm extends javax.swing.JFrame {
      */
     public UserManualForm() {
         initComponents();
+        addHoverEffectToButtons(getContentPane());
     }
 
     /**
@@ -160,6 +165,37 @@ public class UserManualForm extends javax.swing.JFrame {
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(() -> new UserManualForm().setVisible(true));
+    }
+    
+        // iterate through every component adding hover effects
+    private void addHoverEffectToButtons(Container container) {
+        for (Component c: container.getComponents()) {
+            if (c instanceof javax.swing.JButton button) 
+                addHoverEffect(button);
+            // use recursion to add events to nested buttons
+            else if (c instanceof Container nestedContainer) 
+                addHoverEffectToButtons(nestedContainer);
+        }
+    }
+    
+    // add mouse hover event to buttons
+    private void addHoverEffect(javax.swing.JButton button) {
+        button.addMouseListener(new MouseAdapter() {
+            
+            @Override
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                button.setBackground(Color.yellow);
+                button.setForeground(Color.blue);
+                repaint();
+            }
+            
+            @Override
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                button.setBackground(Color.white);
+                button.setForeground(Color.black);
+                repaint();
+            }
+        });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

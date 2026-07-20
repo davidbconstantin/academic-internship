@@ -13,9 +13,11 @@ package com.security.academicinternshipproject;
 import com.security.academicinternshipproject.helpmenu.AboutForm;
 import com.security.academicinternshipproject.helpmenu.UserManualForm;
 import java.awt.CardLayout;
+import java.awt.Color;
 import java.awt.Component;
 import java.awt.Container;
 import java.awt.Dimension;
+import java.awt.event.MouseAdapter;
 import java.io.BufferedReader;
 import java.io.EOFException;
 import java.io.File;
@@ -30,6 +32,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import javax.sql.rowset.CachedRowSet;
+import javax.swing.JButton;
 import javax.swing.JDialog;
 import javax.swing.JPanel;
 
@@ -114,6 +117,40 @@ public class MainMenuForm extends javax.swing.JFrame {
         
         // load SQL database settings
         loadSQLCredentials();
+        
+        // add GUI effects
+        addHoverEffectToButtons(contentPane);
+    }  
+    
+    // iterate through every component adding hover effects
+    private void addHoverEffectToButtons(Container container) {
+        for (Component c: container.getComponents()) {
+            if (c instanceof javax.swing.JButton button) 
+                addHoverEffect(button);
+            // use recursion to add events to nested buttons
+            else if (c instanceof Container nestedContainer) 
+                addHoverEffectToButtons(nestedContainer);
+        }
+    }
+    
+    // add mouse hover event to buttons
+    private void addHoverEffect(javax.swing.JButton button) {
+        button.addMouseListener(new MouseAdapter() {
+            
+            @Override
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                button.setBackground(Color.yellow);
+                button.setForeground(Color.blue);
+                repaint();
+            }
+            
+            @Override
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                button.setBackground(Color.white);
+                button.setForeground(Color.black);
+                repaint();
+            }
+        });
     }
     
     public void displayPanel(String panelName) {
