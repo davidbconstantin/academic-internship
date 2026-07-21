@@ -76,7 +76,7 @@ public class CrawlerScriptingJP extends javax.swing.JPanel {
         editBTN = new javax.swing.JButton();
         removeBTN = new javax.swing.JButton();
 
-        setBackground(new java.awt.Color(51, 51, 255));
+        setBackground(new java.awt.Color(50, 50, 50));
         setName("crawlerScriptingJP"); // NOI18N
         setPreferredSize(new java.awt.Dimension(610, 390));
         addAncestorListener(new javax.swing.event.AncestorListener() {

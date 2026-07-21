@@ -59,7 +59,7 @@ public class AboutForm extends javax.swing.JFrame {
             }
         });
 
-        mainJP.setBackground(new java.awt.Color(51, 51, 255));
+        mainJP.setBackground(new java.awt.Color(50, 50, 50));
         mainJP.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
         titleLBL.setForeground(new java.awt.Color(255, 255, 255));

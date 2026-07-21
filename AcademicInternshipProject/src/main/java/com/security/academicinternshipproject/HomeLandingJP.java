@@ -37,7 +37,7 @@ public class HomeLandingJP extends JPanel {
     
     private void buildUI() {
 
-        setBackground(new Color(51,51,255));
+        setBackground(new Color(50,50,50));
         setLayout(new BorderLayout(16,16));
         setBorder(BorderFactory.createEmptyBorder(22,22,22,22));
 
@@ -123,7 +123,7 @@ public class HomeLandingJP extends JPanel {
     private JPanel createCardPanel() {
         JPanel panel = new JPanel();
         panel.setOpaque(true);
-        panel.setBackground(new Color(35,35,180));
+        panel.setBackground(new Color(100,100,100));
         panel.setBorder(BorderFactory.createCompoundBorder(
                 BorderFactory.createLineBorder(new Color(180,200,255),1),
                 BorderFactory.createEmptyBorder(18,18,18,18)));

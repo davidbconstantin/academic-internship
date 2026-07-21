@@ -55,7 +55,7 @@ public class SQLDatabaseJP extends javax.swing.JPanel {
         addBTN = new javax.swing.JButton();
         deleteBTN = new javax.swing.JButton();
 
-        setBackground(new java.awt.Color(0, 51, 255));
+        setBackground(new java.awt.Color(50, 50, 50));
         setPreferredSize(new java.awt.Dimension(610, 390));
 
         titleLBL.setForeground(new java.awt.Color(255, 255, 255));

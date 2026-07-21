@@ -52,7 +52,7 @@ public class UserManualForm extends javax.swing.JFrame {
             }
         });
 
-        mainJP.setBackground(new java.awt.Color(51, 51, 255));
+        mainJP.setBackground(new java.awt.Color(50, 50, 50));
 
         exitBTN.setText("Exit");
         exitBTN.addActionListener(this::exitBTNActionPerformed);

@@ -62,7 +62,7 @@ public class CrawlerConfigJP extends javax.swing.JPanel {
         userAgentLBL = new javax.swing.JLabel();
         scriptBTN = new javax.swing.JButton();
 
-        setBackground(new java.awt.Color(51, 51, 255));
+        setBackground(new java.awt.Color(50, 50, 50));
         setName("crawlerConfigJP"); // NOI18N
         addAncestorListener(new javax.swing.event.AncestorListener() {
             public void ancestorAdded(javax.swing.event.AncestorEvent evt) {

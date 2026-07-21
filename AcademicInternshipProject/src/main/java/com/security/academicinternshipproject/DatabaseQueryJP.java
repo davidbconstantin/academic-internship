@@ -109,7 +109,7 @@ public class DatabaseQueryJP extends javax.swing.JPanel {
         refreshBTN = new javax.swing.JButton();
         selectedColLBL = new javax.swing.JLabel();
 
-        setBackground(new java.awt.Color(0, 51, 242));
+        setBackground(new java.awt.Color(50, 50, 50));
         setPreferredSize(new java.awt.Dimension(610, 390));
         addAncestorListener(new javax.swing.event.AncestorListener() {
             public void ancestorAdded(javax.swing.event.AncestorEvent evt) {
