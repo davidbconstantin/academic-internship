@@ -5,7 +5,6 @@
 package com.security.academicinternshipproject;
 
 import java.sql.SQLException;
-import java.sql.Types;
 import java.util.ArrayList;
 import java.util.List;
 import javax.sql.rowset.CachedRowSet;

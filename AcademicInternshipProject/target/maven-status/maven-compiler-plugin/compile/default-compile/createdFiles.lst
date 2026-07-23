@@ -20,6 +20,8 @@ com\security\academicinternshipproject\SentimentAnalysisJP$5.class
 com\security\academicinternshipproject\TestForm$1.class
 com\security\academicinternshipproject\CrawlerConfigJP$2.class
 com\security\academicinternshipproject\DatabaseQueryJP$6.class
+com\security\academicinternshipproject\DeleteCrawlerJP$1.class
+com\security\academicinternshipproject\MainMenuForm$6.class
 com\security\academicinternshipproject\MainMenuJP.class
 com\security\academicinternshipproject\MainMenuJP$4.class
 com\mycompany\davidssimplecrawler\ProductScraper.class
@@ -34,6 +36,7 @@ com\mycompany\davidssimplecrawler\MainWindow$5.class
 com\security\academicinternshipproject\swingworkers\SentimentAnalysisGUIWorker.class
 com\security\academicinternshipproject\CrawlerScriptingJP$3.class
 com\security\academicinternshipproject\SQLDatabaseJP$3.class
+com\security\academicinternshipproject\SentimentAnalysisJP$6.class
 com\mycompany\davidssimplecrawler\PageFetcher.class
 com\security\academicinternshipproject\DatabaseQueryJP$SQLTableModel.class
 com\security\academicinternshipproject\CrawlerScriptingJP$8.class
@@ -68,6 +71,7 @@ com\security\academicinternshipproject\SQLDatabaseJP$2.class
 com\security\academicinternshipproject\helpmenu\AboutForm.class
 com\security\academicinternshipproject\AcademicInternshipProject.class
 com\security\academicinternshipproject\MainMenuJP$1.class
+com\security\academicinternshipproject\DeleteCrawlerJP.class
 com\security\academicinternshipproject\CrawlerScriptingJP$4.class
 com\security\academicinternshipproject\SQLDatabaseJP$5.class
 com\mycompany\davidssimplecrawler\ProductScraper$ProductEntry.class
