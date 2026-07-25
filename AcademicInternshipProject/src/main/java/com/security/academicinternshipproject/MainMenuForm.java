@@ -13,9 +13,11 @@ package com.security.academicinternshipproject;
 import com.security.academicinternshipproject.helpmenu.AboutForm;
 import com.security.academicinternshipproject.helpmenu.UserManualForm;
 import java.awt.CardLayout;
+import java.awt.Color;
 import java.awt.Component;
 import java.awt.Container;
 import java.awt.Dimension;
+import java.awt.event.MouseAdapter;
 import java.io.BufferedReader;
 import java.io.EOFException;
 import java.io.File;
@@ -30,6 +32,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import javax.sql.rowset.CachedRowSet;
+import javax.swing.JButton;
 import javax.swing.JDialog;
 import javax.swing.JPanel;
 
@@ -88,32 +91,78 @@ public class MainMenuForm extends javax.swing.JFrame {
         SQLDatabaseJP sqlDatabasePanel = new SQLDatabaseJP(this);
         SentimentAnalysisJP sentimentAnalysisPanel = new SentimentAnalysisJP(this);
         DatabaseQueryJP databaseQueryPanel = new DatabaseQueryJP(this);
+        DeleteCrawlerJP deleteCrawlerPanel = new DeleteCrawlerJP(this);
         
         // add panels to card layout
         mainPanelJP.add(homeLandingJP, "Landing");
         homeLandingJP.setName("Landing");
+        
         mainPanelJP.add(crawlerConfigPanel, "Crawler Configuration");
         crawlerConfigPanel.setName("Crawler Configuration");
+        
         mainPanelJP.add(mainMenuPanel, "Main Menu");
         mainMenuPanel.setName("Main Menu");
+        
         mainPanelJP.add(crawlerScriptingPanel, "Crawler Scripting");
         crawlerScriptingPanel.setName("Crawler Scripting");
+        
         mainPanelJP.add(databaseSettingsPanel, "Database Settings");
         databaseSettingsPanel.setName("Database Settings");
+        
         mainPanelJP.add(sqlCredentialsPanel, "SQL Settings");
         sqlCredentialsPanel.setName("SQL Settings");
+        
         mainPanelJP.add(sqlDatabasePanel, "SQL Database");
         sqlDatabasePanel.setName("SQL Database");
+        
         mainPanelJP.add(sentimentAnalysisPanel, "Sentiment Analysis");
         sentimentAnalysisPanel.setName("Sentiment Analysis");
+        
         mainPanelJP.add(databaseQueryPanel, "Database Query");
         databaseQueryPanel.setName("Database Query");
+        
+        mainPanelJP.add(deleteCrawlerPanel, "Delete Crawler");
+        deleteCrawlerPanel.setName("Delete Crawler");
         
         lastPanel = mainMenuPanel;  
         selectedCrawler = new WebCrawler();
         
         // load SQL database settings
         loadSQLCredentials();
+        
+        // add GUI effects
+        addHoverEffectToButtons(contentPane);
+    }  
+    
+    // iterate through every component adding hover effects
+    private void addHoverEffectToButtons(Container container) {
+        for (Component c: container.getComponents()) {
+            if (c instanceof javax.swing.JButton button) 
+                addHoverEffect(button);
+            // use recursion to add events to nested buttons
+            else if (c instanceof Container nestedContainer) 
+                addHoverEffectToButtons(nestedContainer);
+        }
+    }
+    
+    // add mouse hover event to buttons
+    private void addHoverEffect(javax.swing.JButton button) {
+        button.addMouseListener(new MouseAdapter() {
+            
+            @Override
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                button.setBackground(Color.yellow);
+                button.setForeground(Color.blue);
+                repaint();
+            }
+            
+            @Override
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                button.setBackground(Color.white);
+                button.setForeground(Color.black);
+                repaint();
+            }
+        });
     }
     
     public void displayPanel(String panelName) {
@@ -263,6 +312,56 @@ public class MainMenuForm extends javax.swing.JFrame {
             editMode = true;
     }
     
+    public void loadCrawlers(javax.swing.JList crawlersLS) {
+        webCrawlers.clear();
+        try {
+            FileInputStream crawlers = new FileInputStream("crawlers.dat");
+            try {
+                ObjectInputStream ois = new ObjectInputStream(crawlers);
+                while (true) {
+                    try {
+                        webCrawlers.add((WebCrawler)ois.readObject());
+                    } catch (EOFException | ClassNotFoundException ex) {
+                        //ex.printStackTrace();
+                        break;
+                    }
+                }
+                List<String> listData = new ArrayList<>();
+                for (WebCrawler crawler: webCrawlers) {
+                    if (crawler != null)
+                    {
+                        listData.add(crawler.getName());
+                    }
+                }
+                String[] array = new String[listData.size()];
+                for (int i = 0; i < array.length; i++) {
+                    array[i] = listData.get(i);
+                }
+                crawlersLS.setListData(array);
+            } catch (IOException ex) {
+                ex.printStackTrace();
+            }
+        } catch (FileNotFoundException ex) {
+            //ex.printStackTrace();
+        }
+    }
+    
+    public void deleteCrawler(int index) {
+        try {
+            FileOutputStream fos = new FileOutputStream("crawlers.dat");
+            ObjectOutputStream ostream = new ObjectOutputStream(fos);
+            if (webCrawlers.size() > 0) {
+                for (int i = 0; i < webCrawlers.size(); i++) {
+                    if (i != index)
+                        ostream.writeObject(webCrawlers.get(i));
+                }
+            }
+            webCrawlers.clear();
+        } catch (IOException ex) {
+            ex.printStackTrace();
+        }  
+    }
+    
     public void loadSQLCredentials() {
         File databaseSettings = new File("credentials.txt");
         sqlCredentials.clear();
@@ -397,6 +496,7 @@ public class MainMenuForm extends javax.swing.JFrame {
         mainMB = new javax.swing.JMenuBar();
         actionsMU = new javax.swing.JMenu();
         sAnalysisMI = new javax.swing.JMenuItem();
+        deleteCrawlerMI = new javax.swing.JMenuItem();
         helpMU = new javax.swing.JMenu();
         aboutMI = new javax.swing.JMenuItem();
         userManualMI = new javax.swing.JMenuItem();
@@ -420,6 +520,14 @@ public class MainMenuForm extends javax.swing.JFrame {
             }
         });
         actionsMU.add(sAnalysisMI);
+
+        deleteCrawlerMI.setText("Delete Crawler");
+        deleteCrawlerMI.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                deleteCrawlerMIActionPerformed(evt);
+            }
+        });
+        actionsMU.add(deleteCrawlerMI);
 
         mainMB.add(actionsMU);
 
@@ -482,6 +590,11 @@ public class MainMenuForm extends javax.swing.JFrame {
         userManualForm.setVisible(true);
     }//GEN-LAST:event_userManualMIActionPerformed
 
+    private void deleteCrawlerMIActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteCrawlerMIActionPerformed
+        // TODO add your handling code here:
+        displayPanel("Delete Crawler");
+    }//GEN-LAST:event_deleteCrawlerMIActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -520,6 +633,7 @@ public class MainMenuForm extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenuItem aboutMI;
     private javax.swing.JMenu actionsMU;
+    private javax.swing.JMenuItem deleteCrawlerMI;
     private javax.swing.JMenu helpMU;
     private javax.swing.JMenuBar mainMB;
     private javax.swing.JPanel mainPanelJP;

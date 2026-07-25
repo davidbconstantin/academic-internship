@@ -1,5 +1,6 @@
 package com.security.academicinternshipproject;
 
+import com.mycompany.davidssimplecrawler.MainWindow;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Dimension;
@@ -16,6 +17,7 @@ import javax.swing.BorderFactory;
 import javax.swing.Box;
 import javax.swing.BoxLayout;
 import javax.swing.JButton;
+import javax.swing.JDialog;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
@@ -35,7 +37,7 @@ public class HomeLandingJP extends JPanel {
     
     private void buildUI() {
 
-        setBackground(new Color(51,51,255));
+        setBackground(new Color(50,50,50));
         setLayout(new BorderLayout(16,16));
         setBorder(BorderFactory.createEmptyBorder(22,22,22,22));
 
@@ -99,10 +101,12 @@ public class HomeLandingJP extends JPanel {
 
         actions.add(createActionButton("Open crawler workspace","Main Menu"));
         actions.add(Box.createRigidArea(new Dimension(0,10)));
+        
+        actions.add(createActionButton("Simple Ireland Crawler", null));
+        actions.add(Box.createRigidArea(new Dimension(0, 10)));
 
         actions.add(createActionButton("Exit", null));
         actions.add(Box.createRigidArea(new Dimension(0,10)));
-
 
         center.add(stats, gbc);
 
@@ -119,7 +123,7 @@ public class HomeLandingJP extends JPanel {
     private JPanel createCardPanel() {
         JPanel panel = new JPanel();
         panel.setOpaque(true);
-        panel.setBackground(new Color(35,35,180));
+        panel.setBackground(new Color(100,100,100));
         panel.setBorder(BorderFactory.createCompoundBorder(
                 BorderFactory.createLineBorder(new Color(180,200,255),1),
                 BorderFactory.createEmptyBorder(18,18,18,18)));
@@ -153,8 +157,17 @@ public class HomeLandingJP extends JPanel {
         button.setMaximumSize(new Dimension(220,34));
         if (panelName != null)
             button.addActionListener(e -> openPanel(panelName));
-        else
+        else if (text.equals("Exit"))
             button.addActionListener(e -> System.exit(0));
+        // launch applet if the simple crawler is selected
+        if (text.equals("Simple Ireland Crawler"))
+            button.addActionListener(e -> {
+                MainWindow mainWindow = new MainWindow();
+                mainWindow.setLocationRelativeTo(this);
+                mainWindow.setTitle("About");
+                mainWindow.setDefaultCloseOperation(JDialog.DO_NOTHING_ON_CLOSE);
+                mainWindow.setVisible(true);
+            });
         return button;
     }
 

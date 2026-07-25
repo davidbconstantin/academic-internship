@@ -55,7 +55,7 @@ public class SQLDatabaseJP extends javax.swing.JPanel {
         addBTN = new javax.swing.JButton();
         deleteBTN = new javax.swing.JButton();
 
-        setBackground(new java.awt.Color(0, 51, 255));
+        setBackground(new java.awt.Color(50, 50, 50));
         setPreferredSize(new java.awt.Dimension(610, 390));
 
         titleLBL.setForeground(new java.awt.Color(255, 255, 255));
@@ -136,13 +136,13 @@ public class SQLDatabaseJP extends javax.swing.JPanel {
                                 .addComponent(addBTN)
                                 .addGap(49, 49, 49)
                                 .addComponent(deleteBTN)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 104, Short.MAX_VALUE)
                                 .addComponent(okBTN)))))
                 .addGap(45, 45, 45))
             .addGroup(layout.createSequentialGroup()
                 .addGap(49, 49, 49)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 343, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(218, Short.MAX_VALUE))
+                .addComponent(jScrollPane1)
+                .addGap(72, 72, 72))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -154,8 +154,8 @@ public class SQLDatabaseJP extends javax.swing.JPanel {
                     .addComponent(nameLBL)
                     .addComponent(nameTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 202, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 42, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 202, Short.MAX_VALUE)
+                .addGap(42, 42, 42)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(abortBTN)
                     .addComponent(okBTN)

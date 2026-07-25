@@ -2,6 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  * https://docs.oracle.com/javase/8/docs/api/javax/swing/Timer.html
+ * https://docs.oracle.com/javase/tutorial/uiswing/components/editorpane.html
  */
 package com.security.academicinternshipproject.swingworkers;
 
@@ -9,12 +10,17 @@ import ai.djl.MalformedModelException;
 import ai.djl.repository.zoo.ModelNotFoundException;
 import ai.djl.translate.TranslateException;
 import com.security.academicinternshipproject.MainMenuForm;
+import java.awt.Color;
 import java.io.IOException;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 import javax.swing.SwingWorker;
 import javax.swing.Timer;
+import javax.swing.text.BadLocationException;
+import javax.swing.text.SimpleAttributeSet;
+import javax.swing.text.StyleConstants;
+import javax.swing.text.StyledDocument;
 
 /**
  *
@@ -23,7 +29,7 @@ import javax.swing.Timer;
 public class SentimentAnalysisGUIWorker extends SwingWorker<List<Integer>, Integer> {
     
     private MainMenuForm mainMenuForm;
-    private javax.swing.JTextArea statusTA;
+    private javax.swing.JTextPane statusTP;
     private javax.swing.JTextField inputTF;
     private javax.swing.JProgressBar positivePB;
     private javax.swing.JProgressBar negativePB;
@@ -36,12 +42,12 @@ public class SentimentAnalysisGUIWorker extends SwingWorker<List<Integer>, Integ
     private String row;
     private Timer timer;
     
-    public SentimentAnalysisGUIWorker(MainMenuForm mainMenuForm, javax.swing.JTextArea statusTA,
+    public SentimentAnalysisGUIWorker(MainMenuForm mainMenuForm, javax.swing.JTextPane statusTP,
             javax.swing.JTextField inputTF, javax.swing.JProgressBar positivePB,
             javax.swing.JProgressBar negativePB, javax.swing.JLabel pValueLBL,
             javax.swing.JLabel nValueLBL) {
         this.mainMenuForm = mainMenuForm;
-        this.statusTA = statusTA;
+        this.statusTP = statusTP;
         this.inputTF = inputTF;
         this.positivePB = positivePB;
         this.negativePB = negativePB;
@@ -54,8 +60,8 @@ public class SentimentAnalysisGUIWorker extends SwingWorker<List<Integer>, Integ
         scores = new ArrayList<>();
         mainMenuForm.getTaskNotifier().setToolTip("Performing sentiment analysis on table " + mainMenuForm.getSelectedTableName() + "...");
         try {
-            if (!statusTA.getText().equals(""))
-                mainMenuForm.getSentimentAnalyser().predict(statusTA.getText());
+            if (!statusTP.getText().equals(""))
+                mainMenuForm.getSentimentAnalyser().predict(statusTP.getText());
             else if (!mainMenuForm.isAnalysingSQLTable())
                 mainMenuForm.getSentimentAnalyser().predict(inputTF.getText());
             else {
@@ -105,8 +111,12 @@ public class SentimentAnalysisGUIWorker extends SwingWorker<List<Integer>, Integ
         positivePB.setValue(values.get(values.size() - 2));
         nValueLBL.setText(String.valueOf(values.get(values.size() - 1)));
         negativePB.setValue(values.get(values.size() - 1));
-        statusTA.append("Processed " + index + "/" + mainMenuForm.getCrs().size() + " row(s): "  
-                + row + "\n");
+        if (positivePB.getValue() > negativePB.getValue())
+            appendTextWithColour(statusTP, "Processed " + index + "/" + mainMenuForm.getCrs().size() + " row(s): "  
+                + row + "\n", Color.green);
+        else
+            appendTextWithColour(statusTP, "Processed " + index + "/" + mainMenuForm.getCrs().size() + " row(s): "  
+                + row + "\n", Color.red);
     }
     
     @Override
@@ -145,5 +155,25 @@ public class SentimentAnalysisGUIWorker extends SwingWorker<List<Integer>, Integ
         }
         System.out.println("Final value: " + finalValue + "/" + denominator);
         return finalValue / denominator;
+    }
+    
+    public void appendText(javax.swing.JTextPane textPane, String text) {
+        try {
+            StyledDocument document = textPane.getStyledDocument();
+            document.insertString(document.getLength(), text, null);
+        } catch (BadLocationException ex) {
+            System.out.println(ex);
+        }
+    }
+    
+    public void appendTextWithColour(javax.swing.JTextPane textPane, String text, Color colour) {
+        try {
+            StyledDocument document = textPane.getStyledDocument();
+            SimpleAttributeSet attributes = new SimpleAttributeSet();
+            StyleConstants.setForeground(attributes, colour);
+            document.insertString(document.getLength(), text, attributes);
+        } catch (BadLocationException ex) {
+            System.out.println(ex);
+        }
     }
 }

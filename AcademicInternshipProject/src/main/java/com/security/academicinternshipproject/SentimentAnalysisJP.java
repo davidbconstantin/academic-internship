@@ -4,15 +4,11 @@
  */
 package com.security.academicinternshipproject;
 
-import ai.djl.MalformedModelException;
-import ai.djl.repository.zoo.ModelNotFoundException;
-import ai.djl.translate.TranslateException;
 import com.security.academicinternshipproject.swingworkers.SentimentAnalysisGUIWorker;
 import java.awt.Color;
-import java.io.IOException;
-import java.sql.SQLException;
-import java.util.ArrayList;
 import java.util.List;
+import javax.swing.text.BadLocationException;
+import javax.swing.text.StyledDocument;
 
 /**
  *
@@ -57,11 +53,16 @@ public class SentimentAnalysisJP extends javax.swing.JPanel {
         nValueLBL = new javax.swing.JLabel();
         responsesCB = new javax.swing.JComboBox<>();
         responsesLBL = new javax.swing.JLabel();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        statusTA = new javax.swing.JTextArea();
         queryBTN = new javax.swing.JButton();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        statusTP = new javax.swing.JTextPane() {
+            @Override
+            public boolean getScrollableTracksViewportWidth() {
+                return true;
+            }
+        };
 
-        setBackground(new java.awt.Color(0, 51, 242));
+        setBackground(new java.awt.Color(50, 50, 50));
         setPreferredSize(new java.awt.Dimension(610, 390));
         addAncestorListener(new javax.swing.event.AncestorListener() {
             public void ancestorAdded(javax.swing.event.AncestorEvent evt) {
@@ -105,6 +106,8 @@ public class SentimentAnalysisJP extends javax.swing.JPanel {
 
         positivePB.setOpaque(true);
 
+        negativePB.setOpaque(true);
+
         pValueLBL.setForeground(new java.awt.Color(255, 255, 255));
         pValueLBL.setText("Positive");
 
@@ -121,12 +124,6 @@ public class SentimentAnalysisJP extends javax.swing.JPanel {
         responsesLBL.setForeground(new java.awt.Color(255, 255, 255));
         responsesLBL.setText("HTML Responses:");
 
-        statusTA.setEditable(false);
-        statusTA.setColumns(20);
-        statusTA.setRows(5);
-        statusTA.setWrapStyleWord(true);
-        jScrollPane1.setViewportView(statusTA);
-
         queryBTN.setText("Query Database");
         queryBTN.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -134,54 +131,58 @@ public class SentimentAnalysisJP extends javax.swing.JPanel {
             }
         });
 
+        jScrollPane2.setBackground(new java.awt.Color(0, 0, 0));
+        jScrollPane2.setOpaque(false);
+
+        statusTP.setBackground(new java.awt.Color(0, 0, 0));
+        jScrollPane2.setViewportView(statusTP);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
+                .addGap(203, 203, 203)
+                .addComponent(titleLBL))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(31, 31, 31)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(203, 203, 203)
-                        .addComponent(titleLBL))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(31, 31, 31)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(inputTF, javax.swing.GroupLayout.PREFERRED_SIZE, 202, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(inputLBL))
+                        .addGap(67, 67, 67)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(responsesLBL)
                             .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(modelLBL)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(inputTF, javax.swing.GroupLayout.PREFERRED_SIZE, 202, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(inputLBL))
-                                        .addGap(67, 67, 67)
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(responsesLBL)
-                                            .addGroup(layout.createSequentialGroup()
-                                                .addComponent(responsesCB, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                                .addComponent(queryBTN))))
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                            .addGroup(layout.createSequentialGroup()
-                                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                    .addComponent(positiveLBL)
-                                                    .addComponent(negativeLBL))
-                                                .addGap(29, 29, 29)
-                                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                                    .addComponent(positivePB, javax.swing.GroupLayout.DEFAULT_SIZE, 193, Short.MAX_VALUE)
-                                                    .addComponent(negativePB, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                                            .addComponent(jScrollPane1))
-                                        .addGap(18, 18, 18)
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(pValueLBL)
-                                            .addComponent(nValueLBL))))
-                                .addGap(52, 52, 52))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(backBTN)
+                                .addComponent(responsesCB, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(runBTN)
-                                .addGap(44, 44, 44)))))
-                .addContainerGap())
+                                .addComponent(queryBTN)))
+                        .addGap(104, 104, 104))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(backBTN)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(runBTN)
+                        .addGap(44, 44, 44))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(modelLBL)
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jScrollPane2)
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(positiveLBL)
+                                    .addComponent(negativeLBL))
+                                .addGap(29, 29, 29)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(positivePB, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(negativePB, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .addGap(18, 18, 18)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(pValueLBL)
+                                    .addComponent(nValueLBL))))
+                        .addGap(156, 156, 156))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -202,25 +203,21 @@ public class SentimentAnalysisJP extends javax.swing.JPanel {
                 .addGap(46, 46, 46)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(positivePB, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(positivePB, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(positiveLBL, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addComponent(pValueLBL))
                 .addGap(43, 43, 43)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(negativePB, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(negativeLBL))
-                        .addGap(18, 18, 18)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 140, Short.MAX_VALUE)
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(backBTN)
-                            .addComponent(runBTN))
-                        .addGap(29, 29, 29))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(nValueLBL)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                    .addComponent(negativePB, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(negativeLBL)
+                    .addComponent(nValueLBL))
+                .addGap(18, 18, 18)
+                .addComponent(jScrollPane2)
+                .addGap(14, 14, 14)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(backBTN)
+                    .addComponent(runBTN))
+                .addGap(29, 29, 29))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -232,45 +229,8 @@ public class SentimentAnalysisJP extends javax.swing.JPanel {
     private void runBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_runBTNActionPerformed
         // TODO add your handling code here:
         SentimentAnalysisGUIWorker worker = new SentimentAnalysisGUIWorker(mainMenuForm,
-        statusTA, inputTF, positivePB, negativePB, pValueLBL, nValueLBL);
+        statusTP, inputTF, positivePB, negativePB, pValueLBL, nValueLBL);
         worker.execute();
-//        try {
-//            if (!statusTA.getText().equals(""))
-//                mainMenuForm.getSentimentAnalyser().predict(statusTA.getText());
-//            else if (!mainMenuForm.isAnalysingSQLTable())
-//                mainMenuForm.getSentimentAnalyser().predict(inputTF.getText());
-//            else {
-//                // predict sentiment for each table row
-//                int index = 0;
-//                positiveScores = new ArrayList<>();
-//                negativeScores = new ArrayList<>();
-//                while (mainMenuForm.getCrs().next()) {
-//                    index++;
-//                    System.out.println("Analysing row " + index + " out of " + mainMenuForm.getCrs().size()); 
-//                    if (mainMenuForm.getCrs().getString(mainMenuForm.getSelectedColumnName()) != null &&
-//                            !mainMenuForm.getCrs().getString(mainMenuForm.getSelectedColumnName()).trim().isEmpty()) {
-//                        mainMenuForm.getSentimentAnalyser().predict(mainMenuForm.getCrs().getString(mainMenuForm.getSelectedColumnName()));
-//                        positiveScores.add((int)(mainMenuForm.getSentimentAnalyser().getClassifications().get("Positive").getProbability() * 100));
-//                        negativeScores.add((int)(mainMenuForm.getSentimentAnalyser().getClassifications().get("Negative").getProbability() * 100));
-//                    } else
-//                        System.out.println("Skipping row...");
-//                }
-//                mainMenuForm.getCrs().close();
-//                mainMenuForm.setIsAnalysingTable(false);
-//                inputTF.setText("");
-//            }
-//            displayAnalysisResults();
-//        } catch (MalformedModelException ex) {
-//            System.out.println(ex);
-//        } catch (ModelNotFoundException ex) {
-//            System.out.println(ex);
-//        } catch (IOException ex) {
-//            System.out.println(ex);
-//        } catch (TranslateException ex) {
-//            System.out.println(ex);
-//        } catch (SQLException ex) {
-//            System.out.println(ex);
-//        }
     }//GEN-LAST:event_runBTNActionPerformed
 
     private void formAncestorAdded(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_formAncestorAdded
@@ -293,9 +253,9 @@ public class SentimentAnalysisJP extends javax.swing.JPanel {
     private void responsesCBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_responsesCBActionPerformed
         // TODO add your handling code here:
         // populate text area with crawler output
-        statusTA.setText("");
+        statusTP.setText("");
         for (String result: mainMenuForm.getSelectedCrawler().getHtmlResponses().get(responsesCB.getSelectedIndex()).getResults()) {
-            statusTA.append(result + "\n");
+            appendText(statusTP, result + "\n");
         }
     }//GEN-LAST:event_responsesCBActionPerformed
 
@@ -304,37 +264,20 @@ public class SentimentAnalysisJP extends javax.swing.JPanel {
         mainMenuForm.displayPanel("Database Query");
     }//GEN-LAST:event_queryBTNActionPerformed
 
-    public void displayAnalysisResults() {
-//        if (!mainMenuForm.isAnalysingSQLTable()) {
-//        positivePB.setValue((int)(mainMenuForm.getSentimentAnalyser().getClassifications().get("Positive").getProbability() * 100));
-//        negativePB.setValue((int)(mainMenuForm.getSentimentAnalyser().getClassifications().get("Negative").getProbability() * 100));
-//        } else {
-//            positivePB.setValue(computeAggregateScore((ArrayList<Integer>) positiveScores));
-//            negativePB.setValue(computeAggregateScore((ArrayList<Integer>) negativeScores));
-//            positiveScores.clear();
-//            negativeScores.clear();
-//        }
-//        pValueLBL.setText(String.valueOf(mainMenuForm.getSentimentAnalyser().getClassifications().get("Positive").getProbability()));
-//        nValueLBL.setText(String.valueOf(mainMenuForm.getSentimentAnalyser().getClassifications().get("Negative").getProbability()));
+    public void appendText(javax.swing.JTextPane textPane, String text) {
+        try {
+            StyledDocument document = textPane.getStyledDocument();
+            document.insertString(document.getLength(), text, null);
+        } catch (BadLocationException ex) {
+            System.out.println(ex);
+        }
     }
-    
-//    public int computeAggregateScore(ArrayList<Integer> values) {
-//        int finalValue = 0;
-//        int denominator = 0;
-//        for (int value: values) {
-//            denominator++;
-//            System.out.println("Value " + denominator + ": "+ value);
-//            finalValue += value;
-//        }
-//        System.out.println("Final value: " + finalValue + "/" + denominator);
-//        return finalValue / denominator;
-//    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton backBTN;
     private javax.swing.JLabel inputLBL;
     private javax.swing.JTextField inputTF;
-    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JLabel modelLBL;
     private javax.swing.JLabel nValueLBL;
     private javax.swing.JLabel negativeLBL;
@@ -346,7 +289,7 @@ public class SentimentAnalysisJP extends javax.swing.JPanel {
     private javax.swing.JComboBox<String> responsesCB;
     private javax.swing.JLabel responsesLBL;
     private javax.swing.JButton runBTN;
-    private javax.swing.JTextArea statusTA;
+    private javax.swing.JTextPane statusTP;
     private javax.swing.JLabel titleLBL;
     // End of variables declaration//GEN-END:variables
 }

@@ -42,7 +42,7 @@ public class DatabaseSettingsJP extends javax.swing.JPanel {
         backBTN = new javax.swing.JButton();
         tablesBTN = new javax.swing.JButton();
 
-        setBackground(new java.awt.Color(0, 0, 255));
+        setBackground(new java.awt.Color(50, 50, 50));
         setName("databaseSettingsJP"); // NOI18N
         setPreferredSize(new java.awt.Dimension(610, 390));
 
