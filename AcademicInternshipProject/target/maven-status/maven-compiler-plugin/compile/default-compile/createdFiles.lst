@@ -69,6 +69,7 @@ com\security\academicinternshipproject\CrawlerScriptingJP$1.class
 com\security\academicinternshipproject\HomeLandingJP.class
 com\security\academicinternshipproject\SQLDatabaseJP$2.class
 com\security\academicinternshipproject\helpmenu\AboutForm.class
+com\mycompany\davidssimplecrawler\MainWindow$9.class
 com\security\academicinternshipproject\AcademicInternshipProject.class
 com\security\academicinternshipproject\MainMenuJP$1.class
 com\security\academicinternshipproject\DeleteCrawlerJP.class
@@ -76,7 +77,9 @@ com\security\academicinternshipproject\CrawlerScriptingJP$4.class
 com\security\academicinternshipproject\SQLDatabaseJP$5.class
 com\mycompany\davidssimplecrawler\ProductScraper$ProductEntry.class
 com\security\academicinternshipproject\MainMenuForm$2.class
+com\mycompany\davidssimplecrawler\CsvWriter.class
 com\security\academicinternshipproject\MainMenuForm$5.class
+com\mycompany\davidssimplecrawler\MainWindow$6.class
 com\security\academicinternshipproject\CrawlerScriptingJP$7.class
 com\mycompany\davidssimplecrawler\CsvReader.class
 com\mycompany\davidssimplecrawler\MainWindow$1.class
@@ -85,6 +88,7 @@ com\security\academicinternshipproject\SQLCredentialsJP$1.class
 com\security\academicinternshipproject\CrawlerScriptingJP$10.class
 com\security\academicinternshipproject\SentimentAnalysisJP$3.class
 com\security\academicinternshipproject\CrawlerConfigJP.class
+com\mycompany\davidssimplecrawler\MainWindow$8.class
 com\security\academicinternshipproject\CrawlerConfigJP$3.class
 com\security\academicinternshipproject\WebCrawler.class
 com\security\academicinternshipproject\MainMenuForm$3.class
@@ -97,6 +101,7 @@ com\security\academicinternshipproject\TestPanel.class
 com\mycompany\davidssimplecrawler\HtmlParser.class
 com\security\academicinternshipproject\SQLCredentialsJP$2.class
 com\security\academicinternshipproject\CrawlerScriptingJP$6.class
+com\mycompany\davidssimplecrawler\MainWindow$7.class
 com\security\academicinternshipproject\CrawlerConfigJP$4.class
 com\mycompany\davidssimplecrawler\WebCrawlerApp.class
 com\security\academicinternshipproject\SentimentAnalysisJP$4.class

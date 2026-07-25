@@ -22,52 +22,55 @@ import java.util.ArrayList;
 
 public class ProductScraper {
 
-    // csv file for product prices saved next to where the app runs
+    // csv file saved next to where the app runs
     private static final String CSV_FILE = "product_prices.csv";
 
     // timestamp format used in the csv
     private static final DateTimeFormatter TIMESTAMP_FORMAT =
             DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss");
 
-    // the search url templates for each supermarket
-    // {QUERY} gets replaced with the product name the user types
+    // supermarket url templates
+    // aldi uses ?q= as a signal - JsBrowserFetcher extracts the query and types it into the search box
+    // because aldi.ie does not support url-based search (it redirects to homepage)
     public static final String[][] SUPERMARKETS = {
-        {
-            "Aldi Ireland",
-            "https://www.aldi.ie/search?q={QUERY}"
-        },
-        {
-            "Lidl Ireland",
-            "https://www.lidl.ie/search?q={QUERY}&action=list"
-        },
-        {
-            "Tesco Ireland",
-            "https://www.tesco.ie/groceries/en-IE/search?query={QUERY}"
-        },
-        {
-            "Dunnes Stores",
-            "https://www.dunnesstores.com/search?q={QUERY}"
-        },
-        {
-            "SuperValu",
-            "https://shop.supervalu.ie/sm/delivery/rsid/5550/results?q={QUERY}"
-        },
+        {"Aldi Ireland",  "https://www.aldi.ie/search?q={QUERY}"},
+        {"Lidl Ireland",  "https://www.lidl.ie/search?q={QUERY}&action=list"},
+        {"Tesco Ireland", "https://www.tesco.ie/groceries/en-IE/search?query={QUERY}"},
+        {"Dunnes Stores", "https://www.dunnesstores.com/search?q={QUERY}"},
+        {"SuperValu",     "https://shop.supervalu.ie/sm/delivery/rsid/5550/results?q={QUERY}"},
     };
 
     /**
-     * Builds the search url for a given supermarket and product query.
-     * Replaces spaces with + for use in urls.
+     * Builds the search url for a supermarket by replacing {QUERY} with the encoded query.
+     * For Aldi the url is passed to JsBrowserFetcher which extracts the query
+     * and types it into the search box directly.
      */
     public String buildSearchUrl(String urlTemplate, String query) {
-        // replace spaces with + for the url query string
         String encoded = query.trim().replace(" ", "+");
         return urlTemplate.replace("{QUERY}", encoded);
     }
 
     /**
      * Scrapes product results from a rendered html page.
-     * Tries multiple selector patterns to match different supermarket layouts.
-     * Returns a list of ProductEntry objects.
+     *
+     * Confirmed selectors:
+     *
+     * Aldi (from saved Search___ALDI_IE.html - 30 tiles):
+     *   div.product-tile                               - card
+     *   div.product-tile__brandname p                 - brand
+     *   div.product-tile__name p                      - name
+     *   div.product-tile__unit-of-measurement p       - size
+     *   div.base-price--product-tile span.digit       - price digits joined manually
+     *
+     * Tesco (from saved Results_for_bread_-_Tesco_Groceries.html - 27 products):
+     *   h2.online-components-product-tile-product-heading__heading a  - name (link text)
+     *   p.online-components-product-tile-price__text                  - price
+     *
+     * Lidl (from saved results_for_lidl_ie_for__bread.html - 32 tiles):
+     *   .product-grid-box                             - card
+     *   .product-grid-box__title                      - name
+     *   .ods-price__value                             - price value e.g. 1.79
+     *   .ods-price__prefix                            - price prefix e.g. "each" or currency
      */
     public ArrayList<ProductEntry> scrapeProducts(String html, String supermarket, String searchQuery) {
         ArrayList<ProductEntry> entries = new ArrayList<>();
@@ -77,64 +80,93 @@ public class ProductScraper {
         Document doc = Jsoup.parse(html);
 
         // ── Aldi Ireland ─────────────────────────────────────────────
-        // aldi uses article tags for each product card
         if (supermarket.contains("Aldi")) {
-            Elements cards = doc.select("article");
-            for (Element card : cards) {
+            Elements tiles = doc.select("div.product-tile");
+            System.out.println("Aldi: found " + tiles.size() + " tiles");
+
+            for (Element tile : tiles) {
+
+                // brand + name combined
+                String brand = "";
+                Element brandEl = tile.selectFirst("div.product-tile__brandname p");
+                if (brandEl != null) brand = brandEl.text().trim();
+
                 String name = "";
-                Element nameEl = card.selectFirst("h2, .product-tile__name, [class*='name']");
+                Element nameEl = tile.selectFirst("div.product-tile__name p");
                 if (nameEl != null) name = nameEl.text().trim();
                 if (name.isEmpty()) continue;
 
-                // aldi price is in ins.base-price__discounted or .base-price__regular
+                String fullName = brand.isEmpty() ? name : brand + " - " + name;
+
+                // size appended to name
+                Element sizeEl = tile.selectFirst("div.product-tile__unit-of-measurement p");
+                if (sizeEl != null && !sizeEl.text().trim().isEmpty()) {
+                    fullName = fullName + " (" + sizeEl.text().trim() + ")";
+                }
+
+                // price - join individual span.digit elements to reconstruct e.g. "€1.29"
                 String price = "";
-                Element priceEl = card.selectFirst("ins.base-price__discounted, .base-price__regular");
-                if (priceEl != null) price = priceEl.text().trim();
+                Element priceDiv = tile.selectFirst("div.base-price--product-tile");
+                if (priceDiv != null) {
+                    Elements digitSpans = priceDiv.select("span.digit");
+                    if (!digitSpans.isEmpty()) {
+                        StringBuilder pb = new StringBuilder();
+                        for (Element d : digitSpans) pb.append(d.text());
+                        price = pb.toString().trim();
+                    } else {
+                        Element priceEl = priceDiv.selectFirst("span.base-price__regular span");
+                        if (priceEl != null) price = priceEl.text().trim();
+                    }
+                }
+
                 if (price.isEmpty()) continue;
 
+                entries.add(new ProductEntry(timestamp, supermarket, searchQuery, fullName, price));
+            }
+        }
+
+        // ── Tesco Ireland ─────────────────────────────────────────────
+        // confirmed from real saved html - 27 products paired by index
+        else if (supermarket.contains("Tesco")) {
+            Elements nameEls  = doc.select("h2.online-components-product-tile-product-heading__heading a");
+            Elements priceEls = doc.select("p.online-components-product-tile-price__text");
+            System.out.println("Tesco: " + nameEls.size() + " names, " + priceEls.size() + " prices");
+
+            int count = Math.min(nameEls.size(), priceEls.size());
+            for (int i = 0; i < count; i++) {
+                String name  = nameEls.get(i).text().trim();
+                String price = priceEls.get(i).text().trim();
+                if (name.isEmpty() || price.isEmpty()) continue;
                 entries.add(new ProductEntry(timestamp, supermarket, searchQuery, name, price));
             }
         }
 
         // ── Lidl Ireland ─────────────────────────────────────────────
-        // lidl uses a grid of product tiles
+        // confirmed from saved results_for_lidl_ie_for__bread.html - 32 tiles
+        // card:  .product-grid-box
+        // name:  .product-grid-box__title
+        // price: .ods-price__value (the number) - prefix is "each" not a currency symbol
+        //        price text is just the number e.g. "1.79" - we add € in front
         else if (supermarket.contains("Lidl")) {
-            Elements cards = doc.select("[class*='product'], [class*='Product'], .s-grid__item");
-            for (Element card : cards) {
+            Elements tiles = doc.select(".product-grid-box");
+            System.out.println("Lidl: found " + tiles.size() + " tiles");
+
+            for (Element tile : tiles) {
                 String name = "";
-                Element nameEl = card.selectFirst("h3, h2, [class*='title'], [class*='name']");
+                Element nameEl = tile.selectFirst(".product-grid-box__title");
                 if (nameEl != null) name = nameEl.text().trim();
                 if (name.isEmpty()) continue;
 
                 String price = "";
-                Element priceEl = card.selectFirst("[class*='price'], [class*='Price']");
-                if (priceEl != null) price = priceEl.text().trim();
-                if (price.isEmpty()) continue;
-
-                // clean up price - keep only up to 20 chars to avoid grabbing whole paragraphs
-                if (price.length() > 20) price = price.substring(0, 20).trim();
-
-                entries.add(new ProductEntry(timestamp, supermarket, searchQuery, name, price));
-            }
-        }
-
-        // ── Tesco Ireland ─────────────────────────────────────────────
-        // tesco uses product tiles with data-auto attributes
-        else if (supermarket.contains("Tesco")) {
-            Elements cards = doc.select("[data-auto='product-tile'], .product-list--list-item, " +
-                                        "[class*='product-list'], li.product-list--list-item");
-            for (Element card : cards) {
-                String name = "";
-                Element nameEl = card.selectFirst("[class*='title'], h2, h3, a[class*='product']");
-                if (nameEl != null) name = nameEl.text().trim();
-                if (name.isEmpty()) continue;
-
-                String price = "";
-                Element priceEl = card.selectFirst("[class*='price'], .value");
-                if (priceEl != null) price = priceEl.text().trim();
-                if (price.isEmpty()) continue;
-
-                if (price.length() > 20) price = price.substring(0, 20).trim();
+                Element priceEl = tile.selectFirst(".ods-price__value");
+                if (priceEl != null) {
+                    price = priceEl.text().trim();
+                    // add euro sign if not already present
+                    if (!price.startsWith("€") && !price.startsWith("£")) {
+                        price = "€" + price;
+                    }
+                }
+                if (price.isEmpty() || price.equals("€")) continue;
 
                 entries.add(new ProductEntry(timestamp, supermarket, searchQuery, name, price));
             }
@@ -142,18 +174,25 @@ public class ProductScraper {
 
         // ── Dunnes Stores ─────────────────────────────────────────────
         else if (supermarket.contains("Dunnes")) {
-            Elements cards = doc.select(".product-tile, [class*='product-card'], [class*='ProductCard']");
-            for (Element card : cards) {
+            Elements tiles = doc.select(
+                ".product-tile, [class*='ProductCard'], [class*='product-card']"
+            );
+            System.out.println("Dunnes: found " + tiles.size() + " tiles");
+
+            for (Element tile : tiles) {
                 String name = "";
-                Element nameEl = card.selectFirst("h2, h3, [class*='name'], [class*='title']");
+                Element nameEl = tile.selectFirst(
+                    "h2, h3, [class*='product-name'], [class*='ProductName'], [class*='title']"
+                );
                 if (nameEl != null) name = nameEl.text().trim();
                 if (name.isEmpty()) continue;
 
                 String price = "";
-                Element priceEl = card.selectFirst("[class*='price'], [class*='Price']");
+                Element priceEl = tile.selectFirst(
+                    "[class*='product-price'], [class*='ProductPrice'], [class*='price']"
+                );
                 if (priceEl != null) price = priceEl.text().trim();
                 if (price.isEmpty()) continue;
-
                 if (price.length() > 20) price = price.substring(0, 20).trim();
 
                 entries.add(new ProductEntry(timestamp, supermarket, searchQuery, name, price));
@@ -162,25 +201,30 @@ public class ProductScraper {
 
         // ── SuperValu ─────────────────────────────────────────────────
         else if (supermarket.contains("SuperValu")) {
-            Elements cards = doc.select(".product-grid-item, [class*='ProductGridItem'], " +
-                                        "[class*='product-item']");
-            for (Element card : cards) {
+            Elements tiles = doc.select(
+                "[class*='ProductCardWrapper'], [class*='ColProductCard'], [class*='product-grid-item']"
+            );
+            System.out.println("SuperValu: found " + tiles.size() + " tiles");
+
+            for (Element tile : tiles) {
                 String name = "";
-                Element nameEl = card.selectFirst("h2, h3, [class*='name'], [class*='title']");
+                Element nameEl = tile.selectFirst(
+                    "h2, h3, [class*='ProductName'], [class*='product-name'], [class*='Title']"
+                );
                 if (nameEl != null) name = nameEl.text().trim();
                 if (name.isEmpty()) continue;
 
                 String price = "";
-                Element priceEl = card.selectFirst("[class*='price'], [class*='Price']");
+                Element priceEl = tile.selectFirst("[class*='Price'], [class*='price']");
                 if (priceEl != null) price = priceEl.text().trim();
                 if (price.isEmpty()) continue;
-
                 if (price.length() > 20) price = price.substring(0, 20).trim();
 
                 entries.add(new ProductEntry(timestamp, supermarket, searchQuery, name, price));
             }
         }
 
+        System.out.println(supermarket + ": returning " + entries.size() + " entries");
         return entries;
     }
 
@@ -216,11 +260,8 @@ public class ProductScraper {
         return new java.io.File(CSV_FILE).getAbsolutePath();
     }
 
-    // ── inner class - holds one product result ───────────────────────
+    // ── inner class ──────────────────────────────────────────────────
 
-    /**
-     * Holds data for one product price result.
-     */
     public static class ProductEntry {
 
         public String timestamp;
@@ -238,7 +279,6 @@ public class ProductScraper {
             this.price = price;
         }
 
-        // formats as a csv row with quoted fields
         public String toCsvRow() {
             return "\"" + timestamp + "\","
                  + "\"" + supermarket + "\","
