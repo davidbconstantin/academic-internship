@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: UseCaseTests.NavigateGUITest$ExceptionE1
+-------------------------------------------------------------------------------
+Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.221 s -- in UseCaseTests.NavigateGUITest$ExceptionE1
