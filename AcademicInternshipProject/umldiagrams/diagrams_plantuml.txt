@@ -1,0 +1,801 @@
+dbdiagram.io
+Table NewsTable { 
+
+  id integer [primary key] 
+
+  articleText varchar 
+
+  created_at timestamp 
+
+} 
+
+plantuml.com
+
+Class Diagram
+@startuml 
+
+AcademicInternshipProject --> MainMenuForm 
+
+class AcademicInternshipProject { 
+
+  +main(args: String[]): static void 
+
+} 
+
+class MainMenuForm extends javax.swing.JFrame { 
+
+  -cardLayout: CardLayout  
+
+  -lastPanel: String 
+
+  -webCrawlers: List<WebCrawler> 
+
+  -selectedCrawler: WebCrawler 
+
+  -sql: MySQLConnector 
+
+  -sqlCredentials: List<String> 
+
+  -sqlCredentialsRequired: boolean 
+
+  -editMode: boolean  
+
+  -username: char[] 
+
+  -password: char[] 
+
+  +MainMenuForm() 
+
+  +displayPanel(panelName: String): void 
+
+  +getWebCrawlers(): List<WebCrawler> 
+
+  +getSelectedCrawler(): WebCrawler 
+
+  +setSelectedCrawler(crawler: WebCrawler): void 
+
+  +isSqlCredentialsRequired(): boolean 
+
+  +setSQLCredentialsRequired(value: boolean): void 
+
+  +getUsername(): char[] 
+
+  +getPassword(): char[] 
+
+  +setUsername(username: char[]): void 
+
+  +setPassword(password: char[]): void 
+
+  +isEditMode(): boolean 
+
+  +getMySQL(): MySQLConnector 
+
+  +setEditMode(value: boolean): void 
+
+  +eraseCredentials(): void 
+
+  +writeCrawler(): void 
+
+  +loadCrawlers(crawlersCB: javax.swing.JComboBox): void 
+
+  +loadSQLCredentials(): void 
+
+  +getSQLCredentials(): List<String> 
+
+} 
+
+class CommandParser { 
+
+  -action: String 
+
+  -object: String 
+
+  -subject: String 
+
+  -subjectNo: int 
+
+  -commandNo: static int 
+
+  -tokenizer: StringTokenizer 
+
+  +CommandParser(command: String) 
+
+  +getAction(): String 
+
+  +getObject(): String 
+
+  +getSubject(): String 
+
+  +getSubjectNo(): int 
+
+  +getCommandNo(): int 
+
+  +setCommandNo(number: int): void 
+
+} 
+
+class HTMLNode { 
+
+  -element: String 
+
+  -elementClass: String 
+
+  -attribute: String 
+
+  +HTMLNode(element: String, elementClass: String, attribute: String) 
+
+  +getElement(): String 
+
+  +setElement(element: String): void 
+
+  +getElementClass(): String 
+
+  +setElementClass(elementClass: String): void 
+
+  +getAttribute(): String 
+
+  +setAttribute(attribute: String): void 
+
+} 
+
+class JSoupParser { 
+
+  -paragraphs: ArrayList<String> 
+
+  -elements: Elements 
+
+  +JSoupParser() 
+
+  +searchDocument(htmlMarkup: ArrayList<String>, searchTerm: String) 
+
+  +getTextFromDocument(htmlMarkup: String) 
+
+  +getAttributesFromDocument(htmlMarkup: String, searchTerm: String) 
+
+  +getParagraphs(): ArrayList<String> 
+
+} 
+
+class MySQLConnector { 
+
+-result: String 
+
+-metadata: DatabaseMetaData 
+
+-tableStrings: List<String> 
+
+-currentDb: String 
+
++MySQLConnector(host: String, port: int, databaseName: String, userName: String, password: String) 
+
++MySQLConnector(host: String, port: int, databaseName: String, userName: String, password: String, userStatement: String) 
+
++MySQLConnector(url: String, userName: String, password: String, userStatement: String) 
+
++MySQLConnector(url: String, userName: String, password: String) 
+
++getColumnSize(url: String, userName: String, password: String, tableName: String, columnName: String) 
+
++fetchTableSchemas(url: String, userName: String, password: String) 
+
++getTableSchemas(): List<String> 
+
++getResult(): String 
+
+} 
+
+class SQLColumnInfo { 
+
+-columnName: String 
+
+-dataType: int 
+
+-typeName: String 
+
+-columnSize: int 
+
+-remarks: String 
+
+-columnDef: String 
+
+-ordinalPosition: int 
+
+-isAutoincrement: String 
+
+-isGeneratedColumn: String 
+
++SQLColumnInfo(columnName: String, dataType: int, typeName: String, columnSize: int, remarks: String, columnDef: String, ordinalPosition: int, isAutoincrement: String, isGeneratedColumn: String) 
+
++printInfo(): void 
+
+} 
+
+class SQLDatabaseInfo{ 
+
+-name: String 
+
+-tables: List<SQLTableInfo> 
+
++SQLDatabaseInfo(name: String, tables: List<SQLTableInfo> 
+
++getName(): String 
+
++getTables(): List<SQLTableInfo> 
+
++printInfo(): void 
+
+} 
+
+class SQLParser{ 
+
+-columnInfo: List<String> 
+
+-currentDb: String 
+
++SQLParser(sqlStatement: String, dbMetadata: DatabaseMetaData) 
+
+} 
+
+class SQLTableInfo { 
+
+-databaseName: String 
+
+-tableName: String 
+
+-columns: List<SQLColumnInfo> 
+
++SQLTableInfo(databaseName: String, tableName: String, columns: List<SQLColumnInfo> 
+
++getColumns(List<SQLColumnInfo> 
+
++printInfo(): void 
+
+} 
+
+class SearchResult { 
+
+-id: static int 
+
+-results: ArrayList<String> 
+
+-commandNo: int 
+
++SearchResult(results: ArrayList<String>, commandNo: int) 
+
++SearchResult(result: String) 
+
++getId(): int 
+
++getCommandNo(): int 
+
++getResults(): ArrayList<String> 
+
++setResults(results: ArrayList<String>): void 
+
+} 
+
+class WebCrawler implements java.io.Serializable { 
+
+-name: String 
+
+-userAgent: String 
+
+-crawlDelay: int 
+
+-urls: ArrayList<String> 
+
+-searchResults: ArrayList<SearchResult> 
+
+-commands: ArrayList<String> 
+
++WebCrawler(name: String, userAgent: String, crawlDelay: int) 
+
++WebCrawler(name: String, userAgent: String, crawlDelay: int, urls: ArrayList<String>, commands: ArrayList<String>) 
+
++WebCrawler() 
+
++getName(): String 
+
++setName(name: String): void 
+
++getUserAgent(): String 
+
++setUserAgent(userAgent: String): void 
+
++getCrawlDelay(): int 
+
++setCrawlDelay(crawlDelay: int): void 
+
++getUrls(): ArrayList<String> 
+
++setUrls(urls: ArrayList<String>): void 
+
++getHtmlResponses(): ArrayList<SearchResult> 
+
++addHtmlResponse(response: SearchResult): void 
+
++getCommands(): ArrayList<String> 
+
++setCommands(commands: ArrayList<String>) 
+
++addCommand(command: String) 
+
++editCommand(index: int, command: String) 
+
++removeCommand(index: int): void 
+
++printInfo(): void 
+
+} 
+
+class CrawlerConfigJP extends javax.swing.JPanel {  
+
+-mainMenuForm: MainMenuForm  
+
+-backBTN: javax.swing.JButton  
+
+-crawlDelayLBL: javax.swing.JLabel  
+
+-crawlDelaySP: javax.swing.JSpinner  
+
+-nameLBL: javax.swing.JLabel  
+
+-nameTF: javax.swing.JTextField  
+
+-okBTN: javax.swing.JButton  
+
+-scriptBTN: javax.swing.JButton  
+
+-userAgentLBL: javax.swing.JLabel  
+
+-userAgentTF: javax.swing.JTextField  
+
++CrawlerConfigJP(mainMenuForm: MainMenuForm) 
+
+-populateFields(): void 
+
+-initComponents(): void 
+
+-backBTNActionPerformed(evt: java.awt.event.ActionEvent): void 
+
+-okBTNActionPerformed(evt: java.awt.event.ActionEvent): void 
+
+-scriptBTNActionPerformed(evt: java.awt.event.ActionEvent):void 
+
+-formAncestorAdded(): void 
+
+} 
+
+class CrawlerScriptingJP extends javax.swing.JPanel {  
+
+-mainMenuForm: MainMenuForm 
+
+-selectedCommandIndex: int 
+
+-addBTN: javax.swing.JButton 
+
+-backBTN: javax.swing.JButton 
+
+-chooseLBL: javax.swing.JLabel 
+
+-commandBG: javax.swing.ButtonGroup 
+
+-editBTN: javax.swing.JButton 
+
+-editCB: javax.swing.JComboBox<String> 
+
+-editLBL: javax.swing.JLabel 
+
+-inputTF: javax.swing.JTextField 
+
+-jScrollPanel: javax.swing.JScrollPanel 
+
+-okBTN: javax.swing.JButton 
+
+-removeBTN: javax.swing.JButton 
+
+-resultsCB: javax.swing.JComboBox<String> 
+
+-resultsRB: javax.swing.JRadioButton 
+
+-scriptTA: javax.swing.JTextArea 
+
+-urlhtmlRB: javax.swing.JRadioButton 
+
++CrawlerScriptingJP(mainMenuForm: MainMenuForm) 
+
++populateFields(): void 
+
+-initComponents(): void 
+
+-backBTNActionPerformed(evt: java.awt.event.ActionEvent): void 
+
+-addBTNActionPerformed(evt: java.awt.event.ActionEvent): void 
+
+-okBTNActionPerformed(evt: java.awt.event.ActionEvent): void 
+
+-commandCBActionPerformed(evt: java.awt.event.ActionEvent): void 
+
+-urlhtmlRBActionPerformed(evt: java.awt.event.ActionEvent): void 
+
+-resultsRBActionPerformed(evt: java.awt.event.ActionEvent): void 
+
+-formAncestorAdded(evt: java.awt.event.ActionEvent): void 
+
+-editCBActionPerformed(evt: java.awt.event.ActionEvent): void 
+
+-editBTNActionPerformed(evt: java.awt.event.ActionEvent): void 
+
+-removeBTNActionPerformed(evt: java.awt.event.ActionEvent): void 
+
+-composeCommand(): String 
+
+} 
+
+class DatabaseSettingsJP extends javax.swing.JPanel {  
+
+-mainMenuForm: MainMenuForm 
+
+-backBTN: javax.swing.JButton 
+
+-dbNameLBL: javax.swing.JLabel 
+
+-dbNameTF: javax.swing.JTextField 
+
+-hostLBL: javax.swing.JLabel 
+
+-hostTF: javax.swing.JTextField 
+
+-okBTN: javax.swing.JButton 
+
+-portLBL: javax.swing.JLabel 
+
+-portTF: javax.swing.JTextField 
+
+-tablesBTN: javax.swing.JButton 
+
++DatabaseSettingsJP(mainMenuForm: MainMenuForm) 
+
+-initComponents(): void 
+
+-backBTNActionPerformed(evt: java.awt.event.ActionEvent) 
+
+-okBTNActionPerformed(evt: java.awt.event.ActionEvent) 
+
+-tablesBTNActionPerformed(evt: java.awt.event.ActionEvent) 
+
+} 
+
+class HomeLandingJP extends JPanel {  
+
+-mainMenuForm: MainMenuForm 
+
+-savedCrawlersValue: final JLabel 
+
+-statusValue: final JLabel 
+
++HomeLandingJP(mainMenuForm: MainMenuForm) 
+
+-buildUI(): void 
+
+-createCardPanel(): JPanel 
+
+-createCardTitle(text: String): JLabel 
+
+-createRow(labelText: String, valueLabel: JLabel): JPanel 
+
+-createActionButton(text: String, panelName: String): JButton 
+
+-openPanel(panelName: String): void 
+
+-refreshStats(): final void 
+
+-countSavedCrawlers(): int 
+
+} 
+
+class MainMenuJP extends javax.swing.JPanel { 
+
+-mainMenuForm: MainMenuForm 
+
+-mysql: MySQLConnector 
+
+-backBTN: javax.swing.JButton 
+
+-configBTN: javax.swing.JButton 
+
+-crawlBTN: javax.swing.JButton 
+
+-crawlersCB: javax.swing.JComboBox<String> 
+
+-dbSettingsBTN: javax.swing.JButton 
+
+-jScrollPane1: javax.swing.JScrollPane 
+
+-responsesCB: javax.swing.JComboBox<String> 
+
+-responsesLBL: javax.swing.JLabel 
+
+-selectCrawlerLBL: javax.swing.JLabel 
+
+-statusTA: javax.swing.JTextArea 
+
++MainMenuJP(mainMenuForm: MainMenuForm) 
+
+-initComponents() 
+
+-configBTNActionPerformed(evt: java.awt.event.ActionEvent) 
+
+-crawlersCBActionPerformed(evt: java.awt.event.ActionEvent) 
+
+-crawlBTNActionPerformed(evt: java.awt.event.ActionEvent) 
+
+-responsesCBActionPerformed(evt: java.awt.event.ActionEvent) 
+
+-dbSettingsActionPerformed(evt: java.awt.event.ActionEvent) 
+
+-backBTNActionPerformed(evt: java.awt.event.ActionEvent) 
+
+-formAncestorAdded(evt: java.awt.event.ActionEvent) 
+
+} 
+
+class SQLCredentialsJP extends javax.swing.JPanel { 
+
+-mainMenuForm: MainMenuForm 
+
+-credentialsSet: boolean 
+
+-abortBTN: javax.swing.JButton 
+
+-okBTN: javax.swing.JButton 
+
+-passwordLBL: javax.swing.JLabel 
+
+-passwordPF: javax.swing.JPasswordField 
+
+-titleLBL: javax.swing.JLabel 
+
+-usernameLBL: javax.swing.JLabel 
+
+-usernamePF: javax.swing.JPasswordField 
+
++SQLCredentialsJP(mainMenuForm: MainMenuForm) 
+
++getAreCredentialsSet(): boolean 
+
+-initComponents() 
+
+-okBTNActionPerformed(evt: java.awt.event.ActionEvent) 
+
+} 
+
+class SQLDatabaseJP extends javax.swing.JPanel { 
+
+-mainMenuForm: MainMenuForm 
+
+-reentrancyGuard: boolean 
+
+-primaryKeyIndex: int 
+
+-abortBTN: javax.swing.JButton 
+
+-addBTN: javax.swing.JButton 
+
+-columnsTBL: javax.swing.JTable 
+
+-dataTypes: String[] 
+
+-deleteBTN: javax.swing.JButton 
+
+-jScrollPane1: javax.swing.JScrollPane 
+
+-nameLBL: javax.swing.JLabel 
+
+-nameTF: javax.swing.JTextField 
+
+-okBTN: javax.swing.JButton 
+
+-titleLBL: javax.swing.JLabel 
+
++SQLDatabaseJP(mainMenuForm: MainMenuForm) 
+
++getAreCredentialsSet(): boolean 
+
+-initComponents() 
+
+-abortBTNActionPerformed(evt: java.awt.event.ActionEvent) 
+
+-okBTNActionPerformed(evt: java.awt.event.ActionEvent) 
+
+-addBTNActionPerformed(evt: java.awt.event.ActionEvent) 
+
+-deleteBTNActionPerformed(evt: java.awt.event.ActionEvent) 
+
+-configureTable() 
+
+} 
+
+@enduml 
+
+State Diagram 1
+@startuml 
+
+mainframe RunCrawler 
+
+[*] --> Navigating 
+
+Navigating --> Inputting : Credentials required 
+
+Crawling --> [*] 
+
+state Navigating { 
+
+CrawlerNotSelected --> CrawlerSelected : Combo box activated 
+
+CrawlerSelected --> Crawling 
+
+} 
+
+state Inputting { 
+
+SQLAccessGranted --> SQLAccessNotGranted : Incorrect credentials 
+
+SQLAccessGranted --> Crawling : Credentials verified 
+
+} 
+
+state Crawling { 
+
+CrawlerInactive --> CrawlerActive : Crawling button clicked 
+
+} 
+
+@enduml 
+
+State Diagram 2
+@startuml  
+
+mainframe CreateCrawler  
+
+[*] --> Navigating 
+
+Programming --> Saving 
+
+Saving --> [*] 
+
+  
+
+state Navigating {  
+
+CrawlerNotSelected --> CrawlerSelected : Use Combo Box 
+
+CrawlerSelected --> Programming : Navigate to Editor 
+
+}  
+
+  
+
+state Programming { 
+
+CreatingCrawler --> EditingCrawler : Existing Crawler 
+
+EditingCrawler --> CreatingCrawler : New Crawler... 
+
+}  
+
+  
+
+state Saving {  
+
+LoadingCrawler --> SavingCrawler : Confirm Edits 
+
+SavingCrawler --> LoadingCrawler 
+
+LoadingCrawler --> Navigating : Return to Main Menu 
+
+}  
+
+  
+
+@enduml
+
+State Diagram 3
+
+@startuml  
+
+  
+
+mainframe NavigateGUI 
+
+[*] --> Running 
+
+state Running { 
+
+AppRunning --> AppTerminated 
+
+AppTerminated --> [*] : User exits 
+
+AppRunning --> Navigating 
+
+} 
+
+state Navigating { 
+
+ButtonEnabled --> ButtonDisabled 
+
+ButtonDisabled --> ButtonEnabled : Requirements met 
+
+ButtonEnabled --> ButtonClicked 
+
+ButtonClicked --> FunctionTriggered : Non-navigational button 
+
+ButtonClicked --> NavigationTriggered : JPanel changes 
+
+ButtonClicked --> AppTerminated 
+
+} 
+@enduml
+
+State Diagram 4
+@startuml  
+
+  
+
+mainframe EditDatabase 
+
+[*] --> Navigating 
+
+  
+
+state Navigating { 
+
+  EditorActive--> EditorInactive 
+
+  EditorInactive--> EditorActive 
+
+  EditorActive --> Connecting : Table schema defined 
+
+} 
+
+state Saving { 
+
+  SQLParametersWritten --> SQLParametersLoaded 
+
+  SQLParametersLoaded --> SQLParametersWritten 
+
+} 
+
+state Connecting { 
+
+  ConnectionActive --> ConnectionInactive 
+
+  ConnectionActive --> StatementExecuted 
+
+  ConnectionInactive --> ConnectionActive 
+
+  StatementExecuted --> StatementAborted : Invalid syntax 
+
+  StatementExecuted --> [*] 
+
+} 
+
+state Inputting { 
+
+  SQLParametersSet --> SQLParametersUnset 
+
+  Inputting --> Connecting : Access granted 
+
+  SQLCredentialsValid --> SQLCredentialsInvalid 
+
+  SQLCredentialsInvalid --> SQLCredentialsValid 
+
+  Inputting -> Saving : File I/O 
+
+  SQLParametersUnset --> SQLParametersSet   
+
+} 
+
+  
+
+@enduml 
