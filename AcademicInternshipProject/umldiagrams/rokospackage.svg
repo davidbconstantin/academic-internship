@@ -1,0 +1,832 @@
+<?xml version="1.0" encoding="UTF-8"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentStyleType="text/css" data-diagram-type="CLASS" height="3174px" preserveAspectRatio="none" style="width:7914px;height:3174px;background:#FFFFFF;" version="1.1" viewBox="0 0 7914 3174" width="7914px" zoomAndPan="magnify">
+    <title>Nascrawler - Complete Class Diagram
+(com.security.academicinternshipproject)</title>
+    <defs/>
+    <g>
+        <g class="title" data-source-line="5">
+            <text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="252.1025" x="3824.3837" y="24.5332">Nascrawler - Complete Class Diagram</text>
+            <text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="277.751" x="3811.5595" y="42.1426">(com.security.academicinternshipproject)</text>
+        </g>
+        <!--cluster com-->
+        <g class="cluster" data-entity="com" data-source-line="9" data-uid="ent0004" id="cluster_com">
+            <rect fill="none" height="2638" rx="2.5" ry="2.5" style="stroke:#000000;stroke-width:1.5;" width="6557" x="673" y="530.6087"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="28.7861" x="3937.1069" y="547.142">com</text>
+        </g>
+        <!--cluster security-->
+        <g class="cluster" data-entity="security" data-source-line="9" data-uid="ent0005" id="cluster_security">
+            <rect fill="none" height="2570" rx="2.5" ry="2.5" style="stroke:#000000;stroke-width:1.5;" width="6307" x="697" y="574.6087"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="53.6963" x="3823.6519" y="591.142">security</text>
+        </g>
+        <!--cluster academicinternshipproject-->
+        <g class="cluster" data-entity="academicinternshipproject" data-source-line="7" data-uid="ent0002" id="cluster_academicinternshipproject">
+            <rect fill="none" height="2502" rx="2.5" ry="2.5" style="stroke:#000000;stroke-width:1.5;" width="6259" x="721" y="618.6087"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="178.165" x="3761.4175" y="635.142">academicinternshipproject</text>
+        </g>
+        <!--cluster java-->
+        <g class="cluster" data-entity="java" data-source-line="93" data-uid="ent0009" id="cluster_java">
+            <rect fill="none" height="168" rx="2.5" ry="2.5" style="stroke:#000000;stroke-width:1.5;" width="184" x="2847" y="2447.6088"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="27.248" x="2925.376" y="2464.142">java</text>
+        </g>
+        <!--cluster io-->
+        <g class="cluster" data-entity="io" data-source-line="93" data-uid="ent0010" id="cluster_io">
+            <rect fill="none" height="100" rx="2.5" ry="2.5" style="stroke:#000000;stroke-width:1.5;" width="136" x="2871" y="2491.6088"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="12.4414" x="2932.7793" y="2508.142">io</text>
+        </g>
+        <!--cluster microsoft-->
+        <g class="cluster" data-entity="microsoft" data-source-line="365" data-uid="ent0075" id="cluster_microsoft">
+            <rect fill="none" height="168" rx="2.5" ry="2.5" style="stroke:#000000;stroke-width:1.5;" width="178" x="7028" y="689.1087"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="63.7861" x="7085.1069" y="705.642">microsoft</text>
+        </g>
+        <!--cluster playwright-->
+        <g class="cluster" data-entity="playwright" data-source-line="365" data-uid="ent0076" id="cluster_playwright">
+            <rect fill="none" height="100" rx="2.5" ry="2.5" style="stroke:#000000;stroke-width:1.5;" width="130" x="7052" y="733.1087"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="70.0068" x="7081.9966" y="749.642">playwright</text>
+        </g>
+        <!--cluster helpmenu-->
+        <g class="cluster" data-entity="helpmenu" data-source-line="290" data-uid="ent0035" id="cluster_helpmenu">
+            <rect fill="none" height="100" rx="2.5" ry="2.5" style="stroke:#000000;stroke-width:1.5;" width="294" x="355" y="2096.6088"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="66.1172" x="468.9414" y="2113.142">helpmenu</text>
+        </g>
+        <!--cluster swingworkers-->
+        <g class="cluster" data-entity="swingworkers" data-source-line="295" data-uid="ent0038" id="cluster_swingworkers">
+            <rect fill="none" height="798.5" rx="2.5" ry="2.5" style="stroke:#000000;stroke-width:1.5;" width="642" x="7" y="82.6087"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="93.3652" x="281.3174" y="99.142">swingworkers</text>
+        </g>
+        <!--cluster javax-->
+        <g class="cluster" data-entity="javax" data-source-line="328" data-uid="ent0042" id="cluster_javax">
+            <rect fill="none" height="168" rx="2.5" ry="2.5" style="stroke:#000000;stroke-width:1.5;" width="196" x="154" y="689.1087"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="35.0342" x="234.4829" y="705.642">javax</text>
+        </g>
+        <!--cluster swing-->
+        <g class="cluster" data-entity="swing" data-source-line="328" data-uid="ent0043" id="cluster_swing">
+            <rect fill="none" height="100" rx="2.5" ry="2.5" style="stroke:#000000;stroke-width:1.5;" width="148" x="178" y="733.1087"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="39.6689" x="232.1655" y="749.642">swing</text>
+        </g>
+        <!--class AcademicInternshipProject-->
+        <g class="entity" data-entity="AcademicInternshipProject" data-source-line="9" data-uid="ent0003" id="entity_AcademicInternshipProject">
+            <rect fill="#F1F1F1" height="65.6094" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="198.5234" x="3304.5" y="760.1087"/>
+            <ellipse cx="3319.5" cy="776.1087" fill="#ADD1B2" rx="11" ry="11" style="stroke:#181818;stroke-width:1;"/>
+            <path d="M3322.2656,771.9837 Q3322.4219,771.765 3322.6094,771.6556 Q3322.7969,771.5462 3323.0156,771.5462 Q3323.3906,771.5462 3323.625,771.8119 Q3323.8594,772.0619 3323.8594,772.6712 L3323.8594,774.1244 Q3323.8594,774.7337 3323.625,774.9994 Q3323.3906,775.265 3323.0156,775.265 Q3322.6719,775.265 3322.4688,775.0619 Q3322.2656,774.8744 3322.1563,774.3587 Q3322.1094,773.9994 3321.9219,773.8119 Q3321.5938,773.4369 3320.9844,773.2181 Q3320.375,772.9994 3319.75,772.9994 Q3318.9844,772.9994 3318.3438,773.3275 Q3317.7188,773.6556 3317.2188,774.4056 Q3316.7344,775.1556 3316.7344,776.1869 L3316.7344,777.2806 Q3316.7344,778.515 3317.625,779.3431 Q3318.5156,780.1556 3320.1094,780.1556 Q3321.0469,780.1556 3321.7031,779.9056 Q3322.0938,779.7494 3322.5156,779.3119 Q3322.7813,779.0462 3322.9219,778.9681 Q3323.0781,778.89 3323.2813,778.89 Q3323.6094,778.89 3323.8594,779.1556 Q3324.125,779.4056 3324.125,779.7494 Q3324.125,780.0931 3323.7813,780.4994 Q3323.2813,781.0775 3322.4844,781.4056 Q3321.4063,781.8587 3320.1094,781.8587 Q3318.5938,781.8587 3317.3906,781.2337 Q3316.4063,780.7337 3315.7188,779.6712 Q3315.0313,778.5931 3315.0313,777.3119 L3315.0313,776.1556 Q3315.0313,774.8275 3315.6406,773.6869 Q3316.2656,772.5306 3317.3594,771.9212 Q3318.4531,771.2962 3319.6875,771.2962 Q3320.4219,771.2962 3321.0625,771.4681 Q3321.7188,771.6244 3322.2656,771.9837 Z " fill="#000000"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="166.5234" x="3333.5" y="781.8373">AcademicInternshipProject</text>
+            <line style="stroke:#181818;stroke-width:0.5;" x1="3305.5" x2="3502.0234" y1="792.1087" y2="792.1087"/>
+            <line style="stroke:#181818;stroke-width:0.5;" x1="3305.5" x2="3502.0234" y1="800.1087" y2="800.1087"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" text-decoration="underline" textLength="160.6719" x="3310.5" y="818.642">+main(args: String[]): void</text>
+        </g>
+        <!--class MainMenuForm-->
+        <g class="entity" data-entity="MainMenuForm" data-source-line="13" data-uid="ent0006" id="entity_MainMenuForm">
+            <rect fill="#F1F1F1" height="893.25" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="328.3535" x="3240" y="975.6087"/>
+            <ellipse cx="3350.9131" cy="991.6087" fill="#ADD1B2" rx="11" ry="11" style="stroke:#181818;stroke-width:1;"/>
+            <path d="M3353.6787,987.4837 Q3353.835,987.265 3354.0225,987.1556 Q3354.21,987.0462 3354.4287,987.0462 Q3354.8037,987.0462 3355.0381,987.3119 Q3355.2725,987.5619 3355.2725,988.1712 L3355.2725,989.6244 Q3355.2725,990.2337 3355.0381,990.4994 Q3354.8037,990.765 3354.4287,990.765 Q3354.085,990.765 3353.8818,990.5619 Q3353.6787,990.3744 3353.5693,989.8587 Q3353.5225,989.4994 3353.335,989.3119 Q3353.0068,988.9369 3352.3975,988.7181 Q3351.7881,988.4994 3351.1631,988.4994 Q3350.3975,988.4994 3349.7568,988.8275 Q3349.1318,989.1556 3348.6318,989.9056 Q3348.1475,990.6556 3348.1475,991.6869 L3348.1475,992.7806 Q3348.1475,994.015 3349.0381,994.8431 Q3349.9287,995.6556 3351.5225,995.6556 Q3352.46,995.6556 3353.1162,995.4056 Q3353.5068,995.2494 3353.9287,994.8119 Q3354.1943,994.5462 3354.335,994.4681 Q3354.4912,994.39 3354.6943,994.39 Q3355.0225,994.39 3355.2725,994.6556 Q3355.5381,994.9056 3355.5381,995.2494 Q3355.5381,995.5931 3355.1943,995.9994 Q3354.6943,996.5775 3353.8975,996.9056 Q3352.8193,997.3587 3351.5225,997.3587 Q3350.0068,997.3587 3348.8037,996.7337 Q3347.8193,996.2337 3347.1318,995.1712 Q3346.4443,994.0931 3346.4443,992.8119 L3346.4443,991.6556 Q3346.4443,990.3275 3347.0537,989.1869 Q3347.6787,988.0306 3348.7725,987.4212 Q3349.8662,986.7962 3351.1006,986.7962 Q3351.835,986.7962 3352.4756,986.9681 Q3353.1318,987.1244 3353.6787,987.4837 Z " fill="#000000"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="98.0273" x="3371.4131" y="997.3373">MainMenuForm</text>
+            <line style="stroke:#181818;stroke-width:0.5;" x1="3241" x2="3567.3535" y1="1007.6087" y2="1007.6087"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="154.0889" x="3246" y="1026.142">-cardLayout: CardLayout</text>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="112.8408" x="3246" y="1043.7513">-lastPanel: JPanel</text>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="208.5029" x="3246" y="1061.3607">-webCrawlers: List&lt;WebCrawler&gt;</text>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="189.8271" x="3246" y="1078.9701">-selectedCrawler: WebCrawler</text>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="141.6064" x="3246" y="1096.5795">-sql: MySQLConnector</text>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="175.8613" x="3246" y="1114.1888">-sqlCredentials: List&lt;String&gt;</text>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="162.6611" x="3246" y="1131.7982">-dbInfo: SQLDatabaseInfo</text>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="128.3789" x="3246" y="1149.4076">-crs: CachedRowSet</text>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="245.1094" x="3246" y="1167.017">-sentimentAnalyser: SentimentAnalyser</text>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="186.7441" x="3246" y="1184.6263">-selectedColumnName: String</text>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="173.5234" x="3246" y="1202.2357">-selectedTableName: String</text>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="184.4541" x="3246" y="1219.8451">-analysingSQLTable: boolean</text>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="207.792" x="3246" y="1237.4545">-sqlCredentialsRequired: boolean</text>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="119.8613" x="3246" y="1255.0638">-editMode: boolean</text>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="109.71" x="3246" y="1272.6732">-username: char[]</text>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="107.3721" x="3246" y="1290.2826">-password: char[]</text>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="210.8545" x="3246" y="1307.892">-lastSelectedCrawlerName: String</text>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="129.1445" x="3246" y="1325.5013">-notifier: TaskNotifier</text>
+            <line style="stroke:#181818;stroke-width:1;" x1="3241" x2="3567.3535" y1="1332.5775" y2="1332.5775"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="115.5273" x="3246" y="1351.1107">+MainMenuForm()</text>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="246.2988" x="3246" y="1368.7201">+displayPanel(panelName: String): void</text>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="243.9063" x="3246" y="1386.3295">+getWebCrawlers(): List&lt;WebCrawler&gt;</text>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="224.4648" x="3246" y="1403.9388">+getSelectedCrawler(): WebCrawler</text>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="302.2578" x="3246" y="1421.5482">+setSelectedCrawler(crawler: WebCrawler): void</text>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="279.7471" x="3246" y="1439.1576">+getSentimentAnalyser(): SentimentAnalyser</text>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="233.0781" x="3246" y="1456.767">+isSqlCredentialsRequired(): boolean</text>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="316.3535" x="3246" y="1474.3763">+setSQLCredentialsRequired(value: boolean): void</text>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="144.334" x="3246" y="1491.9857">+getUsername(): char[]</text>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="141.2236" x="3246" y="1509.5951">+getPassword(): char[]</text>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="239.2646" x="3246" y="1527.2045">+setUsername(username: char[]): void</text>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="233.8164" x="3246" y="1544.8138">+setPassword(password: char[]): void</text>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="144.3613" x="3246" y="1562.4232">+isEditMode(): boolean</text>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="219.8574" x="3246" y="1580.0326">+setEditMode(value: boolean): void</text>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="202.6855" x="3246" y="1597.642">+getMySQL(): MySQLConnector</text>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="247.8301" x="3246" y="1615.2513">+getLastSelectedCrawlerName(): String</text>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="315.5264" x="3246" y="1632.8607">+setLastSelectedCrawlerName(name: String): void</text>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="208.9541" x="3246" y="1650.4701">+isAnalysingSQLTable(): boolean</text>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="267.3262" x="3246" y="1668.0795">+setIsAnalysingTable(value: boolean): void</text>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="156.7959" x="3246" y="1685.6888">+eraseCredentials(): void</text>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="128.748" x="3246" y="1703.2982">+writeCrawler(): void</text>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="288.2578" x="3246" y="1720.9076">+loadCrawlers(crawlersCB: JComboBox): void</text>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="238.4648" x="3246" y="1738.517">+loadCrawlers(crawlersLS: JList): void</text>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="193.3682" x="3246" y="1756.1263">+deleteCrawler(index: int): void</text>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="176.2578" x="3246" y="1773.7357">+loadSQLCredentials(): void</text>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="218.2783" x="3246" y="1791.3451">+getSQLCredentials(): List&lt;String&gt;</text>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="194.1064" x="3246" y="1808.9545">+getTaskNotifier(): TaskNotifier</text>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="163.7891" x="3246" y="1826.5638">+getCrs(): CachedRowSet</text>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="221.3818" x="3246" y="1844.1732">+getSelectedColumnName(): String</text>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="208.1611" x="3246" y="1861.7826">+getSelectedTableName(): String</text>
+        </g>
+        <!--class WebCrawler-->
+        <g class="entity" data-entity="WebCrawler" data-source-line="65" data-uid="ent0007" id="entity_WebCrawler">
+            <rect fill="#F1F1F1" height="488.2344" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="739.1045" x="2569.5" y="1912.6087"/>
+            <ellipse cx="2896.2954" cy="1928.6087" fill="#ADD1B2" rx="11" ry="11" style="stroke:#181818;stroke-width:1;"/>
+            <path d="M2899.061,1924.4837 Q2899.2173,1924.265 2899.4048,1924.1556 Q2899.5923,1924.0462 2899.811,1924.0462 Q2900.186,1924.0462 2900.4204,1924.3119 Q2900.6548,1924.5619 2900.6548,1925.1712 L2900.6548,1926.6244 Q2900.6548,1927.2337 2900.4204,1927.4994 Q2900.186,1927.765 2899.811,1927.765 Q2899.4673,1927.765 2899.2642,1927.5619 Q2899.061,1927.3744 2898.9517,1926.8587 Q2898.9048,1926.4994 2898.7173,1926.3119 Q2898.3892,1925.9369 2897.7798,1925.7181 Q2897.1704,1925.4994 2896.5454,1925.4994 Q2895.7798,1925.4994 2895.1392,1925.8275 Q2894.5142,1926.1556 2894.0142,1926.9056 Q2893.5298,1927.6556 2893.5298,1928.6869 L2893.5298,1929.7806 Q2893.5298,1931.015 2894.4204,1931.8431 Q2895.311,1932.6556 2896.9048,1932.6556 Q2897.8423,1932.6556 2898.4985,1932.4056 Q2898.8892,1932.2494 2899.311,1931.8119 Q2899.5767,1931.5462 2899.7173,1931.4681 Q2899.8735,1931.39 2900.0767,1931.39 Q2900.4048,1931.39 2900.6548,1931.6556 Q2900.9204,1931.9056 2900.9204,1932.2494 Q2900.9204,1932.5931 2900.5767,1932.9994 Q2900.0767,1933.5775 2899.2798,1933.9056 Q2898.2017,1934.3587 2896.9048,1934.3587 Q2895.3892,1934.3587 2894.186,1933.7337 Q2893.2017,1933.2337 2892.5142,1932.1712 Q2891.8267,1931.0931 2891.8267,1929.8119 L2891.8267,1928.6556 Q2891.8267,1927.3275 2892.436,1926.1869 Q2893.061,1925.0306 2894.1548,1924.4212 Q2895.2485,1923.7962 2896.4829,1923.7962 Q2897.2173,1923.7962 2897.8579,1923.9681 Q2898.5142,1924.1244 2899.061,1924.4837 Z " fill="#000000"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="77.0137" x="2916.7954" y="1934.3373">WebCrawler</text>
+            <line style="stroke:#181818;stroke-width:0.5;" x1="2570.5" x2="3307.6045" y1="1944.6087" y2="1944.6087"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="84.0342" x="2575.5" y="1963.142">-name: String</text>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="112.834" x="2575.5" y="1980.7513">-userAgent: String</text>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="95.6895" x="2575.5" y="1998.3607">-crawlDelay: int</text>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="143.1582" x="2575.5" y="2015.9701">-urls: ArrayList&lt;String&gt;</text>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="256.7715" x="2575.5" y="2033.5795">-searchResults: ArrayList&lt;SearchResult&gt;</text>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="189.0684" x="2575.5" y="2051.1888">-commands: ArrayList&lt;String&gt;</text>
+            <line style="stroke:#181818;stroke-width:1;" x1="2570.5" x2="3307.6045" y1="2058.265" y2="2058.265"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="388.6436" x="2575.5" y="2076.7982">+WebCrawler(name: String, userAgent: String, crawlDelay: int)</text>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="727.1045" x="2575.5" y="2094.4076">+WebCrawler(name: String, userAgent: String, crawlDelay: int, urls: ArrayList&lt;String&gt;, commands: ArrayList&lt;String&gt;)</text>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="94.5137" x="2575.5" y="2112.017">+WebCrawler()</text>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="118.6582" x="2575.5" y="2129.6263">+getName(): String</text>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="186.3545" x="2575.5" y="2147.2357">+setName(name: String): void</text>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="147.458" x="2575.5" y="2164.8451">+getUserAgent(): String</text>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="243.9541" x="2575.5" y="2182.4545">+setUserAgent(userAgent: String): void</text>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="131.0996" x="2575.5" y="2200.0638">+getCrawlDelay(): int</text>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="232.2373" x="2575.5" y="2217.6732">+setCrawlDelay(crawlDelay: int): void</text>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="177.7822" x="2575.5" y="2235.2826">+getUrls(): ArrayList&lt;String&gt;</text>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="233.0166" x="2575.5" y="2252.892">+setUrls(urls: ArrayList&lt;String&gt;): void</text>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="299.1816" x="2575.5" y="2270.5013">+getHtmlResponses(): ArrayList&lt;SearchResult&gt;</text>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="315.5469" x="2575.5" y="2288.1107">+addHtmlResponse(response: SearchResult): void</text>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="224.4785" x="2575.5" y="2305.7201">+getCommands(): ArrayList&lt;String&gt;</text>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="325.623" x="2575.5" y="2323.3295">+setCommands(commands: ArrayList&lt;String&gt;): void</text>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="244.7197" x="2575.5" y="2340.9388">+addCommand(command: String): void</text>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="307.7471" x="2575.5" y="2358.5482">+editCommand(index: int, command: String): void</text>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="218.2578" x="2575.5" y="2376.1576">+removeCommand(index: int): void</text>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="101.5479" x="2575.5" y="2393.767">+printInfo(): void</text>
+        </g>
+        <!--class SearchResult-->
+        <g class="entity" data-entity="SearchResult" data-source-line="96" data-uid="ent0012" id="entity_SearchResult">
+            <rect fill="#F1F1F1" height="206.4844" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="380.4229" x="4072" y="2448.6088"/>
+            <ellipse cx="4215.9409" cy="2464.6088" fill="#ADD1B2" rx="11" ry="11" style="stroke:#181818;stroke-width:1;"/>
+            <path d="M4218.7065,2460.4838 Q4218.8628,2460.265 4219.0503,2460.1556 Q4219.2378,2460.0463 4219.4565,2460.0463 Q4219.8315,2460.0463 4220.0659,2460.3119 Q4220.3003,2460.5619 4220.3003,2461.1713 L4220.3003,2462.6244 Q4220.3003,2463.2338 4220.0659,2463.4994 Q4219.8315,2463.765 4219.4565,2463.765 Q4219.1128,2463.765 4218.9097,2463.5619 Q4218.7065,2463.3744 4218.5972,2462.8588 Q4218.5503,2462.4994 4218.3628,2462.3119 Q4218.0347,2461.9369 4217.4253,2461.7181 Q4216.8159,2461.4994 4216.1909,2461.4994 Q4215.4253,2461.4994 4214.7847,2461.8275 Q4214.1597,2462.1556 4213.6597,2462.9056 Q4213.1753,2463.6556 4213.1753,2464.6869 L4213.1753,2465.7806 Q4213.1753,2467.015 4214.0659,2467.8431 Q4214.9565,2468.6556 4216.5503,2468.6556 Q4217.4878,2468.6556 4218.144,2468.4056 Q4218.5347,2468.2494 4218.9565,2467.8119 Q4219.2222,2467.5463 4219.3628,2467.4681 Q4219.519,2467.39 4219.7222,2467.39 Q4220.0503,2467.39 4220.3003,2467.6556 Q4220.5659,2467.9056 4220.5659,2468.2494 Q4220.5659,2468.5931 4220.2222,2468.9994 Q4219.7222,2469.5775 4218.9253,2469.9056 Q4217.8472,2470.3588 4216.5503,2470.3588 Q4215.0347,2470.3588 4213.8315,2469.7338 Q4212.8472,2469.2338 4212.1597,2468.1713 Q4211.4722,2467.0931 4211.4722,2465.8119 L4211.4722,2464.6556 Q4211.4722,2463.3275 4212.0815,2462.1869 Q4212.7065,2461.0306 4213.8003,2460.4213 Q4214.894,2459.7963 4216.1284,2459.7963 Q4216.8628,2459.7963 4217.5034,2459.9681 Q4218.1597,2460.1244 4218.7065,2460.4838 Z " fill="#000000"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="84.041" x="4236.4409" y="2470.3373">SearchResult</text>
+            <line style="stroke:#181818;stroke-width:0.5;" x1="4073" x2="4451.4229" y1="2480.6088" y2="2480.6088"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" text-decoration="underline" textLength="38.124" x="4078" y="2499.142">-id: int</text>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="161.834" x="4078" y="2516.7513">-results: ArrayList&lt;String&gt;</text>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="106.5928" x="4078" y="2534.3607">-commandNo: int</text>
+            <line style="stroke:#181818;stroke-width:1;" x1="4073" x2="4451.4229" y1="2541.4369" y2="2541.4369"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="368.4229" x="4078" y="2559.9701">+SearchResult(results: ArrayList&lt;String&gt;, commandNo: int)</text>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="180.127" x="4078" y="2577.5795">+SearchResult(result: String)</text>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="71.2031" x="4078" y="2595.1888">+getId(): int</text>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="142.0029" x="4078" y="2612.7982">+getCommandNo(): int</text>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="199.582" x="4078" y="2630.4076">+getResults(): ArrayList&lt;String&gt;</text>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="273.4922" x="4078" y="2648.017">+setResults(results: ArrayList&lt;String&gt;): void</text>
+        </g>
+        <!--class CommandParser-->
+        <g class="entity" data-entity="CommandParser" data-source-line="109" data-uid="ent0013" id="entity_CommandParser">
+            <rect fill="#F1F1F1" height="276.9219" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="241.1338" x="1552.5" y="654.6087"/>
+            <ellipse cx="1615.9102" cy="670.6087" fill="#ADD1B2" rx="11" ry="11" style="stroke:#181818;stroke-width:1;"/>
+            <path d="M1618.6758,666.4837 Q1618.832,666.265 1619.0195,666.1556 Q1619.207,666.0462 1619.4258,666.0462 Q1619.8008,666.0462 1620.0352,666.3119 Q1620.2695,666.5619 1620.2695,667.1712 L1620.2695,668.6244 Q1620.2695,669.2337 1620.0352,669.4994 Q1619.8008,669.765 1619.4258,669.765 Q1619.082,669.765 1618.8789,669.5619 Q1618.6758,669.3744 1618.5664,668.8587 Q1618.5195,668.4994 1618.332,668.3119 Q1618.0039,667.9369 1617.3945,667.7181 Q1616.7852,667.4994 1616.1602,667.4994 Q1615.3945,667.4994 1614.7539,667.8275 Q1614.1289,668.1556 1613.6289,668.9056 Q1613.1445,669.6556 1613.1445,670.6869 L1613.1445,671.7806 Q1613.1445,673.015 1614.0352,673.8431 Q1614.9258,674.6556 1616.5195,674.6556 Q1617.457,674.6556 1618.1133,674.4056 Q1618.5039,674.2494 1618.9258,673.8119 Q1619.1914,673.5462 1619.332,673.4681 Q1619.4883,673.39 1619.6914,673.39 Q1620.0195,673.39 1620.2695,673.6556 Q1620.5352,673.9056 1620.5352,674.2494 Q1620.5352,674.5931 1620.1914,674.9994 Q1619.6914,675.5775 1618.8945,675.9056 Q1617.8164,676.3587 1616.5195,676.3587 Q1615.0039,676.3587 1613.8008,675.7337 Q1612.8164,675.2337 1612.1289,674.1712 Q1611.4414,673.0931 1611.4414,671.8119 L1611.4414,670.6556 Q1611.4414,669.3275 1612.0508,668.1869 Q1612.6758,667.0306 1613.7695,666.4212 Q1614.8633,665.7962 1616.0977,665.7962 Q1616.832,665.7962 1617.4727,665.9681 Q1618.1289,666.1244 1618.6758,666.4837 Z " fill="#000000"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="105.8135" x="1636.4102" y="676.3373">CommandParser</text>
+            <line style="stroke:#181818;stroke-width:0.5;" x1="1553.5" x2="1792.6338" y1="686.6087" y2="686.6087"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="86.3721" x="1558.5" y="705.142">-action: String</text>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="86.3721" x="1558.5" y="722.7513">-object: String</text>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="93.3721" x="1558.5" y="740.3607">-subject: String</text>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="89.4824" x="1558.5" y="757.9701">-subjectNo: int</text>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" text-decoration="underline" textLength="106.5928" x="1558.5" y="775.5795">-commandNo: int</text>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="167.2891" x="1558.5" y="793.1888">-tokenizer: StringTokenizer</text>
+            <line style="stroke:#181818;stroke-width:1;" x1="1553.5" x2="1792.6338" y1="800.265" y2="800.265"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="229.1338" x="1558.5" y="818.7982">+CommandParser(command: String)</text>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="120.2236" x="1558.5" y="836.4076">+getAction(): String</text>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="121.7754" x="1558.5" y="854.017">+getObject(): String</text>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="128.0098" x="1558.5" y="871.6263">+getSubject(): String</text>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="124.1201" x="1558.5" y="889.2357">+getSubjectNo(): int</text>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="142.0029" x="1558.5" y="906.8451">+getCommandNo(): int</text>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="222.1475" x="1558.5" y="924.4545">+setCommandNo(number: int): void</text>
+        </g>
+        <!--class HTMLNode-->
+        <g class="entity" data-entity="HTMLNode" data-source-line="126" data-uid="ent0014" id="entity_HTMLNode">
+            <rect fill="#F1F1F1" height="224.0938" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="434.8984" x="1031.5" y="1310.1087"/>
+            <ellipse cx="1208.9097" cy="1326.1087" fill="#ADD1B2" rx="11" ry="11" style="stroke:#181818;stroke-width:1;"/>
+            <path d="M1211.6753,1321.9837 Q1211.8315,1321.765 1212.019,1321.6556 Q1212.2065,1321.5462 1212.4253,1321.5462 Q1212.8003,1321.5462 1213.0347,1321.8119 Q1213.269,1322.0619 1213.269,1322.6712 L1213.269,1324.1244 Q1213.269,1324.7337 1213.0347,1324.9994 Q1212.8003,1325.265 1212.4253,1325.265 Q1212.0815,1325.265 1211.8784,1325.0619 Q1211.6753,1324.8744 1211.5659,1324.3587 Q1211.519,1323.9994 1211.3315,1323.8119 Q1211.0034,1323.4369 1210.394,1323.2181 Q1209.7847,1322.9994 1209.1597,1322.9994 Q1208.394,1322.9994 1207.7534,1323.3275 Q1207.1284,1323.6556 1206.6284,1324.4056 Q1206.144,1325.1556 1206.144,1326.1869 L1206.144,1327.2806 Q1206.144,1328.515 1207.0347,1329.3431 Q1207.9253,1330.1556 1209.519,1330.1556 Q1210.4565,1330.1556 1211.1128,1329.9056 Q1211.5034,1329.7494 1211.9253,1329.3119 Q1212.1909,1329.0462 1212.3315,1328.9681 Q1212.4878,1328.89 1212.6909,1328.89 Q1213.019,1328.89 1213.269,1329.1556 Q1213.5347,1329.4056 1213.5347,1329.7494 Q1213.5347,1330.0931 1213.1909,1330.4994 Q1212.6909,1331.0775 1211.894,1331.4056 Q1210.8159,1331.8587 1209.519,1331.8587 Q1208.0034,1331.8587 1206.8003,1331.2337 Q1205.8159,1330.7337 1205.1284,1329.6712 Q1204.4409,1328.5931 1204.4409,1327.3119 L1204.4409,1326.1556 Q1204.4409,1324.8275 1205.0503,1323.6869 Q1205.6753,1322.5306 1206.769,1321.9212 Q1207.8628,1321.2962 1209.0972,1321.2962 Q1209.8315,1321.2962 1210.4722,1321.4681 Q1211.1284,1321.6244 1211.6753,1321.9837 Z " fill="#000000"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="71.5791" x="1229.4097" y="1331.8373">HTMLNode</text>
+            <line style="stroke:#181818;stroke-width:0.5;" x1="1032.5" x2="1465.3984" y1="1342.1087" y2="1342.1087"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="98.8203" x="1037.5" y="1360.642">-element: String</text>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="133.8271" x="1037.5" y="1378.2513">-elementClass: String</text>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="99.5996" x="1037.5" y="1395.8607">-attribute: String</text>
+            <line style="stroke:#181818;stroke-width:1;" x1="1032.5" x2="1465.3984" y1="1402.9369" y2="1402.9369"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="422.8984" x="1037.5" y="1421.4701">+HTMLNode(element: String, elementClass: String, attribute: String)</text>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="132.6719" x="1037.5" y="1439.0795">+getElement(): String</text>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="215.1543" x="1037.5" y="1456.6888">+setElement(element: String): void</text>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="167.6787" x="1037.5" y="1474.2982">+getElementClass(): String</text>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="285.168" x="1037.5" y="1491.9076">+setElementClass(elementClass: String): void</text>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="133.4512" x="1037.5" y="1509.517">+getAttribute(): String</text>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="216.7129" x="1037.5" y="1527.1263">+setAttribute(attribute: String): void</text>
+        </g>
+        <!--class JSoupParser-->
+        <g class="entity" data-entity="JSoupParser" data-source-line="140" data-uid="ent0015" id="entity_JSoupParser">
+            <rect fill="#F1F1F1" height="171.2656" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="567.1465" x="965.5" y="707.6087"/>
+            <ellipse cx="1204.3579" cy="723.6087" fill="#ADD1B2" rx="11" ry="11" style="stroke:#181818;stroke-width:1;"/>
+            <path d="M1207.1235,719.4837 Q1207.2798,719.265 1207.4673,719.1556 Q1207.6548,719.0462 1207.8735,719.0462 Q1208.2485,719.0462 1208.4829,719.3119 Q1208.7173,719.5619 1208.7173,720.1712 L1208.7173,721.6244 Q1208.7173,722.2337 1208.4829,722.4994 Q1208.2485,722.765 1207.8735,722.765 Q1207.5298,722.765 1207.3267,722.5619 Q1207.1235,722.3744 1207.0142,721.8587 Q1206.9673,721.4994 1206.7798,721.3119 Q1206.4517,720.9369 1205.8423,720.7181 Q1205.2329,720.4994 1204.6079,720.4994 Q1203.8423,720.4994 1203.2017,720.8275 Q1202.5767,721.1556 1202.0767,721.9056 Q1201.5923,722.6556 1201.5923,723.6869 L1201.5923,724.7806 Q1201.5923,726.015 1202.4829,726.8431 Q1203.3735,727.6556 1204.9673,727.6556 Q1205.9048,727.6556 1206.561,727.4056 Q1206.9517,727.2494 1207.3735,726.8119 Q1207.6392,726.5462 1207.7798,726.4681 Q1207.936,726.39 1208.1392,726.39 Q1208.4673,726.39 1208.7173,726.6556 Q1208.9829,726.9056 1208.9829,727.2494 Q1208.9829,727.5931 1208.6392,727.9994 Q1208.1392,728.5775 1207.3423,728.9056 Q1206.2642,729.3587 1204.9673,729.3587 Q1203.4517,729.3587 1202.2485,728.7337 Q1201.2642,728.2337 1200.5767,727.1712 Q1199.8892,726.0931 1199.8892,724.8119 L1199.8892,723.6556 Q1199.8892,722.3275 1200.4985,721.1869 Q1201.1235,720.0306 1202.2173,719.4212 Q1203.311,718.7962 1204.5454,718.7962 Q1205.2798,718.7962 1205.9204,718.9681 Q1206.5767,719.1244 1207.1235,719.4837 Z " fill="#000000"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="80.9307" x="1224.8579" y="729.3373">JSoupParser</text>
+            <line style="stroke:#181818;stroke-width:0.5;" x1="966.5" x2="1531.6465" y1="739.6087" y2="739.6087"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="191.4268" x="971.5" y="758.142">-paragraphs: ArrayList&lt;String&gt;</text>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="127.6064" x="971.5" y="775.7513">-elements: Elements</text>
+            <line style="stroke:#181818;stroke-width:1;" x1="966.5" x2="1531.6465" y1="782.8275" y2="782.8275"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="98.4307" x="971.5" y="801.3607">+JSoupParser()</text>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="555.1465" x="971.5" y="818.9701">+searchDocument(htmlMarkup: ArrayList&lt;String&gt;, searchTerm: String): ArrayList&lt;String&gt;</text>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="322.4922" x="971.5" y="836.5795">+getTextFromDocument(htmlMarkup: String): String</text>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="552.8018" x="971.5" y="854.1888">+getAttributesFromDocument(htmlMarkup: String, searchTerm: String): ArrayList&lt;String&gt;</text>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="225.2783" x="971.5" y="871.7982">+getParagraphs(): ArrayList&lt;String&gt;</text>
+        </g>
+        <!--class MySQLConnector-->
+        <g class="entity" data-entity="MySQLConnector" data-source-line="151" data-uid="ent0016" id="entity_MySQLConnector">
+            <rect fill="#F1F1F1" height="276.9219" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="785.0693" x="4780.5" y="2018.1087"/>
+            <ellipse cx="5113.1504" cy="2034.1087" fill="#ADD1B2" rx="11" ry="11" style="stroke:#181818;stroke-width:1;"/>
+            <path d="M5115.916,2029.9837 Q5116.0723,2029.765 5116.2598,2029.6556 Q5116.4473,2029.5462 5116.666,2029.5462 Q5117.041,2029.5462 5117.2754,2029.8119 Q5117.5098,2030.0619 5117.5098,2030.6712 L5117.5098,2032.1244 Q5117.5098,2032.7337 5117.2754,2032.9994 Q5117.041,2033.265 5116.666,2033.265 Q5116.3223,2033.265 5116.1191,2033.0619 Q5115.916,2032.8744 5115.8066,2032.3587 Q5115.7598,2031.9994 5115.5723,2031.8119 Q5115.2441,2031.4369 5114.6348,2031.2181 Q5114.0254,2030.9994 5113.4004,2030.9994 Q5112.6348,2030.9994 5111.9941,2031.3275 Q5111.3691,2031.6556 5110.8691,2032.4056 Q5110.3848,2033.1556 5110.3848,2034.1869 L5110.3848,2035.2806 Q5110.3848,2036.515 5111.2754,2037.3431 Q5112.166,2038.1556 5113.7598,2038.1556 Q5114.6973,2038.1556 5115.3535,2037.9056 Q5115.7441,2037.7494 5116.166,2037.3119 Q5116.4316,2037.0462 5116.5723,2036.9681 Q5116.7285,2036.89 5116.9316,2036.89 Q5117.2598,2036.89 5117.5098,2037.1556 Q5117.7754,2037.4056 5117.7754,2037.7494 Q5117.7754,2038.0931 5117.4316,2038.4994 Q5116.9316,2039.0775 5116.1348,2039.4056 Q5115.0566,2039.8587 5113.7598,2039.8587 Q5112.2441,2039.8587 5111.041,2039.2337 Q5110.0566,2038.7337 5109.3691,2037.6712 Q5108.6816,2036.5931 5108.6816,2035.3119 L5108.6816,2034.1556 Q5108.6816,2032.8275 5109.291,2031.6869 Q5109.916,2030.5306 5111.0098,2029.9212 Q5112.1035,2029.2962 5113.3379,2029.2962 Q5114.0723,2029.2962 5114.7129,2029.4681 Q5115.3691,2029.6244 5115.916,2029.9837 Z " fill="#000000"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="111.2686" x="5133.6504" y="2039.8373">MySQLConnector</text>
+            <line style="stroke:#181818;stroke-width:0.5;" x1="4781.5" x2="5564.5693" y1="2050.1088" y2="2050.1088"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="83.248" x="4786.5" y="2068.642">-result: String</text>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="191.4404" x="4786.5" y="2086.2513">-metadata: DatabaseMetaData</text>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="161.082" x="4786.5" y="2103.8607">-tableStrings: List&lt;String&gt;</text>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="110.4824" x="4786.5" y="2121.4701">-currentDb: String</text>
+            <line style="stroke:#181818;stroke-width:1;" x1="4781.5" x2="5564.5693" y1="2128.5463" y2="2128.5463"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="629.8906" x="4786.5" y="2147.0795">+MySQLConnector(host: String, port: int, databaseName: String, userName: String, password: String)</text>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="773.0693" x="4786.5" y="2164.6888">+MySQLConnector(host: String, port: int, databaseName: String, userName: String, password: String, userStatement: String)</text>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="560.6152" x="4786.5" y="2182.2982">+MySQLConnector(url: String, userName: String, password: String, userStatement: String)</text>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="417.4365" x="4786.5" y="2199.9076">+MySQLConnector(url: String, userName: String, password: String)</text>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="146.6719" x="4786.5" y="2217.517">+getColumnSize(...): int</text>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="186.3613" x="4786.5" y="2235.1263">+fetchTableSchemas(...): void</text>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="212.8301" x="4786.5" y="2252.7357">+getTableSchemas(): List&lt;String&gt;</text>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="120.9961" x="4786.5" y="2270.3451">+getResult(): String</text>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="260.3057" x="4786.5" y="2287.9545">+getCurrentDbAsInfo(): SQLDatabaseInfo</text>
+        </g>
+        <!--class SQLParser-->
+        <g class="entity" data-entity="SQLParser" data-source-line="168" data-uid="ent0017" id="entity_SQLParser">
+            <rect fill="#F1F1F1" height="171.2656" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="390.5879" x="6305.5" y="2071.1088"/>
+            <ellipse cx="6461.9199" cy="2087.1088" fill="#ADD1B2" rx="11" ry="11" style="stroke:#181818;stroke-width:1;"/>
+            <path d="M6464.6855,2082.9838 Q6464.8418,2082.765 6465.0293,2082.6556 Q6465.2168,2082.5463 6465.4355,2082.5463 Q6465.8105,2082.5463 6466.0449,2082.8119 Q6466.2793,2083.0619 6466.2793,2083.6713 L6466.2793,2085.1244 Q6466.2793,2085.7338 6466.0449,2085.9994 Q6465.8105,2086.265 6465.4355,2086.265 Q6465.0918,2086.265 6464.8887,2086.0619 Q6464.6855,2085.8744 6464.5762,2085.3588 Q6464.5293,2084.9994 6464.3418,2084.8119 Q6464.0137,2084.4369 6463.4043,2084.2181 Q6462.7949,2083.9994 6462.1699,2083.9994 Q6461.4043,2083.9994 6460.7637,2084.3275 Q6460.1387,2084.6556 6459.6387,2085.4056 Q6459.1543,2086.1556 6459.1543,2087.1869 L6459.1543,2088.2806 Q6459.1543,2089.515 6460.0449,2090.3431 Q6460.9355,2091.1556 6462.5293,2091.1556 Q6463.4668,2091.1556 6464.123,2090.9056 Q6464.5137,2090.7494 6464.9355,2090.3119 Q6465.2012,2090.0463 6465.3418,2089.9681 Q6465.498,2089.89 6465.7012,2089.89 Q6466.0293,2089.89 6466.2793,2090.1556 Q6466.5449,2090.4056 6466.5449,2090.7494 Q6466.5449,2091.0931 6466.2012,2091.4994 Q6465.7012,2092.0775 6464.9043,2092.4056 Q6463.8262,2092.8588 6462.5293,2092.8588 Q6461.0137,2092.8588 6459.8105,2092.2338 Q6458.8262,2091.7338 6458.1387,2090.6713 Q6457.4512,2089.5931 6457.4512,2088.3119 L6457.4512,2087.1556 Q6457.4512,2085.8275 6458.0605,2084.6869 Q6458.6855,2083.5306 6459.7793,2082.9213 Q6460.873,2082.2963 6462.1074,2082.2963 Q6462.8418,2082.2963 6463.4824,2082.4681 Q6464.1387,2082.6244 6464.6855,2082.9838 Z " fill="#000000"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="69.248" x="6482.4199" y="2092.8373">SQLParser</text>
+            <line style="stroke:#181818;stroke-width:0.5;" x1="6306.5" x2="6695.0879" y1="2103.1088" y2="2103.1088"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="155.6338" x="6311.5" y="2121.642">-columnInfo: List&lt;String&gt;</text>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="110.4824" x="6311.5" y="2139.2513">-currentDb: String</text>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="119.8408" x="6311.5" y="2156.8607">-mustSplit: boolean</text>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="179.7373" x="6311.5" y="2174.4701">-stringsToInsert: List&lt;String&gt;</text>
+            <line style="stroke:#181818;stroke-width:1;" x1="6306.5" x2="6695.0879" y1="2181.5463" y2="2181.5463"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="378.5879" x="6311.5" y="2200.0795">+SQLParser(sqlStatement: String, dbInfo: SQLDatabaseInfo)</text>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="152.1406" x="6311.5" y="2217.6888">+getMustSplit(): boolean</text>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="214.375" x="6311.5" y="2235.2982">+getStringsToInsert(): List&lt;String&gt;</text>
+        </g>
+        <!--class SQLDatabaseInfo-->
+        <g class="entity" data-entity="SQLDatabaseInfo" data-source-line="179" data-uid="ent0018" id="entity_SQLDatabaseInfo">
+            <rect fill="#F1F1F1" height="153.6563" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="397.6084" x="5487" y="2474.6088"/>
+            <ellipse cx="5625.9063" cy="2490.6088" fill="#ADD1B2" rx="11" ry="11" style="stroke:#181818;stroke-width:1;"/>
+            <path d="M5628.6719,2486.4838 Q5628.8281,2486.265 5629.0156,2486.1556 Q5629.2031,2486.0463 5629.4219,2486.0463 Q5629.7969,2486.0463 5630.0313,2486.3119 Q5630.2656,2486.5619 5630.2656,2487.1713 L5630.2656,2488.6244 Q5630.2656,2489.2338 5630.0313,2489.4994 Q5629.7969,2489.765 5629.4219,2489.765 Q5629.0781,2489.765 5628.875,2489.5619 Q5628.6719,2489.3744 5628.5625,2488.8588 Q5628.5156,2488.4994 5628.3281,2488.3119 Q5628,2487.9369 5627.3906,2487.7181 Q5626.7813,2487.4994 5626.1563,2487.4994 Q5625.3906,2487.4994 5624.75,2487.8275 Q5624.125,2488.1556 5623.625,2488.9056 Q5623.1406,2489.6556 5623.1406,2490.6869 L5623.1406,2491.7806 Q5623.1406,2493.015 5624.0313,2493.8431 Q5624.9219,2494.6556 5626.5156,2494.6556 Q5627.4531,2494.6556 5628.1094,2494.4056 Q5628.5,2494.2494 5628.9219,2493.8119 Q5629.1875,2493.5463 5629.3281,2493.4681 Q5629.4844,2493.39 5629.6875,2493.39 Q5630.0156,2493.39 5630.2656,2493.6556 Q5630.5313,2493.9056 5630.5313,2494.2494 Q5630.5313,2494.5931 5630.1875,2494.9994 Q5629.6875,2495.5775 5628.8906,2495.9056 Q5627.8125,2496.3588 5626.5156,2496.3588 Q5625,2496.3588 5623.7969,2495.7338 Q5622.8125,2495.2338 5622.125,2494.1713 Q5621.4375,2493.0931 5621.4375,2491.8119 L5621.4375,2490.6556 Q5621.4375,2489.3275 5622.0469,2488.1869 Q5622.6719,2487.0306 5623.7656,2486.4213 Q5624.8594,2485.7963 5626.0938,2485.7963 Q5626.8281,2485.7963 5627.4688,2485.9681 Q5628.125,2486.1244 5628.6719,2486.4838 Z " fill="#000000"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="111.2959" x="5646.4063" y="2496.3373">SQLDatabaseInfo</text>
+            <line style="stroke:#181818;stroke-width:0.5;" x1="5488" x2="5883.6084" y1="2506.6088" y2="2506.6088"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="84.0342" x="5493" y="2525.142">-name: String</text>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="174.3232" x="5493" y="2542.7513">-tables: List&lt;SQLTableInfo&gt;</text>
+            <line style="stroke:#181818;stroke-width:1;" x1="5488" x2="5883.6084" y1="2549.8275" y2="2549.8275"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="385.6084" x="5493" y="2568.3607">+SQLDatabaseInfo(name: String, tables: List&lt;SQLTableInfo&gt;)</text>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="118.6582" x="5493" y="2585.9701">+getName(): String</text>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="211.2852" x="5493" y="2603.5795">+getTables(): List&lt;SQLTableInfo&gt;</text>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="101.5479" x="5493" y="2621.1888">+printInfo(): void</text>
+        </g>
+        <!--class SQLTableInfo-->
+        <g class="entity" data-entity="SQLTableInfo" data-source-line="189" data-uid="ent0019" id="entity_SQLTableInfo">
+            <rect fill="#F1F1F1" height="153.6563" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="580.4561" x="5396" y="2681.6088"/>
+            <ellipse cx="5638.7852" cy="2697.6088" fill="#ADD1B2" rx="11" ry="11" style="stroke:#181818;stroke-width:1;"/>
+            <path d="M5641.5508,2693.4838 Q5641.707,2693.265 5641.8945,2693.1556 Q5642.082,2693.0463 5642.3008,2693.0463 Q5642.6758,2693.0463 5642.9102,2693.3119 Q5643.1445,2693.5619 5643.1445,2694.1713 L5643.1445,2695.6244 Q5643.1445,2696.2338 5642.9102,2696.4994 Q5642.6758,2696.765 5642.3008,2696.765 Q5641.957,2696.765 5641.7539,2696.5619 Q5641.5508,2696.3744 5641.4414,2695.8588 Q5641.3945,2695.4994 5641.207,2695.3119 Q5640.8789,2694.9369 5640.2695,2694.7181 Q5639.6602,2694.4994 5639.0352,2694.4994 Q5638.2695,2694.4994 5637.6289,2694.8275 Q5637.0039,2695.1556 5636.5039,2695.9056 Q5636.0195,2696.6556 5636.0195,2697.6869 L5636.0195,2698.7806 Q5636.0195,2700.015 5636.9102,2700.8431 Q5637.8008,2701.6556 5639.3945,2701.6556 Q5640.332,2701.6556 5640.9883,2701.4056 Q5641.3789,2701.2494 5641.8008,2700.8119 Q5642.0664,2700.5463 5642.207,2700.4681 Q5642.3633,2700.39 5642.5664,2700.39 Q5642.8945,2700.39 5643.1445,2700.6556 Q5643.4102,2700.9056 5643.4102,2701.2494 Q5643.4102,2701.5931 5643.0664,2701.9994 Q5642.5664,2702.5775 5641.7695,2702.9056 Q5640.6914,2703.3588 5639.3945,2703.3588 Q5637.8789,2703.3588 5636.6758,2702.7338 Q5635.6914,2702.2338 5635.0039,2701.1713 Q5634.3164,2700.0931 5634.3164,2698.8119 L5634.3164,2697.6556 Q5634.3164,2696.3275 5634.9258,2695.1869 Q5635.5508,2694.0306 5636.6445,2693.4213 Q5637.7383,2692.7963 5638.9727,2692.7963 Q5639.707,2692.7963 5640.3477,2692.9681 Q5641.0039,2693.1244 5641.5508,2693.4838 Z " fill="#000000"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="86.3857" x="5659.2852" y="2703.3373">SQLTableInfo</text>
+            <line style="stroke:#181818;stroke-width:0.5;" x1="5397" x2="5975.4561" y1="2713.6088" y2="2713.6088"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="143.9648" x="5402" y="2732.142">-databaseName: String</text>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="116.7168" x="5402" y="2749.7513">-tableName: String</text>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="202.3164" x="5402" y="2767.3607">-columns: List&lt;SQLColumnInfo&gt;</text>
+            <line style="stroke:#181818;stroke-width:1;" x1="5397" x2="5975.4561" y1="2774.4369" y2="2774.4369"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="568.4561" x="5402" y="2792.9701">+SQLTableInfo(databaseName: String, tableName: String, columns: List&lt;SQLColumnInfo&gt;)</text>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="237.7266" x="5402" y="2810.5795">+getColumns(): List&lt;SQLColumnInfo&gt;</text>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="101.5479" x="5402" y="2828.1888">+printInfo(): void</text>
+        </g>
+        <!--class SQLColumnInfo-->
+        <g class="entity" data-entity="SQLColumnInfo" data-source-line="199" data-uid="ent0020" id="entity_SQLColumnInfo">
+            <rect fill="#F1F1F1" height="241.7031" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="185.5234" x="5593" y="2862.6088"/>
+            <ellipse cx="5632.2626" cy="2878.6088" fill="#ADD1B2" rx="11" ry="11" style="stroke:#181818;stroke-width:1;"/>
+            <path d="M5635.0283,2874.4838 Q5635.1845,2874.265 5635.372,2874.1556 Q5635.5595,2874.0463 5635.7783,2874.0463 Q5636.1533,2874.0463 5636.3876,2874.3119 Q5636.622,2874.5619 5636.622,2875.1713 L5636.622,2876.6244 Q5636.622,2877.2338 5636.3876,2877.4994 Q5636.1533,2877.765 5635.7783,2877.765 Q5635.4345,2877.765 5635.2314,2877.5619 Q5635.0283,2877.3744 5634.9189,2876.8588 Q5634.872,2876.4994 5634.6845,2876.3119 Q5634.3564,2875.9369 5633.747,2875.7181 Q5633.1376,2875.4994 5632.5126,2875.4994 Q5631.747,2875.4994 5631.1064,2875.8275 Q5630.4814,2876.1556 5629.9814,2876.9056 Q5629.497,2877.6556 5629.497,2878.6869 L5629.497,2879.7806 Q5629.497,2881.015 5630.3876,2881.8431 Q5631.2783,2882.6556 5632.872,2882.6556 Q5633.8095,2882.6556 5634.4658,2882.4056 Q5634.8564,2882.2494 5635.2783,2881.8119 Q5635.5439,2881.5463 5635.6845,2881.4681 Q5635.8408,2881.39 5636.0439,2881.39 Q5636.372,2881.39 5636.622,2881.6556 Q5636.8876,2881.9056 5636.8876,2882.2494 Q5636.8876,2882.5931 5636.5439,2882.9994 Q5636.0439,2883.5775 5635.247,2883.9056 Q5634.1689,2884.3588 5632.872,2884.3588 Q5631.3564,2884.3588 5630.1533,2883.7338 Q5629.1689,2883.2338 5628.4814,2882.1713 Q5627.7939,2881.0931 5627.7939,2879.8119 L5627.7939,2878.6556 Q5627.7939,2877.3275 5628.4033,2876.1869 Q5629.0283,2875.0306 5630.122,2874.4213 Q5631.2158,2873.7963 5632.4501,2873.7963 Q5633.1845,2873.7963 5633.8251,2873.9681 Q5634.4814,2874.1244 5635.0283,2874.4838 Z " fill="#000000"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="99.6064" x="5651.6543" y="2884.3373">SQLColumnInfo</text>
+            <line style="stroke:#181818;stroke-width:0.5;" x1="5594" x2="5777.5234" y1="2894.6088" y2="2894.6088"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="131.4893" x="5599" y="2913.142">-columnName: String</text>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="85.5996" x="5599" y="2930.7513">-dataType: int</text>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="112.8203" x="5599" y="2948.3607">-typeName: String</text>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="99.5928" x="5599" y="2965.9701">-columnSize: int</text>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="99.5723" x="5599" y="2983.5795">-remarks: String</text>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="115.9307" x="5599" y="3001.1888">-columnDef: String</text>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="119.0615" x="5599" y="3018.7982">-ordinalPosition: int</text>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="149.3926" x="5599" y="3036.4076">-isAutoincrement: String</text>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="173.5234" x="5599" y="3054.017">-isGeneratedColumn: String</text>
+            <line style="stroke:#181818;stroke-width:1;" x1="5594" x2="5777.5234" y1="3061.0931" y2="3061.0931"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="128.7754" x="5599" y="3079.6263">+SQLColumnInfo(...)</text>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="101.5479" x="5599" y="3097.2357">+printInfo(): void</text>
+        </g>
+        <!--class SentimentAnalyser-->
+        <g class="entity" data-entity="SentimentAnalyser" data-source-line="214" data-uid="ent0021" id="entity_SentimentAnalyser">
+            <rect fill="#F1F1F1" height="188.875" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="247.3682" x="6716.5" y="2062.1088"/>
+            <ellipse cx="6777.1826" cy="2078.1088" fill="#ADD1B2" rx="11" ry="11" style="stroke:#181818;stroke-width:1;"/>
+            <path d="M6779.9482,2073.9838 Q6780.1045,2073.765 6780.292,2073.6556 Q6780.4795,2073.5463 6780.6982,2073.5463 Q6781.0732,2073.5463 6781.3076,2073.8119 Q6781.542,2074.0619 6781.542,2074.6713 L6781.542,2076.1244 Q6781.542,2076.7338 6781.3076,2076.9994 Q6781.0732,2077.265 6780.6982,2077.265 Q6780.3545,2077.265 6780.1514,2077.0619 Q6779.9482,2076.8744 6779.8389,2076.3588 Q6779.792,2075.9994 6779.6045,2075.8119 Q6779.2764,2075.4369 6778.667,2075.2181 Q6778.0576,2074.9994 6777.4326,2074.9994 Q6776.667,2074.9994 6776.0264,2075.3275 Q6775.4014,2075.6556 6774.9014,2076.4056 Q6774.417,2077.1556 6774.417,2078.1869 L6774.417,2079.2806 Q6774.417,2080.515 6775.3076,2081.3431 Q6776.1982,2082.1556 6777.792,2082.1556 Q6778.7295,2082.1556 6779.3857,2081.9056 Q6779.7764,2081.7494 6780.1982,2081.3119 Q6780.4639,2081.0463 6780.6045,2080.9681 Q6780.7607,2080.89 6780.9639,2080.89 Q6781.292,2080.89 6781.542,2081.1556 Q6781.8076,2081.4056 6781.8076,2081.7494 Q6781.8076,2082.0931 6781.4639,2082.4994 Q6780.9639,2083.0775 6780.167,2083.4056 Q6779.0889,2083.8588 6777.792,2083.8588 Q6776.2764,2083.8588 6775.0732,2083.2338 Q6774.0889,2082.7338 6773.4014,2081.6713 Q6772.7139,2080.5931 6772.7139,2079.3119 L6772.7139,2078.1556 Q6772.7139,2076.8275 6773.3232,2075.6869 Q6773.9482,2074.5306 6775.042,2073.9213 Q6776.1357,2073.2963 6777.3701,2073.2963 Q6778.1045,2073.2963 6778.7451,2073.4681 Q6779.4014,2073.6244 6779.9482,2073.9838 Z " fill="#000000"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="117.5029" x="6797.6826" y="2083.8373">SentimentAnalyser</text>
+            <line style="stroke:#181818;stroke-width:0.5;" x1="6717.5" x2="6962.8682" y1="2094.1088" y2="2094.1088"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="188.2822" x="6722.5" y="2112.642">-classifications: Classifications</text>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="79.3721" x="6722.5" y="2130.2513">-input: String</text>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="105.0273" x="6722.5" y="2147.8607">-modelUrl: String</text>
+            <line style="stroke:#181818;stroke-width:1;" x1="6717.5" x2="6962.8682" y1="2154.9369" y2="2154.9369"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="235.3682" x="6722.5" y="2173.4701">+SentimentAnalyser(modelUrl: String)</text>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="231.4854" x="6722.5" y="2191.0795">+predict(input: String): Classifications</text>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="223.6924" x="6722.5" y="2208.6888">+getClassifications(): Classifications</text>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="112.4512" x="6722.5" y="2226.2982">+getInput(): String</text>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="137.3271" x="6722.5" y="2243.9076">+getModelUrl(): String</text>
+        </g>
+        <!--class TaskNotifier-->
+        <g class="entity" data-entity="TaskNotifier" data-source-line="226" data-uid="ent0022" id="entity_TaskNotifier">
+            <rect fill="#F1F1F1" height="153.6563" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="264.5059" x="3407.5" y="2079.6088"/>
+            <ellipse cx="3498.1616" cy="2095.6088" fill="#ADD1B2" rx="11" ry="11" style="stroke:#181818;stroke-width:1;"/>
+            <path d="M3500.9272,2091.4838 Q3501.0835,2091.265 3501.271,2091.1556 Q3501.4585,2091.0463 3501.6772,2091.0463 Q3502.0522,2091.0463 3502.2866,2091.3119 Q3502.521,2091.5619 3502.521,2092.1713 L3502.521,2093.6244 Q3502.521,2094.2338 3502.2866,2094.4994 Q3502.0522,2094.765 3501.6772,2094.765 Q3501.3335,2094.765 3501.1304,2094.5619 Q3500.9272,2094.3744 3500.8179,2093.8588 Q3500.771,2093.4994 3500.5835,2093.3119 Q3500.2554,2092.9369 3499.646,2092.7181 Q3499.0366,2092.4994 3498.4116,2092.4994 Q3497.646,2092.4994 3497.0054,2092.8275 Q3496.3804,2093.1556 3495.8804,2093.9056 Q3495.396,2094.6556 3495.396,2095.6869 L3495.396,2096.7806 Q3495.396,2098.015 3496.2866,2098.8431 Q3497.1772,2099.6556 3498.771,2099.6556 Q3499.7085,2099.6556 3500.3647,2099.4056 Q3500.7554,2099.2494 3501.1772,2098.8119 Q3501.4429,2098.5463 3501.5835,2098.4681 Q3501.7397,2098.39 3501.9429,2098.39 Q3502.271,2098.39 3502.521,2098.6556 Q3502.7866,2098.9056 3502.7866,2099.2494 Q3502.7866,2099.5931 3502.4429,2099.9994 Q3501.9429,2100.5775 3501.146,2100.9056 Q3500.0679,2101.3588 3498.771,2101.3588 Q3497.2554,2101.3588 3496.0522,2100.7338 Q3495.0679,2100.2338 3494.3804,2099.1713 Q3493.6929,2098.0931 3493.6929,2096.8119 L3493.6929,2095.6556 Q3493.6929,2094.3275 3494.3022,2093.1869 Q3494.9272,2092.0306 3496.021,2091.4213 Q3497.1147,2090.7963 3498.3491,2090.7963 Q3499.0835,2090.7963 3499.7241,2090.9681 Q3500.3804,2091.1244 3500.9272,2091.4838 Z " fill="#000000"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="74.6826" x="3518.6616" y="2101.3373">TaskNotifier</text>
+            <line style="stroke:#181818;stroke-width:0.5;" x1="3408.5" x2="3671.0059" y1="2111.6088" y2="2111.6088"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="91.0342" x="3413.5" y="2130.142">-toolTip: String</text>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="92.5859" x="3413.5" y="2147.7513">-icon: TrayIcon</text>
+            <line style="stroke:#181818;stroke-width:1;" x1="3408.5" x2="3671.0059" y1="2154.8275" y2="2154.8275"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="92.1826" x="3413.5" y="2173.3607">+TaskNotifier()</text>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="252.5059" x="3413.5" y="2190.9701">+displayMessage(message: String): void</text>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="127.9961" x="3413.5" y="2208.5795">+getToolTip(): String</text>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="202.6924" x="3413.5" y="2226.1888">+setToolTip(toolTip: String): void</text>
+        </g>
+        <!--class HomeLandingJP-->
+        <g class="entity" data-entity="HomeLandingJP" data-source-line="237" data-uid="ent0023" id="entity_HomeLandingJP">
+            <rect fill="#F1F1F1" height="83.2188" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="336.8438" x="3692.5" y="2115.1088"/>
+            <ellipse cx="3804.917" cy="2131.1088" fill="#ADD1B2" rx="11" ry="11" style="stroke:#181818;stroke-width:1;"/>
+            <path d="M3807.6826,2126.9838 Q3807.8389,2126.765 3808.0264,2126.6556 Q3808.2139,2126.5463 3808.4326,2126.5463 Q3808.8076,2126.5463 3809.042,2126.8119 Q3809.2764,2127.0619 3809.2764,2127.6713 L3809.2764,2129.1244 Q3809.2764,2129.7338 3809.042,2129.9994 Q3808.8076,2130.265 3808.4326,2130.265 Q3808.0889,2130.265 3807.8857,2130.0619 Q3807.6826,2129.8744 3807.5732,2129.3588 Q3807.5264,2128.9994 3807.3389,2128.8119 Q3807.0107,2128.4369 3806.4014,2128.2181 Q3805.792,2127.9994 3805.167,2127.9994 Q3804.4014,2127.9994 3803.7607,2128.3275 Q3803.1357,2128.6556 3802.6357,2129.4056 Q3802.1514,2130.1556 3802.1514,2131.1869 L3802.1514,2132.2806 Q3802.1514,2133.515 3803.042,2134.3431 Q3803.9326,2135.1556 3805.5264,2135.1556 Q3806.4639,2135.1556 3807.1201,2134.9056 Q3807.5107,2134.7494 3807.9326,2134.3119 Q3808.1982,2134.0463 3808.3389,2133.9681 Q3808.4951,2133.89 3808.6982,2133.89 Q3809.0264,2133.89 3809.2764,2134.1556 Q3809.542,2134.4056 3809.542,2134.7494 Q3809.542,2135.0931 3809.1982,2135.4994 Q3808.6982,2136.0775 3807.9014,2136.4056 Q3806.8232,2136.8588 3805.5264,2136.8588 Q3804.0107,2136.8588 3802.8076,2136.2338 Q3801.8232,2135.7338 3801.1357,2134.6713 Q3800.4482,2133.5931 3800.4482,2132.3119 L3800.4482,2131.1556 Q3800.4482,2129.8275 3801.0576,2128.6869 Q3801.6826,2127.5306 3802.7764,2126.9213 Q3803.8701,2126.2963 3805.1045,2126.2963 Q3805.8389,2126.2963 3806.4795,2126.4681 Q3807.1357,2126.6244 3807.6826,2126.9838 Z " fill="#000000"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="103.5098" x="3825.417" y="2136.8373">HomeLandingJP</text>
+            <line style="stroke:#181818;stroke-width:0.5;" x1="3693.5" x2="4028.3438" y1="2147.1088" y2="2147.1088"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="208.4961" x="3698.5" y="2165.642">-mainMenuForm: MainMenuForm</text>
+            <line style="stroke:#181818;stroke-width:0.5;" x1="3693.5" x2="4028.3438" y1="2172.7181" y2="2172.7181"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="324.8438" x="3698.5" y="2191.2513">+HomeLandingJP(mainMenuForm: MainMenuForm)</text>
+        </g>
+        <!--class MainMenuJP-->
+        <g class="entity" data-entity="MainMenuJP" data-source-line="241" data-uid="ent0024" id="entity_MainMenuJP">
+            <rect fill="#F1F1F1" height="100.8281" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="315.0371" x="5585.5" y="2106.1088"/>
+            <ellipse cx="5697.917" cy="2122.1088" fill="#ADD1B2" rx="11" ry="11" style="stroke:#181818;stroke-width:1;"/>
+            <path d="M5700.6826,2117.9838 Q5700.8389,2117.765 5701.0264,2117.6556 Q5701.2139,2117.5463 5701.4326,2117.5463 Q5701.8076,2117.5463 5702.042,2117.8119 Q5702.2764,2118.0619 5702.2764,2118.6713 L5702.2764,2120.1244 Q5702.2764,2120.7338 5702.042,2120.9994 Q5701.8076,2121.265 5701.4326,2121.265 Q5701.0889,2121.265 5700.8857,2121.0619 Q5700.6826,2120.8744 5700.5732,2120.3588 Q5700.5264,2119.9994 5700.3389,2119.8119 Q5700.0107,2119.4369 5699.4014,2119.2181 Q5698.792,2118.9994 5698.167,2118.9994 Q5697.4014,2118.9994 5696.7607,2119.3275 Q5696.1357,2119.6556 5695.6357,2120.4056 Q5695.1514,2121.1556 5695.1514,2122.1869 L5695.1514,2123.2806 Q5695.1514,2124.515 5696.042,2125.3431 Q5696.9326,2126.1556 5698.5264,2126.1556 Q5699.4639,2126.1556 5700.1201,2125.9056 Q5700.5107,2125.7494 5700.9326,2125.3119 Q5701.1982,2125.0463 5701.3389,2124.9681 Q5701.4951,2124.89 5701.6982,2124.89 Q5702.0264,2124.89 5702.2764,2125.1556 Q5702.542,2125.4056 5702.542,2125.7494 Q5702.542,2126.0931 5702.1982,2126.4994 Q5701.6982,2127.0775 5700.9014,2127.4056 Q5699.8232,2127.8588 5698.5264,2127.8588 Q5697.0107,2127.8588 5695.8076,2127.2338 Q5694.8232,2126.7338 5694.1357,2125.6713 Q5693.4482,2124.5931 5693.4482,2123.3119 L5693.4482,2122.1556 Q5693.4482,2120.8275 5694.0576,2119.6869 Q5694.6826,2118.5306 5695.7764,2117.9213 Q5696.8701,2117.2963 5698.1045,2117.2963 Q5698.8389,2117.2963 5699.4795,2117.4681 Q5700.1357,2117.6244 5700.6826,2117.9838 Z " fill="#000000"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="81.7031" x="5718.417" y="2127.8373">MainMenuJP</text>
+            <line style="stroke:#181818;stroke-width:0.5;" x1="5586.5" x2="5899.5371" y1="2138.1088" y2="2138.1088"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="208.4961" x="5591.5" y="2156.642">-mainMenuForm: MainMenuForm</text>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="160.2686" x="5591.5" y="2174.2513">-mysql: MySQLConnector</text>
+            <line style="stroke:#181818;stroke-width:0.5;" x1="5586.5" x2="5899.5371" y1="2181.3275" y2="2181.3275"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="303.0371" x="5591.5" y="2199.8607">+MainMenuJP(mainMenuForm: MainMenuForm)</text>
+        </g>
+        <!--class CrawlerConfigJP-->
+        <g class="entity" data-entity="CrawlerConfigJP" data-source-line="246" data-uid="ent0025" id="entity_CrawlerConfigJP">
+            <rect fill="#F1F1F1" height="83.2188" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="338.3682" x="4050" y="2115.1088"/>
+            <ellipse cx="4162.417" cy="2131.1088" fill="#ADD1B2" rx="11" ry="11" style="stroke:#181818;stroke-width:1;"/>
+            <path d="M4165.1826,2126.9838 Q4165.3389,2126.765 4165.5264,2126.6556 Q4165.7139,2126.5463 4165.9326,2126.5463 Q4166.3076,2126.5463 4166.542,2126.8119 Q4166.7764,2127.0619 4166.7764,2127.6713 L4166.7764,2129.1244 Q4166.7764,2129.7338 4166.542,2129.9994 Q4166.3076,2130.265 4165.9326,2130.265 Q4165.5889,2130.265 4165.3857,2130.0619 Q4165.1826,2129.8744 4165.0732,2129.3588 Q4165.0264,2128.9994 4164.8389,2128.8119 Q4164.5107,2128.4369 4163.9014,2128.2181 Q4163.292,2127.9994 4162.667,2127.9994 Q4161.9014,2127.9994 4161.2607,2128.3275 Q4160.6357,2128.6556 4160.1357,2129.4056 Q4159.6514,2130.1556 4159.6514,2131.1869 L4159.6514,2132.2806 Q4159.6514,2133.515 4160.542,2134.3431 Q4161.4326,2135.1556 4163.0264,2135.1556 Q4163.9639,2135.1556 4164.6201,2134.9056 Q4165.0107,2134.7494 4165.4326,2134.3119 Q4165.6982,2134.0463 4165.8389,2133.9681 Q4165.9951,2133.89 4166.1982,2133.89 Q4166.5264,2133.89 4166.7764,2134.1556 Q4167.042,2134.4056 4167.042,2134.7494 Q4167.042,2135.0931 4166.6982,2135.4994 Q4166.1982,2136.0775 4165.4014,2136.4056 Q4164.3232,2136.8588 4163.0264,2136.8588 Q4161.5107,2136.8588 4160.3076,2136.2338 Q4159.3232,2135.7338 4158.6357,2134.6713 Q4157.9482,2133.5931 4157.9482,2132.3119 L4157.9482,2131.1556 Q4157.9482,2129.8275 4158.5576,2128.6869 Q4159.1826,2127.5306 4160.2764,2126.9213 Q4161.3701,2126.2963 4162.6045,2126.2963 Q4163.3389,2126.2963 4163.9795,2126.4681 Q4164.6357,2126.6244 4165.1826,2126.9838 Z " fill="#000000"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="105.0342" x="4182.917" y="2136.8373">CrawlerConfigJP</text>
+            <line style="stroke:#181818;stroke-width:0.5;" x1="4051" x2="4387.3682" y1="2147.1088" y2="2147.1088"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="208.4961" x="4056" y="2165.642">-mainMenuForm: MainMenuForm</text>
+            <line style="stroke:#181818;stroke-width:0.5;" x1="4051" x2="4387.3682" y1="2172.7181" y2="2172.7181"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="326.3682" x="4056" y="2191.2513">+CrawlerConfigJP(mainMenuForm: MainMenuForm)</text>
+        </g>
+        <!--class CrawlerScriptingJP-->
+        <g class="entity" data-entity="CrawlerScriptingJP" data-source-line="250" data-uid="ent0026" id="entity_CrawlerScriptingJP">
+            <rect fill="#F1F1F1" height="118.4375" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="352.3682" x="4408" y="2097.6088"/>
+            <ellipse cx="4520.417" cy="2113.6088" fill="#ADD1B2" rx="11" ry="11" style="stroke:#181818;stroke-width:1;"/>
+            <path d="M4523.1826,2109.4838 Q4523.3389,2109.265 4523.5264,2109.1556 Q4523.7139,2109.0463 4523.9326,2109.0463 Q4524.3076,2109.0463 4524.542,2109.3119 Q4524.7764,2109.5619 4524.7764,2110.1713 L4524.7764,2111.6244 Q4524.7764,2112.2338 4524.542,2112.4994 Q4524.3076,2112.765 4523.9326,2112.765 Q4523.5889,2112.765 4523.3857,2112.5619 Q4523.1826,2112.3744 4523.0732,2111.8588 Q4523.0264,2111.4994 4522.8389,2111.3119 Q4522.5107,2110.9369 4521.9014,2110.7181 Q4521.292,2110.4994 4520.667,2110.4994 Q4519.9014,2110.4994 4519.2607,2110.8275 Q4518.6357,2111.1556 4518.1357,2111.9056 Q4517.6514,2112.6556 4517.6514,2113.6869 L4517.6514,2114.7806 Q4517.6514,2116.015 4518.542,2116.8431 Q4519.4326,2117.6556 4521.0264,2117.6556 Q4521.9639,2117.6556 4522.6201,2117.4056 Q4523.0107,2117.2494 4523.4326,2116.8119 Q4523.6982,2116.5463 4523.8389,2116.4681 Q4523.9951,2116.39 4524.1982,2116.39 Q4524.5264,2116.39 4524.7764,2116.6556 Q4525.042,2116.9056 4525.042,2117.2494 Q4525.042,2117.5931 4524.6982,2117.9994 Q4524.1982,2118.5775 4523.4014,2118.9056 Q4522.3232,2119.3588 4521.0264,2119.3588 Q4519.5107,2119.3588 4518.3076,2118.7338 Q4517.3232,2118.2338 4516.6357,2117.1713 Q4515.9482,2116.0931 4515.9482,2114.8119 L4515.9482,2113.6556 Q4515.9482,2112.3275 4516.5576,2111.1869 Q4517.1826,2110.0306 4518.2764,2109.4213 Q4519.3701,2108.7963 4520.6045,2108.7963 Q4521.3389,2108.7963 4521.9795,2108.9681 Q4522.6357,2109.1244 4523.1826,2109.4838 Z " fill="#000000"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="119.0342" x="4540.917" y="2119.3373">CrawlerScriptingJP</text>
+            <line style="stroke:#181818;stroke-width:0.5;" x1="4409" x2="4759.3682" y1="2129.6088" y2="2129.6088"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="208.4961" x="4414" y="2148.142">-mainMenuForm: MainMenuForm</text>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="178.1992" x="4414" y="2165.7513">-selectedCommandIndex: int</text>
+            <line style="stroke:#181818;stroke-width:0.5;" x1="4409" x2="4759.3682" y1="2172.8275" y2="2172.8275"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="340.3682" x="4414" y="2191.3607">+CrawlerScriptingJP(mainMenuForm: MainMenuForm)</text>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="179.7236" x="4414" y="2208.9701">-composeCommand(): String</text>
+        </g>
+        <!--class DatabaseSettingsJP-->
+        <g class="entity" data-entity="DatabaseSettingsJP" data-source-line="256" data-uid="ent0027" id="entity_DatabaseSettingsJP">
+            <rect fill="#F1F1F1" height="83.2188" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="360.1885" x="737" y="2115.1088"/>
+            <ellipse cx="849.417" cy="2131.1088" fill="#ADD1B2" rx="11" ry="11" style="stroke:#181818;stroke-width:1;"/>
+            <path d="M852.1826,2126.9838 Q852.3389,2126.765 852.5264,2126.6556 Q852.7139,2126.5463 852.9326,2126.5463 Q853.3076,2126.5463 853.542,2126.8119 Q853.7764,2127.0619 853.7764,2127.6713 L853.7764,2129.1244 Q853.7764,2129.7338 853.542,2129.9994 Q853.3076,2130.265 852.9326,2130.265 Q852.5889,2130.265 852.3857,2130.0619 Q852.1826,2129.8744 852.0732,2129.3588 Q852.0264,2128.9994 851.8389,2128.8119 Q851.5107,2128.4369 850.9014,2128.2181 Q850.292,2127.9994 849.667,2127.9994 Q848.9014,2127.9994 848.2607,2128.3275 Q847.6357,2128.6556 847.1357,2129.4056 Q846.6514,2130.1556 846.6514,2131.1869 L846.6514,2132.2806 Q846.6514,2133.515 847.542,2134.3431 Q848.4326,2135.1556 850.0264,2135.1556 Q850.9639,2135.1556 851.6201,2134.9056 Q852.0107,2134.7494 852.4326,2134.3119 Q852.6982,2134.0463 852.8389,2133.9681 Q852.9951,2133.89 853.1982,2133.89 Q853.5264,2133.89 853.7764,2134.1556 Q854.042,2134.4056 854.042,2134.7494 Q854.042,2135.0931 853.6982,2135.4994 Q853.1982,2136.0775 852.4014,2136.4056 Q851.3232,2136.8588 850.0264,2136.8588 Q848.5107,2136.8588 847.3076,2136.2338 Q846.3232,2135.7338 845.6357,2134.6713 Q844.9482,2133.5931 844.9482,2132.3119 L844.9482,2131.1556 Q844.9482,2129.8275 845.5576,2128.6869 Q846.1826,2127.5306 847.2764,2126.9213 Q848.3701,2126.2963 849.6045,2126.2963 Q850.3389,2126.2963 850.9795,2126.4681 Q851.6357,2126.6244 852.1826,2126.9838 Z " fill="#000000"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="126.8545" x="869.917" y="2136.8373">DatabaseSettingsJP</text>
+            <line style="stroke:#181818;stroke-width:0.5;" x1="738" x2="1096.1885" y1="2147.1088" y2="2147.1088"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="208.4961" x="743" y="2165.642">-mainMenuForm: MainMenuForm</text>
+            <line style="stroke:#181818;stroke-width:0.5;" x1="738" x2="1096.1885" y1="2172.7181" y2="2172.7181"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="348.1885" x="743" y="2191.2513">+DatabaseSettingsJP(mainMenuForm: MainMenuForm)</text>
+        </g>
+        <!--class SQLCredentialsJP-->
+        <g class="entity" data-entity="SQLCredentialsJP" data-source-line="260" data-uid="ent0028" id="entity_SQLCredentialsJP">
+            <rect fill="#F1F1F1" height="118.4375" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="348.499" x="1117" y="2097.6088"/>
+            <ellipse cx="1229.417" cy="2113.6088" fill="#ADD1B2" rx="11" ry="11" style="stroke:#181818;stroke-width:1;"/>
+            <path d="M1232.1826,2109.4838 Q1232.3389,2109.265 1232.5264,2109.1556 Q1232.7139,2109.0463 1232.9326,2109.0463 Q1233.3076,2109.0463 1233.542,2109.3119 Q1233.7764,2109.5619 1233.7764,2110.1713 L1233.7764,2111.6244 Q1233.7764,2112.2338 1233.542,2112.4994 Q1233.3076,2112.765 1232.9326,2112.765 Q1232.5889,2112.765 1232.3857,2112.5619 Q1232.1826,2112.3744 1232.0732,2111.8588 Q1232.0264,2111.4994 1231.8389,2111.3119 Q1231.5107,2110.9369 1230.9014,2110.7181 Q1230.292,2110.4994 1229.667,2110.4994 Q1228.9014,2110.4994 1228.2607,2110.8275 Q1227.6357,2111.1556 1227.1357,2111.9056 Q1226.6514,2112.6556 1226.6514,2113.6869 L1226.6514,2114.7806 Q1226.6514,2116.015 1227.542,2116.8431 Q1228.4326,2117.6556 1230.0264,2117.6556 Q1230.9639,2117.6556 1231.6201,2117.4056 Q1232.0107,2117.2494 1232.4326,2116.8119 Q1232.6982,2116.5463 1232.8389,2116.4681 Q1232.9951,2116.39 1233.1982,2116.39 Q1233.5264,2116.39 1233.7764,2116.6556 Q1234.042,2116.9056 1234.042,2117.2494 Q1234.042,2117.5931 1233.6982,2117.9994 Q1233.1982,2118.5775 1232.4014,2118.9056 Q1231.3232,2119.3588 1230.0264,2119.3588 Q1228.5107,2119.3588 1227.3076,2118.7338 Q1226.3232,2118.2338 1225.6357,2117.1713 Q1224.9482,2116.0931 1224.9482,2114.8119 L1224.9482,2113.6556 Q1224.9482,2112.3275 1225.5576,2111.1869 Q1226.1826,2110.0306 1227.2764,2109.4213 Q1228.3701,2108.7963 1229.6045,2108.7963 Q1230.3389,2108.7963 1230.9795,2108.9681 Q1231.6357,2109.1244 1232.1826,2109.4838 Z " fill="#000000"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="115.165" x="1249.917" y="2119.3373">SQLCredentialsJP</text>
+            <line style="stroke:#181818;stroke-width:0.5;" x1="1118" x2="1464.499" y1="2129.6088" y2="2129.6088"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="208.4961" x="1123" y="2148.142">-mainMenuForm: MainMenuForm</text>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="150.9854" x="1123" y="2165.7513">-credentialsSet: boolean</text>
+            <line style="stroke:#181818;stroke-width:0.5;" x1="1118" x2="1464.499" y1="2172.8275" y2="2172.8275"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="336.499" x="1123" y="2191.3607">+SQLCredentialsJP(mainMenuForm: MainMenuForm)</text>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="208.1816" x="1123" y="2208.9701">+getAreCredentialsSet(): boolean</text>
+        </g>
+        <!--class SQLDatabaseJP-->
+        <g class="entity" data-entity="SQLDatabaseJP" data-source-line="266" data-uid="ent0029" id="entity_SQLDatabaseJP">
+            <rect fill="#F1F1F1" height="136.0469" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="337.6162" x="1485" y="2088.6088"/>
+            <ellipse cx="1597.417" cy="2104.6088" fill="#ADD1B2" rx="11" ry="11" style="stroke:#181818;stroke-width:1;"/>
+            <path d="M1600.1826,2100.4838 Q1600.3389,2100.265 1600.5264,2100.1556 Q1600.7139,2100.0463 1600.9326,2100.0463 Q1601.3076,2100.0463 1601.542,2100.3119 Q1601.7764,2100.5619 1601.7764,2101.1713 L1601.7764,2102.6244 Q1601.7764,2103.2338 1601.542,2103.4994 Q1601.3076,2103.765 1600.9326,2103.765 Q1600.5889,2103.765 1600.3857,2103.5619 Q1600.1826,2103.3744 1600.0732,2102.8588 Q1600.0264,2102.4994 1599.8389,2102.3119 Q1599.5107,2101.9369 1598.9014,2101.7181 Q1598.292,2101.4994 1597.667,2101.4994 Q1596.9014,2101.4994 1596.2607,2101.8275 Q1595.6357,2102.1556 1595.1357,2102.9056 Q1594.6514,2103.6556 1594.6514,2104.6869 L1594.6514,2105.7806 Q1594.6514,2107.015 1595.542,2107.8431 Q1596.4326,2108.6556 1598.0264,2108.6556 Q1598.9639,2108.6556 1599.6201,2108.4056 Q1600.0107,2108.2494 1600.4326,2107.8119 Q1600.6982,2107.5463 1600.8389,2107.4681 Q1600.9951,2107.39 1601.1982,2107.39 Q1601.5264,2107.39 1601.7764,2107.6556 Q1602.042,2107.9056 1602.042,2108.2494 Q1602.042,2108.5931 1601.6982,2108.9994 Q1601.1982,2109.5775 1600.4014,2109.9056 Q1599.3232,2110.3588 1598.0264,2110.3588 Q1596.5107,2110.3588 1595.3076,2109.7338 Q1594.3232,2109.2338 1593.6357,2108.1713 Q1592.9482,2107.0931 1592.9482,2105.8119 L1592.9482,2104.6556 Q1592.9482,2103.3275 1593.5576,2102.1869 Q1594.1826,2101.0306 1595.2764,2100.4213 Q1596.3701,2099.7963 1597.6045,2099.7963 Q1598.3389,2099.7963 1598.9795,2099.9681 Q1599.6357,2100.1244 1600.1826,2100.4838 Z " fill="#000000"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="104.2822" x="1617.917" y="2110.3373">SQLDatabaseJP</text>
+            <line style="stroke:#181818;stroke-width:0.5;" x1="1486" x2="1821.6162" y1="2120.6088" y2="2120.6088"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="208.4961" x="1491" y="2139.142">-mainMenuForm: MainMenuForm</text>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="167.3232" x="1491" y="2156.7513">-reentrancyGuard: boolean</text>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="132.2686" x="1491" y="2174.3607">-primaryKeyIndex: int</text>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="122.165" x="1491" y="2191.9701">-dataTypes: String[]</text>
+            <line style="stroke:#181818;stroke-width:0.5;" x1="1486" x2="1821.6162" y1="2199.0463" y2="2199.0463"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="325.6162" x="1491" y="2217.5795">+SQLDatabaseJP(mainMenuForm: MainMenuForm)</text>
+        </g>
+        <!--class SentimentAnalysisJP-->
+        <g class="entity" data-entity="SentimentAnalysisJP" data-source-line="273" data-uid="ent0030" id="entity_SentimentAnalysisJP">
+            <rect fill="#F1F1F1" height="83.2188" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="364.8369" x="5920.5" y="2115.1088"/>
+            <ellipse cx="6032.917" cy="2131.1088" fill="#ADD1B2" rx="11" ry="11" style="stroke:#181818;stroke-width:1;"/>
+            <path d="M6035.6826,2126.9838 Q6035.8389,2126.765 6036.0264,2126.6556 Q6036.2139,2126.5463 6036.4326,2126.5463 Q6036.8076,2126.5463 6037.042,2126.8119 Q6037.2764,2127.0619 6037.2764,2127.6713 L6037.2764,2129.1244 Q6037.2764,2129.7338 6037.042,2129.9994 Q6036.8076,2130.265 6036.4326,2130.265 Q6036.0889,2130.265 6035.8857,2130.0619 Q6035.6826,2129.8744 6035.5732,2129.3588 Q6035.5264,2128.9994 6035.3389,2128.8119 Q6035.0107,2128.4369 6034.4014,2128.2181 Q6033.792,2127.9994 6033.167,2127.9994 Q6032.4014,2127.9994 6031.7607,2128.3275 Q6031.1357,2128.6556 6030.6357,2129.4056 Q6030.1514,2130.1556 6030.1514,2131.1869 L6030.1514,2132.2806 Q6030.1514,2133.515 6031.042,2134.3431 Q6031.9326,2135.1556 6033.5264,2135.1556 Q6034.4639,2135.1556 6035.1201,2134.9056 Q6035.5107,2134.7494 6035.9326,2134.3119 Q6036.1982,2134.0463 6036.3389,2133.9681 Q6036.4951,2133.89 6036.6982,2133.89 Q6037.0264,2133.89 6037.2764,2134.1556 Q6037.542,2134.4056 6037.542,2134.7494 Q6037.542,2135.0931 6037.1982,2135.4994 Q6036.6982,2136.0775 6035.9014,2136.4056 Q6034.8232,2136.8588 6033.5264,2136.8588 Q6032.0107,2136.8588 6030.8076,2136.2338 Q6029.8232,2135.7338 6029.1357,2134.6713 Q6028.4482,2133.5931 6028.4482,2132.3119 L6028.4482,2131.1556 Q6028.4482,2129.8275 6029.0576,2128.6869 Q6029.6826,2127.5306 6030.7764,2126.9213 Q6031.8701,2126.2963 6033.1045,2126.2963 Q6033.8389,2126.2963 6034.4795,2126.4681 Q6035.1357,2126.6244 6035.6826,2126.9838 Z " fill="#000000"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="131.5029" x="6053.417" y="2136.8373">SentimentAnalysisJP</text>
+            <line style="stroke:#181818;stroke-width:0.5;" x1="5921.5" x2="6284.3369" y1="2147.1088" y2="2147.1088"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="208.4961" x="5926.5" y="2165.642">-mainMenuForm: MainMenuForm</text>
+            <line style="stroke:#181818;stroke-width:0.5;" x1="5921.5" x2="6284.3369" y1="2172.7181" y2="2172.7181"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="352.8369" x="5926.5" y="2191.2513">+SentimentAnalysisJP(mainMenuForm: MainMenuForm)</text>
+        </g>
+        <!--class DatabaseQueryJP-->
+        <g class="entity" data-entity="DatabaseQueryJP" data-source-line="277" data-uid="ent0031" id="entity_DatabaseQueryJP">
+            <rect fill="#F1F1F1" height="83.2188" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="347.7266" x="1843" y="2115.1088"/>
+            <ellipse cx="1955.417" cy="2131.1088" fill="#ADD1B2" rx="11" ry="11" style="stroke:#181818;stroke-width:1;"/>
+            <path d="M1958.1826,2126.9838 Q1958.3389,2126.765 1958.5264,2126.6556 Q1958.7139,2126.5463 1958.9326,2126.5463 Q1959.3076,2126.5463 1959.542,2126.8119 Q1959.7764,2127.0619 1959.7764,2127.6713 L1959.7764,2129.1244 Q1959.7764,2129.7338 1959.542,2129.9994 Q1959.3076,2130.265 1958.9326,2130.265 Q1958.5889,2130.265 1958.3857,2130.0619 Q1958.1826,2129.8744 1958.0732,2129.3588 Q1958.0264,2128.9994 1957.8389,2128.8119 Q1957.5107,2128.4369 1956.9014,2128.2181 Q1956.292,2127.9994 1955.667,2127.9994 Q1954.9014,2127.9994 1954.2607,2128.3275 Q1953.6357,2128.6556 1953.1357,2129.4056 Q1952.6514,2130.1556 1952.6514,2131.1869 L1952.6514,2132.2806 Q1952.6514,2133.515 1953.542,2134.3431 Q1954.4326,2135.1556 1956.0264,2135.1556 Q1956.9639,2135.1556 1957.6201,2134.9056 Q1958.0107,2134.7494 1958.4326,2134.3119 Q1958.6982,2134.0463 1958.8389,2133.9681 Q1958.9951,2133.89 1959.1982,2133.89 Q1959.5264,2133.89 1959.7764,2134.1556 Q1960.042,2134.4056 1960.042,2134.7494 Q1960.042,2135.0931 1959.6982,2135.4994 Q1959.1982,2136.0775 1958.4014,2136.4056 Q1957.3232,2136.8588 1956.0264,2136.8588 Q1954.5107,2136.8588 1953.3076,2136.2338 Q1952.3232,2135.7338 1951.6357,2134.6713 Q1950.9482,2133.5931 1950.9482,2132.3119 L1950.9482,2131.1556 Q1950.9482,2129.8275 1951.5576,2128.6869 Q1952.1826,2127.5306 1953.2764,2126.9213 Q1954.3701,2126.2963 1955.6045,2126.2963 Q1956.3389,2126.2963 1956.9795,2126.4681 Q1957.6357,2126.6244 1958.1826,2126.9838 Z " fill="#000000"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="114.3926" x="1975.917" y="2136.8373">DatabaseQueryJP</text>
+            <line style="stroke:#181818;stroke-width:0.5;" x1="1844" x2="2189.7266" y1="2147.1088" y2="2147.1088"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="208.4961" x="1849" y="2165.642">-mainMenuForm: MainMenuForm</text>
+            <line style="stroke:#181818;stroke-width:0.5;" x1="1844" x2="2189.7266" y1="2172.7181" y2="2172.7181"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="335.7266" x="1849" y="2191.2513">+DatabaseQueryJP(mainMenuForm: MainMenuForm)</text>
+        </g>
+        <!--class DeleteCrawlerJP-->
+        <g class="entity" data-entity="DeleteCrawlerJP" data-source-line="281" data-uid="ent0032" id="entity_DeleteCrawlerJP">
+            <rect fill="#F1F1F1" height="83.2188" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="338.3682" x="2211" y="2115.1088"/>
+            <ellipse cx="2323.417" cy="2131.1088" fill="#ADD1B2" rx="11" ry="11" style="stroke:#181818;stroke-width:1;"/>
+            <path d="M2326.1826,2126.9838 Q2326.3389,2126.765 2326.5264,2126.6556 Q2326.7139,2126.5463 2326.9326,2126.5463 Q2327.3076,2126.5463 2327.542,2126.8119 Q2327.7764,2127.0619 2327.7764,2127.6713 L2327.7764,2129.1244 Q2327.7764,2129.7338 2327.542,2129.9994 Q2327.3076,2130.265 2326.9326,2130.265 Q2326.5889,2130.265 2326.3857,2130.0619 Q2326.1826,2129.8744 2326.0732,2129.3588 Q2326.0264,2128.9994 2325.8389,2128.8119 Q2325.5107,2128.4369 2324.9014,2128.2181 Q2324.292,2127.9994 2323.667,2127.9994 Q2322.9014,2127.9994 2322.2607,2128.3275 Q2321.6357,2128.6556 2321.1357,2129.4056 Q2320.6514,2130.1556 2320.6514,2131.1869 L2320.6514,2132.2806 Q2320.6514,2133.515 2321.542,2134.3431 Q2322.4326,2135.1556 2324.0264,2135.1556 Q2324.9639,2135.1556 2325.6201,2134.9056 Q2326.0107,2134.7494 2326.4326,2134.3119 Q2326.6982,2134.0463 2326.8389,2133.9681 Q2326.9951,2133.89 2327.1982,2133.89 Q2327.5264,2133.89 2327.7764,2134.1556 Q2328.042,2134.4056 2328.042,2134.7494 Q2328.042,2135.0931 2327.6982,2135.4994 Q2327.1982,2136.0775 2326.4014,2136.4056 Q2325.3232,2136.8588 2324.0264,2136.8588 Q2322.5107,2136.8588 2321.3076,2136.2338 Q2320.3232,2135.7338 2319.6357,2134.6713 Q2318.9482,2133.5931 2318.9482,2132.3119 L2318.9482,2131.1556 Q2318.9482,2129.8275 2319.5576,2128.6869 Q2320.1826,2127.5306 2321.2764,2126.9213 Q2322.3701,2126.2963 2323.6045,2126.2963 Q2324.3389,2126.2963 2324.9795,2126.4681 Q2325.6357,2126.6244 2326.1826,2126.9838 Z " fill="#000000"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="105.0342" x="2343.917" y="2136.8373">DeleteCrawlerJP</text>
+            <line style="stroke:#181818;stroke-width:0.5;" x1="2212" x2="2548.3682" y1="2147.1088" y2="2147.1088"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="208.4961" x="2217" y="2165.642">-mainMenuForm: MainMenuForm</text>
+            <line style="stroke:#181818;stroke-width:0.5;" x1="2212" x2="2548.3682" y1="2172.7181" y2="2172.7181"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="326.3682" x="2217" y="2191.2513">+DeleteCrawlerJP(mainMenuForm: MainMenuForm)</text>
+        </g>
+        <!--class TestForm-->
+        <g class="entity" data-entity="TestForm" data-source-line="286" data-uid="ent0033" id="entity_TestForm">
+            <rect fill="#F1F1F1" height="48" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="91.8896" x="853" y="769.1087"/>
+            <ellipse cx="868" cy="785.1087" fill="#ADD1B2" rx="11" ry="11" style="stroke:#181818;stroke-width:1;"/>
+            <path d="M870.7656,780.9837 Q870.9219,780.765 871.1094,780.6556 Q871.2969,780.5462 871.5156,780.5462 Q871.8906,780.5462 872.125,780.8119 Q872.3594,781.0619 872.3594,781.6712 L872.3594,783.1244 Q872.3594,783.7337 872.125,783.9994 Q871.8906,784.265 871.5156,784.265 Q871.1719,784.265 870.9688,784.0619 Q870.7656,783.8744 870.6563,783.3587 Q870.6094,782.9994 870.4219,782.8119 Q870.0938,782.4369 869.4844,782.2181 Q868.875,781.9994 868.25,781.9994 Q867.4844,781.9994 866.8438,782.3275 Q866.2188,782.6556 865.7188,783.4056 Q865.2344,784.1556 865.2344,785.1869 L865.2344,786.2806 Q865.2344,787.515 866.125,788.3431 Q867.0156,789.1556 868.6094,789.1556 Q869.5469,789.1556 870.2031,788.9056 Q870.5938,788.7494 871.0156,788.3119 Q871.2813,788.0462 871.4219,787.9681 Q871.5781,787.89 871.7813,787.89 Q872.1094,787.89 872.3594,788.1556 Q872.625,788.4056 872.625,788.7494 Q872.625,789.0931 872.2813,789.4994 Q871.7813,790.0775 870.9844,790.4056 Q869.9063,790.8587 868.6094,790.8587 Q867.0938,790.8587 865.8906,790.2337 Q864.9063,789.7337 864.2188,788.6712 Q863.5313,787.5931 863.5313,786.3119 L863.5313,785.1556 Q863.5313,783.8275 864.1406,782.6869 Q864.7656,781.5306 865.8594,780.9212 Q866.9531,780.2962 868.1875,780.2962 Q868.9219,780.2962 869.5625,780.4681 Q870.2188,780.6244 870.7656,780.9837 Z " fill="#000000"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="59.8896" x="882" y="790.8373">TestForm</text>
+            <line style="stroke:#181818;stroke-width:0.5;" x1="854" x2="943.8896" y1="801.1087" y2="801.1087"/>
+            <line style="stroke:#181818;stroke-width:0.5;" x1="854" x2="943.8896" y1="809.1087" y2="809.1087"/>
+        </g>
+        <!--class TestPanel-->
+        <g class="entity" data-entity="TestPanel" data-source-line="287" data-uid="ent0034" id="entity_TestPanel">
+            <rect fill="#F1F1F1" height="48" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="95.0342" x="737.5" y="769.1087"/>
+            <ellipse cx="752.5" cy="785.1087" fill="#ADD1B2" rx="11" ry="11" style="stroke:#181818;stroke-width:1;"/>
+            <path d="M755.2656,780.9837 Q755.4219,780.765 755.6094,780.6556 Q755.7969,780.5462 756.0156,780.5462 Q756.3906,780.5462 756.625,780.8119 Q756.8594,781.0619 756.8594,781.6712 L756.8594,783.1244 Q756.8594,783.7337 756.625,783.9994 Q756.3906,784.265 756.0156,784.265 Q755.6719,784.265 755.4688,784.0619 Q755.2656,783.8744 755.1563,783.3587 Q755.1094,782.9994 754.9219,782.8119 Q754.5938,782.4369 753.9844,782.2181 Q753.375,781.9994 752.75,781.9994 Q751.9844,781.9994 751.3438,782.3275 Q750.7188,782.6556 750.2188,783.4056 Q749.7344,784.1556 749.7344,785.1869 L749.7344,786.2806 Q749.7344,787.515 750.625,788.3431 Q751.5156,789.1556 753.1094,789.1556 Q754.0469,789.1556 754.7031,788.9056 Q755.0938,788.7494 755.5156,788.3119 Q755.7813,788.0462 755.9219,787.9681 Q756.0781,787.89 756.2813,787.89 Q756.6094,787.89 756.8594,788.1556 Q757.125,788.4056 757.125,788.7494 Q757.125,789.0931 756.7813,789.4994 Q756.2813,790.0775 755.4844,790.4056 Q754.4063,790.8587 753.1094,790.8587 Q751.5938,790.8587 750.3906,790.2337 Q749.4063,789.7337 748.7188,788.6712 Q748.0313,787.5931 748.0313,786.3119 L748.0313,785.1556 Q748.0313,783.8275 748.6406,782.6869 Q749.2656,781.5306 750.3594,780.9212 Q751.4531,780.2962 752.6875,780.2962 Q753.4219,780.2962 754.0625,780.4681 Q754.7188,780.6244 755.2656,780.9837 Z " fill="#000000"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="63.0342" x="766.5" y="790.8373">TestPanel</text>
+            <line style="stroke:#181818;stroke-width:0.5;" x1="738.5" x2="831.5342" y1="801.1087" y2="801.1087"/>
+            <line style="stroke:#181818;stroke-width:0.5;" x1="738.5" x2="831.5342" y1="809.1087" y2="809.1087"/>
+        </g>
+        <!--class Serializable-->
+        <g class="entity" data-entity="Serializable" data-source-line="93" data-uid="ent0008" id="entity_Serializable">
+            <rect fill="#F1F1F1" height="48" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="104.3721" x="2887" y="2527.6088"/>
+            <ellipse cx="2902" cy="2543.6088" fill="#B4A7E5" rx="11" ry="11" style="stroke:#181818;stroke-width:1;"/>
+            <path d="M2902.9531,2540.2494 L2902.9531,2546.9056 L2904.6719,2546.9056 Q2905.2813,2546.9056 2905.5469,2547.14 Q2905.8125,2547.3744 2905.8125,2547.765 Q2905.8125,2548.14 2905.5469,2548.3744 Q2905.2813,2548.6088 2904.6719,2548.6088 L2899.5313,2548.6088 Q2898.9219,2548.6088 2898.6563,2548.3744 Q2898.3906,2548.14 2898.3906,2547.7494 Q2898.3906,2547.3744 2898.6563,2547.14 Q2898.9219,2546.9056 2899.5313,2546.9056 L2901.25,2546.9056 L2901.25,2540.2494 L2899.5313,2540.2494 Q2898.9219,2540.2494 2898.6563,2540.015 Q2898.3906,2539.7806 2898.3906,2539.39 Q2898.3906,2539.015 2898.6563,2538.7806 Q2898.9219,2538.5463 2899.5313,2538.5463 L2904.6719,2538.5463 Q2905.2813,2538.5463 2905.5469,2538.7806 Q2905.8125,2539.015 2905.8125,2539.39 Q2905.8125,2539.7806 2905.5469,2540.015 Q2905.2813,2540.2494 2904.6719,2540.2494 L2902.9531,2540.2494 Z " fill="#000000"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" font-style="italic" lengthAdjust="spacing" textLength="72.3721" x="2916" y="2549.3373">Serializable</text>
+            <line style="stroke:#181818;stroke-width:0.5;" x1="2888" x2="2990.3721" y1="2559.6088" y2="2559.6088"/>
+            <line style="stroke:#181818;stroke-width:0.5;" x1="2888" x2="2990.3721" y1="2567.6088" y2="2567.6088"/>
+        </g>
+        <!--class Playwright-->
+        <g class="entity" data-entity="Playwright" data-source-line="365" data-uid="ent0074" id="entity_Playwright">
+            <rect fill="#F1F1F1" height="48" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="96.5791" x="7068.5" y="769.1087"/>
+            <ellipse cx="7083.5" cy="785.1087" fill="#ADD1B2" rx="11" ry="11" style="stroke:#181818;stroke-width:1;"/>
+            <path d="M7086.2656,780.9837 Q7086.4219,780.765 7086.6094,780.6556 Q7086.7969,780.5462 7087.0156,780.5462 Q7087.3906,780.5462 7087.625,780.8119 Q7087.8594,781.0619 7087.8594,781.6712 L7087.8594,783.1244 Q7087.8594,783.7337 7087.625,783.9994 Q7087.3906,784.265 7087.0156,784.265 Q7086.6719,784.265 7086.4688,784.0619 Q7086.2656,783.8744 7086.1563,783.3587 Q7086.1094,782.9994 7085.9219,782.8119 Q7085.5938,782.4369 7084.9844,782.2181 Q7084.375,781.9994 7083.75,781.9994 Q7082.9844,781.9994 7082.3438,782.3275 Q7081.7188,782.6556 7081.2188,783.4056 Q7080.7344,784.1556 7080.7344,785.1869 L7080.7344,786.2806 Q7080.7344,787.515 7081.625,788.3431 Q7082.5156,789.1556 7084.1094,789.1556 Q7085.0469,789.1556 7085.7031,788.9056 Q7086.0938,788.7494 7086.5156,788.3119 Q7086.7813,788.0462 7086.9219,787.9681 Q7087.0781,787.89 7087.2813,787.89 Q7087.6094,787.89 7087.8594,788.1556 Q7088.125,788.4056 7088.125,788.7494 Q7088.125,789.0931 7087.7813,789.4994 Q7087.2813,790.0775 7086.4844,790.4056 Q7085.4063,790.8587 7084.1094,790.8587 Q7082.5938,790.8587 7081.3906,790.2337 Q7080.4063,789.7337 7079.7188,788.6712 Q7079.0313,787.5931 7079.0313,786.3119 L7079.0313,785.1556 Q7079.0313,783.8275 7079.6406,782.6869 Q7080.2656,781.5306 7081.3594,780.9212 Q7082.4531,780.2962 7083.6875,780.2962 Q7084.4219,780.2962 7085.0625,780.4681 Q7085.7188,780.6244 7086.2656,780.9837 Z " fill="#000000"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="64.5791" x="7097.5" y="790.8373">Playwright</text>
+            <line style="stroke:#181818;stroke-width:0.5;" x1="7069.5" x2="7164.0791" y1="801.1087" y2="801.1087"/>
+            <line style="stroke:#181818;stroke-width:0.5;" x1="7069.5" x2="7164.0791" y1="809.1087" y2="809.1087"/>
+        </g>
+        <!--class AboutForm-->
+        <g class="entity" data-entity="AboutForm" data-source-line="291" data-uid="ent0036" id="entity_AboutForm">
+            <rect fill="#F1F1F1" height="48" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="101.248" x="371.5" y="2132.6088"/>
+            <ellipse cx="386.5" cy="2148.6088" fill="#ADD1B2" rx="11" ry="11" style="stroke:#181818;stroke-width:1;"/>
+            <path d="M389.2656,2144.4838 Q389.4219,2144.265 389.6094,2144.1556 Q389.7969,2144.0463 390.0156,2144.0463 Q390.3906,2144.0463 390.625,2144.3119 Q390.8594,2144.5619 390.8594,2145.1713 L390.8594,2146.6244 Q390.8594,2147.2338 390.625,2147.4994 Q390.3906,2147.765 390.0156,2147.765 Q389.6719,2147.765 389.4688,2147.5619 Q389.2656,2147.3744 389.1563,2146.8588 Q389.1094,2146.4994 388.9219,2146.3119 Q388.5938,2145.9369 387.9844,2145.7181 Q387.375,2145.4994 386.75,2145.4994 Q385.9844,2145.4994 385.3438,2145.8275 Q384.7188,2146.1556 384.2188,2146.9056 Q383.7344,2147.6556 383.7344,2148.6869 L383.7344,2149.7806 Q383.7344,2151.015 384.625,2151.8431 Q385.5156,2152.6556 387.1094,2152.6556 Q388.0469,2152.6556 388.7031,2152.4056 Q389.0938,2152.2494 389.5156,2151.8119 Q389.7813,2151.5463 389.9219,2151.4681 Q390.0781,2151.39 390.2813,2151.39 Q390.6094,2151.39 390.8594,2151.6556 Q391.125,2151.9056 391.125,2152.2494 Q391.125,2152.5931 390.7813,2152.9994 Q390.2813,2153.5775 389.4844,2153.9056 Q388.4063,2154.3588 387.1094,2154.3588 Q385.5938,2154.3588 384.3906,2153.7338 Q383.4063,2153.2338 382.7188,2152.1713 Q382.0313,2151.0931 382.0313,2149.8119 L382.0313,2148.6556 Q382.0313,2147.3275 382.6406,2146.1869 Q383.2656,2145.0306 384.3594,2144.4213 Q385.4531,2143.7963 386.6875,2143.7963 Q387.4219,2143.7963 388.0625,2143.9681 Q388.7188,2144.1244 389.2656,2144.4838 Z " fill="#000000"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="69.248" x="400.5" y="2154.3373">AboutForm</text>
+            <line style="stroke:#181818;stroke-width:0.5;" x1="372.5" x2="471.748" y1="2164.6088" y2="2164.6088"/>
+            <line style="stroke:#181818;stroke-width:0.5;" x1="372.5" x2="471.748" y1="2172.6088" y2="2172.6088"/>
+        </g>
+        <!--class UserManualForm-->
+        <g class="entity" data-entity="UserManualForm" data-source-line="292" data-uid="ent0037" id="entity_UserManualForm">
+            <rect fill="#F1F1F1" height="48" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="140.1377" x="493" y="2132.6088"/>
+            <ellipse cx="508" cy="2148.6088" fill="#ADD1B2" rx="11" ry="11" style="stroke:#181818;stroke-width:1;"/>
+            <path d="M510.7656,2144.4838 Q510.9219,2144.265 511.1094,2144.1556 Q511.2969,2144.0463 511.5156,2144.0463 Q511.8906,2144.0463 512.125,2144.3119 Q512.3594,2144.5619 512.3594,2145.1713 L512.3594,2146.6244 Q512.3594,2147.2338 512.125,2147.4994 Q511.8906,2147.765 511.5156,2147.765 Q511.1719,2147.765 510.9688,2147.5619 Q510.7656,2147.3744 510.6563,2146.8588 Q510.6094,2146.4994 510.4219,2146.3119 Q510.0938,2145.9369 509.4844,2145.7181 Q508.875,2145.4994 508.25,2145.4994 Q507.4844,2145.4994 506.8438,2145.8275 Q506.2188,2146.1556 505.7188,2146.9056 Q505.2344,2147.6556 505.2344,2148.6869 L505.2344,2149.7806 Q505.2344,2151.015 506.125,2151.8431 Q507.0156,2152.6556 508.6094,2152.6556 Q509.5469,2152.6556 510.2031,2152.4056 Q510.5938,2152.2494 511.0156,2151.8119 Q511.2813,2151.5463 511.4219,2151.4681 Q511.5781,2151.39 511.7813,2151.39 Q512.1094,2151.39 512.3594,2151.6556 Q512.625,2151.9056 512.625,2152.2494 Q512.625,2152.5931 512.2813,2152.9994 Q511.7813,2153.5775 510.9844,2153.9056 Q509.9063,2154.3588 508.6094,2154.3588 Q507.0938,2154.3588 505.8906,2153.7338 Q504.9063,2153.2338 504.2188,2152.1713 Q503.5313,2151.0931 503.5313,2149.8119 L503.5313,2148.6556 Q503.5313,2147.3275 504.1406,2146.1869 Q504.7656,2145.0306 505.8594,2144.4213 Q506.9531,2143.7963 508.1875,2143.7963 Q508.9219,2143.7963 509.5625,2143.9681 Q510.2188,2144.1244 510.7656,2144.4838 Z " fill="#000000"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="108.1377" x="522" y="2154.3373">UserManualForm</text>
+            <line style="stroke:#181818;stroke-width:0.5;" x1="494" x2="632.1377" y1="2164.6088" y2="2164.6088"/>
+            <line style="stroke:#181818;stroke-width:0.5;" x1="494" x2="632.1377" y1="2172.6088" y2="2172.6088"/>
+        </g>
+        <!--class WebCrawlerGUIWorker-->
+        <g class="entity" data-entity="WebCrawlerGUIWorker" data-source-line="296" data-uid="ent0039" id="entity_WebCrawlerGUIWorker">
+            <rect fill="#F1F1F1" height="188.875" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="220.4961" x="23" y="206.6087"/>
+            <ellipse cx="56.6671" cy="222.6087" fill="#ADD1B2" rx="11" ry="11" style="stroke:#181818;stroke-width:1;"/>
+            <path d="M59.4327,218.4837 Q59.589,218.265 59.7765,218.1556 Q59.964,218.0462 60.1827,218.0462 Q60.5577,218.0462 60.7921,218.3119 Q61.0265,218.5619 61.0265,219.1712 L61.0265,220.6244 Q61.0265,221.2337 60.7921,221.4994 Q60.5577,221.765 60.1827,221.765 Q59.839,221.765 59.6358,221.5619 Q59.4327,221.3744 59.3233,220.8587 Q59.2765,220.4994 59.089,220.3119 Q58.7608,219.9369 58.1515,219.7181 Q57.5421,219.4994 56.9171,219.4994 Q56.1515,219.4994 55.5108,219.8275 Q54.8858,220.1556 54.3858,220.9056 Q53.9015,221.6556 53.9015,222.6869 L53.9015,223.7806 Q53.9015,225.015 54.7921,225.8431 Q55.6827,226.6556 57.2765,226.6556 Q58.214,226.6556 58.8702,226.4056 Q59.2608,226.2494 59.6827,225.8119 Q59.9483,225.5462 60.089,225.4681 Q60.2452,225.39 60.4483,225.39 Q60.7765,225.39 61.0265,225.6556 Q61.2921,225.9056 61.2921,226.2494 Q61.2921,226.5931 60.9483,226.9994 Q60.4483,227.5775 59.6515,227.9056 Q58.5733,228.3587 57.2765,228.3587 Q55.7608,228.3587 54.5577,227.7337 Q53.5733,227.2337 52.8858,226.1712 Q52.1983,225.0931 52.1983,223.8119 L52.1983,222.6556 Q52.1983,221.3275 52.8077,220.1869 Q53.4327,219.0306 54.5265,218.4212 Q55.6202,217.7962 56.8546,217.7962 Q57.589,217.7962 58.2296,217.9681 Q58.8858,218.1244 59.4327,218.4837 Z " fill="#000000"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="147.0137" x="74.8153" y="228.3373">WebCrawlerGUIWorker</text>
+            <line style="stroke:#181818;stroke-width:0.5;" x1="24" x2="242.4961" y1="238.6087" y2="238.6087"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="208.4961" x="29" y="257.142">-mainMenuForm: MainMenuForm</text>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="160.2686" x="29" y="274.7513">-mysql: MySQLConnector</text>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="128.3789" x="29" y="292.3607">-textArea: JTextArea</text>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="160.2617" x="29" y="309.9701">-crawlersCB: JComboBox</text>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="172.7373" x="29" y="327.5795">-responsesCB: JComboBox</text>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="140.0479" x="29" y="345.1888">-playwright: Playwright</text>
+            <line style="stroke:#181818;stroke-width:1;" x1="24" x2="242.4961" y1="352.265" y2="352.265"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="176.1826" x="29" y="370.7982">+WebCrawlerGUIWorker(...)</text>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="163.4268" x="29" y="388.4076">#doInBackground(): String</text>
+        </g>
+        <!--class SentimentAnalysisGUIWorker-->
+        <g class="entity" data-entity="SentimentAnalysisGUIWorker" data-source-line="307" data-uid="ent0040" id="entity_SentimentAnalysisGUIWorker">
+            <rect fill="#F1F1F1" height="364.9688" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="370.3604" x="263" y="118.6087"/>
+            <ellipse cx="351.3477" cy="134.6087" fill="#ADD1B2" rx="11" ry="11" style="stroke:#181818;stroke-width:1;"/>
+            <path d="M354.1133,130.4837 Q354.2695,130.265 354.457,130.1556 Q354.6445,130.0462 354.8633,130.0462 Q355.2383,130.0462 355.4727,130.3119 Q355.707,130.5619 355.707,131.1712 L355.707,132.6244 Q355.707,133.2337 355.4727,133.4994 Q355.2383,133.765 354.8633,133.765 Q354.5195,133.765 354.3164,133.5619 Q354.1133,133.3744 354.0039,132.8587 Q353.957,132.4994 353.7695,132.3119 Q353.4414,131.9369 352.832,131.7181 Q352.2227,131.4994 351.5977,131.4994 Q350.832,131.4994 350.1914,131.8275 Q349.5664,132.1556 349.0664,132.9056 Q348.582,133.6556 348.582,134.6869 L348.582,135.7806 Q348.582,137.015 349.4727,137.8431 Q350.3633,138.6556 351.957,138.6556 Q352.8945,138.6556 353.5508,138.4056 Q353.9414,138.2494 354.3633,137.8119 Q354.6289,137.5462 354.7695,137.4681 Q354.9258,137.39 355.1289,137.39 Q355.457,137.39 355.707,137.6556 Q355.9727,137.9056 355.9727,138.2494 Q355.9727,138.5931 355.6289,138.9994 Q355.1289,139.5775 354.332,139.9056 Q353.2539,140.3587 351.957,140.3587 Q350.4414,140.3587 349.2383,139.7337 Q348.2539,139.2337 347.5664,138.1712 Q346.8789,137.0931 346.8789,135.8119 L346.8789,134.6556 Q346.8789,133.3275 347.4883,132.1869 Q348.1133,131.0306 349.207,130.4212 Q350.3008,129.7962 351.5352,129.7962 Q352.2695,129.7962 352.9102,129.9681 Q353.5664,130.1244 354.1133,130.4837 Z " fill="#000000"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="185.165" x="371.8477" y="140.3373">SentimentAnalysisGUIWorker</text>
+            <line style="stroke:#181818;stroke-width:0.5;" x1="264" x2="632.3604" y1="150.6087" y2="150.6087"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="208.4961" x="269" y="169.142">-mainMenuForm: MainMenuForm</text>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="134.6064" x="269" y="186.7513">-statusTP: JTextPane</text>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="124.4756" x="269" y="204.3607">-inputTF: JTextField</text>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="163.3926" x="269" y="221.9701">-positivePB: JProgressBar</text>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="168.8545" x="269" y="239.5795">-negativePB: JProgressBar</text>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="122.1992" x="269" y="257.1888">-pValueLBL: JLabel</text>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="122.1992" x="269" y="274.7982">-nValueLBL: JLabel</text>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="185.2061" x="269" y="292.4076">-positiveScores: List&lt;Integer&gt;</text>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="190.668" x="269" y="310.017">-negativeScores: List&lt;Integer&gt;</text>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="135.3994" x="269" y="327.6263">-scores: List&lt;Integer&gt;</text>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="60.6963" x="269" y="345.2357">-index: int</text>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="71.5723" x="269" y="362.8451">-row: String</text>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="79.3242" x="269" y="380.4545">-timer: Timer</text>
+            <line style="stroke:#181818;stroke-width:1;" x1="264" x2="632.3604" y1="387.5306" y2="387.5306"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="214.334" x="269" y="406.0638">+SentimentAnalysisGUIWorker(...)</text>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="208.5781" x="269" y="423.6732">#doInBackground(): List&lt;Integer&gt;</text>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="229.5645" x="269" y="441.2826">#process(values: List&lt;Integer&gt;): void</text>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="81.7168" x="269" y="458.892">#done(): void</text>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="358.3604" x="269" y="476.5013">+computeAggregateScore(values: ArrayList&lt;Integer&gt;): int</text>
+        </g>
+        <!--class SwingWorker-->
+        <g class="entity" data-entity="SwingWorker" data-source-line="328" data-uid="ent0041" id="entity_SwingWorker">
+            <rect fill="#F1F1F1" height="48" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="115.2412" x="194.5" y="769.1087"/>
+            <ellipse cx="209.5" cy="785.1087" fill="#ADD1B2" rx="11" ry="11" style="stroke:#181818;stroke-width:1;"/>
+            <path d="M212.2656,780.9837 Q212.4219,780.765 212.6094,780.6556 Q212.7969,780.5462 213.0156,780.5462 Q213.3906,780.5462 213.625,780.8119 Q213.8594,781.0619 213.8594,781.6712 L213.8594,783.1244 Q213.8594,783.7337 213.625,783.9994 Q213.3906,784.265 213.0156,784.265 Q212.6719,784.265 212.4688,784.0619 Q212.2656,783.8744 212.1563,783.3587 Q212.1094,782.9994 211.9219,782.8119 Q211.5938,782.4369 210.9844,782.2181 Q210.375,781.9994 209.75,781.9994 Q208.9844,781.9994 208.3438,782.3275 Q207.7188,782.6556 207.2188,783.4056 Q206.7344,784.1556 206.7344,785.1869 L206.7344,786.2806 Q206.7344,787.515 207.625,788.3431 Q208.5156,789.1556 210.1094,789.1556 Q211.0469,789.1556 211.7031,788.9056 Q212.0938,788.7494 212.5156,788.3119 Q212.7813,788.0462 212.9219,787.9681 Q213.0781,787.89 213.2813,787.89 Q213.6094,787.89 213.8594,788.1556 Q214.125,788.4056 214.125,788.7494 Q214.125,789.0931 213.7813,789.4994 Q213.2813,790.0775 212.4844,790.4056 Q211.4063,790.8587 210.1094,790.8587 Q208.5938,790.8587 207.3906,790.2337 Q206.4063,789.7337 205.7188,788.6712 Q205.0313,787.5931 205.0313,786.3119 L205.0313,785.1556 Q205.0313,783.8275 205.6406,782.6869 Q206.2656,781.5306 207.3594,780.9212 Q208.4531,780.2962 209.6875,780.2962 Q210.4219,780.2962 211.0625,780.4681 Q211.7188,780.6244 212.2656,780.9837 Z " fill="#000000"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="83.2412" x="223.5" y="790.8373">SwingWorker</text>
+            <line style="stroke:#181818;stroke-width:0.5;" x1="195.5" x2="308.7412" y1="801.1087" y2="801.1087"/>
+            <line style="stroke:#181818;stroke-width:0.5;" x1="195.5" x2="308.7412" y1="809.1087" y2="809.1087"/>
+        </g>
+        <g class="entity" data-entity="GMN87" data-source-line="380" data-uid="ent0088" id="entity_GMN87">
+            <path d="M665.5,271.6087 L665.5,330.6634 L864.2344,330.6634 L864.2344,281.6087 L854.2344,271.6087 L665.5,271.6087" fill="#FEFFDD" style="stroke:#181818;stroke-width:0.5;"/>
+            <path d="M854.2344,271.6087 L854.2344,281.6087 L864.2344,281.6087 L854.2344,271.6087" fill="#FEFFDD" style="stroke:#181818;stroke-width:1;"/>
+            <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="177.0107" x="671.5" y="290.1039">Executes Visit / Search / Text /</text>
+            <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="177.7344" x="671.5" y="306.4554">Attribute / SQL / Write / Python</text>
+            <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="146.6563" x="671.5" y="322.807">using Playwright (Firefox)</text>
+        </g>
+        <g class="entity" data-entity="GMN90" data-source-line="386" data-uid="ent0091" id="entity_GMN90">
+            <path d="M7246.5,2135.1088 L7246.5,2152.6088 L6963.64,2156.6088 L7246.5,2160.6088 L7246.5,2177.8119 A0,0 0 0 0 7246.5,2177.8119 L7475.5762,2177.8119 A0,0 0 0 0 7475.5762,2177.8119 L7475.5762,2145.1088 L7465.5762,2135.1088 L7246.5,2135.1088 A0,0 0 0 0 7246.5,2135.1088" fill="#FEFFDD" style="stroke:#181818;stroke-width:0.5;"/>
+            <path d="M7465.5762,2135.1088 L7465.5762,2145.1088 L7475.5762,2145.1088 L7465.5762,2135.1088" fill="#FEFFDD" style="stroke:#181818;stroke-width:0.5;"/>
+            <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="152.7817" x="7252.5" y="2153.6039">DJL + PyTorch DistilBERT</text>
+            <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="208.0762" x="7252.5" y="2169.9554">modelUrl: djl://ai.djl.pytorch/distilbert</text>
+        </g>
+        <!--link WebCrawler to Serializable-->
+        <g class="link" data-entity-1="WebCrawler" data-entity-2="Serializable" data-source-line="94" data-uid="lnk11" id="link_WebCrawler_Serializable">
+            <path codeLine="94" d="M2939,2400.6288 C2939,2452.8388 2939,2482.3988 2939,2509.3887" fill="none" id="WebCrawler-to-Serializable" style="stroke:#181818;stroke-width:1;stroke-dasharray:7,7;"/>
+            <polygon fill="none" points="2939,2527.3887,2945,2509.3887,2933,2509.3887,2939,2527.3887" style="stroke:#181818;stroke-width:1;"/>
+        </g>
+        <!--link WebCrawlerGUIWorker to SwingWorker-->
+        <g class="link" data-entity-1="WebCrawlerGUIWorker" data-entity-2="SwingWorker" data-source-line="328" data-uid="lnk44" id="link_WebCrawlerGUIWorker_SwingWorker">
+            <path codeLine="328" d="M155.73,395.7188 C183.93,511.8287 226.0009,685.0675 242.0609,751.1775" fill="none" id="WebCrawlerGUIWorker-to-SwingWorker" style="stroke:#181818;stroke-width:1;"/>
+            <polygon fill="none" points="246.31,768.6687,247.8913,749.7611,236.2304,752.5938,246.31,768.6687" style="stroke:#181818;stroke-width:1;"/>
+        </g>
+        <!--link SentimentAnalysisGUIWorker to SwingWorker-->
+        <g class="link" data-entity-1="SentimentAnalysisGUIWorker" data-entity-2="SwingWorker" data-source-line="329" data-uid="lnk45" id="link_SentimentAnalysisGUIWorker_SwingWorker">
+            <path codeLine="329" d="M375.3,483.8688 C332.04,591.9987 288.4262,701.0566 268.0062,752.0966" fill="none" id="SentimentAnalysisGUIWorker-to-SwingWorker" style="stroke:#181818;stroke-width:1;"/>
+            <polygon fill="none" points="261.32,768.8087,273.5769,754.3253,262.4355,749.8679,261.32,768.8087" style="stroke:#181818;stroke-width:1;"/>
+        </g>
+        <!--link AcademicInternshipProject to MainMenuForm-->
+        <g class="link" data-entity-1="AcademicInternshipProject" data-entity-2="MainMenuForm" data-source-line="333" data-uid="lnk46" id="link_AcademicInternshipProject_MainMenuForm">
+            <path codeLine="333" d="M3404,826.4987 C3404,858.9088 3404,906.8487 3404,969.3888" fill="none" id="AcademicInternshipProject-to-MainMenuForm" style="stroke:#181818;stroke-width:1;"/>
+            <polygon fill="#181818" points="3404,975.3888,3408,966.3888,3404,970.3888,3400,966.3888,3404,975.3888" style="stroke:#181818;stroke-width:1;"/>
+            <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="42.6309" x="3405" y="959.1039">creates</text>
+        </g>
+        <!--reverse link MainMenuForm to WebCrawler-->
+        <g class="link" data-entity-1="MainMenuForm" data-entity-2="WebCrawler" data-source-line="335" data-uid="lnk47" id="link_MainMenuForm_WebCrawler">
+            <path codeLine="335" d="M3232.235,1614.1534 C3165.075,1694.8734 3098.06,1784.2788 3043,1881.6087 C3037.36,1891.5688 3031.91,1901.8987 3026.66,1912.4587" fill="none" id="MainMenuForm-backto-WebCrawler" style="stroke:#181818;stroke-width:1;"/>
+            <polygon fill="#181818" points="3239.91,1604.9287,3232.9976,1606.9827,3232.235,1614.1534,3239.1474,1612.0994,3239.91,1604.9287" style="stroke:#181818;stroke-width:1;"/>
+            <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="75.1309" x="3044" y="1896.1039">webCrawlers</text>
+            <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="7.23" x="3224.7894" y="1610.8942">1</text>
+            <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="5.0591" x="3024.4536" y="1901.6821">*</text>
+        </g>
+        <!--link MainMenuForm to WebCrawler-->
+        <g class="link" data-entity-1="MainMenuForm" data-entity-2="WebCrawler" data-source-line="336" data-uid="lnk48" id="link_MainMenuForm_WebCrawler">
+            <path codeLine="336" d="M3239.99,1707.9687 C3201.9,1771.6487 3160.82,1838.4187 3121,1899.6087 C3118.25,1903.8388 3118.7611,1903.0785 3115.9411,1907.3585" fill="none" id="MainMenuForm-to-WebCrawler" style="stroke:#181818;stroke-width:1;"/>
+            <polygon fill="#181818" points="3112.64,1912.3687,3120.9319,1907.0542,3115.3909,1908.1936,3114.2515,1902.6526,3112.64,1912.3687" style="stroke:#181818;stroke-width:1;"/>
+            <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="93.2026" x="3130" y="1896.1039">selectedCrawler</text>
+        </g>
+        <!--link MainMenuForm to MySQLConnector-->
+        <g class="link" data-entity-1="MainMenuForm" data-entity-2="MySQLConnector" data-source-line="337" data-uid="lnk49" id="link_MainMenuForm_MySQLConnector">
+            <path codeLine="337" d="M3568.01,1470.2988 C3828.79,1547.8887 4351.28,1713.7688 4770,1912.6087 C4834.48,1943.2287 4896.7667,1978.1524 4957.5967,2014.9624" fill="none" id="MainMenuForm-to-MySQLConnector" style="stroke:#181818;stroke-width:1;"/>
+            <polygon fill="#181818" points="4962.73,2018.0688,4957.1009,2009.9871,4958.4522,2015.4802,4952.9592,2016.8315,4962.73,2018.0688" style="stroke:#181818;stroke-width:1;"/>
+            <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="16.6182" x="4735" y="1896.1039">sql</text>
+        </g>
+        <!--link MainMenuForm to SQLDatabaseInfo-->
+        <g class="link" data-entity-1="MainMenuForm" data-entity-2="SQLDatabaseInfo" data-source-line="338" data-uid="lnk50" id="link_MainMenuForm_SQLDatabaseInfo">
+            <path codeLine="338" d="M3354.89,1868.7888 C3333.7,2107.4988 3321.51,2360.7287 3360,2400.6088 C3402.54,2444.6888 4400.86,2435.7588 4462,2439.6088 C4824.01,2462.4088 5239.0225,2503.2551 5481.0025,2528.5451" fill="none" id="MainMenuForm-to-SQLDatabaseInfo" style="stroke:#181818;stroke-width:1;"/>
+            <polygon fill="#181818" points="5486.97,2529.1688,5478.4345,2524.2549,5481.9971,2528.649,5477.603,2532.2116,5486.97,2529.1688" style="stroke:#181818;stroke-width:1;"/>
+            <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="36.1436" x="3361" y="2162.1039">dbInfo</text>
+        </g>
+        <!--link MainMenuForm to SentimentAnalyser-->
+        <g class="link" data-entity-1="MainMenuForm" data-entity-2="SentimentAnalyser" data-source-line="339" data-uid="lnk51" id="link_MainMenuForm_SentimentAnalyser">
+            <path codeLine="339" d="M3568.24,1428.4487 C4161.97,1450.6087 6189.09,1551.7287 6707,1912.6087 C6758,1948.1487 6789.2132,2004.1554 6809.7832,2056.4354" fill="none" id="MainMenuForm-to-SentimentAnalyser" style="stroke:#181818;stroke-width:1;"/>
+            <polygon fill="#181818" points="6811.98,2062.0188,6812.407,2052.1792,6810.1493,2057.3659,6804.9625,2055.1082,6811.98,2062.0188" style="stroke:#181818;stroke-width:1;"/>
+            <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="106.939" x="6669" y="1896.1039">sentimentAnalyser</text>
+        </g>
+        <!--link MainMenuForm to TaskNotifier-->
+        <g class="link" data-entity-1="MainMenuForm" data-entity-2="TaskNotifier" data-source-line="340" data-uid="lnk52" id="link_MainMenuForm_TaskNotifier">
+            <path codeLine="340" d="M3486.74,1868.7287 C3501.87,1950.2488 3514.8837,2020.3598 3524.7837,2073.6298" fill="none" id="MainMenuForm-to-TaskNotifier" style="stroke:#181818;stroke-width:1;"/>
+            <polygon fill="#181818" points="3525.88,2079.5288,3528.1682,2069.9494,3524.9664,2074.6129,3520.3029,2071.4111,3525.88,2079.5288" style="stroke:#181818;stroke-width:1;"/>
+            <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="39.019" x="3493" y="1896.1039">notifier</text>
+        </g>
+        <!--reverse link MainMenuForm to HomeLandingJP-->
+        <g class="link" data-entity-1="MainMenuForm" data-entity-2="HomeLandingJP" data-source-line="342" data-uid="lnk53" id="link_MainMenuForm_HomeLandingJP">
+            <path codeLine="342" d="M3574.3721,1696.1897 C3673.9621,1855.8097 3784.99,2033.7788 3835.64,2114.9588" fill="none" id="MainMenuForm-backto-HomeLandingJP" style="stroke:#181818;stroke-width:1;"/>
+            <polygon fill="none" points="3568.02,1686.0088,3567.8024,1693.2166,3574.3721,1696.1897,3574.5897,1688.9819,3568.02,1686.0088" style="stroke:#181818;stroke-width:1;"/>
+        </g>
+        <!--reverse link MainMenuForm to MainMenuJP-->
+        <g class="link" data-entity-1="MainMenuForm" data-entity-2="MainMenuJP" data-source-line="343" data-uid="lnk54" id="link_MainMenuForm_MainMenuJP">
+            <path codeLine="343" d="M3580.0224,1445.9523 C4026.9924,1506.2223 5242.82,1687.0188 5576,1912.6087 C5647.11,1960.7488 5696.73,2050.1388 5722.5,2106.0488" fill="none" id="MainMenuForm-backto-MainMenuJP" style="stroke:#181818;stroke-width:1;"/>
+            <polygon fill="none" points="3568.13,1444.3487,3573.5417,1449.1147,3580.0224,1445.9523,3574.6107,1441.1864,3568.13,1444.3487" style="stroke:#181818;stroke-width:1;"/>
+        </g>
+        <!--reverse link MainMenuForm to CrawlerConfigJP-->
+        <g class="link" data-entity-1="MainMenuForm" data-entity-2="CrawlerConfigJP" data-source-line="344" data-uid="lnk55" id="link_MainMenuForm_CrawlerConfigJP">
+            <path codeLine="344" d="M3578.2199,1537.2105 C3713.0299,1629.5605 3894.75,1764.2688 4040,1912.6087 C4103.05,1977.0088 4162.18,2064.5588 4194.2,2115.0888" fill="none" id="MainMenuForm-backto-CrawlerConfigJP" style="stroke:#181818;stroke-width:1;"/>
+            <polygon fill="none" points="3568.32,1530.4287,3571.0093,1537.1196,3578.2199,1537.2105,3575.5305,1530.5197,3568.32,1530.4287" style="stroke:#181818;stroke-width:1;"/>
+        </g>
+        <!--reverse link MainMenuForm to CrawlerScriptingJP-->
+        <g class="link" data-entity-1="MainMenuForm" data-entity-2="CrawlerScriptingJP" data-source-line="345" data-uid="lnk56" id="link_MainMenuForm_CrawlerScriptingJP">
+            <path codeLine="345" d="M3579.4502,1481.3868 C3788.0702,1555.9368 4140.64,1701.2588 4398,1912.6087 C4462.05,1965.2087 4517.11,2043.9387 4550.35,2097.4188" fill="none" id="MainMenuForm-backto-CrawlerScriptingJP" style="stroke:#181818;stroke-width:1;"/>
+            <polygon fill="none" points="3568.15,1477.3487,3572.4541,1483.1345,3579.4502,1481.3868,3575.1461,1475.6011,3568.15,1477.3487" style="stroke:#181818;stroke-width:1;"/>
+        </g>
+        <!--reverse link MainMenuForm to DatabaseSettingsJP-->
+        <g class="link" data-entity-1="MainMenuForm" data-entity-2="DatabaseSettingsJP" data-source-line="346" data-uid="lnk57" id="link_MainMenuForm_DatabaseSettingsJP">
+            <path codeLine="346" d="M3228.3426,1470.5008 C2897.3226,1558.4708 2136.4,1753.5288 1477,1868.6087 C1313.86,1897.0788 1251.3,1831.3687 1107,1912.6087 C1023.94,1959.3787 964.53,2058.5888 936.03,2114.6988" fill="none" id="MainMenuForm-backto-DatabaseSettingsJP" style="stroke:#181818;stroke-width:1;"/>
+            <polygon fill="none" points="3239.94,1467.4187,3233.1139,1465.094,3228.3426,1470.5008,3235.1686,1472.8256,3239.94,1467.4187" style="stroke:#181818;stroke-width:1;"/>
+        </g>
+        <!--reverse link MainMenuForm to SQLCredentialsJP-->
+        <g class="link" data-entity-1="MainMenuForm" data-entity-2="SQLCredentialsJP" data-source-line="347" data-uid="lnk58" id="link_MainMenuForm_SQLCredentialsJP">
+            <path codeLine="347" d="M3227.9584,1429.5236 C2875.8284,1449.0636 2045.3,1534.3787 1475,1912.6087 C1404.88,1959.1087 1350.88,2041.5888 1320.03,2097.4188" fill="none" id="MainMenuForm-backto-SQLCredentialsJP" style="stroke:#181818;stroke-width:1;"/>
+            <polygon fill="none" points="3239.94,1428.8587,3233.7276,1425.1973,3227.9584,1429.5236,3234.1708,1433.185,3239.94,1428.8587" style="stroke:#181818;stroke-width:1;"/>
+        </g>
+        <!--reverse link MainMenuForm to SQLDatabaseJP-->
+        <g class="link" data-entity-1="MainMenuForm" data-entity-2="SQLDatabaseJP" data-source-line="348" data-uid="lnk59" id="link_MainMenuForm_SQLDatabaseJP">
+            <path codeLine="348" d="M3228.0257,1441.731 C2924.7157,1480.261 2278.57,1595.1987 1833,1912.6087 C1768.99,1958.2087 1718.53,2033.7988 1687.73,2088.5787" fill="none" id="MainMenuForm-backto-SQLDatabaseJP" style="stroke:#181818;stroke-width:1;"/>
+            <polygon fill="none" points="3239.93,1440.2187,3233.4738,1437.0068,3228.0257,1441.731,3234.4819,1444.943,3239.93,1440.2187" style="stroke:#181818;stroke-width:1;"/>
+        </g>
+        <!--reverse link MainMenuForm to SentimentAnalysisJP-->
+        <g class="link" data-entity-1="MainMenuForm" data-entity-2="SentimentAnalysisJP" data-source-line="349" data-uid="lnk60" id="link_MainMenuForm_SentimentAnalysisJP">
+            <path codeLine="349" d="M3580.1199,1441.4637 C4071.6899,1494.8237 5510.46,1668.4287 5911,1912.6087 C5992.49,1962.2888 6053.28,2059.8988 6082.9,2115.0888" fill="none" id="MainMenuForm-backto-SentimentAnalysisJP" style="stroke:#181818;stroke-width:1;"/>
+            <polygon fill="none" points="3568.19,1440.1687,3573.7233,1444.7929,3580.1199,1441.4637,3574.5866,1436.8396,3568.19,1440.1687" style="stroke:#181818;stroke-width:1;"/>
+        </g>
+        <!--reverse link MainMenuForm to DatabaseQueryJP-->
+        <g class="link" data-entity-1="MainMenuForm" data-entity-2="DatabaseQueryJP" data-source-line="350" data-uid="lnk61" id="link_MainMenuForm_DatabaseQueryJP">
+            <path codeLine="350" d="M3228.2499,1463.0255 C2982.6999,1524.5555 2525.55,1663.5388 2201,1912.6087 C2127.54,1968.9888 2068.53,2061.8388 2038.54,2114.9588" fill="none" id="MainMenuForm-backto-DatabaseQueryJP" style="stroke:#181818;stroke-width:1;"/>
+            <polygon fill="none" points="3239.89,1460.1087,3233.0977,1457.6871,3228.2499,1463.0255,3235.0422,1465.4472,3239.89,1460.1087" style="stroke:#181818;stroke-width:1;"/>
+        </g>
+        <!--reverse link MainMenuForm to DeleteCrawlerJP-->
+        <g class="link" data-entity-1="MainMenuForm" data-entity-2="DeleteCrawlerJP" data-source-line="351" data-uid="lnk62" id="link_MainMenuForm_DeleteCrawlerJP">
+            <path codeLine="351" d="M3228.7848,1498.7165 C3048.7348,1581.3965 2768.7,1726.0688 2560,1912.6087 C2492.09,1973.3088 2433.55,2063.3488 2402.87,2115.0788" fill="none" id="MainMenuForm-backto-DeleteCrawlerJP" style="stroke:#181818;stroke-width:1;"/>
+            <polygon fill="none" points="3239.69,1493.7087,3232.5682,1492.5776,3228.7848,1498.7165,3235.9067,1499.8477,3239.69,1493.7087" style="stroke:#181818;stroke-width:1;"/>
+        </g>
+        <!--link MainMenuForm to AboutForm-->
+        <g class="link" data-entity-1="MainMenuForm" data-entity-2="AboutForm" data-source-line="353" data-uid="lnk63" id="link_MainMenuForm_AboutForm">
+            <path codeLine="353" d="M3239.81,1473.1887 C2909.74,1571.1587 2140.57,1785.7988 1477,1868.6087 C1341.13,1885.5588 997.74,1874.5688 861,1881.6087 C776.83,1885.9487 547.28,1858.0987 483,1912.6087 C417.32,1968.3088 416.3716,2077.2207 419.4816,2126.4307" fill="none" id="MainMenuForm-to-AboutForm" style="stroke:#181818;stroke-width:1;stroke-dasharray:7,7;"/>
+            <polygon fill="#181818" points="419.86,2132.4188,423.2844,2123.1844,419.5446,2127.4287,415.3003,2123.689,419.86,2132.4188" style="stroke:#181818;stroke-width:1;"/>
+        </g>
+        <!--link MainMenuForm to UserManualForm-->
+        <g class="link" data-entity-1="MainMenuForm" data-entity-2="UserManualForm" data-source-line="354" data-uid="lnk64" id="link_MainMenuForm_UserManualForm">
+            <path codeLine="354" d="M3239.7,1472.2788 C2909.41,1568.6187 2139.89,1780.4888 1477,1868.6087 C1322.69,1889.1187 1282.41,1872.7488 1127,1881.6087 C1115.79,1882.2488 733.68,1906.9187 724,1912.6087 C637.17,1963.6287 590.03,2076.4949 572.46,2126.7549" fill="none" id="MainMenuForm-to-UserManualForm" style="stroke:#181818;stroke-width:1;stroke-dasharray:7,7;"/>
+            <polygon fill="#181818" points="570.48,2132.4188,577.2259,2125.2429,572.13,2127.6988,569.6741,2122.6029,570.48,2132.4188" style="stroke:#181818;stroke-width:1;"/>
+        </g>
+        <!--reverse link WebCrawler to SearchResult-->
+        <g class="link" data-entity-1="WebCrawler" data-entity-2="SearchResult" data-source-line="356" data-uid="lnk65" id="link_WebCrawler_SearchResult">
+            <path codeLine="356" d="M3210.6052,2407.1137 C3229.7152,2418.6837 3239.07,2422.8688 3259,2431.6088 C3400.53,2493.6488 3822.6,2526.6688 4071.84,2541.2188" fill="none" id="WebCrawler-backto-SearchResult" style="stroke:#181818;stroke-width:1;"/>
+            <polygon fill="#181818" points="3200.34,2400.8988,3203.4009,2407.428,3210.6052,2407.1137,3207.5443,2400.5845,3200.34,2400.8988" style="stroke:#181818;stroke-width:1;"/>
+            <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="82.3672" x="3260" y="2428.1039">searchResults</text>
+            <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="7.23" x="3201.8024" y="2422.6741">1</text>
+            <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="5.0591" x="4058.7045" y="2537.9352">*</text>
+        </g>
+        <!--link WebCrawlerGUIWorker to WebCrawler-->
+        <g class="link" data-entity-1="WebCrawlerGUIWorker" data-entity-2="WebCrawler" data-source-line="357" data-uid="lnk66" id="link_WebCrawlerGUIWorker_WebCrawler">
+            <path codeLine="357" d="M171.75,395.9688 C190.87,429.8987 217.59,464.5187 253,483.6087 C269.45,492.4787 5616.31,496.4288 5635,496.6087 C5722.95,497.4387 7156.32,459.9088 7218,522.6087 C7404.4,712.0987 6936.3,1798.9087 6781,1899.6087 C6740.77,1925.6887 3375.07,1899.3388 3329,1912.6087 C3322.2,1914.5688 3321.0929,1914.7939 3314.3029,1917.0539" fill="none" id="WebCrawlerGUIWorker-to-WebCrawler" style="stroke:#181818;stroke-width:1;"/>
+            <polygon fill="#181818" points="3308.61,1918.9487,3318.4126,1919.9018,3313.3541,1917.3697,3315.8862,1912.3112,3308.61,1918.9487" style="stroke:#181818;stroke-width:1;"/>
+        </g>
+        <!--link WebCrawlerGUIWorker to CommandParser-->
+        <g class="link" data-entity-1="WebCrawlerGUIWorker" data-entity-2="CommandParser" data-source-line="358" data-uid="lnk67" id="link_WebCrawlerGUIWorker_CommandParser">
+            <path codeLine="358" d="M172.29,395.9488 C191.44,429.6487 218.02,464.1188 253,483.6087 C268.66,492.3387 1527.97,512.8487 1543,522.6087 C1589.4,552.7287 1617.5192,598.8491 1637.0692,648.9591" fill="none" id="WebCrawlerGUIWorker-to-CommandParser" style="stroke:#181818;stroke-width:1;"/>
+            <polygon fill="#181818" points="1639.25,654.5487,1639.7053,644.7104,1637.4327,649.8907,1632.2524,647.6181,1639.25,654.5487" style="stroke:#181818;stroke-width:1;"/>
+            <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="79.479" x="1352" y="511.1039">per command</text>
+        </g>
+        <!--link WebCrawlerGUIWorker to JSoupParser-->
+        <g class="link" data-entity-1="WebCrawlerGUIWorker" data-entity-2="JSoupParser" data-source-line="359" data-uid="lnk68" id="link_WebCrawlerGUIWorker_JSoupParser">
+            <path codeLine="359" d="M172.82,395.9688 C191.98,429.4587 218.44,463.7687 253,483.6087 C388.51,561.3888 811.02,461.9488 955,522.6087 C1048.16,561.8587 1126.8091,639.4229 1180.5291,702.7629" fill="none" id="WebCrawlerGUIWorker-to-JSoupParser" style="stroke:#181818;stroke-width:1;"/>
+            <polygon fill="#181818" points="1184.41,707.3387,1181.6392,697.8877,1181.1759,703.5255,1175.5381,703.0622,1184.41,707.3387" style="stroke:#181818;stroke-width:1;"/>
+        </g>
+        <!--link WebCrawlerGUIWorker to MySQLConnector-->
+        <g class="link" data-entity-1="WebCrawlerGUIWorker" data-entity-2="MySQLConnector" data-source-line="360" data-uid="lnk69" id="link_WebCrawlerGUIWorker_MySQLConnector">
+            <path codeLine="360" d="M171.74,395.9787 C190.87,429.8987 217.59,464.5187 253,483.6087 C271.89,493.7887 6411.54,496.2487 6433,496.6087 C6524.37,498.1487 7191.41,456.9787 7255,522.6087 C7383.76,655.5088 7163.84,1748.1587 7031,1868.6087 C6956.22,1936.4187 6906.67,1892.1687 6806,1899.6087 C6737.85,1904.6387 5641.74,1893.9487 5576,1912.6087 C5498.49,1934.6087 5425.9361,1972.4982 5359.8261,2014.7382" fill="none" id="WebCrawlerGUIWorker-to-MySQLConnector" style="stroke:#181818;stroke-width:1;"/>
+            <polygon fill="#181818" points="5354.77,2017.9687,5364.5078,2016.4937,5358.9834,2015.2767,5360.2004,2009.7523,5354.77,2017.9687" style="stroke:#181818;stroke-width:1;"/>
+        </g>
+        <!--link WebCrawlerGUIWorker to SQLParser-->
+        <g class="link" data-entity-1="WebCrawlerGUIWorker" data-entity-2="SQLParser" data-source-line="361" data-uid="lnk70" id="link_WebCrawlerGUIWorker_SQLParser">
+            <path codeLine="361" d="M171.74,395.9787 C190.87,429.9088 217.58,464.5287 253,483.6087 C273.87,494.8587 7058.32,495.3287 7082,496.6087 C7190.9,502.4987 7239.38,456.3387 7326,522.6087 C7480.9,641.1188 7361.97,780.2788 7485,931.6087 C7491.69,939.8387 7499.94,935.2887 7505,944.6087 C7555.61,1037.8587 7337.15,1791.7588 7264,1868.6087 C7232.8,1901.3887 7211.62,1892.0088 7167,1899.6087 C7116.6,1908.1987 6753.09,1890.4587 6707,1912.6087 C6637.58,1945.9687 6585.9495,2009.8657 6550.3595,2065.8357" fill="none" id="WebCrawlerGUIWorker-to-SQLParser" style="stroke:#181818;stroke-width:1;"/>
+            <polygon fill="#181818" points="6547.14,2070.8988,6555.3446,2065.4505,6549.8229,2066.6795,6548.5939,2061.1578,6547.14,2070.8988" style="stroke:#181818;stroke-width:1;"/>
+        </g>
+        <!--link WebCrawlerGUIWorker to SQLDatabaseInfo-->
+        <g class="link" data-entity-1="WebCrawlerGUIWorker" data-entity-2="SQLDatabaseInfo" data-source-line="362" data-uid="lnk71" id="link_WebCrawlerGUIWorker_SQLDatabaseInfo">
+            <path codeLine="362" d="M171.74,395.9888 C190.87,429.9088 217.58,464.5287 253,483.6087 C274.63,495.2587 7303.52,494.5987 7328,496.6087 C7399.36,502.4688 7436.64,471.6988 7487,522.6087 C7558.61,595.0088 7547.53,874.1388 7556,975.6087 C7590.17,1384.8987 7584.32,1489.1487 7570,1899.6087 C7562.22,2122.6787 7691.95,2241.8988 7535,2400.6088 C7420.85,2516.0387 6345.5595,2542.6079 5891.3695,2548.7279" fill="none" id="WebCrawlerGUIWorker-to-SQLDatabaseInfo" style="stroke:#181818;stroke-width:1;"/>
+            <polygon fill="#181818" points="5885.37,2548.8087,5894.4231,2552.6871,5890.3695,2548.7414,5894.3153,2544.6879,5885.37,2548.8087" style="stroke:#181818;stroke-width:1;"/>
+        </g>
+        <!--link WebCrawlerGUIWorker to SearchResult-->
+        <g class="link" data-entity-1="WebCrawlerGUIWorker" data-entity-2="SearchResult" data-source-line="363" data-uid="lnk72" id="link_WebCrawlerGUIWorker_SearchResult">
+            <path codeLine="363" d="M171.74,395.9787 C190.87,429.9088 217.58,464.5287 253,483.6087 C274.28,495.0787 7189.88,495.0787 7214,496.6087 C7306.54,502.4888 7351.86,460.8187 7421,522.6087 C7564.88,651.1887 7500.17,753.0088 7523,944.6087 C7542.14,1105.2988 7600.79,2286.5387 7486,2400.6088 C7446.41,2439.9488 5532.73,2436.5288 5477,2439.6088 C5113.76,2459.6988 4697.0043,2502.1451 4458.1043,2528.3251" fill="none" id="WebCrawlerGUIWorker-to-SearchResult" style="stroke:#181818;stroke-width:1;"/>
+            <polygon fill="#181818" points="4452.14,2528.9787,4461.5222,2531.9745,4457.1102,2528.4341,4460.6507,2524.0222,4452.14,2528.9787" style="stroke:#181818;stroke-width:1;"/>
+        </g>
+        <!--link WebCrawlerGUIWorker to MainMenuForm-->
+        <g class="link" data-entity-1="WebCrawlerGUIWorker" data-entity-2="MainMenuForm" data-source-line="364" data-uid="lnk73" id="link_WebCrawlerGUIWorker_MainMenuForm">
+            <path codeLine="364" d="M171.76,395.9587 C190.88,429.8787 217.6,464.4987 253,483.6087 C276.48,496.2787 4068.32,496.4488 4095,496.6087 C4180.67,497.1188 7118.68,461.7787 7179,522.6087 C7243,587.1487 7238.99,863.3287 7179,931.6087 C6936.32,1207.7888 4269.0807,1373.3654 3574.2407,1412.0254" fill="none" id="WebCrawlerGUIWorker-to-MainMenuForm" style="stroke:#181818;stroke-width:1;"/>
+            <polygon fill="#181818" points="3568.25,1412.3587,3577.4583,1415.8526,3573.2423,1412.081,3577.0139,1407.865,3568.25,1412.3587" style="stroke:#181818;stroke-width:1;"/>
+        </g>
+        <!--link WebCrawlerGUIWorker to Playwright-->
+        <g class="link" data-entity-1="WebCrawlerGUIWorker" data-entity-2="Playwright" data-source-line="365" data-uid="lnk77" id="link_WebCrawlerGUIWorker_Playwright">
+            <path codeLine="365" d="M171.78,395.9088 C190.91,429.8287 217.62,464.4587 253,483.6087 C294.06,505.8387 6937.16,498.2487 6977,522.6087 C7068.09,578.2987 7101.537,708.6267 7112.017,763.1267" fill="none" id="WebCrawlerGUIWorker-to-Playwright" style="stroke:#181818;stroke-width:1;stroke-dasharray:7,7;"/>
+            <polygon fill="#181818" points="7113.15,769.0187,7115.3785,759.4253,7112.2058,764.1087,7107.5225,760.936,7113.15,769.0187" style="stroke:#181818;stroke-width:1;"/>
+        </g>
+        <!--link SentimentAnalysisGUIWorker to MainMenuForm-->
+        <g class="link" data-entity-1="SentimentAnalysisGUIWorker" data-entity-2="MainMenuForm" data-source-line="367" data-uid="lnk78" id="link_SentimentAnalysisGUIWorker_MainMenuForm">
+            <path codeLine="367" d="M633.1,473.6588 C640.62,477.3587 648.26,480.6988 656,483.6087 C677.84,491.8187 7358.23,480.3888 7375,496.6087 C7523.99,640.6487 7528.91,807.9288 7391,962.6087 C7131.96,1253.1487 4293.0751,1385.5866 3574.2351,1414.6166" fill="none" id="SentimentAnalysisGUIWorker-to-MainMenuForm" style="stroke:#181818;stroke-width:1;"/>
+            <polygon fill="#181818" points="3568.24,1414.8587,3577.3941,1418.4923,3573.2359,1414.657,3577.0713,1410.4988,3568.24,1414.8587" style="stroke:#181818;stroke-width:1;"/>
+        </g>
+        <!--link SentimentAnalysisGUIWorker to SentimentAnalyser-->
+        <g class="link" data-entity-1="SentimentAnalysisGUIWorker" data-entity-2="SentimentAnalyser" data-source-line="368" data-uid="lnk79" id="link_SentimentAnalysisGUIWorker_SentimentAnalyser">
+            <path codeLine="368" d="M633.1,473.6588 C640.62,477.3587 648.26,480.6988 656,483.6087 C700.11,500.1988 7395.55,488.6388 7442,496.6087 C7476.36,502.4987 7493.24,496.1988 7516,522.6087 C7907.87,977.3487 7818.22,1434.1287 7404,1868.6087 C7351.04,1924.1587 7307.59,1882.4787 7237,1912.6087 C7140.38,1953.8487 7044.4981,2012.5194 6968.6081,2063.5794" fill="none" id="SentimentAnalysisGUIWorker-to-SentimentAnalyser" style="stroke:#181818;stroke-width:1;"/>
+            <polygon fill="#181818" points="6963.63,2066.9288,6973.3301,2065.2235,6967.7784,2064.1376,6968.8643,2058.586,6963.63,2066.9288" style="stroke:#181818;stroke-width:1;"/>
+            <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="111.2554" x="7749" y="959.1039">via MainMenuForm</text>
+        </g>
+        <!--link JSoupParser to HTMLNode-->
+        <g class="link" data-entity-1="JSoupParser" data-entity-2="HTMLNode" data-source-line="370" data-uid="lnk80" id="link_JSoupParser_HTMLNode">
+            <path codeLine="370" d="M1249,878.6687 C1249,990.1487 1249,1180.5488 1249,1303.9387" fill="none" id="JSoupParser-to-HTMLNode" style="stroke:#181818;stroke-width:1;stroke-dasharray:7,7;"/>
+            <polygon fill="#181818" points="1249,1309.9387,1253,1300.9387,1249,1304.9387,1245,1300.9387,1249,1309.9387" style="stroke:#181818;stroke-width:1;"/>
+            <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="49.1309" x="1250" y="959.1039">may use</text>
+        </g>
+        <!--link MySQLConnector to SQLDatabaseInfo-->
+        <g class="link" data-entity-1="MySQLConnector" data-entity-2="SQLDatabaseInfo" data-source-line="371" data-uid="lnk81" id="link_MySQLConnector_SQLDatabaseInfo">
+            <path codeLine="371" d="M5352.78,2295.3388 C5431.34,2355.5187 5515.7073,2420.1495 5582.0073,2470.9495" fill="none" id="MySQLConnector-to-SQLDatabaseInfo" style="stroke:#181818;stroke-width:1;"/>
+            <polygon fill="#181818" points="5586.77,2474.5987,5582.0588,2465.9498,5582.8011,2471.5577,5577.1932,2472.3,5586.77,2474.5987" style="stroke:#181818;stroke-width:1;"/>
+            <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="33.9663" x="5521" y="2428.1039">builds</text>
+        </g>
+        <!--reverse link SQLDatabaseInfo to SQLTableInfo-->
+        <g class="link" data-entity-1="SQLDatabaseInfo" data-entity-2="SQLTableInfo" data-source-line="372" data-uid="lnk82" id="link_SQLDatabaseInfo_SQLTableInfo">
+            <path codeLine="372" d="M5686,2640.6488 C5686,2657.8588 5686,2664.1288 5686,2681.3487" fill="none" id="SQLDatabaseInfo-backto-SQLTableInfo" style="stroke:#181818;stroke-width:1;"/>
+            <polygon fill="#181818" points="5686,2628.6488,5682,2634.6488,5686,2640.6488,5690,2634.6488,5686,2628.6488" style="stroke:#181818;stroke-width:1;"/>
+            <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="7.23" x="5678.716" y="2649.7487">1</text>
+            <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="5.0591" x="5680.7428" y="2670.7507">*</text>
+        </g>
+        <!--reverse link SQLTableInfo to SQLColumnInfo-->
+        <g class="link" data-entity-1="SQLTableInfo" data-entity-2="SQLColumnInfo" data-source-line="373" data-uid="lnk83" id="link_SQLTableInfo_SQLColumnInfo">
+            <path codeLine="373" d="M5686,2847.7287 C5686,2856.4388 5686,2853.4588 5686,2862.5688" fill="none" id="SQLTableInfo-backto-SQLColumnInfo" style="stroke:#181818;stroke-width:1;"/>
+            <polygon fill="#181818" points="5686,2835.7287,5682,2841.7287,5686,2847.7287,5690,2841.7287,5686,2835.7287" style="stroke:#181818;stroke-width:1;"/>
+            <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="7.23" x="5678.5427" y="2851.6818">1</text>
+            <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="5.0591" x="5686.1773" y="2851.818">*</text>
+        </g>
+        <!--link SQLParser to SQLDatabaseInfo-->
+        <g class="link" data-entity-1="SQLParser" data-entity-2="SQLDatabaseInfo" data-source-line="374" data-uid="lnk84" id="link_SQLParser_SQLDatabaseInfo">
+            <path codeLine="374" d="M6449.73,2242.2188 C6413.25,2295.3988 6359.54,2361.1588 6296,2400.6088 C6171.96,2477.6088 6016.7676,2514.2358 5891.2676,2532.4758" fill="none" id="SQLParser-to-SQLDatabaseInfo" style="stroke:#181818;stroke-width:1;"/>
+            <polygon fill="#181818" points="5885.33,2533.3388,5894.8117,2536.0027,5890.278,2532.6196,5893.6611,2528.0859,5885.33,2533.3388" style="stroke:#181818;stroke-width:1;"/>
+        </g>
+        <!--link MainMenuJP to WebCrawlerGUIWorker-->
+        <g class="link" data-entity-1="MainMenuJP" data-entity-2="WebCrawlerGUIWorker" data-source-line="376" data-uid="lnk85" id="link_MainMenuJP_WebCrawlerGUIWorker">
+            <path codeLine="376" d="M5760.98,2105.8988 C5785.07,2047.5788 5833.93,1953.6487 5911,1912.6087 C5935.89,1899.3587 6897.87,1901.5788 6926,1899.6087 C7034.61,1892.0088 7091.62,1945.1987 7169,1868.6087 C7285.69,1753.1087 7394.16,632.0987 7290,522.6087 C7222.95,452.1188 6950.24,499.5987 6853,496.6087 C6830.09,495.9088 273.17,494.4787 253,483.6087 C217.59,464.5187 193.8168,435.1353 174.6868,401.2053" fill="none" id="MainMenuJP-to-WebCrawlerGUIWorker" style="stroke:#181818;stroke-width:1;"/>
+            <polygon fill="#181818" points="171.74,395.9787,172.6758,405.7831,174.1956,400.3342,179.6445,401.854,171.74,395.9787" style="stroke:#181818;stroke-width:1;"/>
+            <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="65.73" x="7329" y="959.1039">starts crawl</text>
+        </g>
+        <!--link SentimentAnalysisJP to SentimentAnalysisGUIWorker-->
+        <g class="link" data-entity-1="SentimentAnalysisJP" data-entity-2="SentimentAnalysisGUIWorker" data-source-line="377" data-uid="lnk86" id="link_SentimentAnalysisJP_SentimentAnalysisGUIWorker">
+            <path codeLine="377" d="M6121.17,2114.9388 C6149.28,2057.6488 6209.28,1955.3987 6296,1912.6087 C6333.82,1893.9487 7012.97,1903.0688 7055,1899.6087 C7148.59,1891.8987 7195.61,1932.9587 7264,1868.6087 C7428.18,1714.1487 7660.91,818.1188 7462,522.6087 C7444.86,497.1388 7428.13,502.5287 7398,496.6087 C7352.06,487.5887 699.82,500.0887 656,483.6087 C648.26,480.6988 646.0036,480.0076 638.4836,476.3076" fill="none" id="SentimentAnalysisJP-to-SentimentAnalysisGUIWorker" style="stroke:#181818;stroke-width:1;"/>
+            <polygon fill="#181818" points="633.1,473.6588,639.4095,481.2211,637.5864,475.8661,642.9414,474.043,633.1,473.6588" style="stroke:#181818;stroke-width:1;"/>
+            <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="60.6836" x="7537" y="959.1039">starts NLP</text>
+        </g>
+        <!--link WebCrawlerGUIWorker to GMN87-->
+        <g class="link" data-entity-1="WebCrawlerGUIWorker" data-entity-2="GMN87" data-source-line="380" data-uid="lnk89" id="link_WebCrawlerGUIWorker_GMN87">
+            <path d="M152.39,206.3787 C170.05,149.9387 202.93,85.9187 263,68.1087 C282.87,62.2188 616.13,62.2188 636,68.1087 C722,93.5987 751.74,214.2687 761.1,271.2188" fill="none" id="WebCrawlerGUIWorker-GMN87" style="stroke:#181818;stroke-width:1;stroke-dasharray:7,7;"/>
+        </g>
+        <!--SRC=[pHfTSnktyPs_0gCyX8mbkkrCNpYjPoJATkIGActIyKEQ1_0Eec3T7Su0JXAJwhztSOV3zv5IsivK3nI9NIps2xkB1SGThMhCSOco0WjnBYMdsqQIgunLQ_eRGNyQ2ODIu-mExyXQxWk2ECaahdO5SH0gbXD1QlGNTnR7rLqx-DUHf19cNcEHSVnG48xEq9oLTK4aGNErFhgaU0UJ_bcDCrPE1SaQJkL-YZESav9cj9A4L-AMrZLdNu63oMYakK8dpvjnWduVZL0dBZhNM5S6QzLX0HA2lrVeTo6nfDaJAZ6jnfZln0ojGKdLxfTV9pDqpsWEc4-Mv1BmbgHgtZ5UQYfdACCyN-0zQ-GCpSrt3OHfSeKhKipGX_Q_7dyWstcd9rXpGONysnSpyaRZ2580joJNmpDaKNgCRq1tkLz_NCnPLG4oSo1pJd9IIOgBVebEjfvylhsgRXX8_75nYINUOa7KG2-LOcoEirkIVs8FQo8DKq2oX8_p2XTxeTXQXqCX_wneokeQbwHNRu2mmTk29E2ufGU_WSKMPuQsZ1K4LqafFv5l3OMV8HR9gLo2zuRZ3R1QjQjcjvZ_ygiUhi7I3updmR2ovDgtI8BbYabwGvLMDbZSNUjV7V1CkvthHUE97iofg0kyRtraNAjFbxhrHeMx8zAwWXXF1ZoeHGnOLiY16xq2EqHeMUnp4G-HtHNnj3EyGbIiayPISropTDo0GoTGxt7HM2j6_7pMzbGa7TEri9KsQWGJphpG8VmLX4Cbz14VaugtskMIqXdW4NdQZQqe97PuYx18ksHh1kkKxPf3gDMWar5n7cw_f3HN5gz3EYGLuH1b7DEEVV03X7VYUAe3AXZEZSThxnJp2mYha6Msx88zFWD_iGPyjLTyt9oeBDMlIwkSFCuG99UOek-OutXBHF0eyBPuRd1GM56mQB7ctUQEeh2_iKrqZUpkO9aGwo4vgStkSvFOgZYygHrolWFnWl5MmPS40bYhk1wRgzHppZdU9_AF89Xdjv-8Q0hfepc07XdoVuchV9XS7roj79vldyQiduPSJ_vp4gT3CfyUaY2nyCIQS6XB7zc_EY2s_AQcMs0aLaHeRgHKb7e3jsGSKAZEY1tUROcq1Jkc5Cg02YDwFygo02-fMIL8I3XoeLS8vxaxOypr5vMpB7OikxRR4SuDsY4xUxI17psfdvFMlofVUaGRcun3fITnKh9x4a_piMgOA5NHDtRBNOJQmle6PmHznVTuIjbqJJX4DFgR2YE0u4IBwVHVRz9e9hQu-ZNHnHJVD7TZ1a_40oziQB6lcJEht_pkGkDXIgS1aSdmTADTwn1NkRy9h8zSimYYmziHv-cnXbbE7aVqiYlCXHEsSIOfgu80pRRgv1FMtys1KK_1rbefzIF9xaW59qhUazhq0xvzF8OZhxTQEsz5IEMpVxIy9JDTSmoKCC-0uOGBgPfogoJpTezZXHytoyKrb7F6091oopX5wj7sA1oUS_gJkJ_UQwrVO1mGFatIF8t9EPfzsyr89OGU5AmI1SItpg87w7Jm58SHHTEPI96pm5Ykb3a-h5bJ1rj2DIjs7DUt1-AAvXGmj032ju93rsJdheIvP5dJQkuMqiiIyxkcJWQT3dj3UEa8C1GLL9587kKxpieaVKCWT7QZBt5axiiPMXar3iKpjrVY7LgCAVomgWTB8d6E9PwXlXEnX17rlGymAg5qKzBDZApX7CIytAQtaC_C-9O9PnVLZ4kTKtEz_7LKz_aZzlpdxx3_zJeTpXfYiRz7qyj38VL_GtpY1brrOb4ToF5qElK2xmsHu92jiU7CKsAXCVnuuI4Cdh5q7aziaNdlBEUYBtxY9fZZoW0C0ahMYj3rpvxlZQXiu1HU5rH6ZQpEjJVi2WfIvIN31np3p5XyAo9ZdGwrzHpzBtikulEyIfO-Amdz-ffn5pbqT6otiDcykgEW9iNokII38zWmbMCdfjvl78-9c1YgY5rvpHGZR6epkq8dnZl_SUIO6uUArM5M7AV3HhJ8wK7wqKxqD18oyXoLs3d11ab8haJOx6lYbO_mUr19Aaxu1uGIqfX8ubwIcx3kvJcjSB5YWdPLiIL4nNaZ6QqodYhNg7XFAiAnwR2a4uidVHkidgcri4rgDQVWz8PcM36icl3-GCzVLJTH6eKYiVXiut9uE0hRjI6-vHtEd51AUsjCqfnqVkG3neTmhnJHrEvSQcw6EbHkZyneIqBusj0wD5wcJBs1-aJTTVbgy5jlVlTzIOJ0Ep8kk_-31UkcMpLLhlQWWB702Ru7Vle_zFaAjGr_uGpQqmKhoG8E8a3Zmyg8NJfN23FlGg4_CxZJniFe4ttYz- -tdhyI8Eo7Rg5UEVIUpO9kAm2b6_eYYOE9BrrmdN5QonTfsRtXQW-BLwRDulFaq3x2bcvmr4oOtes_6tgk-nIv9b8H5Y_HL3ptsSho-zilKLLcfy6wOTqHqZsgfkwemzsx123h5pHFgJBb9Jnp0gGvhhBz-mRpw5uHGZoaelrFP1yOtcOvvq8vBczUedS_TjCNsJin-TaBzxn-R0ZV_n4dqnEVlw1x5_EY1Vs9HnUqUOK8gUdOWUwk_ibvWN1BYXgKs9oqBEad1blM-7DLLts9gmONxR1BG3o07y2Hw8vmuHAnlTJtdw- -jF3_HlI5t4WUrHQ1K_M7ZVxgNjU4zsVsWDvrr5D0bIGVEDtTmWvUcUz3Dp167biOVOToE5XSW4vsd3M3uIrosJ-W6jMnRCHcfSLN5dLhfyqx3NX7IP7tyhLruZrPATbNdEr06-82zngjo0uV0DS_gwlFnSL2tJBYhNdiKGsCzwkjCyRDeKOzLzdPHo3zaeTmn04O3KCJPm_X8GKqhHuig7y7IqR738Sj6ZFo7KHBbe6skklXa5ctmb84AnBShQgas4XolWELWq8wTHXQjXNb4En4Vl9kAwmRdPtfQul7QRinfslrsG5XoW47F3WJDlptwE_g3u4ViunsvMytD1f-adHsziP_NJHJ6HC45QEHDtxovnFq0nID9p-SkBSmC_T5aJz3aVOmWtT5CNRGkfkfTpOnLdZsd-dMGm8pEkpCudT4yJIlu9-PfpM1GXWemwjsOx0jGsDOK3OE8ZWrN8mJLrGnJbZY935iQP00nsbyc1ETTXC8VfeCb3cTld6IMWGAijl8SIlNBxtxlfb_qJzARqRNHGTH_Fkk6QhXKryY3SvnslQ3E47s748pdRT365uNSH3FqSWmLsvAIo4fYwXtaH1GE1FiHavjUfuwsNbqC9W52nt1JMtbUufz6YFt3aPnQQx8Pf2szwfRF0fYJ3gWR1jQv68K0ZnVS_fZ8wyz5s3PDit8zdDJHXivfs3VCQqgPggwu59qbTGeLPudjEKgqr2uNi0cXDX6K6ijn6vIAq9AUlj8CdMjWtwcK3QWrzgBu8kgOj1hG35tFmhwSG6VNzIBAlY_silRjXFIg8TQJks6nkye9pViSJ8YLQw2B0dPIJtfk_omWAoysc-OOk4IKYyjBjv-sW38TfNohyNizMjCf_1bMk-bmdsTjxXRmgLTyDy0]-->
+    </g>
+</svg>

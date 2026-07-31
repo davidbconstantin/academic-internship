@@ -1,4 +1,4 @@
 -------------------------------------------------------------------------------
-Test set: UseCaseTests.NavigateGUITest
+Test set: SearchProductsTest
 -------------------------------------------------------------------------------
-Tests run: 0, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 2.412 s -- in UseCaseTests.NavigateGUITest
+Tests run: 12, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.287 s -- in SearchProductsTest

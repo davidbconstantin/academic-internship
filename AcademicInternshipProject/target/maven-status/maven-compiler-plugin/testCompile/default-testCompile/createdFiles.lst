@@ -12,9 +12,11 @@ UseCaseTests\NavigateGUITest.class
 UseCaseTests\EditDatabaseTest.class
 JSoupTextTest.class
 SystemTrayTest.class
+ScrapeFuelPricesTest.class
 UseCaseTests\EditDatabaseTest$ExceptionE3.class
 UseCaseTests\RunCrawlerTest$AlternateFlowA1.class
 AsynchronousGUITest$1.class
+SearchProductsTest.class
 UseCaseTests\RunCrawlerTest.class
 UseCaseTests\NavigateGUITest$NormalFlow.class
 AsynchronousGUITest.class
@@ -23,7 +25,9 @@ SQLUpdateTest.class
 UseCaseTests\EditDatabaseTest$1.class
 CardLayoutTest.class
 CommandParserTest.class
+NavigateGUITest.class
 UseCaseTests\CreateCrawlerTest$AlternateFlowA1.class
+ManageCSVRecordsTest.class
 UseCaseTests\NavigateGUITest$AlternateFlowA1.class
 SQLSelectTest.class
 UseCaseTests\CreateCrawlerTest$ExceptionE1.class

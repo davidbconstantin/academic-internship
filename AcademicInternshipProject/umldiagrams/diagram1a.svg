@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentStyleType="text/css" data-diagram-type="CLASS" height="648.55px" preserveAspectRatio="none" style="width:1173px;height:648px;background:#FFFFFF;" version="1.1" viewBox="0 0 1173 648" width="1173.85px" zoomAndPan="magnify">
+    <title>Nascrawler (1a) - Crawler Core &amp; Scripting</title>
+    <defs/>
+    <g>
+        <g class="title" data-source-line="8">
+            <text fill="#000000" font-family="sans-serif" font-size="11.9" font-weight="bold" lengthAdjust="spacing" textLength="239.4003" x="461.2748" y="20.8532">Nascrawler (1a) - Crawler Core &amp; Scripting</text>
+        </g>
+        <!--cluster com-->
+        <g class="cluster" data-entity="com" data-source-line="12" data-uid="ent0004" id="cluster_com">
+            <rect fill="none" height="499.8" rx="2.125" ry="2.125" style="stroke:#000000;stroke-width:1.275;" width="1162.8" x="5.95" y="102.093"/>
+            <text fill="#000000" font-family="sans-serif" font-size="11.9" font-weight="bold" lengthAdjust="spacing" textLength="24.4682" x="575.1159" y="116.1462">com</text>
+        </g>
+        <!--cluster security-->
+        <g class="cluster" data-entity="security" data-source-line="12" data-uid="ent0005" id="cluster_security">
+            <rect fill="none" height="442" rx="2.125" ry="2.125" style="stroke:#000000;stroke-width:1.275;" width="1122" x="26.35" y="139.493"/>
+            <text fill="#000000" font-family="sans-serif" font-size="11.9" font-weight="bold" lengthAdjust="spacing" textLength="45.6418" x="564.5291" y="153.5462">security</text>
+        </g>
+        <!--cluster academicinternshipproject-->
+        <g class="cluster" data-entity="academicinternshipproject" data-source-line="10" data-uid="ent0002" id="cluster_academicinternshipproject">
+            <rect fill="none" height="384.2" rx="2.125" ry="2.125" style="stroke:#000000;stroke-width:1.275;" width="1081.2" x="46.75" y="176.893"/>
+            <text fill="#000000" font-family="sans-serif" font-size="11.9" font-weight="bold" lengthAdjust="spacing" textLength="151.4403" x="511.6299" y="190.9462">academicinternshipproject</text>
+        </g>
+        <!--cluster java-->
+        <g class="cluster" data-entity="java" data-source-line="39" data-uid="ent0008" id="cluster_java">
+            <rect fill="none" height="129.2" rx="2.125" ry="2.125" style="stroke:#000000;stroke-width:1.275;" width="156.4" x="874.65" y="221.943"/>
+            <text fill="#000000" font-family="sans-serif" font-size="11.9" font-weight="bold" lengthAdjust="spacing" textLength="23.1608" x="941.2696" y="235.9962">java</text>
+        </g>
+        <!--cluster io-->
+        <g class="cluster" data-entity="io" data-source-line="39" data-uid="ent0009" id="cluster_io">
+            <rect fill="none" height="71.4" rx="2.125" ry="2.125" style="stroke:#000000;stroke-width:1.275;" width="115.6" x="895.05" y="259.343"/>
+            <text fill="#000000" font-family="sans-serif" font-size="11.9" font-weight="bold" lengthAdjust="spacing" textLength="10.5752" x="947.5624" y="273.3962">io</text>
+        </g>
+        <!--class AcademicInternshipProject-->
+        <g class="entity" data-entity="AcademicInternshipProject" data-source-line="12" data-uid="ent0003" id="entity_AcademicInternshipProject">
+            <rect fill="#F1F1F1" height="48.968" rx="2.125" ry="2.125" style="stroke:#181818;stroke-width:0.425;" width="168.7449" x="78.2" y="498.193"/>
+            <ellipse cx="90.95" cy="511.793" fill="#ADD1B2" rx="9.35" ry="9.35" style="stroke:#181818;stroke-width:0.85;"/>
+            <path d="M93.3008,508.2867 Q93.4336,508.1008 93.593,508.0078 Q93.7523,507.9148 93.9383,507.9148 Q94.257,507.9148 94.4563,508.1406 Q94.6555,508.3531 94.6555,508.8711 L94.6555,510.1063 Q94.6555,510.6242 94.4563,510.85 Q94.257,511.0758 93.9383,511.0758 Q93.6461,511.0758 93.4734,510.9031 Q93.3008,510.7438 93.2078,510.3055 Q93.168,510 93.0086,509.8406 Q92.7297,509.5219 92.2117,509.3359 Q91.6938,509.15 91.1625,509.15 Q90.5117,509.15 89.9672,509.4289 Q89.4359,509.7078 89.0109,510.3453 Q88.5992,510.9828 88.5992,511.8594 L88.5992,512.7891 Q88.5992,513.8383 89.3563,514.5422 Q90.1133,515.2328 91.468,515.2328 Q92.2648,515.2328 92.8227,515.0203 Q93.1547,514.8875 93.5133,514.5156 Q93.7391,514.2898 93.8586,514.2234 Q93.9914,514.157 94.1641,514.157 Q94.443,514.157 94.6555,514.3828 Q94.8813,514.5953 94.8813,514.8875 Q94.8813,515.1797 94.5891,515.525 Q94.1641,516.0164 93.4867,516.2953 Q92.5703,516.6805 91.468,516.6805 Q90.1797,516.6805 89.157,516.1492 Q88.3203,515.7242 87.7359,514.8211 Q87.1516,513.9047 87.1516,512.8156 L87.1516,511.8328 Q87.1516,510.7039 87.6695,509.7344 Q88.2008,508.7516 89.1305,508.2336 Q90.0602,507.7023 91.1094,507.7023 Q91.7336,507.7023 92.2781,507.8484 Q92.8359,507.9813 93.3008,508.2867 Z " fill="#000000"/>
+            <text fill="#000000" font-family="sans-serif" font-size="11.9" lengthAdjust="spacing" textLength="141.5449" x="102.85" y="516.6622">AcademicInternshipProject</text>
+            <line style="stroke:#181818;stroke-width:0.425;" x1="79.05" x2="246.0949" y1="525.393" y2="525.393"/>
+            <text fill="#000000" font-family="sans-serif" font-size="11.9" lengthAdjust="spacing" text-decoration="underline" textLength="136.5711" x="83.3" y="541.1462">+main(args: String[]): void</text>
+        </g>
+        <!--class WebCrawler-->
+        <g class="entity" data-entity="WebCrawler" data-source-line="16" data-uid="ent0006" id="entity_WebCrawler">
+            <rect fill="#F1F1F1" height="340.1594" rx="2.125" ry="2.125" style="stroke:#181818;stroke-width:0.425;" width="340.547" x="363.8" y="207.493"/>
+            <ellipse cx="497.7302" cy="221.093" fill="#ADD1B2" rx="9.35" ry="9.35" style="stroke:#181818;stroke-width:0.85;"/>
+            <path d="M500.081,217.5867 Q500.2138,217.4008 500.3732,217.3078 Q500.5325,217.2148 500.7185,217.2148 Q501.0372,217.2148 501.2365,217.4406 Q501.4357,217.6531 501.4357,218.1711 L501.4357,219.4063 Q501.4357,219.9242 501.2365,220.15 Q501.0372,220.3758 500.7185,220.3758 Q500.4263,220.3758 500.2536,220.2031 Q500.081,220.0438 499.988,219.6055 Q499.9482,219.3 499.7888,219.1406 Q499.5099,218.8219 498.9919,218.6359 Q498.474,218.45 497.9427,218.45 Q497.2919,218.45 496.7474,218.7289 Q496.2161,219.0078 495.7911,219.6453 Q495.3794,220.2828 495.3794,221.1594 L495.3794,222.0891 Q495.3794,223.1383 496.1365,223.8422 Q496.8935,224.5328 498.2482,224.5328 Q499.045,224.5328 499.6029,224.3203 Q499.9349,224.1875 500.2935,223.8156 Q500.5193,223.5898 500.6388,223.5234 Q500.7716,223.457 500.9443,223.457 Q501.2232,223.457 501.4357,223.6828 Q501.6615,223.8953 501.6615,224.1875 Q501.6615,224.4797 501.3693,224.825 Q500.9443,225.3164 500.2669,225.5953 Q499.3505,225.9805 498.2482,225.9805 Q496.9599,225.9805 495.9372,225.4492 Q495.1005,225.0242 494.5161,224.1211 Q493.9318,223.2047 493.9318,222.1156 L493.9318,221.1328 Q493.9318,220.0039 494.4497,219.0344 Q494.981,218.0516 495.9107,217.5336 Q496.8404,217.0023 497.8896,217.0023 Q498.5138,217.0023 499.0583,217.1484 Q499.6161,217.2813 500.081,217.5867 Z " fill="#000000"/>
+            <text fill="#000000" font-family="sans-serif" font-size="11.9" lengthAdjust="spacing" textLength="65.4616" x="515.1552" y="225.9622">WebCrawler</text>
+            <line style="stroke:#181818;stroke-width:0.425;" x1="364.65" x2="703.497" y1="234.693" y2="234.693"/>
+            <text fill="#000000" font-family="sans-serif" font-size="11.9" lengthAdjust="spacing" textLength="71.4291" x="368.9" y="250.4462">-name: String</text>
+            <text fill="#000000" font-family="sans-serif" font-size="11.9" lengthAdjust="spacing" textLength="95.9089" x="368.9" y="265.4142">-userAgent: String</text>
+            <text fill="#000000" font-family="sans-serif" font-size="11.9" lengthAdjust="spacing" textLength="81.336" x="368.9" y="280.3821">-crawlDelay: int</text>
+            <text fill="#000000" font-family="sans-serif" font-size="11.9" lengthAdjust="spacing" textLength="121.6845" x="368.9" y="295.3501">-urls: ArrayList&lt;String&gt;</text>
+            <text fill="#000000" font-family="sans-serif" font-size="11.9" lengthAdjust="spacing" textLength="218.2558" x="368.9" y="310.3181">-searchResults: ArrayList&lt;SearchResult&gt;</text>
+            <text fill="#000000" font-family="sans-serif" font-size="11.9" lengthAdjust="spacing" textLength="160.7081" x="368.9" y="325.286">-commands: ArrayList&lt;String&gt;</text>
+            <line style="stroke:#181818;stroke-width:0.85;" x1="364.65" x2="703.497" y1="331.3008" y2="331.3008"/>
+            <text fill="#000000" font-family="sans-serif" font-size="11.9" lengthAdjust="spacing" textLength="80.3366" x="368.9" y="347.054">+WebCrawler()</text>
+            <text fill="#000000" font-family="sans-serif" font-size="11.9" lengthAdjust="spacing" textLength="330.347" x="368.9" y="362.022">+WebCrawler(name: String, userAgent: String, crawlDelay: int)</text>
+            <text fill="#000000" font-family="sans-serif" font-size="11.9" lengthAdjust="spacing" textLength="326.3668" x="368.9" y="376.9899">+WebCrawler(name, userAgent, crawlDelay, urls, commands)</text>
+            <text fill="#000000" font-family="sans-serif" font-size="11.9" lengthAdjust="spacing" textLength="128.6223" x="368.9" y="391.9579">+getName() / setName()</text>
+            <text fill="#000000" font-family="sans-serif" font-size="11.9" lengthAdjust="spacing" textLength="177.5819" x="368.9" y="406.9259">+getUserAgent() / setUserAgent()</text>
+            <text fill="#000000" font-family="sans-serif" font-size="11.9" lengthAdjust="spacing" textLength="186.8091" x="368.9" y="421.8938">+getCrawlDelay() / setCrawlDelay()</text>
+            <text fill="#000000" font-family="sans-serif" font-size="11.9" lengthAdjust="spacing" textLength="107.437" x="368.9" y="436.8618">+getUrls() / setUrls()</text>
+            <text fill="#000000" font-family="sans-serif" font-size="11.9" lengthAdjust="spacing" textLength="186.8207" x="368.9" y="451.8298">+getCommands() / setCommands()</text>
+            <text fill="#000000" font-family="sans-serif" font-size="11.9" lengthAdjust="spacing" textLength="208.0118" x="368.9" y="466.7978">+addCommand(command: String): void</text>
+            <text fill="#000000" font-family="sans-serif" font-size="11.9" lengthAdjust="spacing" textLength="261.585" x="368.9" y="481.7657">+editCommand(index: int, command: String): void</text>
+            <text fill="#000000" font-family="sans-serif" font-size="11.9" lengthAdjust="spacing" textLength="185.5191" x="368.9" y="496.7337">+removeCommand(index: int): void</text>
+            <text fill="#000000" font-family="sans-serif" font-size="11.9" lengthAdjust="spacing" textLength="254.3044" x="368.9" y="511.7017">+getHtmlResponses(): ArrayList&lt;SearchResult&gt;</text>
+            <text fill="#000000" font-family="sans-serif" font-size="11.9" lengthAdjust="spacing" textLength="268.2148" x="368.9" y="526.6696">+addHtmlResponse(response: SearchResult): void</text>
+            <text fill="#000000" font-family="sans-serif" font-size="11.9" lengthAdjust="spacing" textLength="86.3157" x="368.9" y="541.6376">+printInfo(): void</text>
+        </g>
+        <!--class SearchResult-->
+        <g class="entity" data-entity="SearchResult" data-source-line="41" data-uid="ent0011" id="entity_SearchResult">
+            <rect fill="#F1F1F1" height="175.5117" rx="2.125" ry="2.125" style="stroke:#181818;stroke-width:0.425;" width="323.3594" x="791.35" y="364.743"/>
+            <ellipse cx="913.6998" cy="378.343" fill="#ADD1B2" rx="9.35" ry="9.35" style="stroke:#181818;stroke-width:0.85;"/>
+            <path d="M916.0506,374.8367 Q916.1834,374.6508 916.3427,374.5578 Q916.5021,374.4648 916.6881,374.4648 Q917.0068,374.4648 917.206,374.6906 Q917.4052,374.9031 917.4052,375.4211 L917.4052,376.6563 Q917.4052,377.1742 917.206,377.4 Q917.0068,377.6258 916.6881,377.6258 Q916.3959,377.6258 916.2232,377.4531 Q916.0506,377.2938 915.9576,376.8555 Q915.9177,376.55 915.7584,376.3906 Q915.4795,376.0719 914.9615,375.8859 Q914.4435,375.7 913.9123,375.7 Q913.2615,375.7 912.717,375.9789 Q912.1857,376.2578 911.7607,376.8953 Q911.349,377.5328 911.349,378.4094 L911.349,379.3391 Q911.349,380.3883 912.106,381.0922 Q912.8631,381.7828 914.2177,381.7828 Q915.0146,381.7828 915.5724,381.5703 Q915.9045,381.4375 916.2631,381.0656 Q916.4888,380.8398 916.6084,380.7734 Q916.7412,380.707 916.9138,380.707 Q917.1927,380.707 917.4052,380.9328 Q917.631,381.1453 917.631,381.4375 Q917.631,381.7297 917.3388,382.075 Q916.9138,382.5664 916.2365,382.8453 Q915.3201,383.2305 914.2177,383.2305 Q912.9295,383.2305 911.9068,382.6992 Q911.0701,382.2742 910.4857,381.3711 Q909.9013,380.4547 909.9013,379.3656 L909.9013,378.3828 Q909.9013,377.2539 910.4193,376.2844 Q910.9506,375.3016 911.8802,374.7836 Q912.8099,374.2523 913.8592,374.2523 Q914.4834,374.2523 915.0279,374.3984 Q915.5857,374.5313 916.0506,374.8367 Z " fill="#000000"/>
+            <text fill="#000000" font-family="sans-serif" font-size="11.9" lengthAdjust="spacing" textLength="71.4349" x="931.1248" y="383.2122">SearchResult</text>
+            <line style="stroke:#181818;stroke-width:0.425;" x1="792.2" x2="1113.8594" y1="391.943" y2="391.943"/>
+            <text fill="#000000" font-family="sans-serif" font-size="11.9" lengthAdjust="spacing" text-decoration="underline" textLength="32.4054" x="796.45" y="407.6962">-id: int</text>
+            <text fill="#000000" font-family="sans-serif" font-size="11.9" lengthAdjust="spacing" textLength="137.5589" x="796.45" y="422.6642">-results: ArrayList&lt;String&gt;</text>
+            <text fill="#000000" font-family="sans-serif" font-size="11.9" lengthAdjust="spacing" textLength="90.6039" x="796.45" y="437.6321">-commandNo: int</text>
+            <line style="stroke:#181818;stroke-width:0.85;" x1="792.2" x2="1113.8594" y1="443.6469" y2="443.6469"/>
+            <text fill="#000000" font-family="sans-serif" font-size="11.9" lengthAdjust="spacing" textLength="313.1594" x="796.45" y="459.4001">+SearchResult(results: ArrayList&lt;String&gt;, commandNo: int)</text>
+            <text fill="#000000" font-family="sans-serif" font-size="11.9" lengthAdjust="spacing" textLength="153.1079" x="796.45" y="474.3681">+SearchResult(result: String)</text>
+            <text fill="#000000" font-family="sans-serif" font-size="11.9" lengthAdjust="spacing" textLength="60.5227" x="796.45" y="489.336">+getId(): int</text>
+            <text fill="#000000" font-family="sans-serif" font-size="11.9" lengthAdjust="spacing" textLength="120.7025" x="796.45" y="504.304">+getCommandNo(): int</text>
+            <text fill="#000000" font-family="sans-serif" font-size="11.9" lengthAdjust="spacing" textLength="169.6447" x="796.45" y="519.272">+getResults(): ArrayList&lt;String&gt;</text>
+            <text fill="#000000" font-family="sans-serif" font-size="11.9" lengthAdjust="spacing" textLength="232.4684" x="796.45" y="534.2399">+setResults(results: ArrayList&lt;String&gt;): void</text>
+        </g>
+        <!--class CommandParser-->
+        <g class="entity" data-entity="CommandParser" data-source-line="54" data-uid="ent0012" id="entity_CommandParser">
+            <rect fill="#F1F1F1" height="235.3836" rx="2.125" ry="2.125" style="stroke:#181818;stroke-width:0.425;" width="204.9637" x="60.35" y="230.018"/>
+            <ellipse cx="114.2486" cy="243.618" fill="#ADD1B2" rx="9.35" ry="9.35" style="stroke:#181818;stroke-width:0.85;"/>
+            <path d="M116.5994,240.1117 Q116.7322,239.9258 116.8916,239.8328 Q117.051,239.7398 117.2369,239.7398 Q117.5557,239.7398 117.7549,239.9656 Q117.9541,240.1781 117.9541,240.6961 L117.9541,241.9313 Q117.9541,242.4492 117.7549,242.675 Q117.5557,242.9008 117.2369,242.9008 Q116.9447,242.9008 116.7721,242.7281 Q116.5994,242.5688 116.5064,242.1305 Q116.4666,241.825 116.3072,241.6656 Q116.0283,241.3469 115.5104,241.1609 Q114.9924,240.975 114.4611,240.975 Q113.8104,240.975 113.2658,241.2539 Q112.7346,241.5328 112.3096,242.1703 Q111.8979,242.8078 111.8979,243.6844 L111.8979,244.6141 Q111.8979,245.6633 112.6549,246.3672 Q113.4119,247.0578 114.7666,247.0578 Q115.5635,247.0578 116.1213,246.8453 Q116.4533,246.7125 116.8119,246.3406 Q117.0377,246.1148 117.1572,246.0484 Q117.29,245.982 117.4627,245.982 Q117.7416,245.982 117.9541,246.2078 Q118.1799,246.4203 118.1799,246.7125 Q118.1799,247.0047 117.8877,247.35 Q117.4627,247.8414 116.7854,248.1203 Q115.8689,248.5055 114.7666,248.5055 Q113.4783,248.5055 112.4557,247.9742 Q111.6189,247.5492 111.0346,246.6461 Q110.4502,245.7297 110.4502,244.6406 L110.4502,243.6578 Q110.4502,242.5289 110.9682,241.5594 Q111.4994,240.5766 112.4291,240.0586 Q113.3588,239.5273 114.408,239.5273 Q115.0322,239.5273 115.5768,239.6734 Q116.1346,239.8063 116.5994,240.1117 Z " fill="#000000"/>
+            <text fill="#000000" font-family="sans-serif" font-size="11.9" lengthAdjust="spacing" textLength="89.9415" x="131.6736" y="248.4872">CommandParser</text>
+            <line style="stroke:#181818;stroke-width:0.425;" x1="61.2" x2="264.4637" y1="257.218" y2="257.218"/>
+            <text fill="#000000" font-family="sans-serif" font-size="11.9" lengthAdjust="spacing" textLength="73.4163" x="65.45" y="272.9712">-action: String</text>
+            <text fill="#000000" font-family="sans-serif" font-size="11.9" lengthAdjust="spacing" textLength="73.4163" x="65.45" y="287.9392">-object: String</text>
+            <text fill="#000000" font-family="sans-serif" font-size="11.9" lengthAdjust="spacing" textLength="79.3663" x="65.45" y="302.9071">-subject: String</text>
+            <text fill="#000000" font-family="sans-serif" font-size="11.9" lengthAdjust="spacing" textLength="76.0601" x="65.45" y="317.8751">-subjectNo: int</text>
+            <text fill="#000000" font-family="sans-serif" font-size="11.9" lengthAdjust="spacing" text-decoration="underline" textLength="90.6039" x="65.45" y="332.8431">-commandNo: int</text>
+            <text fill="#000000" font-family="sans-serif" font-size="11.9" lengthAdjust="spacing" textLength="142.1957" x="65.45" y="347.811">-tokenizer: StringTokenizer</text>
+            <line style="stroke:#181818;stroke-width:0.85;" x1="61.2" x2="264.4637" y1="353.8258" y2="353.8258"/>
+            <text fill="#000000" font-family="sans-serif" font-size="11.9" lengthAdjust="spacing" textLength="194.7637" x="65.45" y="369.579">+CommandParser(command: String)</text>
+            <text fill="#000000" font-family="sans-serif" font-size="11.9" lengthAdjust="spacing" textLength="102.1901" x="65.45" y="384.547">+getAction(): String</text>
+            <text fill="#000000" font-family="sans-serif" font-size="11.9" lengthAdjust="spacing" textLength="103.5091" x="65.45" y="399.5149">+getObject(): String</text>
+            <text fill="#000000" font-family="sans-serif" font-size="11.9" lengthAdjust="spacing" textLength="108.8083" x="65.45" y="414.4829">+getSubject(): String</text>
+            <text fill="#000000" font-family="sans-serif" font-size="11.9" lengthAdjust="spacing" textLength="105.5021" x="65.45" y="429.4509">+getSubjectNo(): int</text>
+            <text fill="#000000" font-family="sans-serif" font-size="11.9" lengthAdjust="spacing" textLength="120.7025" x="65.45" y="444.4188">+getCommandNo(): int</text>
+            <text fill="#000000" font-family="sans-serif" font-size="11.9" lengthAdjust="spacing" textLength="188.8253" x="65.45" y="459.3868">+setCommandNo(number: int): void</text>
+        </g>
+        <!--class Serializable-->
+        <g class="entity" data-entity="Serializable" data-source-line="39" data-uid="ent0007" id="entity_Serializable">
+            <rect fill="#F1F1F1" height="27.2" rx="2.125" ry="2.125" style="stroke:#181818;stroke-width:0.425;" width="88.7163" x="908.65" y="289.943"/>
+            <ellipse cx="921.4" cy="303.543" fill="#ADD1B2" rx="9.35" ry="9.35" style="stroke:#181818;stroke-width:0.85;"/>
+            <path d="M923.7508,300.0367 Q923.8836,299.8508 924.043,299.7578 Q924.2023,299.6648 924.3883,299.6648 Q924.707,299.6648 924.9063,299.8906 Q925.1055,300.1031 925.1055,300.6211 L925.1055,301.8563 Q925.1055,302.3742 924.9063,302.6 Q924.707,302.8258 924.3883,302.8258 Q924.0961,302.8258 923.9234,302.6531 Q923.7508,302.4938 923.6578,302.0555 Q923.618,301.75 923.4586,301.5906 Q923.1797,301.2719 922.6617,301.0859 Q922.1438,300.9 921.6125,300.9 Q920.9617,300.9 920.4172,301.1789 Q919.8859,301.4578 919.4609,302.0953 Q919.0492,302.7328 919.0492,303.6094 L919.0492,304.5391 Q919.0492,305.5883 919.8063,306.2922 Q920.5633,306.9828 921.918,306.9828 Q922.7148,306.9828 923.2727,306.7703 Q923.6047,306.6375 923.9633,306.2656 Q924.1891,306.0398 924.3086,305.9734 Q924.4414,305.907 924.6141,305.907 Q924.893,305.907 925.1055,306.1328 Q925.3313,306.3453 925.3313,306.6375 Q925.3313,306.9297 925.0391,307.275 Q924.6141,307.7664 923.9367,308.0453 Q923.0203,308.4305 921.918,308.4305 Q920.6297,308.4305 919.607,307.8992 Q918.7703,307.4742 918.1859,306.5711 Q917.6016,305.6547 917.6016,304.5656 L917.6016,303.5828 Q917.6016,302.4539 918.1195,301.4844 Q918.6508,300.5016 919.5805,299.9836 Q920.5102,299.4523 921.5594,299.4523 Q922.1836,299.4523 922.7281,299.5984 Q923.2859,299.7313 923.7508,300.0367 Z " fill="#000000"/>
+            <text fill="#000000" font-family="sans-serif" font-size="11.9" lengthAdjust="spacing" textLength="61.5163" x="933.3" y="308.4122">Serializable</text>
+        </g>
+        <!--class MainMenuForm-->
+        <g class="entity" data-entity="MainMenuForm" data-source-line="72" data-uid="ent0013" id="entity_MainMenuForm">
+            <rect fill="#F1F1F1" height="27.2" rx="2.125" ry="2.125" style="stroke:#181818;stroke-width:0.425;" width="110.5232" x="478.975" y="615.493"/>
+            <ellipse cx="491.725" cy="629.093" fill="#ADD1B2" rx="9.35" ry="9.35" style="stroke:#181818;stroke-width:0.85;"/>
+            <path d="M494.0758,625.5867 Q494.2086,625.4008 494.368,625.3078 Q494.5273,625.2148 494.7133,625.2148 Q495.032,625.2148 495.2313,625.4406 Q495.4305,625.6531 495.4305,626.1711 L495.4305,627.4063 Q495.4305,627.9242 495.2313,628.15 Q495.032,628.3758 494.7133,628.3758 Q494.4211,628.3758 494.2484,628.2031 Q494.0758,628.0437 493.9828,627.6055 Q493.943,627.3 493.7836,627.1406 Q493.5047,626.8219 492.9867,626.6359 Q492.4688,626.45 491.9375,626.45 Q491.2867,626.45 490.7422,626.7289 Q490.2109,627.0078 489.7859,627.6453 Q489.3742,628.2828 489.3742,629.1594 L489.3742,630.0891 Q489.3742,631.1383 490.1312,631.8422 Q490.8883,632.5328 492.243,632.5328 Q493.0398,632.5328 493.5977,632.3203 Q493.9297,632.1875 494.2883,631.8156 Q494.5141,631.5898 494.6336,631.5234 Q494.7664,631.457 494.9391,631.457 Q495.218,631.457 495.4305,631.6828 Q495.6563,631.8953 495.6563,632.1875 Q495.6563,632.4797 495.3641,632.825 Q494.9391,633.3164 494.2617,633.5953 Q493.3453,633.9805 492.243,633.9805 Q490.9547,633.9805 489.932,633.4492 Q489.0953,633.0242 488.5109,632.1211 Q487.9266,631.2047 487.9266,630.1156 L487.9266,629.1328 Q487.9266,628.0039 488.4445,627.0344 Q488.9758,626.0516 489.9055,625.5336 Q490.8352,625.0023 491.8844,625.0023 Q492.5086,625.0023 493.0531,625.1484 Q493.6109,625.2813 494.0758,625.5867 Z " fill="#000000"/>
+            <text fill="#000000" font-family="sans-serif" font-size="11.9" lengthAdjust="spacing" textLength="83.3232" x="503.625" y="633.9622">MainMenuForm</text>
+        </g>
+        <g class="entity" data-entity="GMN17" data-source-line="78" data-uid="ent0018" id="entity_GMN17">
+            <path d="M447.95,37.918 L447.95,88.1145 A0,0 0 0 0 447.95,88.1145 L530.825,88.1145 L534.225,207.34 L537.625,88.1145 L620.5378,88.1145 A0,0 0 0 0 620.5378,88.1145 L620.5378,46.418 L612.0378,37.918 L447.95,37.918 A0,0 0 0 0 447.95,37.918" fill="#FEFFDD" style="stroke:#181818;stroke-width:0.425;"/>
+            <path d="M612.0378,37.918 L612.0378,46.418 L620.5378,46.418 L612.0378,37.918" fill="#FEFFDD" style="stroke:#181818;stroke-width:0.425;"/>
+            <text fill="#000000" font-family="sans-serif" font-size="11.05" lengthAdjust="spacing" textLength="88.427" x="453.05" y="53.6388">Script commands:</text>
+            <text fill="#000000" font-family="sans-serif" font-size="11.05" lengthAdjust="spacing" textLength="154.7378" x="453.05" y="67.5376">Visit · Search · Text · Attribute ·</text>
+            <text fill="#000000" font-family="sans-serif" font-size="11.05" lengthAdjust="spacing" textLength="101.9319" x="453.05" y="81.4365">Write · SQL · Python</text>
+        </g>
+        <g class="entity" data-entity="GMN20" data-source-line="84" data-uid="ent0021" id="entity_GMN20">
+            <path d="M94.775,51.518 L94.775,87.8156 A0,0 0 0 0 94.775,87.8156 L159.375,87.8156 L162.775,229.9415 L166.175,87.8156 L231.1967,87.8156 A0,0 0 0 0 231.1967,87.8156 L231.1967,60.018 L222.6967,51.518 L94.775,51.518 A0,0 0 0 0 94.775,51.518" fill="#FEFFDD" style="stroke:#181818;stroke-width:0.425;"/>
+            <path d="M222.6967,51.518 L222.6967,60.018 L231.1967,60.018 L222.6967,51.518" fill="#FEFFDD" style="stroke:#181818;stroke-width:0.425;"/>
+            <text fill="#000000" font-family="sans-serif" font-size="11.05" lengthAdjust="spacing" textLength="118.5717" x="99.875" y="67.2388">Supports @"N"i / @"N"s</text>
+            <text fill="#000000" font-family="sans-serif" font-size="11.05" lengthAdjust="spacing" textLength="101.9643" x="99.875" y="81.1376">substitution into SQL</text>
+        </g>
+        <!--link WebCrawler to Serializable-->
+        <g class="link" data-entity-1="WebCrawler" data-entity-2="Serializable" data-source-line="39" data-uid="lnk10" id="link_WebCrawler_Serializable">
+            <path codeLine="39" d="M704.7945,336.948 C733.5755,330.8875 763.2405,325.1415 791.35,320.543 C830.79,314.0915 860.8587,310.86 893.2777,308.0975" fill="none" id="WebCrawler-to-Serializable" style="stroke:#181818;stroke-width:0.85;stroke-dasharray:5.95,5.95;"/>
+            <polygon fill="none" points="908.5225,306.7985,892.8447,303.0159,893.7108,313.1791,908.5225,306.7985" style="stroke:#181818;stroke-width:0.85;"/>
+        </g>
+        <!--link AcademicInternshipProject to MainMenuForm-->
+        <g class="link" data-entity-1="AcademicInternshipProject" data-entity-2="MainMenuForm" data-source-line="72" data-uid="lnk14" id="link_AcademicInternshipProject_MainMenuForm">
+            <path codeLine="72" d="M247.5285,546.949 C321.249,568.1395 420.9738,596.7957 481.0603,614.0592" fill="none" id="AcademicInternshipProject-to-MainMenuForm" style="stroke:#181818;stroke-width:0.85;stroke-dasharray:5.95,5.95;"/>
+            <polygon fill="#181818" points="485.962,615.4675,479.5483,610.0872,481.8773,614.2939,477.6706,616.6228,485.962,615.4675" style="stroke:#181818;stroke-width:0.85;"/>
+            <text fill="#000000" font-family="sans-serif" font-size="11.05" lengthAdjust="spacing" textLength="36.2362" x="296.7253" y="537.7138">creates</text>
+            <text fill="#000000" font-family="sans-serif" font-size="11.05" lengthAdjust="spacing" textLength="82.2869" x="273.7" y="551.6126">(see UI diagram)</text>
+        </g>
+        <!--reverse link WebCrawler to SearchResult-->
+        <g class="link" data-entity-1="WebCrawler" data-entity-2="SearchResult" data-source-line="74" data-uid="lnk15" id="link_WebCrawler_SearchResult">
+            <path codeLine="74" d="M714.6978,409.7178 C743.3258,414.8603 762.9345,418.3695 791.3245,423.4695" fill="none" id="WebCrawler-backto-SearchResult" style="stroke:#181818;stroke-width:0.85;"/>
+            <polygon fill="#181818" points="704.6585,407.9145,709.077,412.1626,714.6978,409.7178,710.2793,405.4697,704.6585,407.9145" style="stroke:#181818;stroke-width:0.85;"/>
+            <text fill="#000000" font-family="sans-serif" font-size="11.05" lengthAdjust="spacing" textLength="70.0121" x="713.15" y="406.8138">searchResults</text>
+            <text fill="#000000" font-family="sans-serif" font-size="11.05" lengthAdjust="spacing" textLength="6.1455" x="710.8993" y="420.7255">1</text>
+            <text fill="#000000" font-family="sans-serif" font-size="11.05" lengthAdjust="spacing" textLength="4.3002" x="780.164" y="434.0088">*</text>
+        </g>
+        <!--link CommandParser to WebCrawler-->
+        <g class="link" data-entity-1="CommandParser" data-entity-2="WebCrawler" data-source-line="75" data-uid="lnk16" id="link_CommandParser_WebCrawler">
+            <path codeLine="75" d="M265.3955,355.9285 C295.8595,358.385 325.0394,360.7299 358.6314,363.4329" fill="none" id="CommandParser-to-WebCrawler" style="stroke:#181818;stroke-width:0.85;stroke-dasharray:5.95,5.95;"/>
+            <polygon fill="#181818" points="363.715,363.842,356.3623,359.8393,359.4787,363.5011,355.8169,366.6174,363.715,363.842" style="stroke:#181818;stroke-width:0.85;"/>
+            <text fill="#000000" font-family="sans-serif" font-size="11.05" lengthAdjust="spacing" textLength="60.1977" x="284.7948" y="340.5138">parses each</text>
+            <text fill="#000000" font-family="sans-serif" font-size="11.05" lengthAdjust="spacing" textLength="68.7873" x="280.5" y="354.4126">command line</text>
+        </g>
+        <!--SRC=[XLPBRzD04BxxLunoG4wRc1O9gOfGHLI4YDI6GbeuK0uRU-fiO-zQk-lIjFHtSUUNCUkixNKU9PVOCz-yNzPBBWgcM0vnnhGU6wFul3GuYQMOyKU4eq0t424Jr5Z0yHkFg9XOLiGJZrYmUCbId9bLXg0mDaoa6GOBdY1WNfWLv9ZFKUb0numWHz79so33MmD6WkBfma32hHoN8Z3S46JATApOhmmLXCUi3qCuSwzdKY6yWbciU66uI8F0cOTUBFD8OrmgRbOHYrc2EO-vCAY4Nl2YKFAEZFJWAGXWdG4OEzIaGLskKGG2-Xt2apRCyFWPSiP5o5IgHp2Zl8dqny_-2EubJmZvtAhyZlFQrxME8GYMOotbIAL6DKvHc0rw5VK7pDXg1EHwZLOPcHqhnLRdN9jtQv5JnzN8LBpuYhhCJ1VcCMem9Ibd8jclRkW2R-C8-ziaFwJ1TZI3pK3sgF14VP515V6WSRQMJj5CIIhimskAsZstlEjQLmtm22tgh35JmtoAfurSQ1HLpvuEvrYZeNbt69OaZXQw8EhKj4rZSPZmMZZa8i67AbjDvBk55ERo7hV5kYXoyvF9Cof_8OL6yktbtgYSzYL2vHx82m_TjLAGUsOYRcNeJmFuOn15lq_XZjspYCjeXegpZ3-oEQs8PcXy_StODAF74tyOr8v6xyo3ozrKUb9rL_k6mlsQ1XjA-ll5cnArQPyaDXcrRRzXfdABu-PsepfUG8UsmMhKVfTtBYDdzf8fxUqZLgtQZSqZvtRlRH1r-GAra-2sMhlIJvj-YO9EZAfLNTM4Rdqw3c-DJfkrSHM2JPhdMSNvNFcsYpCh_yVQKPuzXTC-HvJsl6sCu7D0TTX_NwBe52xef5oWA3zAbSE8zXyoW_f6X1eHhYTq5LbA1xOV1DuqzOvxS30SGk-WrnsRKVSG1DtQMtkUbX5TRQ9hG1OlReHBD6HSq5GAQH3cqXYPWxprn2YizU5jpmYHld7D3VpzuzonJrVuK56QJmnwiKk1JZDMo2_dzkzoPHPqyv4iMvjRbZiXMEDbKKXbDBplJNkSLg_zryIWZjJqvL3Qfh1baDP2g_SV]-->
+    </g>
+</svg>
