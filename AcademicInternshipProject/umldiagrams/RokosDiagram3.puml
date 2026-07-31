@@ -1,0 +1,171 @@
+@startuml Nascrawler_3_UI
+skinparam classAttributeIconSize 0
+skinparam nodesep 12
+skinparam ranksep 18
+skinparam packageStyle rectangle
+hide empty members
+scale 0.85
+left to right direction
+title Nascrawler (3/3) – UI Controller, Panels & Workers
+
+package "com.security.academicinternshipproject" {
+
+  class MainMenuForm {
+    - cardLayout: CardLayout
+    - lastPanel: JPanel
+    - webCrawlers: List<WebCrawler>
+    - selectedCrawler: WebCrawler
+    - sql: MySQLConnector
+    - sqlCredentials: List<String>
+    - dbInfo: SQLDatabaseInfo
+    - crs: CachedRowSet
+    - sentimentAnalyser: SentimentAnalyser
+    - selectedColumnName: String
+    - selectedTableName: String
+    - analysingSQLTable: boolean
+    - sqlCredentialsRequired: boolean
+    - editMode: boolean
+    - username: char[]
+    - password: char[]
+    - lastSelectedCrawlerName: String
+    - notifier: TaskNotifier
+    --
+    + displayPanel(panelName: String): void
+    + loadCrawlers(crawlersCB: JComboBox): void
+    + loadCrawlers(crawlersLS: JList): void
+    + writeCrawler(): void
+    + deleteCrawler(index: int): void
+    + loadSQLCredentials(): void
+    + eraseCredentials(): void
+    + getWebCrawlers() / getSelectedCrawler()
+    + getMySQL() / getSentimentAnalyser()
+    + getTaskNotifier() / getCrs()
+  }
+  MainMenuForm --|> javax.swing.JFrame
+
+  together {
+    class HomeLandingJP
+    class MainMenuJP
+    class CrawlerConfigJP
+    class CrawlerScriptingJP
+    class DatabaseSettingsJP
+  }
+  together {
+    class SQLCredentialsJP
+    class SQLDatabaseJP
+    class SentimentAnalysisJP
+    class DatabaseQueryJP
+    class DeleteCrawlerJP
+  }
+
+  HomeLandingJP : - mainMenuForm: MainMenuForm
+  MainMenuJP : - mainMenuForm: MainMenuForm
+  MainMenuJP : - mysql: MySQLConnector
+  CrawlerConfigJP : - mainMenuForm: MainMenuForm
+  CrawlerScriptingJP : - mainMenuForm: MainMenuForm
+  CrawlerScriptingJP : - selectedCommandIndex: int
+  DatabaseSettingsJP : - mainMenuForm: MainMenuForm
+  SQLCredentialsJP : - mainMenuForm: MainMenuForm
+  SQLCredentialsJP : - credentialsSet: boolean
+  SQLDatabaseJP : - mainMenuForm: MainMenuForm
+  SQLDatabaseJP : - reentrancyGuard: boolean
+  SentimentAnalysisJP : - mainMenuForm: MainMenuForm
+  DatabaseQueryJP : - mainMenuForm: MainMenuForm
+  DeleteCrawlerJP : - mainMenuForm: MainMenuForm
+
+  class TestForm
+  class TestPanel
+}
+
+package "helpmenu" {
+  class AboutForm
+  class UserManualForm
+}
+
+package "swingworkers" {
+  class WebCrawlerGUIWorker {
+    - mainMenuForm: MainMenuForm
+    - mysql: MySQLConnector
+    - textArea: JTextArea
+    - crawlersCB: JComboBox
+    - responsesCB: JComboBox
+    - playwright: Playwright
+    --
+    # doInBackground(): String
+  }
+  class SentimentAnalysisGUIWorker {
+    - mainMenuForm: MainMenuForm
+    - statusTP: JTextPane
+    - inputTF: JTextField
+    - positivePB: JProgressBar
+    - negativePB: JProgressBar
+    - pValueLBL: JLabel
+    - nValueLBL: JLabel
+    - positiveScores: List<Integer>
+    - negativeScores: List<Integer>
+    - scores: List<Integer>
+    - timer: Timer
+    --
+    # doInBackground(): List<Integer>
+    # process(values: List<Integer>): void
+    # done(): void
+    + computeAggregateScore(values: ArrayList<Integer>): int
+  }
+  WebCrawlerGUIWorker --|> javax.swing.SwingWorker
+  SentimentAnalysisGUIWorker --|> javax.swing.SwingWorker
+}
+
+' Types from diagrams 1–2 (references only)
+class WebCrawler
+class MySQLConnector
+class SQLDatabaseInfo
+class SentimentAnalyser
+class TaskNotifier
+class CommandParser
+class JSoupParser
+class SQLParser
+class SearchResult
+
+MainMenuForm "1" *-- "*" WebCrawler : webCrawlers
+MainMenuForm --> WebCrawler : selectedCrawler
+MainMenuForm --> MySQLConnector : sql
+MainMenuForm --> SQLDatabaseInfo : dbInfo
+MainMenuForm --> SentimentAnalyser
+MainMenuForm --> TaskNotifier : notifier
+
+MainMenuForm o-- HomeLandingJP
+MainMenuForm o-- MainMenuJP
+MainMenuForm o-- CrawlerConfigJP
+MainMenuForm o-- CrawlerScriptingJP
+MainMenuForm o-- DatabaseSettingsJP
+MainMenuForm o-- SQLCredentialsJP
+MainMenuForm o-- SQLDatabaseJP
+MainMenuForm o-- SentimentAnalysisJP
+MainMenuForm o-- DatabaseQueryJP
+MainMenuForm o-- DeleteCrawlerJP
+MainMenuForm ..> AboutForm
+MainMenuForm ..> UserManualForm
+
+MainMenuJP ..> WebCrawlerGUIWorker : start crawl
+SentimentAnalysisJP ..> SentimentAnalysisGUIWorker : start NLP
+
+WebCrawlerGUIWorker --> MainMenuForm
+WebCrawlerGUIWorker --> MySQLConnector
+WebCrawlerGUIWorker --> CommandParser
+WebCrawlerGUIWorker --> JSoupParser
+WebCrawlerGUIWorker --> SQLParser
+WebCrawlerGUIWorker --> SearchResult
+WebCrawlerGUIWorker ..> com.microsoft.playwright.Playwright
+
+SentimentAnalysisGUIWorker --> MainMenuForm
+SentimentAnalysisGUIWorker --> SentimentAnalyser
+
+note right of MainMenuForm
+  CardLayout: Landing, Main Menu,
+  Crawler Config, Scripting,
+  DB Settings, SQL Credentials,
+  SQL Database, Sentiment,
+  DB Query, Delete Crawler
+end note
+
+@enduml

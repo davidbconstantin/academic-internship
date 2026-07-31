@@ -1,0 +1,391 @@
+@startuml Nascrawler_Complete_Class_Diagram
+skinparam classAttributeIconSize 0
+skinparam packageStyle rectangle
+skinparam nodesep 20
+skinparam ranksep 25
+title Nascrawler – Complete Class Diagram\n(com.security.academicinternshipproject)
+
+package "com.security.academicinternshipproject" {
+
+  class AcademicInternshipProject {
+    + {static} main(args: String[]): void
+  }
+
+  class MainMenuForm {
+    - cardLayout: CardLayout
+    - lastPanel: JPanel
+    - webCrawlers: List<WebCrawler>
+    - selectedCrawler: WebCrawler
+    - sql: MySQLConnector
+    - sqlCredentials: List<String>
+    - dbInfo: SQLDatabaseInfo
+    - crs: CachedRowSet
+    - sentimentAnalyser: SentimentAnalyser
+    - selectedColumnName: String
+    - selectedTableName: String
+    - analysingSQLTable: boolean
+    - sqlCredentialsRequired: boolean
+    - editMode: boolean
+    - username: char[]
+    - password: char[]
+    - lastSelectedCrawlerName: String
+    - notifier: TaskNotifier
+    --
+    + MainMenuForm()
+    + displayPanel(panelName: String): void
+    + getWebCrawlers(): List<WebCrawler>
+    + getSelectedCrawler(): WebCrawler
+    + setSelectedCrawler(crawler: WebCrawler): void
+    + getSentimentAnalyser(): SentimentAnalyser
+    + isSqlCredentialsRequired(): boolean
+    + setSQLCredentialsRequired(value: boolean): void
+    + getUsername(): char[]
+    + getPassword(): char[]
+    + setUsername(username: char[]): void
+    + setPassword(password: char[]): void
+    + isEditMode(): boolean
+    + setEditMode(value: boolean): void
+    + getMySQL(): MySQLConnector
+    + getLastSelectedCrawlerName(): String
+    + setLastSelectedCrawlerName(name: String): void
+    + isAnalysingSQLTable(): boolean
+    + setIsAnalysingTable(value: boolean): void
+    + eraseCredentials(): void
+    + writeCrawler(): void
+    + loadCrawlers(crawlersCB: JComboBox): void
+    + loadCrawlers(crawlersLS: JList): void
+    + deleteCrawler(index: int): void
+    + loadSQLCredentials(): void
+    + getSQLCredentials(): List<String>
+    + getTaskNotifier(): TaskNotifier
+    + getCrs(): CachedRowSet
+    + getSelectedColumnName(): String
+    + getSelectedTableName(): String
+  }
+
+  class WebCrawler {
+    - name: String
+    - userAgent: String
+    - crawlDelay: int
+    - urls: ArrayList<String>
+    - searchResults: ArrayList<SearchResult>
+    - commands: ArrayList<String>
+    --
+    + WebCrawler(name: String, userAgent: String, crawlDelay: int)
+    + WebCrawler(name: String, userAgent: String, crawlDelay: int, urls: ArrayList<String>, commands: ArrayList<String>)
+    + WebCrawler()
+    + getName(): String
+    + setName(name: String): void
+    + getUserAgent(): String
+    + setUserAgent(userAgent: String): void
+    + getCrawlDelay(): int
+    + setCrawlDelay(crawlDelay: int): void
+    + getUrls(): ArrayList<String>
+    + setUrls(urls: ArrayList<String>): void
+    + getHtmlResponses(): ArrayList<SearchResult>
+    + addHtmlResponse(response: SearchResult): void
+    + getCommands(): ArrayList<String>
+    + setCommands(commands: ArrayList<String>): void
+    + addCommand(command: String): void
+    + editCommand(index: int, command: String): void
+    + removeCommand(index: int): void
+    + printInfo(): void
+  }
+  interface java.io.Serializable
+  WebCrawler ..|> java.io.Serializable
+
+  class SearchResult {
+    - {static} id: int
+    - results: ArrayList<String>
+    - commandNo: int
+    --
+    + SearchResult(results: ArrayList<String>, commandNo: int)
+    + SearchResult(result: String)
+    + getId(): int
+    + getCommandNo(): int
+    + getResults(): ArrayList<String>
+    + setResults(results: ArrayList<String>): void
+  }
+
+  class CommandParser {
+    - action: String
+    - object: String
+    - subject: String
+    - subjectNo: int
+    - {static} commandNo: int
+    - tokenizer: StringTokenizer
+    --
+    + CommandParser(command: String)
+    + getAction(): String
+    + getObject(): String
+    + getSubject(): String
+    + getSubjectNo(): int
+    + getCommandNo(): int
+    + setCommandNo(number: int): void
+  }
+
+  class HTMLNode {
+    - element: String
+    - elementClass: String
+    - attribute: String
+    --
+    + HTMLNode(element: String, elementClass: String, attribute: String)
+    + getElement(): String
+    + setElement(element: String): void
+    + getElementClass(): String
+    + setElementClass(elementClass: String): void
+    + getAttribute(): String
+    + setAttribute(attribute: String): void
+  }
+
+  class JSoupParser {
+    - paragraphs: ArrayList<String>
+    - elements: Elements
+    --
+    + JSoupParser()
+    + searchDocument(htmlMarkup: ArrayList<String>, searchTerm: String): ArrayList<String>
+    + getTextFromDocument(htmlMarkup: String): String
+    + getAttributesFromDocument(htmlMarkup: String, searchTerm: String): ArrayList<String>
+    + getParagraphs(): ArrayList<String>
+  }
+
+  class MySQLConnector {
+    - result: String
+    - metadata: DatabaseMetaData
+    - tableStrings: List<String>
+    - currentDb: String
+    --
+    + MySQLConnector(host: String, port: int, databaseName: String, userName: String, password: String)
+    + MySQLConnector(host: String, port: int, databaseName: String, userName: String, password: String, userStatement: String)
+    + MySQLConnector(url: String, userName: String, password: String, userStatement: String)
+    + MySQLConnector(url: String, userName: String, password: String)
+    + getColumnSize(...): int
+    + fetchTableSchemas(...): void
+    + getTableSchemas(): List<String>
+    + getResult(): String
+    + getCurrentDbAsInfo(): SQLDatabaseInfo
+  }
+
+  class SQLParser {
+    - columnInfo: List<String>
+    - currentDb: String
+    - mustSplit: boolean
+    - stringsToInsert: List<String>
+    --
+    + SQLParser(sqlStatement: String, dbInfo: SQLDatabaseInfo)
+    + getMustSplit(): boolean
+    + getStringsToInsert(): List<String>
+  }
+
+  class SQLDatabaseInfo {
+    - name: String
+    - tables: List<SQLTableInfo>
+    --
+    + SQLDatabaseInfo(name: String, tables: List<SQLTableInfo>)
+    + getName(): String
+    + getTables(): List<SQLTableInfo>
+    + printInfo(): void
+  }
+
+  class SQLTableInfo {
+    - databaseName: String
+    - tableName: String
+    - columns: List<SQLColumnInfo>
+    --
+    + SQLTableInfo(databaseName: String, tableName: String, columns: List<SQLColumnInfo>)
+    + getColumns(): List<SQLColumnInfo>
+    + printInfo(): void
+  }
+
+  class SQLColumnInfo {
+    - columnName: String
+    - dataType: int
+    - typeName: String
+    - columnSize: int
+    - remarks: String
+    - columnDef: String
+    - ordinalPosition: int
+    - isAutoincrement: String
+    - isGeneratedColumn: String
+    --
+    + SQLColumnInfo(...)
+    + printInfo(): void
+  }
+
+  class SentimentAnalyser {
+    - classifications: Classifications
+    - input: String
+    - modelUrl: String
+    --
+    + SentimentAnalyser(modelUrl: String)
+    + predict(input: String): Classifications
+    + getClassifications(): Classifications
+    + getInput(): String
+    + getModelUrl(): String
+  }
+
+  class TaskNotifier {
+    - toolTip: String
+    - icon: TrayIcon
+    --
+    + TaskNotifier()
+    + displayMessage(message: String): void
+    + getToolTip(): String
+    + setToolTip(toolTip: String): void
+  }
+
+  ' ---------- UI panels ----------
+  class HomeLandingJP {
+    - mainMenuForm: MainMenuForm
+    + HomeLandingJP(mainMenuForm: MainMenuForm)
+  }
+  class MainMenuJP {
+    - mainMenuForm: MainMenuForm
+    - mysql: MySQLConnector
+    + MainMenuJP(mainMenuForm: MainMenuForm)
+  }
+  class CrawlerConfigJP {
+    - mainMenuForm: MainMenuForm
+    + CrawlerConfigJP(mainMenuForm: MainMenuForm)
+  }
+  class CrawlerScriptingJP {
+    - mainMenuForm: MainMenuForm
+    - selectedCommandIndex: int
+    + CrawlerScriptingJP(mainMenuForm: MainMenuForm)
+    - composeCommand(): String
+  }
+  class DatabaseSettingsJP {
+    - mainMenuForm: MainMenuForm
+    + DatabaseSettingsJP(mainMenuForm: MainMenuForm)
+  }
+  class SQLCredentialsJP {
+    - mainMenuForm: MainMenuForm
+    - credentialsSet: boolean
+    + SQLCredentialsJP(mainMenuForm: MainMenuForm)
+    + getAreCredentialsSet(): boolean
+  }
+  class SQLDatabaseJP {
+    - mainMenuForm: MainMenuForm
+    - reentrancyGuard: boolean
+    - primaryKeyIndex: int
+    - dataTypes: String[]
+    + SQLDatabaseJP(mainMenuForm: MainMenuForm)
+  }
+  class SentimentAnalysisJP {
+    - mainMenuForm: MainMenuForm
+    + SentimentAnalysisJP(mainMenuForm: MainMenuForm)
+  }
+  class DatabaseQueryJP {
+    - mainMenuForm: MainMenuForm
+    + DatabaseQueryJP(mainMenuForm: MainMenuForm)
+  }
+  class DeleteCrawlerJP {
+    - mainMenuForm: MainMenuForm
+    + DeleteCrawlerJP(mainMenuForm: MainMenuForm)
+  }
+
+  class TestForm
+  class TestPanel
+}
+
+package "helpmenu" {
+  class AboutForm
+  class UserManualForm
+}
+
+package "swingworkers" {
+  class WebCrawlerGUIWorker {
+    - mainMenuForm: MainMenuForm
+    - mysql: MySQLConnector
+    - textArea: JTextArea
+    - crawlersCB: JComboBox
+    - responsesCB: JComboBox
+    - playwright: Playwright
+    --
+    + WebCrawlerGUIWorker(...)
+    # doInBackground(): String
+  }
+  class SentimentAnalysisGUIWorker {
+    - mainMenuForm: MainMenuForm
+    - statusTP: JTextPane
+    - inputTF: JTextField
+    - positivePB: JProgressBar
+    - negativePB: JProgressBar
+    - pValueLBL: JLabel
+    - nValueLBL: JLabel
+    - positiveScores: List<Integer>
+    - negativeScores: List<Integer>
+    - scores: List<Integer>
+    - index: int
+    - row: String
+    - timer: Timer
+    --
+    + SentimentAnalysisGUIWorker(...)
+    # doInBackground(): List<Integer>
+    # process(values: List<Integer>): void
+    # done(): void
+    + computeAggregateScore(values: ArrayList<Integer>): int
+  }
+  WebCrawlerGUIWorker --|> javax.swing.SwingWorker
+  SentimentAnalysisGUIWorker --|> javax.swing.SwingWorker
+}
+
+' ===== associations =====
+AcademicInternshipProject --> MainMenuForm : creates
+
+MainMenuForm "1" *-- "*" WebCrawler : webCrawlers
+MainMenuForm --> WebCrawler : selectedCrawler
+MainMenuForm --> MySQLConnector : sql
+MainMenuForm --> SQLDatabaseInfo : dbInfo
+MainMenuForm --> SentimentAnalyser : sentimentAnalyser
+MainMenuForm --> TaskNotifier : notifier
+
+MainMenuForm o-- HomeLandingJP
+MainMenuForm o-- MainMenuJP
+MainMenuForm o-- CrawlerConfigJP
+MainMenuForm o-- CrawlerScriptingJP
+MainMenuForm o-- DatabaseSettingsJP
+MainMenuForm o-- SQLCredentialsJP
+MainMenuForm o-- SQLDatabaseJP
+MainMenuForm o-- SentimentAnalysisJP
+MainMenuForm o-- DatabaseQueryJP
+MainMenuForm o-- DeleteCrawlerJP
+
+MainMenuForm ..> AboutForm
+MainMenuForm ..> UserManualForm
+
+WebCrawler "1" *-- "*" SearchResult : searchResults
+WebCrawlerGUIWorker --> WebCrawler
+WebCrawlerGUIWorker --> CommandParser : per command
+WebCrawlerGUIWorker --> JSoupParser
+WebCrawlerGUIWorker --> MySQLConnector
+WebCrawlerGUIWorker --> SQLParser
+WebCrawlerGUIWorker --> SQLDatabaseInfo
+WebCrawlerGUIWorker --> SearchResult
+WebCrawlerGUIWorker --> MainMenuForm
+WebCrawlerGUIWorker ..> com.microsoft.playwright.Playwright
+
+SentimentAnalysisGUIWorker --> MainMenuForm
+SentimentAnalysisGUIWorker --> SentimentAnalyser : via MainMenuForm
+
+JSoupParser ..> HTMLNode : may use
+MySQLConnector --> SQLDatabaseInfo : builds
+SQLDatabaseInfo "1" *-- "*" SQLTableInfo
+SQLTableInfo "1" *-- "*" SQLColumnInfo
+SQLParser --> SQLDatabaseInfo
+
+MainMenuJP --> WebCrawlerGUIWorker : starts crawl
+SentimentAnalysisJP --> SentimentAnalysisGUIWorker : starts NLP
+
+note right of WebCrawlerGUIWorker
+  Executes Visit / Search / Text /
+  Attribute / SQL / Write / Python
+  using Playwright (Firefox)
+end note
+
+note right of SentimentAnalyser
+  DJL + PyTorch DistilBERT
+  modelUrl: djl://ai.djl.pytorch/distilbert
+end note
+
+@enduml

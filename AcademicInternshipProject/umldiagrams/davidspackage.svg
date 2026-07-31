@@ -1,0 +1,371 @@
+<?xml version="1.0" encoding="UTF-8"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentStyleType="text/css" data-diagram-type="CLASS" height="1287px" preserveAspectRatio="none" style="width:3560px;height:1287px;background:#FFFFFF;" version="1.1" viewBox="0 0 3560 1287" width="3560px" zoomAndPan="magnify">
+    <title>David's Simple Crawler - Class Diagram
+(com.mycompany.davidssimplecrawler)</title>
+    <defs/>
+    <g>
+        <g class="title" data-source-line="3">
+            <text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="263.9902" x="1641.1125" y="24.5332">David's Simple Crawler - Class Diagram</text>
+            <text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="265.3232" x="1640.446" y="42.1426">(com.mycompany.davidssimplecrawler)</text>
+        </g>
+        <!--cluster com-->
+        <g class="cluster" data-entity="com" data-source-line="7" data-uid="ent0004" id="cluster_com">
+            <rect fill="none" height="1218" rx="2.5" ry="2.5" style="stroke:#000000;stroke-width:1.5;" width="3038" x="7" y="63.2188"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="28.7861" x="1511.6069" y="79.752">com</text>
+        </g>
+        <!--cluster mycompany-->
+        <g class="cluster" data-entity="mycompany" data-source-line="7" data-uid="ent0005" id="cluster_mycompany">
+            <rect fill="none" height="1150" rx="2.5" ry="2.5" style="stroke:#000000;stroke-width:1.5;" width="2990" x="31" y="107.2188"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="81.6963" x="1485.1519" y="123.752">mycompany</text>
+        </g>
+        <!--cluster davidssimplecrawler-->
+        <g class="cluster" data-entity="davidssimplecrawler" data-source-line="5" data-uid="ent0002" id="cluster_davidssimplecrawler">
+            <rect fill="none" height="1082" rx="2.5" ry="2.5" style="stroke:#000000;stroke-width:1.5;" width="2942" x="55" y="151.2188"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="137.7373" x="1457.1313" y="167.752">davidssimplecrawler</text>
+        </g>
+        <!--cluster org-->
+        <g class="cluster" data-entity="org" data-source-line="114" data-uid="ent0027" id="cluster_org">
+            <rect fill="none" height="236" rx="2.5" ry="2.5" style="stroke:#000000;stroke-width:1.5;" width="352" x="1109" y="973.2188"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="22.5518" x="1273.7241" y="989.752">org</text>
+        </g>
+        <!--cluster openqa-->
+        <g class="cluster" data-entity="openqa" data-source-line="114" data-uid="ent0028" id="cluster_openqa">
+            <rect fill="none" height="168" rx="2.5" ry="2.5" style="stroke:#000000;stroke-width:1.5;" width="178" x="1259" y="1017.2188"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="49.7793" x="1323.1104" y="1033.752">openqa</text>
+        </g>
+        <!--cluster selenium-->
+        <g class="cluster" data-entity="selenium" data-source-line="114" data-uid="ent0029" id="cluster_selenium">
+            <rect fill="none" height="100" rx="2.5" ry="2.5" style="stroke:#000000;stroke-width:1.5;" width="130" x="1283" y="1061.2188"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="60.6895" x="1317.6553" y="1077.752">selenium</text>
+        </g>
+        <!--cluster jsoup-->
+        <g class="cluster" data-entity="jsoup" data-source-line="116" data-uid="ent0036" id="cluster_jsoup">
+            <rect fill="none" height="100" rx="2.5" ry="2.5" style="stroke:#000000;stroke-width:1.5;" width="102" x="1133" y="1061.2188"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="37.3311" x="1165.3345" y="1077.752">jsoup</text>
+        </g>
+        <!--cluster java-->
+        <g class="cluster" data-entity="java" data-source-line="115" data-uid="ent0032" id="cluster_java">
+            <rect fill="none" height="168" rx="2.5" ry="2.5" style="stroke:#000000;stroke-width:1.5;" width="238" x="1941" y="1017.2188"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="27.248" x="2046.376" y="1033.752">java</text>
+        </g>
+        <!--cluster net-->
+        <g class="cluster" data-entity="net" data-source-line="115" data-uid="ent0033" id="cluster_net">
+            <rect fill="none" height="100" rx="2.5" ry="2.5" style="stroke:#000000;stroke-width:1.5;" width="190" x="1965" y="1061.2188"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="21" x="2049.5" y="1077.752">net</text>
+        </g>
+        <!--class WebCrawlerApp-->
+        <g class="entity" data-entity="WebCrawlerApp" data-source-line="7" data-uid="ent0003" id="entity_WebCrawlerApp">
+            <rect fill="#F1F1F1" height="65.6094" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="172.6719" x="1817.5" y="187.2188"/>
+            <ellipse cx="1849.9366" cy="203.2188" fill="#ADD1B2" rx="11" ry="11" style="stroke:#181818;stroke-width:1;"/>
+            <path d="M1852.7022,199.0938 Q1852.8585,198.875 1853.046,198.7656 Q1853.2335,198.6563 1853.4522,198.6563 Q1853.8272,198.6563 1854.0616,198.9219 Q1854.296,199.1719 1854.296,199.7813 L1854.296,201.2344 Q1854.296,201.8438 1854.0616,202.1094 Q1853.8272,202.375 1853.4522,202.375 Q1853.1085,202.375 1852.9054,202.1719 Q1852.7022,201.9844 1852.5929,201.4688 Q1852.546,201.1094 1852.3585,200.9219 Q1852.0304,200.5469 1851.421,200.3281 Q1850.8116,200.1094 1850.1866,200.1094 Q1849.421,200.1094 1848.7804,200.4375 Q1848.1554,200.7656 1847.6554,201.5156 Q1847.171,202.2656 1847.171,203.2969 L1847.171,204.3906 Q1847.171,205.625 1848.0616,206.4531 Q1848.9522,207.2656 1850.546,207.2656 Q1851.4835,207.2656 1852.1397,207.0156 Q1852.5304,206.8594 1852.9522,206.4219 Q1853.2179,206.1563 1853.3585,206.0781 Q1853.5147,206 1853.7179,206 Q1854.046,206 1854.296,206.2656 Q1854.5616,206.5156 1854.5616,206.8594 Q1854.5616,207.2031 1854.2179,207.6094 Q1853.7179,208.1875 1852.921,208.5156 Q1851.8429,208.9688 1850.546,208.9688 Q1849.0304,208.9688 1847.8272,208.3438 Q1846.8429,207.8438 1846.1554,206.7813 Q1845.4679,205.7031 1845.4679,204.4219 L1845.4679,203.2656 Q1845.4679,201.9375 1846.0772,200.7969 Q1846.7022,199.6406 1847.796,199.0313 Q1848.8897,198.4063 1850.1241,198.4063 Q1850.8585,198.4063 1851.4991,198.5781 Q1852.1554,198.7344 1852.7022,199.0938 Z " fill="#000000"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="101.9238" x="1867.8114" y="208.9473">WebCrawlerApp</text>
+            <line style="stroke:#181818;stroke-width:0.5;" x1="1818.5" x2="1989.1719" y1="219.2188" y2="219.2188"/>
+            <line style="stroke:#181818;stroke-width:0.5;" x1="1818.5" x2="1989.1719" y1="227.2188" y2="227.2188"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" text-decoration="underline" textLength="160.6719" x="1823.5" y="245.752">+main(args: String[]): void</text>
+        </g>
+        <!--class MainWindow-->
+        <g class="entity" data-entity="MainWindow" data-source-line="11" data-uid="ent0006" id="entity_MainWindow">
+            <rect fill="#F1F1F1" height="294.5313" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="217.4268" x="1795.5" y="331.2188"/>
+            <ellipse cx="1859.8945" cy="347.2188" fill="#ADD1B2" rx="11" ry="11" style="stroke:#181818;stroke-width:1;"/>
+            <path d="M1862.6602,343.0938 Q1862.8164,342.875 1863.0039,342.7656 Q1863.1914,342.6563 1863.4102,342.6563 Q1863.7852,342.6563 1864.0195,342.9219 Q1864.2539,343.1719 1864.2539,343.7813 L1864.2539,345.2344 Q1864.2539,345.8438 1864.0195,346.1094 Q1863.7852,346.375 1863.4102,346.375 Q1863.0664,346.375 1862.8633,346.1719 Q1862.6602,345.9844 1862.5508,345.4688 Q1862.5039,345.1094 1862.3164,344.9219 Q1861.9883,344.5469 1861.3789,344.3281 Q1860.7695,344.1094 1860.1445,344.1094 Q1859.3789,344.1094 1858.7383,344.4375 Q1858.1133,344.7656 1857.6133,345.5156 Q1857.1289,346.2656 1857.1289,347.2969 L1857.1289,348.3906 Q1857.1289,349.625 1858.0195,350.4531 Q1858.9102,351.2656 1860.5039,351.2656 Q1861.4414,351.2656 1862.0977,351.0156 Q1862.4883,350.8594 1862.9102,350.4219 Q1863.1758,350.1563 1863.3164,350.0781 Q1863.4727,350 1863.6758,350 Q1864.0039,350 1864.2539,350.2656 Q1864.5195,350.5156 1864.5195,350.8594 Q1864.5195,351.2031 1864.1758,351.6094 Q1863.6758,352.1875 1862.8789,352.5156 Q1861.8008,352.9688 1860.5039,352.9688 Q1858.9883,352.9688 1857.7852,352.3438 Q1856.8008,351.8438 1856.1133,350.7813 Q1855.4258,349.7031 1855.4258,348.4219 L1855.4258,347.2656 Q1855.4258,345.9375 1856.0352,344.7969 Q1856.6602,343.6406 1857.7539,343.0313 Q1858.8477,342.4063 1860.082,342.4063 Q1860.8164,342.4063 1861.457,342.5781 Q1862.1133,342.7344 1862.6602,343.0938 Z " fill="#000000"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="80.1377" x="1880.3945" y="352.9473">MainWindow</text>
+            <line style="stroke:#181818;stroke-width:0.5;" x1="1796.5" x2="2011.9268" y1="363.2188" y2="363.2188"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="160.2891" x="1801.5" y="381.752">-fuelScraper: FuelScraper</text>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="205.4268" x="1801.5" y="399.3613">-productScraper: ProductScraper</text>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="149.3857" x="1801.5" y="416.9707">-csvReader: CsvReader</text>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="132.2002" x="1801.5" y="434.5801">-csvWriter: CsvWriter</text>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="99.5723" x="1801.5" y="452.1895">-lastHtml: String</text>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="122.917" x="1801.5" y="469.7988">-urlField: JTextField</text>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="140.8271" x="1801.5" y="487.4082">-delayField: JTextField</text>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="156.3789" x="1801.5" y="505.0176">-selectorField: JTextField</text>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="182.8613" x="1801.5" y="522.627">-parseModeBox: JComboBox</text>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="154.0684" x="1801.5" y="540.2363">-countyBox: JComboBox</text>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="178.9785" x="1801.5" y="557.8457">-productTable / fuelTable / ...</text>
+            <line style="stroke:#181818;stroke-width:0.5;" x1="1796.5" x2="2011.9268" y1="564.9219" y2="564.9219"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="97.6377" x="1801.5" y="583.4551">+MainWindow()</text>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="91.0273" x="1801.5" y="601.0645">-buildUI(): void</text>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="180.5166" x="1801.5" y="618.6738">-onScrapeFuelClicked(): void</text>
+        </g>
+        <!--class PageFetcher-->
+        <g class="entity" data-entity="PageFetcher" data-source-line="29" data-uid="ent0007" id="entity_PageFetcher">
+            <rect fill="#F1F1F1" height="100.8281" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="233.3818" x="1943.5" y="764.2188"/>
+            <ellipse cx="2015.8618" cy="780.2188" fill="#ADD1B2" rx="11" ry="11" style="stroke:#181818;stroke-width:1;"/>
+            <path d="M2018.6274,776.0938 Q2018.7837,775.875 2018.9712,775.7656 Q2019.1587,775.6563 2019.3774,775.6563 Q2019.7524,775.6563 2019.9868,775.9219 Q2020.2212,776.1719 2020.2212,776.7813 L2020.2212,778.2344 Q2020.2212,778.8438 2019.9868,779.1094 Q2019.7524,779.375 2019.3774,779.375 Q2019.0337,779.375 2018.8306,779.1719 Q2018.6274,778.9844 2018.5181,778.4688 Q2018.4712,778.1094 2018.2837,777.9219 Q2017.9556,777.5469 2017.3462,777.3281 Q2016.7368,777.1094 2016.1118,777.1094 Q2015.3462,777.1094 2014.7056,777.4375 Q2014.0806,777.7656 2013.5806,778.5156 Q2013.0962,779.2656 2013.0962,780.2969 L2013.0962,781.3906 Q2013.0962,782.625 2013.9868,783.4531 Q2014.8774,784.2656 2016.4712,784.2656 Q2017.4087,784.2656 2018.0649,784.0156 Q2018.4556,783.8594 2018.8774,783.4219 Q2019.1431,783.1563 2019.2837,783.0781 Q2019.4399,783 2019.6431,783 Q2019.9712,783 2020.2212,783.2656 Q2020.4868,783.5156 2020.4868,783.8594 Q2020.4868,784.2031 2020.1431,784.6094 Q2019.6431,785.1875 2018.8462,785.5156 Q2017.7681,785.9688 2016.4712,785.9688 Q2014.9556,785.9688 2013.7524,785.3438 Q2012.7681,784.8438 2012.0806,783.7813 Q2011.3931,782.7031 2011.3931,781.4219 L2011.3931,780.2656 Q2011.3931,778.9375 2012.0024,777.7969 Q2012.6274,776.6406 2013.7212,776.0313 Q2014.8149,775.4063 2016.0493,775.4063 Q2016.7837,775.4063 2017.4243,775.5781 Q2018.0806,775.7344 2018.6274,776.0938 Z " fill="#000000"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="80.1582" x="2036.3618" y="785.9473">PageFetcher</text>
+            <line style="stroke:#181818;stroke-width:0.5;" x1="1944.5" x2="2175.8818" y1="796.2188" y2="796.2188"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="112.834" x="1949.5" y="814.752">-userAgent: String</text>
+            <line style="stroke:#181818;stroke-width:0.5;" x1="1944.5" x2="2175.8818" y1="821.8281" y2="821.8281"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="205.8301" x="1949.5" y="840.3613">+PageFetcher(userAgent: String)</text>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="221.3818" x="1949.5" y="857.9707">+fetchPage(urlString: String): String</text>
+        </g>
+        <!--class JsBrowserFetcher-->
+        <g class="entity" data-entity="JsBrowserFetcher" data-source-line="35" data-uid="ent0008" id="entity_JsBrowserFetcher">
+            <rect fill="#F1F1F1" height="188.875" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="315.8369" x="1592" y="720.2188"/>
+            <ellipse cx="1689.2651" cy="736.2188" fill="#ADD1B2" rx="11" ry="11" style="stroke:#181818;stroke-width:1;"/>
+            <path d="M1692.0308,732.0938 Q1692.187,731.875 1692.3745,731.7656 Q1692.562,731.6563 1692.7808,731.6563 Q1693.1558,731.6563 1693.3901,731.9219 Q1693.6245,732.1719 1693.6245,732.7813 L1693.6245,734.2344 Q1693.6245,734.8438 1693.3901,735.1094 Q1693.1558,735.375 1692.7808,735.375 Q1692.437,735.375 1692.2339,735.1719 Q1692.0308,734.9844 1691.9214,734.4688 Q1691.8745,734.1094 1691.687,733.9219 Q1691.3589,733.5469 1690.7495,733.3281 Q1690.1401,733.1094 1689.5151,733.1094 Q1688.7495,733.1094 1688.1089,733.4375 Q1687.4839,733.7656 1686.9839,734.5156 Q1686.4995,735.2656 1686.4995,736.2969 L1686.4995,737.3906 Q1686.4995,738.625 1687.3901,739.4531 Q1688.2808,740.2656 1689.8745,740.2656 Q1690.812,740.2656 1691.4683,740.0156 Q1691.8589,739.8594 1692.2808,739.4219 Q1692.5464,739.1563 1692.687,739.0781 Q1692.8433,739 1693.0464,739 Q1693.3745,739 1693.6245,739.2656 Q1693.8901,739.5156 1693.8901,739.8594 Q1693.8901,740.2031 1693.5464,740.6094 Q1693.0464,741.1875 1692.2495,741.5156 Q1691.1714,741.9688 1689.8745,741.9688 Q1688.3589,741.9688 1687.1558,741.3438 Q1686.1714,740.8438 1685.4839,739.7813 Q1684.7964,738.7031 1684.7964,737.4219 L1684.7964,736.2656 Q1684.7964,734.9375 1685.4058,733.7969 Q1686.0308,732.6406 1687.1245,732.0313 Q1688.2183,731.4063 1689.4526,731.4063 Q1690.187,731.4063 1690.8276,731.5781 Q1691.4839,731.7344 1692.0308,732.0938 Z " fill="#000000"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="112.8066" x="1709.7651" y="741.9473">JsBrowserFetcher</text>
+            <line style="stroke:#181818;stroke-width:0.5;" x1="1593" x2="1906.8369" y1="752.2188" y2="752.2188"/>
+            <line style="stroke:#181818;stroke-width:0.5;" x1="1593" x2="1906.8369" y1="760.2188" y2="760.2188"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="303.8369" x="1598" y="778.752">+fetchWithJs(url: String, waitSeconds: int): String</text>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="159.4482" x="1598" y="796.3613">-makeDriver(): WebDriver</text>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="272.3301" x="1598" y="813.9707">-scrapePickapump(url, waitSeconds): String</text>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="245.8818" x="1598" y="831.5801">-scrapeAldi(query, waitSeconds): String</text>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="241.1992" x="1598" y="849.1895">-scrapeTesco(url, waitSeconds): String</text>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="224.8682" x="1598" y="866.7988">-scrapeLidl(url, waitSeconds): String</text>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="252.0957" x="1598" y="884.4082">-scrapeGeneric(url, waitSeconds): String</text>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="221.7305" x="1598" y="902.0176">-extractAldiQuery(url: String): String</text>
+        </g>
+        <!--class HtmlParser-->
+        <g class="entity" data-entity="HtmlParser" data-source-line="46" data-uid="ent0009" id="entity_HtmlParser">
+            <rect fill="#F1F1F1" height="100.8281" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="474.5537" x="1081.5" y="764.2188"/>
+            <ellipse cx="1279.5234" cy="780.2188" fill="#ADD1B2" rx="11" ry="11" style="stroke:#181818;stroke-width:1;"/>
+            <path d="M1282.2891,776.0938 Q1282.4453,775.875 1282.6328,775.7656 Q1282.8203,775.6563 1283.0391,775.6563 Q1283.4141,775.6563 1283.6484,775.9219 Q1283.8828,776.1719 1283.8828,776.7813 L1283.8828,778.2344 Q1283.8828,778.8438 1283.6484,779.1094 Q1283.4141,779.375 1283.0391,779.375 Q1282.6953,779.375 1282.4922,779.1719 Q1282.2891,778.9844 1282.1797,778.4688 Q1282.1328,778.1094 1281.9453,777.9219 Q1281.6172,777.5469 1281.0078,777.3281 Q1280.3984,777.1094 1279.7734,777.1094 Q1279.0078,777.1094 1278.3672,777.4375 Q1277.7422,777.7656 1277.2422,778.5156 Q1276.7578,779.2656 1276.7578,780.2969 L1276.7578,781.3906 Q1276.7578,782.625 1277.6484,783.4531 Q1278.5391,784.2656 1280.1328,784.2656 Q1281.0703,784.2656 1281.7266,784.0156 Q1282.1172,783.8594 1282.5391,783.4219 Q1282.8047,783.1563 1282.9453,783.0781 Q1283.1016,783 1283.3047,783 Q1283.6328,783 1283.8828,783.2656 Q1284.1484,783.5156 1284.1484,783.8594 Q1284.1484,784.2031 1283.8047,784.6094 Q1283.3047,785.1875 1282.5078,785.5156 Q1281.4297,785.9688 1280.1328,785.9688 Q1278.6172,785.9688 1277.4141,785.3438 Q1276.4297,784.8438 1275.7422,783.7813 Q1275.0547,782.7031 1275.0547,781.4219 L1275.0547,780.2656 Q1275.0547,778.9375 1275.6641,777.7969 Q1276.2891,776.6406 1277.3828,776.0313 Q1278.4766,775.4063 1279.7109,775.4063 Q1280.4453,775.4063 1281.0859,775.5781 Q1281.7422,775.7344 1282.2891,776.0938 Z " fill="#000000"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="70.0068" x="1300.0234" y="785.9473">HtmlParser</text>
+            <line style="stroke:#181818;stroke-width:0.5;" x1="1082.5" x2="1555.0537" y1="796.2188" y2="796.2188"/>
+            <line style="stroke:#181818;stroke-width:0.5;" x1="1082.5" x2="1555.0537" y1="804.2188" y2="804.2188"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="462.5537" x="1087.5" y="822.752">+searchByCssSelector(html: String, cssSelector: String): ArrayList&lt;String&gt;</text>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="194.8994" x="1087.5" y="840.3613">+getAllText(html: String): String</text>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="271.9404" x="1087.5" y="857.9707">+getAllLinks(html: String): ArrayList&lt;String&gt;</text>
+        </g>
+        <!--class FuelScraper-->
+        <g class="entity" data-entity="FuelScraper" data-source-line="52" data-uid="ent0010" id="entity_FuelScraper">
+            <rect fill="#F1F1F1" height="118.4375" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="320.4922" x="726" y="755.7188"/>
+            <ellipse cx="843.8687" cy="771.7188" fill="#ADD1B2" rx="11" ry="11" style="stroke:#181818;stroke-width:1;"/>
+            <path d="M846.6343,767.5938 Q846.7905,767.375 846.978,767.2656 Q847.1655,767.1563 847.3843,767.1563 Q847.7593,767.1563 847.9937,767.4219 Q848.228,767.6719 848.228,768.2813 L848.228,769.7344 Q848.228,770.3438 847.9937,770.6094 Q847.7593,770.875 847.3843,770.875 Q847.0405,770.875 846.8374,770.6719 Q846.6343,770.4844 846.5249,769.9688 Q846.478,769.6094 846.2905,769.4219 Q845.9624,769.0469 845.353,768.8281 Q844.7437,768.6094 844.1187,768.6094 Q843.353,768.6094 842.7124,768.9375 Q842.0874,769.2656 841.5874,770.0156 Q841.103,770.7656 841.103,771.7969 L841.103,772.8906 Q841.103,774.125 841.9937,774.9531 Q842.8843,775.7656 844.478,775.7656 Q845.4155,775.7656 846.0718,775.5156 Q846.4624,775.3594 846.8843,774.9219 Q847.1499,774.6563 847.2905,774.5781 Q847.4468,774.5 847.6499,774.5 Q847.978,774.5 848.228,774.7656 Q848.4937,775.0156 848.4937,775.3594 Q848.4937,775.7031 848.1499,776.1094 Q847.6499,776.6875 846.853,777.0156 Q845.7749,777.4688 844.478,777.4688 Q842.9624,777.4688 841.7593,776.8438 Q840.7749,776.3438 840.0874,775.2813 Q839.3999,774.2031 839.3999,772.9219 L839.3999,771.7656 Q839.3999,770.4375 840.0093,769.2969 Q840.6343,768.1406 841.728,767.5313 Q842.8218,766.9063 844.0562,766.9063 Q844.7905,766.9063 845.4312,767.0781 Q846.0874,767.2344 846.6343,767.5938 Z " fill="#000000"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="76.2549" x="864.3687" y="777.4473">FuelScraper</text>
+            <line style="stroke:#181818;stroke-width:0.5;" x1="727" x2="1045.4922" y1="787.7188" y2="787.7188"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" text-decoration="underline" textLength="115.1514" x="732" y="806.252">-CSV_FILE: String</text>
+            <line style="stroke:#181818;stroke-width:0.5;" x1="727" x2="1045.4922" y1="813.3281" y2="813.3281"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="308.4922" x="732" y="831.8613">+scrapePrices(html: String): ArrayList&lt;FuelEntry&gt;</text>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="302.2783" x="732" y="849.4707">+saveToCsv(entries: ArrayList&lt;FuelEntry&gt;): void</text>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="156.7822" x="732" y="867.0801">+getCsvFilePath(): String</text>
+        </g>
+        <!--class FuelEntry-->
+        <g class="entity" data-entity="FuelEntry" data-source-line="59" data-uid="ent0011" id="entity_FuelEntry">
+            <rect fill="#F1F1F1" height="181.9688" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="143.1201" x="814.5" y="1030.2188"/>
+            <ellipse cx="852.5445" cy="1051.5703" fill="#ADD1B2" rx="11" ry="11" style="stroke:#181818;stroke-width:1;"/>
+            <path d="M855.3101,1047.4453 Q855.4664,1047.2266 855.6539,1047.1172 Q855.8414,1047.0078 856.0601,1047.0078 Q856.4351,1047.0078 856.6695,1047.2734 Q856.9039,1047.5234 856.9039,1048.1328 L856.9039,1049.5859 Q856.9039,1050.1953 856.6695,1050.4609 Q856.4351,1050.7266 856.0601,1050.7266 Q855.7164,1050.7266 855.5132,1050.5234 Q855.3101,1050.3359 855.2007,1049.8203 Q855.1539,1049.4609 854.9664,1049.2734 Q854.6382,1048.8984 854.0289,1048.6797 Q853.4195,1048.4609 852.7945,1048.4609 Q852.0289,1048.4609 851.3882,1048.7891 Q850.7632,1049.1172 850.2632,1049.8672 Q849.7789,1050.6172 849.7789,1051.6484 L849.7789,1052.7422 Q849.7789,1053.9766 850.6695,1054.8047 Q851.5601,1055.6172 853.1539,1055.6172 Q854.0914,1055.6172 854.7476,1055.3672 Q855.1382,1055.2109 855.5601,1054.7734 Q855.8257,1054.5078 855.9664,1054.4297 Q856.1226,1054.3516 856.3257,1054.3516 Q856.6539,1054.3516 856.9039,1054.6172 Q857.1695,1054.8672 857.1695,1055.2109 Q857.1695,1055.5547 856.8257,1055.9609 Q856.3257,1056.5391 855.5289,1056.8672 Q854.4507,1057.3203 853.1539,1057.3203 Q851.6382,1057.3203 850.4351,1056.6953 Q849.4507,1056.1953 848.7632,1055.1328 Q848.0757,1054.0547 848.0757,1052.7734 L848.0757,1051.6172 Q848.0757,1050.2891 848.6851,1049.1484 Q849.3101,1047.9922 850.4039,1047.3828 Q851.4976,1046.7578 852.732,1046.7578 Q853.4664,1046.7578 854.107,1046.9297 Q854.7632,1047.0859 855.3101,1047.4453 Z " fill="#000000"/>
+            <text fill="#000000" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="49.377" x="876.9321" y="1047.6758">«nested»</text>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="59.9102" x="871.6655" y="1064.8457">FuelEntry</text>
+            <line style="stroke:#181818;stroke-width:0.5;" x1="815.5" x2="956.6201" y1="1072.9219" y2="1072.9219"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="117.0996" x="820.5" y="1091.4551">+timestamp: String</text>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="131.1201" x="820.5" y="1109.0645">+stationName: String</text>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="102.334" x="820.5" y="1126.6738">+address: String</text>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="106.2236" x="820.5" y="1144.2832">+fuelType: String</text>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="82.8721" x="820.5" y="1161.8926">+price: String</text>
+            <line style="stroke:#181818;stroke-width:0.5;" x1="815.5" x2="956.6201" y1="1168.9688" y2="1168.9688"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="89.0791" x="820.5" y="1187.502">+FuelEntry(...)</text>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="125.6445" x="820.5" y="1205.1113">+toCsvRow(): String</text>
+        </g>
+        <!--class ProductScraper-->
+        <g class="entity" data-entity="ProductScraper" data-source-line="69" data-uid="ent0012" id="entity_ProductScraper">
+            <rect fill="#F1F1F1" height="153.6563" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="620.0703" x="71" y="737.7188"/>
+            <ellipse cx="328.1509" cy="753.7188" fill="#ADD1B2" rx="11" ry="11" style="stroke:#181818;stroke-width:1;"/>
+            <path d="M330.9165,749.5938 Q331.0728,749.375 331.2603,749.2656 Q331.4478,749.1563 331.6665,749.1563 Q332.0415,749.1563 332.2759,749.4219 Q332.5103,749.6719 332.5103,750.2813 L332.5103,751.7344 Q332.5103,752.3438 332.2759,752.6094 Q332.0415,752.875 331.6665,752.875 Q331.3228,752.875 331.1196,752.6719 Q330.9165,752.4844 330.8071,751.9688 Q330.7603,751.6094 330.5728,751.4219 Q330.2446,751.0469 329.6353,750.8281 Q329.0259,750.6094 328.4009,750.6094 Q327.6353,750.6094 326.9946,750.9375 Q326.3696,751.2656 325.8696,752.0156 Q325.3853,752.7656 325.3853,753.7969 L325.3853,754.8906 Q325.3853,756.125 326.2759,756.9531 Q327.1665,757.7656 328.7603,757.7656 Q329.6978,757.7656 330.354,757.5156 Q330.7446,757.3594 331.1665,756.9219 Q331.4321,756.6563 331.5728,756.5781 Q331.729,756.5 331.9321,756.5 Q332.2603,756.5 332.5103,756.7656 Q332.7759,757.0156 332.7759,757.3594 Q332.7759,757.7031 332.4321,758.1094 Q331.9321,758.6875 331.1353,759.0156 Q330.0571,759.4688 328.7603,759.4688 Q327.2446,759.4688 326.0415,758.8438 Q325.0571,758.3438 324.3696,757.2813 Q323.6821,756.2031 323.6821,754.9219 L323.6821,753.7656 Q323.6821,752.4375 324.2915,751.2969 Q324.9165,750.1406 326.0103,749.5313 Q327.104,748.9063 328.3384,748.9063 Q329.0728,748.9063 329.7134,749.0781 Q330.3696,749.2344 330.9165,749.5938 Z " fill="#000000"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="97.2686" x="348.6509" y="759.4473">ProductScraper</text>
+            <line style="stroke:#181818;stroke-width:0.5;" x1="72" x2="690.0703" y1="769.7188" y2="769.7188"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" text-decoration="underline" textLength="115.1514" x="77" y="788.252">-CSV_FILE: String</text>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" text-decoration="underline" textLength="183.9961" x="77" y="805.8613">+SUPERMARKETS: String[][]</text>
+            <line style="stroke:#181818;stroke-width:0.5;" x1="72" x2="690.0703" y1="812.9375" y2="812.9375"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="359.0918" x="77" y="831.4707">+buildSearchUrl(urlTemplate: String, query: String): String</text>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="608.0703" x="77" y="849.0801">+scrapeProducts(html: String, supermarket: String, searchQuery: String): ArrayList&lt;ProductEntry&gt;</text>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="323.292" x="77" y="866.6895">+saveToCsv(entries: ArrayList&lt;ProductEntry&gt;): void</text>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="156.7822" x="77" y="884.2988">+getCsvFilePath(): String</text>
+        </g>
+        <!--class ProductEntry-->
+        <g class="entity" data-entity="ProductEntry" data-source-line="78" data-uid="ent0013" id="entity_ProductEntry">
+            <rect fill="#F1F1F1" height="181.9688" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="148.5684" x="306.5" y="1030.2188"/>
+            <ellipse cx="337.54" cy="1051.5703" fill="#ADD1B2" rx="11" ry="11" style="stroke:#181818;stroke-width:1;"/>
+            <path d="M340.3057,1047.4453 Q340.4619,1047.2266 340.6494,1047.1172 Q340.8369,1047.0078 341.0557,1047.0078 Q341.4307,1047.0078 341.665,1047.2734 Q341.8994,1047.5234 341.8994,1048.1328 L341.8994,1049.5859 Q341.8994,1050.1953 341.665,1050.4609 Q341.4307,1050.7266 341.0557,1050.7266 Q340.7119,1050.7266 340.5088,1050.5234 Q340.3057,1050.3359 340.1963,1049.8203 Q340.1494,1049.4609 339.9619,1049.2734 Q339.6338,1048.8984 339.0244,1048.6797 Q338.415,1048.4609 337.79,1048.4609 Q337.0244,1048.4609 336.3838,1048.7891 Q335.7588,1049.1172 335.2588,1049.8672 Q334.7744,1050.6172 334.7744,1051.6484 L334.7744,1052.7422 Q334.7744,1053.9766 335.665,1054.8047 Q336.5557,1055.6172 338.1494,1055.6172 Q339.0869,1055.6172 339.7432,1055.3672 Q340.1338,1055.2109 340.5557,1054.7734 Q340.8213,1054.5078 340.9619,1054.4297 Q341.1182,1054.3516 341.3213,1054.3516 Q341.6494,1054.3516 341.8994,1054.6172 Q342.165,1054.8672 342.165,1055.2109 Q342.165,1055.5547 341.8213,1055.9609 Q341.3213,1056.5391 340.5244,1056.8672 Q339.4463,1057.3203 338.1494,1057.3203 Q336.6338,1057.3203 335.4307,1056.6953 Q334.4463,1056.1953 333.7588,1055.1328 Q333.0713,1054.0547 333.0713,1052.7734 L333.0713,1051.6172 Q333.0713,1050.2891 333.6807,1049.1484 Q334.3057,1047.9922 335.3994,1047.3828 Q336.4932,1046.7578 337.7275,1046.7578 Q338.4619,1046.7578 339.1025,1046.9297 Q339.7588,1047.0859 340.3057,1047.4453 Z " fill="#000000"/>
+            <text fill="#000000" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="49.377" x="370.8779" y="1047.6758">«nested»</text>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="80.9238" x="355.1045" y="1064.8457">ProductEntry</text>
+            <line style="stroke:#181818;stroke-width:0.5;" x1="307.5" x2="454.0684" y1="1072.9219" y2="1072.9219"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="117.0996" x="312.5" y="1091.4551">+timestamp: String</text>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="130.334" x="312.5" y="1109.0645">+supermarket: String</text>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="132.6719" x="312.5" y="1126.6738">+searchQuery: String</text>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="136.5684" x="312.5" y="1144.2832">+productName: String</text>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="82.8721" x="312.5" y="1161.8926">+price: String</text>
+            <line style="stroke:#181818;stroke-width:0.5;" x1="307.5" x2="454.0684" y1="1168.9688" y2="1168.9688"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="110.0928" x="312.5" y="1187.502">+ProductEntry(...)</text>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="125.6445" x="312.5" y="1205.1113">+toCsvRow(): String</text>
+        </g>
+        <!--class CsvReader-->
+        <g class="entity" data-entity="CsvReader" data-source-line="88" data-uid="ent0014" id="entity_CsvReader">
+            <rect fill="#F1F1F1" height="83.2188" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="296.3955" x="2212" y="773.2188"/>
+            <ellipse cx="2320.9341" cy="789.2188" fill="#ADD1B2" rx="11" ry="11" style="stroke:#181818;stroke-width:1;"/>
+            <path d="M2323.6997,785.0938 Q2323.856,784.875 2324.0435,784.7656 Q2324.231,784.6563 2324.4497,784.6563 Q2324.8247,784.6563 2325.0591,784.9219 Q2325.2935,785.1719 2325.2935,785.7813 L2325.2935,787.2344 Q2325.2935,787.8438 2325.0591,788.1094 Q2324.8247,788.375 2324.4497,788.375 Q2324.106,788.375 2323.9028,788.1719 Q2323.6997,787.9844 2323.5903,787.4688 Q2323.5435,787.1094 2323.356,786.9219 Q2323.0278,786.5469 2322.4185,786.3281 Q2321.8091,786.1094 2321.1841,786.1094 Q2320.4185,786.1094 2319.7778,786.4375 Q2319.1528,786.7656 2318.6528,787.5156 Q2318.1685,788.2656 2318.1685,789.2969 L2318.1685,790.3906 Q2318.1685,791.625 2319.0591,792.4531 Q2319.9497,793.2656 2321.5435,793.2656 Q2322.481,793.2656 2323.1372,793.0156 Q2323.5278,792.8594 2323.9497,792.4219 Q2324.2153,792.1563 2324.356,792.0781 Q2324.5122,792 2324.7153,792 Q2325.0435,792 2325.2935,792.2656 Q2325.5591,792.5156 2325.5591,792.8594 Q2325.5591,793.2031 2325.2153,793.6094 Q2324.7153,794.1875 2323.9185,794.5156 Q2322.8403,794.9688 2321.5435,794.9688 Q2320.0278,794.9688 2318.8247,794.3438 Q2317.8403,793.8438 2317.1528,792.7813 Q2316.4653,791.7031 2316.4653,790.4219 L2316.4653,789.2656 Q2316.4653,787.9375 2317.0747,786.7969 Q2317.6997,785.6406 2318.7935,785.0313 Q2319.8872,784.4063 2321.1216,784.4063 Q2321.856,784.4063 2322.4966,784.5781 Q2323.1528,784.7344 2323.6997,785.0938 Z " fill="#000000"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="70.0273" x="2341.4341" y="794.9473">CsvReader</text>
+            <line style="stroke:#181818;stroke-width:0.5;" x1="2213" x2="2507.3955" y1="805.2188" y2="805.2188"/>
+            <line style="stroke:#181818;stroke-width:0.5;" x1="2213" x2="2507.3955" y1="813.2188" y2="813.2188"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="284.3955" x="2218" y="831.752">+readCsv(filePath: String): ArrayList&lt;String[]&gt;</text>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="217.8613" x="2218" y="849.3613">-parseCsvLine(line: String): String[]</text>
+        </g>
+        <!--class CsvWriter-->
+        <g class="entity" data-entity="CsvWriter" data-source-line="93" data-uid="ent0015" id="entity_CsvWriter">
+            <rect fill="#F1F1F1" height="83.2188" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="437.2842" x="2543.5" y="773.2188"/>
+            <ellipse cx="2727.1748" cy="789.2188" fill="#ADD1B2" rx="11" ry="11" style="stroke:#181818;stroke-width:1;"/>
+            <path d="M2729.9404,785.0938 Q2730.0967,784.875 2730.2842,784.7656 Q2730.4717,784.6563 2730.6904,784.6563 Q2731.0654,784.6563 2731.2998,784.9219 Q2731.5342,785.1719 2731.5342,785.7813 L2731.5342,787.2344 Q2731.5342,787.8438 2731.2998,788.1094 Q2731.0654,788.375 2730.6904,788.375 Q2730.3467,788.375 2730.1436,788.1719 Q2729.9404,787.9844 2729.8311,787.4688 Q2729.7842,787.1094 2729.5967,786.9219 Q2729.2686,786.5469 2728.6592,786.3281 Q2728.0498,786.1094 2727.4248,786.1094 Q2726.6592,786.1094 2726.0186,786.4375 Q2725.3936,786.7656 2724.8936,787.5156 Q2724.4092,788.2656 2724.4092,789.2969 L2724.4092,790.3906 Q2724.4092,791.625 2725.2998,792.4531 Q2726.1904,793.2656 2727.7842,793.2656 Q2728.7217,793.2656 2729.3779,793.0156 Q2729.7686,792.8594 2730.1904,792.4219 Q2730.4561,792.1563 2730.5967,792.0781 Q2730.7529,792 2730.9561,792 Q2731.2842,792 2731.5342,792.2656 Q2731.7998,792.5156 2731.7998,792.8594 Q2731.7998,793.2031 2731.4561,793.6094 Q2730.9561,794.1875 2730.1592,794.5156 Q2729.0811,794.9688 2727.7842,794.9688 Q2726.2686,794.9688 2725.0654,794.3438 Q2724.0811,793.8438 2723.3936,792.7813 Q2722.7061,791.7031 2722.7061,790.4219 L2722.7061,789.2656 Q2722.7061,787.9375 2723.3154,786.7969 Q2723.9404,785.6406 2725.0342,785.0313 Q2726.1279,784.4063 2727.3623,784.4063 Q2728.0967,784.4063 2728.7373,784.5781 Q2729.3936,784.7344 2729.9404,785.0938 Z " fill="#000000"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="61.4346" x="2747.6748" y="794.9473">CsvWriter</text>
+            <line style="stroke:#181818;stroke-width:0.5;" x1="2544.5" x2="2979.7842" y1="805.2188" y2="805.2188"/>
+            <line style="stroke:#181818;stroke-width:0.5;" x1="2544.5" x2="2979.7842" y1="813.2188" y2="813.2188"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="425.2842" x="2549.5" y="831.752">+deleteRows(filePath: String, keepIndexes: ArrayList&lt;Integer&gt;): void</text>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="222.9199" x="2549.5" y="849.3613">+clearAllRows(filePath: String): void</text>
+        </g>
+        <!--class WebDriver-->
+        <g class="entity" data-entity="WebDriver" data-source-line="114" data-uid="ent0026" id="entity_WebDriver">
+            <rect fill="#F1F1F1" height="48" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="98.1172" x="1299" y="1097.2188"/>
+            <ellipse cx="1314" cy="1113.2188" fill="#ADD1B2" rx="11" ry="11" style="stroke:#181818;stroke-width:1;"/>
+            <path d="M1316.7656,1109.0938 Q1316.9219,1108.875 1317.1094,1108.7656 Q1317.2969,1108.6563 1317.5156,1108.6563 Q1317.8906,1108.6563 1318.125,1108.9219 Q1318.3594,1109.1719 1318.3594,1109.7813 L1318.3594,1111.2344 Q1318.3594,1111.8438 1318.125,1112.1094 Q1317.8906,1112.375 1317.5156,1112.375 Q1317.1719,1112.375 1316.9688,1112.1719 Q1316.7656,1111.9844 1316.6563,1111.4688 Q1316.6094,1111.1094 1316.4219,1110.9219 Q1316.0938,1110.5469 1315.4844,1110.3281 Q1314.875,1110.1094 1314.25,1110.1094 Q1313.4844,1110.1094 1312.8438,1110.4375 Q1312.2188,1110.7656 1311.7188,1111.5156 Q1311.2344,1112.2656 1311.2344,1113.2969 L1311.2344,1114.3906 Q1311.2344,1115.625 1312.125,1116.4531 Q1313.0156,1117.2656 1314.6094,1117.2656 Q1315.5469,1117.2656 1316.2031,1117.0156 Q1316.5938,1116.8594 1317.0156,1116.4219 Q1317.2813,1116.1563 1317.4219,1116.0781 Q1317.5781,1116 1317.7813,1116 Q1318.1094,1116 1318.3594,1116.2656 Q1318.625,1116.5156 1318.625,1116.8594 Q1318.625,1117.2031 1318.2813,1117.6094 Q1317.7813,1118.1875 1316.9844,1118.5156 Q1315.9063,1118.9688 1314.6094,1118.9688 Q1313.0938,1118.9688 1311.8906,1118.3438 Q1310.9063,1117.8438 1310.2188,1116.7813 Q1309.5313,1115.7031 1309.5313,1114.4219 L1309.5313,1113.2656 Q1309.5313,1111.9375 1310.1406,1110.7969 Q1310.7656,1109.6406 1311.8594,1109.0313 Q1312.9531,1108.4063 1314.1875,1108.4063 Q1314.9219,1108.4063 1315.5625,1108.5781 Q1316.2188,1108.7344 1316.7656,1109.0938 Z " fill="#000000"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="66.1172" x="1328" y="1118.9473">WebDriver</text>
+            <line style="stroke:#181818;stroke-width:0.5;" x1="1300" x2="1396.1172" y1="1129.2188" y2="1129.2188"/>
+            <line style="stroke:#181818;stroke-width:0.5;" x1="1300" x2="1396.1172" y1="1137.2188" y2="1137.2188"/>
+        </g>
+        <!--class Jsoup-->
+        <g class="entity" data-entity="Jsoup" data-source-line="116" data-uid="ent0035" id="entity_Jsoup">
+            <rect fill="#F1F1F1" height="48" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="69.3584" x="1149.5" y="1097.2188"/>
+            <ellipse cx="1164.5" cy="1113.2188" fill="#ADD1B2" rx="11" ry="11" style="stroke:#181818;stroke-width:1;"/>
+            <path d="M1167.2656,1109.0938 Q1167.4219,1108.875 1167.6094,1108.7656 Q1167.7969,1108.6563 1168.0156,1108.6563 Q1168.3906,1108.6563 1168.625,1108.9219 Q1168.8594,1109.1719 1168.8594,1109.7813 L1168.8594,1111.2344 Q1168.8594,1111.8438 1168.625,1112.1094 Q1168.3906,1112.375 1168.0156,1112.375 Q1167.6719,1112.375 1167.4688,1112.1719 Q1167.2656,1111.9844 1167.1563,1111.4688 Q1167.1094,1111.1094 1166.9219,1110.9219 Q1166.5938,1110.5469 1165.9844,1110.3281 Q1165.375,1110.1094 1164.75,1110.1094 Q1163.9844,1110.1094 1163.3438,1110.4375 Q1162.7188,1110.7656 1162.2188,1111.5156 Q1161.7344,1112.2656 1161.7344,1113.2969 L1161.7344,1114.3906 Q1161.7344,1115.625 1162.625,1116.4531 Q1163.5156,1117.2656 1165.1094,1117.2656 Q1166.0469,1117.2656 1166.7031,1117.0156 Q1167.0938,1116.8594 1167.5156,1116.4219 Q1167.7813,1116.1563 1167.9219,1116.0781 Q1168.0781,1116 1168.2813,1116 Q1168.6094,1116 1168.8594,1116.2656 Q1169.125,1116.5156 1169.125,1116.8594 Q1169.125,1117.2031 1168.7813,1117.6094 Q1168.2813,1118.1875 1167.4844,1118.5156 Q1166.4063,1118.9688 1165.1094,1118.9688 Q1163.5938,1118.9688 1162.3906,1118.3438 Q1161.4063,1117.8438 1160.7188,1116.7813 Q1160.0313,1115.7031 1160.0313,1114.4219 L1160.0313,1113.2656 Q1160.0313,1111.9375 1160.6406,1110.7969 Q1161.2656,1109.6406 1162.3594,1109.0313 Q1163.4531,1108.4063 1164.6875,1108.4063 Q1165.4219,1108.4063 1166.0625,1108.5781 Q1166.7188,1108.7344 1167.2656,1109.0938 Z " fill="#000000"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="37.3584" x="1178.5" y="1118.9473">Jsoup</text>
+            <line style="stroke:#181818;stroke-width:0.5;" x1="1150.5" x2="1217.8584" y1="1129.2188" y2="1129.2188"/>
+            <line style="stroke:#181818;stroke-width:0.5;" x1="1150.5" x2="1217.8584" y1="1137.2188" y2="1137.2188"/>
+        </g>
+        <!--class HttpURLConnection-->
+        <g class="entity" data-entity="HttpURLConnection" data-source-line="115" data-uid="ent0031" id="entity_HttpURLConnection">
+            <rect fill="#F1F1F1" height="48" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="156.5098" x="1981.5" y="1097.2188"/>
+            <ellipse cx="1996.5" cy="1113.2188" fill="#ADD1B2" rx="11" ry="11" style="stroke:#181818;stroke-width:1;"/>
+            <path d="M1999.2656,1109.0938 Q1999.4219,1108.875 1999.6094,1108.7656 Q1999.7969,1108.6563 2000.0156,1108.6563 Q2000.3906,1108.6563 2000.625,1108.9219 Q2000.8594,1109.1719 2000.8594,1109.7813 L2000.8594,1111.2344 Q2000.8594,1111.8438 2000.625,1112.1094 Q2000.3906,1112.375 2000.0156,1112.375 Q1999.6719,1112.375 1999.4688,1112.1719 Q1999.2656,1111.9844 1999.1563,1111.4688 Q1999.1094,1111.1094 1998.9219,1110.9219 Q1998.5938,1110.5469 1997.9844,1110.3281 Q1997.375,1110.1094 1996.75,1110.1094 Q1995.9844,1110.1094 1995.3438,1110.4375 Q1994.7188,1110.7656 1994.2188,1111.5156 Q1993.7344,1112.2656 1993.7344,1113.2969 L1993.7344,1114.3906 Q1993.7344,1115.625 1994.625,1116.4531 Q1995.5156,1117.2656 1997.1094,1117.2656 Q1998.0469,1117.2656 1998.7031,1117.0156 Q1999.0938,1116.8594 1999.5156,1116.4219 Q1999.7813,1116.1563 1999.9219,1116.0781 Q2000.0781,1116 2000.2813,1116 Q2000.6094,1116 2000.8594,1116.2656 Q2001.125,1116.5156 2001.125,1116.8594 Q2001.125,1117.2031 2000.7813,1117.6094 Q2000.2813,1118.1875 1999.4844,1118.5156 Q1998.4063,1118.9688 1997.1094,1118.9688 Q1995.5938,1118.9688 1994.3906,1118.3438 Q1993.4063,1117.8438 1992.7188,1116.7813 Q1992.0313,1115.7031 1992.0313,1114.4219 L1992.0313,1113.2656 Q1992.0313,1111.9375 1992.6406,1110.7969 Q1993.2656,1109.6406 1994.3594,1109.0313 Q1995.4531,1108.4063 1996.6875,1108.4063 Q1997.4219,1108.4063 1998.0625,1108.5781 Q1998.7188,1108.7344 1999.2656,1109.0938 Z " fill="#000000"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="124.5098" x="2010.5" y="1118.9473">HttpURLConnection</text>
+            <line style="stroke:#181818;stroke-width:0.5;" x1="1982.5" x2="2137.0098" y1="1129.2188" y2="1129.2188"/>
+            <line style="stroke:#181818;stroke-width:0.5;" x1="1982.5" x2="2137.0098" y1="1137.2188" y2="1137.2188"/>
+        </g>
+        <g class="entity" data-entity="GMN40" data-source-line="122" data-uid="ent0041" id="entity_GMN40">
+            <path d="M3061,432.7188 L3061,474.7188 L2012.76,478.7188 L3061,482.7188 L3061,524.4766 A0,0 0 0 0 3061,524.4766 L3271.2808,524.4766 A0,0 0 0 0 3271.2808,524.4766 L3271.2808,442.7188 L3261.2808,432.7188 L3061,432.7188 A0,0 0 0 0 3061,432.7188" fill="#FEFFDD" style="stroke:#181818;stroke-width:0.5;"/>
+            <path d="M3261.2808,432.7188 L3261.2808,442.7188 L3271.2808,442.7188 L3261.2808,432.7188" fill="#FEFFDD" style="stroke:#181818;stroke-width:0.5;"/>
+            <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="189.2808" x="3067" y="451.2139">JFrame UI with CardLayout-style</text>
+            <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="109.1289" x="3067" y="467.5654">sidebar navigation:</text>
+            <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="152.4199" x="3067" y="483.917">Fuel · Products · Crawler ·</text>
+            <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="177.0298" x="3067" y="500.2686">Saved Fuel · Saved Products ·</text>
+            <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="96.1099" x="3067" y="516.6201">Cheapest Finder</text>
+        </g>
+        <g class="entity" data-entity="GMN43" data-source-line="130" data-uid="ent0044" id="entity_GMN43">
+            <path d="M3061,1099.7188 L3061,1142.4219 L3292.9707,1142.4219 L3292.9707,1109.7188 L3282.9707,1099.7188 L3061,1099.7188" fill="#FEFFDD" style="stroke:#181818;stroke-width:0.5;"/>
+            <path d="M3282.9707,1099.7188 L3282.9707,1109.7188 L3292.9707,1109.7188 L3282.9707,1099.7188" fill="#FEFFDD" style="stroke:#181818;stroke-width:1;"/>
+            <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="210.9707" x="3067" y="1118.2139">Selenium Chrome for JS-heavy sites</text>
+            <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="200.1289" x="3067" y="1134.5654">(Pickapump, Aldi, Tesco, Lidl, etc.)</text>
+        </g>
+        <g class="entity" data-entity="GMN46" data-source-line="135" data-uid="ent0047" id="entity_GMN46">
+            <path d="M3328.5,1099.7188 L3328.5,1142.4219 L3553.2153,1142.4219 L3553.2153,1109.7188 L3543.2153,1099.7188 L3328.5,1099.7188" fill="#FEFFDD" style="stroke:#181818;stroke-width:0.5;"/>
+            <path d="M3543.2153,1099.7188 L3543.2153,1109.7188 L3553.2153,1109.7188 L3543.2153,1099.7188" fill="#FEFFDD" style="stroke:#181818;stroke-width:1;"/>
+            <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="203.7153" x="3334.5" y="1118.2139">Simple HTTP GET with User-Agent</text>
+            <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="100.439" x="3334.5" y="1134.5654">(no JS rendering)</text>
+        </g>
+        <!--link WebCrawlerApp to MainWindow-->
+        <g class="link" data-entity-1="WebCrawlerApp" data-entity-2="MainWindow" data-source-line="100" data-uid="lnk16" id="link_WebCrawlerApp_MainWindow">
+            <path codeLine="100" d="M1904,253.4488 C1904,273.8288 1904,295.7888 1904,325.0488" fill="none" id="WebCrawlerApp-to-MainWindow" style="stroke:#181818;stroke-width:1;"/>
+            <polygon fill="#181818" points="1904,331.0488,1908,322.0488,1904,326.0488,1900,322.0488,1904,331.0488" style="stroke:#181818;stroke-width:1;"/>
+            <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="80.9009" x="1905" y="297.7139">creates (EDT)</text>
+        </g>
+        <!--reverse link MainWindow to FuelScraper-->
+        <g class="link" data-entity-1="MainWindow" data-entity-2="FuelScraper" data-source-line="102" data-uid="lnk17" id="link_MainWindow_FuelScraper">
+            <path codeLine="102" d="M1783.5384,505.9783 C1621.0984,542.8983 1318.67,618.1288 1064,720.2188 C1038.73,730.3488 1012.33,742.9888 987.84,755.6588" fill="none" id="MainWindow-backto-FuelScraper" style="stroke:#181818;stroke-width:1;"/>
+            <polygon fill="#181818" points="1795.24,503.3188,1788.5027,500.748,1783.5384,505.9783,1790.2757,508.5491,1795.24,503.3188" style="stroke:#181818;stroke-width:1;"/>
+            <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="7.23" x="1780.3398" y="502.0099">1</text>
+            <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="7.23" x="992.8092" y="744.9757">1</text>
+        </g>
+        <!--reverse link MainWindow to ProductScraper-->
+        <g class="link" data-entity-1="MainWindow" data-entity-2="ProductScraper" data-source-line="103" data-uid="lnk18" id="link_MainWindow_ProductScraper">
+            <path codeLine="103" d="M1783.6236,500.6901 C1572.9836,537.9701 1106.42,623.7388 709,720.2188 C686.7,725.6288 663.64,731.5488 640.56,737.6888" fill="none" id="MainWindow-backto-ProductScraper" style="stroke:#181818;stroke-width:1;"/>
+            <polygon fill="#181818" points="1795.44,498.5988,1788.8347,495.7056,1783.6236,500.6901,1790.2289,503.5832,1795.44,498.5988" style="stroke:#181818;stroke-width:1;"/>
+            <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="7.23" x="1780.2034" y="514.1714">1</text>
+            <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="7.23" x="658.7738" y="726.8479">1</text>
+        </g>
+        <!--reverse link MainWindow to CsvReader-->
+        <g class="link" data-entity-1="MainWindow" data-entity-2="CsvReader" data-source-line="104" data-uid="lnk19" id="link_MainWindow_CsvReader">
+            <path codeLine="104" d="M2022.3212,566.3891 C2114.1312,633.6291 2232.21,720.1188 2304.44,773.0288" fill="none" id="MainWindow-backto-CsvReader" style="stroke:#181818;stroke-width:1;"/>
+            <polygon fill="#181818" points="2012.64,559.2988,2015.1172,566.071,2022.3212,566.3891,2019.8441,559.6169,2012.64,559.2988" style="stroke:#181818;stroke-width:1;"/>
+            <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="7.23" x="2020.8681" y="562.1541">1</text>
+            <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="7.23" x="2287.6445" y="762.305">1</text>
+        </g>
+        <!--reverse link MainWindow to CsvWriter-->
+        <g class="link" data-entity-1="MainWindow" data-entity-2="CsvWriter" data-source-line="105" data-uid="lnk20" id="link_MainWindow_CsvWriter">
+            <path codeLine="105" d="M2023.7408,525.6747 C2147.9508,573.4247 2346.22,649.8488 2526,720.2188 C2570.01,737.4488 2618.57,756.6488 2660.14,773.1488" fill="none" id="MainWindow-backto-CsvWriter" style="stroke:#181818;stroke-width:1;"/>
+            <polygon fill="#181818" points="2012.54,521.3688,2016.7051,527.2553,2023.7408,525.6747,2019.5757,519.7881,2012.54,521.3688" style="stroke:#181818;stroke-width:1;"/>
+            <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="7.23" x="2020.7607" y="521.4386">1</text>
+            <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="7.23" x="2635.6853" y="762.4448">1</text>
+        </g>
+        <!--link MainWindow to JsBrowserFetcher-->
+        <g class="link" data-entity-1="MainWindow" data-entity-2="JsBrowserFetcher" data-source-line="107" data-uid="lnk21" id="link_MainWindow_JsBrowserFetcher">
+            <path codeLine="107" d="M1836.23,626.6988 C1821.62,658.3788 1809.082,685.5799 1795.722,714.5599" fill="none" id="MainWindow-to-JsBrowserFetcher" style="stroke:#181818;stroke-width:1;stroke-dasharray:7,7;"/>
+            <polygon fill="#181818" points="1793.21,720.0088,1800.6105,713.5101,1795.3033,715.468,1793.3454,710.1608,1793.21,720.0088" style="stroke:#181818;stroke-width:1;"/>
+            <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="122.8462" x="1823.3618" y="670.7139">fuel &amp; product scrape</text>
+            <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="123.5698" x="1823" y="687.0654">(background threads)</text>
+        </g>
+        <!--link MainWindow to PageFetcher-->
+        <g class="link" data-entity-1="MainWindow" data-entity-2="PageFetcher" data-source-line="108" data-uid="lnk22" id="link_MainWindow_PageFetcher">
+            <path codeLine="108" d="M1972.65,626.6988 C1995.62,675.8788 2017.1513,721.9723 2034.1913,758.4623" fill="none" id="MainWindow-to-PageFetcher" style="stroke:#181818;stroke-width:1;stroke-dasharray:7,7;"/>
+            <polygon fill="#181818" points="2036.73,763.8988,2036.5463,754.0516,2034.6144,759.3684,2029.2977,757.4365,2036.73,763.8988" style="stroke:#181818;stroke-width:1;"/>
+            <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="109.8271" x="2001" y="678.7139">generic crawler tab</text>
+        </g>
+        <!--link MainWindow to HtmlParser-->
+        <g class="link" data-entity-1="MainWindow" data-entity-2="HtmlParser" data-source-line="109" data-uid="lnk23" id="link_MainWindow_HtmlParser">
+            <path codeLine="109" d="M1795.34,541.7588 C1682.99,605.8988 1515.0104,701.8036 1411.3304,761.0036" fill="none" id="MainWindow-to-HtmlParser" style="stroke:#181818;stroke-width:1;stroke-dasharray:7,7;"/>
+            <polygon fill="#181818" points="1406.12,763.9788,1415.9191,762.9897,1410.462,761.4995,1411.9523,756.0425,1406.12,763.9788" style="stroke:#181818;stroke-width:1;"/>
+            <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="83.0781" x="1608.8059" y="670.7139">parse lastHtml</text>
+            <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="112.6899" x="1594" y="687.0654">(Text / CSS / Links)</text>
+        </g>
+        <!--reverse link FuelScraper to FuelEntry-->
+        <g class="link" data-entity-1="FuelScraper" data-entity-2="FuelEntry" data-source-line="111" data-uid="lnk24" id="link_FuelScraper_FuelEntry">
+            <path codeLine="111" d="M886,886.0688 C886,930.1888 886,979.5788 886,1030.0088" fill="none" id="FuelScraper-backto-FuelEntry" style="stroke:#181818;stroke-width:1;"/>
+            <polygon fill="#181818" points="886,874.0688,882,880.0688,886,886.0688,890,880.0688,886,874.0688" style="stroke:#181818;stroke-width:1;"/>
+            <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="53.479" x="887" y="953.7139">produces</text>
+            <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="7.23" x="878.5575" y="895.7669">1</text>
+            <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="5.0591" x="880.7904" y="1019.3039">*</text>
+        </g>
+        <!--reverse link ProductScraper to ProductEntry-->
+        <g class="link" data-entity-1="ProductScraper" data-entity-2="ProductEntry" data-source-line="112" data-uid="lnk25" id="link_ProductScraper_ProductEntry">
+            <path codeLine="112" d="M381,903.7688 C381,945.6988 381,986.0088 381,1029.9888" fill="none" id="ProductScraper-backto-ProductEntry" style="stroke:#181818;stroke-width:1;"/>
+            <polygon fill="#181818" points="381,891.7688,377,897.7688,381,903.7688,385,897.7688,381,891.7688" style="stroke:#181818;stroke-width:1;"/>
+            <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="53.479" x="382" y="953.7139">produces</text>
+            <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="7.23" x="373.6954" y="912.8696">1</text>
+            <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="5.0591" x="375.8133" y="1019.2822">*</text>
+        </g>
+        <!--link JsBrowserFetcher to WebDriver-->
+        <g class="link" data-entity-1="JsBrowserFetcher" data-entity-2="WebDriver" data-source-line="114" data-uid="lnk30" id="link_JsBrowserFetcher_WebDriver">
+            <path codeLine="114" d="M1626.38,909.3588 C1539.85,974.8988 1435.5228,1053.9259 1383.3228,1093.4659" fill="none" id="JsBrowserFetcher-to-WebDriver" style="stroke:#181818;stroke-width:1;stroke-dasharray:7,7;"/>
+            <polygon fill="#181818" points="1378.54,1097.0888,1388.1294,1094.843,1382.5257,1094.0697,1383.299,1088.466,1378.54,1097.0888" style="stroke:#181818;stroke-width:1;"/>
+            <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="111.9727" x="1586" y="953.7139">uses ChromeDriver</text>
+        </g>
+        <!--link PageFetcher to HttpURLConnection-->
+        <g class="link" data-entity-1="PageFetcher" data-entity-2="HttpURLConnection" data-source-line="115" data-uid="lnk34" id="link_PageFetcher_HttpURLConnection">
+            <path codeLine="115" d="M2060,865.3188 C2060,932.0587 2060,1042.0388 2060,1091.1688" fill="none" id="PageFetcher-to-HttpURLConnection" style="stroke:#181818;stroke-width:1;stroke-dasharray:7,7;"/>
+            <polygon fill="#181818" points="2060,1097.1688,2064,1088.1688,2060,1092.1688,2056,1088.1688,2060,1097.1688" style="stroke:#181818;stroke-width:1;"/>
+            <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="27.46" x="2061" y="953.7139">uses</text>
+        </g>
+        <!--link HtmlParser to Jsoup-->
+        <g class="link" data-entity-1="HtmlParser" data-entity-2="Jsoup" data-source-line="116" data-uid="lnk37" id="link_HtmlParser_Jsoup">
+            <path codeLine="116" d="M1297.01,865.3188 C1267.42,932.0587 1218.4317,1042.5536 1196.6517,1091.6836" fill="none" id="HtmlParser-to-Jsoup" style="stroke:#181818;stroke-width:1;stroke-dasharray:7,7;"/>
+            <polygon fill="#181818" points="1194.22,1097.1688,1201.5243,1090.5621,1196.2464,1092.5978,1194.2107,1087.3199,1194.22,1097.1688" style="stroke:#181818;stroke-width:1;"/>
+            <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="27.46" x="1264" y="953.7139">uses</text>
+        </g>
+        <!--link FuelScraper to Jsoup-->
+        <g class="link" data-entity-1="FuelScraper" data-entity-2="Jsoup" data-source-line="117" data-uid="lnk38" id="link_FuelScraper_Jsoup">
+            <path codeLine="117" d="M996.09,873.7488 C1062.11,909.4588 1135.32,951.0188 1146,965.2188 C1175.72,1004.7488 1182.2196,1058.514 1183.5796,1091.074" fill="none" id="FuelScraper-to-Jsoup" style="stroke:#181818;stroke-width:1;stroke-dasharray:7,7;"/>
+            <polygon fill="#181818" points="1183.83,1097.0688,1187.4509,1087.9097,1183.6213,1092.0731,1179.4579,1088.2435,1183.83,1097.0688" style="stroke:#181818;stroke-width:1;"/>
+            <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="27.46" x="1138" y="953.7139">uses</text>
+        </g>
+        <!--link ProductScraper to Jsoup-->
+        <g class="link" data-entity-1="ProductScraper" data-entity-2="Jsoup" data-source-line="118" data-uid="lnk39" id="link_ProductScraper_Jsoup">
+            <path codeLine="118" d="M589.62,891.7987 C669.62,917.5088 762.48,943.2288 849,957.2188 C865.29,959.8488 1133.15,954.8588 1146,965.2188 C1185.36,996.9588 1188.2143,1056.2265 1186.4443,1091.0865" fill="none" id="ProductScraper-to-Jsoup" style="stroke:#181818;stroke-width:1;stroke-dasharray:7,7;"/>
+            <polygon fill="#181818" points="1186.14,1097.0788,1190.5912,1088.2932,1186.3935,1092.0852,1182.6015,1087.8875,1186.14,1097.0788" style="stroke:#181818;stroke-width:1;"/>
+            <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="27.46" x="850" y="953.7139">uses</text>
+        </g>
+        <!--link JsBrowserFetcher to GMN43-->
+        <g class="link" data-entity-1="JsBrowserFetcher" data-entity-2="GMN43" data-source-line="130" data-uid="lnk45" id="link_JsBrowserFetcher_GMN43">
+            <path d="M1908.22,902.6988 C1914.17,905.0288 1920.1,907.2188 1926,909.2188 C1939.52,913.8188 2753.01,1049.5888 3060.76,1100.8587" fill="none" id="JsBrowserFetcher-GMN43" style="stroke:#181818;stroke-width:1;stroke-dasharray:7,7;"/>
+        </g>
+        <!--link PageFetcher to GMN46-->
+        <g class="link" data-entity-1="PageFetcher" data-entity-2="GMN46" data-source-line="135" data-uid="lnk48" id="link_PageFetcher_GMN46">
+            <path d="M2116.14,865.4188 C2139.01,882.6188 2166.7,899.9088 2195,909.2188 C2301.44,944.2288 3091.94,924.3588 3203,939.2188 C3251.94,945.7688 3269.03,939.2188 3311,965.2188 C3366.54,999.6188 3410,1065.8587 3429.61,1099.5088" fill="none" id="PageFetcher-GMN46" style="stroke:#181818;stroke-width:1;stroke-dasharray:7,7;"/>
+        </g>
+        <!--SRC=[dLVTSjeu5BxdAJIvs9WMlBktJ8QPX413bkpG63ONsSoEi0-WObkk99EmdJvNx_jaUoJBHZQGffiBOkjyvqVdH_eiDopDgA092MCgvQLIWYro1UEGfm7x5yXlBLb1CXfkw0e2jOk120WLJLSnj1HJ-7vDjomwboHWIOQl0q6VOn2aImRQCBbcT8Ks_awza2T-iiFVZAOxFz9gKXgbiD1fjrhM4pdx8VYCV6crI14zUO25zNkPPIWW-FUUV96AAXP-9GbbgKV5IlP8WFjCLuzFxHxPSXOXyklUp1tY7bWQyMTheqkMESG1kin0zCXe_sB5cU1H7geACQszMr0ej_T08oqVb8zxqODWoegAHol2YDIDIk8oPhkSYtZ488vwv7O6ByeyMr44CTsT4ah0r2akJicnqXBkU0HN_0N50vuiE3wMSV8yLRkZ8fk26LrWzNyr2IkVVT-tfTXdrcjRlKNEucW-zlQLqAlOVIPtEjM3c8KRY6g8SpHcFUAMg0ZN7IBf5Y8IKKKx95m3Qaj5bkWDH8Ui80N1GcBRXYYwg1TzYlqs0eMAegfwBh6JK5FLal_UnNe7cBO5BJL08psiLI6g88uz9uHRUINuCzghns5DFJ2rlfNQMAdT8S-KgG1mLYFiQPQgTgDB4hg1Qy6s62UAS3oAbx8NJ8gdc5sQvKccJTTCDgqL-CiuOjxd7CJk3U0Po92_qV24HV4ReH-AQluGZSqjQAXqo1zrn6xsJXH1pzfK3y4-_KM3NUq6KWPsVBorCvBORdk9O_vI2BgRCAakYgM-jRS2Z2ZMarSpqsvqMG6Ri7GZcxXZbfqzE0TKrSlLAJW8_lfdD9uC6zviCs1MuHLtsl8mLM9NxaKFtOpZeUNX20W6yZZQdLspCzGOiHYcLAsz4vMejCd5HOgp356_NzL4iGINQ98rjw5toTC_QG8D2OqY0L8sLiqvjSkQu4pdeR5MnUFXWLPEkT9xlzVdsV5Dr6-2DrUZaWVpwV3-xlB-Z-4is5zRZqyMPqxFmFJdN9ZfcG7UZbJ1lZdDh9vgihBi9ahPQ6kPOym95HjGpgBnzh5XT5zqQ-ljNL9J-3-DuXhugLuvt5vjucjxh1h3-3hINyTQnetiPxgcuWVL7WI-wlmjRIvUEGmUd_hkPOvQU8Q05-FFGHUOHgexBjX7vHZP12Z0MEM1xmxP06HZl61VwXKTfmfM81h536FCAfveHsqrYDWvwNQxkEdOJBDSiqpg5Isgaxnkj-_ojHvUy83TBuatl9wrDTwHdlr-HjwXNVs_Jk9EW0vut0cSo-TEGoolgsDyltzuyVVCkKH-sNCS4m6ovmKouvL06XOHjTPD8Tk7zbmkqpj1VHegphNNA_gcOfxeLTzLIEG6GO2_vaOogNNlcMglxywSaxjdTm0IuOspqDMeZR2ZX5e7oT7XSh7oUGRfP-fhHfkoFF4hUeC6a9LXCwy5Jw2YF6vMj8rFT4lz59H_erGslvyCU9hY5OxzPWsWZfEMqkqdoVFClzM_UvoRYLU1ZHoyWiKvIBd23ossMYl2bqx5T5P6-3K5P3ucpyWBoO2AQ49tF5TTgJ_F425P10igI8eVJIipHZqRAFd-hOn3wkVoM-txDmG4XaMNiEBD0IDYK7BhaU7MBS1Ur97QU1TSAPxeW9kLqzPjiMnjo98BSXjqqU9sXn4haoElegGTegbRXnWQsI6Q8NO86iE3zAHNfypQOV4vUZERJSc7uQp8rXnZwXhIhhsb74F0iqPlnl3tolH_]-->
+    </g>
+</svg>

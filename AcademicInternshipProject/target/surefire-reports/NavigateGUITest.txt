@@ -1,4 +1,4 @@
 -------------------------------------------------------------------------------
-Test set: UseCaseTests.NavigateGUITest
+Test set: NavigateGUITest
 -------------------------------------------------------------------------------
-Tests run: 0, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 2.412 s -- in UseCaseTests.NavigateGUITest
+Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.476 s -- in NavigateGUITest

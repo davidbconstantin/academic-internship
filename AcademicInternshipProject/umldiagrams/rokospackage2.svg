@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="UTF-8"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentStyleType="text/css" data-diagram-type="CLASS" height="1091.4px" preserveAspectRatio="none" style="width:1229px;height:1091px;background:#FFFFFF;" version="1.1" viewBox="0 0 1229 1091" width="1229.1px" zoomAndPan="magnify">
+    <title>Nascrawler (2/3) - Database, NLP &amp; Notifications</title>
+    <defs/>
+    <g>
+        <g class="title" data-source-line="8">
+            <text fill="#000000" font-family="sans-serif" font-size="11.9" font-weight="bold" lengthAdjust="spacing" textLength="272.4565" x="472.7032" y="20.8532">Nascrawler (2/3) - Database, NLP &amp; Notifications</text>
+        </g>
+        <!--cluster com-->
+        <g class="cluster" data-entity="com" data-source-line="12" data-uid="ent0004" id="cluster_com">
+            <rect fill="none" height="864.45" rx="2.125" ry="2.125" style="stroke:#000000;stroke-width:1.275;" width="1206.15" x="18.513" y="222.0365"/>
+            <text fill="#000000" font-family="sans-serif" font-size="11.9" font-weight="bold" lengthAdjust="spacing" textLength="24.4682" x="609.3539" y="236.0897">com</text>
+        </g>
+        <!--cluster security-->
+        <g class="cluster" data-entity="security" data-source-line="12" data-uid="ent0005" id="cluster_security">
+            <rect fill="none" height="806.65" rx="2.125" ry="2.125" style="stroke:#000000;stroke-width:1.275;" width="1165.35" x="38.913" y="259.4365"/>
+            <text fill="#000000" font-family="sans-serif" font-size="11.9" font-weight="bold" lengthAdjust="spacing" textLength="45.6418" x="598.7671" y="273.4897">security</text>
+        </g>
+        <!--cluster academicinternshipproject-->
+        <g class="cluster" data-entity="academicinternshipproject" data-source-line="10" data-uid="ent0002" id="cluster_academicinternshipproject">
+            <rect fill="none" height="748.85" rx="2.125" ry="2.125" style="stroke:#000000;stroke-width:1.275;" width="1124.55" x="59.313" y="296.8365"/>
+            <text fill="#000000" font-family="sans-serif" font-size="11.9" font-weight="bold" lengthAdjust="spacing" textLength="151.4403" x="545.8679" y="310.8897">academicinternshipproject</text>
+        </g>
+        <!--class MySQLConnector-->
+        <g class="entity" data-entity="MySQLConnector" data-source-line="12" data-uid="ent0003" id="entity_MySQLConnector">
+            <rect fill="#F1F1F1" height="235.3836" rx="2.125" ry="2.125" style="stroke:#181818;stroke-width:0.425;" width="459.6342" x="72.913" y="498.7115"/>
+            <ellipse cx="251.8285" cy="512.3115" fill="#ADD1B2" rx="9.35" ry="9.35" style="stroke:#181818;stroke-width:0.85;"/>
+            <path d="M254.1792,508.8052 Q254.312,508.6193 254.4714,508.5263 Q254.6308,508.4333 254.8167,508.4333 Q255.1355,508.4333 255.3347,508.6591 Q255.5339,508.8716 255.5339,509.3896 L255.5339,510.6247 Q255.5339,511.1427 255.3347,511.3685 Q255.1355,511.5943 254.8167,511.5943 Q254.5245,511.5943 254.3519,511.4216 Q254.1792,511.2622 254.0863,510.824 Q254.0464,510.5185 253.887,510.3591 Q253.6081,510.0404 253.0902,509.8544 Q252.5722,509.6685 252.041,509.6685 Q251.3902,509.6685 250.8456,509.9474 Q250.3144,510.2263 249.8894,510.8638 Q249.4777,511.5013 249.4777,512.3779 L249.4777,513.3076 Q249.4777,514.3568 250.2347,515.0607 Q250.9917,515.7513 252.3464,515.7513 Q253.1433,515.7513 253.7011,515.5388 Q254.0331,515.406 254.3917,515.0341 Q254.6175,514.8083 254.737,514.7419 Q254.8699,514.6755 255.0425,514.6755 Q255.3214,514.6755 255.5339,514.9013 Q255.7597,515.1138 255.7597,515.406 Q255.7597,515.6982 255.4675,516.0435 Q255.0425,516.5349 254.3652,516.8138 Q253.4488,517.199 252.3464,517.199 Q251.0581,517.199 250.0355,516.6677 Q249.1988,516.2427 248.6144,515.3396 Q248.03,514.4232 248.03,513.3341 L248.03,512.3513 Q248.03,511.2224 248.548,510.2529 Q249.0792,509.2701 250.0089,508.7521 Q250.9386,508.2208 251.9878,508.2208 Q252.612,508.2208 253.1566,508.3669 Q253.7144,508.4997 254.1792,508.8052 Z " fill="#000000"/>
+            <text fill="#000000" font-family="sans-serif" font-size="11.9" lengthAdjust="spacing" textLength="94.5783" x="269.2535" y="517.1807">MySQLConnector</text>
+            <line style="stroke:#181818;stroke-width:0.425;" x1="73.763" x2="531.6972" y1="525.9115" y2="525.9115"/>
+            <text fill="#000000" font-family="sans-serif" font-size="11.9" lengthAdjust="spacing" textLength="70.7608" x="78.013" y="541.6647">-result: String</text>
+            <text fill="#000000" font-family="sans-serif" font-size="11.9" lengthAdjust="spacing" textLength="162.7244" x="78.013" y="556.6327">-metadata: DatabaseMetaData</text>
+            <text fill="#000000" font-family="sans-serif" font-size="11.9" lengthAdjust="spacing" textLength="136.9197" x="78.013" y="571.6006">-tableStrings: List&lt;String&gt;</text>
+            <text fill="#000000" font-family="sans-serif" font-size="11.9" lengthAdjust="spacing" textLength="93.9101" x="78.013" y="586.5686">-currentDb: String</text>
+            <line style="stroke:#181818;stroke-width:0.85;" x1="73.763" x2="531.6972" y1="592.5833" y2="592.5833"/>
+            <text fill="#000000" font-family="sans-serif" font-size="11.9" lengthAdjust="spacing" textLength="365.4311" x="78.013" y="608.3366">+MySQLConnector(host, port, databaseName, userName, password)</text>
+            <text fill="#000000" font-family="sans-serif" font-size="11.9" lengthAdjust="spacing" textLength="449.4342" x="78.013" y="623.3045">+MySQLConnector(host, port, databaseName, userName, password, userStatement)</text>
+            <text fill="#000000" font-family="sans-serif" font-size="11.9" lengthAdjust="spacing" textLength="325.7276" x="78.013" y="638.2725">+MySQLConnector(url, userName, password, userStatement)</text>
+            <text fill="#000000" font-family="sans-serif" font-size="11.9" lengthAdjust="spacing" textLength="241.7246" x="78.013" y="653.2405">+MySQLConnector(url, userName, password)</text>
+            <text fill="#000000" font-family="sans-serif" font-size="11.9" lengthAdjust="spacing" textLength="158.4071" x="78.013" y="668.2084">+fetchTableSchemas(...): void</text>
+            <text fill="#000000" font-family="sans-serif" font-size="11.9" lengthAdjust="spacing" textLength="124.6711" x="78.013" y="683.1764">+getColumnSize(...): int</text>
+            <text fill="#000000" font-family="sans-serif" font-size="11.9" lengthAdjust="spacing" textLength="180.9056" x="78.013" y="698.1444">+getTableSchemas(): List&lt;String&gt;</text>
+            <text fill="#000000" font-family="sans-serif" font-size="11.9" lengthAdjust="spacing" textLength="102.8467" x="78.013" y="713.1123">+getResult(): String</text>
+            <text fill="#000000" font-family="sans-serif" font-size="11.9" lengthAdjust="spacing" textLength="221.2598" x="78.013" y="728.0803">+getCurrentDbAsInfo(): SQLDatabaseInfo</text>
+        </g>
+        <!--class SQLParser-->
+        <g class="entity" data-entity="SQLParser" data-source-line="29" data-uid="ent0006" id="entity_SQLParser">
+            <rect fill="#F1F1F1" height="145.5758" rx="2.125" ry="2.125" style="stroke:#181818;stroke-width:0.425;" width="331.9997" x="136.663" y="886.3115"/>
+            <ellipse cx="269.6199" cy="899.9115" fill="#ADD1B2" rx="9.35" ry="9.35" style="stroke:#181818;stroke-width:0.85;"/>
+            <path d="M271.9707,896.4052 Q272.1035,896.2193 272.2629,896.1263 Q272.4223,896.0333 272.6082,896.0333 Q272.927,896.0333 273.1262,896.2591 Q273.3254,896.4716 273.3254,896.9896 L273.3254,898.2247 Q273.3254,898.7427 273.1262,898.9685 Q272.927,899.1943 272.6082,899.1943 Q272.316,899.1943 272.1434,899.0216 Q271.9707,898.8622 271.8777,898.424 Q271.8379,898.1185 271.6785,897.9591 Q271.3996,897.6404 270.8817,897.4544 Q270.3637,897.2685 269.8324,897.2685 Q269.1817,897.2685 268.6371,897.5474 Q268.1059,897.8263 267.6809,898.4638 Q267.2692,899.1013 267.2692,899.9779 L267.2692,900.9076 Q267.2692,901.9568 268.0262,902.6607 Q268.7832,903.3513 270.1379,903.3513 Q270.9348,903.3513 271.4926,903.1388 Q271.8246,903.006 272.1832,902.6341 Q272.409,902.4083 272.5285,902.3419 Q272.6613,902.2755 272.834,902.2755 Q273.1129,902.2755 273.3254,902.5013 Q273.5512,902.7138 273.5512,903.006 Q273.5512,903.2982 273.259,903.6435 Q272.834,904.1349 272.1567,904.4138 Q271.2402,904.799 270.1379,904.799 Q268.8496,904.799 267.827,904.2677 Q266.9902,903.8427 266.4059,902.9396 Q265.8215,902.0232 265.8215,900.9341 L265.8215,899.9513 Q265.8215,898.8224 266.3395,897.8529 Q266.8707,896.8701 267.8004,896.3521 Q268.7301,895.8208 269.7793,895.8208 Q270.4035,895.8208 270.9481,895.9669 Q271.5059,896.0997 271.9707,896.4052 Z " fill="#000000"/>
+            <text fill="#000000" font-family="sans-serif" font-size="11.9" lengthAdjust="spacing" textLength="58.8608" x="287.0449" y="904.7807">SQLParser</text>
+            <line style="stroke:#181818;stroke-width:0.425;" x1="137.513" x2="467.8127" y1="913.5115" y2="913.5115"/>
+            <text fill="#000000" font-family="sans-serif" font-size="11.9" lengthAdjust="spacing" textLength="132.2887" x="141.763" y="929.2647">-columnInfo: List&lt;String&gt;</text>
+            <text fill="#000000" font-family="sans-serif" font-size="11.9" lengthAdjust="spacing" textLength="93.9101" x="141.763" y="944.2327">-currentDb: String</text>
+            <text fill="#000000" font-family="sans-serif" font-size="11.9" lengthAdjust="spacing" textLength="101.8647" x="141.763" y="959.2006">-mustSplit: boolean</text>
+            <text fill="#000000" font-family="sans-serif" font-size="11.9" lengthAdjust="spacing" textLength="152.7767" x="141.763" y="974.1686">-stringsToInsert: List&lt;String&gt;</text>
+            <line style="stroke:#181818;stroke-width:0.85;" x1="137.513" x2="467.8127" y1="980.1833" y2="980.1833"/>
+            <text fill="#000000" font-family="sans-serif" font-size="11.9" lengthAdjust="spacing" textLength="321.7997" x="141.763" y="995.9366">+SQLParser(sqlStatement: String, dbInfo: SQLDatabaseInfo)</text>
+            <text fill="#000000" font-family="sans-serif" font-size="11.9" lengthAdjust="spacing" textLength="129.3195" x="141.763" y="1010.9045">+getMustSplit(): boolean</text>
+            <text fill="#000000" font-family="sans-serif" font-size="11.9" lengthAdjust="spacing" textLength="182.2188" x="141.763" y="1025.8725">+getStringsToInsert(): List&lt;String&gt;</text>
+        </g>
+        <!--class SQLDatabaseInfo-->
+        <g class="entity" data-entity="SQLDatabaseInfo" data-source-line="40" data-uid="ent0007" id="entity_SQLDatabaseInfo">
+            <rect fill="#F1F1F1" height="115.6398" rx="2.125" ry="2.125" style="stroke:#181818;stroke-width:0.425;" width="189.7924" x="577.813" y="719.2865"/>
+            <ellipse cx="621.7959" cy="732.8865" fill="#ADD1B2" rx="9.35" ry="9.35" style="stroke:#181818;stroke-width:0.85;"/>
+            <path d="M624.1467,729.3802 Q624.2795,729.1943 624.4389,729.1013 Q624.5983,729.0083 624.7842,729.0083 Q625.103,729.0083 625.3022,729.2341 Q625.5014,729.4466 625.5014,729.9646 L625.5014,731.1997 Q625.5014,731.7177 625.3022,731.9435 Q625.103,732.1693 624.7842,732.1693 Q624.492,732.1693 624.3194,731.9966 Q624.1467,731.8372 624.0537,731.399 Q624.0139,731.0935 623.8545,730.9341 Q623.5756,730.6154 623.0577,730.4294 Q622.5397,730.2435 622.0084,730.2435 Q621.3577,730.2435 620.8131,730.5224 Q620.2819,730.8013 619.8569,731.4388 Q619.4452,732.0763 619.4452,732.9529 L619.4452,733.8826 Q619.4452,734.9318 620.2022,735.6357 Q620.9592,736.3263 622.3139,736.3263 Q623.1108,736.3263 623.6686,736.1138 Q624.0006,735.981 624.3592,735.6091 Q624.585,735.3833 624.7045,735.3169 Q624.8373,735.2505 625.01,735.2505 Q625.2889,735.2505 625.5014,735.4763 Q625.7272,735.6888 625.7272,735.981 Q625.7272,736.2732 625.435,736.6185 Q625.01,737.1099 624.3327,737.3888 Q623.4162,737.774 622.3139,737.774 Q621.0256,737.774 620.003,737.2427 Q619.1662,736.8177 618.5819,735.9146 Q617.9975,734.9982 617.9975,733.9091 L617.9975,732.9263 Q617.9975,731.7974 618.5155,730.8279 Q619.0467,729.8451 619.9764,729.3271 Q620.9061,728.7958 621.9553,728.7958 Q622.5795,728.7958 623.1241,728.9419 Q623.6819,729.0747 624.1467,729.3802 Z " fill="#000000"/>
+            <text fill="#000000" font-family="sans-serif" font-size="11.9" lengthAdjust="spacing" textLength="94.6015" x="639.2209" y="737.7557">SQLDatabaseInfo</text>
+            <line style="stroke:#181818;stroke-width:0.425;" x1="578.663" x2="766.7554" y1="746.4865" y2="746.4865"/>
+            <text fill="#000000" font-family="sans-serif" font-size="11.9" lengthAdjust="spacing" textLength="71.4291" x="582.913" y="762.2397">-name: String</text>
+            <text fill="#000000" font-family="sans-serif" font-size="11.9" lengthAdjust="spacing" textLength="148.1748" x="582.913" y="777.2077">-tables: List&lt;SQLTableInfo&gt;</text>
+            <line style="stroke:#181818;stroke-width:0.85;" x1="578.663" x2="766.7554" y1="783.2224" y2="783.2224"/>
+            <text fill="#000000" font-family="sans-serif" font-size="11.9" lengthAdjust="spacing" textLength="100.8595" x="582.913" y="798.9756">+getName(): String</text>
+            <text fill="#000000" font-family="sans-serif" font-size="11.9" lengthAdjust="spacing" textLength="179.5924" x="582.913" y="813.9436">+getTables(): List&lt;SQLTableInfo&gt;</text>
+            <text fill="#000000" font-family="sans-serif" font-size="11.9" lengthAdjust="spacing" textLength="86.3157" x="582.913" y="828.9116">+printInfo(): void</text>
+        </g>
+        <!--class SQLTableInfo-->
+        <g class="entity" data-entity="SQLTableInfo" data-source-line="49" data-uid="ent0008" id="entity_SQLTableInfo">
+            <rect fill="#F1F1F1" height="115.6398" rx="2.125" ry="2.125" style="stroke:#181818;stroke-width:0.425;" width="212.2676" x="783.513" y="719.2865"/>
+            <ellipse cx="849.3203" cy="732.8865" fill="#ADD1B2" rx="9.35" ry="9.35" style="stroke:#181818;stroke-width:0.85;"/>
+            <path d="M851.6711,729.3802 Q851.8039,729.1943 851.9633,729.1013 Q852.1227,729.0083 852.3086,729.0083 Q852.6274,729.0083 852.8266,729.2341 Q853.0258,729.4466 853.0258,729.9646 L853.0258,731.1997 Q853.0258,731.7177 852.8266,731.9435 Q852.6274,732.1693 852.3086,732.1693 Q852.0164,732.1693 851.8438,731.9966 Q851.6711,731.8372 851.5782,731.399 Q851.5383,731.0935 851.3789,730.9341 Q851.1,730.6154 850.5821,730.4294 Q850.0641,730.2435 849.5328,730.2435 Q848.8821,730.2435 848.3375,730.5224 Q847.8063,730.8013 847.3813,731.4388 Q846.9696,732.0763 846.9696,732.9529 L846.9696,733.8826 Q846.9696,734.9318 847.7266,735.6357 Q848.4836,736.3263 849.8383,736.3263 Q850.6352,736.3263 851.193,736.1138 Q851.525,735.981 851.8836,735.6091 Q852.1094,735.3833 852.2289,735.3169 Q852.3618,735.2505 852.5344,735.2505 Q852.8133,735.2505 853.0258,735.4763 Q853.2516,735.6888 853.2516,735.981 Q853.2516,736.2732 852.9594,736.6185 Q852.5344,737.1099 851.8571,737.3888 Q850.9407,737.774 849.8383,737.774 Q848.55,737.774 847.5274,737.2427 Q846.6907,736.8177 846.1063,735.9146 Q845.5219,734.9982 845.5219,733.9091 L845.5219,732.9263 Q845.5219,731.7974 846.0399,730.8279 Q846.5711,729.8451 847.5008,729.3271 Q848.4305,728.7958 849.4797,728.7958 Q850.1039,728.7958 850.6485,728.9419 Q851.2063,729.0747 851.6711,729.3802 Z " fill="#000000"/>
+            <text fill="#000000" font-family="sans-serif" font-size="11.9" lengthAdjust="spacing" textLength="73.4279" x="866.7453" y="737.7557">SQLTableInfo</text>
+            <line style="stroke:#181818;stroke-width:0.425;" x1="784.363" x2="994.9306" y1="746.4865" y2="746.4865"/>
+            <text fill="#000000" font-family="sans-serif" font-size="11.9" lengthAdjust="spacing" textLength="122.3701" x="788.613" y="762.2397">-databaseName: String</text>
+            <text fill="#000000" font-family="sans-serif" font-size="11.9" lengthAdjust="spacing" textLength="99.2093" x="788.613" y="777.2077">-tableName: String</text>
+            <text fill="#000000" font-family="sans-serif" font-size="11.9" lengthAdjust="spacing" textLength="171.9689" x="788.613" y="792.1756">-columns: List&lt;SQLColumnInfo&gt;</text>
+            <line style="stroke:#181818;stroke-width:0.85;" x1="784.363" x2="994.9306" y1="798.1904" y2="798.1904"/>
+            <text fill="#000000" font-family="sans-serif" font-size="11.9" lengthAdjust="spacing" textLength="202.0676" x="788.613" y="813.9436">+getColumns(): List&lt;SQLColumnInfo&gt;</text>
+            <text fill="#000000" font-family="sans-serif" font-size="11.9" lengthAdjust="spacing" textLength="86.3157" x="788.613" y="828.9116">+printInfo(): void</text>
+        </g>
+        <!--class SQLColumnInfo-->
+        <g class="entity" data-entity="SQLColumnInfo" data-source-line="58" data-uid="ent0009" id="entity_SQLColumnInfo">
+            <rect fill="#F1F1F1" height="190.4797" rx="2.125" ry="2.125" style="stroke:#181818;stroke-width:0.425;" width="157.6949" x="1012.163" y="681.8865"/>
+            <ellipse cx="1045.5362" cy="695.4865" fill="#ADD1B2" rx="9.35" ry="9.35" style="stroke:#181818;stroke-width:0.85;"/>
+            <path d="M1047.887,691.9802 Q1048.0198,691.7943 1048.1792,691.7013 Q1048.3386,691.6083 1048.5245,691.6083 Q1048.8433,691.6083 1049.0425,691.8341 Q1049.2417,692.0466 1049.2417,692.5646 L1049.2417,693.7997 Q1049.2417,694.3177 1049.0425,694.5435 Q1048.8433,694.7693 1048.5245,694.7693 Q1048.2323,694.7693 1048.0597,694.5966 Q1047.887,694.4373 1047.7941,693.999 Q1047.7542,693.6935 1047.5948,693.5341 Q1047.3159,693.2154 1046.798,693.0294 Q1046.28,692.8435 1045.7487,692.8435 Q1045.098,692.8435 1044.5534,693.1224 Q1044.0222,693.4013 1043.5972,694.0388 Q1043.1855,694.6763 1043.1855,695.5529 L1043.1855,696.4826 Q1043.1855,697.5318 1043.9425,698.2357 Q1044.6995,698.9263 1046.0542,698.9263 Q1046.8511,698.9263 1047.4089,698.7138 Q1047.7409,698.581 1048.0995,698.2091 Q1048.3253,697.9833 1048.4448,697.9169 Q1048.5777,697.8505 1048.7503,697.8505 Q1049.0292,697.8505 1049.2417,698.0763 Q1049.4675,698.2888 1049.4675,698.581 Q1049.4675,698.8732 1049.1753,699.2185 Q1048.7503,699.7099 1048.073,699.9888 Q1047.1566,700.374 1046.0542,700.374 Q1044.7659,700.374 1043.7433,699.8427 Q1042.9066,699.4177 1042.3222,698.5146 Q1041.7378,697.5982 1041.7378,696.5091 L1041.7378,695.5263 Q1041.7378,694.3974 1042.2558,693.4279 Q1042.787,692.4451 1043.7167,691.9271 Q1044.6464,691.3958 1045.6956,691.3958 Q1046.3198,691.3958 1046.8644,691.5419 Q1047.4222,691.6747 1047.887,691.9802 Z " fill="#000000"/>
+            <text fill="#000000" font-family="sans-serif" font-size="11.9" lengthAdjust="spacing" textLength="84.6655" x="1062.0192" y="700.3557">SQLColumnInfo</text>
+            <line style="stroke:#181818;stroke-width:0.425;" x1="1013.013" x2="1169.0079" y1="709.0865" y2="709.0865"/>
+            <text fill="#000000" font-family="sans-serif" font-size="11.9" lengthAdjust="spacing" textLength="111.7659" x="1017.263" y="724.8397">-columnName: String</text>
+            <text fill="#000000" font-family="sans-serif" font-size="11.9" lengthAdjust="spacing" textLength="72.7597" x="1017.263" y="739.8077">-dataType: int</text>
+            <text fill="#000000" font-family="sans-serif" font-size="11.9" lengthAdjust="spacing" textLength="95.8973" x="1017.263" y="754.7756">-typeName: String</text>
+            <text fill="#000000" font-family="sans-serif" font-size="11.9" lengthAdjust="spacing" textLength="84.6539" x="1017.263" y="769.7436">-columnSize: int</text>
+            <text fill="#000000" font-family="sans-serif" font-size="11.9" lengthAdjust="spacing" textLength="84.6364" x="1017.263" y="784.7116">-remarks: String</text>
+            <text fill="#000000" font-family="sans-serif" font-size="11.9" lengthAdjust="spacing" textLength="98.5411" x="1017.263" y="799.6795">-columnDef: String</text>
+            <text fill="#000000" font-family="sans-serif" font-size="11.9" lengthAdjust="spacing" textLength="101.2023" x="1017.263" y="814.6475">-ordinalPosition: int</text>
+            <text fill="#000000" font-family="sans-serif" font-size="11.9" lengthAdjust="spacing" textLength="126.9837" x="1017.263" y="829.6155">-isAutoincrement: String</text>
+            <text fill="#000000" font-family="sans-serif" font-size="11.9" lengthAdjust="spacing" textLength="147.4949" x="1017.263" y="844.5834">-isGeneratedColumn: String</text>
+            <line style="stroke:#181818;stroke-width:0.85;" x1="1013.013" x2="1169.0079" y1="850.5982" y2="850.5982"/>
+            <text fill="#000000" font-family="sans-serif" font-size="11.9" lengthAdjust="spacing" textLength="86.3157" x="1017.263" y="866.3514">+printInfo(): void</text>
+        </g>
+        <!--class SentimentAnalyser-->
+        <g class="entity" data-entity="SentimentAnalyser" data-source-line="72" data-uid="ent0010" id="entity_SentimentAnalyser">
+            <rect fill="#F1F1F1" height="160.5438" rx="2.125" ry="2.125" style="stroke:#181818;stroke-width:0.425;" width="210.2629" x="197.863" y="327.8615"/>
+            <ellipse cx="249.4432" cy="341.4615" fill="#ADD1B2" rx="9.35" ry="9.35" style="stroke:#181818;stroke-width:0.85;"/>
+            <path d="M251.794,337.9552 Q251.9268,337.7693 252.0862,337.6763 Q252.2456,337.5833 252.4315,337.5833 Q252.7503,337.5833 252.9495,337.8091 Q253.1487,338.0216 253.1487,338.5396 L253.1487,339.7747 Q253.1487,340.2927 252.9495,340.5185 Q252.7503,340.7443 252.4315,340.7443 Q252.1393,340.7443 251.9667,340.5716 Q251.794,340.4122 251.701,339.974 Q251.6612,339.6685 251.5018,339.5091 Q251.2229,339.1904 250.7049,339.0044 Q250.187,338.8185 249.6557,338.8185 Q249.0049,338.8185 248.4604,339.0974 Q247.9292,339.3763 247.5042,340.0138 Q247.0924,340.6513 247.0924,341.5279 L247.0924,342.4576 Q247.0924,343.5068 247.8495,344.2107 Q248.6065,344.9013 249.9612,344.9013 Q250.7581,344.9013 251.3159,344.6888 Q251.6479,344.556 252.0065,344.1841 Q252.2323,343.9583 252.3518,343.8919 Q252.4846,343.8255 252.6573,343.8255 Q252.9362,343.8255 253.1487,344.0513 Q253.3745,344.2638 253.3745,344.556 Q253.3745,344.8482 253.0823,345.1935 Q252.6573,345.6849 251.9799,345.9638 Q251.0635,346.349 249.9612,346.349 Q248.6729,346.349 247.6503,345.8177 Q246.8135,345.3927 246.2292,344.4896 Q245.6448,343.5732 245.6448,342.4841 L245.6448,341.5013 Q245.6448,340.3724 246.1628,339.4029 Q246.694,338.4201 247.6237,337.9021 Q248.5534,337.3708 249.6026,337.3708 Q250.2268,337.3708 250.7713,337.5169 Q251.3292,337.6497 251.794,337.9552 Z " fill="#000000"/>
+            <text fill="#000000" font-family="sans-serif" font-size="11.9" lengthAdjust="spacing" textLength="99.8775" x="266.8682" y="346.3307">SentimentAnalyser</text>
+            <line style="stroke:#181818;stroke-width:0.425;" x1="198.713" x2="407.2759" y1="355.0615" y2="355.0615"/>
+            <text fill="#000000" font-family="sans-serif" font-size="11.9" lengthAdjust="spacing" textLength="160.0399" x="202.963" y="370.8147">-classifications: Classifications</text>
+            <text fill="#000000" font-family="sans-serif" font-size="11.9" lengthAdjust="spacing" textLength="67.4663" x="202.963" y="385.7827">-input: String</text>
+            <text fill="#000000" font-family="sans-serif" font-size="11.9" lengthAdjust="spacing" textLength="89.2732" x="202.963" y="400.7506">-modelUrl: String</text>
+            <line style="stroke:#181818;stroke-width:0.85;" x1="198.713" x2="407.2759" y1="406.7654" y2="406.7654"/>
+            <text fill="#000000" font-family="sans-serif" font-size="11.9" lengthAdjust="spacing" textLength="200.0629" x="202.963" y="422.5186">+SentimentAnalyser(modelUrl: String)</text>
+            <text fill="#000000" font-family="sans-serif" font-size="11.9" lengthAdjust="spacing" textLength="196.7625" x="202.963" y="437.4866">+predict(input: String): Classifications</text>
+            <text fill="#000000" font-family="sans-serif" font-size="11.9" lengthAdjust="spacing" textLength="190.1385" x="202.963" y="452.4545">+getClassifications(): Classifications</text>
+            <text fill="#000000" font-family="sans-serif" font-size="11.9" lengthAdjust="spacing" textLength="95.5835" x="202.963" y="467.4225">+getInput(): String</text>
+            <text fill="#000000" font-family="sans-serif" font-size="11.9" lengthAdjust="spacing" textLength="116.7281" x="202.963" y="482.3905">+getModelUrl(): String</text>
+        </g>
+        <!--class TaskNotifier-->
+        <g class="entity" data-entity="TaskNotifier" data-source-line="84" data-uid="ent0011" id="entity_TaskNotifier">
+            <rect fill="#F1F1F1" height="130.6078" rx="2.125" ry="2.125" style="stroke:#181818;stroke-width:0.425;" width="224.83" x="190.213" y="744.7865"/>
+            <ellipse cx="267.2754" cy="758.3865" fill="#ADD1B2" rx="9.35" ry="9.35" style="stroke:#181818;stroke-width:0.85;"/>
+            <path d="M269.6262,754.8802 Q269.759,754.6943 269.9183,754.6013 Q270.0777,754.5083 270.2637,754.5083 Q270.5824,754.5083 270.7816,754.7341 Q270.9808,754.9466 270.9808,755.4646 L270.9808,756.6997 Q270.9808,757.2177 270.7816,757.4435 Q270.5824,757.6693 270.2637,757.6693 Q269.9715,757.6693 269.7988,757.4966 Q269.6262,757.3372 269.5332,756.899 Q269.4933,756.5935 269.334,756.4341 Q269.0551,756.1154 268.5371,755.9294 Q268.0191,755.7435 267.4879,755.7435 Q266.8371,755.7435 266.2926,756.0224 Q265.7613,756.3013 265.3363,756.9388 Q264.9246,757.5763 264.9246,758.4529 L264.9246,759.3826 Q264.9246,760.4318 265.6816,761.1357 Q266.4387,761.8263 267.7933,761.8263 Q268.5902,761.8263 269.148,761.6138 Q269.4801,761.481 269.8387,761.1091 Q270.0644,760.8833 270.184,760.8169 Q270.3168,760.7505 270.4894,760.7505 Q270.7683,760.7505 270.9808,760.9763 Q271.2066,761.1888 271.2066,761.481 Q271.2066,761.7732 270.9144,762.1185 Q270.4894,762.6099 269.8121,762.8888 Q268.8957,763.274 267.7933,763.274 Q266.5051,763.274 265.4824,762.7427 Q264.6457,762.3177 264.0613,761.4146 Q263.4769,760.4982 263.4769,759.4091 L263.4769,758.4263 Q263.4769,757.2974 263.9949,756.3279 Q264.5262,755.3451 265.4558,754.8271 Q266.3855,754.2958 267.4348,754.2958 Q268.059,754.2958 268.6035,754.4419 Q269.1613,754.5747 269.6262,754.8802 Z " fill="#000000"/>
+            <text fill="#000000" font-family="sans-serif" font-size="11.9" lengthAdjust="spacing" textLength="63.4802" x="284.7004" y="763.2557">TaskNotifier</text>
+            <line style="stroke:#181818;stroke-width:0.425;" x1="191.063" x2="414.193" y1="771.9865" y2="771.9865"/>
+            <text fill="#000000" font-family="sans-serif" font-size="11.9" lengthAdjust="spacing" textLength="77.3791" x="195.313" y="787.7397">-toolTip: String</text>
+            <text fill="#000000" font-family="sans-serif" font-size="11.9" lengthAdjust="spacing" textLength="78.698" x="195.313" y="802.7077">-icon: TrayIcon</text>
+            <line style="stroke:#181818;stroke-width:0.85;" x1="191.063" x2="414.193" y1="808.7224" y2="808.7224"/>
+            <text fill="#000000" font-family="sans-serif" font-size="11.9" lengthAdjust="spacing" textLength="78.3552" x="195.313" y="824.4756">+TaskNotifier()</text>
+            <text fill="#000000" font-family="sans-serif" font-size="11.9" lengthAdjust="spacing" textLength="214.63" x="195.313" y="839.4436">+displayMessage(message: String): void</text>
+            <text fill="#000000" font-family="sans-serif" font-size="11.9" lengthAdjust="spacing" textLength="108.7967" x="195.313" y="854.4116">+getToolTip(): String</text>
+            <text fill="#000000" font-family="sans-serif" font-size="11.9" lengthAdjust="spacing" textLength="172.2885" x="195.313" y="869.3795">+setToolTip(toolTip: String): void</text>
+        </g>
+        <g class="entity" data-entity="GMN16" data-source-line="101" data-uid="ent0017" id="entity_GMN16">
+            <path d="M205.513,171.4615 L205.513,207.7591 A0,0 0 0 0 205.513,207.7591 L299.438,207.7591 L302.838,327.7595 L306.238,207.7591 L400.2277,207.7591 A0,0 0 0 0 400.2277,207.7591 L400.2277,179.9615 L391.7277,171.4615 L205.513,171.4615 A0,0 0 0 0 205.513,171.4615" fill="#FEFFDD" style="stroke:#181818;stroke-width:0.425;"/>
+            <path d="M391.7277,171.4615 L391.7277,179.9615 L400.2277,179.9615 L391.7277,171.4615" fill="#FEFFDD" style="stroke:#181818;stroke-width:0.425;"/>
+            <text fill="#000000" font-family="sans-serif" font-size="11.05" lengthAdjust="spacing" textLength="73.3843" x="210.613" y="187.1823">DJL + PyTorch</text>
+            <text fill="#000000" font-family="sans-serif" font-size="11.05" lengthAdjust="spacing" textLength="176.8647" x="210.613" y="201.0811">modelUrl: djl://ai.djl.pytorch/distilbert</text>
+        </g>
+        <g class="entity" data-entity="GMN19" data-source-line="106" data-uid="ent0020" id="entity_GMN19">
+            <path d="M211.038,124.7115 L211.038,161.0091 L394.7027,161.0091 L394.7027,133.2115 L386.2027,124.7115 L211.038,124.7115" fill="#FEFFDD" style="stroke:#181818;stroke-width:0.425;"/>
+            <path d="M386.2027,124.7115 L386.2027,133.2115 L394.7027,133.2115 L386.2027,124.7115" fill="#FEFFDD" style="stroke:#181818;stroke-width:0.85;"/>
+            <text fill="#000000" font-family="sans-serif" font-size="11.05" lengthAdjust="spacing" textLength="149.2559" x="216.138" y="140.4323">Credentials not stored on disk;</text>
+            <text fill="#000000" font-family="sans-serif" font-size="11.05" lengthAdjust="spacing" textLength="165.8147" x="216.138" y="154.3311">long text may be split across rows</text>
+        </g>
+        <g class="entity" data-entity="GMN22" data-source-line="111" data-uid="ent0023" id="entity_GMN22">
+            <path d="M218.688,77.9615 L218.688,114.2591 L387.0079,114.2591 L387.0079,86.4615 L378.5079,77.9615 L218.688,77.9615" fill="#FEFFDD" style="stroke:#181818;stroke-width:0.425;"/>
+            <path d="M378.5079,77.9615 L378.5079,86.4615 L387.0079,86.4615 L378.5079,77.9615" fill="#FEFFDD" style="stroke:#181818;stroke-width:0.85;"/>
+            <text fill="#000000" font-family="sans-serif" font-size="11.05" lengthAdjust="spacing" textLength="150.4699" x="223.788" y="93.6823">System tray balloon messages</text>
+            <text fill="#000000" font-family="sans-serif" font-size="11.05" lengthAdjust="spacing" textLength="140.0296" x="223.788" y="107.5811">during crawl / sentiment jobs</text>
+        </g>
+        <!--link MySQLConnector to SQLDatabaseInfo-->
+        <g class="link" data-entity-1="MySQLConnector" data-entity-2="SQLDatabaseInfo" data-source-line="95" data-uid="lnk12" id="link_MySQLConnector_SQLDatabaseInfo">
+            <path codeLine="95" d="M532.8565,716.4645 C548.3265,723.222 558.6711,727.7369 572.7641,733.8824" fill="none" id="MySQLConnector-to-SQLDatabaseInfo" style="stroke:#181818;stroke-width:0.85;"/>
+            <polygon fill="#181818" points="577.439,735.921,571.7857,729.7466,573.5433,734.2222,569.0677,735.9797,577.439,735.921" style="stroke:#181818;stroke-width:0.85;"/>
+            <text fill="#000000" font-family="sans-serif" font-size="11.05" lengthAdjust="spacing" textLength="28.8714" x="541.263" y="718.0073">builds</text>
+        </g>
+        <!--reverse link SQLDatabaseInfo to SQLTableInfo-->
+        <g class="link" data-entity-1="SQLDatabaseInfo" data-entity-2="SQLTableInfo" data-source-line="96" data-uid="lnk13" id="link_SQLDatabaseInfo_SQLTableInfo">
+            <path codeLine="96" d="M777.835,777.0865 C783.0455,777.0865 778.0985,777.0865 783.343,777.0865" fill="none" id="SQLDatabaseInfo-backto-SQLTableInfo" style="stroke:#181818;stroke-width:0.85;"/>
+            <polygon fill="#181818" points="767.635,777.0865,772.735,780.4865,777.835,777.0865,772.735,773.6865,767.635,777.0865" style="stroke:#181818;stroke-width:0.85;"/>
+            <text fill="#000000" font-family="sans-serif" font-size="11.05" lengthAdjust="spacing" textLength="6.1455" x="770.4988" y="789.3111">1</text>
+            <text fill="#000000" font-family="sans-serif" font-size="11.05" lengthAdjust="spacing" textLength="4.3002" x="772.4872" y="788.9796">*</text>
+        </g>
+        <!--reverse link SQLTableInfo to SQLColumnInfo-->
+        <g class="link" data-entity-1="SQLTableInfo" data-entity-2="SQLColumnInfo" data-source-line="97" data-uid="lnk14" id="link_SQLTableInfo_SQLColumnInfo">
+            <path codeLine="97" d="M1006.247,777.0865 C1011.5935,777.0865 1006.7145,777.0865 1011.959,777.0865" fill="none" id="SQLTableInfo-backto-SQLColumnInfo" style="stroke:#181818;stroke-width:0.85;"/>
+            <polygon fill="#181818" points="996.047,777.0865,1001.147,780.4865,1006.247,777.0865,1001.147,773.6865,996.047,777.0865" style="stroke:#181818;stroke-width:0.85;"/>
+            <text fill="#000000" font-family="sans-serif" font-size="11.05" lengthAdjust="spacing" textLength="6.1455" x="999.1228" y="789.2889">1</text>
+            <text fill="#000000" font-family="sans-serif" font-size="11.05" lengthAdjust="spacing" textLength="4.3002" x="1000.9887" y="789.1295">*</text>
+        </g>
+        <!--link SQLParser to SQLDatabaseInfo-->
+        <g class="link" data-entity-1="SQLParser" data-entity-2="SQLDatabaseInfo" data-source-line="98" data-uid="lnk15" id="link_SQLParser_SQLDatabaseInfo">
+            <path codeLine="98" d="M469.2935,909.3975 C491.0875,900.872 512.7795,891.318 532.763,880.7865 C556.869,868.0875 577.2294,854.4771 598.7429,838.2166" fill="none" id="SQLParser-to-SQLDatabaseInfo" style="stroke:#181818;stroke-width:0.85;"/>
+            <polygon fill="#181818" points="602.8115,835.1415,594.6585,837.0418,599.421,837.7041,598.7587,842.4666,602.8115,835.1415" style="stroke:#181818;stroke-width:0.85;"/>
+        </g>
+        <!--link MySQLConnector to GMN19-->
+        <g class="link" data-entity-1="MySQLConnector" data-entity-2="GMN19" data-source-line="106" data-uid="lnk21" id="link_MySQLConnector_GMN19">
+            <path d="M72.573,532.856 C51.0935,521.0155 30.413,507.815 11.713,493.1865 C9.4775,491.444 8.7805,490.7725 7.888,488.0865 C5.1,479.731 5.1,179.392 7.888,171.0365 C20.6805,132.6675 129.047,130.857 210.7405,135.158" fill="none" id="MySQLConnector-GMN19" style="stroke:#181818;stroke-width:0.85;stroke-dasharray:5.95,5.95;"/>
+        </g>
+        <!--link TaskNotifier to GMN22-->
+        <g class="link" data-entity-1="TaskNotifier" data-entity-2="GMN22" data-source-line="111" data-uid="lnk24" id="link_TaskNotifier_GMN22">
+            <path d="M190.077,820.6235 C117.0195,820.2325 31.263,803.87 7.888,733.7365 C5.2105,725.704 5.2105,132.319 7.888,124.2865 C36.6775,37.918 166.6595,57.57 244.137,77.9275" fill="none" id="TaskNotifier-GMN22" style="stroke:#181818;stroke-width:0.85;stroke-dasharray:5.95,5.95;"/>
+        </g>
+        <!--SRC=[hLPjRzis4FwkNt7mXy9kQxljCA3mXWA10nGPx22PtHz0KsURCKMgv6cPDko_xwXtoSgseik7MBhNv-wU8-KlogJ2YGIa5jxV43bro0Zlf3KxzGV2kyWt9iR6w365znywGYVCfH1-x0XJ8I_YX3lADO93ISASD4Pd5IDWab8E2IO7T3xoKh39kyN77oEDHmAouDJfJ12huAUiYKWHczmBBvrurkXW-c7vmmpcS2j878J7jt2_UO1NS6z97PKKmSj7KGK29j8c2uyoSuhoXP0YnaH9PGYTyMULfiu-SQe9_1b5KFO1jldkSREsnh32EjO0_ysv59zfMi6EssHEbJ114Z53MJM0jYm9pvK12pMMBdu56-Nfv_BjKsN0q1mQkZtq8y-BdpS3CDEpzVGMKkluVrnbl1S9jo7pwCgdb8jujYwUVN-8KhOZGPWmo1SYPax_xywrzH59dlT54-KP4-6dYyLYjeBVh8ehanFIskeiAKXRgNd2hRRdFXkPGc7rQp7VeE_CeOnUZ-Z6tvcZBKmUD_N0WuXj_se9nCe7uRYaXZkom1SiluK3a6IUTgbMpBg3jHg5gHI-9DJUtXbEGsD1Qm8rOAR-gsw6KITY2XnAM8EAPctvsnf5ABoBez3k-b16-jllJ3T9qn_3in_KNYnEipAFcsA8mMbG7qC8p1cRM-7IcVXLa3UGiWVLGwqurSVRk3HWkqip1df4Niw_Kysw8SHrEQMkXtje_b-0jpu36exW2oNjynJRnU5Q-Ft5KiAgTOqTxvQx-57RMpmEvBpVoWZzOBqAvtKtaF8t6LbbfElnjD5-HeEEIHoNvOqVcl_M70wiGlGR1f7tzZJestja1Uk-e8PXqkpg9k0BKdznUXpHLShfq7xMOCTOIPhsSip6aPHqwIkc_sHx5uAEhSgsGjFJTLgs5_vINh6TRX6V1NkL3cSamqJtJkJXGwBVXcwOQLrnh7ogHRv5x_dAdYRbRwVq_bc_BxDULU5RrG1ObmHSq-1-dyy_NPrBVCvbIiS-6YecxoVmUZw7oUj9xt28UYV5mAhTnAYz6aRIHf6nX7p44ja4xF6QDLp2xIyRBlOXtridp_pUyYX-qglbKgW5FopId8B1afjBIlFd5aLeOWW9hjBq6y8nryp1a5fe7ppukh4i0Ml2h2u_iOMsvWI4lnCa8eS3WWyN10ZfBBF5sMV_Shek2JZKBlTy9m6v44XeRJbDnO70t3WB8uJY-m-MFEMg9V1a3vqaVmC0]-->
+    </g>
+</svg>

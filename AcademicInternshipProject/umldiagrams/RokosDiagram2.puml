@@ -1,0 +1,116 @@
+@startuml Nascrawler_2_Services
+skinparam classAttributeIconSize 0
+skinparam nodesep 12
+skinparam ranksep 18
+skinparam packageStyle rectangle
+hide empty members
+scale 0.85
+left to right direction
+title Nascrawler (2/3) – Database, NLP & Notifications
+
+package "com.security.academicinternshipproject" {
+
+  class MySQLConnector {
+    - result: String
+    - metadata: DatabaseMetaData
+    - tableStrings: List<String>
+    - currentDb: String
+    --
+    + MySQLConnector(host, port, databaseName, userName, password)
+    + MySQLConnector(host, port, databaseName, userName, password, userStatement)
+    + MySQLConnector(url, userName, password, userStatement)
+    + MySQLConnector(url, userName, password)
+    + fetchTableSchemas(...): void
+    + getColumnSize(...): int
+    + getTableSchemas(): List<String>
+    + getResult(): String
+    + getCurrentDbAsInfo(): SQLDatabaseInfo
+  }
+
+  class SQLParser {
+    - columnInfo: List<String>
+    - currentDb: String
+    - mustSplit: boolean
+    - stringsToInsert: List<String>
+    --
+    + SQLParser(sqlStatement: String, dbInfo: SQLDatabaseInfo)
+    + getMustSplit(): boolean
+    + getStringsToInsert(): List<String>
+  }
+
+  class SQLDatabaseInfo {
+    - name: String
+    - tables: List<SQLTableInfo>
+    --
+    + getName(): String
+    + getTables(): List<SQLTableInfo>
+    + printInfo(): void
+  }
+
+  class SQLTableInfo {
+    - databaseName: String
+    - tableName: String
+    - columns: List<SQLColumnInfo>
+    --
+    + getColumns(): List<SQLColumnInfo>
+    + printInfo(): void
+  }
+
+  class SQLColumnInfo {
+    - columnName: String
+    - dataType: int
+    - typeName: String
+    - columnSize: int
+    - remarks: String
+    - columnDef: String
+    - ordinalPosition: int
+    - isAutoincrement: String
+    - isGeneratedColumn: String
+    --
+    + printInfo(): void
+  }
+
+  class SentimentAnalyser {
+    - classifications: Classifications
+    - input: String
+    - modelUrl: String
+    --
+    + SentimentAnalyser(modelUrl: String)
+    + predict(input: String): Classifications
+    + getClassifications(): Classifications
+    + getInput(): String
+    + getModelUrl(): String
+  }
+
+  class TaskNotifier {
+    - toolTip: String
+    - icon: TrayIcon
+    --
+    + TaskNotifier()
+    + displayMessage(message: String): void
+    + getToolTip(): String
+    + setToolTip(toolTip: String): void
+  }
+}
+
+MySQLConnector --> SQLDatabaseInfo : builds
+SQLDatabaseInfo "1" *-- "*" SQLTableInfo
+SQLTableInfo "1" *-- "*" SQLColumnInfo
+SQLParser --> SQLDatabaseInfo
+
+note bottom of SentimentAnalyser
+  DJL + PyTorch
+  modelUrl: djl://ai.djl.pytorch/distilbert
+end note
+
+note bottom of MySQLConnector
+  Credentials not stored on disk;
+  long text may be split across rows
+end note
+
+note bottom of TaskNotifier
+  System tray balloon messages
+  during crawl / sentiment jobs
+end note
+
+@enduml

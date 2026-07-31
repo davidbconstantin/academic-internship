@@ -1,0 +1,83 @@
+@startuml Nascrawler_1b_HTML
+skinparam classAttributeIconSize 0
+skinparam nodesep 12
+skinparam ranksep 18
+skinparam packageStyle rectangle
+hide empty members
+scale 0.85
+left to right direction
+title Nascrawler (1b) – HTML Parsing
+
+package "com.security.academicinternshipproject" {
+
+  class JSoupParser {
+    - paragraphs: ArrayList<String>
+    - elements: Elements
+    --
+    + JSoupParser()
+    + searchDocument(htmlMarkup: ArrayList<String>, searchTerm: String): ArrayList<String>
+    + getTextFromDocument(htmlMarkup: String): String
+    + getAttributesFromDocument(htmlMarkup: String, searchTerm: String): ArrayList<String>
+    + getParagraphs(): ArrayList<String>
+  }
+
+  class HTMLNode {
+    - element: String
+    - elementClass: String
+    - attribute: String
+    --
+    + HTMLNode(element: String, elementClass: String, attribute: String)
+    + getElement(): String
+    + setElement(element: String): void
+    + getElementClass(): String
+    + setElementClass(elementClass: String): void
+    + getAttribute(): String
+    + setAttribute(attribute: String): void
+  }
+
+  ' Repeated for context (from 1a)
+  class WebCrawler {
+    - searchResults: ArrayList<SearchResult>
+    - commands: ArrayList<String>
+    --
+    + getHtmlResponses(): ArrayList<SearchResult>
+    + addHtmlResponse(response: SearchResult): void
+  }
+
+  class SearchResult {
+    - results: ArrayList<String>
+    - commandNo: int
+    --
+    + getResults(): ArrayList<String>
+    + getCommandNo(): int
+  }
+
+  class CommandParser {
+    - action: String
+    - object: String
+    --
+    + getAction(): String
+    + getObject(): String
+  }
+}
+
+JSoupParser ..> HTMLNode : may use
+JSoupParser ..> org.jsoup.Jsoup : uses
+
+WebCrawler "1" *-- "*" SearchResult : searchResults
+CommandParser ..> WebCrawler : Search / Text /\nAttribute commands
+JSoupParser ..> SearchResult : fills results\nfrom HTML
+JSoupParser ..> WebCrawler : used during crawl
+
+note bottom of JSoupParser
+  Search → select elements
+  Text → strip markup
+  Attribute → e.g. href values
+end note
+
+note bottom of HTMLNode
+  Optional structure for
+  element / class / attribute
+end note
+
+@enduml

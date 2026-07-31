@@ -1,0 +1,89 @@
+@startuml Nascrawler_1a_Crawler
+skinparam classAttributeIconSize 0
+skinparam nodesep 12
+skinparam ranksep 18
+skinparam packageStyle rectangle
+hide empty members
+scale 0.85
+left to right direction
+title Nascrawler (1a) – Crawler Core & Scripting
+
+package "com.security.academicinternshipproject" {
+
+  class AcademicInternshipProject {
+    + {static} main(args: String[]): void
+  }
+
+  class WebCrawler {
+    - name: String
+    - userAgent: String
+    - crawlDelay: int
+    - urls: ArrayList<String>
+    - searchResults: ArrayList<SearchResult>
+    - commands: ArrayList<String>
+    --
+    + WebCrawler()
+    + WebCrawler(name: String, userAgent: String, crawlDelay: int)
+    + WebCrawler(name, userAgent, crawlDelay, urls, commands)
+    + getName() / setName()
+    + getUserAgent() / setUserAgent()
+    + getCrawlDelay() / setCrawlDelay()
+    + getUrls() / setUrls()
+    + getCommands() / setCommands()
+    + addCommand(command: String): void
+    + editCommand(index: int, command: String): void
+    + removeCommand(index: int): void
+    + getHtmlResponses(): ArrayList<SearchResult>
+    + addHtmlResponse(response: SearchResult): void
+    + printInfo(): void
+  }
+  WebCrawler ..|> java.io.Serializable
+
+  class SearchResult {
+    - {static} id: int
+    - results: ArrayList<String>
+    - commandNo: int
+    --
+    + SearchResult(results: ArrayList<String>, commandNo: int)
+    + SearchResult(result: String)
+    + getId(): int
+    + getCommandNo(): int
+    + getResults(): ArrayList<String>
+    + setResults(results: ArrayList<String>): void
+  }
+
+  class CommandParser {
+    - action: String
+    - object: String
+    - subject: String
+    - subjectNo: int
+    - {static} commandNo: int
+    - tokenizer: StringTokenizer
+    --
+    + CommandParser(command: String)
+    + getAction(): String
+    + getObject(): String
+    + getSubject(): String
+    + getSubjectNo(): int
+    + getCommandNo(): int
+    + setCommandNo(number: int): void
+  }
+}
+
+AcademicInternshipProject ..> MainMenuForm : creates\n(see UI diagram)
+
+WebCrawler "1" *-- "*" SearchResult : searchResults
+CommandParser ..> WebCrawler : parses each\ncommand line
+
+note bottom of WebCrawler
+  Script commands:
+  Visit · Search · Text · Attribute ·
+  Write · SQL · Python
+end note
+
+note bottom of CommandParser
+  Supports @"N"i / @"N"s
+  substitution into SQL
+end note
+
+@enduml

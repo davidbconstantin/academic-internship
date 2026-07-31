@@ -1,0 +1,140 @@
+@startuml DavidSimpleCrawler_Class_Diagram
+skinparam classAttributeIconSize 0
+skinparam packageStyle rectangle
+title David's Simple Crawler – Class Diagram\n(com.mycompany.davidssimplecrawler)
+
+package "com.mycompany.davidssimplecrawler" {
+
+  class WebCrawlerApp {
+    + {static} main(args: String[]): void
+  }
+
+  class MainWindow {
+    - fuelScraper: FuelScraper
+    - productScraper: ProductScraper
+    - csvReader: CsvReader
+    - csvWriter: CsvWriter
+    - lastHtml: String
+    - urlField: JTextField
+    - delayField: JTextField
+    - selectorField: JTextField
+    - parseModeBox: JComboBox
+    - countyBox: JComboBox
+    - productTable / fuelTable / ...
+    + MainWindow()
+    - buildUI(): void
+    - onScrapeFuelClicked(): void
+    ' + product search, saved data, cheapest finder, generic crawler tab
+  }
+
+  class PageFetcher {
+    - userAgent: String
+    + PageFetcher(userAgent: String)
+    + fetchPage(urlString: String): String
+  }
+
+  class JsBrowserFetcher {
+    + fetchWithJs(url: String, waitSeconds: int): String
+    - makeDriver(): WebDriver
+    - scrapePickapump(url, waitSeconds): String
+    - scrapeAldi(query, waitSeconds): String
+    - scrapeTesco(url, waitSeconds): String
+    - scrapeLidl(url, waitSeconds): String
+    - scrapeGeneric(url, waitSeconds): String
+    - extractAldiQuery(url: String): String
+  }
+
+  class HtmlParser {
+    + searchByCssSelector(html: String, cssSelector: String): ArrayList<String>
+    + getAllText(html: String): String
+    + getAllLinks(html: String): ArrayList<String>
+  }
+
+  class FuelScraper {
+    - {static} CSV_FILE: String
+    + scrapePrices(html: String): ArrayList<FuelEntry>
+    + saveToCsv(entries: ArrayList<FuelEntry>): void
+    + getCsvFilePath(): String
+  }
+
+  class FuelEntry <<nested>> {
+    + timestamp: String
+    + stationName: String
+    + address: String
+    + fuelType: String
+    + price: String
+    + FuelEntry(...)
+    + toCsvRow(): String
+  }
+
+  class ProductScraper {
+    - {static} CSV_FILE: String
+    + {static} SUPERMARKETS: String[][]
+    + buildSearchUrl(urlTemplate: String, query: String): String
+    + scrapeProducts(html: String, supermarket: String, searchQuery: String): ArrayList<ProductEntry>
+    + saveToCsv(entries: ArrayList<ProductEntry>): void
+    + getCsvFilePath(): String
+  }
+
+  class ProductEntry <<nested>> {
+    + timestamp: String
+    + supermarket: String
+    + searchQuery: String
+    + productName: String
+    + price: String
+    + ProductEntry(...)
+    + toCsvRow(): String
+  }
+
+  class CsvReader {
+    + readCsv(filePath: String): ArrayList<String[]>
+    - parseCsvLine(line: String): String[]
+  }
+
+  class CsvWriter {
+    + deleteRows(filePath: String, keepIndexes: ArrayList<Integer>): void
+    + clearAllRows(filePath: String): void
+  }
+
+  ' --- relationships ---
+
+  WebCrawlerApp --> MainWindow : creates (EDT)
+
+  MainWindow "1" *-- "1" FuelScraper
+  MainWindow "1" *-- "1" ProductScraper
+  MainWindow "1" *-- "1" CsvReader
+  MainWindow "1" *-- "1" CsvWriter
+
+  MainWindow ..> JsBrowserFetcher : fuel & product scrape\n(background threads)
+  MainWindow ..> PageFetcher : generic crawler tab
+  MainWindow ..> HtmlParser : parse lastHtml\n(Text / CSS / Links)
+
+  FuelScraper "1" *-- "*" FuelEntry : produces
+  ProductScraper "1" *-- "*" ProductEntry : produces
+
+  JsBrowserFetcher ..> org.openqa.selenium.WebDriver : uses ChromeDriver
+  PageFetcher ..> java.net.HttpURLConnection : uses
+  HtmlParser ..> org.jsoup.Jsoup : uses
+  FuelScraper ..> org.jsoup.Jsoup : uses
+  ProductScraper ..> org.jsoup.Jsoup : uses
+}
+
+note right of MainWindow
+  JFrame UI with CardLayout-style
+  sidebar navigation:
+  Fuel · Products · Crawler ·
+  Saved Fuel · Saved Products ·
+  Cheapest Finder
+end note
+
+note bottom of JsBrowserFetcher
+  Selenium Chrome for JS-heavy sites
+  (Pickapump, Aldi, Tesco, Lidl, etc.)
+end note
+
+note bottom of PageFetcher
+  Simple HTTP GET with User-Agent
+  (no JS rendering)
+end note
+
+@enduml
